@@ -1,0 +1,22 @@
+Bank Data
+
+00.BIN - Code
+01.BIN - Gameplay (Jill, Zombie sprites, Shooting mechanic)
+02.BIN - Chinese Glyphs
+03.BIN - Chinese Glyphs
+04.BIN - Inventory Items Sprites
+05.BIN - Map, Inventory
+06.BIN - Environment, Title Screen
+07.BIN - Tilemaps
+08.BIN - Tilemaps
+09.BIN - Tilemaps
+0A.BIN - Tilemaps
+0B.BIN - Tilemaps
+0C.BIN - Tilemaps
+0D.BIN - Tilemaps
+0E.BIN - Tilemaps
+0F.BIN - Tilemaps
+10.BIN - Tilemaps
+11.BIN - Tilemaps
+12.BIN - Code
+13.BIN - Intro Sprites

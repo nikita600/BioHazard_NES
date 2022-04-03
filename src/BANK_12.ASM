@@ -5,9 +5,9 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-bank_switch_128000:			; CODE XREF: command_0_1280FB+1B0p
+bank_switch_128000:			
 					; command_0_1280FB+1C9p ...
-		LDA	#$EE ; '�'
+		LDA	#$EE 
 		STA	bank_switch_flag_6C
 		LDA	bank_to_344
 		CMP	#$10
@@ -22,12 +22,12 @@ bank_switch_128000:			; CODE XREF: command_0_1280FB+1B0p
 		JMP	loc_128035
 ; ---------------------------------------------------------------------------
 
-loc_12801A:				; CODE XREF: bank_switch_128000+12j
+loc_12801A:				
 		STA	$8081,Y
 		JMP	loc_128035
 ; ---------------------------------------------------------------------------
 
-loc_128020:				; CODE XREF: bank_switch_128000+9j
+loc_128020:				
 		SEC
 		SBC	#$10
 		ASL	A
@@ -40,14 +40,14 @@ loc_128020:				; CODE XREF: bank_switch_128000+9j
 		JMP	loc_128035
 ; ---------------------------------------------------------------------------
 
-loc_128032:				; CODE XREF: bank_switch_128000+2Aj
+loc_128032:				
 		STA	$8181,Y
 
-loc_128035:				; CODE XREF: bank_switch_128000+17j
+loc_128035:				
 					; bank_switch_128000+1Dj ...
 		LDA	bank_to_344
 		STA	bank_prev_345
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	bank_switch_flag_6C
 		LDA	bank_command_346
 		CMP	#$FF
@@ -64,12 +64,12 @@ loc_128035:				; CODE XREF: bank_switch_128000+17j
 		JMP	(ptr_0)
 ; ---------------------------------------------------------------------------
 
-locret_12805A:				; CODE XREF: bank_switch_128000+44j
+locret_12805A:				
 		RTS
 ; End of function bank_switch_128000
 
 ; ---------------------------------------------------------------------------
-CommandPtrs_12805B:.WORD command_0_1280FB ; DATA XREF: bank_switch_128000+48r
+CommandPtrs_12805B:.WORD command_0_1280FB 
 					; bank_switch_128000+4Er
 		.WORD command_1_128101
 		.WORD command_2_128107
@@ -154,347 +154,347 @@ CommandPtrs_12805B:.WORD command_0_1280FB ; DATA XREF: bank_switch_128000+48r
 ; =============== S U B	R O U T	I N E =======================================
 
 
-command_0_1280FB:			; DATA XREF: BANK_12:CommandPtrs_12805Bo
+command_0_1280FB:			
 		JSR	sub_12B1B0
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_1_128101:			; DATA XREF: BANK_12:805Do
+command_1_128101:			
 		JSR	sub_12B1E3
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_2_128107:			; DATA XREF: BANK_12:805Fo
+command_2_128107:			
 		JSR	sub_12B225
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_3_12810D:			; DATA XREF: BANK_12:8061o
+command_3_12810D:			
 		JSR	sub_12B267
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_4_128113:			; DATA XREF: BANK_12:8063o
+command_4_128113:			
 		JSR	sub_12B2A9
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_5_128119:			; DATA XREF: BANK_12:8065o
+command_5_128119:			
 		JSR	sub_12B2EB
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_6_12811F:			; DATA XREF: BANK_12:8067o
+command_6_12811F:			
 		JSR	sub_12B32D
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_7_128125:			; DATA XREF: BANK_12:8069o
+command_7_128125:			
 		JSR	sub_12B36F
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_8_12812B:			; DATA XREF: BANK_12:806Bo
+command_8_12812B:			
 		JSR	sub_12B404
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_9_check_level_128131:		; DATA XREF: BANK_12:806Do
+command_9_check_level_128131:		
 		JSR	entry_idx_handler_unk_12AA6D
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_A_128137:			; DATA XREF: BANK_12:806Fo
+command_A_128137:			
 		JSR	sub_12B441
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_B_open_inventory_12813D:	; DATA XREF: BANK_12:8071o
+command_B_open_inventory_12813D:	
 		JSR	sub_12D4C6
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_C_128143:			; DATA XREF: BANK_12:8073o
+command_C_128143:			
 		JSR	sub_12EF66
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_D_open_item_128149:		; DATA XREF: BANK_12:8075o
+command_D_open_item_128149:		
 		JSR	sub_12D58C
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_E_load_game_12814F:		; DATA XREF: BANK_12:8077o
+command_E_load_game_12814F:		
 		JSR	com_E_load_game_12CD30
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_F_128155:			; DATA XREF: BANK_12:8079o
+command_F_128155:			
 		JSR	sub_12BEB5
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_10_12815B:			; DATA XREF: BANK_12:807Bo
+command_10_12815B:			
 		JSR	sub_12BEFA
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_11_close_inventory_128161:	; DATA XREF: BANK_12:807Do
+command_11_close_inventory_128161:	
 		JSR	sub_12ACDB
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128167:				; DATA XREF: BANK_12:807Fo
+loc_128167:				
 		JSR	sub_12BF32
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12816D:				; DATA XREF: BANK_12:8081o
+loc_12816D:				
 		JSR	sub_12BF52
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128173:				; DATA XREF: BANK_12:8083o
+loc_128173:				
 		JSR	sub_12BF79
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128179:				; DATA XREF: BANK_12:8085o
+loc_128179:				
 		JSR	sub_12BF89
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12817F:				; DATA XREF: BANK_12:8087o
+loc_12817F:				
 		JSR	sub_12BF99
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_17_player_update_128185:	; DATA XREF: BANK_12:8089o
+command_17_player_update_128185:	
 		JSR	com_17_player_update_12A9C4
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_18_12818B:			; DATA XREF: BANK_12:808Bo
+command_18_12818B:			
 		JSR	sub_12BFDF
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128191:				; DATA XREF: BANK_12:808Do
+loc_128191:				
 		JSR	sub_12C022
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128197:				; DATA XREF: BANK_12:808Fo
+loc_128197:				
 		JSR	sub_12C096
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12819D:				; DATA XREF: BANK_12:8091o
+loc_12819D:				
 		JSR	sub_12C0AE
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1281A3:				; DATA XREF: BANK_12:8093o
+loc_1281A3:				
 		JSR	sub_12C0CE
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_1D_1281A9:			; DATA XREF: BANK_12:8095o
+command_1D_1281A9:			
 		JSR	sub_12C119
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1281AF:				; DATA XREF: BANK_12:8097o
+loc_1281AF:				
 		JSR	sub_12C1F2
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1281B5:				; DATA XREF: BANK_12:8099o
+loc_1281B5:				
 		JSR	sub_12C221
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_20_1281BB:			; DATA XREF: BANK_12:809Bo
+command_20_1281BB:			
 		JSR	sub_12C25E
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1281C1:				; DATA XREF: BANK_12:809Do
+loc_1281C1:				
 		JSR	sub_12C27E
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1281C7:				; DATA XREF: BANK_12:809Fo
+loc_1281C7:				
 		JSR	sub_12C2BF
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1281CD:				; DATA XREF: BANK_12:80A1o
+loc_1281CD:				
 		JSR	sub_12C2D6
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1281D3:				; DATA XREF: BANK_12:80A3o
+loc_1281D3:				
 		JSR	sub_12F07D
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1281D9:				; DATA XREF: BANK_12:80A5o
+loc_1281D9:				
 		JSR	sub_12C324
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1281DF:				; DATA XREF: BANK_12:80A7o
+loc_1281DF:				
 		JSR	nullsub_3
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1281E5:				; DATA XREF: BANK_12:80A9o
+loc_1281E5:				
 		JSR	sub_12C373
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_28_1281EB:			; DATA XREF: BANK_12:80ABo
+command_28_1281EB:			
 		JSR	sub_12C393
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_29_open_level_1281F1:		; DATA XREF: BANK_12:80ADo
+command_29_open_level_1281F1:		
 		JSR	com_29_start_new_game_12A646
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_2A_1281F7:			; DATA XREF: BANK_12:80AFo
+command_2A_1281F7:			
 		JSR	sub_12C3B8
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_2B_1281FD:			; DATA XREF: BANK_12:80B1o
+command_2B_1281FD:			
 		JSR	sub_12C3BE
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_2C_128203:			; DATA XREF: BANK_12:80B3o
+command_2C_128203:			
 		JSR	sub_12C413
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128209:				; DATA XREF: BANK_12:80B5o
+loc_128209:				
 		JSR	sub_12C438
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12820F:				; DATA XREF: BANK_12:80B7o
+loc_12820F:				
 		JSR	sub_12C43F
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128215:				; DATA XREF: BANK_12:80B9o
+loc_128215:				
 		JSR	sub_12C45F
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_30_12821B:			; DATA XREF: BANK_12:80BBo
+command_30_12821B:			
 		JSR	sub_12C46C
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128221:				; DATA XREF: BANK_12:80BDo
+loc_128221:				
 		JSR	sub_12C4AE
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128227:				; DATA XREF: BANK_12:80BFo
+loc_128227:				
 		JSR	sub_12C4D3
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12822D:				; DATA XREF: BANK_12:80C1o
+loc_12822D:				
 		JSR	sub_12C4F3
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128233:				; DATA XREF: BANK_12:80C3o
+loc_128233:				
 		JSR	sub_12C51A
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128239:				; DATA XREF: BANK_12:80C5o
+loc_128239:				
 		JSR	sub_12C541
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12823F:				; DATA XREF: BANK_12:80C7o
+loc_12823F:				
 		JSR	sub_12C568
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-show_tree_screen_c36_128245:		; DATA XREF: BANK_12:80C9o
+show_tree_screen_c36_128245:		
 		JSR	show_tree_screen_12C588
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12824B:				; DATA XREF: BANK_12:80CBo
+loc_12824B:				
 		JSR	sub_12C5F0
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128251:				; DATA XREF: BANK_12:80CDo
+loc_128251:				
 		JSR	sub_12C637
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128257:				; DATA XREF: BANK_12:80CFo
+loc_128257:				
 		JSR	sub_12C694
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12825D:				; DATA XREF: BANK_12:80D1o
+loc_12825D:				
 		JSR	sub_12C6B9
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128263:				; DATA XREF: BANK_12:80D3o
+loc_128263:				
 		JSR	sub_12C6DE
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128269:				; DATA XREF: BANK_12:80D5o
+loc_128269:				
 		JSR	sub_12C700
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12826F:				; DATA XREF: BANK_12:80D7o
+loc_12826F:				
 		JSR	sub_12C755
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128275:				; DATA XREF: BANK_12:80D9o
+loc_128275:				
 		JSR	sub_12C792
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12827B:				; DATA XREF: BANK_12:80DBo
+loc_12827B:				
 		JSR	sub_12C7CB
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_40_128281:			; DATA XREF: BANK_12:80DDo
+command_40_128281:			
 		JSR	sub_12C7DE
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128287:				; DATA XREF: BANK_12:80DFo
+loc_128287:				
 		JSR	sub_12C3EE
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_12828D:				; DATA XREF: BANK_12:80E1o
+loc_12828D:				
 		JSR	sub_12C3C9
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_128293:				; DATA XREF: BANK_12:80E3o
+loc_128293:				
 		LDA	apu_unk_76C
 		PHA
 		LDA	#5
@@ -525,37 +525,37 @@ exec_b13_c5_1282B5:
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_44_battle_1282CA:		; DATA XREF: BANK_12:80E5o
+command_44_battle_1282CA:		
 		JSR	show_intro_screen_12CB58
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1282D0:				; DATA XREF: BANK_12:80E7o
+loc_1282D0:				
 		JSR	sub_12873A
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_46_1282D6:			; DATA XREF: BANK_12:80E9o
+command_46_1282D6:			
 		JSR	comm_46_12CCE3
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1282DC:				; DATA XREF: BANK_12:80EBo
+loc_1282DC:				
 		JSR	sub_128531
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_48_take_item_1282E2:		; DATA XREF: BANK_12:80EDo
+command_48_take_item_1282E2:		
 		JSR	comm_48_take_item_12CD1D
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-loc_1282E8:				; DATA XREF: BANK_12:80EFo
+loc_1282E8:				
 		JSR	sub_12D21B
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-return_1282EE:				; CODE XREF: command_0_1280FB+3j
+return_1282EE:				
 					; command_0_1280FB+9j ...
 		PLA
 		STA	bank_from_343
@@ -570,7 +570,7 @@ return_1282EE:				; CODE XREF: command_0_1280FB+3j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b2_c1_128300:			; CODE XREF: sub_12D329+7Ep
+exec_b2_c1_128300:			
 					; sub_12D58C+69p ...
 		LDA	#1
 		STA	bank_command_346
@@ -586,7 +586,7 @@ exec_b2_c1_128300:			; CODE XREF: sub_12D329+7Ep
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b2_c3_128313:			; CODE XREF: sub_12C022+37p
+exec_b2_c3_128313:			
 					; sub_12E69F+C1p
 		LDA	#3
 		STA	bank_command_346
@@ -602,7 +602,7 @@ exec_b2_c3_128313:			; CODE XREF: sub_12C022+37p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128326:				; CODE XREF: sub_12D287+77p
+sub_128326:				
 					; sub_12D58C+61p ...
 		LDA	inv_itemPrev_idx_31D
 		PHA
@@ -632,7 +632,7 @@ sub_128326:				; CODE XREF: sub_12D287+77p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128358:				; CODE XREF: sub_12D287+74p
+sub_128358:				
 					; sub_12D58C+5Ep ...
 		LDA	inv_itemPrev_idx_31D
 		PHA
@@ -670,7 +670,7 @@ loc_128387:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b1_c1_128394:			; CODE XREF: sub_128B0F+30p
+exec_b1_c1_128394:			
 					; sub_128B43+63p ...
 		LDA	#1
 		STA	bank_command_346
@@ -686,7 +686,7 @@ exec_b1_c1_128394:			; CODE XREF: sub_128B0F+30p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b4_c2_1283A7:			; CODE XREF: sub_128326+22p
+exec_b4_c2_1283A7:			
 					; sub_128955+BAp ...
 		LDA	#2
 		STA	bank_command_346
@@ -702,7 +702,7 @@ exec_b4_c2_1283A7:			; CODE XREF: sub_128326+22p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_1283BA:				; CODE XREF: sub_128955p sub_12D4C6p ...
+sub_1283BA:				
 		LDA	entry_idx_300
 		STA	image_id_4A4
 		LDA	ppu_unk_byte_302
@@ -722,7 +722,7 @@ sub_1283BA:				; CODE XREF: sub_128955p sub_12D4C6p ...
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b2_c2_1283DF:			; CODE XREF: show_intro_screen_12CB58+D8p
+exec_b2_c2_1283DF:			
 		LDA	#2
 		STA	bank_command_346
 		LDA	#text_2
@@ -737,7 +737,7 @@ exec_b2_c2_1283DF:			; CODE XREF: show_intro_screen_12CB58+D8p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b2_c4_1283F2:			; CODE XREF: com_E_load_game_12CD30+B1p
+exec_b2_c4_1283F2:			
 					; sub_12CEAC+45p ...
 		LDA	#4
 		STA	bank_command_346
@@ -753,7 +753,7 @@ exec_b2_c4_1283F2:			; CODE XREF: com_E_load_game_12CD30+B1p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b2_c5_128405:			; CODE XREF: sub_12D4B3+Fp
+exec_b2_c5_128405:			
 		LDA	#5
 		STA	bank_command_346
 		LDA	#text_2
@@ -768,7 +768,7 @@ exec_b2_c5_128405:			; CODE XREF: sub_12D4B3+Fp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_c3_128418:			; CODE XREF: sub_12873A+152p
+exec_b0_c3_128418:			
 					; sub_128A1A+B1p ...
 		LDA	#3
 		STA	bank_command_346
@@ -784,7 +784,7 @@ exec_b0_c3_128418:			; CODE XREF: sub_12873A+152p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_c4_12842B:			; CODE XREF: sub_12BF99+2Dp
+exec_b0_c4_12842B:			
 					; sub_12BF99+42p
 		LDA	#4
 		STA	bank_command_346
@@ -800,7 +800,7 @@ exec_b0_c4_12842B:			; CODE XREF: sub_12BF99+2Dp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_c5_12843E:			; CODE XREF: sub_12C1C3+17p
+exec_b0_c5_12843E:			
 		LDA	bank_from_343
 		PHA
 		LDA	#5
@@ -819,7 +819,7 @@ exec_b0_c5_12843E:			; CODE XREF: sub_12C1C3+17p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_c6_128459:			; CODE XREF: sub_128955+7Dp
+exec_b0_c6_128459:			
 		LDA	bank_from_343
 		PHA
 		LDA	#6
@@ -838,7 +838,7 @@ exec_b0_c6_128459:			; CODE XREF: sub_128955+7Dp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_c7_128474:			; CODE XREF: sub_128955+8Ap
+exec_b0_c7_128474:			
 		LDA	bank_from_343
 		PHA
 		LDA	#7
@@ -857,7 +857,7 @@ exec_b0_c7_128474:			; CODE XREF: sub_128955+8Ap
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_c8_12848F:			; CODE XREF: sub_128955+92p
+exec_b0_c8_12848F:			
 		LDA	bank_from_343
 		PHA
 		LDA	#8
@@ -876,7 +876,7 @@ exec_b0_c8_12848F:			; CODE XREF: sub_128955+92p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_c9_1284AA:			; CODE XREF: sub_12873A+99p
+exec_b0_c9_1284AA:			
 					; sub_12873A+112p ...
 		LDA	bank_from_343
 		PHA
@@ -896,7 +896,7 @@ exec_b0_c9_1284AA:			; CODE XREF: sub_12873A+99p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_cA_1284C5:			; CODE XREF: sub_12873A+CDp
+exec_b0_cA_1284C5:			
 					; sub_12873A+10Ap ...
 		LDA	bank_from_343
 		PHA
@@ -916,7 +916,7 @@ exec_b0_cA_1284C5:			; CODE XREF: sub_12873A+CDp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_cB_1284E0:			; CODE XREF: sub_12873A+137p
+exec_b0_cB_1284E0:			
 					; sub_12873A+14Ap ...
 		LDA	bank_from_343
 		PHA
@@ -936,7 +936,7 @@ exec_b0_cB_1284E0:			; CODE XREF: sub_12873A+137p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_cC_1284FB:			; CODE XREF: sub_12873A+1Ap
+exec_b0_cC_1284FB:			
 		LDA	bank_from_343
 		PHA
 		LDA	#$C
@@ -955,7 +955,7 @@ exec_b0_cC_1284FB:			; CODE XREF: sub_12873A+1Ap
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_cD_128516:			; CODE XREF: sub_128955+A0p
+exec_b0_cD_128516:			
 		LDA	bank_from_343
 		PHA
 		LDA	#$D
@@ -974,27 +974,27 @@ exec_b0_cD_128516:			; CODE XREF: sub_128955+A0p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128531:				; CODE XREF: command_0_1280FB:loc_1282DCp
+sub_128531:				
 					; sub_12ED44+Cp ...
 		LDA	tilemapTypeUnk_30B
-		CMP	#$47 ; 'G'
+		CMP	#$47 
 		BCC	loc_12853B
 		BEQ	loc_12853B
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12853B:				; CODE XREF: sub_128531+5j
+loc_12853B:				
 					; sub_128531+7j
 		LDX	#$F
 		STX	_APU_STATUS
 		PHA
 		TAY
-		CMP	#$40 ; '@'
+		CMP	#$40 
 		BCC	loc_128549
 		SEC
-		SBC	#$40 ; '@'
+		SBC	#$40 
 
-loc_128549:				; CODE XREF: sub_128531+13j
+loc_128549:				
 		ASL	A
 		ASL	A
 		TAX
@@ -1002,7 +1002,7 @@ loc_128549:				; CODE XREF: sub_128531+13j
 		LDA	byte_1285D2,Y
 		TAY
 		PLA
-		CMP	#$40 ; '@'
+		CMP	#$40 
 		BCS	loc_128571
 		LDA	apu_pulse_timer1_12861A,X
 		STA	_APU_PULSE1_ENV,Y
@@ -1015,7 +1015,7 @@ loc_128549:				; CODE XREF: sub_128531+13j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_128571:				; CODE XREF: sub_128531+25j
+loc_128571:				
 		LDA	stru_12871A,X
 		STA	_APU_PULSE1_ENV,Y
 		LDA	stru_12871A.length,X
@@ -1029,18 +1029,18 @@ loc_128571:				; CODE XREF: sub_128531+25j
 
 ; ---------------------------------------------------------------------------
 byte_12858A:	.BYTE	2,  2,	2,  8,	8,  2,	2,  8,	8,  8,	8,  2,	2,  2,	2,  2
-					; DATA XREF: sub_128531+1Br
+					
 		.BYTE	2,  2,	8,  8,	8,  8,	2,  2,	2,  2,	2,  2,	2,  2,	8,  2
 		.BYTE	8,  2,	2,  2,	2,  8,	2,  2,	2,  8,	8,  2,	2,  2,	8,  2
 		.BYTE	2,  2,	2,  2,	8,  2,	2,  2,	2,  2,	2,  2,	8,  2,	2,  2
 		.BYTE	2,  2,	8,  8,	2,  2,	1,  2
 byte_1285D2:	.BYTE	4,  4,	4, $C, $C,  4,	4, $C, $C, $C, $C,  4,	4,  4,	4,  4
-					; DATA XREF: sub_128531+1Er
+					
 		.BYTE	4,  4, $C, $C, $C, $C,	4,  4,	4,  4,	4,  4,	4,  4, $C,  4
 		.BYTE  $C,  4,	4,  4,	4, $C,	4,  4,	4, $C, $C,  4,	4,  4, $C,  4
 		.BYTE	4,  4,	4,  4, $C,  4,	4,  4,	4,  4,	4,  4, $C,  4,	4,  4
 		.BYTE	4,  4, $C, $C,	4,  4,	0,  4
-apu_pulse_timer1_12861A:pulse_entry <$9F, $BA, $F4, $F1> ; DATA	XREF: sub_128531+27r
+apu_pulse_timer1_12861A:pulse_entry <$9F, $BA, $F4, $F1> 
 					; sub_128531+2Dr ...
 		pulse_entry <$81, $99, $8D, $A>
 		pulse_entry <$88, $93, $2E, 0>
@@ -1105,7 +1105,7 @@ apu_pulse_timer1_12861A:pulse_entry <$9F, $BA, $F4, $F1> ; DATA	XREF: sub_128531
 		pulse_entry <$81, $99, $8D, $A>
 		pulse_entry <$8D, $CA, $EA, $D0>
 		pulse_entry <$AB, $C5, $51, $D2>
-stru_12871A:	pulse_entry <$88, $84, $5F, $30> ; DATA	XREF: sub_128531:loc_128571r
+stru_12871A:	pulse_entry <$88, $84, $5F, $30> 
 					; sub_128531+46r ...
 		pulse_entry <$88, $93, $2E, 0>
 		pulse_entry <$8F, $A1, 9, $F0>
@@ -1118,7 +1118,7 @@ stru_12871A:	pulse_entry <$88, $84, $5F, $30> ; DATA	XREF: sub_128531:loc_128571
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12873A:				; CODE XREF: command_0_1280FB:loc_1282D0p
+sub_12873A:				
 		LDA	byte_46F
 		CMP	#$17
 		BNE	loc_12875A
@@ -1134,29 +1134,29 @@ sub_12873A:				; CODE XREF: command_0_1280FB:loc_1282D0p
 		JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
-loc_12875A:				; CODE XREF: sub_12873A+5j
+loc_12875A:				
 					; sub_12873A+Cj ...
 		LDA	byte_46F
-		CMP	#$69 ; 'i'
+		CMP	#$69 
 		BEQ	loc_128768
-		CMP	#$98 ; '�'
+		CMP	#$98 
 		BEQ	loc_128768
 		JMP	loc_128777
 ; ---------------------------------------------------------------------------
 
-loc_128768:				; CODE XREF: sub_12873A+25j
+loc_128768:				
 					; sub_12873A+29j
 		LDA	entry_idx_300
-		CMP	#$63 ; 'c'
+		CMP	#$63 
 		BNE	loc_128774
 		LDA	#$FF
 		STA	byte_5D5
 
-loc_128774:				; CODE XREF: sub_12873A+33j
+loc_128774:				
 		JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
-loc_128777:				; CODE XREF: sub_12873A+2Bj
+loc_128777:				
 		LDA	byte_46F
 		CMP	#$1B
 		BNE	loc_12878D
@@ -1166,11 +1166,11 @@ loc_128777:				; CODE XREF: sub_12873A+2Bj
 		LDA	#$FF
 		STA	byte_5D4
 
-loc_12878A:				; CODE XREF: sub_12873A+49j
+loc_12878A:				
 		JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
-loc_12878D:				; CODE XREF: sub_12873A+42j
+loc_12878D:				
 		LDA	byte_46F
 		CMP	#$19
 		BNE	loc_1287A3
@@ -1180,30 +1180,30 @@ loc_12878D:				; CODE XREF: sub_12873A+42j
 		LDA	#$FF
 		STA	byte_5D3
 
-loc_1287A0:				; CODE XREF: sub_12873A+5Fj
+loc_1287A0:				
 		JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
-loc_1287A3:				; CODE XREF: sub_12873A+58j
+loc_1287A3:				
 		LDA	byte_46F
-		CMP	#$7B ; '{'
+		CMP	#$7B 
 		BNE	loc_1287B9
 		LDA	entry_idx_300
-		CMP	#$74 ; 't'
+		CMP	#$74 
 		BNE	loc_1287B6
 		LDA	#$FF
 		STA	byte_690
 
-loc_1287B6:				; CODE XREF: sub_12873A+75j
+loc_1287B6:				
 		JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
-loc_1287B9:				; CODE XREF: sub_12873A+6Ej
+loc_1287B9:				
 		LDA	byte_46F
-		CMP	#$71 ; 'q'
+		CMP	#$71 
 		BNE	loc_128817
 		LDA	entry_idx_300
-		CMP	#$6F ; 'o'
+		CMP	#$6F 
 		BNE	loc_128814
 		LDA	byte_6A2
 		CMP	#0
@@ -1219,7 +1219,7 @@ loc_1287B9:				; CODE XREF: sub_12873A+6Ej
 		LDA	#1
 		STA	cur_obj_idx_unk_43A
 		JSR	sub_12BF29
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -1236,33 +1236,33 @@ loc_1287B9:				; CODE XREF: sub_12873A+6Ej
 		LDA	#$FF
 		STA	byte_553
 
-loc_128814:				; CODE XREF: sub_12873A+8Bj
+loc_128814:				
 					; sub_12873A+92j
 		JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
-loc_128817:				; CODE XREF: sub_12873A+84j
+loc_128817:				
 		LDA	byte_46F
-		CMP	#$7C ; '|'
+		CMP	#$7C 
 		BEQ	loc_128821
 		JMP	loc_1288EE
 ; ---------------------------------------------------------------------------
 
-loc_128821:				; CODE XREF: sub_12873A+E2j
+loc_128821:				
 		LDA	entry_idx_300
-		CMP	#$82 ; '�'
+		CMP	#$82 
 		BEQ	loc_12882B
 		JMP	loc_1288EB
 ; ---------------------------------------------------------------------------
 
-loc_12882B:				; CODE XREF: sub_12873A+ECj
+loc_12882B:				
 		LDA	byte_597
 		CMP	#$FF
 		BNE	loc_128835
 		JMP	loc_1288EB
 ; ---------------------------------------------------------------------------
 
-loc_128835:				; CODE XREF: sub_12873A+F6j
+loc_128835:				
 		LDA	#$FF
 		STA	byte_597
 		LDA	#8
@@ -1273,7 +1273,7 @@ loc_128835:				; CODE XREF: sub_12873A+F6j
 		LDA	#0
 		STA	byte_313
 		JSR	exec_b0_c9_1284AA
-		LDA	#$40 ; '@'
+		LDA	#$40 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -1301,7 +1301,7 @@ loc_128835:				; CODE XREF: sub_12873A+F6j
 		LDA	#2
 		STA	cur_obj_idx_unk_43A
 		JSR	exec_b0_c3_128418
-		LDA	#$51 ; 'Q'
+		LDA	#$51 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -1318,7 +1318,7 @@ loc_128835:				; CODE XREF: sub_12873A+F6j
 		STA	byte_6C4
 
 set_tyrant_level_1288B6:
-		LDA	#$83 ; '�'
+		LDA	#$83 
 		STA	image_id_4A4
 		LDA	#0
 		STA	image_offset_4A5
@@ -1326,12 +1326,12 @@ set_tyrant_level_1288B6:
 		STA	ppu_prev_scroll_x_unk_4A7
 		STA	ppu_prev_scroll_y_unk_4A8
 		STA	prev_sprite_type_4A9
-		LDA	#$40 ; '@'
+		LDA	#$40 
 		STA	byte_4AD
-		LDA	#$50 ; 'P'
+		LDA	#$50 
 		STA	byte_4AE
 		JSR	exec_b0_c2_12A9A9
-		LDA	#$3F ; '?'
+		LDA	#$3F 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -1339,17 +1339,17 @@ set_tyrant_level_1288B6:
 		STA	tilemapTypeUnk_30B
 		JSR	exec_b0_c0_12A973
 
-loc_1288EB:				; CODE XREF: sub_12873A+EEj
+loc_1288EB:				
 					; sub_12873A+F8j
 		JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
-loc_1288EE:				; CODE XREF: sub_12873A+E4j
+loc_1288EE:				
 		LDA	byte_46F
-		CMP	#$78 ; 'x'
+		CMP	#$78 
 		BNE	locret_128954
 		LDA	entry_idx_300
-		CMP	#$79 ; 'y'
+		CMP	#$79 
 		BNE	loc_128951
 		LDA	byte_6C6
 		CMP	#0
@@ -1372,7 +1372,7 @@ loc_1288EE:				; CODE XREF: sub_12873A+E4j
 		LDA	#2
 		STA	byte_313
 		JSR	exec_b0_c9_1284AA
-		LDA	#$78 ; 'x'
+		LDA	#$78 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -1385,12 +1385,12 @@ loc_1288EE:				; CODE XREF: sub_12873A+E4j
 		LDA	#0
 		STA	byte_6C6
 
-loc_128951:				; CODE XREF: sub_12873A+1C0j
+loc_128951:				
 					; sub_12873A+1C7j
 		JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
-locret_128954:				; CODE XREF: sub_12873A+1Dj
+locret_128954:				
 					; sub_12873A:loc_128774j ...
 		RTS
 ; End of function sub_12873A
@@ -1399,7 +1399,7 @@ locret_128954:				; CODE XREF: sub_12873A+1Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128955:				; CODE XREF: command_0_1280FB:loc_1282AEp
+sub_128955:				
 					; sub_12C27E+Dp
 		JSR	sub_1283BA
 		LDA	image_id_4A4
@@ -1416,7 +1416,7 @@ sub_128955:				; CODE XREF: command_0_1280FB:loc_1282AEp
 		PHA
 		LDA	inv_sprite_idx_31C
 		SEC
-		SBC	#$2A ; '*'
+		SBC	#$2A 
 		ASL	A
 		TAX
 		LDA	byte_129255,X
@@ -1425,22 +1425,22 @@ sub_128955:				; CODE XREF: command_0_1280FB:loc_1282AEp
 		STA	byte_43F
 		STA	byte_472
 
-loc_128986:				; CODE XREF: sub_128A1A+6Aj
+loc_128986:				
 		LDA	#0
 		STA	byte_43E
 		JSR	sub_12EEAE
 		JSR	ppu_reset_ctrl_mask_12F963
-		LDA	#$28 ; '('
+		LDA	#$28 
 		STA	_PPU_ADDR
 		LDA	#0
 		STA	_PPU_ADDR
 		LDA	#0
 		LDX	#0
 
-loc_12899F:				; CODE XREF: sub_128955+55j
+loc_12899F:				
 		LDY	#0
 
-ppu_clear_ram_1289A1:			; CODE XREF: sub_128955+50j
+ppu_clear_ram_1289A1:			
 		STA	_PPU_DATA
 		INY
 		BNE	ppu_clear_ram_1289A1
@@ -1472,7 +1472,7 @@ ppu_clear_ram_1289A1:			; CODE XREF: sub_128955+50j
 		STA	objectIdx_318
 		JSR	exec_b0_c8_12848F
 		LDA	ppu_ctrl_31F
-		AND	#$FC ; '�'
+		AND	#$FC 
 		STA	ppu_ctrl_31F
 		JSR	ppu_update_ctrl_mask_12F956
 		JSR	exec_b0_cD_128516
@@ -1499,7 +1499,7 @@ sub_128A1A:
 		STA	count_unk_466
 		STA	count_unk_466
 
-loc_128A20:				; CODE XREF: sub_128A1A+55j
+loc_128A20:				
 					; sub_128A1A+7Fj ...
 		JSR	sub_128FC1
 		LDA	is_game_finished_561
@@ -1520,7 +1520,7 @@ loc_128A20:				; CODE XREF: sub_128A1A+55j
 		RTS
 ; ---------------------------------------------------------------------------
 
-game_not_finished_128A43:		; CODE XREF: sub_128A1A+Ej
+game_not_finished_128A43:		
 		JSR	sub_128B43
 		JSR	sub_128CC0
 		JSR	sub_128D20
@@ -1529,7 +1529,7 @@ game_not_finished_128A43:		; CODE XREF: sub_128A1A+Ej
 		JSR	sub_129019
 		JSR	wait_for_count350_zero_12F770
 		LDA	input_pressed_34A
-		CMP	#$20 ; ' '
+		CMP	#$20 
 		BNE	loc_128A72
 		JSR	sub_12ED3B
 		LDA	byte_472
@@ -1540,7 +1540,7 @@ game_not_finished_128A43:		; CODE XREF: sub_128A1A+Ej
 		JMP	loc_128A20
 ; ---------------------------------------------------------------------------
 
-loc_128A72:				; CODE XREF: sub_128A1A+43j
+loc_128A72:				
 		CMP	#$10
 		BNE	loc_128A87
 		JSR	sub_12ED44
@@ -1552,28 +1552,28 @@ loc_128A72:				; CODE XREF: sub_128A1A+43j
 		JMP	loc_128986
 ; ---------------------------------------------------------------------------
 
-loc_128A87:				; CODE XREF: sub_128A1A+5Aj
-		CMP	#$80 ; '�'
+loc_128A87:				
+		CMP	#$80 
 		BNE	loc_128A9C
 		JSR	sub_1290C3
 		LDA	sprite_length_30F
 		CMP	#$FF
 		BEQ	loc_128AA5
-		CMP	#$FE ; '�'
+		CMP	#$FE 
 		BEQ	loc_128A9F
 		JMP	loc_128A20
 ; ---------------------------------------------------------------------------
 
-loc_128A9C:				; CODE XREF: sub_128A1A+6Fj
+loc_128A9C:				
 		JMP	loc_128A20
 ; ---------------------------------------------------------------------------
 
-loc_128A9F:				; CODE XREF: sub_128A1A+7Dj
+loc_128A9F:				
 		JSR	sub_1291F5
 		JMP	loc_128AE9
 ; ---------------------------------------------------------------------------
 
-loc_128AA5:				; CODE XREF: sub_128A1A+79j
+loc_128AA5:				
 		PLA
 		STA	prev_sprite_type_4A9
 		PLA
@@ -1589,28 +1589,28 @@ loc_128AA5:				; CODE XREF: sub_128A1A+79j
 		LDA	image_id_4A4
 		CMP	#$17
 		BEQ	loc_128B01
-		CMP	#$45 ; 'E'
+		CMP	#$45 
 		BEQ	loc_128B01
 		JSR	sub_12C7DE
 		JSR	exec_b0_c3_128418
 		LDA	image_id_4A4
-		CMP	#$96 ; '�'
+		CMP	#$96 
 		BNE	loc_128ADA
 		LDA	#$FF
 		STA	byte_6C9
 
-loc_128ADA:				; CODE XREF: sub_128A1A+B9j
+loc_128ADA:				
 		LDA	image_id_4A4
-		CMP	#$9A ; '�'
+		CMP	#$9A 
 		BNE	loc_128AE6
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	is_game_finished_561
 
-loc_128AE6:				; CODE XREF: sub_128A1A+C5j
+loc_128AE6:				
 		JMP	loc_128B01
 ; ---------------------------------------------------------------------------
 
-loc_128AE9:				; CODE XREF: sub_128A1A+88j
+loc_128AE9:				
 		PLA
 		STA	prev_sprite_type_4A9
 		PLA
@@ -1624,7 +1624,7 @@ loc_128AE9:				; CODE XREF: sub_128A1A+88j
 		PLA
 		STA	image_id_4A4
 
-loc_128B01:				; CODE XREF: sub_128A1A+A8j
+loc_128B01:				
 					; sub_128A1A+ACj ...
 		LDA	#$FF
 		STA	map_show_43B
@@ -1638,8 +1638,8 @@ loc_128B01:				; CODE XREF: sub_128A1A+A8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128B0F:				; CODE XREF: sub_128955+BDp
-		LDA	#$80 ; '�'
+sub_128B0F:				
+		LDA	#$80 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -1652,7 +1652,7 @@ sub_128B0F:				; CODE XREF: sub_128955+BDp
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
-		LDA	#$21 ; '!'
+		LDA	#$21 
 		STA	objMapIdx_316
 		LDX	objMapIdx_316
 		LDA	byte_128F59,X
@@ -1665,13 +1665,13 @@ sub_128B0F:				; CODE XREF: sub_128955+BDp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128B43:				; CODE XREF: sub_128A1A:game_not_finished_128A43p
+sub_128B43:				
 		LDA	byte_472
 		BNE	loc_128B4B
 		JMP	loc_128BFB
 ; ---------------------------------------------------------------------------
 
-loc_128B4B:				; CODE XREF: sub_128B43+3j
+loc_128B4B:				
 		LDA	#8
 		STA	byte_31A
 		LDA	#8
@@ -1679,7 +1679,7 @@ loc_128B4B:				; CODE XREF: sub_128B43+3j
 		JSR	sub_12D26B
 		LDA	inv_sprite_idx_31C
 		SEC
-		SBC	#$2A ; '*'
+		SBC	#$2A 
 		ASL	A
 		TAY
 		LDA	byte_129006,Y
@@ -1688,7 +1688,7 @@ loc_128B4B:				; CODE XREF: sub_128B43+3j
 		ASL	A
 		ASL	A
 		STA	tilemapTypeUnk_30B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		SEC
 		SBC	tilemapTypeUnk_30B
 		STA	byte_36A
@@ -1696,7 +1696,7 @@ loc_128B4B:				; CODE XREF: sub_128B43+3j
 		LDA	#0
 		SBC	#0
 		STA	byte_36B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -1706,7 +1706,7 @@ loc_128B4B:				; CODE XREF: sub_128B43+3j
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
-		LDA	#$26 ; '&'
+		LDA	#$26 
 		STA	objMapIdx_316
 		LDX	objMapIdx_316
 		LDA	byte_128F59,X
@@ -1714,7 +1714,7 @@ loc_128B4B:				; CODE XREF: sub_128B43+3j
 		JSR	exec_b1_c1_128394
 		LDA	inv_sprite_idx_31C
 		SEC
-		SBC	#$2A ; '*'
+		SBC	#$2A 
 		ASL	A
 		TAY
 		LDA	byte_129006,Y
@@ -1723,7 +1723,7 @@ loc_128B4B:				; CODE XREF: sub_128B43+3j
 		ASL	A
 		ASL	A
 		STA	tilemapTypeUnk_30B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		CLC
 		ADC	tilemapTypeUnk_30B
 		STA	byte_36A
@@ -1731,7 +1731,7 @@ loc_128B4B:				; CODE XREF: sub_128B43+3j
 		LDA	#0
 		ADC	#0
 		STA	byte_36B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -1741,7 +1741,7 @@ loc_128B4B:				; CODE XREF: sub_128B43+3j
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
-		LDA	#$27 ; '''
+		LDA	#$27 
 		STA	objMapIdx_316
 		LDX	objMapIdx_316
 		LDA	byte_128F59,X
@@ -1750,12 +1750,12 @@ loc_128B4B:				; CODE XREF: sub_128B43+3j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_128BFB:				; CODE XREF: sub_128B43+5j
-		LDA	#$80 ; '�'
+loc_128BFB:				
+		LDA	#$80 
 		STA	byte_36A
 		LDA	#0
 		STA	byte_36B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -1765,7 +1765,7 @@ loc_128BFB:				; CODE XREF: sub_128B43+5j
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
-		LDA	#$28 ; '('
+		LDA	#$28 
 		STA	objMapIdx_316
 		LDX	objMapIdx_316
 		LDA	byte_128F59,X
@@ -1777,7 +1777,7 @@ loc_128BFB:				; CODE XREF: sub_128B43+5j
 		ASL	A
 		ASL	A
 		STA	tilemapTypeUnk_30B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		SEC
 		SBC	tilemapTypeUnk_30B
 		STA	byte_36A
@@ -1785,7 +1785,7 @@ loc_128BFB:				; CODE XREF: sub_128B43+5j
 		LDA	#0
 		SBC	#0
 		STA	byte_36B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -1795,7 +1795,7 @@ loc_128BFB:				; CODE XREF: sub_128B43+5j
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
-		LDA	#$26 ; '&'
+		LDA	#$26 
 		STA	objMapIdx_316
 		LDX	objMapIdx_316
 		LDA	byte_128F59,X
@@ -1807,7 +1807,7 @@ loc_128BFB:				; CODE XREF: sub_128B43+5j
 		ASL	A
 		ASL	A
 		STA	tilemapTypeUnk_30B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		CLC
 		ADC	tilemapTypeUnk_30B
 		STA	byte_36A
@@ -1815,7 +1815,7 @@ loc_128BFB:				; CODE XREF: sub_128B43+5j
 		LDA	#0
 		ADC	#0
 		STA	byte_36B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -1825,7 +1825,7 @@ loc_128BFB:				; CODE XREF: sub_128B43+5j
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
-		LDA	#$27 ; '''
+		LDA	#$27 
 		STA	objMapIdx_316
 		LDX	objMapIdx_316
 		LDA	byte_128F59,X
@@ -1838,20 +1838,20 @@ loc_128BFB:				; CODE XREF: sub_128B43+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128CC0:				; CODE XREF: sub_128A1A+2Cp
+sub_128CC0:				
 		LDA	byte_543
 		CMP	#0
 		BNE	loc_128CD5
-		LDA	#$38 ; '8'
+		LDA	#$38 
 		STA	byte_31A
-		LDA	#$40 ; '@'
+		LDA	#$40 
 		STA	tilemapWidth_308
 		JSR	sub_12D26B
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_128CD5:				; CODE XREF: sub_128CC0+5j
-		LDA	#$A0 ; '�'
+loc_128CD5:				
+		LDA	#$A0 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -1861,14 +1861,14 @@ loc_128CD5:				; CODE XREF: sub_128CC0+5j
 		STA	byte_36B
 		LDA	byte_36A
 		CLC
-		ADC	#$C0 ; '�'
+		ADC	#$C0 
 		STA	byte_36A
 		LDA	byte_36B
 		ADC	#0
 		STA	byte_36B
 		LDA	#0
 		STA	sprite_secondByte_31B
-		LDA	#$38 ; '8'
+		LDA	#$38 
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
@@ -1887,11 +1887,11 @@ loc_128CD5:				; CODE XREF: sub_128CC0+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128D20:				; CODE XREF: sub_128A1A+2Fp
+sub_128D20:				
 		LDA	byte_543
 		CMP	#0
 		BNE	loc_128D35
-		LDA	#$78 ; 'x'
+		LDA	#$78 
 		STA	byte_31A
 		LDA	#8
 		STA	tilemapWidth_308
@@ -1899,7 +1899,7 @@ sub_128D20:				; CODE XREF: sub_128A1A+2Fp
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_128D35:				; CODE XREF: sub_128D20+5j
+loc_128D35:				
 		LDX	byte_544
 		LDA	unk_53B,X
 		STA	tilemapTypeUnk_30B
@@ -1907,9 +1907,9 @@ loc_128D35:				; CODE XREF: sub_128D20+5j
 		LDA	byte_543
 		CMP	#1
 		BNE	loc_128D8F
-		LDA	#$33 ; '3'
+		LDA	#$33 
 		STA	objMapIdx_316
-		LDA	#$C0 ; '�'
+		LDA	#$C0 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -1919,14 +1919,14 @@ loc_128D35:				; CODE XREF: sub_128D20+5j
 		STA	byte_36B
 		LDA	byte_36A
 		CLC
-		ADC	#$C8 ; '�'
+		ADC	#$C8 
 		STA	byte_36A
 		LDA	byte_36B
 		ADC	#0
 		STA	byte_36B
 		LDA	#0
 		STA	sprite_secondByte_31B
-		LDA	#$78 ; 'x'
+		LDA	#$78 
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
@@ -1939,12 +1939,12 @@ loc_128D8B:
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_128D8F:				; CODE XREF: sub_128D20+26j
+loc_128D8F:				
 		LDA	byte_355
 		CLC
-		ADC	#$29 ; ')'
+		ADC	#$29 
 		STA	objMapIdx_316
-		LDA	#$C0 ; '�'
+		LDA	#$C0 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -1954,14 +1954,14 @@ loc_128D8F:				; CODE XREF: sub_128D20+26j
 		STA	byte_36B
 		LDA	byte_36A
 		CLC
-		ADC	#$C8 ; '�'
+		ADC	#$C8 
 		STA	byte_36A
 		LDA	byte_36B
 		ADC	#0
 		STA	byte_36B
 		LDA	#0
 		STA	sprite_secondByte_31B
-		LDA	#$78 ; 'x'
+		LDA	#$78 
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
@@ -1971,9 +1971,9 @@ loc_128D8F:				; CODE XREF: sub_128D20+26j
 		JSR	exec_b1_c1_128394
 		LDA	byte_354
 		CLC
-		ADC	#$29 ; ')'
+		ADC	#$29 
 		STA	objMapIdx_316
-		LDA	#$C0 ; '�'
+		LDA	#$C0 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -1983,14 +1983,14 @@ loc_128D8F:				; CODE XREF: sub_128D20+26j
 		STA	byte_36B
 		LDA	byte_36A
 		CLC
-		ADC	#$D0 ; '�'
+		ADC	#$D0 
 		STA	byte_36A
 		LDA	byte_36B
 		ADC	#0
 		STA	byte_36B
 		LDA	#0
 		STA	sprite_secondByte_31B
-		LDA	#$7C ; '|'
+		LDA	#$7C 
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
@@ -2005,8 +2005,8 @@ loc_128D8F:				; CODE XREF: sub_128D20+26j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128E24:				; CODE XREF: sub_128A1A+32p
-		LDA	#$A0 ; '�'
+sub_128E24:				
+		LDA	#$A0 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -2016,28 +2016,28 @@ sub_128E24:				; CODE XREF: sub_128A1A+32p
 		STA	byte_36B
 		LDA	byte_36A
 		CLC
-		ADC	#$20 ; ' '
+		ADC	#$20 
 		STA	byte_36A
 		LDA	byte_36B
 		ADC	#0
 		STA	byte_36B
 		LDA	#0
 		STA	sprite_secondByte_31B
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	byte_31A
 		LDA	#0
 		STA	objMapIdx_316
 		LDA	byte_549
-		CMP	#$55 ; 'U'
+		CMP	#$55 
 		BCC	loc_128E7D
-		CMP	#$AA ; '�'
+		CMP	#$AA 
 		BCC	loc_128E6C
 		LDA	#0
 		STA	byte_54B
 		JMP	loc_128E8B
 ; ---------------------------------------------------------------------------
 
-loc_128E6C:				; CODE XREF: sub_128E24+3Ej
+loc_128E6C:				
 		LDA	objMapIdx_316
 		CLC
 		ADC	#7
@@ -2047,7 +2047,7 @@ loc_128E6C:				; CODE XREF: sub_128E24+3Ej
 		JMP	loc_128E8B
 ; ---------------------------------------------------------------------------
 
-loc_128E7D:				; CODE XREF: sub_128E24+3Aj
+loc_128E7D:				
 		LDA	objMapIdx_316
 		CLC
 		ADC	#$E
@@ -2055,7 +2055,7 @@ loc_128E7D:				; CODE XREF: sub_128E24+3Aj
 		LDA	#2
 		STA	byte_54B
 
-loc_128E8B:				; CODE XREF: sub_128E24+45j
+loc_128E8B:				
 					; sub_128E24+56j
 		LDA	count_unk_465
 		CMP	#$A
@@ -2068,10 +2068,10 @@ loc_128E8B:				; CODE XREF: sub_128E24+45j
 		LDA	#$FF
 		STA	byte_54C
 
-loc_128EA3:				; CODE XREF: sub_128E24+78j
+loc_128EA3:				
 		INC	byte_54C
 
-loc_128EA6:				; CODE XREF: sub_128E24+6Cj
+loc_128EA6:				
 		LDA	objMapIdx_316
 		CLC
 		ADC	byte_54C
@@ -2089,8 +2089,8 @@ loc_128EA6:				; CODE XREF: sub_128E24+6Cj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128EC2:				; CODE XREF: sub_128A1A+35p
-		LDA	#$B8 ; '�'
+sub_128EC2:				
+		LDA	#$B8 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -2100,14 +2100,14 @@ sub_128EC2:				; CODE XREF: sub_128A1A+35p
 		STA	byte_36B
 		LDA	byte_36A
 		CLC
-		ADC	#$20 ; ' '
+		ADC	#$20 
 		STA	byte_36A
 		LDA	byte_36B
 		ADC	#0
 		STA	byte_36B
 		LDA	#0
 		STA	sprite_secondByte_31B
-		LDA	#$B8 ; '�'
+		LDA	#$B8 
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
@@ -2122,7 +2122,7 @@ sub_128EC2:				; CODE XREF: sub_128A1A+35p
 		ADC	#3
 		STA	objMapIdx_316
 
-loc_128F0E:				; CODE XREF: sub_128EC2+41j
+loc_128F0E:				
 		LDX	objMapIdx_316
 		LDA	byte_128F59,X
 		STA	byte_317
@@ -2134,25 +2134,25 @@ loc_128F0E:				; CODE XREF: sub_128EC2+41j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128F1B:				; CODE XREF: sub_128D20+1Ep
+sub_128F1B:				
 		LDA	#0
 		STA	byte_354
 		STA	byte_355
 		STA	byte_356
 
-loc_128F26:				; CODE XREF: sub_128F1B+1Ej
+loc_128F26:				
 		LDA	tilemapTypeUnk_30B
-		CMP	#$64 ; 'd'
+		CMP	#$64 
 		BCC	loc_128F3C
 		LDA	tilemapTypeUnk_30B
 		SEC
-		SBC	#$64 ; 'd'
+		SBC	#$64 
 		STA	tilemapTypeUnk_30B
 		INC	byte_356
 		JMP	loc_128F26
 ; ---------------------------------------------------------------------------
 
-loc_128F3C:				; CODE XREF: sub_128F1B+10j
+loc_128F3C:				
 					; sub_128F1B+34j
 		LDA	tilemapTypeUnk_30B
 		CMP	#$A
@@ -2165,7 +2165,7 @@ loc_128F3C:				; CODE XREF: sub_128F1B+10j
 		JMP	loc_128F3C
 ; ---------------------------------------------------------------------------
 
-loc_128F52:				; CODE XREF: sub_128F1B+26j
+loc_128F52:				
 		LDA	tilemapTypeUnk_30B
 		STA	byte_354
 		RTS
@@ -2173,7 +2173,7 @@ loc_128F52:				; CODE XREF: sub_128F1B+26j
 
 ; ---------------------------------------------------------------------------
 byte_128F59:	.BYTE	0,  0,	0,  0,	0,  0,	0,  1,	1,  1,	1,  1,	1,  1,	2,  2
-					; DATA XREF: sub_128B0F+2Ar
+					
 					; sub_128B43+5Dr ...
 		.BYTE	2,  2,	2,  2,	2,  0,	1,  2,	0,  1,	2,  3,	3,  3,	3,  3
 		.BYTE	3,  1,	2,  2,	3,  3,	0,  0,	2,  2,	2,  2,	2,  2,	2,  2
@@ -2185,9 +2185,9 @@ byte_128F59:	.BYTE	0,  0,	0,  0,	0,  0,	0,  1,	1,  1,	1,  1,	1,  1,	2,  2
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_128FC1:				; CODE XREF: sub_128A1A:loc_128A20p
+sub_128FC1:				
 		LDA	count_unk_467
-		CMP	#$32 ; '2'
+		CMP	#$32 
 		BCC	locret_129004
 		LDA	#0
 		STA	count_unk_467
@@ -2205,7 +2205,7 @@ sub_128FC1:				; CODE XREF: sub_128A1A:loc_128A20p
 		INC	byte_43F
 		LDA	inv_sprite_idx_31C
 		SEC
-		SBC	#$2A ; '*'
+		SBC	#$2A 
 		ASL	A
 		TAY
 		LDA	byte_129006,Y
@@ -2215,34 +2215,34 @@ sub_128FC1:				; CODE XREF: sub_128A1A:loc_128A20p
 		STA	byte_43F
 		JSR	sub_129155
 
-locret_129004:				; CODE XREF: sub_128FC1+5j
+locret_129004:				
 					; sub_128FC1+38j
 		RTS
 ; End of function sub_128FC1
 
 ; ---------------------------------------------------------------------------
-byte_129005:	.BYTE	3		; DATA XREF: sub_128FC1+3Ar
+byte_129005:	.BYTE	3		
 byte_129006:	.BYTE	6,  1,	4,  1,	3,  1,	4,  1,	4,  1,	4,  1,	4,  1,	4,  2
-					; DATA XREF: sub_128B43+1Dr
+					
 					; sub_128B43+6Er ...
 		.BYTE	5,  1,	6
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_129019:				; CODE XREF: sub_128A1A+38p
+sub_129019:				
 		LDA	byte_440
 		BNE	loc_12902C
-		LDA	#$C8 ; '�'
+		LDA	#$C8 
 		STA	byte_31A
-		LDA	#$38 ; '8'
+		LDA	#$38 
 		STA	tilemapWidth_308
 		JSR	sub_12D26B
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12902C:				; CODE XREF: sub_129019+3j
-		LDA	#$40 ; '@'
+loc_12902C:				
+		LDA	#$40 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
@@ -2255,7 +2255,7 @@ loc_12902C:				; CODE XREF: sub_129019+3j
 		STA	byte_36B
 		LDA	#0
 		STA	sprite_secondByte_31B
-		LDA	#$C8 ; '�'
+		LDA	#$C8 
 		STA	byte_31A
 		LDA	#4
 		STA	objectIdx_318
@@ -2265,23 +2265,23 @@ loc_12902C:				; CODE XREF: sub_129019+3j
 		JMP	loc_129071
 ; ---------------------------------------------------------------------------
 
-loc_12905F:				; CODE XREF: sub_129019+3Fj
+loc_12905F:				
 		LDA	byte_543
 		CMP	#0
 		BNE	loc_129069
 		JMP	loc_12908C
 ; ---------------------------------------------------------------------------
 
-loc_129069:				; CODE XREF: sub_129019+4Bj
+loc_129069:				
 		LDA	byte_543
 		SEC
 		SBC	#1
 		ASL	A
 		ASL	A
 
-loc_129071:				; CODE XREF: sub_129019+43j
+loc_129071:				
 		CLC
-		ADC	#$34 ; '4'
+		ADC	#$34 
 		CLC
 		ADC	byte_443
 		STA	objMapIdx_316
@@ -2292,7 +2292,7 @@ loc_129071:				; CODE XREF: sub_129019+43j
 		STA	byte_317
 		JSR	exec_b1_c1_128394
 
-loc_12908C:				; CODE XREF: sub_129019+4Dj
+loc_12908C:				
 		LDA	count_unk_466
 		CMP	#5
 		BCC	locret_1290A8
@@ -2305,7 +2305,7 @@ loc_12908C:				; CODE XREF: sub_129019+4Dj
 		LDA	#0
 		STA	byte_440
 
-locret_1290A8:				; CODE XREF: sub_129019+78j
+locret_1290A8:				
 					; sub_129019+88j
 		RTS
 ; End of function sub_129019
@@ -2341,7 +2341,7 @@ locret_1290A8:				; CODE XREF: sub_129019+78j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_1290C3:				; CODE XREF: sub_128A1A+71p
+sub_1290C3:				
 		LDA	#0
 		STA	sprite_length_30F
 		LDA	byte_472
@@ -2355,7 +2355,7 @@ sub_1290C3:				; CODE XREF: sub_128A1A+71p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_1290DC:				; CODE XREF: sub_1290C3+16j
+loc_1290DC:				
 		LDX	byte_544
 		LDA	unk_53B,X
 		CMP	#0
@@ -2363,10 +2363,10 @@ loc_1290DC:				; CODE XREF: sub_1290C3+16j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_1290E7:				; CODE XREF: sub_1290C3+21j
+loc_1290E7:				
 		DEC	unk_53B,X
 
-loc_1290EA:				; CODE XREF: sub_1290C3+8j
+loc_1290EA:				
 					; sub_1290C3+Fj
 		LDA	#0
 		STA	byte_443
@@ -2387,7 +2387,7 @@ loc_1290EA:				; CODE XREF: sub_1290C3+8j
 		LDA	#$FF
 		STA	byte_476
 
-loc_129117:				; CODE XREF: sub_1290C3+46j
+loc_129117:				
 					; sub_1290C3+4Bj ...
 		LDA	byte_476
 		BNE	loc_129120
@@ -2395,16 +2395,16 @@ loc_129117:				; CODE XREF: sub_1290C3+46j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_129120:				; CODE XREF: sub_1290C3+57j
+loc_129120:				
 		JSR	sub_12ED20
 		LDA	byte_472
 		BEQ	loc_12912E
-		LDA	#$FE ; '�'
+		LDA	#$FE 
 		STA	sprite_length_30F
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12912E:				; CODE XREF: sub_1290C3+63j
+loc_12912E:				
 		JSR	sub_129196
 		LDA	byte_475
 		CMP	byte_477
@@ -2415,18 +2415,18 @@ loc_12912E:				; CODE XREF: sub_1290C3+63j
 		JMP	loc_129148
 ; ---------------------------------------------------------------------------
 
-loc_129143:				; CODE XREF: sub_1290C3+74j
+loc_129143:				
 		LDA	#0
 		STA	byte_475
 
-loc_129148:				; CODE XREF: sub_1290C3+7Dj
+loc_129148:				
 		LDA	byte_475
 		CMP	#0
 		BNE	locret_129154
 		LDA	#$FF
 		STA	sprite_length_30F
 
-locret_129154:				; CODE XREF: sub_1290C3+8Aj
+locret_129154:				
 		RTS
 ; End of function sub_1290C3
 
@@ -2434,7 +2434,7 @@ locret_129154:				; CODE XREF: sub_1290C3+8Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_129155:				; CODE XREF: sub_128FC1+40p
+sub_129155:				
 		LDA	#$10
 		STA	scroll_offset_y_47A
 		LDA	#0
@@ -2449,18 +2449,18 @@ sub_129155:				; CODE XREF: sub_128FC1+40p
 		JMP	loc_129179
 ; ---------------------------------------------------------------------------
 
-loc_129174:				; CODE XREF: sub_129155+13j
+loc_129174:				
 		LDA	#0
 		STA	byte_549
 
-loc_129179:				; CODE XREF: sub_129155+1Cj
+loc_129179:				
 		LDA	byte_549
 		CMP	#0
 		BNE	locret_129185
 		LDA	#$FF
 		STA	is_game_finished_561
 
-locret_129185:				; CODE XREF: sub_129155+29j
+locret_129185:				
 		RTS
 ; End of function sub_129155
 
@@ -2468,10 +2468,10 @@ locret_129185:				; CODE XREF: sub_129155+29j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_129186:				; CODE XREF: sub_129155+Ap
+sub_129186:				
 		LDA	inv_sprite_idx_31C
 		SEC
-		SBC	#$2A ; '*'
+		SBC	#$2A 
 		ASL	A
 		TAX
 		INX
@@ -2486,53 +2486,53 @@ loc_12918F:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_129196:				; CODE XREF: sub_1290C3:loc_12912Ep
+sub_129196:				
 		LDA	#0
 		STA	byte_477
 		LDA	byte_476
 		CMP	#$FF
 		BNE	locret_1291F4
 		LDA	byte_441
-		CMP	#$80 ; '�'
+		CMP	#$80 
 		BEQ	loc_1291C3
 		BCC	loc_1291B7
 		LDA	byte_441
 		SEC
-		SBC	#$80 ; '�'
+		SBC	#$80 
 		STA	tilemapTypeUnk_30B
 		JMP	loc_1291C8
 ; ---------------------------------------------------------------------------
 
-loc_1291B7:				; CODE XREF: sub_129196+13j
-		LDA	#$80 ; '�'
+loc_1291B7:				
+		LDA	#$80 
 		SEC
 		SBC	byte_441
 		STA	tilemapTypeUnk_30B
 		JMP	loc_1291C8
 ; ---------------------------------------------------------------------------
 
-loc_1291C3:				; CODE XREF: sub_129196+11j
+loc_1291C3:				
 		LDA	#0
 		STA	tilemapTypeUnk_30B
 
-loc_1291C8:				; CODE XREF: sub_129196+1Ej
+loc_1291C8:				
 					; sub_129196+2Aj
 		LDA	#$14
 		SEC
 		SBC	tilemapTypeUnk_30B
 		STA	byte_477
 		LDA	byte_301
-		CMP	#$9A ; '�'
+		CMP	#$9A 
 		BNE	loc_1291DE
 		LDA	byte_543
 		STA	byte_477
 
-loc_1291DE:				; CODE XREF: sub_129196+40j
+loc_1291DE:				
 		LDA	byte_477
 		LDY	byte_543
 		DEY
 
-loc_1291E5:				; CODE XREF: sub_129196+58j
+loc_1291E5:				
 		CPY	#0
 		BEQ	loc_1291F1
 		CLC
@@ -2541,10 +2541,10 @@ loc_1291E5:				; CODE XREF: sub_129196+58j
 		JMP	loc_1291E5
 ; ---------------------------------------------------------------------------
 
-loc_1291F1:				; CODE XREF: sub_129196+51j
+loc_1291F1:				
 		STA	byte_477
 
-locret_1291F4:				; CODE XREF: sub_129196+Aj
+locret_1291F4:				
 		RTS
 ; End of function sub_129196
 
@@ -2552,7 +2552,7 @@ locret_1291F4:				; CODE XREF: sub_129196+Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_1291F5:				; CODE XREF: sub_128A1A:loc_128A9Fp
+sub_1291F5:				
 		LDX	cur_obj_idx_unk_43A
 		LDA	array_unk_3A7,X
 		CMP	#1
@@ -2567,7 +2567,7 @@ sub_1291F5:				; CODE XREF: sub_128A1A:loc_128A9Fp
 		JMP	locret_129254
 ; ---------------------------------------------------------------------------
 
-loc_129213:				; CODE XREF: sub_1291F5+8j
+loc_129213:				
 		CMP	#0
 		BNE	loc_12922B
 		LDA	array_unk_3D9,X
@@ -2580,7 +2580,7 @@ loc_129213:				; CODE XREF: sub_1291F5+8j
 		JMP	locret_129254
 ; ---------------------------------------------------------------------------
 
-loc_12922B:				; CODE XREF: sub_1291F5+20j
+loc_12922B:				
 		CMP	#3
 		BNE	loc_129243
 		LDA	array_unk_3C5,X
@@ -2593,7 +2593,7 @@ loc_12922B:				; CODE XREF: sub_1291F5+20j
 		JMP	locret_129254
 ; ---------------------------------------------------------------------------
 
-loc_129243:				; CODE XREF: sub_1291F5+38j
+loc_129243:				
 		LDA	array_unk_3C5,X
 		CLC
 		ADC	#8
@@ -2602,13 +2602,13 @@ loc_129243:				; CODE XREF: sub_1291F5+38j
 		ADC	#0
 		STA	array_unk_3BB,X
 
-locret_129254:				; CODE XREF: sub_1291F5+1Bj
+locret_129254:				
 					; sub_1291F5+33j ...
 		RTS
 ; End of function sub_1291F5
 
 ; ---------------------------------------------------------------------------
-byte_129255:	.BYTE $78,$1E		; DATA XREF: sub_128955+23r
+byte_129255:	.BYTE $78,$1E		
 					; sub_129186:loc_12918Fr
 		.BYTE $A0,$28
 		.BYTE $A0,$1E
@@ -2780,177 +2780,177 @@ byte_129255:	.BYTE $78,$1E		; DATA XREF: sub_128955+23r
 		.WORD byte_1296C5
 		.WORD byte_1296C6
 		.WORD byte_1296C7
-byte_1293AB:	.BYTE 0			; DATA XREF: BANK_12:9269o
-byte_1293AC:	.BYTE 0			; DATA XREF: BANK_12:926Bo
-byte_1293AD:	.BYTE 0			; DATA XREF: BANK_12:926Do
-byte_1293AE:	.BYTE 0			; DATA XREF: BANK_12:926Fo
-byte_1293AF:	.BYTE 0			; DATA XREF: BANK_12:9271o
-byte_1293B0:	.BYTE 0			; DATA XREF: BANK_12:9273o
-byte_1293B1:	.BYTE 0			; DATA XREF: BANK_12:9275o
-byte_1293B2:	.BYTE 0			; DATA XREF: BANK_12:9277o
-byte_1293B3:	.BYTE 0			; DATA XREF: BANK_12:9279o
-byte_1293B4:	.BYTE 0			; DATA XREF: BANK_12:927Bo
-byte_1293B5:	.BYTE 0			; DATA XREF: BANK_12:927Do
-byte_1293B6:	.BYTE 0			; DATA XREF: BANK_12:927Fo
-byte_1293B7:	.BYTE 0			; DATA XREF: BANK_12:9281o
-byte_1293B8:	.BYTE 0			; DATA XREF: BANK_12:9283o
-byte_1293B9:	.BYTE 0			; DATA XREF: BANK_12:9285o
-byte_1293BA:	.BYTE 0			; DATA XREF: BANK_12:9287o
-byte_1293BB:	.BYTE 0			; DATA XREF: BANK_12:9289o
-byte_1293BC:	.BYTE 0			; DATA XREF: BANK_12:928Bo
-byte_1293BD:	.BYTE 0			; DATA XREF: BANK_12:928Do
-byte_1293BE:	.BYTE 0			; DATA XREF: BANK_12:928Fo
-byte_1293BF:	.BYTE 0			; DATA XREF: BANK_12:9291o
-byte_1293C0:	.BYTE 0			; DATA XREF: BANK_12:9293o
-byte_1293C1:	.BYTE	4,$C8,$96,$D5,$96,$E2,$96,$EF,$96 ; DATA XREF: BANK_12:9295o
-byte_1293CA:	.BYTE	4,$FC,$96,  9,$97,$16,$97,$23,$97 ; DATA XREF: BANK_12:9297o
-byte_1293D3:	.BYTE	1,$30,$97	; DATA XREF: BANK_12:9299o
-byte_1293D6:	.BYTE	0		; DATA XREF: BANK_12:929Bo
-byte_1293D7:	.BYTE	1,$3D,$97	; DATA XREF: BANK_12:929Do
-byte_1293DA:	.BYTE	2,$4A,$97,$57,$97 ; DATA XREF: BANK_12:929Fo
-byte_1293DF:	.BYTE	3,$64,$97,$71,$97,$7E,$97 ; DATA XREF: BANK_12:92A1o
-byte_1293E6:	.BYTE	2,$8B,$97,$98,$97 ; DATA XREF: BANK_12:92A3o
+byte_1293AB:	.BYTE 0			
+byte_1293AC:	.BYTE 0			
+byte_1293AD:	.BYTE 0			
+byte_1293AE:	.BYTE 0			
+byte_1293AF:	.BYTE 0			
+byte_1293B0:	.BYTE 0			
+byte_1293B1:	.BYTE 0			
+byte_1293B2:	.BYTE 0			
+byte_1293B3:	.BYTE 0			
+byte_1293B4:	.BYTE 0			
+byte_1293B5:	.BYTE 0			
+byte_1293B6:	.BYTE 0			
+byte_1293B7:	.BYTE 0			
+byte_1293B8:	.BYTE 0			
+byte_1293B9:	.BYTE 0			
+byte_1293BA:	.BYTE 0			
+byte_1293BB:	.BYTE 0			
+byte_1293BC:	.BYTE 0			
+byte_1293BD:	.BYTE 0			
+byte_1293BE:	.BYTE 0			
+byte_1293BF:	.BYTE 0			
+byte_1293C0:	.BYTE 0			
+byte_1293C1:	.BYTE	4,$C8,$96,$D5,$96,$E2,$96,$EF,$96 
+byte_1293CA:	.BYTE	4,$FC,$96,  9,$97,$16,$97,$23,$97 
+byte_1293D3:	.BYTE	1,$30,$97	
+byte_1293D6:	.BYTE	0		
+byte_1293D7:	.BYTE	1,$3D,$97	
+byte_1293DA:	.BYTE	2,$4A,$97,$57,$97 
+byte_1293DF:	.BYTE	3,$64,$97,$71,$97,$7E,$97 
+byte_1293E6:	.BYTE	2,$8B,$97,$98,$97 
 byte_1293EB:	.BYTE  $A,$A5,$97,$B2,$97,$BF,$97,$CC,$97,$D9,$97,$E6,$97,$F3,$97,  0
-					; DATA XREF: BANK_12:92A5o
+					
 		.BYTE $98, $D,$98,$1A,$98
-byte_129400:	.BYTE	2,$27,$98,$34,$98 ; DATA XREF: BANK_12:92A7o
-byte_129405:	.BYTE	2,$41,$98,$4E,$98 ; DATA XREF: BANK_12:92A9o
-byte_12940A:	.BYTE	2,$5B,$98,$68,$98 ; DATA XREF: BANK_12:92ABo
-byte_12940F:	.BYTE	2,$75,$98,$82,$98 ; DATA XREF: BANK_12:92ADo
-byte_129414:	.BYTE	1,$8F,$98	; DATA XREF: BANK_12:92AFo
-byte_129417:	.BYTE	2,$9C,$98,$A9,$98 ; DATA XREF: BANK_12:92B1o
-byte_12941C:	.BYTE	4,$B6,$98,$C3,$98,$D0,$98,$DD,$98 ; DATA XREF: BANK_12:92B3o
-byte_129425:	.BYTE	1,$EA,$98	; DATA XREF: BANK_12:92B5o
-byte_129428:	.BYTE	2,$F7,$98,  4,$99 ; DATA XREF: BANK_12:92B7o
-byte_12942D:	.BYTE	1,$11,$99	; DATA XREF: BANK_12:92B9o
-byte_129430:	.BYTE	0		; DATA XREF: BANK_12:92BBo
-byte_129431:	.BYTE	1,$1E,$99	; DATA XREF: BANK_12:92BDo
-byte_129434:	.BYTE	2,$2D,$99,$3A,$99 ; DATA XREF: BANK_12:92BFo
-byte_129439:	.BYTE	2,$47,$99,$54,$99 ; DATA XREF: BANK_12:92C1o
-byte_12943E:	.BYTE	3,$61,$99,$6E,$99,$7B,$99 ; DATA XREF: BANK_12:92C3o
-byte_129445:	.BYTE	2,$88,$99,$95,$99 ; DATA XREF: BANK_12:92C5o
-byte_12944A:	.BYTE	2,$A2,$99,$AF,$99 ; DATA XREF: BANK_12:92C7o
-byte_12944F:	.BYTE	1,$BC,$99	; DATA XREF: BANK_12:92C9o
-byte_129452:	.BYTE	0		; DATA XREF: BANK_12:92CBo
-byte_129453:	.BYTE	4,$C9,$99,$D6,$99,$E3,$99,$F0,$99 ; DATA XREF: BANK_12:92CDo
-byte_12945C:	.BYTE	2,$FD,$99, $A,$9A ; DATA XREF: BANK_12:92CFo
-byte_129461:	.BYTE	3,$17,$9A,$24,$9A,$31,$9A ; DATA XREF: BANK_12:92D1o
-byte_129468:	.BYTE	0		; DATA XREF: BANK_12:92D3o
-byte_129469:	.BYTE	3,$3E,$9A,$4B,$9A,$58,$9A ; DATA XREF: BANK_12:92D5o
-byte_129470:	.BYTE	2,$65,$9A,$72,$9A ; DATA XREF: BANK_12:92D7o
-byte_129475:	.BYTE	4,$7F,$9A,$8C,$9A,$99,$9A,$A6,$9A ; DATA XREF: BANK_12:92D9o
-byte_12947E:	.BYTE	0		; DATA XREF: BANK_12:92DBo
-byte_12947F:	.BYTE	5,$AD,$9A,$BA,$9A,$C7,$9A,$D4,$9A,$E1,$9A ; DATA XREF: BANK_12:92DDo
-byte_12948A:	.BYTE	5,$EE,$9A,$FB,$9A,  8,$9B,$15,$9B,$22,$9B ; DATA XREF: BANK_12:92DFo
-byte_129495:	.BYTE	4,$2F,$9B,$3C,$9B,$49,$9B,$50,$9B ; DATA XREF: BANK_12:92E1o
-byte_12949E:	.BYTE	1,$5D,$9B	; DATA XREF: BANK_12:92E3o
-byte_1294A1:	.BYTE	1,$64,$9B	; DATA XREF: BANK_12:92E5o
-byte_1294A4:	.BYTE	0		; DATA XREF: BANK_12:92E7o
-byte_1294A5:	.BYTE	3,$71,$9B,$7E,$9B,$8B,$9B ; DATA XREF: BANK_12:92E9o
-byte_1294AC:	.BYTE	2,$98,$9B,$A5,$9B ; DATA XREF: BANK_12:92EBo
-byte_1294B1:	.BYTE	3,$B2,$9B,$B9,$9B,$C6,$9B ; DATA XREF: BANK_12:92EDo
-byte_1294B8:	.BYTE	0		; DATA XREF: BANK_12:92EFo
-byte_1294B9:	.BYTE	1,$D3,$9B	; DATA XREF: BANK_12:92F1o
-byte_1294BC:	.BYTE	2,$DA,$9B,$E7,$9B ; DATA XREF: BANK_12:92F3o
-byte_1294C1:	.BYTE	4,$F4,$9B,  3,$9C,$16,$9C,$29,$9C ; DATA XREF: BANK_12:92F5o
-byte_1294CA:	.BYTE	2,$38,$9C,$45,$9C ; DATA XREF: BANK_12:92F7o
-byte_1294CF:	.BYTE	2,$52,$9C,$5F,$9C ; DATA XREF: BANK_12:92F9o
-byte_1294D4:	.BYTE	0		; DATA XREF: BANK_12:92FBo
-byte_1294D5:	.BYTE	2,$6C,$9C,$79,$9C ; DATA XREF: BANK_12:92FDo
-byte_1294DA:	.BYTE	3,$86,$9C,$93,$9C,$A0,$9C ; DATA XREF: BANK_12:92FFo
-byte_1294E1:	.BYTE	2,$AD,$9C,$BA,$9C ; DATA XREF: BANK_12:9301o
-byte_1294E6:	.BYTE	1,$C7,$9C	; DATA XREF: BANK_12:9303o
+byte_129400:	.BYTE	2,$27,$98,$34,$98 
+byte_129405:	.BYTE	2,$41,$98,$4E,$98 
+byte_12940A:	.BYTE	2,$5B,$98,$68,$98 
+byte_12940F:	.BYTE	2,$75,$98,$82,$98 
+byte_129414:	.BYTE	1,$8F,$98	
+byte_129417:	.BYTE	2,$9C,$98,$A9,$98 
+byte_12941C:	.BYTE	4,$B6,$98,$C3,$98,$D0,$98,$DD,$98 
+byte_129425:	.BYTE	1,$EA,$98	
+byte_129428:	.BYTE	2,$F7,$98,  4,$99 
+byte_12942D:	.BYTE	1,$11,$99	
+byte_129430:	.BYTE	0		
+byte_129431:	.BYTE	1,$1E,$99	
+byte_129434:	.BYTE	2,$2D,$99,$3A,$99 
+byte_129439:	.BYTE	2,$47,$99,$54,$99 
+byte_12943E:	.BYTE	3,$61,$99,$6E,$99,$7B,$99 
+byte_129445:	.BYTE	2,$88,$99,$95,$99 
+byte_12944A:	.BYTE	2,$A2,$99,$AF,$99 
+byte_12944F:	.BYTE	1,$BC,$99	
+byte_129452:	.BYTE	0		
+byte_129453:	.BYTE	4,$C9,$99,$D6,$99,$E3,$99,$F0,$99 
+byte_12945C:	.BYTE	2,$FD,$99, $A,$9A 
+byte_129461:	.BYTE	3,$17,$9A,$24,$9A,$31,$9A 
+byte_129468:	.BYTE	0		
+byte_129469:	.BYTE	3,$3E,$9A,$4B,$9A,$58,$9A 
+byte_129470:	.BYTE	2,$65,$9A,$72,$9A 
+byte_129475:	.BYTE	4,$7F,$9A,$8C,$9A,$99,$9A,$A6,$9A 
+byte_12947E:	.BYTE	0		
+byte_12947F:	.BYTE	5,$AD,$9A,$BA,$9A,$C7,$9A,$D4,$9A,$E1,$9A 
+byte_12948A:	.BYTE	5,$EE,$9A,$FB,$9A,  8,$9B,$15,$9B,$22,$9B 
+byte_129495:	.BYTE	4,$2F,$9B,$3C,$9B,$49,$9B,$50,$9B 
+byte_12949E:	.BYTE	1,$5D,$9B	
+byte_1294A1:	.BYTE	1,$64,$9B	
+byte_1294A4:	.BYTE	0		
+byte_1294A5:	.BYTE	3,$71,$9B,$7E,$9B,$8B,$9B 
+byte_1294AC:	.BYTE	2,$98,$9B,$A5,$9B 
+byte_1294B1:	.BYTE	3,$B2,$9B,$B9,$9B,$C6,$9B 
+byte_1294B8:	.BYTE	0		
+byte_1294B9:	.BYTE	1,$D3,$9B	
+byte_1294BC:	.BYTE	2,$DA,$9B,$E7,$9B 
+byte_1294C1:	.BYTE	4,$F4,$9B,  3,$9C,$16,$9C,$29,$9C 
+byte_1294CA:	.BYTE	2,$38,$9C,$45,$9C 
+byte_1294CF:	.BYTE	2,$52,$9C,$5F,$9C 
+byte_1294D4:	.BYTE	0		
+byte_1294D5:	.BYTE	2,$6C,$9C,$79,$9C 
+byte_1294DA:	.BYTE	3,$86,$9C,$93,$9C,$A0,$9C 
+byte_1294E1:	.BYTE	2,$AD,$9C,$BA,$9C 
+byte_1294E6:	.BYTE	1,$C7,$9C	
 byte_1294E9:	.BYTE	8,$D4,$9C,$E1,$9C,$EE,$9C,$FB,$9C,  8,$9D,$15,$9D,$22,$9D,$2F
-					; DATA XREF: BANK_12:9305o
+					
 		.BYTE $9D
-byte_1294FA:	.BYTE	0		; DATA XREF: BANK_12:9307o
-byte_1294FB:	.BYTE	2,$3C,$9D,$49,$9D ; DATA XREF: BANK_12:9309o
+byte_1294FA:	.BYTE	0		
+byte_1294FB:	.BYTE	2,$3C,$9D,$49,$9D 
 byte_129500:	.BYTE	6,$56,$9D,$63,$9D,$70,$9D,$7D,$9D,$8A,$9D,$97,$9D
-					; DATA XREF: BANK_12:930Bo
-byte_12950D:	.BYTE	5,$A4,$9D,$B1,$9D,$BE,$9D,$CB,$9D,$D8,$9D ; DATA XREF: BANK_12:930Do
-byte_129518:	.BYTE	1,$E5,$9D	; DATA XREF: BANK_12:930Fo
-byte_12951B:	.BYTE	1,$F2,$9D	; DATA XREF: BANK_12:9311o
-byte_12951E:	.BYTE	4,$FF,$9D, $C,$9E,$19,$9E,$26,$9E ; DATA XREF: BANK_12:9313o
-byte_129527:	.BYTE	2,$33,$9E,$40,$9E ; DATA XREF: BANK_12:9315o
-byte_12952C:	.BYTE	2,$4D,$9E,$5A,$9E ; DATA XREF: BANK_12:9317o
-byte_129531:	.BYTE	4,$67,$9E,$74,$9E,$81,$9E,$8E,$9E ; DATA XREF: BANK_12:9319o
-byte_12953A:	.BYTE	3,$9B,$9E,$A2,$9E,$A9,$9E ; DATA XREF: BANK_12:931Bo
-byte_129541:	.BYTE	3,$B0,$9E,$BD,$9E,$CA,$9E ; DATA XREF: BANK_12:931Do
-byte_129548:	.BYTE	4,$D7,$9E,$E4,$9E,$F1,$9E,$FE,$9E ; DATA XREF: BANK_12:931Fo
-byte_129551:	.BYTE	2, $B,$9F,$1E,$9F ; DATA XREF: BANK_12:9321o
+					
+byte_12950D:	.BYTE	5,$A4,$9D,$B1,$9D,$BE,$9D,$CB,$9D,$D8,$9D 
+byte_129518:	.BYTE	1,$E5,$9D	
+byte_12951B:	.BYTE	1,$F2,$9D	
+byte_12951E:	.BYTE	4,$FF,$9D, $C,$9E,$19,$9E,$26,$9E 
+byte_129527:	.BYTE	2,$33,$9E,$40,$9E 
+byte_12952C:	.BYTE	2,$4D,$9E,$5A,$9E 
+byte_129531:	.BYTE	4,$67,$9E,$74,$9E,$81,$9E,$8E,$9E 
+byte_12953A:	.BYTE	3,$9B,$9E,$A2,$9E,$A9,$9E 
+byte_129541:	.BYTE	3,$B0,$9E,$BD,$9E,$CA,$9E 
+byte_129548:	.BYTE	4,$D7,$9E,$E4,$9E,$F1,$9E,$FE,$9E 
+byte_129551:	.BYTE	2, $B,$9F,$1E,$9F 
 byte_129556:	.BYTE	7,$25,$9F,$32,$9F,$3F,$9F,$4C,$9F,$59,$9F,$60,$9F,$6D,$9F
-					; DATA XREF: BANK_12:9323o
-byte_129565:	.BYTE	2,$7A,$9F,$87,$9F ; DATA XREF: BANK_12:9325o
-byte_12956A:	.BYTE	4,$94,$9F,$A1,$9F,$AE,$9F,$BB,$9F ; DATA XREF: BANK_12:9327o
-byte_129573:	.BYTE	2,$C8,$9F,$D5,$9F ; DATA XREF: BANK_12:9329o
-byte_129578:	.BYTE	5,$E2,$9F,$EF,$9F,$FC,$9F,  9,$A0,$16,$A0 ; DATA XREF: BANK_12:932Bo
-byte_129583:	.BYTE	2,$23,$A0,$30,$A0 ; DATA XREF: BANK_12:932Do
-byte_129588:	.BYTE	4,$3D,$A0,$4A,$A0,$57,$A0,$64,$A0 ; DATA XREF: BANK_12:932Fo
-byte_129591:	.BYTE	1,$71,$A0	; DATA XREF: BANK_12:9331o
+					
+byte_129565:	.BYTE	2,$7A,$9F,$87,$9F 
+byte_12956A:	.BYTE	4,$94,$9F,$A1,$9F,$AE,$9F,$BB,$9F 
+byte_129573:	.BYTE	2,$C8,$9F,$D5,$9F 
+byte_129578:	.BYTE	5,$E2,$9F,$EF,$9F,$FC,$9F,  9,$A0,$16,$A0 
+byte_129583:	.BYTE	2,$23,$A0,$30,$A0 
+byte_129588:	.BYTE	4,$3D,$A0,$4A,$A0,$57,$A0,$64,$A0 
+byte_129591:	.BYTE	1,$71,$A0	
 byte_129594:	.BYTE	6,$7E,$A0,$85,$A0,$92,$A0,$9F,$A0,$AC,$A0,$B9,$A0
-					; DATA XREF: BANK_12:9333o
-byte_1295A1:	.BYTE	1,$C6,$A0	; DATA XREF: BANK_12:9335o
-byte_1295A4:	.BYTE	2,$D3,$A0,$E0,$A0 ; DATA XREF: BANK_12:9337o
-byte_1295A9:	.BYTE	2,$ED,$A0,$FA,$A0 ; DATA XREF: BANK_12:9339o
-byte_1295AE:	.BYTE	0		; DATA XREF: BANK_12:933Bo
+					
+byte_1295A1:	.BYTE	1,$C6,$A0	
+byte_1295A4:	.BYTE	2,$D3,$A0,$E0,$A0 
+byte_1295A9:	.BYTE	2,$ED,$A0,$FA,$A0 
+byte_1295AE:	.BYTE	0		
 byte_1295AF:	.BYTE	6,  7,$A1, $E,$A1,$15,$A1,$1C,$A1,$29,$A1,$36,$A1
-					; DATA XREF: BANK_12:933Do
-byte_1295BC:	.BYTE	4,$43,$A1,$4A,$A1,$51,$A1,$58,$A1 ; DATA XREF: BANK_12:933Fo
-byte_1295C5:	.BYTE	1,$5F,$A1	; DATA XREF: BANK_12:9341o
-byte_1295C8:	.BYTE	2,$6C,$A1,$73,$A1 ; DATA XREF: BANK_12:9343o
-byte_1295CD:	.BYTE	5,$7A,$A1,$87,$A1,$94,$A1,$A1,$A1,$AE,$A1 ; DATA XREF: BANK_12:9345o
-byte_1295D8:	.BYTE	3,$BB,$A1,$C8,$A1,$D5,$A1 ; DATA XREF: BANK_12:9347o
-byte_1295DF:	.BYTE	3,$E2,$A1,$EF,$A1,$FC,$A1 ; DATA XREF: BANK_12:9349o
-byte_1295E6:	.BYTE	1,  9,$A2	; DATA XREF: BANK_12:934Bo
+					
+byte_1295BC:	.BYTE	4,$43,$A1,$4A,$A1,$51,$A1,$58,$A1 
+byte_1295C5:	.BYTE	1,$5F,$A1	
+byte_1295C8:	.BYTE	2,$6C,$A1,$73,$A1 
+byte_1295CD:	.BYTE	5,$7A,$A1,$87,$A1,$94,$A1,$A1,$A1,$AE,$A1 
+byte_1295D8:	.BYTE	3,$BB,$A1,$C8,$A1,$D5,$A1 
+byte_1295DF:	.BYTE	3,$E2,$A1,$EF,$A1,$FC,$A1 
+byte_1295E6:	.BYTE	1,  9,$A2	
 byte_1295E9:	.BYTE	6,$16,$A2,$23,$A2,$30,$A2,$3D,$A2,$4A,$A2,$57,$A2
-					; DATA XREF: BANK_12:934Do
-byte_1295F6:	.BYTE	2,$64,$A2,$71,$A2 ; DATA XREF: BANK_12:934Fo
-byte_1295FB:	.BYTE	4,$7E,$A2,$8B,$A2,$98,$A2,$A5,$A2 ; DATA XREF: BANK_12:9351o
-byte_129604:	.BYTE	4,$B2,$A2,$BF,$A2,$CC,$A2,$D9,$A2 ; DATA XREF: BANK_12:9353o
-byte_12960D:	.BYTE	4,$E6,$A2,$ED,$A2,$FA,$A2,  7,$A3 ; DATA XREF: BANK_12:9355o
+					
+byte_1295F6:	.BYTE	2,$64,$A2,$71,$A2 
+byte_1295FB:	.BYTE	4,$7E,$A2,$8B,$A2,$98,$A2,$A5,$A2 
+byte_129604:	.BYTE	4,$B2,$A2,$BF,$A2,$CC,$A2,$D9,$A2 
+byte_12960D:	.BYTE	4,$E6,$A2,$ED,$A2,$FA,$A2,  7,$A3 
 byte_129616:	.BYTE	6,$14,$A3,$21,$A3,$2E,$A3,$3B,$A3,$48,$A3,$55,$A3
-					; DATA XREF: BANK_12:9357o
-byte_129623:	.BYTE	1,$62,$A3	; DATA XREF: BANK_12:9359o
-byte_129626:	.BYTE	1,$6F,$A3	; DATA XREF: BANK_12:935Bo
-byte_129629:	.BYTE	0		; DATA XREF: BANK_12:935Do
-byte_12962A:	.BYTE	0		; DATA XREF: BANK_12:935Fo
-byte_12962B:	.BYTE	3,$7C,$A3,$89,$A3,$96,$A3 ; DATA XREF: BANK_12:9361o
-byte_129632:	.BYTE	2,$9D,$A3,$A4,$A3 ; DATA XREF: BANK_12:9363o
-byte_129637:	.BYTE	4,$AB,$A3,$B8,$A3,$C5,$A3,$D2,$A3 ; DATA XREF: BANK_12:9365o
-byte_129640:	.BYTE	3,$DF,$A3,$EC,$A3,$F9,$A3 ; DATA XREF: BANK_12:9367o
-byte_129647:	.BYTE	0		; DATA XREF: BANK_12:9369o
-byte_129648:	.BYTE	0		; DATA XREF: BANK_12:936Bo
-byte_129649:	.BYTE	3,  6,$A4,$13,$A4,$20,$A4 ; DATA XREF: BANK_12:936Do
-byte_129650:	.BYTE	0		; DATA XREF: BANK_12:936Fo
-byte_129651:	.BYTE	0		; DATA XREF: BANK_12:9371o
-byte_129652:	.BYTE	4,$2D,$A4,$3A,$A4,$47,$A4,$54,$A4 ; DATA XREF: BANK_12:9373o
-byte_12965B:	.BYTE	0		; DATA XREF: BANK_12:9375o
-byte_12965C:	.BYTE	4,$61,$A4,$6E,$A4,$7B,$A4,$88,$A4 ; DATA XREF: BANK_12:9377o
-byte_129665:	.BYTE	0		; DATA XREF: BANK_12:9379o
-byte_129666:	.BYTE	1,$95,$A4	; DATA XREF: BANK_12:937Bo
-byte_129669:	.BYTE	2,$A2,$A4,$AF,$A4 ; DATA XREF: BANK_12:937Do
-byte_12966E:	.BYTE	2,$B6,$A4,$BD,$A4 ; DATA XREF: BANK_12:937Fo
-byte_129673:	.BYTE	0		; DATA XREF: BANK_12:9381o
-byte_129674:	.BYTE	3,$CA,$A4,$D1,$A4,$D8,$A4 ; DATA XREF: BANK_12:9383o
-byte_12967B:	.BYTE	0		; DATA XREF: BANK_12:9385o
-byte_12967C:	.BYTE	5,$DF,$A4,$EC,$A4,$F9,$A4,  6,$A5,$13,$A5 ; DATA XREF: BANK_12:9387o
-byte_129687:	.BYTE	1,$20,$A5	; DATA XREF: BANK_12:9389o
-byte_12968A:	.BYTE	2,$2D,$A5,$3A,$A5 ; DATA XREF: BANK_12:938Bo
-byte_12968F:	.BYTE	3,$47,$A5,$54,$A5,$61,$A5 ; DATA XREF: BANK_12:938Do
-byte_129696:	.BYTE	2,$6E,$A5,$81,$A5 ; DATA XREF: BANK_12:938Fo
-byte_12969B:	.BYTE	4,$88,$A5,$8F,$A5,$9C,$A5,$A9,$A5 ; DATA XREF: BANK_12:9391o
-byte_1296A4:	.BYTE	0		; DATA XREF: BANK_12:9393o
-byte_1296A5:	.BYTE	1,$B6,$A5	; DATA XREF: BANK_12:9395o
-byte_1296A8:	.BYTE	3,$C3,$A5,$D0,$A5,$DD,$A5 ; DATA XREF: BANK_12:9397o
-byte_1296AF:	.BYTE	1,$EA,$A5	; DATA XREF: BANK_12:9399o
-byte_1296B2:	.BYTE	0		; DATA XREF: BANK_12:939Bo
-byte_1296B3:	.BYTE	4,$F7,$A5,  4,$A6,$11,$A6,$1E,$A6 ; DATA XREF: BANK_12:939Do
-byte_1296BC:	.BYTE	1,$25,$A6	; DATA XREF: BANK_12:939Fo
-byte_1296BF:	.BYTE	2,$32,$A6,$39,$A6 ; DATA XREF: BANK_12:93A1o
-byte_1296C4:	.BYTE	0		; DATA XREF: BANK_12:93A3o
-byte_1296C5:	.BYTE	0		; DATA XREF: BANK_12:93A5o
-byte_1296C6:	.BYTE	0		; DATA XREF: BANK_12:93A7o
-byte_1296C7:	.BYTE 0			; DATA XREF: BANK_12:93A9o
+					
+byte_129623:	.BYTE	1,$62,$A3	
+byte_129626:	.BYTE	1,$6F,$A3	
+byte_129629:	.BYTE	0		
+byte_12962A:	.BYTE	0		
+byte_12962B:	.BYTE	3,$7C,$A3,$89,$A3,$96,$A3 
+byte_129632:	.BYTE	2,$9D,$A3,$A4,$A3 
+byte_129637:	.BYTE	4,$AB,$A3,$B8,$A3,$C5,$A3,$D2,$A3 
+byte_129640:	.BYTE	3,$DF,$A3,$EC,$A3,$F9,$A3 
+byte_129647:	.BYTE	0		
+byte_129648:	.BYTE	0		
+byte_129649:	.BYTE	3,  6,$A4,$13,$A4,$20,$A4 
+byte_129650:	.BYTE	0		
+byte_129651:	.BYTE	0		
+byte_129652:	.BYTE	4,$2D,$A4,$3A,$A4,$47,$A4,$54,$A4 
+byte_12965B:	.BYTE	0		
+byte_12965C:	.BYTE	4,$61,$A4,$6E,$A4,$7B,$A4,$88,$A4 
+byte_129665:	.BYTE	0		
+byte_129666:	.BYTE	1,$95,$A4	
+byte_129669:	.BYTE	2,$A2,$A4,$AF,$A4 
+byte_12966E:	.BYTE	2,$B6,$A4,$BD,$A4 
+byte_129673:	.BYTE	0		
+byte_129674:	.BYTE	3,$CA,$A4,$D1,$A4,$D8,$A4 
+byte_12967B:	.BYTE	0		
+byte_12967C:	.BYTE	5,$DF,$A4,$EC,$A4,$F9,$A4,  6,$A5,$13,$A5 
+byte_129687:	.BYTE	1,$20,$A5	
+byte_12968A:	.BYTE	2,$2D,$A5,$3A,$A5 
+byte_12968F:	.BYTE	3,$47,$A5,$54,$A5,$61,$A5 
+byte_129696:	.BYTE	2,$6E,$A5,$81,$A5 
+byte_12969B:	.BYTE	4,$88,$A5,$8F,$A5,$9C,$A5,$A9,$A5 
+byte_1296A4:	.BYTE	0		
+byte_1296A5:	.BYTE	1,$B6,$A5	
+byte_1296A8:	.BYTE	3,$C3,$A5,$D0,$A5,$DD,$A5 
+byte_1296AF:	.BYTE	1,$EA,$A5	
+byte_1296B2:	.BYTE	0		
+byte_1296B3:	.BYTE	4,$F7,$A5,  4,$A6,$11,$A6,$1E,$A6 
+byte_1296BC:	.BYTE	1,$25,$A6	
+byte_1296BF:	.BYTE	2,$32,$A6,$39,$A6 
+byte_1296C4:	.BYTE	0		
+byte_1296C5:	.BYTE	0		
+byte_1296C6:	.BYTE	0		
+byte_1296C7:	.BYTE 0			
 		.BYTE $D0,  0,$20,  1,	7,  0,	1,$D1,$96, $B,	0,$FF,$FF,$20,	1,$30
 		.BYTE	1,  7,	1,  1,$DE,$96, $E,  0,$FF,$FF,$60,  0,$C0,  0,	7,  0
 		.BYTE	1,$EB,$96, $C,	0,$FF,$FF,$B0,	0,$80,	0,  6,$1A,  1,$F8,$96
@@ -3203,18 +3203,18 @@ byte_1296C7:	.BYTE 0			; DATA XREF: BANK_12:93A9o
 ; =============== S U B	R O U T	I N E =======================================
 
 
-com_29_start_new_game_12A646:		; CODE XREF: command_0_1280FB:command_29_open_level_1281F1p
+com_29_start_new_game_12A646:		
 		LDX	#0
 		LDA	#0
 
-loc_12A64A:				; CODE XREF: com_29_start_new_game_12A646+Aj
+loc_12A64A:				
 		STA	objArraySize_373,X
 		INX
-		CPX	#$AC ; '�'
+		CPX	#$AC 
 		BNE	loc_12A64A
-		LDA	#$69 ; 'i'
+		LDA	#$69 
 		STA	ptr_0
-		LDA	#$92 ; '�'
+		LDA	#$92 
 		STA	ptr_1
 		LDA	entry_idx_300
 		STA	data_2
@@ -3243,7 +3243,7 @@ loc_12A64A:				; CODE XREF: com_29_start_new_game_12A646+Aj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12A68B:				; CODE XREF: com_29_start_new_game_12A646+42j
+loc_12A68B:				
 		LDA	data_2
 		CLC
 		ADC	#1
@@ -3254,7 +3254,7 @@ loc_12A68B:				; CODE XREF: com_29_start_new_game_12A646+42j
 		LDA	#0
 		STA	inv_spr_dscr1_30C
 
-loc_12A69D:				; CODE XREF: com_29_start_new_game_12A646+204j
+loc_12A69D:				
 		LDA	data_2
 		PHA
 		LDA	data_3
@@ -3294,7 +3294,7 @@ loc_12A69D:				; CODE XREF: com_29_start_new_game_12A646+204j
 		STA	array_unk_39D,X
 		INY
 		LDA	entry_idx_300
-		CMP	#$65 ; 'e'
+		CMP	#$65 
 		BNE	loc_12A70C
 		LDA	objIdxArray_375,X
 		CMP	#3
@@ -3308,10 +3308,10 @@ loc_12A69D:				; CODE XREF: com_29_start_new_game_12A646+204j
 		LDA	byte_56A
 		STA	array_unk_3CF,X
 
-loc_12A70C:				; CODE XREF: com_29_start_new_game_12A646+A5j
+loc_12A70C:				
 					; com_29_start_new_game_12A646+ACj
 		LDA	entry_idx_300
-		CMP	#$3C ; '<'
+		CMP	#$3C 
 		BNE	loc_12A732
 		LDA	objIdxArray_375,X
 		CMP	#3
@@ -3325,10 +3325,10 @@ loc_12A70C:				; CODE XREF: com_29_start_new_game_12A646+A5j
 		LDA	byte_56E
 		STA	array_unk_3CF,X
 
-loc_12A732:				; CODE XREF: com_29_start_new_game_12A646+CBj
+loc_12A732:				
 					; com_29_start_new_game_12A646+D2j
 		LDA	entry_idx_300
-		CMP	#$5C ; '\'
+		CMP	#$5C 
 		BNE	loc_12A758
 		LDA	objIdxArray_375,X
 		CMP	#3
@@ -3342,34 +3342,34 @@ loc_12A732:				; CODE XREF: com_29_start_new_game_12A646+CBj
 		LDA	byte_572
 		STA	array_unk_3CF,X
 
-loc_12A758:				; CODE XREF: com_29_start_new_game_12A646+F1j
+loc_12A758:				
 					; com_29_start_new_game_12A646+F8j
 		LDA	entry_idx_300
-		CMP	#$93 ; '�'
+		CMP	#$93 
 		BNE	loc_12A79E
 		LDA	objIdxArray_375,X
 		CMP	#3
 		BNE	loc_12A79E
 		LDA	byte_56F
-		CMP	#$40 ; '@'
+		CMP	#$40 
 		BEQ	loc_12A786
 		BCS	loc_12A786
 		LDA	byte_571
-		CMP	#$50 ; 'P'
+		CMP	#$50 
 		BEQ	loc_12A781
-		CMP	#$60 ; '`'
+		CMP	#$60 
 		BEQ	loc_12A781
-		CMP	#$70 ; 'p'
+		CMP	#$70 
 		BEQ	loc_12A781
 		JMP	loc_12A786
 ; ---------------------------------------------------------------------------
 
-loc_12A781:				; CODE XREF: com_29_start_new_game_12A646+12Ej
+loc_12A781:				
 					; com_29_start_new_game_12A646+132j ...
-		LDA	#$40 ; '@'
+		LDA	#$40 
 		STA	byte_56F
 
-loc_12A786:				; CODE XREF: com_29_start_new_game_12A646+125j
+loc_12A786:				
 					; com_29_start_new_game_12A646+127j ...
 		LDA	byte_56F
 		STA	array_unk_3C5,X
@@ -3380,22 +3380,22 @@ loc_12A786:				; CODE XREF: com_29_start_new_game_12A646+125j
 		LDA	byte_572
 		STA	array_unk_3CF,X
 
-loc_12A79E:				; CODE XREF: com_29_start_new_game_12A646+117j
+loc_12A79E:				
 					; com_29_start_new_game_12A646+11Ej
 		LDA	entry_idx_300
-		CMP	#$5D ; ']'
+		CMP	#$5D 
 		BNE	loc_12A7F7
 		LDA	objIdxArray_375,X
 		CMP	#3
 		BNE	loc_12A7F7
 		LDA	byte_573
-		CMP	#$90 ; '�'
+		CMP	#$90 
 		BNE	loc_12A7CB
 		LDA	byte_574
 		CMP	#1
 		BNE	loc_12A7CB
 		LDA	byte_575
-		CMP	#$B0 ; '�'
+		CMP	#$B0 
 		BNE	loc_12A7CB
 		LDA	byte_576
 		CMP	#0
@@ -3403,18 +3403,18 @@ loc_12A79E:				; CODE XREF: com_29_start_new_game_12A646+117j
 		JMP	loc_12A7DF
 ; ---------------------------------------------------------------------------
 
-loc_12A7CB:				; CODE XREF: com_29_start_new_game_12A646+16Bj
+loc_12A7CB:				
 					; com_29_start_new_game_12A646+172j ...
 		LDA	#0
 		STA	byte_573
 		LDA	#1
 		STA	byte_574
-		LDA	#$60 ; '`'
+		LDA	#$60 
 		STA	byte_575
 		LDA	#0
 		STA	byte_576
 
-loc_12A7DF:				; CODE XREF: com_29_start_new_game_12A646+182j
+loc_12A7DF:				
 		LDA	byte_573
 		STA	array_unk_3C5,X
 		LDA	byte_574
@@ -3424,7 +3424,7 @@ loc_12A7DF:				; CODE XREF: com_29_start_new_game_12A646+182j
 		LDA	byte_576
 		STA	array_unk_3CF,X
 
-loc_12A7F7:				; CODE XREF: com_29_start_new_game_12A646+15Dj
+loc_12A7F7:				
 					; com_29_start_new_game_12A646+164j
 		LDA	objIdxArray_375,X
 		CMP	#6
@@ -3434,7 +3434,7 @@ loc_12A7F7:				; CODE XREF: com_29_start_new_game_12A646+15Dj
 		LDA	#0
 		STA	array_unk_39D,X
 
-loc_12A809:				; CODE XREF: com_29_start_new_game_12A646+1B6j
+loc_12A809:				
 		LDA	objIdxArray_375,X
 		CMP	#7
 		BNE	loc_12A81B
@@ -3443,7 +3443,7 @@ loc_12A809:				; CODE XREF: com_29_start_new_game_12A646+1B6j
 		LDA	#0
 		STA	array_unk_39D,X
 
-loc_12A81B:				; CODE XREF: com_29_start_new_game_12A646+1C8j
+loc_12A81B:				
 		TYA
 		CLC
 		ADC	ptr_0
@@ -3459,7 +3459,7 @@ loc_12A81B:				; CODE XREF: com_29_start_new_game_12A646+1C8j
 		LDA	#$FF
 		STA	objCreatedArray_393,X
 
-loc_12A839:				; CODE XREF: com_29_start_new_game_12A646+1E9j
+loc_12A839:				
 		PLA
 		STA	data_3
 		PLA
@@ -3471,9 +3471,9 @@ loc_12A839:				; CODE XREF: com_29_start_new_game_12A646+1E9j
 		JMP	loc_12A69D
 ; ---------------------------------------------------------------------------
 
-loc_12A84D:				; CODE XREF: com_29_start_new_game_12A646+202j
+loc_12A84D:				
 		LDA	entry_idx_300
-		CMP	#$6A ; 'j'
+		CMP	#$6A 
 		BNE	locret_12A892
 		LDA	byte_577
 		CMP	#$FF
@@ -3481,7 +3481,7 @@ loc_12A84D:				; CODE XREF: com_29_start_new_game_12A646+202j
 		LDY	#0
 		LDX	#0
 
-loc_12A85F:				; CODE XREF: com_29_start_new_game_12A646+224j
+loc_12A85F:				
 					; com_29_start_new_game_12A646+244j
 		LDA	objIdxArray_375,X
 		CMP	#3
@@ -3492,7 +3492,7 @@ loc_12A85F:				; CODE XREF: com_29_start_new_game_12A646+224j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12A86D:				; CODE XREF: com_29_start_new_game_12A646+21Ej
+loc_12A86D:				
 		LDA	byte_578,Y
 		STA	array_unk_3C5,X
 		LDA	byte_57B,Y
@@ -3508,11 +3508,11 @@ loc_12A86D:				; CODE XREF: com_29_start_new_game_12A646+21Ej
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12A88D:				; CODE XREF: com_29_start_new_game_12A646+213j
+loc_12A88D:				
 		LDA	#0
 		STA	byte_577
 
-locret_12A892:				; CODE XREF: com_29_start_new_game_12A646+20Cj
+locret_12A892:				
 		RTS
 ; End of function com_29_start_new_game_12A646
 
@@ -3520,7 +3520,7 @@ locret_12A892:				; CODE XREF: com_29_start_new_game_12A646+20Cj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12A893:				; CODE XREF: com_29_start_new_game_12A646+1E1p
+sub_12A893:				
 		LDA	#0
 		STA	byte_36F
 		STA	byte_370
@@ -3545,7 +3545,7 @@ sub_12A893:				; CODE XREF: com_29_start_new_game_12A646+1E1p
 		JMP	loc_12A933
 ; ---------------------------------------------------------------------------
 
-loc_12A8C1:				; CODE XREF: sub_12A893+24j
+loc_12A8C1:				
 		LDA	data_2
 		CLC
 		ADC	#1
@@ -3556,7 +3556,7 @@ loc_12A8C1:				; CODE XREF: sub_12A893+24j
 		LDA	#0
 		STA	inv_spr_dscr1_30C
 
-loc_12A8D3:				; CODE XREF: sub_12A893+9Ej
+loc_12A8D3:				
 		LDA	inv_spr_dscr1_30C
 		ASL	A
 		TAY
@@ -3567,7 +3567,7 @@ loc_12A8D3:				; CODE XREF: sub_12A893+9Ej
 		STA	ptr_1
 		LDY	#0
 
-loc_12A8E3:				; CODE XREF: sub_12A893+89j
+loc_12A8E3:				
 		LDA	(ptr_0),Y
 		STA	tilemapFrameCount_30D
 		INY
@@ -3581,7 +3581,7 @@ loc_12A8E3:				; CODE XREF: sub_12A893+89j
 		CMP	#$FF
 		BEQ	loc_12A91F
 
-loc_12A8FD:				; CODE XREF: sub_12A893+61j
+loc_12A8FD:				
 		LDA	byte_370
 		CLC
 		ADC	tilemapFrameCount_30D
@@ -3596,7 +3596,7 @@ loc_12A8FD:				; CODE XREF: sub_12A893+61j
 		JMP	loc_12A8E3
 ; ---------------------------------------------------------------------------
 
-loc_12A91F:				; CODE XREF: sub_12A893+68j
+loc_12A91F:				
 		LDA	byte_36F
 		AND	tilemapFrameCount_30D
 		STA	byte_36F
@@ -3605,7 +3605,7 @@ loc_12A91F:				; CODE XREF: sub_12A893+68j
 		CMP	tilemapTypeUnk_30B
 		BCC	loc_12A8D3
 
-loc_12A933:				; CODE XREF: sub_12A893+2Bj
+loc_12A933:				
 		PLA
 		STA	inv_spr_dscr1_30C
 		PLA
@@ -3623,14 +3623,14 @@ loc_12A933:				; CODE XREF: sub_12A893+2Bj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12A944:				; CODE XREF: sub_12A893+7Dp
+sub_12A944:				
 		LDA	ptr_0
 		PHA
 		LDA	ptr_1
 		PHA
 		TYA
 		PHA
-		LDA	#$98 ; '�'
+		LDA	#$98 
 		STA	ptr_0
 		LDA	#5
 		STA	ptr_1
@@ -3657,7 +3657,7 @@ sub_12A944:				; CODE XREF: sub_12A893+7Dp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_c0_12A973:			; CODE XREF: sub_12873A+C0p
+exec_b0_c0_12A973:			
 					; sub_12873A+124p ...
 		LDA	bank_from_343
 		PHA
@@ -3677,7 +3677,7 @@ exec_b0_c0_12A973:			; CODE XREF: sub_12873A+C0p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_c1_12A98E:			; CODE XREF: sub_12B1E3+31p
+exec_b0_c1_12A98E:			
 					; sub_12B225+31p ...
 		LDA	bank_from_343
 		PHA
@@ -3697,7 +3697,7 @@ exec_b0_c1_12A98E:			; CODE XREF: sub_12B1E3+31p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b0_c2_12A9A9:			; CODE XREF: sub_12873A+19Cp
+exec_b0_c2_12A9A9:			
 					; sub_128A1A+ECp ...
 		LDA	bank_from_343
 		PHA
@@ -3717,9 +3717,9 @@ exec_b0_c2_12A9A9:			; CODE XREF: sub_12873A+19Cp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-com_17_player_update_12A9C4:		; CODE XREF: command_0_1280FB:command_17_player_update_128185p
+com_17_player_update_12A9C4:		
 		LDA	entry_idx_300
-		CMP	#$46 ; 'F'
+		CMP	#$46 
 		BNE	loc_12AA0E
 		LDA	byte_560
 		CMP	#$FF
@@ -3740,61 +3740,61 @@ com_17_player_update_12A9C4:		; CODE XREF: command_0_1280FB:command_17_player_up
 		STA	byte_356
 		LDA	byte_54B
 		AND	#$F
-		ORA	#$F0 ; '�'
+		ORA	#$F0 
 		STA	byte_54B
 		INC	byte_54B
 		LDA	byte_54B
-		CMP	#$F2 ; '�'
+		CMP	#$F2 
 		BCC	locret_12AA0D
 
 set_game_finished_12AA08:
 		LDA	#$FF
 		STA	is_game_finished_561
 
-locret_12AA0D:				; CODE XREF: com_17_player_update_12A9C4+Cj
+locret_12AA0D:				
 					; com_17_player_update_12A9C4+13j ...
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AA0E:				; CODE XREF: com_17_player_update_12A9C4+5j
+loc_12AA0E:				
 		LDA	entry_idx_300
-		CMP	#$41 ; 'A'
+		CMP	#$41 
 		BNE	loc_12AA1B
 		LDA	#0
 		STA	byte_560
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AA1B:				; CODE XREF: com_17_player_update_12A9C4+4Fj
+loc_12AA1B:				
 		LDA	entry_idx_300
-		CMP	#$2F ; '/'
+		CMP	#$2F 
 		BEQ	locret_12AA6C
 		LDA	entry_idx_300
-		CMP	#$5C ; '\'
+		CMP	#$5C 
 		BEQ	locret_12AA6C
-		CMP	#$93 ; '�'
+		CMP	#$93 
 		BEQ	locret_12AA6C
 		LDA	byte_56F
-		CMP	#$B0 ; '�'
+		CMP	#$B0 
 		BNE	loc_12AA3E
 		LDA	byte_571
-		CMP	#$60 ; '`'
+		CMP	#$60 
 		BNE	loc_12AA3E
 		JMP	loc_12AA52
 ; ---------------------------------------------------------------------------
 
-loc_12AA3E:				; CODE XREF: com_17_player_update_12A9C4+6Ej
+loc_12AA3E:				
 					; com_17_player_update_12A9C4+75j
-		LDA	#$20 ; ' '
+		LDA	#$20 
 		STA	byte_56F
 		LDA	#0
 		STA	byte_570
-		LDA	#$A0 ; '�'
+		LDA	#$A0 
 		STA	byte_571
 		LDA	#0
 		STA	byte_572
 
-loc_12AA52:				; CODE XREF: com_17_player_update_12A9C4+77j
+loc_12AA52:				
 		LDA	#0
 		STA	byte_555
 		STA	byte_556
@@ -3805,7 +3805,7 @@ loc_12AA52:				; CODE XREF: com_17_player_update_12A9C4+77j
 		STA	byte_627
 		STA	byte_628
 
-locret_12AA6C:				; CODE XREF: com_17_player_update_12A9C4+5Cj
+locret_12AA6C:				
 					; com_17_player_update_12A9C4+63j ...
 		RTS
 ; End of function com_17_player_update_12A9C4
@@ -3814,188 +3814,188 @@ locret_12AA6C:				; CODE XREF: com_17_player_update_12A9C4+5Cj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-entry_idx_handler_unk_12AA6D:		; CODE XREF: command_0_1280FB:command_9_check_level_128131p
+entry_idx_handler_unk_12AA6D:		
 					; sub_12ACDB+A0p ...
 		LDA	entry_idx_300
-		CMP	#$83 ; '�'
+		CMP	#$83 
 		BNE	check_room_7D_12AA81
 		LDA	byte_595
 		CMP	#0
 		BEQ	locret_12AA80
-		LDA	#$96 ; '�'
+		LDA	#$96 
 		STA	entry_idx_300
 
-locret_12AA80:				; CODE XREF: entry_idx_handler_unk_12AA6D+Cj
+locret_12AA80:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_7D_12AA81:			; CODE XREF: entry_idx_handler_unk_12AA6D+5j
+check_room_7D_12AA81:			
 		LDA	entry_idx_300
-		CMP	#$7D ; '}'
+		CMP	#$7D 
 		BNE	check_room_95_12AA95
 		LDA	byte_594
 		CMP	#0
 		BEQ	locret_12AA94
-		LDA	#$95 ; '�'
+		LDA	#$95 
 		STA	entry_idx_300
 
-locret_12AA94:				; CODE XREF: entry_idx_handler_unk_12AA6D+20j
+locret_12AA94:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_95_12AA95:			; CODE XREF: entry_idx_handler_unk_12AA6D+19j
+check_room_95_12AA95:			
 		LDA	entry_idx_300
-		CMP	#$95 ; '�'
+		CMP	#$95 
 		BNE	check_room_76_12AAA9
 		LDA	byte_594
 		CMP	#0
 		BNE	locret_12AAA8
-		LDA	#$7D ; '}'
+		LDA	#$7D 
 		STA	entry_idx_300
 
-locret_12AAA8:				; CODE XREF: entry_idx_handler_unk_12AA6D+34j
+locret_12AAA8:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_76_12AAA9:			; CODE XREF: entry_idx_handler_unk_12AA6D+2Dj
+check_room_76_12AAA9:			
 		LDA	entry_idx_300
-		CMP	#$76 ; 'v'
+		CMP	#$76 
 		BNE	check_room_94_12AABD
 		LDA	byte_593
 		CMP	#0
 		BEQ	locret_12AABC
-		LDA	#$94 ; '�'
+		LDA	#$94 
 		STA	entry_idx_300
 
-locret_12AABC:				; CODE XREF: entry_idx_handler_unk_12AA6D+48j
+locret_12AABC:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_94_12AABD:			; CODE XREF: entry_idx_handler_unk_12AA6D+41j
+check_room_94_12AABD:			
 		LDA	entry_idx_300
-		CMP	#$94 ; '�'
+		CMP	#$94 
 		BNE	check_room_53_12AAD1
 		LDA	byte_593
 		CMP	#0
 		BNE	locret_12AAD0
-		LDA	#$76 ; 'v'
+		LDA	#$76 
 		STA	entry_idx_300
 
-locret_12AAD0:				; CODE XREF: entry_idx_handler_unk_12AA6D+5Cj
+locret_12AAD0:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_53_12AAD1:			; CODE XREF: entry_idx_handler_unk_12AA6D+55j
+check_room_53_12AAD1:			
 		LDA	entry_idx_300
-		CMP	#$53 ; 'S'
+		CMP	#$53 
 		BNE	check_room_90_12AAE5
 		LDA	byte_58C
 		CMP	#$FF
 		BNE	locret_12AAE4
-		LDA	#$90 ; '�'
+		LDA	#$90 
 		STA	entry_idx_300
 
-locret_12AAE4:				; CODE XREF: entry_idx_handler_unk_12AA6D+70j
+locret_12AAE4:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_90_12AAE5:			; CODE XREF: entry_idx_handler_unk_12AA6D+69j
+check_room_90_12AAE5:			
 		LDA	entry_idx_300
-		CMP	#$90 ; '�'
+		CMP	#$90 
 		BNE	check_room_3D_12AAF9
 		LDA	byte_58C
 		CMP	#$FF
 		BEQ	locret_12AAF8
-		LDA	#$53 ; 'S'
+		LDA	#$53 
 		STA	entry_idx_300
 
-locret_12AAF8:				; CODE XREF: entry_idx_handler_unk_12AA6D+84j
+locret_12AAF8:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_3D_12AAF9:			; CODE XREF: entry_idx_handler_unk_12AA6D+7Dj
+check_room_3D_12AAF9:			
 		LDA	entry_idx_300
-		CMP	#$3D ; '='
+		CMP	#$3D 
 		BNE	check_room_44_12AB0D
 		LDA	byte_58A
 		CMP	#$FF
 		BNE	locret_12AB0C
-		LDA	#$8B ; '�'
+		LDA	#$8B 
 		STA	entry_idx_300
 
-locret_12AB0C:				; CODE XREF: entry_idx_handler_unk_12AA6D+98j
+locret_12AB0C:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_44_12AB0D:			; CODE XREF: entry_idx_handler_unk_12AA6D+91j
+check_room_44_12AB0D:			
 		LDA	entry_idx_300
-		CMP	#$44 ; 'D'
+		CMP	#$44 
 		BNE	check_room_9C_12AB21
 		LDA	byte_58B
 		CMP	#0
 		BEQ	locret_12AB20
-		LDA	#$9C ; '�'
+		LDA	#$9C 
 		STA	entry_idx_300
 
-locret_12AB20:				; CODE XREF: entry_idx_handler_unk_12AA6D+ACj
+locret_12AB20:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_9C_12AB21:			; CODE XREF: entry_idx_handler_unk_12AA6D+A5j
+check_room_9C_12AB21:			
 		LDA	entry_idx_300
-		CMP	#$9C ; '�'
+		CMP	#$9C 
 		BNE	check_room_38_12AB35
 		LDA	byte_58B
 		CMP	#0
 		BNE	locret_12AB34
-		LDA	#$44 ; 'D'
+		LDA	#$44 
 		STA	entry_idx_300
 
-locret_12AB34:				; CODE XREF: entry_idx_handler_unk_12AA6D+C0j
+locret_12AB34:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_38_12AB35:			; CODE XREF: entry_idx_handler_unk_12AA6D+B9j
+check_room_38_12AB35:			
 		LDA	entry_idx_300
-		CMP	#$38 ; '8'
+		CMP	#$38 
 		BNE	check_room_8A_12AB49
 		LDA	byte_589
 		CMP	#0
 		BEQ	locret_12AB48
-		LDA	#$8A ; '�'
+		LDA	#$8A 
 		STA	entry_idx_300
 
-locret_12AB48:				; CODE XREF: entry_idx_handler_unk_12AA6D+D4j
+locret_12AB48:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_8A_12AB49:			; CODE XREF: entry_idx_handler_unk_12AA6D+CDj
+check_room_8A_12AB49:			
 		LDA	entry_idx_300
-		CMP	#$8A ; '�'
+		CMP	#$8A 
 		BNE	check_room_2F_12AB5D
 		LDA	byte_589
 		CMP	#$FF
 		BEQ	locret_12AB5C
-		LDA	#$38 ; '8'
+		LDA	#$38 
 		STA	entry_idx_300
 
-locret_12AB5C:				; CODE XREF: entry_idx_handler_unk_12AA6D+E8j
+locret_12AB5C:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_2F_12AB5D:			; CODE XREF: entry_idx_handler_unk_12AA6D+E1j
+check_room_2F_12AB5D:			
 		LDA	entry_idx_300
-		CMP	#$2F ; '/'
+		CMP	#$2F 
 		BNE	check_room_1A_12AB71
 		LDA	byte_55B
 		CMP	#0
 		BEQ	check_room_1A_12AB71
-		LDA	#$89 ; '�'
+		LDA	#$89 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_1A_12AB71:			; CODE XREF: entry_idx_handler_unk_12AA6D+F5j
+check_room_1A_12AB71:			
 					; entry_idx_handler_unk_12AA6D+FCj
 		LDA	entry_idx_300
 		CMP	#$1A
@@ -4003,12 +4003,12 @@ check_room_1A_12AB71:			; CODE XREF: entry_idx_handler_unk_12AA6D+F5j
 		LDA	byte_55F
 		CMP	#0
 		BEQ	check_room_17_12AB85
-		LDA	#$86 ; '�'
+		LDA	#$86 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_17_12AB85:			; CODE XREF: entry_idx_handler_unk_12AA6D+109j
+check_room_17_12AB85:			
 					; entry_idx_handler_unk_12AA6D+110j
 		LDA	entry_idx_300
 		CMP	#$17
@@ -4016,116 +4016,116 @@ check_room_17_12AB85:			; CODE XREF: entry_idx_handler_unk_12AA6D+109j
 		LDA	byte_5A9
 		CMP	#0
 		BEQ	check_room_4F_12AB99
-		LDA	#$85 ; '�'
+		LDA	#$85 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_4F_12AB99:			; CODE XREF: entry_idx_handler_unk_12AA6D+11Dj
+check_room_4F_12AB99:			
 					; entry_idx_handler_unk_12AA6D+124j
 		LDA	entry_idx_300
-		CMP	#$4F ; 'O'
+		CMP	#$4F 
 		BNE	check_room_50_12ABAD
 		LDA	byte_565
 		CMP	#0
 		BEQ	check_room_50_12ABAD
-		LDA	#$8D ; '�'
+		LDA	#$8D 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_50_12ABAD:			; CODE XREF: entry_idx_handler_unk_12AA6D+131j
+check_room_50_12ABAD:			
 					; entry_idx_handler_unk_12AA6D+138j
 		LDA	entry_idx_300
-		CMP	#$50 ; 'P'
+		CMP	#$50 
 		BNE	check_room_8D_12ABC1
 		LDA	byte_565
 		CMP	#0
 		BNE	check_room_8D_12ABC1
-		LDA	#$8E ; '�'
+		LDA	#$8E 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_8D_12ABC1:			; CODE XREF: entry_idx_handler_unk_12AA6D+145j
+check_room_8D_12ABC1:			
 					; entry_idx_handler_unk_12AA6D+14Cj
 		LDA	entry_idx_300
-		CMP	#$8D ; '�'
+		CMP	#$8D 
 		BNE	check_room_8E_12ABD5
 		LDA	byte_565
 		CMP	#0
 		BNE	check_room_8E_12ABD5
-		LDA	#$4F ; 'O'
+		LDA	#$4F 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_8E_12ABD5:			; CODE XREF: entry_idx_handler_unk_12AA6D+159j
+check_room_8E_12ABD5:			
 					; entry_idx_handler_unk_12AA6D+160j
 		LDA	entry_idx_300
-		CMP	#$8E ; '�'
+		CMP	#$8E 
 		BNE	check_room_60_12ABE9
 		LDA	byte_565
 		CMP	#0
 		BEQ	check_room_60_12ABE9
-		LDA	#$50 ; 'P'
+		LDA	#$50 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_60_12ABE9:			; CODE XREF: entry_idx_handler_unk_12AA6D+16Dj
+check_room_60_12ABE9:			
 					; entry_idx_handler_unk_12AA6D+174j
 		LDA	entry_idx_300
-		CMP	#$60 ; '`'
+		CMP	#$60 
 		BNE	check_room_6B_12ABFD
 		LDA	byte_566
 		CMP	#0
 		BEQ	check_room_6B_12ABFD
-		LDA	#$97 ; '�'
+		LDA	#$97 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_6B_12ABFD:			; CODE XREF: entry_idx_handler_unk_12AA6D+181j
+check_room_6B_12ABFD:			
 					; entry_idx_handler_unk_12AA6D+188j
 		LDA	entry_idx_300
-		CMP	#$6B ; 'k'
+		CMP	#$6B 
 		BNE	check_room_67_12AC11
 		LDA	byte_585
 		CMP	#0
 		BEQ	check_room_67_12AC11
-		LDA	#$99 ; '�'
+		LDA	#$99 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_67_12AC11:			; CODE XREF: entry_idx_handler_unk_12AA6D+195j
+check_room_67_12AC11:			
 					; entry_idx_handler_unk_12AA6D+19Cj
 		LDA	entry_idx_300
-		CMP	#$67 ; 'g'
+		CMP	#$67 
 		BNE	check_room_69_12AC25
 		LDA	byte_586
 		CMP	#0
 		BEQ	check_room_69_12AC25
-		LDA	#$9B ; '�'
+		LDA	#$9B 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_69_12AC25:			; CODE XREF: entry_idx_handler_unk_12AA6D+1A9j
+check_room_69_12AC25:			
 					; entry_idx_handler_unk_12AA6D+1B0j
 		LDA	entry_idx_300
-		CMP	#$69 ; 'i'
+		CMP	#$69 
 		BNE	check_room_1C_12AC39
 		LDA	byte_587
 		CMP	#0
 		BEQ	check_room_1C_12AC39
-		LDA	#$98 ; '�'
+		LDA	#$98 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_1C_12AC39:			; CODE XREF: entry_idx_handler_unk_12AA6D+1BDj
+check_room_1C_12AC39:			
 					; entry_idx_handler_unk_12AA6D+1C4j
 		LDA	entry_idx_300
 		CMP	#$1C
@@ -4133,103 +4133,103 @@ check_room_1C_12AC39:			; CODE XREF: entry_idx_handler_unk_12AA6D+1BDj
 		LDA	byte_588
 		CMP	#0
 		BEQ	check_room_57_12AC4D
-		LDA	#$87 ; '�'
+		LDA	#$87 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_57_12AC4D:			; CODE XREF: entry_idx_handler_unk_12AA6D+1D1j
+check_room_57_12AC4D:			
 					; entry_idx_handler_unk_12AA6D+1D8j
 		LDA	entry_idx_300
-		CMP	#$57 ; 'W'
+		CMP	#$57 
 		BNE	check_room_91_12AC61
 		LDA	byte_646
 		CMP	#0
 		BNE	check_room_91_12AC61
-		LDA	#$91 ; '�'
+		LDA	#$91 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_91_12AC61:			; CODE XREF: entry_idx_handler_unk_12AA6D+1E5j
+check_room_91_12AC61:			
 					; entry_idx_handler_unk_12AA6D+1ECj
 		LDA	entry_idx_300
-		CMP	#$91 ; '�'
+		CMP	#$91 
 		BNE	check_room_5B_12AC75
 		LDA	byte_646
 		CMP	#0
 		BEQ	check_room_5B_12AC75
-		LDA	#$57 ; 'W'
+		LDA	#$57 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_5B_12AC75:			; CODE XREF: entry_idx_handler_unk_12AA6D+1F9j
+check_room_5B_12AC75:			
 					; entry_idx_handler_unk_12AA6D+200j
 		LDA	entry_idx_300
-		CMP	#$5B ; '['
+		CMP	#$5B 
 		BNE	check_room_5C_12AC89
 		LDA	byte_58F
 		CMP	#0
 		BEQ	check_room_5C_12AC89
-		LDA	#$92 ; '�'
+		LDA	#$92 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_5C_12AC89:			; CODE XREF: entry_idx_handler_unk_12AA6D+20Dj
+check_room_5C_12AC89:			
 					; entry_idx_handler_unk_12AA6D+214j
 		LDA	entry_idx_300
-		CMP	#$5C ; '\'
+		CMP	#$5C 
 		BNE	check_room_92_12AC9D
 		LDA	byte_590
 		CMP	#0
 		BEQ	check_room_92_12AC9D
-		LDA	#$93 ; '�'
+		LDA	#$93 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_92_12AC9D:			; CODE XREF: entry_idx_handler_unk_12AA6D+221j
+check_room_92_12AC9D:			
 					; entry_idx_handler_unk_12AA6D+228j
 		LDA	entry_idx_300
-		CMP	#$92 ; '�'
+		CMP	#$92 
 		BNE	check_room_93_12ACB1
 		LDA	byte_58F
 		CMP	#0
 		BNE	check_room_93_12ACB1
-		LDA	#$5B ; '['
+		LDA	#$5B 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_93_12ACB1:			; CODE XREF: entry_idx_handler_unk_12AA6D+235j
+check_room_93_12ACB1:			
 					; entry_idx_handler_unk_12AA6D+23Cj
 		LDA	entry_idx_300
-		CMP	#$93 ; '�'
+		CMP	#$93 
 		BNE	check_room_52_12ACC5
 		LDA	byte_590
 		CMP	#0
 		BNE	check_room_52_12ACC5
-		LDA	#$5C ; '\'
+		LDA	#$5C 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-check_room_52_12ACC5:			; CODE XREF: entry_idx_handler_unk_12AA6D+249j
+check_room_52_12ACC5:			
 					; entry_idx_handler_unk_12AA6D+250j
 		LDA	entry_idx_300
-		CMP	#$52 ; 'R'
+		CMP	#$52 
 		BNE	locret_12ACDA
 		LDA	byte_591
 		AND	byte_592
 		BEQ	locret_12ACDA
-		LDA	#$8F ; '�'
+		LDA	#$8F 
 		STA	entry_idx_300
 		RTS
 ; ---------------------------------------------------------------------------
 
-locret_12ACDA:				; CODE XREF: entry_idx_handler_unk_12AA6D+25Dj
+locret_12ACDA:				
 					; entry_idx_handler_unk_12AA6D+265j
 		RTS
 ; End of function entry_idx_handler_unk_12AA6D
@@ -4238,7 +4238,7 @@ locret_12ACDA:				; CODE XREF: entry_idx_handler_unk_12AA6D+25Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12ACDB:				; CODE XREF: command_0_1280FB:command_11_close_inventory_128161p
+sub_12ACDB:				
 		LDA	byte_46E
 
 is_save_game_12ACDE:
@@ -4248,9 +4248,9 @@ is_save_game_12ACDE:
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12ACE6:				; CODE XREF: sub_12ACDB+5j
+loc_12ACE6:				
 		LDA	byte_46E
-		CMP	#$2F ; '/'
+		CMP	#$2F 
 		BNE	loc_12AD06
 		LDA	#$FF
 		STA	byte_6A6
@@ -4264,60 +4264,60 @@ loc_12ACE6:				; CODE XREF: sub_12ACDB+5j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AD06:				; CODE XREF: sub_12ACDB+10j
+loc_12AD06:				
 		LDA	byte_46E
-		CMP	#$30 ; '0'
+		CMP	#$30 
 		BNE	loc_12AD65
 		LDA	entry_idx_300
-		CMP	#$77 ; 'w'
+		CMP	#$77 
 		BNE	loc_12AD27
 		LDA	#$FF
 		STA	byte_68D
 		LDX	byte_4D0
-		LDA	#$4D ; 'M'
+		LDA	#$4D 
 		STA	unk_4C2,X
 		INC	byte_4D0
 		JMP	loc_12AD58
 ; ---------------------------------------------------------------------------
 
-loc_12AD27:				; CODE XREF: sub_12ACDB+37j
+loc_12AD27:				
 		LDA	entry_idx_300
-		CMP	#$7B ; '{'
+		CMP	#$7B 
 		BNE	loc_12AD41
 		LDA	#$FF
 		STA	byte_68E
 		LDX	byte_4D0
-		LDA	#$4E ; 'N'
+		LDA	#$4E 
 		STA	unk_4C2,X
 		INC	byte_4D0
 		JMP	loc_12AD58
 ; ---------------------------------------------------------------------------
 
-loc_12AD41:				; CODE XREF: sub_12ACDB+51j
+loc_12AD41:				
 		LDA	entry_idx_300
-		CMP	#$80 ; '�'
+		CMP	#$80 
 		BNE	locret_12AD64
 		LDA	#$FF
 		STA	byte_68F
 		LDX	byte_4D0
-		LDA	#$4F ; 'O'
+		LDA	#$4F 
 		STA	unk_4C2,X
 		INC	byte_4D0
 
-loc_12AD58:				; CODE XREF: sub_12ACDB+49j
+loc_12AD58:				
 					; sub_12ACDB+63j
 		LDA	byte_68D
 		AND	byte_68E
 		AND	byte_68F
 		STA	byte_6A4
 
-locret_12AD64:				; CODE XREF: sub_12ACDB+6Bj
+locret_12AD64:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AD65:				; CODE XREF: sub_12ACDB+30j
+loc_12AD65:				
 		LDA	byte_46E
-		CMP	#$27 ; '''
+		CMP	#$27 
 		BNE	loc_12ADA0
 		LDA	#$FF
 		STA	byte_591
@@ -4338,13 +4338,13 @@ loc_12AD65:				; CODE XREF: sub_12ACDB+30j
 		STA	ppu_prev_scroll_y_unk_4A8
 		JSR	exec_b0_c2_12A9A9
 
-locret_12AD9F:				; CODE XREF: sub_12ACDB+9Ej
+locret_12AD9F:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12ADA0:				; CODE XREF: sub_12ACDB+8Fj
+loc_12ADA0:				
 		LDA	byte_46E
-		CMP	#$28 ; '('
+		CMP	#$28 
 		BNE	loc_12ADDB
 		LDA	#$FF
 		STA	byte_592
@@ -4365,20 +4365,20 @@ loc_12ADA0:				; CODE XREF: sub_12ACDB+8Fj
 		STA	ppu_prev_scroll_y_unk_4A8
 		JSR	exec_b0_c2_12A9A9
 
-locret_12ADDA:				; CODE XREF: sub_12ACDB+D9j
+locret_12ADDA:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12ADDB:				; CODE XREF: sub_12ACDB+CAj
+loc_12ADDB:				
 		LDA	byte_46E
-		CMP	#$39 ; '9'
+		CMP	#$39 
 		BNE	loc_12ADE8
 		LDA	#$FF
 		STA	byte_587
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12ADE8:				; CODE XREF: sub_12ACDB+105j
+loc_12ADE8:				
 		LDA	byte_46E
 		CMP	#0
 		BNE	loc_12ADF5
@@ -4387,7 +4387,7 @@ loc_12ADE8:				; CODE XREF: sub_12ACDB+105j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12ADF5:				; CODE XREF: sub_12ACDB+112j
+loc_12ADF5:				
 		LDA	byte_46E
 		CMP	#$15
 		BNE	loc_12AE02
@@ -4396,7 +4396,7 @@ loc_12ADF5:				; CODE XREF: sub_12ACDB+112j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AE02:				; CODE XREF: sub_12ACDB+11Fj
+loc_12AE02:				
 		LDA	byte_46E
 		CMP	#$16
 		BNE	loc_12AE0F
@@ -4405,18 +4405,18 @@ loc_12AE02:				; CODE XREF: sub_12ACDB+11Fj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AE0F:				; CODE XREF: sub_12ACDB+12Cj
+loc_12AE0F:				
 		LDA	byte_46E
-		CMP	#$2A ; '*'
+		CMP	#$2A 
 		BNE	loc_12AE6C
 		LDA	entry_idx_300
-		CMP	#$53 ; 'S'
+		CMP	#$53 
 		BEQ	loc_12AE3F
-		CMP	#$90 ; '�'
+		CMP	#$90 
 		BEQ	loc_12AE3F
-		CMP	#$5C ; '\'
+		CMP	#$5C 
 		BEQ	loc_12AE34
-		CMP	#$93 ; '�'
+		CMP	#$93 
 		BEQ	loc_12AE34
 		LDA	byte_58F
 		EOR	#$FF
@@ -4424,7 +4424,7 @@ loc_12AE0F:				; CODE XREF: sub_12ACDB+12Cj
 		JMP	loc_12AE47
 ; ---------------------------------------------------------------------------
 
-loc_12AE34:				; CODE XREF: sub_12ACDB+148j
+loc_12AE34:				
 					; sub_12ACDB+14Cj
 		LDA	byte_590
 		EOR	#$FF
@@ -4432,13 +4432,13 @@ loc_12AE34:				; CODE XREF: sub_12ACDB+148j
 		JMP	loc_12AE47
 ; ---------------------------------------------------------------------------
 
-loc_12AE3F:				; CODE XREF: sub_12ACDB+140j
+loc_12AE3F:				
 					; sub_12ACDB+144j
 		LDA	byte_58C
 		EOR	#$FF
 		STA	byte_58C
 
-loc_12AE47:				; CODE XREF: sub_12ACDB+156j
+loc_12AE47:				
 					; sub_12ACDB+161j
 		JSR	entry_idx_handler_unk_12AA6D
 		LDA	entry_idx_300
@@ -4455,16 +4455,16 @@ loc_12AE47:				; CODE XREF: sub_12ACDB+156j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AE6C:				; CODE XREF: sub_12ACDB+139j
+loc_12AE6C:				
 		LDA	byte_46E
-		CMP	#$2E ; '.'
+		CMP	#$2E 
 		BEQ	loc_12AE76
 		JMP	loc_12AF01
 ; ---------------------------------------------------------------------------
 
-loc_12AE76:				; CODE XREF: sub_12ACDB+196j
+loc_12AE76:				
 		LDA	entry_idx_300
-		CMP	#$70 ; 'p'
+		CMP	#$70 
 		BEQ	loc_12AE86
 		LDA	#$FF
 		STA	byte_636
@@ -4472,13 +4472,13 @@ loc_12AE76:				; CODE XREF: sub_12ACDB+196j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AE86:				; CODE XREF: sub_12ACDB+1A0j
+loc_12AE86:				
 		LDA	#$FF
 		STA	byte_6CA
 		LDA	#1
 		STA	byte_313
 		JSR	exec_b0_c9_1284AA
-		LDA	#$81 ; '�'
+		LDA	#$81 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -4503,7 +4503,7 @@ loc_12AE86:				; CODE XREF: sub_12ACDB+1A0j
 		LDA	#1
 		STA	tilemap_line_idx_4F
 		JSR	exec_b0_cB_1284E0
-		LDA	#$84 ; '�'
+		LDA	#$84 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -4512,7 +4512,7 @@ loc_12AE86:				; CODE XREF: sub_12ACDB+1A0j
 		JSR	exec_b0_c0_12A973
 
 set_helipad_level_12AEDD:
-		LDA	#$9A ; '�'
+		LDA	#$9A 
 		STA	image_id_4A4
 		LDA	#0
 		STA	image_offset_4A5
@@ -4520,15 +4520,15 @@ set_helipad_level_12AEDD:
 		STA	ppu_prev_scroll_x_unk_4A7
 		STA	ppu_prev_scroll_y_unk_4A8
 		STA	prev_sprite_type_4A9
-		LDA	#$40 ; '@'
+		LDA	#$40 
 		STA	byte_4AD
-		LDA	#$50 ; 'P'
+		LDA	#$50 
 		STA	byte_4AE
 		JSR	exec_b0_c2_12A9A9
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AF01:				; CODE XREF: sub_12ACDB+198j
+loc_12AF01:				
 		LDA	byte_46E
 		CMP	#2
 		BNE	loc_12AF16
@@ -4540,9 +4540,9 @@ loc_12AF01:				; CODE XREF: sub_12ACDB+198j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AF16:				; CODE XREF: sub_12ACDB+22Bj
+loc_12AF16:				
 		LDA	byte_46E
-		CMP	#$3B ; ';'
+		CMP	#$3B 
 		BNE	loc_12AF2B
 		LDA	#$FF
 		STA	byte_5F9
@@ -4552,9 +4552,9 @@ loc_12AF16:				; CODE XREF: sub_12ACDB+22Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AF2B:				; CODE XREF: sub_12ACDB+240j
+loc_12AF2B:				
 		LDA	byte_46E
-		CMP	#$2C ; ','
+		CMP	#$2C 
 		BNE	loc_12AF69
 		LDA	#0
 		STA	byte_5E7
@@ -4578,9 +4578,9 @@ loc_12AF2B:				; CODE XREF: sub_12ACDB+240j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AF69:				; CODE XREF: sub_12ACDB+255j
+loc_12AF69:				
 		LDA	byte_46E
-		CMP	#$24 ; '$'
+		CMP	#$24 
 		BNE	loc_12AF9A
 		LDA	#$FF
 		STA	byte_586
@@ -4599,7 +4599,7 @@ loc_12AF69:				; CODE XREF: sub_12ACDB+255j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AF9A:				; CODE XREF: sub_12ACDB+293j
+loc_12AF9A:				
 		LDA	byte_46E
 		CMP	#$17
 		BNE	loc_12AFA7
@@ -4608,7 +4608,7 @@ loc_12AF9A:				; CODE XREF: sub_12ACDB+293j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AFA7:				; CODE XREF: sub_12ACDB+2C4j
+loc_12AFA7:				
 		LDA	byte_46E
 		CMP	#$18
 		BNE	loc_12AFB4
@@ -4617,7 +4617,7 @@ loc_12AFA7:				; CODE XREF: sub_12ACDB+2C4j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AFB4:				; CODE XREF: sub_12ACDB+2D1j
+loc_12AFB4:				
 		LDA	byte_46E
 		CMP	#$13
 		BNE	loc_12AFC1
@@ -4626,7 +4626,7 @@ loc_12AFB4:				; CODE XREF: sub_12ACDB+2D1j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AFC1:				; CODE XREF: sub_12ACDB+2DEj
+loc_12AFC1:				
 		LDA	byte_46E
 		CMP	#$14
 		BNE	loc_12AFCE
@@ -4635,9 +4635,9 @@ loc_12AFC1:				; CODE XREF: sub_12ACDB+2DEj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AFCE:				; CODE XREF: sub_12ACDB+2EBj
+loc_12AFCE:				
 		LDA	byte_46E
-		CMP	#$22 ; '"'
+		CMP	#$22 
 		BNE	loc_12AFE3
 		LDA	#$FF
 		STA	byte_5D9
@@ -4647,9 +4647,9 @@ loc_12AFCE:				; CODE XREF: sub_12ACDB+2EBj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AFE3:				; CODE XREF: sub_12ACDB+2F8j
+loc_12AFE3:				
 		LDA	byte_46E
-		CMP	#$23 ; '#'
+		CMP	#$23 
 		BNE	loc_12AFF8
 		LDA	#$FF
 		STA	byte_5B3
@@ -4659,11 +4659,11 @@ loc_12AFE3:				; CODE XREF: sub_12ACDB+2F8j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12AFF8:				; CODE XREF: sub_12ACDB+30Dj
+loc_12AFF8:				
 		LDA	byte_46E
-		CMP	#$2D ; '-'
+		CMP	#$2D 
 		BNE	loc_12B03B
-		LDA	#$BC ; '�'
+		LDA	#$BC 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -4687,7 +4687,7 @@ loc_12AFF8:				; CODE XREF: sub_12ACDB+30Dj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B03B:				; CODE XREF: sub_12ACDB+322j
+loc_12B03B:				
 		CMP	#$1C
 		BNE	loc_12B074
 		LDA	entry_idx_300
@@ -4701,7 +4701,7 @@ loc_12B03B:				; CODE XREF: sub_12ACDB+322j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B054:				; CODE XREF: sub_12ACDB+369j
+loc_12B054:				
 		LDA	#$FF
 		STA	byte_5BD
 		LDA	#7
@@ -4717,7 +4717,7 @@ loc_12B054:				; CODE XREF: sub_12ACDB+369j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B074:				; CODE XREF: sub_12ACDB+362j
+loc_12B074:				
 		CMP	#$1D
 		BNE	loc_12B0E2
 		LDA	entry_idx_300
@@ -4733,7 +4733,7 @@ loc_12B074:				; CODE XREF: sub_12ACDB+362j
 		LDA	#1
 		STA	cur_obj_idx_unk_43A
 
-loc_12B095:				; CODE XREF: sub_12ACDB+3B3j
+loc_12B095:				
 		JSR	sub_12BF29
 		LDA	#$FF
 		STA	byte_5BE
@@ -4752,7 +4752,7 @@ loc_12B095:				; CODE XREF: sub_12ACDB+3B3j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B0C2:				; CODE XREF: sub_12ACDB+3A2j
+loc_12B0C2:				
 		LDA	#$FF
 		STA	byte_5BC
 		LDA	#6
@@ -4768,7 +4768,7 @@ loc_12B0C2:				; CODE XREF: sub_12ACDB+3A2j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B0E2:				; CODE XREF: sub_12ACDB+39Bj
+loc_12B0E2:				
 		CMP	#$1B
 		BNE	loc_12B106
 		LDA	#6
@@ -4786,7 +4786,7 @@ loc_12B0E2:				; CODE XREF: sub_12ACDB+39Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B106:				; CODE XREF: sub_12ACDB+409j
+loc_12B106:				
 		CMP	#$1E
 		BNE	loc_12B11F
 		LDA	#$FF
@@ -4799,7 +4799,7 @@ loc_12B106:				; CODE XREF: sub_12ACDB+409j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B11F:				; CODE XREF: sub_12ACDB+42Dj
+loc_12B11F:				
 		CMP	#$1F
 		BNE	loc_12B138
 		LDA	#$FF
@@ -4812,8 +4812,8 @@ loc_12B11F:				; CODE XREF: sub_12ACDB+42Dj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B138:				; CODE XREF: sub_12ACDB+446j
-		CMP	#$20 ; ' '
+loc_12B138:				
+		CMP	#$20 
 		BNE	loc_12B151
 		LDA	#$FF
 		STA	byte_5A1
@@ -4825,8 +4825,8 @@ loc_12B138:				; CODE XREF: sub_12ACDB+446j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B151:				; CODE XREF: sub_12ACDB+45Fj
-		CMP	#$21 ; '!'
+loc_12B151:				
+		CMP	#$21 
 		BNE	loc_12B16A
 		LDA	#$FF
 		STA	byte_5A2
@@ -4838,30 +4838,30 @@ loc_12B151:				; CODE XREF: sub_12ACDB+45Fj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B16A:				; CODE XREF: sub_12ACDB+478j
-		CMP	#$29 ; ')'
+loc_12B16A:				
+		CMP	#$29 
 		BNE	locret_12B1AF
 		LDA	entry_idx_300
-		CMP	#$4F ; 'O'
+		CMP	#$4F 
 		BNE	loc_12B17D
 		LDA	#$FF
 		STA	byte_565
 		JMP	loc_12B18A
 ; ---------------------------------------------------------------------------
 
-loc_12B17D:				; CODE XREF: sub_12ACDB+498j
-		CMP	#$8D ; '�'
+loc_12B17D:				
+		CMP	#$8D 
 		BNE	locret_12B189
 		LDA	#0
 		STA	byte_565
 		JMP	loc_12B18A
 ; ---------------------------------------------------------------------------
 
-locret_12B189:				; CODE XREF: sub_12ACDB+4A4j
+locret_12B189:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B18A:				; CODE XREF: sub_12ACDB+49Fj
+loc_12B18A:				
 					; sub_12ACDB+4ABj
 		JSR	entry_idx_handler_unk_12AA6D
 		LDA	entry_idx_300
@@ -4878,7 +4878,7 @@ loc_12B18A:				; CODE XREF: sub_12ACDB+49Fj
 		RTS
 ; ---------------------------------------------------------------------------
 
-locret_12B1AF:				; CODE XREF: sub_12ACDB+491j
+locret_12B1AF:				
 		RTS
 ; End of function sub_12ACDB
 
@@ -4886,15 +4886,15 @@ locret_12B1AF:				; CODE XREF: sub_12ACDB+491j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B1B0:				; CODE XREF: command_0_1280FBp
+sub_12B1B0:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12B1B8
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B1B8:				; CODE XREF: sub_12B1B0+5j
-		LDA	#$AA ; '�'
+loc_12B1B8:				
+		LDA	#$AA 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -4908,17 +4908,17 @@ loc_12B1B8:				; CODE XREF: sub_12B1B0+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B1CB:				; CODE XREF: sub_12B1E3+3Bp
+sub_12B1CB:				
 					; sub_12B225+3Bp ...
 		LDY	#0
 		LDX	#0
 
-loc_12B1CF:				; CODE XREF: sub_12B1CB+Dj
+loc_12B1CF:				
 		LDA	byte_555,X
 		BEQ	loc_12B1D5
 		INY
 
-loc_12B1D5:				; CODE XREF: sub_12B1CB+7j
+loc_12B1D5:				
 		INX
 		CPX	#6
 		BCC	loc_12B1CF
@@ -4927,20 +4927,20 @@ loc_12B1D5:				; CODE XREF: sub_12B1CB+7j
 ; End of function sub_12B1CB
 
 ; ---------------------------------------------------------------------------
-byte_12B1DC:	.BYTE	5,  1,	4,  2,	3,  6,	0 ; DATA XREF: sub_12B36F:loc_12B3AFr
+byte_12B1DC:	.BYTE	5,  1,	4,  2,	3,  6,	0 
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B1E3:				; CODE XREF: command_0_1280FB:command_1_128101p
+sub_12B1E3:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12B1EB
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B1EB:				; CODE XREF: sub_12B1E3+5j
-		LDA	#$AB ; '�'
+loc_12B1EB:				
+		LDA	#$AB 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -4949,7 +4949,7 @@ loc_12B1EB:				; CODE XREF: sub_12B1E3+5j
 		JSR	exec_b0_c0_12A973
 		LDA	byte_55B
 		BNE	locret_12B224
-		LDA	#$B3 ; '�'
+		LDA	#$B3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -4963,7 +4963,7 @@ loc_12B1EB:				; CODE XREF: sub_12B1E3+5j
 		JSR	sub_12B1CB
 		STY	byte_555
 
-locret_12B224:				; CODE XREF: sub_12B1E3+1Dj
+locret_12B224:				
 					; sub_12B1E3+39j
 		RTS
 ; End of function sub_12B1E3
@@ -4972,15 +4972,15 @@ locret_12B224:				; CODE XREF: sub_12B1E3+1Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B225:				; CODE XREF: command_0_1280FB:command_2_128107p
+sub_12B225:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12B22D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B22D:				; CODE XREF: sub_12B225+5j
-		LDA	#$AC ; '�'
+loc_12B22D:				
+		LDA	#$AC 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -4989,7 +4989,7 @@ loc_12B22D:				; CODE XREF: sub_12B225+5j
 		JSR	exec_b0_c0_12A973
 		LDA	byte_55B
 		BNE	locret_12B266
-		LDA	#$B3 ; '�'
+		LDA	#$B3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5003,7 +5003,7 @@ loc_12B22D:				; CODE XREF: sub_12B225+5j
 		JSR	sub_12B1CB
 		STY	byte_556
 
-locret_12B266:				; CODE XREF: sub_12B225+1Dj
+locret_12B266:				
 					; sub_12B225+39j
 		RTS
 ; End of function sub_12B225
@@ -5012,15 +5012,15 @@ locret_12B266:				; CODE XREF: sub_12B225+1Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B267:				; CODE XREF: command_0_1280FB:command_3_12810Dp
+sub_12B267:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12B26F
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B26F:				; CODE XREF: sub_12B267+5j
-		LDA	#$AD ; '�'
+loc_12B26F:				
+		LDA	#$AD 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5029,7 +5029,7 @@ loc_12B26F:				; CODE XREF: sub_12B267+5j
 		JSR	exec_b0_c0_12A973
 		LDA	byte_55B
 		BNE	locret_12B2A8
-		LDA	#$B3 ; '�'
+		LDA	#$B3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5043,7 +5043,7 @@ loc_12B26F:				; CODE XREF: sub_12B267+5j
 		JSR	sub_12B1CB
 		STY	byte_557
 
-locret_12B2A8:				; CODE XREF: sub_12B267+1Dj
+locret_12B2A8:				
 					; sub_12B267+39j
 		RTS
 ; End of function sub_12B267
@@ -5052,15 +5052,15 @@ locret_12B2A8:				; CODE XREF: sub_12B267+1Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B2A9:				; CODE XREF: command_0_1280FB:command_4_128113p
+sub_12B2A9:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12B2B1
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B2B1:				; CODE XREF: sub_12B2A9+5j
-		LDA	#$AE ; '�'
+loc_12B2B1:				
+		LDA	#$AE 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5069,7 +5069,7 @@ loc_12B2B1:				; CODE XREF: sub_12B2A9+5j
 		JSR	exec_b0_c0_12A973
 		LDA	byte_55B
 		BNE	locret_12B2EA
-		LDA	#$B3 ; '�'
+		LDA	#$B3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5083,7 +5083,7 @@ loc_12B2B1:				; CODE XREF: sub_12B2A9+5j
 		JSR	sub_12B1CB
 		STY	byte_558
 
-locret_12B2EA:				; CODE XREF: sub_12B2A9+1Dj
+locret_12B2EA:				
 					; sub_12B2A9+39j
 		RTS
 ; End of function sub_12B2A9
@@ -5092,15 +5092,15 @@ locret_12B2EA:				; CODE XREF: sub_12B2A9+1Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B2EB:				; CODE XREF: command_0_1280FB:command_5_128119p
+sub_12B2EB:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12B2F3
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B2F3:				; CODE XREF: sub_12B2EB+5j
-		LDA	#$AF ; '�'
+loc_12B2F3:				
+		LDA	#$AF 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5109,7 +5109,7 @@ loc_12B2F3:				; CODE XREF: sub_12B2EB+5j
 		JSR	exec_b0_c0_12A973
 		LDA	byte_55B
 		BNE	locret_12B32C
-		LDA	#$B3 ; '�'
+		LDA	#$B3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5123,7 +5123,7 @@ loc_12B2F3:				; CODE XREF: sub_12B2EB+5j
 		JSR	sub_12B1CB
 		STY	byte_559
 
-locret_12B32C:				; CODE XREF: sub_12B2EB+1Dj
+locret_12B32C:				
 					; sub_12B2EB+39j
 		RTS
 ; End of function sub_12B2EB
@@ -5132,15 +5132,15 @@ locret_12B32C:				; CODE XREF: sub_12B2EB+1Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B32D:				; CODE XREF: command_0_1280FB:command_6_12811Fp
+sub_12B32D:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12B335
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B335:				; CODE XREF: sub_12B32D+5j
-		LDA	#$B0 ; '�'
+loc_12B335:				
+		LDA	#$B0 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5149,7 +5149,7 @@ loc_12B335:				; CODE XREF: sub_12B32D+5j
 		JSR	exec_b0_c0_12A973
 		LDA	byte_55B
 		BNE	locret_12B36E
-		LDA	#$B3 ; '�'
+		LDA	#$B3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5163,7 +5163,7 @@ loc_12B335:				; CODE XREF: sub_12B32D+5j
 		JSR	sub_12B1CB
 		STY	byte_55A
 
-locret_12B36E:				; CODE XREF: sub_12B32D+1Dj
+locret_12B36E:				
 					; sub_12B32D+39j
 		RTS
 ; End of function sub_12B32D
@@ -5172,28 +5172,28 @@ locret_12B36E:				; CODE XREF: sub_12B32D+1Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B36F:				; CODE XREF: command_0_1280FB:command_7_128125p
+sub_12B36F:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12B377
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B377:				; CODE XREF: sub_12B36F+5j
+loc_12B377:				
 		LDA	byte_55B
 		BEQ	loc_12B37F
 		JMP	locret_12B403
 ; ---------------------------------------------------------------------------
 
-loc_12B37F:				; CODE XREF: sub_12B36F+Bj
-		LDA	#$B1 ; '�'
+loc_12B37F:				
+		LDA	#$B1 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
 		LDA	#1
 		STA	tilemapTypeUnk_30B
 		JSR	exec_b0_c0_12A973
-		LDA	#$B3 ; '�'
+		LDA	#$B3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5206,7 +5206,7 @@ loc_12B37F:				; CODE XREF: sub_12B36F+Bj
 		BEQ	locret_12B403
 		LDX	#0
 
-loc_12B3AF:				; CODE XREF: sub_12B36F+4Bj
+loc_12B3AF:				
 		LDA	byte_12B1DC,X
 		CMP	byte_555,X
 		BNE	loc_12B3E8
@@ -5230,7 +5230,7 @@ loc_12B3AF:				; CODE XREF: sub_12B36F+4Bj
 		JMP	locret_12B403
 ; ---------------------------------------------------------------------------
 
-loc_12B3E8:				; CODE XREF: sub_12B36F+46j
+loc_12B3E8:				
 		LDA	#$FF
 		STA	byte_627
 		STA	byte_628
@@ -5243,7 +5243,7 @@ loc_12B3E8:				; CODE XREF: sub_12B36F+46j
 		JMP	locret_12B403
 ; ---------------------------------------------------------------------------
 
-locret_12B403:				; CODE XREF: sub_12B36F+Dj
+locret_12B403:				
 					; sub_12B36F+3Cj ...
 		RTS
 ; End of function sub_12B36F
@@ -5252,11 +5252,11 @@ locret_12B403:				; CODE XREF: sub_12B36F+Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B404:				; CODE XREF: command_0_1280FB:command_8_12812Bp
+sub_12B404:				
 		LDA	byte_471
 		CMP	#0
 		BNE	loc_12B41E
-		LDA	#$A7 ; '�'
+		LDA	#$A7 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -5266,7 +5266,7 @@ sub_12B404:				; CODE XREF: command_0_1280FB:command_8_12812Bp
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B41E:				; CODE XREF: sub_12B404+5j
+loc_12B41E:				
 		LDA	byte_59F
 		CMP	#$FF
 		BNE	loc_12B43B
@@ -5282,7 +5282,7 @@ loc_12B41E:				; CODE XREF: sub_12B404+5j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B43B:				; CODE XREF: sub_12B404+1Fj
+loc_12B43B:				
 					; sub_12B404+26j ...
 		LDA	#$1E
 		STA	byte_46D
@@ -5293,9 +5293,9 @@ loc_12B43B:				; CODE XREF: sub_12B404+1Fj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12B441:				; CODE XREF: command_0_1280FB:command_A_128137p
+sub_12B441:				
 		LDA	entry_idx_300
-		CMP	#$24 ; '$'
+		CMP	#$24 
 		BNE	loc_12B45E
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5306,15 +5306,15 @@ sub_12B441:				; CODE XREF: command_0_1280FB:command_A_128137p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B458:				; CODE XREF: sub_12B441+Fj
+loc_12B458:				
 		LDA	#0
 		STA	byte_6B0
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B45E:				; CODE XREF: sub_12B441+5j
+loc_12B45E:				
 		LDA	entry_idx_300
-		CMP	#$25 ; '%'
+		CMP	#$25 
 		BNE	loc_12B47F
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5325,17 +5325,17 @@ loc_12B45E:				; CODE XREF: sub_12B441+5j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B475:				; CODE XREF: sub_12B441+2Cj
+loc_12B475:				
 		CMP	#6
 		BNE	locret_12B47E
 		LDA	#0
 		STA	byte_5E6
 
-locret_12B47E:				; CODE XREF: sub_12B441+36j
+locret_12B47E:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B47F:				; CODE XREF: sub_12B441+22j
+loc_12B47F:				
 		LDA	entry_idx_300
 		CMP	#$1E
 		BNE	loc_12B4D9
@@ -5351,13 +5351,13 @@ loc_12B47F:				; CODE XREF: sub_12B441+22j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B49D:				; CODE XREF: sub_12B441+54j
+loc_12B49D:				
 		LDA	#0
 		STA	byte_5BA
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B4A3:				; CODE XREF: sub_12B441+4Dj
+loc_12B4A3:				
 		CMP	#$B
 		BNE	loc_12B4C8
 		LDA	byte_434
@@ -5368,7 +5368,7 @@ loc_12B4A3:				; CODE XREF: sub_12B441+4Dj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B4B4:				; CODE XREF: sub_12B441+6Bj
+loc_12B4B4:				
 		CMP	#2
 		BNE	loc_12B4BE
 		LDA	#0
@@ -5376,17 +5376,17 @@ loc_12B4B4:				; CODE XREF: sub_12B441+6Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B4BE:				; CODE XREF: sub_12B441+75j
+loc_12B4BE:				
 		CMP	#3
 		BNE	locret_12B4C7
 		LDA	#0
 		STA	byte_5B8
 
-locret_12B4C7:				; CODE XREF: sub_12B441+7Fj
+locret_12B4C7:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B4C8:				; CODE XREF: sub_12B441+64j
+loc_12B4C8:				
 		CMP	#$13
 		BNE	loc_12B4D2
 		LDA	#0
@@ -5394,7 +5394,7 @@ loc_12B4C8:				; CODE XREF: sub_12B441+64j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B4D2:				; CODE XREF: sub_12B441+89j
+loc_12B4D2:				
 		JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 		RTS
@@ -5402,9 +5402,9 @@ loc_12B4D2:				; CODE XREF: sub_12B441+89j
 		JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 
-loc_12B4D9:				; CODE XREF: sub_12B441+43j
+loc_12B4D9:				
 		LDA	entry_idx_300
-		CMP	#$6E ; 'n'
+		CMP	#$6E 
 		BNE	loc_12B52B
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5420,7 +5420,7 @@ loc_12B4D9:				; CODE XREF: sub_12B441+43j
 		JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 
-loc_12B4FA:				; CODE XREF: sub_12B441+AEj
+loc_12B4FA:				
 		LDA	#0
 		STA	byte_5CE
 		RTS
@@ -5428,7 +5428,7 @@ loc_12B4FA:				; CODE XREF: sub_12B441+AEj
 		JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 
-loc_12B503:				; CODE XREF: sub_12B441+A7j
+loc_12B503:				
 		CMP	#7
 		BNE	loc_12B51D
 		LDA	byte_434
@@ -5441,13 +5441,13 @@ loc_12B503:				; CODE XREF: sub_12B441+A7j
 		JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 
-loc_12B517:				; CODE XREF: sub_12B441+CBj
+loc_12B517:				
 		LDA	#0
 		STA	byte_5D0
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B51D:				; CODE XREF: sub_12B441+C4j
+loc_12B51D:				
 		CMP	#$17
 		BNE	locret_12B527
 		LDA	#0
@@ -5455,13 +5455,13 @@ loc_12B51D:				; CODE XREF: sub_12B441+C4j
 		RTS
 ; ---------------------------------------------------------------------------
 
-locret_12B527:				; CODE XREF: sub_12B441+DEj
+locret_12B527:				
 		RTS
 ; ---------------------------------------------------------------------------
 		JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 
-loc_12B52B:				; CODE XREF: sub_12B441+9Dj
+loc_12B52B:				
 		LDA	entry_idx_300
 		CMP	#$1C
 		BNE	loc_12B58E
@@ -5476,7 +5476,7 @@ loc_12B52B:				; CODE XREF: sub_12B441+9Dj
 		JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 
-loc_12B545:				; CODE XREF: sub_12B441+F9j
+loc_12B545:				
 					; sub_12B441+15Cj
 		LDA	obj_array_unk_415,X
 		CMP	#7
@@ -5486,9 +5486,9 @@ loc_12B545:				; CODE XREF: sub_12B441+F9j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B552:				; CODE XREF: sub_12B441+109j
+loc_12B552:				
 		LDA	obj_array_unk_415,X
-		CMP	#$47 ; 'G'
+		CMP	#$47 
 		BNE	locret_12B58A
 		LDA	#0
 		STA	byte_6A8
@@ -5508,15 +5508,15 @@ loc_12B552:				; CODE XREF: sub_12B441+109j
 		STA	ppu_prev_scroll_y_unk_4A8
 		JSR	exec_b0_c2_12A9A9
 
-locret_12B58A:				; CODE XREF: sub_12B441+116j
+locret_12B58A:				
 		RTS
 ; ---------------------------------------------------------------------------
 		JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 
-loc_12B58E:				; CODE XREF: sub_12B441+EFj
+loc_12B58E:				
 		LDA	entry_idx_300
-		CMP	#$87 ; '�'
+		CMP	#$87 
 		BNE	loc_12B5A8
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5529,9 +5529,9 @@ loc_12B58E:				; CODE XREF: sub_12B441+EFj
 		JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 
-loc_12B5A8:				; CODE XREF: sub_12B441+152j
+loc_12B5A8:				
 		LDA	entry_idx_300
-		CMP	#$20 ; ' '
+		CMP	#$20 
 		BNE	loc_12B5CC
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5542,20 +5542,20 @@ loc_12B5A8:				; CODE XREF: sub_12B441+152j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B5BF:				; CODE XREF: sub_12B441+176j
+loc_12B5BF:				
 		LDA	obj_array_unk_415,X
-		CMP	#$3B ; ';'
+		CMP	#$3B 
 		BNE	locret_12B5CB
 		LDA	#0
 		STA	byte_5DC
 
-locret_12B5CB:				; CODE XREF: sub_12B441+183j
+locret_12B5CB:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B5CC:				; CODE XREF: sub_12B441+16Cj
+loc_12B5CC:				
 		LDA	entry_idx_300
-		CMP	#$21 ; '!'
+		CMP	#$21 
 		BNE	loc_12B5F0
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5566,18 +5566,18 @@ loc_12B5CC:				; CODE XREF: sub_12B441+16Cj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B5E3:				; CODE XREF: sub_12B441+19Aj
+loc_12B5E3:				
 		LDA	obj_array_unk_415,X
 		CMP	#$1B
 		BNE	locret_12B5EF
 		LDA	#0
 		STA	byte_5C3
 
-locret_12B5EF:				; CODE XREF: sub_12B441+1A7j
+locret_12B5EF:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B5F0:				; CODE XREF: sub_12B441+190j
+loc_12B5F0:				
 		LDA	entry_idx_300
 		CMP	#$16
 		BNE	loc_12B606
@@ -5588,10 +5588,10 @@ loc_12B5F0:				; CODE XREF: sub_12B441+190j
 		LDA	#0
 		STA	byte_5EA
 
-loc_12B606:				; CODE XREF: sub_12B441+1B4j
+loc_12B606:				
 					; sub_12B441+1BEj
 		LDA	entry_idx_300
-		CMP	#$26 ; '&'
+		CMP	#$26 
 		BNE	loc_12B61C
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5600,10 +5600,10 @@ loc_12B606:				; CODE XREF: sub_12B441+1B4j
 		LDA	#0
 		STA	byte_5EB
 
-loc_12B61C:				; CODE XREF: sub_12B441+1CAj
+loc_12B61C:				
 					; sub_12B441+1D4j
 		LDA	entry_idx_300
-		CMP	#$27 ; '''
+		CMP	#$27 
 		BNE	loc_12B636
 		LDA	byte_434
 		CMP	#0
@@ -5613,15 +5613,15 @@ loc_12B61C:				; CODE XREF: sub_12B441+1CAj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B630:				; CODE XREF: sub_12B441+1E7j
+loc_12B630:				
 		LDA	#0
 		STA	byte_5ED
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B636:				; CODE XREF: sub_12B441+1E0j
+loc_12B636:				
 		LDA	entry_idx_300
-		CMP	#$28 ; '('
+		CMP	#$28 
 		BNE	loc_12B64C
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5630,10 +5630,10 @@ loc_12B636:				; CODE XREF: sub_12B441+1E0j
 		LDA	#0
 		STA	byte_5EE
 
-loc_12B64C:				; CODE XREF: sub_12B441+1FAj
+loc_12B64C:				
 					; sub_12B441+204j
 		LDA	entry_idx_300
-		CMP	#$2A ; '*'
+		CMP	#$2A 
 		BNE	loc_12B662
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5642,10 +5642,10 @@ loc_12B64C:				; CODE XREF: sub_12B441+1FAj
 		LDA	#0
 		STA	byte_5EF
 
-loc_12B662:				; CODE XREF: sub_12B441+210j
+loc_12B662:				
 					; sub_12B441+21Aj
 		LDA	entry_idx_300
-		CMP	#$2C ; ','
+		CMP	#$2C 
 		BNE	loc_12B678
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5654,10 +5654,10 @@ loc_12B662:				; CODE XREF: sub_12B441+210j
 		LDA	#0
 		STA	byte_5F3
 
-loc_12B678:				; CODE XREF: sub_12B441+226j
+loc_12B678:				
 					; sub_12B441+230j
 		LDA	entry_idx_300
-		CMP	#$2E ; '.'
+		CMP	#$2E 
 		BNE	loc_12B69C
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5668,20 +5668,20 @@ loc_12B678:				; CODE XREF: sub_12B441+226j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B68F:				; CODE XREF: sub_12B441+246j
+loc_12B68F:				
 		LDA	obj_array_unk_415,X
-		CMP	#$25 ; '%'
+		CMP	#$25 
 		BNE	locret_12B69B
 		LDA	#0
 		STA	byte_5F5
 
-locret_12B69B:				; CODE XREF: sub_12B441+253j
+locret_12B69B:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B69C:				; CODE XREF: sub_12B441+23Cj
+loc_12B69C:				
 		LDA	entry_idx_300
-		CMP	#$2D ; '-'
+		CMP	#$2D 
 		BNE	loc_12B6C0
 		LDA	byte_434
 		CMP	#1
@@ -5691,7 +5691,7 @@ loc_12B69C:				; CODE XREF: sub_12B441+23Cj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B6B0:				; CODE XREF: sub_12B441+267j
+loc_12B6B0:				
 		CMP	#2
 		BNE	loc_12B6BA
 		LDA	#0
@@ -5699,15 +5699,15 @@ loc_12B6B0:				; CODE XREF: sub_12B441+267j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B6BA:				; CODE XREF: sub_12B441+271j
+loc_12B6BA:				
 		LDA	#0
 		STA	byte_5B4
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B6C0:				; CODE XREF: sub_12B441+260j
+loc_12B6C0:				
 		LDA	entry_idx_300
-		CMP	#$32 ; '2'
+		CMP	#$32 
 		BNE	loc_12B6E8
 		LDA	byte_434
 		CMP	#0
@@ -5717,7 +5717,7 @@ loc_12B6C0:				; CODE XREF: sub_12B441+260j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B6D4:				; CODE XREF: sub_12B441+28Bj
+loc_12B6D4:				
 		CMP	#1
 		BNE	loc_12B6DE
 		LDA	#0
@@ -5725,19 +5725,19 @@ loc_12B6D4:				; CODE XREF: sub_12B441+28Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B6DE:				; CODE XREF: sub_12B441+295j
+loc_12B6DE:				
 		CMP	#3
 		BNE	locret_12B6E7
 		LDA	#0
 		STA	byte_6B2
 
-locret_12B6E7:				; CODE XREF: sub_12B441+29Fj
+locret_12B6E7:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B6E8:				; CODE XREF: sub_12B441+284j
+loc_12B6E8:				
 		LDA	entry_idx_300
-		CMP	#$34 ; '4'
+		CMP	#$34 
 		BNE	loc_12B6FF
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5748,10 +5748,10 @@ loc_12B6E8:				; CODE XREF: sub_12B441+284j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B6FF:				; CODE XREF: sub_12B441+2ACj
+loc_12B6FF:				
 					; sub_12B441+2B6j
 		LDA	entry_idx_300
-		CMP	#$38 ; '8'
+		CMP	#$38 
 		BNE	loc_12B72D
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5762,28 +5762,28 @@ loc_12B6FF:				; CODE XREF: sub_12B441+2ACj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B716:				; CODE XREF: sub_12B441+2CDj
-		CMP	#$52 ; 'R'
+loc_12B716:				
+		CMP	#$52 
 		BNE	loc_12B720
 		LDA	#0
 		STA	byte_6AE
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B720:				; CODE XREF: sub_12B441+2D7j
+loc_12B720:				
 		LDA	obj_array_unk_415,X
 		CMP	#8
 		BNE	locret_12B72C
 		LDA	#0
 		STA	byte_605
 
-locret_12B72C:				; CODE XREF: sub_12B441+2E4j
+locret_12B72C:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B72D:				; CODE XREF: sub_12B441+2C3j
+loc_12B72D:				
 		LDA	entry_idx_300
-		CMP	#$3A ; ':'
+		CMP	#$3A 
 		BNE	loc_12B747
 		LDA	byte_434
 		CMP	#0
@@ -5793,15 +5793,15 @@ loc_12B72D:				; CODE XREF: sub_12B441+2C3j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B741:				; CODE XREF: sub_12B441+2F8j
+loc_12B741:				
 		LDA	#0
 		STA	byte_609
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B747:				; CODE XREF: sub_12B441+2F1j
+loc_12B747:				
 		LDA	entry_idx_300
-		CMP	#$3B ; ';'
+		CMP	#$3B 
 		BNE	loc_12B783
 		LDA	byte_434
 		CMP	#0
@@ -5811,7 +5811,7 @@ loc_12B747:				; CODE XREF: sub_12B441+2F1j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B75B:				; CODE XREF: sub_12B441+312j
+loc_12B75B:				
 		CMP	#1
 		BNE	loc_12B765
 		LDA	#0
@@ -5819,7 +5819,7 @@ loc_12B75B:				; CODE XREF: sub_12B441+312j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B765:				; CODE XREF: sub_12B441+31Cj
+loc_12B765:				
 		CMP	#2
 		BNE	loc_12B76F
 		LDA	#0
@@ -5827,7 +5827,7 @@ loc_12B765:				; CODE XREF: sub_12B441+31Cj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B76F:				; CODE XREF: sub_12B441+326j
+loc_12B76F:				
 		CMP	#3
 		BNE	loc_12B779
 		LDA	#0
@@ -5835,19 +5835,19 @@ loc_12B76F:				; CODE XREF: sub_12B441+326j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B779:				; CODE XREF: sub_12B441+330j
+loc_12B779:				
 		CMP	#4
 		BNE	locret_12B782
 		LDA	#0
 		STA	byte_60F
 
-locret_12B782:				; CODE XREF: sub_12B441+33Aj
+locret_12B782:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B783:				; CODE XREF: sub_12B441+30Bj
+loc_12B783:				
 		LDA	entry_idx_300
-		CMP	#$3C ; '<'
+		CMP	#$3C 
 		BNE	loc_12B7A4
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5858,19 +5858,19 @@ loc_12B783:				; CODE XREF: sub_12B441+30Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B79A:				; CODE XREF: sub_12B441+351j
-		CMP	#$4A ; 'J'
+loc_12B79A:				
+		CMP	#$4A 
 		BNE	locret_12B7A3
 		LDA	#0
 		STA	byte_6AB
 
-locret_12B7A3:				; CODE XREF: sub_12B441+35Bj
+locret_12B7A3:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B7A4:				; CODE XREF: sub_12B441+347j
+loc_12B7A4:				
 		LDA	entry_idx_300
-		CMP	#$3E ; '>'
+		CMP	#$3E 
 		BNE	loc_12B7BB
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5879,13 +5879,13 @@ loc_12B7A4:				; CODE XREF: sub_12B441+347j
 		LDA	#0
 		STA	byte_615
 
-locret_12B7BA:				; CODE XREF: sub_12B441+372j
+locret_12B7BA:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B7BB:				; CODE XREF: sub_12B441+368j
+loc_12B7BB:				
 		LDA	entry_idx_300
-		CMP	#$42 ; 'B'
+		CMP	#$42 
 		BNE	loc_12B7D9
 		LDA	byte_434
 		CMP	#1
@@ -5895,19 +5895,19 @@ loc_12B7BB:				; CODE XREF: sub_12B441+368j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B7CF:				; CODE XREF: sub_12B441+386j
+loc_12B7CF:				
 		CMP	#2
 		BNE	locret_12B7D8
 		LDA	#0
 		STA	byte_61B
 
-locret_12B7D8:				; CODE XREF: sub_12B441+390j
+locret_12B7D8:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B7D9:				; CODE XREF: sub_12B441+37Fj
+loc_12B7D9:				
 		LDA	entry_idx_300
-		CMP	#$9C ; '�'
+		CMP	#$9C 
 		BNE	loc_12B7F0
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5916,13 +5916,13 @@ loc_12B7D9:				; CODE XREF: sub_12B441+37Fj
 		LDA	#0
 		STA	byte_61D
 
-locret_12B7EF:				; CODE XREF: sub_12B441+3A7j
+locret_12B7EF:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B7F0:				; CODE XREF: sub_12B441+39Dj
+loc_12B7F0:				
 		LDA	entry_idx_300
-		CMP	#$45 ; 'E'
+		CMP	#$45 
 		BNE	loc_12B811
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5933,19 +5933,19 @@ loc_12B7F0:				; CODE XREF: sub_12B441+39Dj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B807:				; CODE XREF: sub_12B441+3BEj
+loc_12B807:				
 		CMP	#$1F
 		BNE	locret_12B810
 		LDA	#0
 		STA	byte_5C4
 
-locret_12B810:				; CODE XREF: sub_12B441+3C8j
+locret_12B810:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B811:				; CODE XREF: sub_12B441+3B4j
+loc_12B811:				
 		LDA	entry_idx_300
-		CMP	#$47 ; 'G'
+		CMP	#$47 
 		BNE	loc_12B832
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -5956,42 +5956,42 @@ loc_12B811:				; CODE XREF: sub_12B441+3B4j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B828:				; CODE XREF: sub_12B441+3DFj
-		CMP	#$53 ; 'S'
+loc_12B828:				
+		CMP	#$53 
 		BNE	locret_12B831
 		LDA	#0
 		STA	byte_6AF
 
-locret_12B831:				; CODE XREF: sub_12B441+3E9j
+locret_12B831:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B832:				; CODE XREF: sub_12B441+3D5j
+loc_12B832:				
 		LDA	entry_idx_300
-		CMP	#$4A ; 'J'
+		CMP	#$4A 
 		BNE	loc_12B853
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$2B ; '+'
+		CMP	#$2B 
 		BNE	loc_12B849
 		LDA	#0
 		STA	byte_622
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B849:				; CODE XREF: sub_12B441+400j
+loc_12B849:				
 		CMP	#$C
 		BNE	locret_12B852
 		LDA	#0
 		STA	byte_623
 
-locret_12B852:				; CODE XREF: sub_12B441+40Aj
+locret_12B852:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B853:				; CODE XREF: sub_12B441+3F6j
+loc_12B853:				
 		LDA	entry_idx_300
-		CMP	#$4B ; 'K'
+		CMP	#$4B 
 		BNE	loc_12B87E
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6002,7 +6002,7 @@ loc_12B853:				; CODE XREF: sub_12B441+3F6j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B86A:				; CODE XREF: sub_12B441+421j
+loc_12B86A:				
 		CMP	#6
 		BNE	loc_12B874
 		LDA	#0
@@ -6010,19 +6010,19 @@ loc_12B86A:				; CODE XREF: sub_12B441+421j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B874:				; CODE XREF: sub_12B441+42Bj
-		CMP	#$48 ; 'H'
+loc_12B874:				
+		CMP	#$48 
 		BNE	locret_12B87D
 		LDA	#0
 		STA	byte_6A9
 
-locret_12B87D:				; CODE XREF: sub_12B441+435j
+locret_12B87D:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B87E:				; CODE XREF: sub_12B441+417j
+loc_12B87E:				
 		LDA	entry_idx_300
-		CMP	#$4C ; 'L'
+		CMP	#$4C 
 		BNE	loc_12B89F
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6033,19 +6033,19 @@ loc_12B87E:				; CODE XREF: sub_12B441+417j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B895:				; CODE XREF: sub_12B441+44Cj
-		CMP	#$3E ; '>'
+loc_12B895:				
+		CMP	#$3E 
 		BNE	locret_12B89E
 		LDA	#0
 		STA	byte_6B1
 
-locret_12B89E:				; CODE XREF: sub_12B441+456j
+locret_12B89E:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B89F:				; CODE XREF: sub_12B441+442j
+loc_12B89F:				
 		LDA	entry_idx_300
-		CMP	#$4E ; 'N'
+		CMP	#$4E 
 		BNE	loc_12B8DB
 		LDA	byte_434
 		CMP	#0
@@ -6055,7 +6055,7 @@ loc_12B89F:				; CODE XREF: sub_12B441+442j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B8B3:				; CODE XREF: sub_12B441+46Aj
+loc_12B8B3:				
 		CMP	#1
 		BNE	loc_12B8BD
 		LDA	#0
@@ -6063,7 +6063,7 @@ loc_12B8B3:				; CODE XREF: sub_12B441+46Aj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B8BD:				; CODE XREF: sub_12B441+474j
+loc_12B8BD:				
 		CMP	#2
 		BNE	loc_12B8C7
 		LDA	#0
@@ -6071,7 +6071,7 @@ loc_12B8BD:				; CODE XREF: sub_12B441+474j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B8C7:				; CODE XREF: sub_12B441+47Ej
+loc_12B8C7:				
 		CMP	#3
 		BNE	loc_12B8D1
 		LDA	#0
@@ -6079,19 +6079,19 @@ loc_12B8C7:				; CODE XREF: sub_12B441+47Ej
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B8D1:				; CODE XREF: sub_12B441+488j
+loc_12B8D1:				
 		CMP	#4
 		BNE	locret_12B8DA
 		LDA	#0
 		STA	byte_6B3
 
-locret_12B8DA:				; CODE XREF: sub_12B441+492j
+locret_12B8DA:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B8DB:				; CODE XREF: sub_12B441+463j
+loc_12B8DB:				
 		LDA	entry_idx_300
-		CMP	#$51 ; 'Q'
+		CMP	#$51 
 		BNE	loc_12B90D
 		LDA	byte_434
 		CMP	#0
@@ -6101,7 +6101,7 @@ loc_12B8DB:				; CODE XREF: sub_12B441+463j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B8EF:				; CODE XREF: sub_12B441+4A6j
+loc_12B8EF:				
 		CMP	#1
 		BNE	loc_12B8F9
 		LDA	#0
@@ -6109,7 +6109,7 @@ loc_12B8EF:				; CODE XREF: sub_12B441+4A6j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B8F9:				; CODE XREF: sub_12B441+4B0j
+loc_12B8F9:				
 		CMP	#2
 		BNE	loc_12B903
 		LDA	#0
@@ -6117,19 +6117,19 @@ loc_12B8F9:				; CODE XREF: sub_12B441+4B0j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B903:				; CODE XREF: sub_12B441+4BAj
+loc_12B903:				
 		CMP	#3
 		BNE	locret_12B90C
 		LDA	#0
 		STA	byte_63A
 
-locret_12B90C:				; CODE XREF: sub_12B441+4C4j
+locret_12B90C:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B90D:				; CODE XREF: sub_12B441+49Fj
+loc_12B90D:				
 		LDA	entry_idx_300
-		CMP	#$53 ; 'S'
+		CMP	#$53 
 		BNE	loc_12B924
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6138,13 +6138,13 @@ loc_12B90D:				; CODE XREF: sub_12B441+49Fj
 		LDA	#0
 		STA	byte_63D
 
-locret_12B923:				; CODE XREF: sub_12B441+4DBj
+locret_12B923:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B924:				; CODE XREF: sub_12B441+4D1j
+loc_12B924:				
 		LDA	entry_idx_300
-		CMP	#$90 ; '�'
+		CMP	#$90 
 		BNE	loc_12B93B
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6153,13 +6153,13 @@ loc_12B924:				; CODE XREF: sub_12B441+4D1j
 		LDA	#0
 		STA	byte_63D
 
-locret_12B93A:				; CODE XREF: sub_12B441+4F2j
+locret_12B93A:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B93B:				; CODE XREF: sub_12B441+4E8j
+loc_12B93B:				
 		LDA	entry_idx_300
-		CMP	#$55 ; 'U'
+		CMP	#$55 
 		BNE	loc_12B95C
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6170,42 +6170,42 @@ loc_12B93B:				; CODE XREF: sub_12B441+4E8j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B952:				; CODE XREF: sub_12B441+509j
+loc_12B952:				
 		CMP	#9
 		BNE	locret_12B95B
 		LDA	#0
 		STA	byte_642
 
-locret_12B95B:				; CODE XREF: sub_12B441+513j
+locret_12B95B:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B95C:				; CODE XREF: sub_12B441+4FFj
+loc_12B95C:				
 		LDA	entry_idx_300
-		CMP	#$56 ; 'V'
+		CMP	#$56 
 		BNE	loc_12B97D
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$2A ; '*'
+		CMP	#$2A 
 		BNE	loc_12B973
 		LDA	#0
 		STA	byte_643
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B973:				; CODE XREF: sub_12B441+52Aj
+loc_12B973:				
 		CMP	#9
 		BNE	locret_12B97C
 		LDA	#0
 		STA	byte_644
 
-locret_12B97C:				; CODE XREF: sub_12B441+534j
+locret_12B97C:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B97D:				; CODE XREF: sub_12B441+520j
+loc_12B97D:				
 		LDA	entry_idx_300
-		CMP	#$57 ; 'W'
+		CMP	#$57 
 		BNE	loc_12B994
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6214,13 +6214,13 @@ loc_12B97D:				; CODE XREF: sub_12B441+520j
 		LDA	#0
 		STA	byte_645
 
-locret_12B993:				; CODE XREF: sub_12B441+54Bj
+locret_12B993:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B994:				; CODE XREF: sub_12B441+541j
+loc_12B994:				
 		LDA	entry_idx_300
-		CMP	#$91 ; '�'
+		CMP	#$91 
 		BNE	loc_12B9AB
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6229,13 +6229,13 @@ loc_12B994:				; CODE XREF: sub_12B441+541j
 		LDA	#0
 		STA	byte_645
 
-locret_12B9AA:				; CODE XREF: sub_12B441+562j
+locret_12B9AA:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B9AB:				; CODE XREF: sub_12B441+558j
+loc_12B9AB:				
 		LDA	entry_idx_300
-		CMP	#$58 ; 'X'
+		CMP	#$58 
 		BNE	loc_12B9C2
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6244,13 +6244,13 @@ loc_12B9AB:				; CODE XREF: sub_12B441+558j
 		LDA	#0
 		STA	byte_64B
 
-locret_12B9C1:				; CODE XREF: sub_12B441+579j
+locret_12B9C1:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B9C2:				; CODE XREF: sub_12B441+56Fj
+loc_12B9C2:				
 		LDA	entry_idx_300
-		CMP	#$5A ; 'Z'
+		CMP	#$5A 
 		BNE	loc_12B9ED
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6261,7 +6261,7 @@ loc_12B9C2:				; CODE XREF: sub_12B441+56Fj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B9D9:				; CODE XREF: sub_12B441+590j
+loc_12B9D9:				
 		CMP	#$1A
 		BNE	loc_12B9E3
 		LDA	#0
@@ -6269,57 +6269,57 @@ loc_12B9D9:				; CODE XREF: sub_12B441+590j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B9E3:				; CODE XREF: sub_12B441+59Aj
+loc_12B9E3:				
 		CMP	#$12
 		BNE	locret_12B9EC
 		LDA	#0
 		STA	byte_64E
 
-locret_12B9EC:				; CODE XREF: sub_12B441+5A4j
+locret_12B9EC:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12B9ED:				; CODE XREF: sub_12B441+586j
+loc_12B9ED:				
 		LDA	entry_idx_300
-		CMP	#$5B ; '['
+		CMP	#$5B 
 		BNE	loc_12BA0E
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$30 ; '0'
+		CMP	#$30 
 		BNE	loc_12BA04
 		LDA	#0
 		STA	byte_650
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA04:				; CODE XREF: sub_12B441+5BBj
-		CMP	#$40 ; '@'
+loc_12BA04:				
+		CMP	#$40 
 		BNE	locret_12BA0D
 		LDA	#0
 		STA	byte_6B4
 
-locret_12BA0D:				; CODE XREF: sub_12B441+5C5j
+locret_12BA0D:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA0E:				; CODE XREF: sub_12B441+5B1j
+loc_12BA0E:				
 		LDA	entry_idx_300
-		CMP	#$92 ; '�'
+		CMP	#$92 
 		BNE	loc_12BA25
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$30 ; '0'
+		CMP	#$30 
 		BNE	locret_12BA24
 		LDA	#0
 		STA	byte_650
 
-locret_12BA24:				; CODE XREF: sub_12B441+5DCj
+locret_12BA24:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA25:				; CODE XREF: sub_12B441+5D2j
+loc_12BA25:				
 		LDA	entry_idx_300
-		CMP	#$5D ; ']'
+		CMP	#$5D 
 		BNE	loc_12BA57
 		LDA	byte_434
 		CMP	#0
@@ -6329,7 +6329,7 @@ loc_12BA25:				; CODE XREF: sub_12B441+5D2j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA39:				; CODE XREF: sub_12B441+5F0j
+loc_12BA39:				
 		CMP	#1
 		BNE	loc_12BA43
 		LDA	#0
@@ -6337,7 +6337,7 @@ loc_12BA39:				; CODE XREF: sub_12B441+5F0j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA43:				; CODE XREF: sub_12B441+5FAj
+loc_12BA43:				
 		CMP	#2
 		BNE	loc_12BA4D
 		LDA	#0
@@ -6345,19 +6345,19 @@ loc_12BA43:				; CODE XREF: sub_12B441+5FAj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA4D:				; CODE XREF: sub_12B441+604j
+loc_12BA4D:				
 		CMP	#3
 		BNE	locret_12BA56
 		LDA	#0
 		STA	byte_658
 
-locret_12BA56:				; CODE XREF: sub_12B441+60Ej
+locret_12BA56:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA57:				; CODE XREF: sub_12B441+5E9j
+loc_12BA57:				
 		LDA	entry_idx_300
-		CMP	#$5E ; '^'
+		CMP	#$5E 
 		BNE	loc_12BA78
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6368,42 +6368,42 @@ loc_12BA57:				; CODE XREF: sub_12B441+5E9j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA6E:				; CODE XREF: sub_12B441+625j
+loc_12BA6E:				
 		CMP	#$12
 		BNE	locret_12BA77
 		LDA	#0
 		STA	byte_65B
 
-locret_12BA77:				; CODE XREF: sub_12B441+62Fj
+locret_12BA77:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA78:				; CODE XREF: sub_12B441+61Bj
+loc_12BA78:				
 		LDA	entry_idx_300
-		CMP	#$5F ; '_'
+		CMP	#$5F 
 		BNE	loc_12BA99
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$24 ; '$'
+		CMP	#$24 
 		BNE	loc_12BA8F
 		LDA	#0
 		STA	byte_5C5
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA8F:				; CODE XREF: sub_12B441+646j
+loc_12BA8F:				
 		CMP	#7
 		BNE	locret_12BA98
 		LDA	#0
 		STA	byte_65C
 
-locret_12BA98:				; CODE XREF: sub_12B441+650j
+locret_12BA98:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BA99:				; CODE XREF: sub_12B441+63Cj
+loc_12BA99:				
 		LDA	entry_idx_300
-		CMP	#$60 ; '`'
+		CMP	#$60 
 		BNE	loc_12BABA
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6414,19 +6414,19 @@ loc_12BA99:				; CODE XREF: sub_12B441+63Cj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BAB0:				; CODE XREF: sub_12B441+667j
+loc_12BAB0:				
 		CMP	#$18
 		BNE	locret_12BAB9
 		LDA	#0
 		STA	byte_5C8
 
-locret_12BAB9:				; CODE XREF: sub_12B441+671j
+locret_12BAB9:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BABA:				; CODE XREF: sub_12B441+65Dj
+loc_12BABA:				
 		LDA	entry_idx_300
-		CMP	#$97 ; '�'
+		CMP	#$97 
 		BNE	loc_12BADB
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6437,19 +6437,19 @@ loc_12BABA:				; CODE XREF: sub_12B441+65Dj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BAD1:				; CODE XREF: sub_12B441+688j
+loc_12BAD1:				
 		CMP	#$18
 		BNE	locret_12BADA
 		LDA	#0
 		STA	byte_5C8
 
-locret_12BADA:				; CODE XREF: sub_12B441+692j
+locret_12BADA:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BADB:				; CODE XREF: sub_12B441+67Ej
+loc_12BADB:				
 		LDA	entry_idx_300
-		CMP	#$61 ; 'a'
+		CMP	#$61 
 		BNE	loc_12BB06
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6460,27 +6460,27 @@ loc_12BADB:				; CODE XREF: sub_12B441+67Ej
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BAF2:				; CODE XREF: sub_12B441+6A9j
-		CMP	#$55 ; 'U'
+loc_12BAF2:				
+		CMP	#$55 
 		BNE	loc_12BAFC
 		LDA	#0
 		STA	byte_6BC
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BAFC:				; CODE XREF: sub_12B441+6B3j
+loc_12BAFC:				
 		CMP	#$1A
 		BNE	locret_12BB05
 		LDA	#0
 		STA	byte_660
 
-locret_12BB05:				; CODE XREF: sub_12B441+6BDj
+locret_12BB05:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BB06:				; CODE XREF: sub_12B441+69Fj
+loc_12BB06:				
 		LDA	entry_idx_300
-		CMP	#$62 ; 'b'
+		CMP	#$62 
 		BNE	loc_12BB24
 		LDA	byte_434
 		CMP	#0
@@ -6490,19 +6490,19 @@ loc_12BB06:				; CODE XREF: sub_12B441+69Fj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BB1A:				; CODE XREF: sub_12B441+6D1j
+loc_12BB1A:				
 		CMP	#1
 		BNE	locret_12BB23
 		LDA	#0
 		STA	byte_664
 
-locret_12BB23:				; CODE XREF: sub_12B441+6DBj
+locret_12BB23:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BB24:				; CODE XREF: sub_12B441+6CAj
+loc_12BB24:				
 		LDA	entry_idx_300
-		CMP	#$65 ; 'e'
+		CMP	#$65 
 		BNE	loc_12BB4F
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6513,27 +6513,27 @@ loc_12BB24:				; CODE XREF: sub_12B441+6CAj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BB3B:				; CODE XREF: sub_12B441+6F2j
-		CMP	#$41 ; 'A'
+loc_12BB3B:				
+		CMP	#$41 
 		BNE	loc_12BB45
 		LDA	#0
 		STA	byte_6B5
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BB45:				; CODE XREF: sub_12B441+6FCj
-		CMP	#$49 ; 'I'
+loc_12BB45:				
+		CMP	#$49 
 		BNE	locret_12BB4E
 		LDA	#0
 		STA	byte_6AA
 
-locret_12BB4E:				; CODE XREF: sub_12B441+706j
+locret_12BB4E:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BB4F:				; CODE XREF: sub_12B441+6E8j
+loc_12BB4F:				
 		LDA	entry_idx_300
-		CMP	#$67 ; 'g'
+		CMP	#$67 
 		BNE	loc_12BB70
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6544,19 +6544,19 @@ loc_12BB4F:				; CODE XREF: sub_12B441+6E8j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BB66:				; CODE XREF: sub_12B441+71Dj
-		CMP	#$4C ; 'L'
+loc_12BB66:				
+		CMP	#$4C 
 		BNE	locret_12BB6F
 		LDA	#0
 		STA	byte_6AC
 
-locret_12BB6F:				; CODE XREF: sub_12B441+727j
+locret_12BB6F:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BB70:				; CODE XREF: sub_12B441+713j
+loc_12BB70:				
 		LDA	entry_idx_300
-		CMP	#$9B ; '�'
+		CMP	#$9B 
 		BNE	loc_12BB87
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6565,13 +6565,13 @@ loc_12BB70:				; CODE XREF: sub_12B441+713j
 		LDA	#0
 		STA	byte_66F
 
-locret_12BB86:				; CODE XREF: sub_12B441+73Ej
+locret_12BB86:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BB87:				; CODE XREF: sub_12B441+734j
+loc_12BB87:				
 		LDA	entry_idx_300
-		CMP	#$68 ; 'h'
+		CMP	#$68 
 		BNE	loc_12BB9E
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
@@ -6580,13 +6580,13 @@ loc_12BB87:				; CODE XREF: sub_12B441+734j
 		LDA	#0
 		STA	byte_671
 
-locret_12BB9D:				; CODE XREF: sub_12B441+755j
+locret_12BB9D:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BB9E:				; CODE XREF: sub_12B441+74Bj
+loc_12BB9E:				
 		LDA	entry_idx_300
-		CMP	#$6A ; 'j'
+		CMP	#$6A 
 		BNE	loc_12BBC6
 		LDA	byte_434
 		CMP	#3
@@ -6596,7 +6596,7 @@ loc_12BB9E:				; CODE XREF: sub_12B441+74Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BBB2:				; CODE XREF: sub_12B441+769j
+loc_12BBB2:				
 		CMP	#4
 		BNE	loc_12BBBC
 		LDA	#0
@@ -6604,26 +6604,26 @@ loc_12BBB2:				; CODE XREF: sub_12B441+769j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BBBC:				; CODE XREF: sub_12B441+773j
+loc_12BBBC:				
 		CMP	#5
 		BNE	locret_12BBC5
 		LDA	#0
 		STA	byte_6B6
 
-locret_12BBC5:				; CODE XREF: sub_12B441+77Dj
+locret_12BBC5:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BBC6:				; CODE XREF: sub_12B441+762j
+loc_12BBC6:				
 		LDA	entry_idx_300
-		CMP	#$52 ; 'R'
+		CMP	#$52 
 		BEQ	loc_12BBD4
-		CMP	#$8F ; '�'
+		CMP	#$8F 
 		BEQ	loc_12BBD4
 		JMP	loc_12BC09
 ; ---------------------------------------------------------------------------
 
-loc_12BBD4:				; CODE XREF: sub_12B441+78Aj
+loc_12BBD4:				
 					; sub_12B441+78Ej
 		LDA	byte_434
 		CMP	#0
@@ -6633,7 +6633,7 @@ loc_12BBD4:				; CODE XREF: sub_12B441+78Aj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BBE1:				; CODE XREF: sub_12B441+798j
+loc_12BBE1:				
 		CMP	#1
 		BNE	loc_12BBEB
 		LDA	#0
@@ -6641,7 +6641,7 @@ loc_12BBE1:				; CODE XREF: sub_12B441+798j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BBEB:				; CODE XREF: sub_12B441+7A2j
+loc_12BBEB:				
 		CMP	#2
 		BNE	loc_12BBF5
 		LDA	#0
@@ -6649,7 +6649,7 @@ loc_12BBEB:				; CODE XREF: sub_12B441+7A2j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BBF5:				; CODE XREF: sub_12B441+7ACj
+loc_12BBF5:				
 		CMP	#3
 		BNE	loc_12BBFF
 		LDA	#0
@@ -6657,19 +6657,19 @@ loc_12BBF5:				; CODE XREF: sub_12B441+7ACj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BBFF:				; CODE XREF: sub_12B441+7B6j
+loc_12BBFF:				
 		CMP	#4
 		BNE	locret_12BC08
 		LDA	#0
 		STA	byte_679
 
-locret_12BC08:				; CODE XREF: sub_12B441+7C0j
+locret_12BC08:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BC09:				; CODE XREF: sub_12B441+790j
+loc_12BC09:				
 		LDA	entry_idx_300
-		CMP	#$72 ; 'r'
+		CMP	#$72 
 		BNE	loc_12BC3B
 		LDA	byte_434
 		CMP	#2
@@ -6679,7 +6679,7 @@ loc_12BC09:				; CODE XREF: sub_12B441+790j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BC1D:				; CODE XREF: sub_12B441+7D4j
+loc_12BC1D:				
 		CMP	#3
 		BNE	loc_12BC27
 		LDA	#0
@@ -6687,7 +6687,7 @@ loc_12BC1D:				; CODE XREF: sub_12B441+7D4j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BC27:				; CODE XREF: sub_12B441+7DEj
+loc_12BC27:				
 		CMP	#4
 		BNE	loc_12BC31
 		LDA	#0
@@ -6695,101 +6695,101 @@ loc_12BC27:				; CODE XREF: sub_12B441+7DEj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BC31:				; CODE XREF: sub_12B441+7E8j
+loc_12BC31:				
 		CMP	#5
 		BNE	locret_12BC3A
 		LDA	#0
 		STA	byte_681
 
-locret_12BC3A:				; CODE XREF: sub_12B441+7F2j
+locret_12BC3A:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BC3B:				; CODE XREF: sub_12B441+7CDj
+loc_12BC3B:				
 		LDA	entry_idx_300
-		CMP	#$70 ; 'p'
+		CMP	#$70 
 		BNE	loc_12BC52
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$2E ; '.'
+		CMP	#$2E 
 		BNE	locret_12BC51
 		LDA	#0
 		STA	byte_682
 
-locret_12BC51:				; CODE XREF: sub_12B441+809j
+locret_12BC51:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BC52:				; CODE XREF: sub_12B441+7FFj
+loc_12BC52:				
 		LDA	entry_idx_300
-		CMP	#$6F ; 'o'
+		CMP	#$6F 
 		BNE	loc_12BC69
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$43 ; 'C'
+		CMP	#$43 
 		BNE	locret_12BC68
 		LDA	#0
 		STA	byte_6B7
 
-locret_12BC68:				; CODE XREF: sub_12B441+820j
+locret_12BC68:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BC69:				; CODE XREF: sub_12B441+816j
+loc_12BC69:				
 		LDA	entry_idx_300
-		CMP	#$71 ; 'q'
+		CMP	#$71 
 		BNE	loc_12BC80
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$44 ; 'D'
+		CMP	#$44 
 		BNE	locret_12BC7F
 		LDA	#0
 		STA	byte_6B8
 
-locret_12BC7F:				; CODE XREF: sub_12B441+837j
+locret_12BC7F:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BC80:				; CODE XREF: sub_12B441+82Dj
+loc_12BC80:				
 		LDA	entry_idx_300
-		CMP	#$75 ; 'u'
+		CMP	#$75 
 		BNE	loc_12BC97
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$45 ; 'E'
+		CMP	#$45 
 		BNE	locret_12BC96
 		LDA	#0
 		STA	byte_6B9
 
-locret_12BC96:				; CODE XREF: sub_12B441+84Ej
+locret_12BC96:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BC97:				; CODE XREF: sub_12B441+844j
+loc_12BC97:				
 		LDA	entry_idx_300
-		CMP	#$82 ; '�'
+		CMP	#$82 
 		BNE	loc_12BCAE
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$46 ; 'F'
+		CMP	#$46 
 		BNE	locret_12BCAD
 		LDA	#0
 		STA	byte_6BA
 
-locret_12BCAD:				; CODE XREF: sub_12B441+865j
+locret_12BCAD:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BCAE:				; CODE XREF: sub_12B441+85Bj
+loc_12BCAE:				
 		LDA	entry_idx_300
-		CMP	#$76 ; 'v'
+		CMP	#$76 
 		BEQ	loc_12BCBC
-		CMP	#$94 ; '�'
+		CMP	#$94 
 		BEQ	loc_12BCBC
 		JMP	loc_12BCDC
 ; ---------------------------------------------------------------------------
 
-loc_12BCBC:				; CODE XREF: sub_12B441+872j
+loc_12BCBC:				
 					; sub_12B441+876j
 		LDA	byte_434
 		CMP	#1
@@ -6799,25 +6799,25 @@ loc_12BCBC:				; CODE XREF: sub_12B441+872j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BCC9:				; CODE XREF: sub_12B441+880j
+loc_12BCC9:				
 		CMP	#2
 		BNE	loc_12BCD2
 		LDA	#0
 		STA	byte_686
 
-loc_12BCD2:				; CODE XREF: sub_12B441+88Aj
+loc_12BCD2:				
 		CMP	#3
 		BNE	locret_12BCDB
 		LDA	#0
 		STA	byte_687
 
-locret_12BCDB:				; CODE XREF: sub_12B441+893j
+locret_12BCDB:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BCDC:				; CODE XREF: sub_12B441+878j
+loc_12BCDC:				
 		LDA	entry_idx_300
-		CMP	#$77 ; 'w'
+		CMP	#$77 
 		BNE	loc_12BD04
 		LDA	byte_434
 		CMP	#0
@@ -6827,7 +6827,7 @@ loc_12BCDC:				; CODE XREF: sub_12B441+878j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BCF0:				; CODE XREF: sub_12B441+8A7j
+loc_12BCF0:				
 		CMP	#1
 		BNE	loc_12BCFA
 		LDA	#0
@@ -6835,19 +6835,19 @@ loc_12BCF0:				; CODE XREF: sub_12B441+8A7j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BCFA:				; CODE XREF: sub_12B441+8B1j
+loc_12BCFA:				
 		CMP	#5
 		BNE	locret_12BD03
 		LDA	#0
 		STA	byte_69F
 
-locret_12BD03:				; CODE XREF: sub_12B441+8BBj
+locret_12BD03:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD04:				; CODE XREF: sub_12B441+8A0j
+loc_12BD04:				
 		LDA	entry_idx_300
-		CMP	#$7E ; '~'
+		CMP	#$7E 
 		BNE	loc_12BD36
 		LDA	byte_434
 		CMP	#0
@@ -6857,7 +6857,7 @@ loc_12BD04:				; CODE XREF: sub_12B441+8A0j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD18:				; CODE XREF: sub_12B441+8CFj
+loc_12BD18:				
 		CMP	#1
 		BNE	loc_12BD22
 		LDA	#0
@@ -6865,7 +6865,7 @@ loc_12BD18:				; CODE XREF: sub_12B441+8CFj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD22:				; CODE XREF: sub_12B441+8D9j
+loc_12BD22:				
 		CMP	#2
 		BNE	loc_12BD2C
 		LDA	#0
@@ -6873,19 +6873,19 @@ loc_12BD22:				; CODE XREF: sub_12B441+8D9j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD2C:				; CODE XREF: sub_12B441+8E3j
+loc_12BD2C:				
 		CMP	#3
 		BNE	locret_12BD35
 		LDA	#0
 		STA	byte_694
 
-locret_12BD35:				; CODE XREF: sub_12B441+8EDj
+locret_12BD35:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD36:				; CODE XREF: sub_12B441+8C8j
+loc_12BD36:				
 		LDA	entry_idx_300
-		CMP	#$9A ; '�'
+		CMP	#$9A 
 		BNE	loc_12BD54
 		LDA	byte_434
 		CMP	#0
@@ -6895,28 +6895,28 @@ loc_12BD36:				; CODE XREF: sub_12B441+8C8j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD4A:				; CODE XREF: sub_12B441+901j
+loc_12BD4A:				
 		CMP	#1
 		BNE	locret_12BD53
 		LDA	#0
 		STA	byte_6A6
 
-locret_12BD53:				; CODE XREF: sub_12B441+90Bj
+locret_12BD53:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD54:				; CODE XREF: sub_12B441:loc_12B4D2j
+loc_12BD54:				
 					; sub_12B441+95j ...
 		LDX	byte_434
 		LDA	obj_array_unk_415,X
-		CMP	#$20 ; ' '
+		CMP	#$20 
 		BNE	loc_12BD64
 		LDA	#0
 		STA	byte_5AD
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD64:				; CODE XREF: sub_12B441+91Bj
+loc_12BD64:				
 		CMP	#$1C
 		BNE	loc_12BD8D
 		LDA	entry_idx_300
@@ -6927,7 +6927,7 @@ loc_12BD64:				; CODE XREF: sub_12B441+91Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD75:				; CODE XREF: sub_12B441+92Cj
+loc_12BD75:				
 		LDA	#0
 		STA	byte_5BD
 		LDA	#5
@@ -6940,7 +6940,7 @@ loc_12BD75:				; CODE XREF: sub_12B441+92Cj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD8D:				; CODE XREF: sub_12B441+925j
+loc_12BD8D:				
 		CMP	#$19
 		BNE	loc_12BD9C
 		LDA	#0
@@ -6950,31 +6950,31 @@ loc_12BD8D:				; CODE XREF: sub_12B441+925j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BD9C:				; CODE XREF: sub_12B441+94Ej
-		CMP	#$39 ; '9'
+loc_12BD9C:				
+		CMP	#$39 
 		BNE	loc_12BDA6
 		LDA	#0
 		STA	byte_6BB
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BDA6:				; CODE XREF: sub_12B441+95Dj
-		CMP	#$50 ; 'P'
+loc_12BDA6:				
+		CMP	#$50 
 		BNE	loc_12BDB0
 		LDA	#0
 		STA	byte_6AD
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BDB0:				; CODE XREF: sub_12B441+967j
-		CMP	#$21 ; '!'
+loc_12BDB0:				
+		CMP	#$21 
 		BNE	loc_12BDBA
 		LDA	#0
 		STA	byte_5B3
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BDBA:				; CODE XREF: sub_12B441+971j
+loc_12BDBA:				
 		CMP	#$16
 		BNE	loc_12BDC4
 		LDA	#0
@@ -6982,23 +6982,23 @@ loc_12BDBA:				; CODE XREF: sub_12B441+971j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BDC4:				; CODE XREF: sub_12B441+97Bj
-		CMP	#$2D ; '-'
+loc_12BDC4:				
+		CMP	#$2D 
 		BNE	loc_12BDCE
 		LDA	#0
 		STA	byte_5BB
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BDCE:				; CODE XREF: sub_12B441+985j
-		CMP	#$30 ; '0'
+loc_12BDCE:				
+		CMP	#$30 
 		BNE	loc_12BDD8
 		LDA	#0
 		STA	byte_614
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BDD8:				; CODE XREF: sub_12B441+98Fj
+loc_12BDD8:				
 		CMP	#$1D
 		BNE	loc_12BE01
 		LDA	entry_idx_300
@@ -7009,7 +7009,7 @@ loc_12BDD8:				; CODE XREF: sub_12B441+98Fj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BDE9:				; CODE XREF: sub_12B441+9A0j
+loc_12BDE9:				
 		LDA	#0
 		STA	byte_5BC
 		LDA	#5
@@ -7022,7 +7022,7 @@ loc_12BDE9:				; CODE XREF: sub_12B441+9A0j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BE01:				; CODE XREF: sub_12B441+999j
+loc_12BE01:				
 		CMP	#$14
 		BNE	loc_12BE0B
 		LDA	#0
@@ -7030,15 +7030,15 @@ loc_12BE01:				; CODE XREF: sub_12B441+999j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BE0B:				; CODE XREF: sub_12B441+9C2j
-		CMP	#$23 ; '#'
+loc_12BE0B:				
+		CMP	#$23 
 		BNE	loc_12BE15
 		LDA	#0
 		STA	byte_5AA
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BE15:				; CODE XREF: sub_12B441+9CCj
+loc_12BE15:				
 		CMP	#$15
 		BNE	loc_12BE5D
 		LDA	#0
@@ -7067,7 +7067,7 @@ loc_12BE15:				; CODE XREF: sub_12B441+9CCj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BE5D:				; CODE XREF: sub_12B441+9D6j
+loc_12BE5D:				
 		CMP	#3
 		BNE	loc_12BE67
 		LDA	#0
@@ -7075,7 +7075,7 @@ loc_12BE5D:				; CODE XREF: sub_12B441+9D6j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BE67:				; CODE XREF: sub_12B441+A1Ej
+loc_12BE67:				
 		CMP	#2
 		BNE	loc_12BE7E
 		LDA	byte_5F9
@@ -7086,21 +7086,21 @@ loc_12BE67:				; CODE XREF: sub_12B441+A1Ej
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BE78:				; CODE XREF: sub_12B441+A2Fj
+loc_12BE78:				
 		LDA	#0
 		STA	byte_5F9
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BE7E:				; CODE XREF: sub_12B441+A28j
-		CMP	#$22 ; '"'
+loc_12BE7E:				
+		CMP	#$22 
 		BNE	loc_12BE88
 		LDA	#0
 		STA	byte_606
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BE88:				; CODE XREF: sub_12B441+A3Fj
+loc_12BE88:				
 		CMP	#4
 		BNE	loc_12BEAA
 		LDA	#0
@@ -7117,15 +7117,15 @@ loc_12BE88:				; CODE XREF: sub_12B441+A3Fj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BEAA:				; CODE XREF: sub_12B441+A49j
-		CMP	#$26 ; '&'
+loc_12BEAA:				
+		CMP	#$26 
 		BNE	locret_12BEB4
 		LDA	#0
 		STA	byte_654
 		RTS
 ; ---------------------------------------------------------------------------
 
-locret_12BEB4:				; CODE XREF: sub_12B441+A6Bj
+locret_12BEB4:				
 		RTS
 ; End of function sub_12B441
 
@@ -7133,7 +7133,7 @@ locret_12BEB4:				; CODE XREF: sub_12B441+A6Bj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12BEB5:				; CODE XREF: command_0_1280FB:command_F_128155p
+sub_12BEB5:				
 		LDA	byte_5B0
 		BEQ	locret_12BEF9
 		LDA	#0
@@ -7149,21 +7149,21 @@ sub_12BEB5:				; CODE XREF: command_0_1280FB:command_F_128155p
 		BEQ	locret_12BEF9
 		LDX	#0
 
-loc_12BED8:				; CODE XREF: sub_12BEB5+31j
+loc_12BED8:				
 		LDA	objIdxArray_375,X
 		CMP	#3
 		BNE	loc_12BEE2
 		JMP	loc_12BEE9
 ; ---------------------------------------------------------------------------
 
-loc_12BEE2:				; CODE XREF: sub_12BEB5+28j
+loc_12BEE2:				
 		INX
 		CPX	objArraySize_373
 		BCC	loc_12BED8
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BEE9:				; CODE XREF: sub_12BEB5+2Aj
+loc_12BEE9:				
 		STX	cur_obj_idx_unk_43A
 		JSR	exec_b0_c3_128418
 		LDA	#0
@@ -7171,7 +7171,7 @@ loc_12BEE9:				; CODE XREF: sub_12BEB5+2Aj
 		LDA	#$FF
 		STA	byte_5AA
 
-locret_12BEF9:				; CODE XREF: sub_12BEB5+3j
+locret_12BEF9:				
 					; sub_12BEB5+1Fj
 		RTS
 ; End of function sub_12BEB5
@@ -7180,11 +7180,11 @@ locret_12BEF9:				; CODE XREF: sub_12BEB5+3j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12BEFA:				; CODE XREF: command_0_1280FB:command_10_12815Bp
+sub_12BEFA:				
 		LDA	byte_471
 		CMP	#0
 		BNE	loc_12BF14
-		LDA	#$39 ; '9'
+		LDA	#$39 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -7194,7 +7194,7 @@ sub_12BEFA:				; CODE XREF: command_0_1280FB:command_10_12815Bp
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BF14:				; CODE XREF: sub_12BEFA+5j
+loc_12BF14:				
 		LDA	byte_55C
 		CMP	#0
 		BEQ	loc_12BF23
@@ -7204,9 +7204,9 @@ loc_12BF14:				; CODE XREF: sub_12BEFA+5j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BF23:				; CODE XREF: sub_12BEFA+1Fj
+loc_12BF23:				
 					; sub_12BEFA+26j
-		LDA	#$22 ; '"'
+		LDA	#$22 
 		STA	byte_46D
 		RTS
 ; End of function sub_12BEFA
@@ -7215,7 +7215,7 @@ loc_12BF23:				; CODE XREF: sub_12BEFA+1Fj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12BF29:				; CODE XREF: sub_12873A+A6p
+sub_12BF29:				
 					; sub_12873A+AEp ...
 		LDX	cur_obj_idx_unk_43A
 		LDA	#0
@@ -7227,11 +7227,11 @@ sub_12BF29:				; CODE XREF: sub_12873A+A6p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12BF32:				; CODE XREF: command_0_1280FB:loc_128167p
+sub_12BF32:				
 		LDA	byte_471
 		CMP	#0
 		BNE	loc_12BF4C
-		LDA	#$37 ; '7'
+		LDA	#$37 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -7241,8 +7241,8 @@ sub_12BF32:				; CODE XREF: command_0_1280FB:loc_128167p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BF4C:				; CODE XREF: sub_12BF32+5j
-		LDA	#$2C ; ','
+loc_12BF4C:				
+		LDA	#$2C 
 		STA	byte_46D
 		RTS
 ; End of function sub_12BF32
@@ -7251,22 +7251,22 @@ loc_12BF4C:				; CODE XREF: sub_12BF32+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12BF52:				; CODE XREF: command_0_1280FB:loc_12816Dp
+sub_12BF52:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12BF66
 		LDA	byte_55F
 		CMP	#$FF
 		BEQ	locret_12BF65
-		LDA	#$2D ; '-'
+		LDA	#$2D 
 		STA	byte_46D
 
-locret_12BF65:				; CODE XREF: sub_12BF52+Cj
+locret_12BF65:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BF66:				; CODE XREF: sub_12BF52+5j
-		LDA	#$BE ; '�'
+loc_12BF66:				
+		LDA	#$BE 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -7280,7 +7280,7 @@ loc_12BF66:				; CODE XREF: sub_12BF52+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12BF79:				; CODE XREF: command_0_1280FB:loc_128173p
+sub_12BF79:				
 		LDA	byte_5BC
 		BNE	locret_12BF88
 		LDA	byte_5BD
@@ -7288,7 +7288,7 @@ sub_12BF79:				; CODE XREF: command_0_1280FB:loc_128173p
 		LDA	#$1C
 		STA	byte_46D
 
-locret_12BF88:				; CODE XREF: sub_12BF79+3j
+locret_12BF88:				
 					; sub_12BF79+8j
 		RTS
 ; End of function sub_12BF79
@@ -7297,7 +7297,7 @@ locret_12BF88:				; CODE XREF: sub_12BF79+3j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12BF89:				; CODE XREF: command_0_1280FB:loc_128179p
+sub_12BF89:				
 		LDA	byte_5A8
 		BNE	locret_12BF98
 		LDA	byte_5A9
@@ -7305,7 +7305,7 @@ sub_12BF89:				; CODE XREF: command_0_1280FB:loc_128179p
 		LDA	#$1C
 		STA	byte_46D
 
-locret_12BF98:				; CODE XREF: sub_12BF89+3j
+locret_12BF98:				
 					; sub_12BF89+8j
 		RTS
 ; End of function sub_12BF89
@@ -7314,7 +7314,7 @@ locret_12BF98:				; CODE XREF: sub_12BF89+3j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12BF99:				; CODE XREF: command_0_1280FB:loc_12817Fp
+sub_12BF99:				
 		LDA	byte_5C1
 		CMP	#0
 		BEQ	loc_12BFC1
@@ -7332,12 +7332,12 @@ sub_12BF99:				; CODE XREF: command_0_1280FB:loc_12817Fp
 		LDA	#1
 		STA	byte_59F
 
-locret_12BFC0:				; CODE XREF: sub_12BF99+13j
+locret_12BFC0:				
 					; sub_12BF99+20j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BFC1:				; CODE XREF: sub_12BF99+5j
+loc_12BFC1:				
 					; sub_12BF99+Cj
 		LDA	#$FF
 		STA	byte_560
@@ -7357,7 +7357,7 @@ loc_12BFC1:				; CODE XREF: sub_12BF99+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12BFDF:				; CODE XREF: command_0_1280FB:command_18_12818Bp
+sub_12BFDF:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12BFEC
@@ -7366,7 +7366,7 @@ sub_12BFDF:				; CODE XREF: command_0_1280FB:command_18_12818Bp
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12BFEC:				; CODE XREF: sub_12BFDF+5j
+loc_12BFEC:				
 		LDA	byte_562
 		CMP	#0
 		BNE	loc_12C00B
@@ -7382,7 +7382,7 @@ loc_12BFEC:				; CODE XREF: sub_12BFDF+5j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C00B:				; CODE XREF: sub_12BFDF+12j
+loc_12C00B:				
 		CMP	#$F
 		BNE	locret_12C021
 		LDA	#5
@@ -7393,7 +7393,7 @@ loc_12C00B:				; CODE XREF: sub_12BFDF+12j
 		STA	tilemapTypeUnk_30B
 		JSR	exec_b0_c0_12A973
 
-locret_12C021:				; CODE XREF: sub_12BFDF+2Ej
+locret_12C021:				
 		RTS
 ; End of function sub_12BFDF
 
@@ -7401,7 +7401,7 @@ locret_12C021:				; CODE XREF: sub_12BFDF+2Ej
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C022:				; CODE XREF: command_0_1280FB:loc_128191p
+sub_12C022:				
 		LDA	byte_313
 		CMP	#2
 		BNE	locret_12C095
@@ -7427,7 +7427,7 @@ sub_12C022:				; CODE XREF: command_0_1280FB:loc_128191p
 		JSR	exec_b2_c3_128313
 
 set_mansion_saveroom_12C05C:
-		LDA	#$21 ; '!'
+		LDA	#$21 
 		STA	image_id_4A4
 		LDA	#0
 		STA	image_offset_4A5
@@ -7437,9 +7437,9 @@ set_mansion_saveroom_12C05C:
 		STA	ppu_prev_scroll_x_unk_4A7
 		STA	ppu_prev_scroll_y_unk_4A8
 		STA	prev_sprite_type_4A9
-		LDA	#$60 ; '`'
+		LDA	#$60 
 		STA	byte_4AD
-		LDA	#$70 ; 'p'
+		LDA	#$70 
 		STA	byte_4AE
 		JSR	exec_b0_c2_12A9A9
 		LDA	#$B
@@ -7450,7 +7450,7 @@ set_mansion_saveroom_12C05C:
 		STA	tilemapTypeUnk_30B
 		JSR	exec_b0_c0_12A973
 
-locret_12C095:				; CODE XREF: sub_12C022+5j
+locret_12C095:				
 					; sub_12C022+Aj ...
 		RTS
 ; End of function sub_12C022
@@ -7459,10 +7459,10 @@ locret_12C095:				; CODE XREF: sub_12C022+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C096:				; CODE XREF: command_0_1280FB:loc_128197p
+sub_12C096:				
 		LDA	byte_564
 		BNE	locret_12C0AD
-		LDA	#$29 ; ')'
+		LDA	#$29 
 		STA	tilemapTypeUnk_30B
 		JSR	sub_12D58C
 		LDA	sprite_length_30F
@@ -7470,7 +7470,7 @@ sub_12C096:				; CODE XREF: command_0_1280FB:loc_128197p
 		LDA	#$FF
 		STA	byte_564
 
-locret_12C0AD:				; CODE XREF: sub_12C096+3j
+locret_12C0AD:				
 					; sub_12C096+10j
 		RTS
 ; End of function sub_12C096
@@ -7479,17 +7479,17 @@ locret_12C0AD:				; CODE XREF: sub_12C096+3j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C0AE:				; CODE XREF: command_0_1280FB:loc_12819Dp
+sub_12C0AE:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C0BB
-		LDA	#$29 ; ')'
+		LDA	#$29 
 		STA	byte_46D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C0BB:				; CODE XREF: sub_12C0AE+5j
-		LDA	#$CB ; '�'
+loc_12C0BB:				
+		LDA	#$CB 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -7503,11 +7503,11 @@ loc_12C0BB:				; CODE XREF: sub_12C0AE+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C0CE:				; CODE XREF: command_0_1280FB:loc_1281A3p
+sub_12C0CE:				
 		LDA	byte_566
 		CMP	#0
 		BNE	locret_12C118
-		LDA	#$D6 ; '�'
+		LDA	#$D6 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -7532,7 +7532,7 @@ sub_12C0CE:				; CODE XREF: command_0_1280FB:loc_1281A3p
 		STA	ppu_prev_scroll_y_unk_4A8
 		JSR	exec_b0_c2_12A9A9
 
-locret_12C118:				; CODE XREF: sub_12C0CE+5j
+locret_12C118:				
 					; sub_12C0CE+1Fj
 		RTS
 ; End of function sub_12C0CE
@@ -7541,10 +7541,10 @@ locret_12C118:				; CODE XREF: sub_12C0CE+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C119:				; CODE XREF: command_0_1280FB:command_1D_1281A9p
+sub_12C119:				
 		LDX	#0
 
-loc_12C11B:				; CODE XREF: sub_12C119+12j
+loc_12C11B:				
 					; sub_12C119+20j
 		LDA	objCreatedArray_393,X
 		BNE	locret_12C13B
@@ -7557,7 +7557,7 @@ loc_12C11B:				; CODE XREF: sub_12C119+12j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C12E:				; CODE XREF: sub_12C119+Cj
+loc_12C12E:				
 		TXA
 		PHA
 		JSR	sub_12C13C
@@ -7567,7 +7567,7 @@ loc_12C12E:				; CODE XREF: sub_12C119+Cj
 		CPX	objArraySize_373
 		BCC	loc_12C11B
 
-locret_12C13B:				; CODE XREF: sub_12C119+5j
+locret_12C13B:				
 		RTS
 ; End of function sub_12C119
 
@@ -7575,10 +7575,10 @@ locret_12C13B:				; CODE XREF: sub_12C119+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C13C:				; CODE XREF: sub_12C119+17p
+sub_12C13C:				
 		LDA	array_unk_3C5,X
 		SEC
-		SBC	#$B0 ; '�'
+		SBC	#$B0 
 		LDA	array_unk_3BB,X
 		SBC	#1
 		BCC	locret_12C1B7
@@ -7588,7 +7588,7 @@ sub_12C13C:				; CODE XREF: sub_12C119+17p
 		LDA	array_unk_3CF,X
 		SBC	#1
 		BCC	locret_12C1B7
-		LDA	#$EF ; '�'
+		LDA	#$EF 
 		SEC
 		SBC	array_unk_3C5,X
 		LDA	#1
@@ -7627,7 +7627,7 @@ sub_12C13C:				; CODE XREF: sub_12C119+17p
 		LDA	#$FF
 		STA	byte_577
 
-locret_12C1B7:				; CODE XREF: sub_12C13C+Bj
+locret_12C1B7:				
 					; sub_12C13C+18j ...
 		RTS
 ; End of function sub_12C13C
@@ -7636,7 +7636,7 @@ locret_12C1B7:				; CODE XREF: sub_12C13C+Bj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C1B8:				; CODE XREF: sub_12C13C+34p
+sub_12C1B8:				
 		LDA	#3
 		SEC
 		SBC	byte_577
@@ -7651,7 +7651,7 @@ sub_12C1B8:				; CODE XREF: sub_12C13C+34p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C1C3:				; CODE XREF: sub_12C1C3+2Cj
+sub_12C1C3:				
 					; sub_12C46C+29p
 		DEY
 		DEY
@@ -7684,18 +7684,18 @@ sub_12C1C3:				; CODE XREF: sub_12C1C3+2Cj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C1F2:				; CODE XREF: command_0_1280FB:loc_1281AFp
+sub_12C1F2:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C1FA
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C1FA:				; CODE XREF: sub_12C1F2+5j
+loc_12C1FA:				
 		LDA	byte_585
 		CMP	#$FF
 		BEQ	locret_12C220
-		LDA	#$E2 ; '�'
+		LDA	#$E2 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -7708,7 +7708,7 @@ loc_12C1FA:				; CODE XREF: sub_12C1F2+5j
 		LDA	#$FF
 		STA	byte_585
 
-locret_12C220:				; CODE XREF: sub_12C1F2+Dj
+locret_12C220:				
 					; sub_12C1F2+27j
 		RTS
 ; End of function sub_12C1F2
@@ -7717,15 +7717,15 @@ locret_12C220:				; CODE XREF: sub_12C1F2+Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C221:				; CODE XREF: command_0_1280FB:loc_1281B5p
+sub_12C221:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C229
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C229:				; CODE XREF: sub_12C221+5j
-		LDA	#$E3 ; '�'
+loc_12C229:				
+		LDA	#$E3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -7735,7 +7735,7 @@ loc_12C229:				; CODE XREF: sub_12C221+5j
 		JSR	exec_b0_c1_12A98E
 		LDA	byte_372
 		BNE	locret_12C25D
-		LDA	#$E4 ; '�'
+		LDA	#$E4 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -7746,7 +7746,7 @@ loc_12C229:				; CODE XREF: sub_12C221+5j
 		EOR	#$FF
 		STA	byte_5CA
 
-locret_12C25D:				; CODE XREF: sub_12C221+20j
+locret_12C25D:				
 		RTS
 ; End of function sub_12C221
 
@@ -7754,17 +7754,17 @@ locret_12C25D:				; CODE XREF: sub_12C221+20j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C25E:				; CODE XREF: command_0_1280FB:command_20_1281BBp
+sub_12C25E:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C26B
-		LDA	#$24 ; '$'
+		LDA	#$24 
 		STA	byte_46D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C26B:				; CODE XREF: sub_12C25E+5j
-		LDA	#$42 ; 'B'
+loc_12C26B:				
+		LDA	#$42 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -7778,15 +7778,15 @@ loc_12C26B:				; CODE XREF: sub_12C25E+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C27E:				; CODE XREF: command_0_1280FB:loc_1281C1p
+sub_12C27E:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C286
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C286:				; CODE XREF: sub_12C27E+5j
-		LDA	#$33 ; '3'
+loc_12C286:				
+		LDA	#$33 
 		STA	inv_sprite_idx_31C
 		JSR	sub_128955
 		LDA	is_game_finished_561
@@ -7807,7 +7807,7 @@ loc_12C286:				; CODE XREF: sub_12C27E+5j
 		STA	ppu_prev_scroll_y_unk_4A8
 		JSR	exec_b0_c2_12A9A9
 
-return_12C2BE:				; CODE XREF: sub_12C27E+15j
+return_12C2BE:				
 		RTS
 ; End of function sub_12C27E
 
@@ -7815,7 +7815,7 @@ return_12C2BE:				; CODE XREF: sub_12C27E+15j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C2BF:				; CODE XREF: command_0_1280FB:loc_1281C7p
+sub_12C2BF:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	locret_12C2D5
@@ -7826,7 +7826,7 @@ sub_12C2BF:				; CODE XREF: command_0_1280FB:loc_1281C7p
 		LDA	#2
 		STA	byte_46D
 
-locret_12C2D5:				; CODE XREF: sub_12C2BF+5j
+locret_12C2D5:				
 					; sub_12C2BF+Fj
 		RTS
 ; End of function sub_12C2BF
@@ -7835,11 +7835,11 @@ locret_12C2D5:				; CODE XREF: sub_12C2BF+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C2D6:				; CODE XREF: command_0_1280FB:loc_1281CDp
+sub_12C2D6:				
 		LDA	byte_471
 		CMP	#0
 		BNE	locret_12C323
-		LDA	#$E3 ; '�'
+		LDA	#$E3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -7865,7 +7865,7 @@ sub_12C2D6:				; CODE XREF: command_0_1280FB:loc_1281CDp
 		STA	ppu_prev_scroll_y_unk_4A8
 		JSR	exec_b0_c2_12A9A9
 
-locret_12C323:				; CODE XREF: sub_12C2D6+5j
+locret_12C323:				
 					; sub_12C2D6+1Fj
 		RTS
 ; End of function sub_12C2D6
@@ -7874,11 +7874,11 @@ locret_12C323:				; CODE XREF: sub_12C2D6+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C324:				; CODE XREF: command_0_1280FB:loc_1281D9p
+sub_12C324:				
 		LDA	byte_471
 		CMP	#0
 		BNE	locret_12C371
-		LDA	#$E3 ; '�'
+		LDA	#$E3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -7904,7 +7904,7 @@ sub_12C324:				; CODE XREF: command_0_1280FB:loc_1281D9p
 		STA	ppu_prev_scroll_y_unk_4A8
 		JSR	exec_b0_c2_12A9A9
 
-locret_12C371:				; CODE XREF: sub_12C324+5j
+locret_12C371:				
 					; sub_12C324+1Fj
 		RTS
 ; End of function sub_12C324
@@ -7913,7 +7913,7 @@ locret_12C371:				; CODE XREF: sub_12C324+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nullsub_3:				; CODE XREF: command_0_1280FB:loc_1281DFp
+nullsub_3:				
 		RTS
 ; End of function nullsub_3
 
@@ -7921,16 +7921,16 @@ nullsub_3:				; CODE XREF: command_0_1280FB:loc_1281DFp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C373:				; CODE XREF: command_0_1280FB:loc_1281E5p
+sub_12C373:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C380
-		LDA	#$2A ; '*'
+		LDA	#$2A 
 		STA	byte_46D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C380:				; CODE XREF: sub_12C373+5j
+loc_12C380:				
 		LDA	#$B
 		STA	text_idx_35C
 		LDA	#2
@@ -7945,11 +7945,11 @@ loc_12C380:				; CODE XREF: sub_12C373+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C393:				; CODE XREF: command_0_1280FB:command_28_1281EBp
+sub_12C393:				
 		LDA	byte_471
 		CMP	#0
 		BNE	loc_12C3AD
-		LDA	#$BA ; '�'
+		LDA	#$BA 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -7959,7 +7959,7 @@ sub_12C393:				; CODE XREF: command_0_1280FB:command_28_1281EBp
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C3AD:				; CODE XREF: sub_12C393+5j
+loc_12C3AD:				
 		LDA	#3
 		STA	byte_47F
 		LDA	#$1A
@@ -7971,7 +7971,7 @@ loc_12C3AD:				; CODE XREF: sub_12C393+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C3B8:				; CODE XREF: command_0_1280FB:command_2A_1281F7p
+sub_12C3B8:				
 		LDA	#$FF
 		STA	byte_58D
 		RTS
@@ -7981,13 +7981,13 @@ sub_12C3B8:				; CODE XREF: command_0_1280FB:command_2A_1281F7p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C3BE:				; CODE XREF: command_0_1280FB:command_2B_1281FDp
+sub_12C3BE:				
 		LDA	byte_58D
 		BEQ	locret_12C3C8
 		LDA	#$FF
 		STA	byte_58E
 
-locret_12C3C8:				; CODE XREF: sub_12C3BE+3j
+locret_12C3C8:				
 		RTS
 ; End of function sub_12C3BE
 
@@ -7995,11 +7995,11 @@ locret_12C3C8:				; CODE XREF: sub_12C3BE+3j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C3C9:				; CODE XREF: command_0_1280FB:loc_12828Dp
+sub_12C3C9:				
 		LDA	byte_471
 		CMP	#0
 		BNE	loc_12C3E3
-		LDA	#$BA ; '�'
+		LDA	#$BA 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -8009,7 +8009,7 @@ sub_12C3C9:				; CODE XREF: command_0_1280FB:loc_12828Dp
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C3E3:				; CODE XREF: sub_12C3C9+5j
+loc_12C3E3:				
 		LDA	#1
 		STA	byte_47F
 		LDA	#$1A
@@ -8021,11 +8021,11 @@ loc_12C3E3:				; CODE XREF: sub_12C3C9+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C3EE:				; CODE XREF: command_0_1280FB:loc_128287p
+sub_12C3EE:				
 		LDA	byte_471
 		CMP	#0
 		BNE	loc_12C408
-		LDA	#$BA ; '�'
+		LDA	#$BA 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -8035,7 +8035,7 @@ sub_12C3EE:				; CODE XREF: command_0_1280FB:loc_128287p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C408:				; CODE XREF: sub_12C3EE+5j
+loc_12C408:				
 		LDA	#2
 		STA	byte_47F
 		LDA	#$1A
@@ -8047,11 +8047,11 @@ loc_12C408:				; CODE XREF: sub_12C3EE+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C413:				; CODE XREF: command_0_1280FB:command_2C_128203p
+sub_12C413:				
 		LDA	byte_471
 		CMP	#0
 		BNE	loc_12C42D
-		LDA	#$BA ; '�'
+		LDA	#$BA 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -8061,7 +8061,7 @@ sub_12C413:				; CODE XREF: command_0_1280FB:command_2C_128203p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C42D:				; CODE XREF: sub_12C413+5j
+loc_12C42D:				
 		LDA	#4
 		STA	byte_47F
 		LDA	#$1A
@@ -8073,7 +8073,7 @@ loc_12C42D:				; CODE XREF: sub_12C413+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C438:				; CODE XREF: command_0_1280FB:loc_128209p
+sub_12C438:				
 		JSR	sub_12ED3B
 		JSR	sub_12D700
 		RTS
@@ -8083,16 +8083,16 @@ sub_12C438:				; CODE XREF: command_0_1280FB:loc_128209p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C43F:				; CODE XREF: command_0_1280FB:loc_12820Fp
+sub_12C43F:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C44C
-		LDA	#$2A ; '*'
+		LDA	#$2A 
 		STA	byte_46D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C44C:				; CODE XREF: sub_12C43F+5j
+loc_12C44C:				
 		LDA	#$B
 		STA	text_idx_35C
 		LDA	#2
@@ -8107,14 +8107,14 @@ loc_12C44C:				; CODE XREF: sub_12C43F+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C45F:				; CODE XREF: command_0_1280FB:loc_128215p
+sub_12C45F:				
 		LDA	byte_651
 		CMP	#0
 		BEQ	locret_12C46B
 		LDA	#$FF
 		STA	byte_58D
 
-locret_12C46B:				; CODE XREF: sub_12C45F+5j
+locret_12C46B:				
 		RTS
 ; End of function sub_12C45F
 
@@ -8122,19 +8122,19 @@ locret_12C46B:				; CODE XREF: sub_12C45F+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C46C:				; CODE XREF: command_0_1280FB:command_30_12821Bp
+sub_12C46C:				
 		LDA	byte_313
 		CMP	#1
 		BNE	locret_12C4AD
 		LDX	#4
 		LDA	array_unk_3C5,X
-		CMP	#$90 ; '�'
+		CMP	#$90 
 		BNE	locret_12C4AD
 		LDA	array_unk_3BB,X
 		CMP	#1
 		BNE	locret_12C4AD
 		LDA	array_unk_3D9,X
-		CMP	#$A0 ; '�'
+		CMP	#$A0 
 		BNE	locret_12C4AD
 		LDA	array_unk_3CF,X
 		CMP	#0
@@ -8151,7 +8151,7 @@ sub_12C46C:				; CODE XREF: command_0_1280FB:command_30_12821Bp
 		LDA	#0
 		STA	byte_659
 
-locret_12C4AD:				; CODE XREF: sub_12C46C+5j
+locret_12C4AD:				
 					; sub_12C46C+Ej ...
 		RTS
 ; End of function sub_12C46C
@@ -8160,11 +8160,11 @@ locret_12C4AD:				; CODE XREF: sub_12C46C+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C4AE:				; CODE XREF: command_0_1280FB:loc_128221p
+sub_12C4AE:				
 		LDA	byte_471
 		CMP	#0
 		BNE	loc_12C4C8
-		LDA	#$BA ; '�'
+		LDA	#$BA 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -8174,7 +8174,7 @@ sub_12C4AE:				; CODE XREF: command_0_1280FB:loc_128221p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C4C8:				; CODE XREF: sub_12C4AE+5j
+loc_12C4C8:				
 		LDA	#5
 		STA	byte_47F
 		LDA	#$1A
@@ -8186,7 +8186,7 @@ loc_12C4C8:				; CODE XREF: sub_12C4AE+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C4D3:				; CODE XREF: command_0_1280FB:loc_128227p
+sub_12C4D3:				
 		LDA	byte_313
 		CMP	#1
 		BNE	locret_12C4F2
@@ -8200,7 +8200,7 @@ sub_12C4D3:				; CODE XREF: command_0_1280FB:loc_128227p
 		STA	cur_obj_idx_unk_43A
 		JSR	sub_12BF29
 
-locret_12C4F2:				; CODE XREF: sub_12C4D3+5j
+locret_12C4F2:				
 		RTS
 ; End of function sub_12C4D3
 
@@ -8208,19 +8208,19 @@ locret_12C4F2:				; CODE XREF: sub_12C4D3+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C4F3:				; CODE XREF: command_0_1280FB:loc_12822Dp
+sub_12C4F3:				
 		LDA	byte_587
 		CMP	#$FF
 		BEQ	locret_12C519
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C507
-		LDA	#$39 ; '9'
+		LDA	#$39 
 		STA	byte_46D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C507:				; CODE XREF: sub_12C4F3+Cj
+loc_12C507:				
 		LDA	#$D
 		STA	text_idx_35C
 		LDA	#2
@@ -8229,7 +8229,7 @@ loc_12C507:				; CODE XREF: sub_12C4F3+Cj
 		STA	tilemapTypeUnk_30B
 		JSR	exec_b0_c0_12A973
 
-locret_12C519:				; CODE XREF: sub_12C4F3+5j
+locret_12C519:				
 		RTS
 ; End of function sub_12C4F3
 
@@ -8237,19 +8237,19 @@ locret_12C519:				; CODE XREF: sub_12C4F3+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C51A:				; CODE XREF: command_0_1280FB:loc_128233p
+sub_12C51A:				
 		LDA	byte_591
 		CMP	#$FF
 		BEQ	locret_12C540
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C52E
-		LDA	#$27 ; '''
+		LDA	#$27 
 		STA	byte_46D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C52E:				; CODE XREF: sub_12C51A+Cj
+loc_12C52E:				
 		LDA	#$E
 		STA	text_idx_35C
 		LDA	#2
@@ -8258,7 +8258,7 @@ loc_12C52E:				; CODE XREF: sub_12C51A+Cj
 		STA	tilemapTypeUnk_30B
 		JSR	exec_b0_c0_12A973
 
-locret_12C540:				; CODE XREF: sub_12C51A+5j
+locret_12C540:				
 		RTS
 ; End of function sub_12C51A
 
@@ -8266,19 +8266,19 @@ locret_12C540:				; CODE XREF: sub_12C51A+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C541:				; CODE XREF: command_0_1280FB:loc_128239p
+sub_12C541:				
 		LDA	byte_592
 		CMP	#$FF
 		BEQ	locret_12C567
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C555
-		LDA	#$28 ; '('
+		LDA	#$28 
 		STA	byte_46D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C555:				; CODE XREF: sub_12C541+Cj
+loc_12C555:				
 		LDA	#$F
 		STA	text_idx_35C
 		LDA	#2
@@ -8287,7 +8287,7 @@ loc_12C555:				; CODE XREF: sub_12C541+Cj
 		STA	tilemapTypeUnk_30B
 		JSR	exec_b0_c0_12A973
 
-locret_12C567:				; CODE XREF: sub_12C541+5j
+locret_12C567:				
 		RTS
 ; End of function sub_12C541
 
@@ -8295,16 +8295,16 @@ locret_12C567:				; CODE XREF: sub_12C541+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C568:				; CODE XREF: command_0_1280FB:loc_12823Fp
+sub_12C568:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C575
-		LDA	#$2E ; '.'
+		LDA	#$2E 
 		STA	byte_46D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C575:				; CODE XREF: sub_12C568+5j
+loc_12C575:				
 		LDA	#$12
 		STA	text_idx_35C
 		LDA	#2
@@ -8319,7 +8319,7 @@ loc_12C575:				; CODE XREF: sub_12C568+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-show_tree_screen_12C588:		; CODE XREF: command_0_1280FB:show_tree_screen_c36_128245p
+show_tree_screen_12C588:		
 		LDA	entry_idx_300
 		PHA
 		LDA	ppu_unk_byte_302
@@ -8334,15 +8334,15 @@ show_tree_screen_12C588:		; CODE XREF: command_0_1280FB:show_tree_screen_c36_128
 		PHA
 
 set_tree_screen_12C5A0:
-		LDA	#$9D ; '�'
+		LDA	#$9D 
 		STA	image_id_4A4
 		LDA	byte_593
 		CMP	#0
 		BEQ	loc_12C5B1
-		LDA	#$9E ; '�'
+		LDA	#$9E 
 		STA	image_id_4A4
 
-loc_12C5B1:				; CODE XREF: show_tree_screen_12C588+22j
+loc_12C5B1:				
 		LDA	#0
 		STA	image_offset_4A5
 		STA	ppu_prev_unk_4A6
@@ -8376,8 +8376,8 @@ loc_12C5B1:				; CODE XREF: show_tree_screen_12C588+22j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C5F0:				; CODE XREF: command_0_1280FB:loc_12824Bp
-		LDA	#$E3 ; '�'
+sub_12C5F0:				
+		LDA	#$E3 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -8403,7 +8403,7 @@ sub_12C5F0:				; CODE XREF: command_0_1280FB:loc_12824Bp
 		STA	ppu_prev_scroll_y_unk_4A8
 		JSR	exec_b0_c2_12A9A9
 
-locret_12C636:				; CODE XREF: sub_12C5F0+18j
+locret_12C636:				
 		RTS
 ; End of function sub_12C5F0
 
@@ -8411,41 +8411,41 @@ locret_12C636:				; CODE XREF: sub_12C5F0+18j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C637:				; CODE XREF: command_0_1280FB:loc_128251p
+sub_12C637:				
 		LDA	entry_idx_300
-		CMP	#$77 ; 'w'
+		CMP	#$77 
 		BNE	loc_12C645
 		LDA	byte_68D
 		CMP	#$FF
 		BEQ	loc_12C681
 
-loc_12C645:				; CODE XREF: sub_12C637+5j
+loc_12C645:				
 		LDA	entry_idx_300
-		CMP	#$7B ; '{'
+		CMP	#$7B 
 		BNE	loc_12C653
 		LDA	byte_68E
 		CMP	#$FF
 		BEQ	loc_12C681
 
-loc_12C653:				; CODE XREF: sub_12C637+13j
+loc_12C653:				
 		LDA	entry_idx_300
-		CMP	#$80 ; '�'
+		CMP	#$80 
 		BNE	loc_12C661
 		LDA	byte_68F
 		CMP	#$FF
 		BEQ	loc_12C681
 
-loc_12C661:				; CODE XREF: sub_12C637+21j
+loc_12C661:				
 		LDA	byte_471
 		CMP	#0
 		BEQ	loc_12C66E
-		LDA	#$30 ; '0'
+		LDA	#$30 
 		STA	byte_46D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C66E:				; CODE XREF: sub_12C637+2Fj
-		LDA	#$20 ; ' '
+loc_12C66E:				
+		LDA	#$20 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -8455,9 +8455,9 @@ loc_12C66E:				; CODE XREF: sub_12C637+2Fj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C681:				; CODE XREF: sub_12C637+Cj
+loc_12C681:				
 					; sub_12C637+1Aj ...
-		LDA	#$21 ; '!'
+		LDA	#$21 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -8471,8 +8471,8 @@ loc_12C681:				; CODE XREF: sub_12C637+Cj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C694:				; CODE XREF: command_0_1280FB:loc_128257p
-		LDA	#$24 ; '$'
+sub_12C694:				
+		LDA	#$24 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -8487,7 +8487,7 @@ sub_12C694:				; CODE XREF: command_0_1280FB:loc_128257p
 		STA	byte_420
 		JSR	sub_12F07D
 
-locret_12C6B8:				; CODE XREF: sub_12C694+1Aj
+locret_12C6B8:				
 		RTS
 ; End of function sub_12C694
 
@@ -8495,11 +8495,11 @@ locret_12C6B8:				; CODE XREF: sub_12C694+1Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C6B9:				; CODE XREF: command_0_1280FB:loc_12825Dp
+sub_12C6B9:				
 		LDA	byte_471
 		CMP	#0
 		BNE	loc_12C6D3
-		LDA	#$BA ; '�'
+		LDA	#$BA 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -8509,7 +8509,7 @@ sub_12C6B9:				; CODE XREF: command_0_1280FB:loc_12825Dp
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C6D3:				; CODE XREF: sub_12C6B9+5j
+loc_12C6D3:				
 		LDA	#6
 		STA	byte_47F
 		LDA	#$1A
@@ -8521,8 +8521,8 @@ loc_12C6D3:				; CODE XREF: sub_12C6B9+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C6DE:				; CODE XREF: command_0_1280FB:loc_128263p
-		LDA	#$2A ; '*'
+sub_12C6DE:				
+		LDA	#$2A 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -8536,7 +8536,7 @@ sub_12C6DE:				; CODE XREF: command_0_1280FB:loc_128263p
 		LDA	#$FF
 		STA	byte_67B
 
-locret_12C6FF:				; CODE XREF: sub_12C6DE+1Aj
+locret_12C6FF:				
 		RTS
 ; End of function sub_12C6DE
 
@@ -8544,11 +8544,11 @@ locret_12C6FF:				; CODE XREF: sub_12C6DE+1Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C700:				; CODE XREF: command_0_1280FB:loc_128269p
+sub_12C700:				
 		LDA	byte_67A
 		CMP	#$FF
 		BEQ	loc_12C72A
-		LDA	#$27 ; '''
+		LDA	#$27 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -8563,8 +8563,8 @@ sub_12C700:				; CODE XREF: command_0_1280FB:loc_128269p
 		CMP	#$FF
 		BNE	loc_12C742
 
-loc_12C72A:				; CODE XREF: sub_12C700+5j
-		LDA	#$28 ; '('
+loc_12C72A:				
+		LDA	#$28 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -8576,8 +8576,8 @@ loc_12C72A:				; CODE XREF: sub_12C700+5j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C742:				; CODE XREF: sub_12C700+28j
-		LDA	#$29 ; ')'
+loc_12C742:				
+		LDA	#$29 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -8585,7 +8585,7 @@ loc_12C742:				; CODE XREF: sub_12C700+28j
 		STA	tilemapTypeUnk_30B
 		JSR	exec_b0_c0_12A973
 
-locret_12C754:				; CODE XREF: sub_12C700+21j
+locret_12C754:				
 		RTS
 ; End of function sub_12C700
 
@@ -8593,8 +8593,8 @@ locret_12C754:				; CODE XREF: sub_12C700+21j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C755:				; CODE XREF: command_0_1280FB:loc_12826Fp
-		LDA	#$26 ; '&'
+sub_12C755:				
+		LDA	#$26 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -8613,8 +8613,8 @@ sub_12C755:				; CODE XREF: command_0_1280FB:loc_12826Fp
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C77E:				; CODE XREF: sub_12C755+21j
-		LDA	#$33 ; '3'
+loc_12C77E:				
+		LDA	#$33 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -8624,7 +8624,7 @@ loc_12C77E:				; CODE XREF: sub_12C755+21j
 		RTS
 ; ---------------------------------------------------------------------------
 
-locret_12C791:				; CODE XREF: sub_12C755+1Aj
+locret_12C791:				
 		RTS
 ; End of function sub_12C755
 
@@ -8632,7 +8632,7 @@ locret_12C791:				; CODE XREF: sub_12C755+1Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C792:				; CODE XREF: command_0_1280FB:loc_128275p
+sub_12C792:				
 		LDA	byte_595
 		CMP	#$FF
 		BEQ	locret_12C7CA
@@ -8654,7 +8654,7 @@ sub_12C792:				; CODE XREF: command_0_1280FB:loc_128275p
 		STA	ppu_prev_scroll_y_unk_4A8
 		JSR	exec_b0_c2_12A9A9
 
-locret_12C7CA:				; CODE XREF: sub_12C792+5j
+locret_12C7CA:				
 		RTS
 ; End of function sub_12C792
 
@@ -8662,8 +8662,8 @@ locret_12C7CA:				; CODE XREF: sub_12C792+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C7CB:				; CODE XREF: command_0_1280FB:loc_12827Bp
-		LDA	#$35 ; '5'
+sub_12C7CB:				
+		LDA	#$35 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -8677,7 +8677,7 @@ sub_12C7CB:				; CODE XREF: command_0_1280FB:loc_12827Bp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12C7DE:				; CODE XREF: command_0_1280FB:command_40_128281p
+sub_12C7DE:				
 					; sub_128A1A+AEp
 		LDA	image_id_4A4
 		CMP	#$18
@@ -8687,7 +8687,7 @@ sub_12C7DE:				; CODE XREF: command_0_1280FB:command_40_128281p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C7EB:				; CODE XREF: sub_12C7DE+5j
+loc_12C7EB:				
 		LDA	image_id_4A4
 		CMP	#$1B
 		BNE	loc_12C805
@@ -8699,22 +8699,22 @@ loc_12C7EB:				; CODE XREF: sub_12C7DE+5j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C7FF:				; CODE XREF: sub_12C7DE+19j
+loc_12C7FF:				
 		LDA	#0
 		STA	byte_5E9
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C805:				; CODE XREF: sub_12C7DE+12j
+loc_12C805:				
 		LDA	image_id_4A4
-		CMP	#$87 ; '�'
+		CMP	#$87 
 		BNE	loc_12C812
 		LDA	#0
 		STA	byte_5D8
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C812:				; CODE XREF: sub_12C7DE+2Cj
+loc_12C812:				
 		LDA	image_id_4A4
 		CMP	#$1F
 		BNE	loc_12C82C
@@ -8726,33 +8726,33 @@ loc_12C812:				; CODE XREF: sub_12C7DE+2Cj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C826:				; CODE XREF: sub_12C7DE+40j
+loc_12C826:				
 		LDA	#0
 		STA	byte_5DB
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C82C:				; CODE XREF: sub_12C7DE+39j
+loc_12C82C:				
 		LDA	image_id_4A4
-		CMP	#$22 ; '"'
+		CMP	#$22 
 		BNE	loc_12C839
 		LDA	#0
 		STA	byte_5E0
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C839:				; CODE XREF: sub_12C7DE+53j
+loc_12C839:				
 		LDA	image_id_4A4
-		CMP	#$23 ; '#'
+		CMP	#$23 
 		BNE	loc_12C846
 		LDA	#0
 		STA	byte_5E1
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C846:				; CODE XREF: sub_12C7DE+60j
+loc_12C846:				
 		LDA	image_id_4A4
-		CMP	#$25 ; '%'
+		CMP	#$25 
 		BNE	loc_12C860
 		LDA	cur_obj_idx_unk_43A
 		CMP	#1
@@ -8762,15 +8762,15 @@ loc_12C846:				; CODE XREF: sub_12C7DE+60j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C85A:				; CODE XREF: sub_12C7DE+74j
+loc_12C85A:				
 		LDA	#0
 		STA	byte_5E5
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C860:				; CODE XREF: sub_12C7DE+6Dj
+loc_12C860:				
 		LDA	image_id_4A4
-		CMP	#$2B ; '+'
+		CMP	#$2B 
 		BNE	loc_12C87A
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -8780,33 +8780,33 @@ loc_12C860:				; CODE XREF: sub_12C7DE+6Dj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C874:				; CODE XREF: sub_12C7DE+8Ej
+loc_12C874:				
 		LDA	#0
 		STA	byte_5F1
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C87A:				; CODE XREF: sub_12C7DE+87j
+loc_12C87A:				
 		LDA	image_id_4A4
-		CMP	#$2C ; ','
+		CMP	#$2C 
 		BNE	loc_12C887
 		LDA	#0
 		STA	byte_5F2
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C887:				; CODE XREF: sub_12C7DE+A1j
+loc_12C887:				
 		LDA	image_id_4A4
-		CMP	#$30 ; '0'
+		CMP	#$30 
 		BNE	loc_12C894
 		LDA	#0
 		STA	byte_5F6
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C894:				; CODE XREF: sub_12C7DE+AEj
+loc_12C894:				
 		LDA	image_id_4A4
-		CMP	#$36 ; '6'
+		CMP	#$36 
 		BNE	loc_12C8AE
 		LDA	cur_obj_idx_unk_43A
 		CMP	#1
@@ -8816,15 +8816,15 @@ loc_12C894:				; CODE XREF: sub_12C7DE+AEj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C8A8:				; CODE XREF: sub_12C7DE+C2j
+loc_12C8A8:				
 		LDA	#0
 		STA	byte_5B1
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C8AE:				; CODE XREF: sub_12C7DE+BBj
+loc_12C8AE:				
 		LDA	image_id_4A4
-		CMP	#$37 ; '7'
+		CMP	#$37 
 		BNE	loc_12C8C8
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -8834,24 +8834,24 @@ loc_12C8AE:				; CODE XREF: sub_12C7DE+BBj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C8C2:				; CODE XREF: sub_12C7DE+DCj
+loc_12C8C2:				
 		LDA	#0
 		STA	byte_603
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C8C8:				; CODE XREF: sub_12C7DE+D5j
+loc_12C8C8:				
 		LDA	image_id_4A4
-		CMP	#$3C ; '<'
+		CMP	#$3C 
 		BNE	loc_12C8D5
 		LDA	#0
 		STA	byte_612
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C8D5:				; CODE XREF: sub_12C7DE+EFj
+loc_12C8D5:				
 		LDA	image_id_4A4
-		CMP	#$3A ; ':'
+		CMP	#$3A 
 		BNE	loc_12C8F9
 		LDA	cur_obj_idx_unk_43A
 		CMP	#2
@@ -8861,7 +8861,7 @@ loc_12C8D5:				; CODE XREF: sub_12C7DE+EFj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C8E9:				; CODE XREF: sub_12C7DE+103j
+loc_12C8E9:				
 		CMP	#3
 		BNE	loc_12C8F3
 		LDA	#0
@@ -8869,15 +8869,15 @@ loc_12C8E9:				; CODE XREF: sub_12C7DE+103j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C8F3:				; CODE XREF: sub_12C7DE+10Dj
+loc_12C8F3:				
 		LDA	#0
 		STA	byte_60C
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C8F9:				; CODE XREF: sub_12C7DE+FCj
+loc_12C8F9:				
 		LDA	image_id_4A4
-		CMP	#$41 ; 'A'
+		CMP	#$41 
 		BNE	loc_12C913
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -8887,15 +8887,15 @@ loc_12C8F9:				; CODE XREF: sub_12C7DE+FCj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C90D:				; CODE XREF: sub_12C7DE+127j
+loc_12C90D:				
 		LDA	#0
 		STA	byte_61A
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C913:				; CODE XREF: sub_12C7DE+120j
+loc_12C913:				
 		LDA	image_id_4A4
-		CMP	#$48 ; 'H'
+		CMP	#$48 
 		BNE	loc_12C92D
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -8905,24 +8905,24 @@ loc_12C913:				; CODE XREF: sub_12C7DE+120j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C927:				; CODE XREF: sub_12C7DE+141j
+loc_12C927:				
 		LDA	#0
 		STA	byte_621
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C92D:				; CODE XREF: sub_12C7DE+13Aj
+loc_12C92D:				
 		LDA	image_id_4A4
-		CMP	#$32 ; '2'
+		CMP	#$32 
 		BNE	loc_12C93A
 		LDA	#0
 		STA	byte_5FC
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C93A:				; CODE XREF: sub_12C7DE+154j
+loc_12C93A:				
 		LDA	image_id_4A4
-		CMP	#$33 ; '3'
+		CMP	#$33 
 		BNE	loc_12C954
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -8932,15 +8932,15 @@ loc_12C93A:				; CODE XREF: sub_12C7DE+154j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C94E:				; CODE XREF: sub_12C7DE+168j
+loc_12C94E:				
 		LDA	#0
 		STA	byte_5FE
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C954:				; CODE XREF: sub_12C7DE+161j
+loc_12C954:				
 		LDA	image_id_4A4
-		CMP	#$34 ; '4'
+		CMP	#$34 
 		BNE	loc_12C96E
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -8950,15 +8950,15 @@ loc_12C954:				; CODE XREF: sub_12C7DE+161j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C968:				; CODE XREF: sub_12C7DE+182j
+loc_12C968:				
 		LDA	#0
 		STA	byte_600
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C96E:				; CODE XREF: sub_12C7DE+17Bj
+loc_12C96E:				
 		LDA	image_id_4A4
-		CMP	#$4E ; 'N'
+		CMP	#$4E 
 		BNE	loc_12C992
 		LDA	cur_obj_idx_unk_43A
 		CMP	#6
@@ -8968,7 +8968,7 @@ loc_12C96E:				; CODE XREF: sub_12C7DE+17Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C982:				; CODE XREF: sub_12C7DE+19Cj
+loc_12C982:				
 		CMP	#7
 		BNE	loc_12C98C
 		LDA	#0
@@ -8976,15 +8976,15 @@ loc_12C982:				; CODE XREF: sub_12C7DE+19Cj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C98C:				; CODE XREF: sub_12C7DE+1A6j
+loc_12C98C:				
 		LDA	#0
 		STA	byte_632
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C992:				; CODE XREF: sub_12C7DE+195j
+loc_12C992:				
 		LDA	image_id_4A4
-		CMP	#$50 ; 'P'
+		CMP	#$50 
 		BNE	loc_12C9AC
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -8994,15 +8994,15 @@ loc_12C992:				; CODE XREF: sub_12C7DE+195j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C9A6:				; CODE XREF: sub_12C7DE+1C0j
+loc_12C9A6:				
 		LDA	#0
 		STA	byte_634
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C9AC:				; CODE XREF: sub_12C7DE+1B9j
+loc_12C9AC:				
 		LDA	image_id_4A4
-		CMP	#$51 ; 'Q'
+		CMP	#$51 
 		BNE	loc_12C9C6
 		LDA	cur_obj_idx_unk_43A
 		CMP	#4
@@ -9012,24 +9012,24 @@ loc_12C9AC:				; CODE XREF: sub_12C7DE+1B9j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C9C0:				; CODE XREF: sub_12C7DE+1DAj
+loc_12C9C0:				
 		LDA	#0
 		STA	byte_63C
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C9C6:				; CODE XREF: sub_12C7DE+1D3j
+loc_12C9C6:				
 		LDA	image_id_4A4
-		CMP	#$54 ; 'T'
+		CMP	#$54 
 		BNE	loc_12C9D3
 		LDA	#0
 		STA	byte_63E
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C9D3:				; CODE XREF: sub_12C7DE+1EDj
+loc_12C9D3:				
 		LDA	image_id_4A4
-		CMP	#$55 ; 'U'
+		CMP	#$55 
 		BNE	loc_12C9ED
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -9039,24 +9039,24 @@ loc_12C9D3:				; CODE XREF: sub_12C7DE+1EDj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C9E7:				; CODE XREF: sub_12C7DE+201j
+loc_12C9E7:				
 		LDA	#0
 		STA	byte_640
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C9ED:				; CODE XREF: sub_12C7DE+1FAj
+loc_12C9ED:				
 		LDA	image_id_4A4
-		CMP	#$91 ; '�'
+		CMP	#$91 
 		BNE	loc_12C9FA
 		LDA	#0
 		STA	byte_647
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12C9FA:				; CODE XREF: sub_12C7DE+214j
+loc_12C9FA:				
 		LDA	image_id_4A4
-		CMP	#$58 ; 'X'
+		CMP	#$58 
 		BNE	loc_12CA1E
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -9066,7 +9066,7 @@ loc_12C9FA:				; CODE XREF: sub_12C7DE+214j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA0E:				; CODE XREF: sub_12C7DE+228j
+loc_12CA0E:				
 		CMP	#1
 		BNE	loc_12CA18
 		LDA	#0
@@ -9074,24 +9074,24 @@ loc_12CA0E:				; CODE XREF: sub_12C7DE+228j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA18:				; CODE XREF: sub_12C7DE+232j
+loc_12CA18:				
 		LDA	#0
 		STA	byte_64A
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA1E:				; CODE XREF: sub_12C7DE+221j
+loc_12CA1E:				
 		LDA	image_id_4A4
-		CMP	#$60 ; '`'
+		CMP	#$60 
 		BNE	loc_12CA2B
 		LDA	#0
 		STA	byte_65E
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA2B:				; CODE XREF: sub_12C7DE+245j
+loc_12CA2B:				
 		LDA	image_id_4A4
-		CMP	#$61 ; 'a'
+		CMP	#$61 
 		BNE	loc_12CA45
 		LDA	cur_obj_idx_unk_43A
 		CMP	#2
@@ -9101,15 +9101,15 @@ loc_12CA2B:				; CODE XREF: sub_12C7DE+245j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA3F:				; CODE XREF: sub_12C7DE+259j
+loc_12CA3F:				
 		LDA	#0
 		STA	byte_662
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA45:				; CODE XREF: sub_12C7DE+252j
+loc_12CA45:				
 		LDA	image_id_4A4
-		CMP	#$5F ; '_'
+		CMP	#$5F 
 		BNE	loc_12CA5F
 		LDA	cur_obj_idx_unk_43A
 		CMP	#2
@@ -9119,15 +9119,15 @@ loc_12CA45:				; CODE XREF: sub_12C7DE+252j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA59:				; CODE XREF: sub_12C7DE+273j
+loc_12CA59:				
 		LDA	#0
 		STA	byte_669
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA5F:				; CODE XREF: sub_12C7DE+26Cj
+loc_12CA5F:				
 		LDA	image_id_4A4
-		CMP	#$65 ; 'e'
+		CMP	#$65 
 		BNE	loc_12CA79
 		LDA	cur_obj_idx_unk_43A
 		CMP	#1
@@ -9137,33 +9137,33 @@ loc_12CA5F:				; CODE XREF: sub_12C7DE+26Cj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA73:				; CODE XREF: sub_12C7DE+28Dj
+loc_12CA73:				
 		LDA	#0
 		STA	byte_66C
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA79:				; CODE XREF: sub_12C7DE+286j
+loc_12CA79:				
 		LDA	image_id_4A4
-		CMP	#$66 ; 'f'
+		CMP	#$66 
 		BNE	loc_12CA86
 		LDA	#0
 		STA	byte_66E
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA86:				; CODE XREF: sub_12C7DE+2A0j
+loc_12CA86:				
 		LDA	image_id_4A4
-		CMP	#$68 ; 'h'
+		CMP	#$68 
 		BNE	loc_12CA93
 		LDA	#0
 		STA	byte_670
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CA93:				; CODE XREF: sub_12C7DE+2ADj
+loc_12CA93:				
 		LDA	image_id_4A4
-		CMP	#$72 ; 'r'
+		CMP	#$72 
 		BNE	loc_12CAAD
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -9173,15 +9173,15 @@ loc_12CA93:				; CODE XREF: sub_12C7DE+2ADj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CAA7:				; CODE XREF: sub_12C7DE+2C1j
+loc_12CAA7:				
 		LDA	#0
 		STA	byte_67D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CAAD:				; CODE XREF: sub_12C7DE+2BAj
+loc_12CAAD:				
 		LDA	image_id_4A4
-		CMP	#$77 ; 'w'
+		CMP	#$77 
 		BNE	loc_12CAD1
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -9191,7 +9191,7 @@ loc_12CAAD:				; CODE XREF: sub_12C7DE+2BAj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CAC1:				; CODE XREF: sub_12C7DE+2DBj
+loc_12CAC1:				
 		CMP	#1
 		BNE	loc_12CACB
 		LDA	#0
@@ -9199,15 +9199,15 @@ loc_12CAC1:				; CODE XREF: sub_12C7DE+2DBj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CACB:				; CODE XREF: sub_12C7DE+2E5j
+loc_12CACB:				
 		LDA	#0
 		STA	byte_68A
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CAD1:				; CODE XREF: sub_12C7DE+2D4j
+loc_12CAD1:				
 		LDA	image_id_4A4
-		CMP	#$7F ; ''
+		CMP	#$7F 
 		BNE	loc_12CAF5
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -9217,7 +9217,7 @@ loc_12CAD1:				; CODE XREF: sub_12C7DE+2D4j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CAE5:				; CODE XREF: sub_12C7DE+2FFj
+loc_12CAE5:				
 		CMP	#1
 		BNE	loc_12CAEF
 		LDA	#0
@@ -9225,15 +9225,15 @@ loc_12CAE5:				; CODE XREF: sub_12C7DE+2FFj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CAEF:				; CODE XREF: sub_12C7DE+309j
+loc_12CAEF:				
 		LDA	#0
 		STA	byte_697
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CAF5:				; CODE XREF: sub_12C7DE+2F8j
+loc_12CAF5:				
 		LDA	image_id_4A4
-		CMP	#$74 ; 't'
+		CMP	#$74 
 		BNE	loc_12CB23
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -9243,7 +9243,7 @@ loc_12CAF5:				; CODE XREF: sub_12C7DE+2F8j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CB09:				; CODE XREF: sub_12C7DE+323j
+loc_12CB09:				
 		CMP	#1
 		BNE	loc_12CB13
 		LDA	#0
@@ -9251,7 +9251,7 @@ loc_12CB09:				; CODE XREF: sub_12C7DE+323j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CB13:				; CODE XREF: sub_12C7DE+32Dj
+loc_12CB13:				
 		CMP	#2
 		BNE	loc_12CB1D
 		LDA	#0
@@ -9259,15 +9259,15 @@ loc_12CB13:				; CODE XREF: sub_12C7DE+32Dj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CB1D:				; CODE XREF: sub_12C7DE+337j
+loc_12CB1D:				
 		LDA	#0
 		STA	byte_69B
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CB23:				; CODE XREF: sub_12C7DE+31Cj
+loc_12CB23:				
 		LDA	image_id_4A4
-		CMP	#$7C ; '|'
+		CMP	#$7C 
 		BNE	loc_12CB3D
 		LDA	cur_obj_idx_unk_43A
 		CMP	#0
@@ -9277,31 +9277,31 @@ loc_12CB23:				; CODE XREF: sub_12C7DE+31Cj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CB37:				; CODE XREF: sub_12C7DE+351j
+loc_12CB37:				
 		LDA	#0
 		STA	byte_69D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CB3D:				; CODE XREF: sub_12C7DE+34Aj
+loc_12CB3D:				
 		LDA	image_id_4A4
-		CMP	#$9A ; '�'
+		CMP	#$9A 
 		BNE	loc_12CB4A
 		LDA	#0
 		STA	byte_6A7
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CB4A:				; CODE XREF: sub_12C7DE+364j
+loc_12CB4A:				
 		LDA	image_id_4A4
-		CMP	#$96 ; '�'
+		CMP	#$96 
 		BNE	locret_12CB57
 		LDA	#0
 		STA	byte_6A1
 		RTS
 ; ---------------------------------------------------------------------------
 
-locret_12CB57:				; CODE XREF: sub_12C7DE+371j
+locret_12CB57:				
 		RTS
 ; End of function sub_12C7DE
 
@@ -9309,7 +9309,7 @@ locret_12CB57:				; CODE XREF: sub_12C7DE+371j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-show_intro_screen_12CB58:		; CODE XREF: command_0_1280FB:command_44_battle_1282CAp
+show_intro_screen_12CB58:		
 		JSR	sub_12F77B
 		LDA	#$10
 		STA	image_id_4A4
@@ -9323,9 +9323,9 @@ show_intro_screen_12CB58:		; CODE XREF: command_0_1280FB:command_44_battle_1282C
 		LDA	#$1A
 		STA	objectIdx_318
 		JSR	exec_b0_c2_12A9A9
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	byte_42C
-		LDA	#$26 ; '&'
+		LDA	#$26 
 		STA	byte_42E
 		LDA	#0
 		STA	byte_430
@@ -9334,7 +9334,7 @@ show_intro_screen_12CB58:		; CODE XREF: command_0_1280FB:command_44_battle_1282C
 		STA	byte_434
 		STA	byte_42B
 
-loc_12CB96:				; CODE XREF: show_intro_screen_12CB58+57j
+loc_12CB96:				
 					; show_intro_screen_12CB58:loc_12CBD6j	...
 		JSR	sub_12CC34
 		JSR	wait_for_count350_zero_12F770
@@ -9342,13 +9342,13 @@ loc_12CB96:				; CODE XREF: show_intro_screen_12CB58+57j
 		JSR	wait_for_count350_zero_12F770
 		JSR	wait_for_count350_zero_12F770
 		LDA	byte_42E
-		CMP	#$26 ; '&'
+		CMP	#$26 
 		BEQ	loc_12CBB2
 		DEC	byte_42E
 		JMP	loc_12CB96
 ; ---------------------------------------------------------------------------
 
-loc_12CBB2:				; CODE XREF: show_intro_screen_12CB58+52j
+loc_12CBB2:				
 		LDA	byte_434
 		CMP	#4
 		BEQ	loc_12CBD9
@@ -9365,11 +9365,11 @@ loc_12CBB2:				; CODE XREF: show_intro_screen_12CB58+52j
 		STA	count_unk_468
 		INC	byte_434
 
-loc_12CBD6:				; CODE XREF: show_intro_screen_12CB58+74j
+loc_12CBD6:				
 		JMP	loc_12CB96
 ; ---------------------------------------------------------------------------
 
-loc_12CBD9:				; CODE XREF: show_intro_screen_12CB58+5Fj
+loc_12CBD9:				
 					; show_intro_screen_12CB58+61j
 		LDA	count_unk_469
 		CMP	#$A
@@ -9384,7 +9384,7 @@ loc_12CBD9:				; CODE XREF: show_intro_screen_12CB58+5Fj
 		BEQ	show_ending_screen_12CC06
 		INC	byte_42B
 
-loc_12CBF7:				; CODE XREF: show_intro_screen_12CB58+86j
+loc_12CBF7:				
 		LDA	#2
 		CLC
 		ADC	byte_434
@@ -9393,8 +9393,8 @@ loc_12CBF7:				; CODE XREF: show_intro_screen_12CB58+86j
 		JMP	loc_12CB96
 ; ---------------------------------------------------------------------------
 
-show_ending_screen_12CC06:		; CODE XREF: show_intro_screen_12CB58+9Aj
-		LDA	#$A0 ; '�'
+show_ending_screen_12CC06:		
+		LDA	#$A0 
 		STA	image_id_4A4
 		LDA	#0
 		STA	image_offset_4A5
@@ -9406,7 +9406,7 @@ show_ending_screen_12CC06:		; CODE XREF: show_intro_screen_12CB58+9Aj
 		LDA	#$1A
 		STA	objectIdx_318
 		JSR	exec_b0_c2_12A9A9
-		LDA	#$46 ; 'F'
+		LDA	#$46 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -9418,7 +9418,7 @@ show_ending_screen_12CC06:		; CODE XREF: show_intro_screen_12CB58+9Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12CC34:				; CODE XREF: show_intro_screen_12CB58:loc_12CB96p
+sub_12CC34:				
 		LDA	count_unk_465
 		CMP	#$A
 		BCC	loc_12CC48
@@ -9428,7 +9428,7 @@ sub_12CC34:				; CODE XREF: show_intro_screen_12CB58:loc_12CB96p
 		EOR	#1
 		STA	byte_430
 
-loc_12CC48:				; CODE XREF: sub_12CC34+5j
+loc_12CC48:				
 		LDA	count_unk_466
 		CMP	#$F
 		BCC	loc_12CC5C
@@ -9438,7 +9438,7 @@ loc_12CC48:				; CODE XREF: sub_12CC34+5j
 		EOR	#1
 		STA	byte_431
 
-loc_12CC5C:				; CODE XREF: sub_12CC34+19j
+loc_12CC5C:				
 		LDA	count_unk_467
 		CMP	#$A
 		BCC	loc_12CC70
@@ -9448,7 +9448,7 @@ loc_12CC5C:				; CODE XREF: sub_12CC34+19j
 		EOR	#1
 		STA	byte_433
 
-loc_12CC70:				; CODE XREF: sub_12CC34+2Dj
+loc_12CC70:				
 		LDA	byte_42C
 		CLC
 		ADC	byte_430
@@ -9479,19 +9479,19 @@ loc_12CC70:				; CODE XREF: sub_12CC34+2Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12CCAB:				; CODE XREF: show_intro_screen_12CB58+6Cp
+sub_12CCAB:				
 					; show_intro_screen_12CB58+A8p
-		LDA	#$70 ; 'p'
+		LDA	#$70 
 		STA	byte_36A
 		LDA	#0
 		STA	byte_36B
-		LDA	#$50 ; 'P'
+		LDA	#$50 
 		STA	byte_366
 		LDA	#0
 		STA	byte_367
 		LDA	#0
 		STA	sprite_secondByte_31B
-		LDA	#$8C ; '�'
+		LDA	#$8C 
 		STA	byte_31A
 		LDA	#$1A
 		STA	objectIdx_318
@@ -9503,7 +9503,7 @@ sub_12CCAB:				; CODE XREF: show_intro_screen_12CB58+6Cp
 		LDA	#2
 		STA	byte_317
 
-loc_12CCDF:				; CODE XREF: sub_12CCAB+2Dj
+loc_12CCDF:				
 		JSR	exec_b1_c1_128394
 		RTS
 ; End of function sub_12CCAB
@@ -9512,11 +9512,11 @@ loc_12CCDF:				; CODE XREF: sub_12CCAB+2Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-comm_46_12CCE3:				; CODE XREF: command_0_1280FB:command_46_1282D6p
+comm_46_12CCE3:				
 		LDA	byte_6C5
 		CMP	#0
 		BEQ	return_12CD1C
-		LDA	#$7B ; '{'
+		LDA	#$7B 
 		STA	text_idx_35C
 		LDA	#1
 		STA	char_type_id_35D
@@ -9538,7 +9538,7 @@ comm_46_12CCE3:				; CODE XREF: command_0_1280FB:command_46_1282D6p
 		LDA	#0
 		STA	byte_6C5
 
-return_12CD1C:				; CODE XREF: comm_46_12CCE3+5j
+return_12CD1C:				
 		RTS
 ; End of function comm_46_12CCE3
 
@@ -9546,8 +9546,8 @@ return_12CD1C:				; CODE XREF: comm_46_12CCE3+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-comm_48_take_item_12CD1D:		; CODE XREF: command_0_1280FB:command_48_take_item_1282E2p
-		LDA	#$45 ; 'E'
+comm_48_take_item_12CD1D:		
+		LDA	#$45 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -9561,7 +9561,7 @@ comm_48_take_item_12CD1D:		; CODE XREF: command_0_1280FB:command_48_take_item_12
 ; =============== S U B	R O U T	I N E =======================================
 
 
-com_E_load_game_12CD30:			; CODE XREF: command_0_1280FB:command_E_load_game_12814Fp
+com_E_load_game_12CD30:			
 					; sub_12ACDB+7p
 		LDA	image_id_4A4
 		STA	byte_100
@@ -9606,17 +9606,17 @@ com_E_load_game_12CD30:			; CODE XREF: command_0_1280FB:command_E_load_game_1281
 		LDY	#0
 		LDA	#$B
 		STA	ppu_unk_byte_309
-		LDA	#$7A ; 'z'
+		LDA	#$7A 
 		STA	sprite_secondByte_31B
 
-loc_12CDA2:				; CODE XREF: com_E_load_game_12CD30+CDj
+loc_12CDA2:				
 		CPY	#4
 		BEQ	loc_12CE00
 		LDA	byte_4A0,Y
 		CMP	#$FF
 		BEQ	loc_12CDEA
 		CLC
-		ADC	#$7E ; '~'
+		ADC	#$7E 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -9644,7 +9644,7 @@ loc_12CDA2:				; CODE XREF: com_E_load_game_12CD30+CDj
 		PLA
 		TAY
 
-loc_12CDEA:				; CODE XREF: com_E_load_game_12CD30+7Bj
+loc_12CDEA:				
 		LDA	ppu_unk_byte_309
 		CLC
 		ADC	#4
@@ -9657,11 +9657,11 @@ loc_12CDEA:				; CODE XREF: com_E_load_game_12CD30+7Bj
 		JMP	loc_12CDA2
 ; ---------------------------------------------------------------------------
 
-loc_12CE00:				; CODE XREF: com_E_load_game_12CD30+74j
+loc_12CE00:				
 		LDA	#0
 		STA	byte_372
 
-loc_12CE05:				; CODE XREF: com_E_load_game_12CD30+F2j
+loc_12CE05:				
 					; com_E_load_game_12CD30+10Bj ...
 		JSR	sub_12D0C2
 		JSR	wait_for_count350_zero_12F770
@@ -9673,13 +9673,13 @@ loc_12CE05:				; CODE XREF: com_E_load_game_12CD30+F2j
 		LDA	#4
 		STA	byte_372
 
-loc_12CE1C:				; CODE XREF: com_E_load_game_12CD30+E5j
+loc_12CE1C:				
 		DEC	byte_372
 		JSR	sub_12ED32
 		JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
-loc_12CE25:				; CODE XREF: com_E_load_game_12CD30+E0j
+loc_12CE25:				
 		CMP	#4
 		BNE	loc_12CE3E
 		LDA	byte_372
@@ -9688,14 +9688,14 @@ loc_12CE25:				; CODE XREF: com_E_load_game_12CD30+E0j
 		LDA	#$FF
 		STA	byte_372
 
-loc_12CE35:				; CODE XREF: com_E_load_game_12CD30+FEj
+loc_12CE35:				
 		INC	byte_372
 		JSR	sub_12ED32
 		JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
-loc_12CE3E:				; CODE XREF: com_E_load_game_12CD30+F7j
-		CMP	#$80 ; '�'
+loc_12CE3E:				
+		CMP	#$80 
 		BNE	loc_12CE62
 		JSR	sub_12ED20
 		LDA	jill_pos_y_47E
@@ -9707,20 +9707,20 @@ loc_12CE3E:				; CODE XREF: com_E_load_game_12CD30+F7j
 		JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
-loc_12CE57:				; CODE XREF: com_E_load_game_12CD30+11Aj
+loc_12CE57:				
 		JSR	sub_12CEAC
 		LDA	sprite_length_30F
 		BNE	loc_12CE69
 		JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
-loc_12CE62:				; CODE XREF: com_E_load_game_12CD30+110j
-		CMP	#$40 ; '@'
+loc_12CE62:				
+		CMP	#$40 
 		BEQ	loc_12CE69
 		JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
-loc_12CE69:				; CODE XREF: com_E_load_game_12CD30+122j
+loc_12CE69:				
 					; com_E_load_game_12CD30+12Dj ...
 		JSR	sub_12ED29
 		LDA	jill_pos_y_47E
@@ -9746,14 +9746,14 @@ loc_12CE69:				; CODE XREF: com_E_load_game_12CD30+122j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CE99:				; CODE XREF: com_E_load_game_12CD30+141j
+loc_12CE99:				
 		LDA	sprite_length_30F
 		CMP	#$FF
 		BNE	loc_12CEA5
 		LDA	#0
 		STA	jill_pos_y_47E
 
-loc_12CEA5:				; CODE XREF: com_E_load_game_12CD30+16Ej
+loc_12CEA5:				
 		PLA
 		PLA
 		PLA
@@ -9767,7 +9767,7 @@ loc_12CEA5:				; CODE XREF: com_E_load_game_12CD30+16Ej
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12CEAC:				; CODE XREF: com_E_load_game_12CD30:loc_12CE57p
+sub_12CEAC:				
 		LDY	byte_372
 		LDA	byte_4A0,Y
 		CMP	#$FF
@@ -9776,14 +9776,14 @@ sub_12CEAC:				; CODE XREF: com_E_load_game_12CD30:loc_12CE57p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CEBA:				; CODE XREF: sub_12CEAC+8j
+loc_12CEBA:				
 		LDA	#$1B
 		STA	ppu_unk_byte_309
 		LDA	#6
 		STA	tilemap_size_307
-		LDA	#$DA ; '�'
+		LDA	#$DA 
 		STA	sprite_secondByte_31B
-		LDA	#$85 ; '�'
+		LDA	#$85 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -9804,9 +9804,9 @@ loc_12CEBA:				; CODE XREF: sub_12CEAC+8j
 		STA	ppu_unk_byte_309
 		LDA	#$15
 		STA	tilemap_size_307
-		LDA	#$F2 ; '�'
+		LDA	#$F2 
 		STA	sprite_secondByte_31B
-		LDA	#$86 ; '�'
+		LDA	#$86 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -9824,7 +9824,7 @@ loc_12CEBA:				; CODE XREF: sub_12CEAC+8j
 		LDA	#1
 		STA	byte_372
 
-loc_12CF2D:				; CODE XREF: sub_12CEAC+99j
+loc_12CF2D:				
 					; sub_12CEAC+ABj ...
 		JSR	sub_12D070
 		JSR	sub_12F765
@@ -9838,7 +9838,7 @@ loc_12CF2D:				; CODE XREF: sub_12CEAC+99j
 		JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
-loc_12CF48:				; CODE XREF: sub_12CEAC+8Cj
+loc_12CF48:				
 		CMP	#1
 		BNE	loc_12CF5A
 		LDA	byte_372
@@ -9848,15 +9848,15 @@ loc_12CF48:				; CODE XREF: sub_12CEAC+8Cj
 		JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
-loc_12CF5A:				; CODE XREF: sub_12CEAC+9Ej
-		CMP	#$80 ; '�'
+loc_12CF5A:				
+		CMP	#$80 
 		BEQ	loc_12CF61
 		JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
-loc_12CF61:				; CODE XREF: sub_12CEAC+B0j
+loc_12CF61:				
 		JSR	sub_12ED20
-		LDA	#$F0 ; '�'
+		LDA	#$F0 
 		STA	byte_204
 		LDA	byte_372
 		BNE	loc_12CF76
@@ -9866,14 +9866,14 @@ loc_12CF61:				; CODE XREF: sub_12CEAC+B0j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12CF76:				; CODE XREF: sub_12CEAC+C0j
+loc_12CF76:				
 		LDA	#$1B
 		STA	ppu_unk_byte_309
 		LDA	#6
 		STA	tilemap_size_307
-		LDA	#$DA ; '�'
+		LDA	#$DA 
 		STA	sprite_secondByte_31B
-		LDA	#$74 ; 't'
+		LDA	#$74 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -9901,9 +9901,9 @@ loc_12CF76:				; CODE XREF: sub_12CEAC+C0j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12CFBA:				; CODE XREF: sub_12CEAC+Ap
+sub_12CFBA:				
 					; sub_12CEAC+C6p
-		LDA	#$F0 ; '�'
+		LDA	#$F0 
 		STA	byte_204
 		LDY	byte_372
 		LDA	byte_47F
@@ -9912,9 +9912,9 @@ sub_12CFBA:				; CODE XREF: sub_12CEAC+Ap
 		PHA
 		LDA	#$B
 		STA	ppu_unk_byte_309
-		LDA	#$7A ; 'z'
+		LDA	#$7A 
 		STA	sprite_secondByte_31B
-		LDA	#$7E ; '~'
+		LDA	#$7E 
 		CLC
 		ADC	byte_47F
 		STA	text_idx_35C
@@ -9922,7 +9922,7 @@ sub_12CFBA:				; CODE XREF: sub_12CEAC+Ap
 		ADC	#0
 		STA	char_type_id_35D
 
-loc_12CFE6:				; CODE XREF: sub_12CFBA+46j
+loc_12CFE6:				
 		LDA	byte_372
 		BEQ	loc_12D003
 		LDA	ppu_unk_byte_309
@@ -9937,7 +9937,7 @@ loc_12CFE6:				; CODE XREF: sub_12CFBA+46j
 		JMP	loc_12CFE6
 ; ---------------------------------------------------------------------------
 
-loc_12D003:				; CODE XREF: sub_12CFBA+2Fj
+loc_12D003:				
 		LDA	#8
 		STA	tilemap_size_307
 		LDA	#8
@@ -9957,9 +9957,9 @@ loc_12D003:				; CODE XREF: sub_12CFBA+2Fj
 		STA	ppu_unk_byte_309
 		LDA	#6
 		STA	tilemap_size_307
-		LDA	#$DA ; '�'
+		LDA	#$DA 
 		STA	sprite_secondByte_31B
-		LDA	#$87 ; '�'
+		LDA	#$87 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -9988,7 +9988,7 @@ loc_12D003:				; CODE XREF: sub_12CFBA+2Fj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D070:				; CODE XREF: sub_12CEAC:loc_12CF2Dp
+sub_12D070:				
 		LDA	count_unk_466
 		CMP	#$A
 		BCC	loc_12D084
@@ -9998,8 +9998,8 @@ sub_12D070:				; CODE XREF: sub_12CEAC:loc_12CF2Dp
 		EOR	#1
 		STA	byte_547
 
-loc_12D084:				; CODE XREF: sub_12D070+5j
-		LDA	#$25 ; '%'
+loc_12D084:				
+		LDA	#$25 
 		STA	objMapIdx_316
 		LDA	byte_372
 		ASL	A
@@ -10032,7 +10032,7 @@ loc_12D084:				; CODE XREF: sub_12D070+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D0C2:				; CODE XREF: com_E_load_game_12CD30:loc_12CE05p
+sub_12D0C2:				
 		LDA	count_unk_465
 		CMP	#$A
 		BCC	loc_12D0D6
@@ -10042,8 +10042,8 @@ sub_12D0C2:				; CODE XREF: com_E_load_game_12CD30:loc_12CE05p
 		EOR	#1
 		STA	byte_547
 
-loc_12D0D6:				; CODE XREF: sub_12D0C2+5j
-		LDA	#$25 ; '%'
+loc_12D0D6:				
+		LDA	#$25 
 		STA	objMapIdx_316
 		LDA	byte_372
 		ASL	A
@@ -10073,19 +10073,19 @@ loc_12D0D6:				; CODE XREF: sub_12D0C2+5j
 ; End of function sub_12D0C2
 
 ; ---------------------------------------------------------------------------
-byte_12D114:	.BYTE $20,$58		; DATA XREF: sub_12D0C2+1Er
+byte_12D114:	.BYTE $20,$58		
 					; sub_12D0C2+29r
 		.BYTE $20,$78
 		.BYTE $20,$98
 		.BYTE $20,$B8
-byte_12D11C:	.BYTE $9D,$DA		; DATA XREF: sub_12D070+1Er
+byte_12D11C:	.BYTE $9D,$DA		
 					; sub_12D070+29r
 		.BYTE $BD,$DA
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D120:				; CODE XREF: com_E_load_game_12CD30+11Cp
+sub_12D120:				
 		LDY	byte_372
 		LDA	byte_4A0,Y
 		CMP	#$FF
@@ -10096,7 +10096,7 @@ sub_12D120:				; CODE XREF: com_E_load_game_12CD30+11Cp
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12D133:				; CODE XREF: sub_12D120+8j
+loc_12D133:				
 		LDA	#0
 		STA	sprite_length_30F
 		RTS
@@ -10106,11 +10106,11 @@ loc_12D133:				; CODE XREF: sub_12D120+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D139:				; CODE XREF: sub_12D167+50p
+sub_12D139:				
 					; sub_12D1E9p
 		LDA	#0
 		STA	ptr_0
-		LDA	#$69 ; 'i'
+		LDA	#$69 
 		STA	ptr_1
 		LDA	ptr_0
 		CLC
@@ -10121,12 +10121,12 @@ sub_12D139:				; CODE XREF: sub_12D167+50p
 		STA	ptr_1
 		LDY	byte_372
 
-loc_12D151:				; CODE XREF: sub_12D139+2Aj
+loc_12D151:				
 		CPY	#0
 		BEQ	locret_12D166
 		LDA	ptr_0
 		CLC
-		ADC	#$58 ; 'X'
+		ADC	#$58 
 		STA	ptr_0
 		LDA	ptr_1
 		ADC	#2
@@ -10135,7 +10135,7 @@ loc_12D151:				; CODE XREF: sub_12D139+2Aj
 		JMP	loc_12D151
 ; ---------------------------------------------------------------------------
 
-locret_12D166:				; CODE XREF: sub_12D139+1Aj
+locret_12D166:				
 		RTS
 ; End of function sub_12D139
 
@@ -10143,14 +10143,14 @@ locret_12D166:				; CODE XREF: sub_12D139+1Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D167:				; CODE XREF: sub_12CFBA+ADp
+sub_12D167:				
 		LDA	#0
 		STA	ptr_0
-		LDA	#$69 ; 'i'
+		LDA	#$69 
 		STA	ptr_1
 		LDY	#0
 
-loc_12D171:				; CODE XREF: sub_12D167+10j
+loc_12D171:				
 		TYA
 		STA	(ptr_0),Y
 		INY
@@ -10158,7 +10158,7 @@ loc_12D171:				; CODE XREF: sub_12D167+10j
 		BCC	loc_12D171
 		LDX	#0
 
-loc_12D17B:				; CODE XREF: sub_12D167+1Dj
+loc_12D17B:				
 		LDA	byte_4A0,X
 		STA	(ptr_0),Y
 		INX
@@ -10187,7 +10187,7 @@ loc_12D17B:				; CODE XREF: sub_12D167+1Dj
 		JSR	sub_12D139
 		LDY	#0
 
-loc_12D1BC:				; CODE XREF: sub_12D167+5Dj
+loc_12D1BC:				
 		LDA	image_id_4A4,Y
 		STA	(ptr_0),Y
 		INY
@@ -10198,7 +10198,7 @@ loc_12D1BC:				; CODE XREF: sub_12D167+5Dj
 		ADC	#4
 		STA	ptr_1
 
-loc_12D1CD:				; CODE XREF: sub_12D167+6Ej
+loc_12D1CD:				
 		LDA	byte_5A4,Y
 		STA	(ptr_0),Y
 		INY
@@ -10209,11 +10209,11 @@ loc_12D1CD:				; CODE XREF: sub_12D167+6Ej
 		ADC	#4
 		STA	ptr_1
 
-loc_12D1DE:				; CODE XREF: sub_12D167+7Fj
+loc_12D1DE:				
 		LDA	byte_6A4,Y
 		STA	(ptr_0),Y
 		INY
-		CPY	#$44 ; 'D'
+		CPY	#$44 
 		BNE	loc_12D1DE
 		RTS
 ; End of function sub_12D167
@@ -10222,11 +10222,11 @@ loc_12D1DE:				; CODE XREF: sub_12D167+7Fj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D1E9:				; CODE XREF: sub_12D120+Ap
+sub_12D1E9:				
 		JSR	sub_12D139
 		LDY	#0
 
-loc_12D1EE:				; CODE XREF: sub_12D1E9+Dj
+loc_12D1EE:				
 		LDA	(ptr_0),Y
 		STA	image_id_4A4,Y
 		INY
@@ -10237,7 +10237,7 @@ loc_12D1EE:				; CODE XREF: sub_12D1E9+Dj
 		ADC	#4
 		STA	ptr_1
 
-loc_12D1FF:				; CODE XREF: sub_12D1E9+1Ej
+loc_12D1FF:				
 		LDA	(ptr_0),Y
 		STA	byte_5A4,Y
 		INY
@@ -10248,11 +10248,11 @@ loc_12D1FF:				; CODE XREF: sub_12D1E9+1Ej
 		ADC	#4
 		STA	ptr_1
 
-loc_12D210:				; CODE XREF: sub_12D1E9+2Fj
+loc_12D210:				
 		LDA	(ptr_0),Y
 		STA	byte_6A4,Y
 		INY
-		CPY	#$44 ; 'D'
+		CPY	#$44 
 		BNE	loc_12D210
 		RTS
 ; End of function sub_12D1E9
@@ -10261,7 +10261,7 @@ loc_12D210:				; CODE XREF: sub_12D1E9+2Fj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D21B:				; CODE XREF: command_0_1280FB:loc_1282E8p
+sub_12D21B:				
 					; sub_12C022+2Ap ...
 		JSR	sub_12EEAE
 		JSR	ppu_reset_ctrl_mask_12F963
@@ -10270,12 +10270,12 @@ sub_12D21B:				; CODE XREF: command_0_1280FB:loc_1282E8p
 		STA	_PPU_ADDR
 		LDA	#0
 		STA	_PPU_ADDR
-		LDX	#$20 ; ' '
+		LDX	#$20 
 
-loc_12D230:				; CODE XREF: sub_12D21B+20j
+loc_12D230:				
 		LDY	#0
 
-loc_12D232:				; CODE XREF: sub_12D21B+1Dj
+loc_12D232:				
 		LDA	#0
 		STA	_PPU_DATA
 		INY
@@ -10284,7 +10284,7 @@ loc_12D232:				; CODE XREF: sub_12D21B+1Dj
 		BNE	loc_12D230
 		LDX	#0
 
-loc_12D23F:				; CODE XREF: sub_12D21B+2Dj
+loc_12D23F:				
 		LDA	byte_12D251,X
 		STA	palette_bg_321,X ; "����������������"
 		INX
@@ -10296,7 +10296,7 @@ loc_12D23F:				; CODE XREF: sub_12D21B+2Dj
 ; End of function sub_12D21B
 
 ; ---------------------------------------------------------------------------
-byte_12D251:	.BYTE $3E,  7,$37,$30	; DATA XREF: sub_12D21B:loc_12D23Fr
+byte_12D251:	.BYTE $3E,  7,$37,$30	
 		.BYTE $3E,  7,$37,$30
 		.BYTE $3E,  7,$37,$30
 		.BYTE $3E,  7,$37,$30
@@ -10304,7 +10304,7 @@ byte_12D251:	.BYTE $3E,  7,$37,$30	; DATA XREF: sub_12D21B:loc_12D23Fr
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D261:				; CODE XREF: sub_128955+7Ap
+sub_12D261:				
 					; sub_12D21B+6p ...
 		LDA	#0
 		STA	tilemapWidth_308
@@ -10316,7 +10316,7 @@ sub_12D261:				; CODE XREF: sub_128955+7Ap
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D26B:				; CODE XREF: sub_128B43+12p
+sub_12D26B:				
 					; sub_128CC0+11p ...
 		LDA	tilemapWidth_308
 		CLC
@@ -10324,8 +10324,8 @@ sub_12D26B:				; CODE XREF: sub_128B43+12p
 		STA	tilemapWidth_308
 		LDY	byte_31A
 
-loc_12D278:				; CODE XREF: sub_12D26B+19j
-		LDA	#$F0 ; '�'
+loc_12D278:				
+		LDA	#$F0 
 		STA	byte_200,Y
 		INY
 		INY
@@ -10340,7 +10340,7 @@ loc_12D278:				; CODE XREF: sub_12D26B+19j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D287:				; CODE XREF: sub_12D4C6+1Bp
+sub_12D287:				
 					; sub_12D58C+1Fp ...
 		LDA	#0
 		STA	sprite_length_30F
@@ -10370,12 +10370,12 @@ set_inventory_screen_12D2A3:
 		JSR	sub_12DEB5
 		LDA	#0
 		STA	byte_372
-		LDA	#$3C ; '<'
+		LDA	#$3C 
 		STA	sprite_secondByte_31B
 		LDA	byte_532
 		BEQ	loc_12D315
 
-loc_12D2D6:				; CODE XREF: sub_12D287+8Cj
+loc_12D2D6:				
 		LDY	byte_372
 		LDA	byte_533,Y
 		TAX
@@ -10406,7 +10406,7 @@ loc_12D2D6:				; CODE XREF: sub_12D287+8Cj
 		CMP	byte_532
 		BNE	loc_12D2D6
 
-loc_12D315:				; CODE XREF: sub_12D287+4Dj
+loc_12D315:				
 		JSR	sub_12E3DF
 		RTS
 ; End of function sub_12D287
@@ -10415,10 +10415,10 @@ loc_12D315:				; CODE XREF: sub_12D287+4Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D319:				; CODE XREF: sub_12D4C6+1Ep
+sub_12D319:				
 					; sub_12D4C6+46p ...
 		JSR	sub_12DD0A
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	byte_31A
 		LDA	#$C
 		STA	tilemapWidth_308
@@ -10429,7 +10429,7 @@ sub_12D319:				; CODE XREF: sub_12D4C6+1Ep
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D329:				; CODE XREF: sub_12E428+22p
+sub_12D329:				
 					; sub_12E428+41p ...
 		LDA	byte_42E
 		ASL	A
@@ -10441,7 +10441,7 @@ sub_12D329:				; CODE XREF: sub_12E428+22p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12D33A:				; CODE XREF: sub_12D329+Bj
+loc_12D33A:				
 		STA	tilemapTypeUnk_30B
 		LDA	tilemapTypeUnk_30B
 		ASL	A
@@ -10478,7 +10478,7 @@ loc_12D33A:				; CODE XREF: sub_12D329+Bj
 		JMP	loc_12D394
 ; ---------------------------------------------------------------------------
 
-loc_12D383:				; CODE XREF: sub_12D329+31j
+loc_12D383:				
 					; sub_12D329+35j ...
 		LDA	tilemapTypeUnk_30B
 		PHA
@@ -10488,7 +10488,7 @@ loc_12D383:				; CODE XREF: sub_12D329+31j
 		PLA
 		STA	tilemapTypeUnk_30B
 
-loc_12D394:				; CODE XREF: sub_12D329+57j
+loc_12D394:				
 		LDY	tilemapTypeUnk_30B
 		LDA	byte_533,Y
 		STA	text_idx_35C
@@ -10504,26 +10504,26 @@ loc_12D394:				; CODE XREF: sub_12D329+57j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D3AB:				; CODE XREF: sub_12D329+64p
+sub_12D3AB:				
 					; sub_12ED58+31p ...
 		STA	ptr_0
 		LDA	#0
 		STA	data_2
 		STA	data_3
 
-loc_12D3B3:				; CODE XREF: sub_12D3AB+17j
+loc_12D3B3:				
 		LDA	ptr_0
-		CMP	#$64 ; 'd'
+		CMP	#$64 
 		BCC	loc_12D3C5
 		LDA	ptr_0
 		SEC
-		SBC	#$64 ; 'd'
+		SBC	#$64 
 		STA	ptr_0
 		INC	data_3
 		JMP	loc_12D3B3
 ; ---------------------------------------------------------------------------
 
-loc_12D3C5:				; CODE XREF: sub_12D3AB+Cj
+loc_12D3C5:				
 					; sub_12D3AB+29j
 		LDA	ptr_0
 		CMP	#$A
@@ -10536,7 +10536,7 @@ loc_12D3C5:				; CODE XREF: sub_12D3AB+Cj
 		JMP	loc_12D3C5
 ; ---------------------------------------------------------------------------
 
-loc_12D3D7:				; CODE XREF: sub_12D3AB+1Ej
+loc_12D3D7:				
 		LDA	data_3
 		BEQ	loc_12D423
 		LDA	tilemap_size_307
@@ -10545,11 +10545,11 @@ loc_12D3D7:				; CODE XREF: sub_12D3AB+1Ej
 		STA	tilemap_size_307
 		LDA	data_3
 		CLC
-		ADC	#$32 ; '2'
+		ADC	#$32 
 		STA	objMapIdx_316
 		LDA	#0
 		STA	byte_317
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
@@ -10577,7 +10577,7 @@ loc_12D3D7:				; CODE XREF: sub_12D3AB+1Ej
 		ADC	#8
 		STA	tilemap_size_307
 
-loc_12D423:				; CODE XREF: sub_12D3AB+2Ej
+loc_12D423:				
 		LDA	data_3
 		BNE	loc_12D434
 		LDA	data_2
@@ -10587,14 +10587,14 @@ loc_12D423:				; CODE XREF: sub_12D3AB+2Ej
 		ADC	#8
 		STA	tilemap_size_307
 
-loc_12D434:				; CODE XREF: sub_12D3AB+7Aj
+loc_12D434:				
 		LDA	data_2
 		CLC
-		ADC	#$32 ; '2'
+		ADC	#$32 
 		STA	objMapIdx_316
 		LDA	#0
 		STA	byte_317
-		LDA	#$84 ; '�'
+		LDA	#$84 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
@@ -10622,7 +10622,7 @@ loc_12D434:				; CODE XREF: sub_12D3AB+7Aj
 		ADC	#8
 		STA	tilemap_size_307
 
-loc_12D473:				; CODE XREF: sub_12D3AB+7Ej
+loc_12D473:				
 		LDA	data_3
 		BNE	loc_12D484
 		LDA	data_2
@@ -10632,15 +10632,15 @@ loc_12D473:				; CODE XREF: sub_12D3AB+7Ej
 		ADC	#$C
 		STA	tilemap_size_307
 
-loc_12D484:				; CODE XREF: sub_12D3AB+CAj
+loc_12D484:				
 					; sub_12D3AB+CEj
 		LDA	ptr_0
 		CLC
-		ADC	#$32 ; '2'
+		ADC	#$32 
 		STA	objMapIdx_316
 		LDA	#0
 		STA	byte_317
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
@@ -10652,7 +10652,7 @@ loc_12D484:				; CODE XREF: sub_12D3AB+CAj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D49F:				; CODE XREF: sub_12D329+Dp
+sub_12D49F:				
 					; sub_12DB1E+4Ap ...
 		LDA	#0
 		STA	byte_310
@@ -10668,7 +10668,7 @@ sub_12D49F:				; CODE XREF: sub_12D329+Dp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D4B3:				; CODE XREF: sub_12E5E6+ABp
+sub_12D4B3:				
 					; sub_12E69F+EBp
 		LDA	#1
 		STA	byte_35F
@@ -10684,7 +10684,7 @@ sub_12D4B3:				; CODE XREF: sub_12E5E6+ABp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D4C6:				; CODE XREF: command_0_1280FB:command_B_open_inventory_12813Dp
+sub_12D4C6:				
 					; sub_128A1A+63p
 		JSR	sub_1283BA
 		LDA	image_id_4A4
@@ -10702,7 +10702,7 @@ sub_12D4C6:				; CODE XREF: command_0_1280FB:command_B_open_inventory_12813Dp
 		JSR	sub_12D287
 		JSR	sub_12D319
 
-loc_12D4E7:				; CODE XREF: sub_12D4C6+49j
+loc_12D4E7:				
 					; sub_12D4C6+65j ...
 		JSR	sub_12DE49
 		JSR	sub_12DEB5
@@ -10717,14 +10717,14 @@ loc_12D4E7:				; CODE XREF: sub_12D4C6+49j
 		LDA	#6
 		STA	byte_42E
 
-loc_12D506:				; CODE XREF: sub_12D4C6+39j
+loc_12D506:				
 		DEC	byte_42E
 		JSR	sub_12ED32
 		JSR	sub_12D319
 		JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
-loc_12D512:				; CODE XREF: sub_12D4C6+32j
+loc_12D512:				
 		CMP	#4
 		BNE	loc_12D52E
 		LDA	byte_42E
@@ -10733,14 +10733,14 @@ loc_12D512:				; CODE XREF: sub_12D4C6+32j
 		LDA	#$FF
 		STA	byte_42E
 
-loc_12D522:				; CODE XREF: sub_12D4C6+55j
+loc_12D522:				
 		INC	byte_42E
 		JSR	sub_12ED32
 		JSR	sub_12D319
 		JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
-loc_12D52E:				; CODE XREF: sub_12D4C6+4Ej
+loc_12D52E:				
 		CMP	#2
 		BNE	loc_12D543
 		LDA	byte_42C
@@ -10751,7 +10751,7 @@ loc_12D52E:				; CODE XREF: sub_12D4C6+4Ej
 		JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
-loc_12D543:				; CODE XREF: sub_12D4C6+6Aj
+loc_12D543:				
 		CMP	#1
 		BNE	loc_12D558
 		LDA	byte_42C
@@ -10762,8 +10762,8 @@ loc_12D543:				; CODE XREF: sub_12D4C6+6Aj
 		JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
-loc_12D558:				; CODE XREF: sub_12D4C6+7Fj
-		CMP	#$80 ; '�'
+loc_12D558:				
+		CMP	#$80 
 		BNE	loc_12D569
 		JSR	sub_12DB1E
 		LDA	sprite_length_30F
@@ -10772,13 +10772,13 @@ loc_12D558:				; CODE XREF: sub_12D4C6+7Fj
 		JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
-loc_12D569:				; CODE XREF: sub_12D4C6+94j
+loc_12D569:				
 		CMP	#$10
 		BEQ	loc_12D570
 		JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
-loc_12D570:				; CODE XREF: sub_12D4C6+9Ej
+loc_12D570:				
 					; sub_12D4C6+A5j
 		JSR	sub_12ED29
 		PLA
@@ -10800,7 +10800,7 @@ loc_12D570:				; CODE XREF: sub_12D4C6+9Ej
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D58C:				; CODE XREF: command_0_1280FB:command_D_open_item_128149p
+sub_12D58C:				
 					; sub_12BF99+1Ap ...
 		JSR	sub_1283BA
 		LDA	image_id_4A4
@@ -10827,14 +10827,14 @@ sub_12D58C:				; CODE XREF: command_0_1280FB:command_D_open_item_128149p
 		LDA	#0
 		STA	char_type_id_35D
 		LDA	tilemapTypeUnk_30B
-		CMP	#$3B ; ';'
+		CMP	#$3B 
 		BNE	loc_12D5D2
 		LDA	#7
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
 
-loc_12D5D2:				; CODE XREF: sub_12D58C+3Aj
+loc_12D5D2:				
 		LDY	tilemapTypeUnk_30B
 		LDA	byte_12E869,Y
 		STA	inv_itemPrev_idx_31D
@@ -10842,7 +10842,7 @@ loc_12D5D2:				; CODE XREF: sub_12D58C+3Aj
 		STA	tilemap_size_307
 		LDA	#8
 		STA	ppu_unk_byte_309
-		LDA	#$C4 ; '�'
+		LDA	#$C4 
 		STA	sprite_secondByte_31B
 		JSR	sub_128358
 		JSR	sub_128326
@@ -10855,7 +10855,7 @@ loc_12D5D2:				; CODE XREF: sub_12D58C+3Aj
 		LDA	byte_532
 		CMP	#8
 		BCC	loc_12D623
-		LDA	#$7D ; '}'
+		LDA	#$7D 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -10868,8 +10868,8 @@ loc_12D5D2:				; CODE XREF: sub_12D58C+3Aj
 		JMP	loc_12D652
 ; ---------------------------------------------------------------------------
 
-loc_12D623:				; CODE XREF: sub_12D58C+78j
-		LDA	#$7A ; 'z'
+loc_12D623:				
+		LDA	#$7A 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -10889,7 +10889,7 @@ loc_12D623:				; CODE XREF: sub_12D58C+78j
 		LDA	#$FF
 		STA	sprite_length_30F
 
-loc_12D652:				; CODE XREF: sub_12D58C+94j
+loc_12D652:				
 					; sub_12D58C+BCj
 		PLA
 		STA	prev_sprite_type_4A9
@@ -10919,11 +10919,11 @@ loc_12D652:				; CODE XREF: sub_12D58C+94j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D680:				; CODE XREF: sub_12D58C+ADp
+sub_12D680:				
 		LDA	#0
 		STA	byte_372
 
-loc_12D685:				; CODE XREF: sub_12D680+60j
+loc_12D685:				
 					; sub_12D680+72j ...
 		LDA	byte_546
 		CMP	#$A
@@ -10934,14 +10934,14 @@ loc_12D685:				; CODE XREF: sub_12D680+60j
 		EOR	#1
 		STA	byte_547
 
-loc_12D699:				; CODE XREF: sub_12D680+Aj
-		LDA	#$70 ; 'p'
+loc_12D699:				
+		LDA	#$70 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
 		LDA	#0
 		STA	byte_317
-		LDA	#$30 ; '0'
+		LDA	#$30 
 		STA	objMapIdx_316
 		LDA	byte_372
 		ASL	A
@@ -10950,13 +10950,13 @@ loc_12D699:				; CODE XREF: sub_12D680+Aj
 		ASL	A
 		ASL	A
 		CLC
-		ADC	#$84 ; '�'
+		ADC	#$84 
 		CLC
 		ADC	byte_547
 		CLC
 		ADC	byte_547
 		STA	tilemap_size_307
-		LDA	#$DC ; '�'
+		LDA	#$DC 
 		STA	ppu_unk_byte_309
 		JSR	sub_12E829
 		JSR	sub_12F765
@@ -10970,7 +10970,7 @@ loc_12D699:				; CODE XREF: sub_12D680+Aj
 		JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
-loc_12D6E3:				; CODE XREF: sub_12D680+53j
+loc_12D6E3:				
 		CMP	#1
 		BNE	loc_12D6F5
 		LDA	byte_372
@@ -10980,13 +10980,13 @@ loc_12D6E3:				; CODE XREF: sub_12D680+53j
 		JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
-loc_12D6F5:				; CODE XREF: sub_12D680+65j
-		CMP	#$80 ; '�'
+loc_12D6F5:				
+		CMP	#$80 
 		BEQ	loc_12D6FC
 		JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
-loc_12D6FC:				; CODE XREF: sub_12D680+77j
+loc_12D6FC:				
 		JSR	sub_12ED20
 		RTS
 ; End of function sub_12D680
@@ -10995,7 +10995,7 @@ loc_12D6FC:				; CODE XREF: sub_12D680+77j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D700:				; CODE XREF: sub_12C438+3p
+sub_12D700:				
 		JSR	sub_1283BA
 		LDA	image_id_4A4
 		PHA
@@ -11017,7 +11017,7 @@ sub_12D700:				; CODE XREF: sub_12C438+3p
 		JSR	sub_12DCCC
 		JSR	sub_12DCE9
 
-loc_12D72F:				; CODE XREF: sub_12D700+6Cj
+loc_12D72F:				
 					; sub_12D700+A3j ...
 		JSR	sub_12DD0A
 		JSR	sub_12F765
@@ -11035,11 +11035,11 @@ loc_12D72F:				; CODE XREF: sub_12D700+6Cj
 		JMP	loc_12D757
 ; ---------------------------------------------------------------------------
 
-loc_12D752:				; CODE XREF: sub_12D700+48j
+loc_12D752:				
 		LDA	#4
 		STA	byte_42E
 
-loc_12D757:				; CODE XREF: sub_12D700+41j
+loc_12D757:				
 					; sub_12D700+4Fj
 		LDA	byte_42E
 		CMP	#5
@@ -11047,14 +11047,14 @@ loc_12D757:				; CODE XREF: sub_12D700+41j
 		LDA	#4
 		STA	byte_42E
 
-loc_12D763:				; CODE XREF: sub_12D700+5Cj
+loc_12D763:				
 		DEC	byte_42E
 		JSR	sub_12ED32
 		JSR	sub_12D319
 		JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
-loc_12D76F:				; CODE XREF: sub_12D700+3Aj
+loc_12D76F:				
 		CMP	#4
 		BNE	loc_12D7A6
 		LDA	byte_42E
@@ -11068,11 +11068,11 @@ loc_12D76F:				; CODE XREF: sub_12D700+3Aj
 		JMP	loc_12D78E
 ; ---------------------------------------------------------------------------
 
-loc_12D789:				; CODE XREF: sub_12D700+7Fj
+loc_12D789:				
 		LDA	#$FF
 		STA	byte_42E
 
-loc_12D78E:				; CODE XREF: sub_12D700+78j
+loc_12D78E:				
 					; sub_12D700+86j
 		LDA	byte_42E
 		CMP	#5
@@ -11080,14 +11080,14 @@ loc_12D78E:				; CODE XREF: sub_12D700+78j
 		LDA	#$FF
 		STA	byte_42E
 
-loc_12D79A:				; CODE XREF: sub_12D700+93j
+loc_12D79A:				
 		INC	byte_42E
 		JSR	sub_12ED32
 		JSR	sub_12D319
 		JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
-loc_12D7A6:				; CODE XREF: sub_12D700+71j
+loc_12D7A6:				
 		CMP	#2
 		BNE	loc_12D7C5
 		LDA	byte_42E
@@ -11096,7 +11096,7 @@ loc_12D7A6:				; CODE XREF: sub_12D700+71j
 		JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
-loc_12D7B4:				; CODE XREF: sub_12D700+AFj
+loc_12D7B4:				
 		LDA	byte_42C
 		EOR	#1
 		STA	byte_42C
@@ -11105,7 +11105,7 @@ loc_12D7B4:				; CODE XREF: sub_12D700+AFj
 		JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
-loc_12D7C5:				; CODE XREF: sub_12D700+A8j
+loc_12D7C5:				
 		CMP	#1
 		BNE	loc_12D7E4
 		LDA	byte_42E
@@ -11114,7 +11114,7 @@ loc_12D7C5:				; CODE XREF: sub_12D700+A8j
 		JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
-loc_12D7D3:				; CODE XREF: sub_12D700+CEj
+loc_12D7D3:				
 		LDA	byte_42C
 		EOR	#1
 		STA	byte_42C
@@ -11123,8 +11123,8 @@ loc_12D7D3:				; CODE XREF: sub_12D700+CEj
 		JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
-loc_12D7E4:				; CODE XREF: sub_12D700+C7j
-		CMP	#$80 ; '�'
+loc_12D7E4:				
+		CMP	#$80 
 		BNE	loc_12D7FB
 		LDA	byte_42E
 		CMP	#5
@@ -11135,13 +11135,13 @@ loc_12D7E4:				; CODE XREF: sub_12D700+C7j
 		JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
-loc_12D7FB:				; CODE XREF: sub_12D700+E6j
+loc_12D7FB:				
 		CMP	#$10
 		BEQ	loc_12D802
 		JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
-loc_12D802:				; CODE XREF: sub_12D700+EDj
+loc_12D802:				
 					; sub_12D700+FDj
 		JSR	sub_12ED29
 		PLA
@@ -11168,7 +11168,7 @@ loc_12D802:				; CODE XREF: sub_12D700+EDj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D82B:				; CODE XREF: sub_12D58C+BEp
+sub_12D82B:				
 		LDY	byte_532
 		LDA	tilemapTypeUnk_30B
 		STA	byte_533,Y
@@ -11178,66 +11178,66 @@ sub_12D82B:				; CODE XREF: sub_12D58C+BEp
 		LDA	#$F
 		STA	unk_53B,Y
 
-loc_12D840:				; CODE XREF: sub_12D82B+Ej
+loc_12D840:				
 		LDA	tilemapTypeUnk_30B
 		CMP	#2
 		BNE	loc_12D84C
 		LDA	#6
 		STA	unk_53B,Y
 
-loc_12D84C:				; CODE XREF: sub_12D82B+1Aj
+loc_12D84C:				
 		LDA	tilemapTypeUnk_30B
 		CMP	#3
 		BNE	loc_12D858
 		LDA	#6
 		STA	unk_53B,Y
 
-loc_12D858:				; CODE XREF: sub_12D82B+26j
+loc_12D858:				
 		LDA	tilemapTypeUnk_30B
 		CMP	#4
 		BNE	loc_12D864
 		LDA	#6
 		STA	unk_53B,Y
 
-loc_12D864:				; CODE XREF: sub_12D82B+32j
+loc_12D864:				
 		LDA	tilemapTypeUnk_30B
 		CMP	#5
 		BNE	loc_12D870
 		LDA	#6
 		STA	unk_53B,Y
 
-loc_12D870:				; CODE XREF: sub_12D82B+3Ej
+loc_12D870:				
 		LDA	tilemapTypeUnk_30B
 		CMP	#6
 		BNE	loc_12D87C
 		LDA	#$F
 		STA	unk_53B,Y
 
-loc_12D87C:				; CODE XREF: sub_12D82B+4Aj
+loc_12D87C:				
 		CMP	#7
 		BNE	loc_12D885
 		LDA	#6
 		STA	unk_53B,Y
 
-loc_12D885:				; CODE XREF: sub_12D82B+53j
+loc_12D885:				
 		CMP	#8
 		BNE	loc_12D88E
 		LDA	#6
 		STA	unk_53B,Y
 
-loc_12D88E:				; CODE XREF: sub_12D82B+5Cj
+loc_12D88E:				
 		CMP	#9
 		BNE	loc_12D897
 		LDA	#6
 		STA	unk_53B,Y
 
-loc_12D897:				; CODE XREF: sub_12D82B+65j
+loc_12D897:				
 		CMP	#$1A
 		BNE	loc_12D8A0
 		LDA	#3
 		STA	unk_53B,Y
 
-loc_12D8A0:				; CODE XREF: sub_12D82B+6Ej
+loc_12D8A0:				
 		LDA	byte_4B4
 		BNE	loc_12D8AF
 		LDA	unk_53B,Y
@@ -11245,7 +11245,7 @@ loc_12D8A0:				; CODE XREF: sub_12D82B+6Ej
 		ADC	unk_53B,Y
 		STA	unk_53B,Y
 
-loc_12D8AF:				; CODE XREF: sub_12D82B+78j
+loc_12D8AF:				
 		INC	byte_532
 		RTS
 ; End of function sub_12D82B
@@ -11254,7 +11254,7 @@ loc_12D8AF:				; CODE XREF: sub_12D82B+78j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D8B3:				; CODE XREF: sub_12DFA5+1A4p
+sub_12D8B3:				
 					; sub_12DFA5+3BAp ...
 		LDA	tilemapTypeUnk_30B
 		CMP	byte_532
@@ -11262,12 +11262,12 @@ sub_12D8B3:				; CODE XREF: sub_12DFA5+1A4p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12D8BC:				; CODE XREF: sub_12D8B3+6j
+loc_12D8BC:				
 		LDY	tilemapTypeUnk_30B
 		LDX	tilemapTypeUnk_30B
 		INX
 
-loc_12D8C3:				; CODE XREF: sub_12D8B3+23j
+loc_12D8C3:				
 		CPX	byte_532
 		BEQ	loc_12D8D9
 		LDA	byte_533,X
@@ -11279,7 +11279,7 @@ loc_12D8C3:				; CODE XREF: sub_12D8B3+23j
 		JMP	loc_12D8C3
 ; ---------------------------------------------------------------------------
 
-loc_12D8D9:				; CODE XREF: sub_12D8B3+13j
+loc_12D8D9:				
 		DEC	byte_532
 		RTS
 ; End of function sub_12D8B3
@@ -11288,7 +11288,7 @@ loc_12D8D9:				; CODE XREF: sub_12D8B3+13j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D8DD:				; CODE XREF: sub_12DC76+45p
+sub_12D8DD:				
 		LDX	byte_372
 		LDA	unk_4D2,X
 		PHA
@@ -11301,12 +11301,12 @@ sub_12D8DD:				; CODE XREF: sub_12DC76+45p
 		CMP	byte_532
 		BCC	loc_12D900
 		LDX	byte_372
-		LDA	#$3A ; ':'
+		LDA	#$3A 
 		STA	unk_4D2,X
 		JMP	loc_12D910
 ; ---------------------------------------------------------------------------
 
-loc_12D900:				; CODE XREF: sub_12D8DD+16j
+loc_12D900:				
 		TAY
 		LDX	byte_372
 		LDA	byte_533,Y
@@ -11314,7 +11314,7 @@ loc_12D900:				; CODE XREF: sub_12D8DD+16j
 		LDA	unk_53B,Y
 		STA	unk_502,X
 
-loc_12D910:				; CODE XREF: sub_12D8DD+20j
+loc_12D910:				
 		JSR	sub_12DF2B
 		PLA
 		STA	inv_spr_dscr1_30C
@@ -11328,12 +11328,12 @@ loc_12D910:				; CODE XREF: sub_12D8DD+20j
 		CPY	byte_532
 		BCC	loc_12D946
 		LDA	tilemapTypeUnk_30B
-		CMP	#$3A ; ':'
+		CMP	#$3A 
 		BNE	loc_12D931
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12D931:				; CODE XREF: sub_12D8DD+51j
+loc_12D931:				
 		LDY	byte_532
 		LDA	tilemapTypeUnk_30B
 		STA	byte_533,Y
@@ -11343,7 +11343,7 @@ loc_12D931:				; CODE XREF: sub_12D8DD+51j
 		JMP	loc_12D9A3
 ; ---------------------------------------------------------------------------
 
-loc_12D946:				; CODE XREF: sub_12D8DD+4Aj
+loc_12D946:				
 		LDA	byte_533,Y
 		CMP	#6
 		BEQ	loc_12D966
@@ -11362,19 +11362,19 @@ loc_12D946:				; CODE XREF: sub_12D8DD+4Aj
 		PLA
 		STA	tilemapTypeUnk_30B
 
-loc_12D966:				; CODE XREF: sub_12D8DD+6Ej
+loc_12D966:				
 					; sub_12D8DD+70j
 		LDA	inv_spr_dscr1_30C
 		STA	unk_53B,Y
 		LDA	tilemapTypeUnk_30B
 		STA	byte_533,Y
-		CMP	#$3A ; ':'
+		CMP	#$3A 
 		BNE	loc_12D9A3
 		TYA
 		PHA
 		TAX
 
-loc_12D979:				; CODE XREF: sub_12D8DD+B1j
+loc_12D979:				
 		TYA
 		TAX
 		INX
@@ -11388,7 +11388,7 @@ loc_12D979:				; CODE XREF: sub_12D8DD+B1j
 		JMP	loc_12D979
 ; ---------------------------------------------------------------------------
 
-loc_12D991:				; CODE XREF: sub_12D8DD+A2j
+loc_12D991:				
 		PLA
 		TAX
 		LDY	byte_532
@@ -11399,7 +11399,7 @@ loc_12D991:				; CODE XREF: sub_12D8DD+A2j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12D9A3:				; CODE XREF: sub_12D8DD+66j
+loc_12D9A3:				
 					; sub_12D8DD+97j
 		LDA	tilemapTypeUnk_30B
 		PHA
@@ -11419,10 +11419,10 @@ loc_12D9A3:				; CODE XREF: sub_12D8DD+66j
 		STA	inv_itemPrev_idx_31D
 		TYA
 		TAX
-		LDA	#$3C ; '<'
+		LDA	#$3C 
 		STA	sprite_secondByte_31B
 
-loc_12D9C9:				; CODE XREF: sub_12D8DD+FAj
+loc_12D9C9:				
 		CPX	#0
 		BEQ	loc_12D9DA
 		LDA	sprite_secondByte_31B
@@ -11433,7 +11433,7 @@ loc_12D9C9:				; CODE XREF: sub_12D8DD+FAj
 		JMP	loc_12D9C9
 ; ---------------------------------------------------------------------------
 
-loc_12D9DA:				; CODE XREF: sub_12D8DD+EEj
+loc_12D9DA:				
 		TYA
 		ASL	A
 		TAY
@@ -11457,14 +11457,14 @@ loc_12D9DA:				; CODE XREF: sub_12D8DD+EEj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12D9F7:				; CODE XREF: sub_12D8DD+B9p
+sub_12D9F7:				
 					; sub_12D8DD+D3p ...
 		TXA
 		PHA
 		TYA
 		PHA
 
-loc_12D9FB:				; CODE XREF: sub_12D9F7+35j
+loc_12D9FB:				
 		TXA
 		PHA
 		ASL	A
@@ -11480,7 +11480,7 @@ loc_12D9FB:				; CODE XREF: sub_12D9F7+35j
 		LSR	A
 		LSR	A
 		STA	ppu_unk_byte_309
-		LDA	#$29 ; ')'
+		LDA	#$29 
 		STA	inv_itemPrev_idx_31D
 		LDA	#$A
 		STA	sprite_secondByte_31B
@@ -11506,7 +11506,7 @@ loc_12D9FB:				; CODE XREF: sub_12D9F7+35j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DA33:				; CODE XREF: sub_12D8DD+C2p
+sub_12DA33:				
 					; sub_12DFA5+1ADp ...
 		TXA
 		PHA
@@ -11519,11 +11519,11 @@ sub_12DA33:				; CODE XREF: sub_12D8DD+C2p
 		JMP	loc_12DACB
 ; ---------------------------------------------------------------------------
 
-loc_12DA43:				; CODE XREF: sub_12DA33+Bj
-		LDA	#$3C ; '<'
+loc_12DA43:				
+		LDA	#$3C 
 		STA	sprite_secondByte_31B
 
-loc_12DA48:				; CODE XREF: sub_12DA33+28j
+loc_12DA48:				
 		LDA	tilemapTypeUnk_30B
 		CMP	#0
 		BEQ	loc_12DA5E
@@ -11535,7 +11535,7 @@ loc_12DA48:				; CODE XREF: sub_12DA33+28j
 		JMP	loc_12DA48
 ; ---------------------------------------------------------------------------
 
-loc_12DA5E:				; CODE XREF: sub_12DA33+1Aj
+loc_12DA5E:				
 					; sub_12DA33+96j
 		TXA
 		PHA
@@ -11590,7 +11590,7 @@ loc_12DA5E:				; CODE XREF: sub_12DA33+1Aj
 		PLA
 		STA	tilemapTypeUnk_30B
 
-loc_12DABA:				; CODE XREF: sub_12DA33+69j
+loc_12DABA:				
 		LDA	sprite_secondByte_31B
 		CLC
 		ADC	#$11
@@ -11601,7 +11601,7 @@ loc_12DABA:				; CODE XREF: sub_12DA33+69j
 		CPX	tilemapTypeUnk_30B
 		BCC	loc_12DA5E
 
-loc_12DACB:				; CODE XREF: sub_12DA33+Dj
+loc_12DACB:				
 		PLA
 		TAY
 		PLA
@@ -11613,7 +11613,7 @@ loc_12DACB:				; CODE XREF: sub_12DA33+Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DAD0:				; CODE XREF: sub_12D58C+6Cp
+sub_12DAD0:				
 					; sub_12D58C+8Cp ...
 		LDA	byte_546
 		CMP	#$A
@@ -11624,18 +11624,18 @@ sub_12DAD0:				; CODE XREF: sub_12D58C+6Cp
 		EOR	#1
 		STA	byte_547
 
-loc_12DAE4:				; CODE XREF: sub_12DAD0+5j
-		LDA	#$70 ; 'p'
+loc_12DAE4:				
+		LDA	#$70 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
 		LDA	#0
 		STA	byte_317
-		LDA	#$2F ; '/'
+		LDA	#$2F 
 		STA	objMapIdx_316
-		LDA	#$C4 ; '�'
+		LDA	#$C4 
 		STA	tilemap_size_307
-		LDA	#$E0 ; '�'
+		LDA	#$E0 
 		CLC
 		ADC	byte_547
 		CLC
@@ -11649,7 +11649,7 @@ loc_12DAE4:				; CODE XREF: sub_12DAD0+5j
 		JMP	sub_12DAD0
 ; ---------------------------------------------------------------------------
 
-loc_12DB1A:				; CODE XREF: sub_12DAD0+45j
+loc_12DB1A:				
 		JSR	sub_12ED32
 		RTS
 ; End of function sub_12DAD0
@@ -11658,7 +11658,7 @@ loc_12DB1A:				; CODE XREF: sub_12DAD0+45j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DB1E:				; CODE XREF: sub_12D4C6+96p
+sub_12DB1E:				
 		LDA	byte_42E
 		CMP	#4
 		BNE	loc_12DB3A
@@ -11670,13 +11670,13 @@ sub_12DB1E:				; CODE XREF: sub_12D4C6+96p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12DB33:				; CODE XREF: sub_12DB1E+Cj
+loc_12DB33:				
 		JSR	sub_12ED20
 		JSR	sub_12E69F
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12DB3A:				; CODE XREF: sub_12DB1E+5j
+loc_12DB3A:				
 		LDA	byte_42E
 		CMP	#5
 		BNE	loc_12DB75
@@ -11686,7 +11686,7 @@ loc_12DB3A:				; CODE XREF: sub_12DB1E+5j
 		LDA	byte_545
 		BEQ	locret_12DB6B
 		JSR	sub_12ED20
-		LDA	#$44 ; 'D'
+		LDA	#$44 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -11697,18 +11697,18 @@ loc_12DB3A:				; CODE XREF: sub_12DB1E+5j
 		JSR	sub_12ED29
 		JSR	sub_12D49F
 
-locret_12DB6B:				; CODE XREF: sub_12DB1E+2Dj
+locret_12DB6B:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12DB6C:				; CODE XREF: sub_12DB1E+28j
+loc_12DB6C:				
 		JSR	sub_12ED29
 		LDA	#$FF
 		STA	sprite_length_30F
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12DB75:				; CODE XREF: sub_12DB1E+21j
+loc_12DB75:				
 		LDA	byte_42E
 		ASL	A
 		CLC
@@ -11718,13 +11718,13 @@ loc_12DB75:				; CODE XREF: sub_12DB1E+21j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12DB83:				; CODE XREF: sub_12DB1E+62j
+loc_12DB83:				
 		JSR	sub_12ED20
 		LDA	#0
 		STA	byte_372
 		JSR	sub_12DC31
 
-loc_12DB8E:				; CODE XREF: sub_12DB1E+8Fj
+loc_12DB8E:				
 					; sub_12DB1E+ABj ...
 		JSR	sub_12F765
 		LDA	input_pressed_34A
@@ -11736,14 +11736,14 @@ loc_12DB8E:				; CODE XREF: sub_12DB1E+8Fj
 		LDA	#3
 		STA	byte_372
 
-loc_12DBA4:				; CODE XREF: sub_12DB1E+7Fj
+loc_12DBA4:				
 		DEC	byte_372
 		JSR	sub_12ED32
 		JSR	sub_12DC31
 		JMP	loc_12DB8E
 ; ---------------------------------------------------------------------------
 
-loc_12DBB0:				; CODE XREF: sub_12DB1E+78j
+loc_12DBB0:				
 		CMP	#4
 		BNE	loc_12DBCC
 		LDA	byte_372
@@ -11752,15 +11752,15 @@ loc_12DBB0:				; CODE XREF: sub_12DB1E+78j
 		LDA	#$FF
 		STA	byte_372
 
-loc_12DBC0:				; CODE XREF: sub_12DB1E+9Bj
+loc_12DBC0:				
 		INC	byte_372
 		JSR	sub_12ED32
 		JSR	sub_12DC31
 		JMP	loc_12DB8E
 ; ---------------------------------------------------------------------------
 
-loc_12DBCC:				; CODE XREF: sub_12DB1E+94j
-		CMP	#$80 ; '�'
+loc_12DBCC:				
+		CMP	#$80 
 		BNE	loc_12DC0F
 		JSR	sub_12ED20
 		LDA	byte_42E
@@ -11775,14 +11775,14 @@ loc_12DBCC:				; CODE XREF: sub_12DB1E+94j
 		JMP	loc_12DC0C
 ; ---------------------------------------------------------------------------
 
-loc_12DBEB:				; CODE XREF: sub_12DB1E+C5j
+loc_12DBEB:				
 		CMP	#1
 		BNE	loc_12DBF5
 		JSR	sub_12E384
 		JMP	loc_12DC0C
 ; ---------------------------------------------------------------------------
 
-loc_12DBF5:				; CODE XREF: sub_12DB1E+CFj
+loc_12DBF5:				
 		CMP	#2
 		BNE	loc_12DC0C
 		LDA	byte_42C
@@ -11795,23 +11795,23 @@ loc_12DBF5:				; CODE XREF: sub_12DB1E+CFj
 		PLA
 		STA	byte_42C
 
-loc_12DC0C:				; CODE XREF: sub_12DB1E+CAj
+loc_12DC0C:				
 					; sub_12DB1E+D4j ...
 		JMP	loc_12DC16
 ; ---------------------------------------------------------------------------
 
-loc_12DC0F:				; CODE XREF: sub_12DB1E+B0j
-		CMP	#$40 ; '@'
+loc_12DC0F:				
+		CMP	#$40 
 		BEQ	loc_12DC16
 		JMP	loc_12DB8E
 ; ---------------------------------------------------------------------------
 
-loc_12DC16:				; CODE XREF: sub_12DB1E:loc_12DC0Cj
+loc_12DC16:				
 					; sub_12DB1E+F3j
 		JSR	sub_12ED29
-		LDA	#$60 ; '`'
+		LDA	#$60 
 		STA	tilemapWidth_308
-		LDA	#$A0 ; '�'
+		LDA	#$A0 
 		STA	byte_31A
 		JSR	sub_12D26B
 		LDA	sprite_length_30F
@@ -11819,7 +11819,7 @@ loc_12DC16:				; CODE XREF: sub_12DB1E:loc_12DC0Cj
 		BEQ	locret_12DC30
 		JSR	sub_12D319
 
-locret_12DC30:				; CODE XREF: sub_12DB1E+10Dj
+locret_12DC30:				
 		RTS
 ; End of function sub_12DB1E
 
@@ -11827,17 +11827,17 @@ locret_12DC30:				; CODE XREF: sub_12DB1E+10Dj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DC31:				; CODE XREF: sub_12DB1E+6Dp
+sub_12DC31:				
 					; sub_12DB1E+8Cp ...
 		LDA	byte_372
 		CLC
-		ADC	#$20 ; ' '
+		ADC	#$20 
 		STA	objMapIdx_316
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	tilemap_size_307
-		LDA	#$50 ; 'P'
+		LDA	#$50 
 		STA	ppu_unk_byte_309
-		LDA	#$A0 ; '�'
+		LDA	#$A0 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
@@ -11849,17 +11849,17 @@ sub_12DC31:				; CODE XREF: sub_12DB1E+6Dp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DC52:				; CODE XREF: sub_12D287+37p
+sub_12DC52:				
 		LDA	byte_545
 		CLC
 		ADC	#$1B
 		STA	objMapIdx_316
-		LDA	#$40 ; '@'
+		LDA	#$40 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
 		STA	byte_317
-		LDA	#$B0 ; '�'
+		LDA	#$B0 
 		STA	tilemap_size_307
 		LDA	#$1F
 		STA	ppu_unk_byte_309
@@ -11871,10 +11871,10 @@ sub_12DC52:				; CODE XREF: sub_12D287+37p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DC76:				; CODE XREF: sub_12D700+F2p
+sub_12DC76:				
 		JSR	sub_12DF6C
 
-loc_12DC79:				; CODE XREF: sub_12DC76+10j
+loc_12DC79:				
 					; sub_12DC76+1Ej ...
 		JSR	sub_12F765
 		LDA	input_reg1_347
@@ -11889,11 +11889,11 @@ loc_12DC79:				; CODE XREF: sub_12DC76+10j
 		JMP	loc_12DC79
 ; ---------------------------------------------------------------------------
 
-loc_12DC97:				; CODE XREF: sub_12DC76+Bj
+loc_12DC97:				
 		CMP	#4
 		BNE	loc_12DCB1
 		LDA	byte_372
-		CMP	#$2F ; '/'
+		CMP	#$2F 
 		BEQ	loc_12DC79
 		INC	byte_372
 		JSR	sub_12ED32
@@ -11902,22 +11902,22 @@ loc_12DC97:				; CODE XREF: sub_12DC76+Bj
 		JMP	loc_12DC79
 ; ---------------------------------------------------------------------------
 
-loc_12DCB1:				; CODE XREF: sub_12DC76+23j
+loc_12DCB1:				
 		LDA	input_pressed_34A
-		CMP	#$80 ; '�'
+		CMP	#$80 
 		BNE	loc_12DCC1
 		JSR	sub_12ED20
 		JSR	sub_12D8DD
 		JMP	loc_12DCC8
 ; ---------------------------------------------------------------------------
 
-loc_12DCC1:				; CODE XREF: sub_12DC76+40j
-		CMP	#$40 ; '@'
+loc_12DCC1:				
+		CMP	#$40 
 		BEQ	loc_12DCC8
 		JMP	loc_12DC79
 ; ---------------------------------------------------------------------------
 
-loc_12DCC8:				; CODE XREF: sub_12DC76+48j
+loc_12DCC8:				
 					; sub_12DC76+4Dj
 		JSR	sub_12ED29
 		RTS
@@ -11927,14 +11927,14 @@ loc_12DCC8:				; CODE XREF: sub_12DC76+48j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DCCC:				; CODE XREF: sub_12D700+29p
-		LDA	#$23 ; '#'
+sub_12DCCC:				
+		LDA	#$23 
 		STA	objMapIdx_316
-		LDA	#$90 ; '�'
+		LDA	#$90 
 		STA	tilemap_size_307
-		LDA	#$30 ; '0'
+		LDA	#$30 
 		STA	ppu_unk_byte_309
-		LDA	#$A8 ; '�'
+		LDA	#$A8 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
@@ -11946,17 +11946,17 @@ sub_12DCCC:				; CODE XREF: sub_12D700+29p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DCE9:				; CODE XREF: sub_12D700+2Cp
+sub_12DCE9:				
 					; sub_12DC76+1Bp ...
-		LDA	#$24 ; '$'
+		LDA	#$24 
 		STA	objMapIdx_316
-		LDA	#$90 ; '�'
+		LDA	#$90 
 		STA	tilemap_size_307
-		LDA	#$38 ; '8'
+		LDA	#$38 
 		CLC
 		ADC	byte_372
 		STA	ppu_unk_byte_309
-		LDA	#$A0 ; '�'
+		LDA	#$A0 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
@@ -11968,7 +11968,7 @@ sub_12DCE9:				; CODE XREF: sub_12D700+2Cp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DD0A:				; CODE XREF: sub_12D319p
+sub_12DD0A:				
 					; sub_12D4C6+27p ...
 		LDA	byte_546
 		CMP	#$A
@@ -11979,7 +11979,7 @@ sub_12DD0A:				; CODE XREF: sub_12D319p
 		EOR	#1
 		STA	byte_547
 
-loc_12DD1E:				; CODE XREF: sub_12DD0A+5j
+loc_12DD1E:				
 		LDA	byte_42E
 		ASL	A
 		ASL	A
@@ -11993,13 +11993,13 @@ loc_12DD1E:				; CODE XREF: sub_12DD0A+5j
 		INY
 		LDA	byte_12E851,Y
 		STA	ppu_unk_byte_309
-		LDA	#$60 ; '`'
+		LDA	#$60 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
 		LDA	#0
 		STA	byte_317
-		LDA	#$2A ; '*'
+		LDA	#$2A 
 		STA	objMapIdx_316
 		LDA	tilemap_size_307
 		PHA
@@ -12022,7 +12022,7 @@ loc_12DD1E:				; CODE XREF: sub_12DD0A+5j
 		CLC
 		ADC	#4
 		STA	byte_31A
-		LDA	#$2B ; '+'
+		LDA	#$2B 
 		STA	objMapIdx_316
 		LDA	tilemap_size_307
 		PHA
@@ -12047,7 +12047,7 @@ loc_12DD1E:				; CODE XREF: sub_12DD0A+5j
 		CLC
 		ADC	#4
 		STA	byte_31A
-		LDA	#$2C ; ','
+		LDA	#$2C 
 		STA	objMapIdx_316
 		LDA	tilemap_size_307
 		PHA
@@ -12071,7 +12071,7 @@ loc_12DD1E:				; CODE XREF: sub_12DD0A+5j
 		SBC	#$10
 		STA	ppu_unk_byte_309
 
-loc_12DDE9:				; CODE XREF: sub_12DD0A+D4j
+loc_12DDE9:				
 		JSR	sub_12E829
 		PLA
 		STA	ppu_unk_byte_309
@@ -12081,7 +12081,7 @@ loc_12DDE9:				; CODE XREF: sub_12DD0A+D4j
 		CLC
 		ADC	#4
 		STA	byte_31A
-		LDA	#$2D ; '-'
+		LDA	#$2D 
 		STA	objMapIdx_316
 		LDA	tilemap_size_307
 		PHA
@@ -12107,7 +12107,7 @@ loc_12DDE9:				; CODE XREF: sub_12DD0A+D4j
 		SBC	#$10
 		STA	ppu_unk_byte_309
 
-loc_12DE34:				; CODE XREF: sub_12DD0A+11Fj
+loc_12DE34:				
 		JSR	sub_12E829
 		PLA
 		STA	ppu_unk_byte_309
@@ -12124,7 +12124,7 @@ loc_12DE34:				; CODE XREF: sub_12DD0A+11Fj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DE49:				; CODE XREF: sub_12D287+3Ap
+sub_12DE49:				
 					; sub_12D4C6:loc_12D4E7p
 		LDA	count_unk_465
 		CMP	#5
@@ -12138,20 +12138,20 @@ sub_12DE49:				; CODE XREF: sub_12D287+3Ap
 		LDA	#0
 		STA	byte_54D
 
-loc_12DE64:				; CODE XREF: sub_12DE49+14j
+loc_12DE64:				
 		LDA	byte_54D
 		STA	objMapIdx_316
 		LDA	byte_549
-		CMP	#$55 ; 'U'
+		CMP	#$55 
 		BCC	loc_12DE8E
-		CMP	#$AA ; '�'
+		CMP	#$AA 
 		BCC	loc_12DE7D
 		LDA	#0
 		STA	byte_54B
 		JMP	loc_12DE9C
 ; ---------------------------------------------------------------------------
 
-loc_12DE7D:				; CODE XREF: sub_12DE49+2Aj
+loc_12DE7D:				
 		LDA	objMapIdx_316
 		CLC
 		ADC	#7
@@ -12161,7 +12161,7 @@ loc_12DE7D:				; CODE XREF: sub_12DE49+2Aj
 		JMP	loc_12DE9C
 ; ---------------------------------------------------------------------------
 
-loc_12DE8E:				; CODE XREF: sub_12DE49+26j
+loc_12DE8E:				
 		LDA	objMapIdx_316
 		CLC
 		ADC	#$E
@@ -12169,19 +12169,19 @@ loc_12DE8E:				; CODE XREF: sub_12DE49+26j
 		LDA	#2
 		STA	byte_54B
 
-loc_12DE9C:				; CODE XREF: sub_12DE49+31j
+loc_12DE9C:				
 					; sub_12DE49+42j
 		LDA	#0
 		STA	byte_31A
 		STA	sprite_secondByte_31B
 		STA	byte_317
-		LDA	#$40 ; '@'
+		LDA	#$40 
 		STA	tilemap_size_307
-		LDA	#$A0 ; '�'
+		LDA	#$A0 
 		STA	ppu_unk_byte_309
 		JSR	sub_12E829
 
-locret_12DEB4:				; CODE XREF: sub_12DE49+5j
+locret_12DEB4:				
 		RTS
 ; End of function sub_12DE49
 
@@ -12189,7 +12189,7 @@ locret_12DEB4:				; CODE XREF: sub_12DE49+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DEB5:				; CODE XREF: sub_12D287+3Dp
+sub_12DEB5:				
 					; sub_12D4C6+24p
 		LDA	byte_54B
 		STA	objMapIdx_316
@@ -12200,19 +12200,19 @@ sub_12DEB5:				; CODE XREF: sub_12D287+3Dp
 		ADC	#3
 		STA	objMapIdx_316
 
-loc_12DEC9:				; CODE XREF: sub_12DEB5+9j
+loc_12DEC9:				
 		LDA	objMapIdx_316
 		CLC
 		ADC	#$15
 		STA	objMapIdx_316
-		LDA	#$30 ; '0'
+		LDA	#$30 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
 		STA	byte_317
-		LDA	#$40 ; '@'
+		LDA	#$40 
 		STA	tilemap_size_307
-		LDA	#$B8 ; '�'
+		LDA	#$B8 
 		STA	ppu_unk_byte_309
 		JSR	sub_12E829
 		RTS
@@ -12220,7 +12220,7 @@ loc_12DEC9:				; CODE XREF: sub_12DEB5+9j
 
 ; ---------------------------------------------------------------------------
 byte_12DEED:	.BYTE	0,  0,	0,  0,	0,  0,	0,  1,	1,  1,	1,  1,	1,  1,	2,  2
-					; DATA XREF: sub_12E829+1Er
+					
 		.BYTE	2,  2,	2,  2,	2,  0,	1,  2,	0,  1,	2,  3,	3,  3,	3,  3
 		.BYTE	3,  3,	3,  3,	3,  3,	3,  3,	3,  3,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	3,  3,	3,  3,	3,  3,	3,  3,	3,  3,	3,  3
@@ -12228,7 +12228,7 @@ byte_12DEED:	.BYTE	0,  0,	0,  0,	0,  0,	0,  1,	1,  1,	1,  1,	1,  1,	2,  2
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DF2B:				; CODE XREF: sub_12D8DD:loc_12D910p
+sub_12DF2B:				
 					; sub_12DC76+18p ...
 		JSR	sub_12DF32
 		JSR	sub_12DF6C
@@ -12239,13 +12239,13 @@ sub_12DF2B:				; CODE XREF: sub_12D8DD:loc_12D910p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DF32:				; CODE XREF: sub_12D700+26p
+sub_12DF32:				
 					; sub_12DF2Bp
 		LDA	#$A
 		STA	tilemap_size_307
 		LDA	#8
 		STA	ppu_unk_byte_309
-		LDA	#$29 ; ')'
+		LDA	#$29 
 		STA	inv_itemPrev_idx_31D
 		LDA	#$A
 		STA	sprite_secondByte_31B
@@ -12259,7 +12259,7 @@ sub_12DF32:				; CODE XREF: sub_12D700+26p
 		STA	tilemap_size_307
 		LDA	#8
 		STA	ppu_unk_byte_309
-		LDA	#$C4 ; '�'
+		LDA	#$C4 
 		STA	sprite_secondByte_31B
 		JSR	sub_128358
 		JSR	sub_128326
@@ -12270,21 +12270,21 @@ sub_12DF32:				; CODE XREF: sub_12D700+26p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DF6C:				; CODE XREF: sub_12DC76p sub_12DF2B+3p
+sub_12DF6C:				
 		LDX	byte_372
 		LDA	unk_4D2,X
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
 		LDA	inv_itemPrev_idx_31D
-		CMP	#$29 ; ')'
+		CMP	#$29 
 		BNE	loc_12DF8B
-		LDA	#$75 ; 'u'
+		LDA	#$75 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
 
-loc_12DF8B:				; CODE XREF: sub_12DF6C+13j
+loc_12DF8B:				
 		LDA	inv_itemPrev_idx_31D
 		CMP	#$15
 		BNE	loc_12DF9C
@@ -12293,7 +12293,7 @@ loc_12DF8B:				; CODE XREF: sub_12DF6C+13j
 		LDA	#2
 		STA	char_type_id_35D
 
-loc_12DF9C:				; CODE XREF: sub_12DF6C+24j
+loc_12DF9C:				
 		LDA	#7
 		STA	byte_364
 		JSR	exec_b2_c1_128300
@@ -12304,7 +12304,7 @@ loc_12DF9C:				; CODE XREF: sub_12DF6C+24j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DFA5:				; CODE XREF: sub_12DB1E+C7p
+sub_12DFA5:				
 
 ; FUNCTION CHUNK AT E019 SIZE 0000013D BYTES
 ; FUNCTION CHUNK AT E166 SIZE 0000021E BYTES
@@ -12326,7 +12326,7 @@ sub_12DFA5:				; CODE XREF: sub_12DB1E+C7p
 		JMP	loc_12E166
 ; ---------------------------------------------------------------------------
 
-loc_12DFC6:				; CODE XREF: sub_12DFA5+14j
+loc_12DFC6:				
 		LDA	tilemapTypeUnk_30B
 		CMP	#2
 		BNE	loc_12DFD7
@@ -12336,7 +12336,7 @@ loc_12DFC6:				; CODE XREF: sub_12DFA5+14j
 		JMP	loc_12E166
 ; ---------------------------------------------------------------------------
 
-loc_12DFD7:				; CODE XREF: sub_12DFA5+26j
+loc_12DFD7:				
 					; sub_12DFA5+2Dj
 		LDA	tilemapTypeUnk_30B
 		CMP	#0
@@ -12347,7 +12347,7 @@ loc_12DFD7:				; CODE XREF: sub_12DFA5+26j
 		JMP	loc_12E166
 ; ---------------------------------------------------------------------------
 
-loc_12DFE8:				; CODE XREF: sub_12DFA5+37j
+loc_12DFE8:				
 					; sub_12DFA5+3Ej
 		LDA	tilemapTypeUnk_30B
 		CLC
@@ -12363,7 +12363,7 @@ loc_12DFE8:				; CODE XREF: sub_12DFA5+37j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12DFFC:				; CODE XREF: sub_12D8DD+7Cp
+sub_12DFFC:				
 					; sub_12DFA5+4Cj
 		LDA	#0
 		STA	byte_543
@@ -12371,7 +12371,7 @@ sub_12DFFC:				; CODE XREF: sub_12D8DD+7Cp
 		STA	tilemap_size_307
 		LDA	#$14
 		STA	ppu_unk_byte_309
-		LDA	#$29 ; ')'
+		LDA	#$29 
 		STA	inv_itemPrev_idx_31D
 		LDA	#$A
 		STA	sprite_secondByte_31B
@@ -12382,8 +12382,8 @@ sub_12DFFC:				; CODE XREF: sub_12D8DD+7Cp
 ; ---------------------------------------------------------------------------
 ; START	OF FUNCTION CHUNK FOR sub_12DFA5
 
-loc_12E019:				; CODE XREF: sub_12DFA5+18j
-		LDA	#$77 ; 'w'
+loc_12E019:				
+		LDA	#$77 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -12396,7 +12396,7 @@ loc_12E019:				; CODE XREF: sub_12DFA5+18j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12E035:				; CODE XREF: sub_12DFA5+1Cj
+loc_12E035:				
 					; sub_12DFA5+1D2j
 		LDA	tilemapTypeUnk_30B
 		CMP	#$12
@@ -12405,12 +12405,12 @@ loc_12E035:				; CODE XREF: sub_12DFA5+1Cj
 		CMP	#0
 		BNE	loc_12E04D
 		LDA	byte_549
-		CMP	#$C8 ; '�'
+		CMP	#$C8 
 		BCC	loc_12E04D
 		JMP	loc_12E05D
 ; ---------------------------------------------------------------------------
 
-loc_12E04D:				; CODE XREF: sub_12DFA5+9Cj
+loc_12E04D:				
 					; sub_12DFA5+A3j
 		LDA	#$FF
 		STA	byte_549
@@ -12420,7 +12420,7 @@ loc_12E04D:				; CODE XREF: sub_12DFA5+9Cj
 		JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
-loc_12E05D:				; CODE XREF: sub_12DFA5+95j
+loc_12E05D:				
 					; sub_12DFA5+A5j
 		LDA	tilemapTypeUnk_30B
 		CMP	#$C
@@ -12434,7 +12434,7 @@ loc_12E05D:				; CODE XREF: sub_12DFA5+95j
 		JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
-loc_12E076:				; CODE XREF: sub_12DFA5+BDj
+loc_12E076:				
 					; sub_12DFA5+C4j
 		LDA	tilemapTypeUnk_30B
 		CMP	#$E
@@ -12443,22 +12443,22 @@ loc_12E076:				; CODE XREF: sub_12DFA5+BDj
 		CMP	#0
 		BNE	loc_12E08E
 		LDA	byte_549
-		CMP	#$C8 ; '�'
+		CMP	#$C8 
 		BCC	loc_12E08E
 		JMP	loc_12E09E
 ; ---------------------------------------------------------------------------
 
-loc_12E08E:				; CODE XREF: sub_12DFA5+DDj
+loc_12E08E:				
 					; sub_12DFA5+E4j
 		LDA	#0
 		STA	byte_54A
 		STA	byte_4B5
-		LDA	#$AA ; '�'
+		LDA	#$AA 
 		JSR	sub_12E156
 		JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
-loc_12E09E:				; CODE XREF: sub_12DFA5+D6j
+loc_12E09E:				
 					; sub_12DFA5+E6j
 		LDA	tilemapTypeUnk_30B
 		CMP	#$11
@@ -12467,76 +12467,76 @@ loc_12E09E:				; CODE XREF: sub_12DFA5+D6j
 		CMP	#0
 		BNE	loc_12E0B6
 		LDA	byte_549
-		CMP	#$C8 ; '�'
+		CMP	#$C8 
 		BCC	loc_12E0B6
 		JMP	loc_12E0C6
 ; ---------------------------------------------------------------------------
 
-loc_12E0B6:				; CODE XREF: sub_12DFA5+105j
+loc_12E0B6:				
 					; sub_12DFA5+10Cj
 		LDA	#0
 		STA	byte_54A
 		STA	byte_4B5
-		LDA	#$55 ; 'U'
+		LDA	#$55 
 		JSR	sub_12E156
 		JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
-loc_12E0C6:				; CODE XREF: sub_12DFA5+FEj
+loc_12E0C6:				
 					; sub_12DFA5+10Ej
 		LDA	tilemapTypeUnk_30B
 		CMP	#$B
 		BNE	loc_12E0DC
 		LDA	byte_549
-		CMP	#$C8 ; '�'
+		CMP	#$C8 
 		BCS	loc_12E0DC
-		LDA	#$55 ; 'U'
+		LDA	#$55 
 		JSR	sub_12E156
 		JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
-loc_12E0DC:				; CODE XREF: sub_12DFA5+126j
+loc_12E0DC:				
 					; sub_12DFA5+12Dj
 		LDA	tilemapTypeUnk_30B
 		CMP	#$D
 		BNE	loc_12E0F2
 		LDA	byte_549
-		CMP	#$C8 ; '�'
+		CMP	#$C8 
 		BCS	loc_12E0F2
-		LDA	#$AA ; '�'
+		LDA	#$AA 
 		JSR	sub_12E156
 		JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
-loc_12E0F2:				; CODE XREF: sub_12DFA5+13Cj
+loc_12E0F2:				
 					; sub_12DFA5+143j
 		LDA	tilemapTypeUnk_30B
 		CMP	#$F
 		BNE	loc_12E108
 		LDA	byte_549
-		CMP	#$C8 ; '�'
+		CMP	#$C8 
 		BCS	loc_12E108
-		LDA	#$AA ; '�'
+		LDA	#$AA 
 		JSR	sub_12E156
 		JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
-loc_12E108:				; CODE XREF: sub_12DFA5+152j
+loc_12E108:				
 					; sub_12DFA5+159j
 		LDA	tilemapTypeUnk_30B
 		CMP	#$10
 		BNE	loc_12E11E
 		LDA	byte_549
-		CMP	#$C8 ; '�'
+		CMP	#$C8 
 		BCS	loc_12E11E
 		LDA	#$FF
 		JSR	sub_12E156
 		JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
-loc_12E11E:				; CODE XREF: sub_12DFA5+168j
+loc_12E11E:				
 					; sub_12DFA5+16Fj
-		LDA	#$78 ; 'x'
+		LDA	#$78 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -12549,7 +12549,7 @@ loc_12E11E:				; CODE XREF: sub_12DFA5+168j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12E13A:				; CODE XREF: sub_12DFA5+B5j
+loc_12E13A:				
 					; sub_12DFA5+CEj ...
 		LDX	byte_47B
 		LDY	byte_532
@@ -12566,7 +12566,7 @@ loc_12E13A:				; CODE XREF: sub_12DFA5+B5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E156:				; CODE XREF: sub_12DFA5+F3p
+sub_12E156:				
 					; sub_12DFA5+11Bp ...
 		CLC
 		ADC	byte_549
@@ -12576,7 +12576,7 @@ sub_12E156:				; CODE XREF: sub_12DFA5+F3p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12E162:				; CODE XREF: sub_12E156+4j
+loc_12E162:				
 		STA	byte_549
 		RTS
 ; End of function sub_12E156
@@ -12584,22 +12584,22 @@ loc_12E162:				; CODE XREF: sub_12E156+4j
 ; ---------------------------------------------------------------------------
 ; START	OF FUNCTION CHUNK FOR sub_12DFA5
 
-loc_12E166:				; CODE XREF: sub_12DFA5+1Ej
+loc_12E166:				
 					; sub_12DFA5+2Fj ...
 		LDA	tilemapTypeUnk_30B
-		CMP	#$2F ; '/'
+		CMP	#$2F 
 		BNE	loc_12E170
 		JMP	loc_12E315
 ; ---------------------------------------------------------------------------
 
-loc_12E170:				; CODE XREF: sub_12DFA5+1C6j
+loc_12E170:				
 		LDA	tilemapTypeUnk_30B
 		CMP	#$12
 		BNE	loc_12E17A
 		JMP	loc_12E035
 ; ---------------------------------------------------------------------------
 
-loc_12E17A:				; CODE XREF: sub_12DFA5+1D0j
+loc_12E17A:				
 		LDA	byte_46D
 		CMP	#$1E
 		BNE	loc_12E1A0
@@ -12610,36 +12610,36 @@ loc_12E17A:				; CODE XREF: sub_12DFA5+1D0j
 		CMP	#$1F
 		BEQ	loc_12E202
 		LDA	tilemapTypeUnk_30B
-		CMP	#$20 ; ' '
+		CMP	#$20 
 		BEQ	loc_12E202
 		LDA	tilemapTypeUnk_30B
-		CMP	#$21 ; '!'
+		CMP	#$21 
 		BEQ	loc_12E202
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E1A0:				; CODE XREF: sub_12DFA5+1DAj
-		CMP	#$22 ; '"'
+loc_12E1A0:				
+		CMP	#$22 
 		BNE	loc_12E1B5
 		LDA	tilemapTypeUnk_30B
-		CMP	#$22 ; '"'
+		CMP	#$22 
 		BEQ	loc_12E202
 		LDA	tilemapTypeUnk_30B
-		CMP	#$23 ; '#'
+		CMP	#$23 
 		BEQ	loc_12E202
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E1B5:				; CODE XREF: sub_12DFA5+1FDj
-		CMP	#$2D ; '-'
+loc_12E1B5:				
+		CMP	#$2D 
 		BNE	loc_12E1C3
 		LDA	tilemapTypeUnk_30B
-		CMP	#$2D ; '-'
+		CMP	#$2D 
 		BEQ	loc_12E202
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E1C3:				; CODE XREF: sub_12DFA5+212j
+loc_12E1C3:				
 		CMP	#$1C
 		BNE	loc_12E1D8
 		LDA	tilemapTypeUnk_30B
@@ -12651,7 +12651,7 @@ loc_12E1C3:				; CODE XREF: sub_12DFA5+212j
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E1D8:				; CODE XREF: sub_12DFA5+220j
+loc_12E1D8:				
 		CMP	#$1B
 		BNE	loc_12E1E6
 		LDA	tilemapTypeUnk_30B
@@ -12660,16 +12660,16 @@ loc_12E1D8:				; CODE XREF: sub_12DFA5+220j
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E1E6:				; CODE XREF: sub_12DFA5+235j
-		CMP	#$29 ; ')'
+loc_12E1E6:				
+		CMP	#$29 
 		BNE	loc_12E1F4
 		LDA	tilemapTypeUnk_30B
-		CMP	#$29 ; ')'
+		CMP	#$29 
 		BEQ	loc_12E202
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E1F4:				; CODE XREF: sub_12DFA5+243j
+loc_12E1F4:				
 		CMP	#$13
 		BNE	loc_12E205
 		LDA	tilemapTypeUnk_30B
@@ -12678,12 +12678,12 @@ loc_12E1F4:				; CODE XREF: sub_12DFA5+243j
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E202:				; CODE XREF: sub_12DFA5+1E1j
+loc_12E202:				
 					; sub_12DFA5+1E8j ...
 		JMP	loc_12E315
 ; ---------------------------------------------------------------------------
 
-loc_12E205:				; CODE XREF: sub_12DFA5+251j
+loc_12E205:				
 		CMP	#$18
 		BNE	loc_12E213
 		LDA	tilemapTypeUnk_30B
@@ -12692,7 +12692,7 @@ loc_12E205:				; CODE XREF: sub_12DFA5+251j
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E213:				; CODE XREF: sub_12DFA5+262j
+loc_12E213:				
 		CMP	#$17
 		BNE	loc_12E221
 		LDA	tilemapTypeUnk_30B
@@ -12701,7 +12701,7 @@ loc_12E213:				; CODE XREF: sub_12DFA5+262j
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E221:				; CODE XREF: sub_12DFA5+270j
+loc_12E221:				
 		CMP	#$16
 		BNE	loc_12E22F
 		LDA	tilemapTypeUnk_30B
@@ -12710,55 +12710,55 @@ loc_12E221:				; CODE XREF: sub_12DFA5+270j
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E22F:				; CODE XREF: sub_12DFA5+27Ej
-		CMP	#$24 ; '$'
+loc_12E22F:				
+		CMP	#$24 
 		BNE	loc_12E23D
 		LDA	tilemapTypeUnk_30B
-		CMP	#$24 ; '$'
+		CMP	#$24 
 		BEQ	loc_12E28A
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E23D:				; CODE XREF: sub_12DFA5+28Cj
-		CMP	#$2C ; ','
+loc_12E23D:				
+		CMP	#$2C 
 		BNE	loc_12E24B
 		LDA	tilemapTypeUnk_30B
-		CMP	#$2C ; ','
+		CMP	#$2C 
 		BEQ	loc_12E28A
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E24B:				; CODE XREF: sub_12DFA5+29Aj
+loc_12E24B:				
 		CMP	#2
 		BNE	loc_12E260
 		LDA	tilemapTypeUnk_30B
 		CMP	#2
 		BEQ	loc_12E28A
 		LDA	tilemapTypeUnk_30B
-		CMP	#$3B ; ';'
+		CMP	#$3B 
 		BEQ	loc_12E28A
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E260:				; CODE XREF: sub_12DFA5+2A8j
-		CMP	#$2E ; '.'
+loc_12E260:				
+		CMP	#$2E 
 		BNE	loc_12E26E
 		LDA	tilemapTypeUnk_30B
-		CMP	#$2E ; '.'
+		CMP	#$2E 
 		BEQ	loc_12E28A
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E26E:				; CODE XREF: sub_12DFA5+2BDj
-		CMP	#$2A ; '*'
+loc_12E26E:				
+		CMP	#$2A 
 		BNE	loc_12E27C
 		LDA	tilemapTypeUnk_30B
-		CMP	#$2A ; '*'
+		CMP	#$2A 
 		BEQ	loc_12E28A
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E27C:				; CODE XREF: sub_12DFA5+2CBj
+loc_12E27C:				
 		CMP	#0
 		BNE	loc_12E28D
 		LDA	tilemapTypeUnk_30B
@@ -12767,48 +12767,48 @@ loc_12E27C:				; CODE XREF: sub_12DFA5+2CBj
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E28A:				; CODE XREF: sub_12DFA5+269j
+loc_12E28A:				
 					; sub_12DFA5+277j ...
 		JMP	loc_12E315
 ; ---------------------------------------------------------------------------
 
-loc_12E28D:				; CODE XREF: sub_12DFA5+2D9j
-		CMP	#$39 ; '9'
+loc_12E28D:				
+		CMP	#$39 
 		BNE	loc_12E29B
 		LDA	tilemapTypeUnk_30B
-		CMP	#$39 ; '9'
+		CMP	#$39 
 		BEQ	loc_12E315
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E29B:				; CODE XREF: sub_12DFA5+2EAj
-		CMP	#$27 ; '''
+loc_12E29B:				
+		CMP	#$27 
 		BNE	loc_12E2A9
 		LDA	tilemapTypeUnk_30B
-		CMP	#$27 ; '''
+		CMP	#$27 
 		BEQ	loc_12E315
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E2A9:				; CODE XREF: sub_12DFA5+2F8j
-		CMP	#$28 ; '('
+loc_12E2A9:				
+		CMP	#$28 
 		BNE	loc_12E2B7
 		LDA	tilemapTypeUnk_30B
-		CMP	#$28 ; '('
+		CMP	#$28 
 		BEQ	loc_12E315
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E2B7:				; CODE XREF: sub_12DFA5+306j
-		CMP	#$30 ; '0'
+loc_12E2B7:				
+		CMP	#$30 
 		BNE	loc_12E2C5
 		LDA	tilemapTypeUnk_30B
-		CMP	#$30 ; '0'
+		CMP	#$30 
 		BEQ	loc_12E315
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E2C5:				; CODE XREF: sub_12DFA5+314j
+loc_12E2C5:				
 		CMP	#$14
 		BNE	loc_12E2D3
 		LDA	tilemapTypeUnk_30B
@@ -12817,7 +12817,7 @@ loc_12E2C5:				; CODE XREF: sub_12DFA5+314j
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E2D3:				; CODE XREF: sub_12DFA5+322j
+loc_12E2D3:				
 		CMP	#$15
 		BNE	loc_12E2E1
 		LDA	tilemapTypeUnk_30B
@@ -12826,13 +12826,13 @@ loc_12E2D3:				; CODE XREF: sub_12DFA5+322j
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E2E1:				; CODE XREF: sub_12DFA5+330j
+loc_12E2E1:				
 		CMP	#$1A
 		BNE	loc_12E312
 		LDA	byte_598
 		CMP	#0
 		BNE	loc_12E308
-		LDA	#$B7 ; '�'
+		LDA	#$B7 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -12845,18 +12845,18 @@ loc_12E2E1:				; CODE XREF: sub_12DFA5+330j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12E308:				; CODE XREF: sub_12DFA5+345j
+loc_12E308:				
 		LDA	tilemapTypeUnk_30B
 		CMP	#$1A
 		BEQ	loc_12E315
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E312:				; CODE XREF: sub_12DFA5+33Ej
+loc_12E312:				
 		JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
-loc_12E315:				; CODE XREF: sub_12DFA5+1C8j
+loc_12E315:				
 					; sub_12DFA5:loc_12E202j ...
 		LDA	tilemapTypeUnk_30B
 		STA	byte_46E
@@ -12876,11 +12876,11 @@ loc_12E315:				; CODE XREF: sub_12DFA5+1C8j
 		BEQ	loc_12E362
 		CMP	#$19
 		BEQ	loc_12E362
-		CMP	#$29 ; ')'
+		CMP	#$29 
 		BEQ	loc_12E362
-		CMP	#$2A ; '*'
+		CMP	#$2A 
 		BEQ	loc_12E362
-		CMP	#$2B ; '+'
+		CMP	#$2B 
 		BEQ	loc_12E362
 		CMP	#$1A
 		BNE	loc_12E35C
@@ -12893,21 +12893,21 @@ loc_12E315:				; CODE XREF: sub_12DFA5+1C8j
 		JMP	loc_12E362
 ; ---------------------------------------------------------------------------
 
-loc_12E35C:				; CODE XREF: sub_12DFA5+3A4j
+loc_12E35C:				
 					; sub_12DFA5+3B2j
 		STY	tilemapTypeUnk_30B
 		JSR	sub_12D8B3
 
-loc_12E362:				; CODE XREF: sub_12DFA5+378j
+loc_12E362:				
 					; sub_12DFA5+37Cj ...
 		LDA	#$FF
 		STA	sprite_length_30F
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12E368:				; CODE XREF: sub_12DFA5+1F8j
+loc_12E368:				
 					; sub_12DFA5+20Dj ...
-		LDA	#$76 ; 'v'
+		LDA	#$76 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -12923,7 +12923,7 @@ loc_12E368:				; CODE XREF: sub_12DFA5+1F8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E384:				; CODE XREF: sub_12DB1E+D1p
+sub_12E384:				
 		LDA	byte_42E
 		ASL	A
 		CLC
@@ -12931,7 +12931,7 @@ sub_12E384:				; CODE XREF: sub_12DB1E+D1p
 		TAY
 		LDA	byte_533,Y
 		CLC
-		ADC	#$3A ; ':'
+		ADC	#$3A 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -12946,27 +12946,27 @@ sub_12E384:				; CODE XREF: sub_12DB1E+D1p
 		ADC	byte_42C
 		TAY
 		LDA	byte_533,Y
-		CMP	#$25 ; '%'
+		CMP	#$25 
 		BNE	loc_12E3C1
-		LDA	#$27 ; '''
+		LDA	#$27 
 		STA	byte_533,Y
 		JMP	loc_12E3CA
 ; ---------------------------------------------------------------------------
 
-loc_12E3C1:				; CODE XREF: sub_12E384+33j
-		CMP	#$26 ; '&'
+loc_12E3C1:				
+		CMP	#$26 
 		BNE	locret_12E3D3
-		LDA	#$28 ; '('
+		LDA	#$28 
 		STA	byte_533,Y
 
-loc_12E3CA:				; CODE XREF: sub_12E384+3Aj
+loc_12E3CA:				
 		TYA
 		TAX
 		INY
 		JSR	sub_12D9F7
 		JSR	sub_12DA33
 
-locret_12E3D3:				; CODE XREF: sub_12E384+3Fj
+locret_12E3D3:				
 		RTS
 ; End of function sub_12E384
 
@@ -12974,11 +12974,11 @@ locret_12E3D3:				; CODE XREF: sub_12E384+3Fj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E3D4:				; CODE XREF: sub_12DB1E+44p
+sub_12E3D4:				
 					; sub_12DFA5+86p ...
 		JSR	sub_12F765
 		LDA	input_pressed_34A
-		CMP	#$40 ; '@'
+		CMP	#$40 
 		BNE	sub_12E3D4
 		RTS
 ; End of function sub_12E3D4
@@ -12987,7 +12987,7 @@ sub_12E3D4:				; CODE XREF: sub_12DB1E+44p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E3DF:				; CODE XREF: sub_12D287:loc_12D315p
+sub_12E3DF:				
 					; sub_12DFA5+54j
 		LDA	byte_543
 		CMP	#0
@@ -13005,16 +13005,16 @@ sub_12E3DF:				; CODE XREF: sub_12D287:loc_12D315p
 		STA	inv_itemPrev_idx_31D
 		LDY	#0
 
-loc_12E404:				; CODE XREF: sub_12E3DF+2Cj
+loc_12E404:				
 		LDA	byte_533,Y
 		INY
 		CMP	tilemapTypeUnk_30B
 		BNE	loc_12E404
 		DEY
-		LDA	#$3C ; '<'
+		LDA	#$3C 
 		STA	sprite_secondByte_31B
 
-loc_12E413:				; CODE XREF: sub_12E3DF+42j
+loc_12E413:				
 		CPY	#0
 		BEQ	loc_12E424
 		LDA	sprite_secondByte_31B
@@ -13025,10 +13025,10 @@ loc_12E413:				; CODE XREF: sub_12E3DF+42j
 		JMP	loc_12E413
 ; ---------------------------------------------------------------------------
 
-loc_12E424:				; CODE XREF: sub_12E3DF+36j
+loc_12E424:				
 		JSR	sub_128326
 
-locret_12E427:				; CODE XREF: sub_12E3DF+5j
+locret_12E427:				
 		RTS
 ; End of function sub_12E3DF
 
@@ -13036,7 +13036,7 @@ locret_12E427:				; CODE XREF: sub_12E3DF+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E428:				; CODE XREF: sub_12DB1E+E3p
+sub_12E428:				
 					; sub_12E428+25j ...
 		JSR	sub_12E4CD
 		JSR	sub_12F765
@@ -13049,7 +13049,7 @@ sub_12E428:				; CODE XREF: sub_12DB1E+E3p
 		LDA	#4
 		STA	byte_42E
 
-loc_12E441:				; CODE XREF: sub_12E428+12j
+loc_12E441:				
 		DEC	byte_42E
 		JSR	sub_12ED32
 		JSR	sub_12E4CD
@@ -13057,7 +13057,7 @@ loc_12E441:				; CODE XREF: sub_12E428+12j
 		JMP	sub_12E428
 ; ---------------------------------------------------------------------------
 
-loc_12E450:				; CODE XREF: sub_12E428+Bj
+loc_12E450:				
 		CMP	#4
 		BNE	loc_12E46F
 		LDA	byte_42E
@@ -13066,7 +13066,7 @@ loc_12E450:				; CODE XREF: sub_12E428+Bj
 		LDA	#$FF
 		STA	byte_42E
 
-loc_12E460:				; CODE XREF: sub_12E428+31j
+loc_12E460:				
 		INC	byte_42E
 		JSR	sub_12ED32
 		JSR	sub_12E4CD
@@ -13074,7 +13074,7 @@ loc_12E460:				; CODE XREF: sub_12E428+31j
 		JMP	sub_12E428
 ; ---------------------------------------------------------------------------
 
-loc_12E46F:				; CODE XREF: sub_12E428+2Aj
+loc_12E46F:				
 		CMP	#2
 		BNE	loc_12E487
 		LDA	byte_42C
@@ -13086,7 +13086,7 @@ loc_12E46F:				; CODE XREF: sub_12E428+2Aj
 		JMP	sub_12E428
 ; ---------------------------------------------------------------------------
 
-loc_12E487:				; CODE XREF: sub_12E428+49j
+loc_12E487:				
 		CMP	#1
 		BNE	loc_12E49F
 		LDA	byte_42C
@@ -13098,8 +13098,8 @@ loc_12E487:				; CODE XREF: sub_12E428+49j
 		JMP	sub_12E428
 ; ---------------------------------------------------------------------------
 
-loc_12E49F:				; CODE XREF: sub_12E428+61j
-		CMP	#$80 ; '�'
+loc_12E49F:				
+		CMP	#$80 
 		BNE	loc_12E4B0
 		JSR	sub_12E8A5
 		LDA	sprite_length_30F
@@ -13108,18 +13108,18 @@ loc_12E49F:				; CODE XREF: sub_12E428+61j
 		JMP	sub_12E428
 ; ---------------------------------------------------------------------------
 
-loc_12E4B0:				; CODE XREF: sub_12E428+79j
-		CMP	#$40 ; '@'
+loc_12E4B0:				
+		CMP	#$40 
 		BEQ	loc_12E4B7
 		JMP	sub_12E428
 ; ---------------------------------------------------------------------------
 
-loc_12E4B7:				; CODE XREF: sub_12E428+83j
+loc_12E4B7:				
 					; sub_12E428+8Aj
 		JSR	sub_12ED29
 		LDA	#$10
 		STA	tilemapWidth_308
-		LDA	#$70 ; 'p'
+		LDA	#$70 
 		STA	byte_31A
 		JSR	sub_12D26B
 		LDA	#0
@@ -13131,9 +13131,9 @@ loc_12E4B7:				; CODE XREF: sub_12E428+83j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E4CD:				; CODE XREF: sub_12E428p
+sub_12E4CD:				
 					; sub_12E428+1Fp ...
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	byte_31A
 		LDA	#$C
 		STA	tilemapWidth_308
@@ -13147,7 +13147,7 @@ sub_12E4CD:				; CODE XREF: sub_12E428p
 		EOR	#1
 		STA	byte_547
 
-loc_12E4EE:				; CODE XREF: sub_12E4CD+12j
+loc_12E4EE:				
 		LDA	byte_42E
 		ASL	A
 		ASL	A
@@ -13161,13 +13161,13 @@ loc_12E4EE:				; CODE XREF: sub_12E4CD+12j
 		INY
 		LDA	byte_12E851,Y
 		STA	ppu_unk_byte_309
-		LDA	#$70 ; 'p'
+		LDA	#$70 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
 		LDA	#0
 		STA	byte_317
-		LDA	#$2F ; '/'
+		LDA	#$2F 
 		STA	objMapIdx_316
 		LDA	tilemap_size_307
 		PHA
@@ -13190,7 +13190,7 @@ loc_12E4EE:				; CODE XREF: sub_12E4CD+12j
 		CLC
 		ADC	#4
 		STA	byte_31A
-		LDA	#$2E ; '.'
+		LDA	#$2E 
 		STA	objMapIdx_316
 		LDA	tilemap_size_307
 		PHA
@@ -13215,7 +13215,7 @@ loc_12E4EE:				; CODE XREF: sub_12E4CD+12j
 		CLC
 		ADC	#4
 		STA	byte_31A
-		LDA	#$30 ; '0'
+		LDA	#$30 
 		STA	objMapIdx_316
 		LDA	tilemap_size_307
 		PHA
@@ -13238,7 +13238,7 @@ loc_12E4EE:				; CODE XREF: sub_12E4CD+12j
 		CLC
 		ADC	#4
 		STA	byte_31A
-		LDA	#$31 ; '1'
+		LDA	#$31 
 		STA	objMapIdx_316
 		LDA	tilemap_size_307
 		PHA
@@ -13266,7 +13266,7 @@ loc_12E4EE:				; CODE XREF: sub_12E4CD+12j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E5E6:				; CODE XREF: sub_12DB1E+11p
+sub_12E5E6:				
 		LDA	byte_372
 		PHA
 		LDA	#0
@@ -13274,14 +13274,14 @@ sub_12E5E6:				; CODE XREF: sub_12DB1E+11p
 		LDA	byte_4C1
 		CMP	#0
 		BNE	loc_12E603
-		LDA	#$75 ; 'u'
+		LDA	#$75 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
 		JMP	loc_12E616
 ; ---------------------------------------------------------------------------
 
-loc_12E603:				; CODE XREF: sub_12E5E6+Ej
+loc_12E603:				
 					; sub_12E5E6+5Cj ...
 		LDX	byte_372
 		LDA	unk_4B6,X
@@ -13292,7 +13292,7 @@ loc_12E603:				; CODE XREF: sub_12E5E6+Ej
 		ADC	#0
 		STA	char_type_id_35D
 
-loc_12E616:				; CODE XREF: sub_12E5E6+1Aj
+loc_12E616:				
 		JSR	sub_12E798
 		JSR	sub_12E7D3
 		JSR	sub_12E7F0
@@ -13302,7 +13302,7 @@ loc_12E616:				; CODE XREF: sub_12E5E6+1Aj
 		JMP	loc_12E67A
 ; ---------------------------------------------------------------------------
 
-loc_12E62A:				; CODE XREF: sub_12E5E6+3Cj
+loc_12E62A:				
 					; sub_12E5E6+54j ...
 		LDA	input_pressed_34A
 		CMP	#4
@@ -13317,7 +13317,7 @@ loc_12E62A:				; CODE XREF: sub_12E5E6+3Cj
 		JMP	loc_12E603
 ; ---------------------------------------------------------------------------
 
-loc_12E645:				; CODE XREF: sub_12E5E6+49j
+loc_12E645:				
 		CMP	#8
 		BNE	loc_12E659
 		LDA	byte_372
@@ -13328,15 +13328,15 @@ loc_12E645:				; CODE XREF: sub_12E5E6+49j
 		JMP	loc_12E603
 ; ---------------------------------------------------------------------------
 
-loc_12E659:				; CODE XREF: sub_12E5E6+61j
-		CMP	#$80 ; '�'
+loc_12E659:				
+		CMP	#$80 
 		BEQ	loc_12E664
-		CMP	#$40 ; '@'
+		CMP	#$40 
 		BEQ	loc_12E67A
 		JMP	loc_12E62A
 ; ---------------------------------------------------------------------------
 
-loc_12E664:				; CODE XREF: sub_12E5E6+75j
+loc_12E664:				
 		JSR	sub_12ED20
 		LDX	byte_372
 		LDA	unk_4B6,X
@@ -13346,7 +13346,7 @@ loc_12E664:				; CODE XREF: sub_12E5E6+75j
 		JSR	sub_12D287
 		JSR	sub_12D319
 
-loc_12E67A:				; CODE XREF: sub_12E5E6+41j
+loc_12E67A:				
 					; sub_12E5E6+79j
 		JSR	sub_12ED29
 		LDA	#$A
@@ -13369,7 +13369,7 @@ loc_12E67A:				; CODE XREF: sub_12E5E6+41j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E69F:				; CODE XREF: sub_12DB1E+18p
+sub_12E69F:				
 		LDA	byte_372
 		PHA
 		LDA	#0
@@ -13377,19 +13377,19 @@ sub_12E69F:				; CODE XREF: sub_12DB1E+18p
 		LDA	byte_4D0
 		CMP	#0
 		BNE	loc_12E6BC
-		LDA	#$75 ; 'u'
+		LDA	#$75 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
 		JMP	loc_12E6E0
 ; ---------------------------------------------------------------------------
 
-loc_12E6BC:				; CODE XREF: sub_12E69F+Ej
+loc_12E6BC:				
 					; sub_12E69F+70j ...
 		LDX	byte_372
 		LDA	unk_4C2,X
 		CLC
-		ADC	#$99 ; '�'
+		ADC	#$99 
 		STA	text_idx_35C
 		LDA	#0
 		ADC	#0
@@ -13397,12 +13397,12 @@ loc_12E6BC:				; CODE XREF: sub_12E69F+Ej
 		LDA	unk_4C2,X
 		CMP	#$E
 		BNE	loc_12E6E0
-		LDA	#$3A ; ':'
+		LDA	#$3A 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
 
-loc_12E6E0:				; CODE XREF: sub_12E69F+1Aj
+loc_12E6E0:				
 					; sub_12E69F+35j
 		JSR	sub_12E798
 		JSR	sub_12E7D3
@@ -13414,7 +13414,7 @@ loc_12E6E0:				; CODE XREF: sub_12E69F+1Aj
 		JMP	loc_12E776
 ; ---------------------------------------------------------------------------
 
-loc_12E6F7:				; CODE XREF: sub_12E69F+4Dj
+loc_12E6F7:				
 					; sub_12E69F+68j ...
 		LDA	input_pressed_34A
 		CMP	#4
@@ -13429,7 +13429,7 @@ loc_12E6F7:				; CODE XREF: sub_12E69F+4Dj
 		JMP	loc_12E6BC
 ; ---------------------------------------------------------------------------
 
-loc_12E712:				; CODE XREF: sub_12E69F+5Dj
+loc_12E712:				
 		CMP	#8
 		BNE	loc_12E726
 		LDA	byte_372
@@ -13440,21 +13440,21 @@ loc_12E712:				; CODE XREF: sub_12E69F+5Dj
 		JMP	loc_12E6BC
 ; ---------------------------------------------------------------------------
 
-loc_12E726:				; CODE XREF: sub_12E69F+75j
-		CMP	#$80 ; '�'
+loc_12E726:				
+		CMP	#$80 
 		BEQ	loc_12E731
-		CMP	#$40 ; '@'
+		CMP	#$40 
 		BEQ	loc_12E776
 		JMP	loc_12E6F7
 ; ---------------------------------------------------------------------------
 
-loc_12E731:				; CODE XREF: sub_12E69F+89j
+loc_12E731:				
 		JSR	sub_12ED20
 		JSR	sub_12D21B
 		LDX	byte_372
 		LDA	unk_4C2,X
 		CLC
-		ADC	#$A7 ; '�'
+		ADC	#$A7 
 		STA	text_idx_35C
 		LDA	#0
 		ADC	#0
@@ -13462,26 +13462,26 @@ loc_12E731:				; CODE XREF: sub_12E69F+89j
 		LDA	unk_4C2,X
 		CMP	#$E
 		BNE	loc_12E75B
-		LDA	#$3B ; ';'
+		LDA	#$3B 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
 
-loc_12E75B:				; CODE XREF: sub_12E69F+B0j
+loc_12E75B:				
 		LDA	#0
 		STA	byte_310
 		JSR	exec_b2_c3_128313
 
-loc_12E763:				; CODE XREF: sub_12E69F+CCj
+loc_12E763:				
 		JSR	wait_for_count350_zero_12F770
 		LDA	input_pressed_34A
-		CMP	#$40 ; '@'
+		CMP	#$40 
 		BNE	loc_12E763
 		JSR	sub_12ED29
 		JSR	sub_12D287
 		JSR	sub_12D319
 
-loc_12E776:				; CODE XREF: sub_12E69F+55j
+loc_12E776:				
 					; sub_12E69F+8Dj
 		LDA	#$A
 		STA	byte_310
@@ -13503,7 +13503,7 @@ loc_12E776:				; CODE XREF: sub_12E69F+55j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E798:				; CODE XREF: sub_12E5E6:loc_12E616p
+sub_12E798:				
 					; sub_12E69F:loc_12E6E0p
 		LDA	#4
 		STA	tilemap_size_307
@@ -13519,7 +13519,7 @@ sub_12E798:				; CODE XREF: sub_12E5E6:loc_12E616p
 		STA	byte_363
 		LDA	#7
 		STA	byte_364
-		LDA	#$C4 ; '�'
+		LDA	#$C4 
 		STA	sprite_secondByte_31B
 		LDA	#$A
 		STA	byte_310
@@ -13535,17 +13535,17 @@ sub_12E798:				; CODE XREF: sub_12E5E6:loc_12E616p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E7D3:				; CODE XREF: sub_12E5E6+33p
+sub_12E7D3:				
 					; sub_12E69F+44p
-		LDA	#$2E ; '.'
+		LDA	#$2E 
 		STA	objMapIdx_316
-		LDA	#$54 ; 'T'
+		LDA	#$54 
 
 loc_12E7DA:
 		STA	tilemap_size_307
-		LDA	#$38 ; '8'
+		LDA	#$38 
 		STA	ppu_unk_byte_309
-		LDA	#$A0 ; '�'
+		LDA	#$A0 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
@@ -13557,15 +13557,15 @@ loc_12E7DA:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E7F0:				; CODE XREF: sub_12E5E6+36p
+sub_12E7F0:				
 					; sub_12E69F+47p
-		LDA	#$2F ; '/'
+		LDA	#$2F 
 		STA	objMapIdx_316
-		LDA	#$54 ; 'T'
+		LDA	#$54 
 		STA	tilemap_size_307
-		LDA	#$60 ; '`'
+		LDA	#$60 
 		STA	ppu_unk_byte_309
-		LDA	#$A4 ; '�'
+		LDA	#$A4 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
@@ -13577,9 +13577,9 @@ sub_12E7F0:				; CODE XREF: sub_12E5E6+36p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E80D:				; CODE XREF: sub_12E5E6+AEp
+sub_12E80D:				
 					; sub_12E69F+EEp
-		LDA	#$A0 ; '�'
+		LDA	#$A0 
 		STA	byte_31A
 		LDA	#4
 		STA	tilemapWidth_308
@@ -13591,9 +13591,9 @@ sub_12E80D:				; CODE XREF: sub_12E5E6+AEp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E81B:				; CODE XREF: sub_12E5E6+B1p
+sub_12E81B:				
 					; sub_12E69F+F1p
-		LDA	#$A4 ; '�'
+		LDA	#$A4 
 		STA	byte_31A
 		LDA	#4
 		STA	tilemapWidth_308
@@ -13605,7 +13605,7 @@ sub_12E81B:				; CODE XREF: sub_12E5E6+B1p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E829:				; CODE XREF: sub_12D3AB+61p
+sub_12E829:				
 					; sub_12D3AB+B1p ...
 		LDA	tilemap_size_307
 		STA	byte_36A
@@ -13626,11 +13626,11 @@ sub_12E829:				; CODE XREF: sub_12D3AB+61p
 
 ; ---------------------------------------------------------------------------
 byte_12E851:	.BYTE $B0,$40,$D0,$40,$B0,$60,$D0,$60,$B0,$80,$D0,$80,$B0,$A0,$D0,$A0
-					; DATA XREF: sub_12D287+61r
+					
 					; sub_12D287+6Br ...
 		.BYTE $B0,$10,$D0,$10,$B0,$20,$D0,$20
 byte_12E869:	.BYTE $1D,$1F,$19,$24,$1E,$12,$23, $E, $B, $A,$1A,$1A,$1A,$1B,$1B,$1B
-					; DATA XREF: sub_12D287+56r
+					
 					; sub_12D58C+49r ...
 		.BYTE $1B,$1B,$28,  7,	3,$17, $F,$18,	5,$27,$13,$28,$26,$26,$1C,  0
 		.BYTE $22,$21,	8,  8,	4, $C, $C,  2,	9,  6,	6,  1,$20,$16,$14,$11
@@ -13639,7 +13639,7 @@ byte_12E869:	.BYTE $1D,$1F,$19,$24,$1E,$12,$23, $E, $B, $A,$1A,$1A,$1A,$1B,$1B,$
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12E8A5:				; CODE XREF: sub_12E428+7Bp
+sub_12E8A5:				
 		LDA	byte_42E
 		ASL	A
 		CLC
@@ -13649,7 +13649,7 @@ sub_12E8A5:				; CODE XREF: sub_12E428+7Bp
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12E8B5:				; CODE XREF: sub_12E8A5+Bj
+loc_12E8B5:				
 		STA	byte_47C
 
 loc_12E8B8:
@@ -13659,7 +13659,7 @@ loc_12E8B8:
 		CMP	#1
 		BNE	loc_12E926
 
-loc_12E8C5:				; CODE XREF: sub_12E8A5+1CFj
+loc_12E8C5:				
 		LDA	byte_533,Y
 		CMP	#6
 		BNE	loc_12E923
@@ -13685,7 +13685,7 @@ loc_12E8C5:				; CODE XREF: sub_12E8A5+1CFj
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12E8FB:				; CODE XREF: sub_12E8A5+30j
+loc_12E8FB:				
 					; sub_12E8A5+32j
 		LDA	unk_53B,X
 		CLC
@@ -13703,16 +13703,16 @@ loc_12E8FB:				; CODE XREF: sub_12E8A5+30j
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12E923:				; CODE XREF: sub_12E8A5+25j
+loc_12E923:				
 					; sub_12E8A5+39j
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12E926:				; CODE XREF: sub_12E8A5+1Ej
+loc_12E926:				
 		CMP	#2
 		BNE	loc_12E98B
 
-loc_12E92A:				; CODE XREF: sub_12E8A5+1F4j
+loc_12E92A:				
 		LDA	byte_533,Y
 		CMP	#7
 		BNE	loc_12E988
@@ -13738,7 +13738,7 @@ loc_12E92A:				; CODE XREF: sub_12E8A5+1F4j
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12E960:				; CODE XREF: sub_12E8A5+95j
+loc_12E960:				
 					; sub_12E8A5+97j
 		LDA	unk_53B,X
 		CLC
@@ -13756,16 +13756,16 @@ loc_12E960:				; CODE XREF: sub_12E8A5+95j
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12E988:				; CODE XREF: sub_12E8A5+8Aj
+loc_12E988:				
 					; sub_12E8A5+9Ej
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12E98B:				; CODE XREF: sub_12E8A5+83j
+loc_12E98B:				
 		CMP	#3
 		BNE	loc_12E9F0
 
-loc_12E98F:				; CODE XREF: sub_12E8A5+219j
+loc_12E98F:				
 		LDA	byte_533,Y
 		CMP	#8
 		BNE	loc_12E9ED
@@ -13791,7 +13791,7 @@ loc_12E98F:				; CODE XREF: sub_12E8A5+219j
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12E9C5:				; CODE XREF: sub_12E8A5+FAj
+loc_12E9C5:				
 					; sub_12E8A5+FCj
 		LDA	unk_53B,X
 		CLC
@@ -13809,16 +13809,16 @@ loc_12E9C5:				; CODE XREF: sub_12E8A5+FAj
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12E9ED:				; CODE XREF: sub_12E8A5+EFj
+loc_12E9ED:				
 					; sub_12E8A5+103j
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12E9F0:				; CODE XREF: sub_12E8A5+E8j
+loc_12E9F0:				
 		CMP	#4
 		BNE	loc_12EA55
 
-loc_12E9F4:				; CODE XREF: sub_12E8A5+23Ej
+loc_12E9F4:				
 		LDA	byte_533,Y
 		CMP	#9
 		BNE	loc_12EA52
@@ -13844,7 +13844,7 @@ loc_12E9F4:				; CODE XREF: sub_12E8A5+23Ej
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12EA2A:				; CODE XREF: sub_12E8A5+15Fj
+loc_12EA2A:				
 					; sub_12E8A5+161j
 		LDA	unk_53B,X
 		CLC
@@ -13862,12 +13862,12 @@ loc_12EA2A:				; CODE XREF: sub_12E8A5+15Fj
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12EA52:				; CODE XREF: sub_12E8A5+154j
+loc_12EA52:				
 					; sub_12E8A5+168j
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12EA55:				; CODE XREF: sub_12E8A5+14Dj
+loc_12EA55:				
 		CMP	#6
 		BNE	loc_12EA7A
 		LDA	byte_533,Y
@@ -13884,11 +13884,11 @@ loc_12EA55:				; CODE XREF: sub_12E8A5+14Dj
 		JMP	loc_12E8C5
 ; ---------------------------------------------------------------------------
 
-loc_12EA77:				; CODE XREF: sub_12E8A5+1B9j
+loc_12EA77:				
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12EA7A:				; CODE XREF: sub_12E8A5+1B2j
+loc_12EA7A:				
 		CMP	#7
 		BNE	loc_12EA9F
 		LDA	byte_533,Y
@@ -13905,11 +13905,11 @@ loc_12EA7A:				; CODE XREF: sub_12E8A5+1B2j
 		JMP	loc_12E92A
 ; ---------------------------------------------------------------------------
 
-loc_12EA9C:				; CODE XREF: sub_12E8A5+1DEj
+loc_12EA9C:				
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12EA9F:				; CODE XREF: sub_12E8A5+1D7j
+loc_12EA9F:				
 		CMP	#8
 		BNE	loc_12EAC4
 		LDA	byte_533,Y
@@ -13926,11 +13926,11 @@ loc_12EA9F:				; CODE XREF: sub_12E8A5+1D7j
 		JMP	loc_12E98F
 ; ---------------------------------------------------------------------------
 
-loc_12EAC1:				; CODE XREF: sub_12E8A5+203j
+loc_12EAC1:				
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12EAC4:				; CODE XREF: sub_12E8A5+1FCj
+loc_12EAC4:				
 		CMP	#9
 		BNE	loc_12EAE9
 		LDA	byte_533,Y
@@ -13947,11 +13947,11 @@ loc_12EAC4:				; CODE XREF: sub_12E8A5+1FCj
 		JMP	loc_12E9F4
 ; ---------------------------------------------------------------------------
 
-loc_12EAE6:				; CODE XREF: sub_12E8A5+228j
+loc_12EAE6:				
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12EAE9:				; CODE XREF: sub_12E8A5+221j
+loc_12EAE9:				
 		CMP	#$A
 		BNE	loc_12EB3C
 		LDA	byte_533,Y
@@ -13962,20 +13962,20 @@ loc_12EAE9:				; CODE XREF: sub_12E8A5+221j
 		JMP	loc_12EB05
 ; ---------------------------------------------------------------------------
 
-loc_12EAFC:				; CODE XREF: sub_12E8A5+24Dj
+loc_12EAFC:				
 		CMP	#$11
 		BNE	loc_12EB39
 		LDA	#$E
 		STA	byte_533,X
 
-loc_12EB05:				; CODE XREF: sub_12E8A5+254j
+loc_12EB05:				
 		LDX	byte_47B
 		LDA	byte_47B
 		CMP	byte_47C
 		BCC	loc_12EB13
 		LDX	byte_47C
 
-loc_12EB13:				; CODE XREF: sub_12E8A5+269j
+loc_12EB13:				
 		LDY	byte_532
 		JSR	sub_12D9F7
 		LDA	byte_47C
@@ -13987,17 +13987,17 @@ loc_12EB13:				; CODE XREF: sub_12E8A5+269j
 		BCC	loc_12EB30
 		LDX	byte_47C
 
-loc_12EB30:				; CODE XREF: sub_12E8A5+286j
+loc_12EB30:				
 		LDY	byte_532
 		JSR	sub_12DA33
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12EB39:				; CODE XREF: sub_12E8A5+259j
+loc_12EB39:				
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12EB3C:				; CODE XREF: sub_12E8A5+246j
+loc_12EB3C:				
 		CMP	#$B
 		BNE	loc_12EBAF
 		LDA	byte_533,Y
@@ -14008,7 +14008,7 @@ loc_12EB3C:				; CODE XREF: sub_12E8A5+246j
 		JMP	loc_12EB78
 ; ---------------------------------------------------------------------------
 
-loc_12EB4F:				; CODE XREF: sub_12E8A5+2A0j
+loc_12EB4F:				
 		CMP	#$B
 		BNE	loc_12EB63
 		LDA	byte_47B
@@ -14019,7 +14019,7 @@ loc_12EB4F:				; CODE XREF: sub_12E8A5+2A0j
 		JMP	loc_12EB78
 ; ---------------------------------------------------------------------------
 
-loc_12EB63:				; CODE XREF: sub_12E8A5+2ACj
+loc_12EB63:				
 					; sub_12E8A5+2B4j
 		CMP	#$C
 		BNE	loc_12EB6F
@@ -14028,13 +14028,13 @@ loc_12EB63:				; CODE XREF: sub_12E8A5+2ACj
 		JMP	loc_12EB78
 ; ---------------------------------------------------------------------------
 
-loc_12EB6F:				; CODE XREF: sub_12E8A5+2C0j
+loc_12EB6F:				
 		CMP	#$F
 		BNE	loc_12EBAC
 		LDA	#$10
 		STA	byte_533,X
 
-loc_12EB78:				; CODE XREF: sub_12E8A5+2A7j
+loc_12EB78:				
 					; sub_12E8A5+2BBj ...
 		LDX	byte_47B
 		LDA	byte_47B
@@ -14042,7 +14042,7 @@ loc_12EB78:				; CODE XREF: sub_12E8A5+2A7j
 		BCC	loc_12EB86
 		LDX	byte_47C
 
-loc_12EB86:				; CODE XREF: sub_12E8A5+2DCj
+loc_12EB86:				
 		LDY	byte_532
 		JSR	sub_12D9F7
 		LDA	byte_47C
@@ -14054,23 +14054,23 @@ loc_12EB86:				; CODE XREF: sub_12E8A5+2DCj
 		BCC	loc_12EBA3
 		LDX	byte_47C
 
-loc_12EBA3:				; CODE XREF: sub_12E8A5+2F9j
+loc_12EBA3:				
 		LDY	byte_532
 		JSR	sub_12DA33
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12EBAC:				; CODE XREF: sub_12E8A5+2CCj
+loc_12EBAC:				
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12EBAF:				; CODE XREF: sub_12E8A5+299j
+loc_12EBAF:				
 		CMP	#$C
 		BEQ	loc_12EBB6
 		JMP	loc_12EC39
 ; ---------------------------------------------------------------------------
 
-loc_12EBB6:				; CODE XREF: sub_12E8A5+30Cj
+loc_12EBB6:				
 		LDA	byte_533,Y
 		CMP	#$B
 		BNE	loc_12EBF6
@@ -14082,7 +14082,7 @@ loc_12EBB6:				; CODE XREF: sub_12E8A5+30Cj
 		BCC	loc_12EBD0
 		LDX	byte_47C
 
-loc_12EBD0:				; CODE XREF: sub_12E8A5+326j
+loc_12EBD0:				
 		LDY	byte_532
 		JSR	sub_12D9F7
 		LDA	byte_47C
@@ -14094,13 +14094,13 @@ loc_12EBD0:				; CODE XREF: sub_12E8A5+326j
 		BCC	loc_12EBED
 		LDX	byte_47C
 
-loc_12EBED:				; CODE XREF: sub_12E8A5+343j
+loc_12EBED:				
 		LDY	byte_532
 		JSR	sub_12DA33
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12EBF6:				; CODE XREF: sub_12E8A5+316j
+loc_12EBF6:				
 		LDA	byte_533,Y
 		CMP	#$D
 		BNE	loc_12EC36
@@ -14112,7 +14112,7 @@ loc_12EBF6:				; CODE XREF: sub_12E8A5+316j
 		BCC	loc_12EC10
 		LDX	byte_47C
 
-loc_12EC10:				; CODE XREF: sub_12E8A5+366j
+loc_12EC10:				
 		LDY	byte_532
 		JSR	sub_12D9F7
 		LDA	byte_47C
@@ -14124,17 +14124,17 @@ loc_12EC10:				; CODE XREF: sub_12E8A5+366j
 		BCC	loc_12EC2D
 		LDX	byte_47C
 
-loc_12EC2D:				; CODE XREF: sub_12E8A5+383j
+loc_12EC2D:				
 		LDY	byte_532
 		JSR	sub_12DA33
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12EC36:				; CODE XREF: sub_12E8A5+356j
+loc_12EC36:				
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12EC39:				; CODE XREF: sub_12E8A5+30Ej
+loc_12EC39:				
 		CMP	#$D
 		BNE	loc_12EC80
 		LDA	byte_533,Y
@@ -14148,7 +14148,7 @@ loc_12EC39:				; CODE XREF: sub_12E8A5+30Ej
 		BCC	loc_12EC57
 		LDX	byte_47C
 
-loc_12EC57:				; CODE XREF: sub_12E8A5+3ADj
+loc_12EC57:				
 		LDY	byte_532
 		JSR	sub_12D9F7
 		LDA	byte_47C
@@ -14160,17 +14160,17 @@ loc_12EC57:				; CODE XREF: sub_12E8A5+3ADj
 		BCC	loc_12EC74
 		LDX	byte_47C
 
-loc_12EC74:				; CODE XREF: sub_12E8A5+3CAj
+loc_12EC74:				
 		LDY	byte_532
 		JSR	sub_12DA33
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12EC7D:				; CODE XREF: sub_12E8A5+39Dj
+loc_12EC7D:				
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12EC80:				; CODE XREF: sub_12E8A5+396j
+loc_12EC80:				
 		CMP	#$F
 		BNE	loc_12ECC7
 		LDA	byte_533,Y
@@ -14184,7 +14184,7 @@ loc_12EC80:				; CODE XREF: sub_12E8A5+396j
 		BCC	loc_12EC9E
 		LDX	byte_47C
 
-loc_12EC9E:				; CODE XREF: sub_12E8A5+3F4j
+loc_12EC9E:				
 		LDY	byte_532
 		JSR	sub_12D9F7
 		LDA	byte_47C
@@ -14196,17 +14196,17 @@ loc_12EC9E:				; CODE XREF: sub_12E8A5+3F4j
 		BCC	loc_12ECBB
 		LDX	byte_47C
 
-loc_12ECBB:				; CODE XREF: sub_12E8A5+411j
+loc_12ECBB:				
 		LDY	byte_532
 		JSR	sub_12DA33
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12ECC4:				; CODE XREF: sub_12E8A5+3E4j
+loc_12ECC4:				
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12ECC7:				; CODE XREF: sub_12E8A5+3DDj
+loc_12ECC7:				
 		CMP	#$11
 		BNE	loc_12ED0E
 		LDA	byte_533,Y
@@ -14220,7 +14220,7 @@ loc_12ECC7:				; CODE XREF: sub_12E8A5+3DDj
 		BCC	loc_12ECE5
 		LDX	byte_47C
 
-loc_12ECE5:				; CODE XREF: sub_12E8A5+43Bj
+loc_12ECE5:				
 		LDY	byte_532
 		JSR	sub_12D9F7
 		LDA	byte_47C
@@ -14232,17 +14232,17 @@ loc_12ECE5:				; CODE XREF: sub_12E8A5+43Bj
 		BCC	loc_12ED02
 		LDX	byte_47C
 
-loc_12ED02:				; CODE XREF: sub_12E8A5+458j
+loc_12ED02:				
 		LDY	byte_532
 		JSR	sub_12DA33
 		JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
-loc_12ED0B:				; CODE XREF: sub_12E8A5+42Bj
+loc_12ED0B:				
 		JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
-loc_12ED0E:				; CODE XREF: sub_12E8A5+Dj
+loc_12ED0E:				
 					; sub_12E8A5:loc_12E923j ...
 		JSR	sub_12ED29
 		LDA	#0
@@ -14250,7 +14250,7 @@ loc_12ED0E:				; CODE XREF: sub_12E8A5+Dj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12ED17:				; CODE XREF: sub_12E8A5+53j
+loc_12ED17:				
 					; sub_12E8A5+7Bj ...
 		JSR	sub_12ED20
 		LDA	#$FF
@@ -14262,7 +14262,7 @@ loc_12ED17:				; CODE XREF: sub_12E8A5+53j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12ED20:				; CODE XREF: sub_1290C3:loc_129120p
+sub_12ED20:				
 					; com_E_load_game_12CD30+112p ...
 		LDA	tilemapTypeUnk_30B
 		PHA
@@ -14274,7 +14274,7 @@ sub_12ED20:				; CODE XREF: sub_1290C3:loc_129120p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12ED29:				; CODE XREF: sub_1290C3+59p
+sub_12ED29:				
 					; com_E_load_game_12CD30:loc_12CE69p ...
 		LDA	tilemapTypeUnk_30B
 		PHA
@@ -14286,11 +14286,11 @@ sub_12ED29:				; CODE XREF: sub_1290C3+59p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12ED32:				; CODE XREF: com_E_load_game_12CD30+EFp
+sub_12ED32:				
 					; com_E_load_game_12CD30+108p ...
 		LDA	tilemapTypeUnk_30B
 		PHA
-		LDA	#$2B ; '+'
+		LDA	#$2B 
 		JMP	loc_12ED4D
 ; End of function sub_12ED32
 
@@ -14298,11 +14298,11 @@ sub_12ED32:				; CODE XREF: com_E_load_game_12CD30+EFp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12ED3B:				; CODE XREF: sub_128A1A+45p
+sub_12ED3B:				
 					; sub_12C438p
 		LDA	tilemapTypeUnk_30B
 		PHA
-		LDA	#$2D ; '-'
+		LDA	#$2D 
 		JMP	loc_12ED4D
 ; End of function sub_12ED3B
 
@@ -14310,14 +14310,14 @@ sub_12ED3B:				; CODE XREF: sub_128A1A+45p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12ED44:				; CODE XREF: sub_128A1A+5Cp
+sub_12ED44:				
 		LDA	tilemapTypeUnk_30B
 		PHA
 		LDA	#$18
 		JMP	loc_12ED4D
 ; ---------------------------------------------------------------------------
 
-loc_12ED4D:				; CODE XREF: sub_12ED20+6j
+loc_12ED4D:				
 					; sub_12ED29+6j ...
 		STA	tilemapTypeUnk_30B
 		JSR	sub_128531
@@ -14347,7 +14347,7 @@ set_inventory_screen_12ED5D:
 		JSR	exec_b0_c2_12A9A9
 		LDA	#0
 		STA	tilemapTypeUnk_30B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	tilemap_size_307
 		STA	ppu_unk_byte_309
 		LDA	tilemapTypeUnk_30B
@@ -14356,7 +14356,7 @@ set_inventory_screen_12ED5D:
 		PLA
 		STA	tilemapTypeUnk_30B
 
-loc_12ED90:				; CODE XREF: sub_12ED58+47j
+loc_12ED90:				
 					; sub_12ED58+65j ...
 		JSR	wait_for_count350_zero_12F770
 		LDA	input_pressed_34A
@@ -14366,7 +14366,7 @@ loc_12ED90:				; CODE XREF: sub_12ED58+47j
 		CMP	#0
 		BEQ	loc_12ED90
 		DEC	tilemapTypeUnk_30B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	tilemap_size_307
 		STA	ppu_unk_byte_309
 		JSR	sub_12D261
@@ -14379,14 +14379,14 @@ loc_12ED90:				; CODE XREF: sub_12ED58+47j
 		JMP	loc_12ED90
 ; ---------------------------------------------------------------------------
 
-loc_12EDC0:				; CODE XREF: sub_12ED58+40j
+loc_12EDC0:				
 		CMP	#4
 		BNE	loc_12EDE7
 		LDA	tilemapTypeUnk_30B
-		CMP	#$47 ; 'G'
+		CMP	#$47 
 		BEQ	loc_12ED90
 		INC	tilemapTypeUnk_30B
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	tilemap_size_307
 		STA	ppu_unk_byte_309
 		LDA	tilemapTypeUnk_30B
@@ -14398,14 +14398,14 @@ loc_12EDC0:				; CODE XREF: sub_12ED58+40j
 		JMP	loc_12ED90
 ; ---------------------------------------------------------------------------
 
-loc_12EDE7:				; CODE XREF: sub_12ED58+6Aj
-		CMP	#$80 ; '�'
+loc_12EDE7:				
+		CMP	#$80 
 		BNE	loc_12EDF1
 		JSR	sub_128531
 		JMP	loc_12ED90
 ; ---------------------------------------------------------------------------
 
-loc_12EDF1:				; CODE XREF: sub_12ED58+91j
+loc_12EDF1:				
 		JMP	loc_12ED90
 ; End of function sub_12ED58
 
@@ -14415,7 +14415,7 @@ loc_12EDF1:				; CODE XREF: sub_12ED58+91j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12EDF5:				; CODE XREF: sub_128955+A3p
+sub_12EDF5:				
 					; sub_12D21B+32p
 		LDX	#0
 		LDA	palette_bg_321,X ; "����������������"
@@ -14424,17 +14424,17 @@ sub_12EDF5:				; CODE XREF: sub_128955+A3p
 		LDA	#4
 		STA	inv_spr_dscr1_30C
 
-loc_12EE04:				; CODE XREF: sub_12EDF5+A4j
+loc_12EE04:				
 		LDA	#0
 		STA	has_ppu_data_to_upload_6F
 		LDX	#0
 		LDA	#1
 		STA	ppu_data_70,X
 		INX
-		LDA	#$20 ; ' '
+		LDA	#$20 
 		STA	ppu_data_70,X
 		INX
-		LDA	#$3F ; '?'
+		LDA	#$3F 
 		STA	ppu_data_70,X
 		INX
 		LDA	#0
@@ -14446,10 +14446,10 @@ loc_12EE04:				; CODE XREF: sub_12EDF5+A4j
 		LDA	#1
 		STA	inv_spr_dscr1_30C
 
-loc_12EE2A:				; CODE XREF: sub_12EDF5+2Ej
+loc_12EE2A:				
 		LDY	#0
 
-loc_12EE2C:				; CODE XREF: sub_12EDF5+8Ej
+loc_12EE2C:				
 		LDA	inv_spr_dscr1_30C
 		CMP	#4
 		BEQ	loc_12EE3F
@@ -14460,35 +14460,35 @@ loc_12EE2C:				; CODE XREF: sub_12EDF5+8Ej
 		CMP	#1
 		BEQ	loc_12EE69
 
-loc_12EE3F:				; CODE XREF: sub_12EDF5+3Cj
+loc_12EE3F:				
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$CF ; '�'
+		AND	#$CF 
 		JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
-loc_12EE47:				; CODE XREF: sub_12EDF5+40j
+loc_12EE47:				
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$30 ; '0'
-		CMP	#$30 ; '0'
+		AND	#$30 
+		CMP	#$30 
 		BCC	loc_12EE7A
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$DF ; '�'
+		AND	#$DF 
 		JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
-loc_12EE58:				; CODE XREF: sub_12EDF5+44j
+loc_12EE58:				
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$30 ; '0'
-		CMP	#$20 ; ' '
+		AND	#$30 
+		CMP	#$20 
 		BCC	loc_12EE7A
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$EF ; '�'
+		AND	#$EF 
 		JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
-loc_12EE69:				; CODE XREF: sub_12EDF5+48j
+loc_12EE69:				
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$30 ; '0'
+		AND	#$30 
 		CMP	#$10
 		BCC	loc_12EE7A
 		LDA	palette_bg_321,Y ; "����������������"
@@ -14496,16 +14496,16 @@ loc_12EE69:				; CODE XREF: sub_12EDF5+48j
 		JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
-loc_12EE7A:				; CODE XREF: sub_12EDF5+59j
+loc_12EE7A:				
 					; sub_12EDF5+6Aj ...
 		LDA	palette_bg_321,Y ; "����������������"
 
-loc_12EE7D:				; CODE XREF: sub_12EDF5+4Fj
+loc_12EE7D:				
 					; sub_12EDF5+60j ...
 		STA	ppu_data_70,X
 		INX
 		INY
-		CPY	#$20 ; ' '
+		CPY	#$20 
 		BCC	loc_12EE2C
 		LDA	#1
 		STA	has_ppu_data_to_upload_6F
@@ -14518,7 +14518,7 @@ loc_12EE7D:				; CODE XREF: sub_12EDF5+4Fj
 		JMP	loc_12EE04
 ; ---------------------------------------------------------------------------
 
-loc_12EE9C:				; CODE XREF: sub_12EDF5+9Cj
+loc_12EE9C:				
 		LDA	byte_341
 		CMP	#0
 		BEQ	loc_12EEA7
@@ -14526,7 +14526,7 @@ loc_12EE9C:				; CODE XREF: sub_12EDF5+9Cj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12EEA7:				; CODE XREF: sub_12EDF5+ACj
+loc_12EEA7:				
 		CLC
 		ADC	#1
 		JSR	wait_for_count350_zero_12F770
@@ -14537,22 +14537,22 @@ loc_12EEA7:				; CODE XREF: sub_12EDF5+ACj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12EEAE:				; CODE XREF: sub_128955+36p
+sub_12EEAE:				
 					; sub_12D21Bp
 		LDA	#4
 		STA	inv_spr_dscr1_30C
 
-write_ppu_entry_12EEB3:			; CODE XREF: sub_12EEAE+A3j
+write_ppu_entry_12EEB3:			
 		LDA	#0
 		STA	has_ppu_data_to_upload_6F
 		LDX	#0
 		LDA	#1
 		STA	ppu_data_70,X
 		INX
-		LDA	#$20 ; ' '
+		LDA	#$20 
 		STA	ppu_data_70,X
 		INX
-		LDA	#$3F ; '?'
+		LDA	#$3F 
 		STA	ppu_data_70,X
 		INX
 		LDA	#0
@@ -14564,10 +14564,10 @@ write_ppu_entry_12EEB3:			; CODE XREF: sub_12EEAE+A3j
 		LDA	#0
 		STA	inv_spr_dscr1_30C
 
-loc_12EED9:				; CODE XREF: sub_12EEAE+24j
+loc_12EED9:				
 		LDY	#0
 
-loc_12EEDB:				; CODE XREF: sub_12EEAE+8Dj
+loc_12EEDB:				
 		LDA	inv_spr_dscr1_30C
 		CMP	#4
 		BEQ	loc_12EEF2
@@ -14580,57 +14580,57 @@ loc_12EEDB:				; CODE XREF: sub_12EEAE+8Dj
 		CMP	#0
 		BEQ	loc_12EF2D
 
-loc_12EEF2:				; CODE XREF: sub_12EEAE+32j
+loc_12EEF2:				
 		LDA	palette_bg_321,Y ; "����������������"
 		AND	#$FF
 		JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
-loc_12EEFA:				; CODE XREF: sub_12EEAE+36j
+loc_12EEFA:				
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$30 ; '0'
-		CMP	#$30 ; '0'
+		AND	#$30 
+		CMP	#$30 
 		BCC	loc_12EF32
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$EF ; '�'
+		AND	#$EF 
 		JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
-loc_12EF0B:				; CODE XREF: sub_12EEAE+3Aj
+loc_12EF0B:				
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$30 ; '0'
-		CMP	#$20 ; ' '
+		AND	#$30 
+		CMP	#$20 
 		BCC	loc_12EF32
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$DF ; '�'
+		AND	#$DF 
 		JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
-loc_12EF1C:				; CODE XREF: sub_12EEAE+3Ej
+loc_12EF1C:				
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$30 ; '0'
+		AND	#$30 
 		CMP	#$10
 		BCC	loc_12EF32
 		LDA	palette_bg_321,Y ; "����������������"
-		AND	#$CF ; '�'
+		AND	#$CF 
 		JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
-loc_12EF2D:				; CODE XREF: sub_12EEAE+42j
+loc_12EF2D:				
 		LDA	#$1D
 		JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
-loc_12EF32:				; CODE XREF: sub_12EEAE+53j
+loc_12EF32:				
 					; sub_12EEAE+64j ...
 		LDA	palette_bg_321,Y ; "����������������"
 
-loc_12EF35:				; CODE XREF: sub_12EEAE+49j
+loc_12EF35:				
 					; sub_12EEAE+5Aj ...
 		STA	ppu_data_70,X
 		INX
 		INY
-		CPY	#$20 ; ' '
+		CPY	#$20 
 		BCC	loc_12EEDB
 		LDA	#1
 		STA	has_ppu_data_to_upload_6F
@@ -14643,7 +14643,7 @@ loc_12EF35:				; CODE XREF: sub_12EEAE+49j
 		JMP	write_ppu_entry_12EEB3
 ; ---------------------------------------------------------------------------
 
-loc_12EF54:				; CODE XREF: sub_12EEAE+9Bj
+loc_12EF54:				
 		LDA	byte_341
 		CMP	#0
 		BEQ	loc_12EF5F
@@ -14651,7 +14651,7 @@ loc_12EF54:				; CODE XREF: sub_12EEAE+9Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12EF5F:				; CODE XREF: sub_12EEAE+ABj
+loc_12EF5F:				
 		CLC
 		ADC	#1
 		JSR	wait_for_count350_zero_12F770
@@ -14662,7 +14662,7 @@ loc_12EF5F:				; CODE XREF: sub_12EEAE+ABj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12EF66:				; CODE XREF: command_0_1280FB:command_C_128143p
+sub_12EF66:				
 		LDY	byte_301
 		LDA	byte_12EFD7,Y
 		TAY
@@ -14677,7 +14677,7 @@ sub_12EF66:				; CODE XREF: command_0_1280FB:command_C_128143p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12EF77:				; CODE XREF: sub_12E5E6+88p
+sub_12EF77:				
 					; sub_12EF66+9j
 		TYA
 		PHA
@@ -14727,7 +14727,7 @@ sub_12EF77:				; CODE XREF: sub_12E5E6+88p
 ; ---------------------------------------------------------------------------
 		.BYTE $60,$60,$60,$60
 byte_12EFD7:	.BYTE  $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F
-					; DATA XREF: sub_12EF66+3r
+					
 		.BYTE  $F, $F, $F, $F, $F, $F,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	1,  1,	1,  2,	2,  2,	2,  2,	2,  2,	2,  2,	2,  2
@@ -14738,12 +14738,12 @@ byte_12EFD7:	.BYTE  $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, $F, 
 		.BYTE	9,  9, $A, $A, $F,  0,	0,  0,	0,  0,	1,  1,	1,  3,	3,  3
 		.BYTE	4,  4,	4,  4,	9,  9, $A,  5,	5,  6, $F
 map_sequence_12F072:.BYTE   4,	6,  5,	7,  3,$14,$15, $C, $D, $E, $F
-					; DATA XREF: sub_12EF77+1Fr
+					
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F07D:				; CODE XREF: command_0_1280FB:loc_1281D3p
+sub_12F07D:				
 					; sub_12C694+21p
 		LDA	#0
 		STA	byte_41F
@@ -14770,7 +14770,7 @@ sub_12F07D:				; CODE XREF: command_0_1280FB:loc_1281D3p
 		STA	byte_361
 
 show_computer_12F0B2:
-		LDA	#$84 ; '�'
+		LDA	#$84 
 		STA	image_id_4A4
 		LDA	#0
 		STA	image_offset_4A5
@@ -14781,7 +14781,7 @@ show_computer_12F0B2:
 		LDA	#2
 		STA	prev_sprite_type_4A9
 		JSR	exec_b0_c2_12A9A9
-		LDA	#$2B ; '+'
+		LDA	#$2B 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -14789,7 +14789,7 @@ show_computer_12F0B2:
 		LDA	#0
 		STA	byte_372
 
-loc_12F0E1:				; CODE XREF: sub_12F07D+7Aj
+loc_12F0E1:				
 					; sub_12F07D+87j ...
 		JSR	sub_12F564
 		JSR	sub_12F168
@@ -14802,7 +14802,7 @@ loc_12F0E1:				; CODE XREF: sub_12F07D+7Aj
 		JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
-loc_12F0FA:				; CODE XREF: sub_12F07D+72j
+loc_12F0FA:				
 		CMP	#4
 		BNE	loc_12F107
 		JSR	sub_12ED32
@@ -14810,7 +14810,7 @@ loc_12F0FA:				; CODE XREF: sub_12F07D+72j
 		JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
-loc_12F107:				; CODE XREF: sub_12F07D+7Fj
+loc_12F107:				
 		CMP	#2
 		BNE	loc_12F114
 		JSR	sub_12ED32
@@ -14818,7 +14818,7 @@ loc_12F107:				; CODE XREF: sub_12F07D+7Fj
 		JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
-loc_12F114:				; CODE XREF: sub_12F07D+8Cj
+loc_12F114:				
 		CMP	#1
 		BNE	loc_12F121
 		JSR	sub_12ED32
@@ -14826,8 +14826,8 @@ loc_12F114:				; CODE XREF: sub_12F07D+8Cj
 		JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
-loc_12F121:				; CODE XREF: sub_12F07D+99j
-		CMP	#$80 ; '�'
+loc_12F121:				
+		CMP	#$80 
 		BNE	loc_12F138
 		JSR	sub_12ED20
 		JSR	sub_12F2C9
@@ -14838,13 +14838,13 @@ loc_12F121:				; CODE XREF: sub_12F07D+99j
 		JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
-loc_12F138:				; CODE XREF: sub_12F07D+A6j
-		CMP	#$40 ; '@'
+loc_12F138:				
+		CMP	#$40 
 		BEQ	loc_12F13F
 		JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
-loc_12F13F:				; CODE XREF: sub_12F07D+B6j
+loc_12F13F:				
 					; sub_12F07D+BDj
 		JSR	sub_12ED29
 		PLA
@@ -14871,9 +14871,9 @@ loc_12F13F:				; CODE XREF: sub_12F07D+B6j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F168:				; CODE XREF: sub_12F07D+67p
+sub_12F168:				
 					; sub_12F2C9+C4p ...
-		LDA	#$2A ; '*'
+		LDA	#$2A 
 		STA	objMapIdx_316
 		LDA	byte_372
 		ASL	A
@@ -14895,7 +14895,7 @@ sub_12F168:				; CODE XREF: sub_12F07D+67p
 		LDA	#0
 		STA	byte_317
 		JSR	exec_b1_c1_128394
-		LDA	#$2B ; '+'
+		LDA	#$2B 
 		STA	objMapIdx_316
 		LDA	byte_372
 		ASL	A
@@ -14916,14 +14916,14 @@ sub_12F168:				; CODE XREF: sub_12F07D+67p
 		JMP	loc_12F1D0
 ; ---------------------------------------------------------------------------
 
-loc_12F1C7:				; CODE XREF: sub_12F168+4Ej
+loc_12F1C7:				
 					; sub_12F168+52j ...
 		LDA	byte_36A
 		CLC
 		ADC	#$10
 		STA	byte_36A
 
-loc_12F1D0:				; CODE XREF: sub_12F168+5Cj
+loc_12F1D0:				
 		INY
 		LDA	byte_12F28B,Y
 		STA	byte_366
@@ -14939,7 +14939,7 @@ loc_12F1D0:				; CODE XREF: sub_12F168+5Cj
 		LDA	#0
 		STA	byte_317
 		JSR	exec_b1_c1_128394
-		LDA	#$2C ; ','
+		LDA	#$2C 
 		STA	objMapIdx_316
 		LDA	byte_372
 		ASL	A
@@ -14963,7 +14963,7 @@ loc_12F1D0:				; CODE XREF: sub_12F168+5Cj
 		LDA	#0
 		STA	byte_317
 		JSR	exec_b1_c1_128394
-		LDA	#$2D ; '-'
+		LDA	#$2D 
 		STA	objMapIdx_316
 		LDA	byte_372
 		ASL	A
@@ -14984,14 +14984,14 @@ loc_12F1D0:				; CODE XREF: sub_12F168+5Cj
 		JMP	loc_12F261
 ; ---------------------------------------------------------------------------
 
-loc_12F258:				; CODE XREF: sub_12F168+DFj
+loc_12F258:				
 					; sub_12F168+E3j ...
 		LDA	byte_36A
 		CLC
 		ADC	#$10
 		STA	byte_36A
 
-loc_12F261:				; CODE XREF: sub_12F168+EDj
+loc_12F261:				
 		INY
 		LDA	byte_12F28B,Y
 		CLC
@@ -15014,7 +15014,7 @@ loc_12F261:				; CODE XREF: sub_12F168+EDj
 
 ; ---------------------------------------------------------------------------
 byte_12F28B:	.BYTE $28,$88,$38,$88,$48,$88,$58,$88,$68,$88,$78,$88,$88,$88,$98,$88
-					; DATA XREF: sub_12F168+Ar
+					
 					; sub_12F168+11r ...
 		.BYTE $A8,$88,$B8,$88,$C8,$88,$28,$98,$38,$98,$48,$98,$58,$98,$68,$98
 		.BYTE $78,$98,$88,$98,$98,$98,$A8,$98,$B8,$98,$28,$A8,$38,$A8,$48,$A8
@@ -15023,7 +15023,7 @@ byte_12F28B:	.BYTE $28,$88,$38,$88,$48,$88,$58,$88,$68,$88,$78,$88,$88,$88,$98,$
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F2C9:				; CODE XREF: sub_12F07D+ABp
+sub_12F2C9:				
 		LDA	byte_421
 		CMP	#$A
 		BCC	loc_12F2D8
@@ -15033,7 +15033,7 @@ sub_12F2C9:				; CODE XREF: sub_12F07D+ABp
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12F2D8:				; CODE XREF: sub_12F2C9+5j
+loc_12F2D8:				
 					; sub_12F2C9+Cj
 		LDA	byte_372
 		CMP	#$A
@@ -15045,17 +15045,17 @@ loc_12F2D8:				; CODE XREF: sub_12F2C9+5j
 		JMP	loc_12F2ED
 ; ---------------------------------------------------------------------------
 
-locret_12F2EC:				; CODE XREF: sub_12F2C9+1Bj
+locret_12F2EC:				
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12F2ED:				; CODE XREF: sub_12F2C9+14j
+loc_12F2ED:				
 					; sub_12F2C9+20j
-		LDA	#$4E ; 'N'
+		LDA	#$4E 
 		CLC
 		ADC	byte_421
 		STA	data_2
-		LDA	#$21 ; '!'
+		LDA	#$21 
 		ADC	#0
 		STA	data_3
 		LDX	byte_372
@@ -15067,10 +15067,10 @@ loc_12F2ED:				; CODE XREF: sub_12F2C9+14j
 		JMP	loc_12F411
 ; ---------------------------------------------------------------------------
 
-loc_12F30E:				; CODE XREF: sub_12F2C9+40j
-		LDA	#$3A ; ':'
+loc_12F30E:				
+		LDA	#$3A 
 		STA	ptr_0
-		LDA	#$F5 ; '�'
+		LDA	#$F5 
 		STA	ptr_1
 		LDA	byte_420
 		ASL	A
@@ -15094,18 +15094,18 @@ loc_12F30E:				; CODE XREF: sub_12F2C9+40j
 		JMP	locret_12F410
 ; ---------------------------------------------------------------------------
 
-loc_12F33F:				; CODE XREF: sub_12F2C9+71j
+loc_12F33F:				
 		INY
 		LDX	#0
 
-loc_12F342:				; CODE XREF: sub_12F2C9+88j
+loc_12F342:				
 		LDA	(data_2),Y
 		CMP	unk_422,X
 		BEQ	loc_12F34C
 		JMP	locret_12F410
 ; ---------------------------------------------------------------------------
 
-loc_12F34C:				; CODE XREF: sub_12F2C9+7Ej
+loc_12F34C:				
 		INX
 		INY
 		CPX	byte_421
@@ -15115,7 +15115,7 @@ loc_12F34C:				; CODE XREF: sub_12F2C9+7Ej
 		BNE	loc_12F377
 		LDA	#3
 		STA	byte_420
-		LDA	#$2C ; ','
+		LDA	#$2C 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -15126,12 +15126,12 @@ loc_12F34C:				; CODE XREF: sub_12F2C9+7Ej
 		JMP	locret_12F410
 ; ---------------------------------------------------------------------------
 
-loc_12F377:				; CODE XREF: sub_12F2C9+8Fj
+loc_12F377:				
 		LDA	byte_420
 		CMP	#3
 		BNE	loc_12F3F4
 
-loc_12F37E:				; CODE XREF: sub_12F2C9+128j
+loc_12F37E:				
 					; sub_12F2C9+13Fj
 		JSR	sub_12F5FC
 		LDA	byte_372
@@ -15139,7 +15139,7 @@ loc_12F37E:				; CODE XREF: sub_12F2C9+128j
 		LDA	#$1C
 		STA	byte_372
 
-loc_12F38A:				; CODE XREF: sub_12F2C9+D3j
+loc_12F38A:				
 					; sub_12F2C9+D8j ...
 		JSR	wait_for_count350_zero_12F770
 		JSR	sub_12F168
@@ -15153,7 +15153,7 @@ loc_12F38A:				; CODE XREF: sub_12F2C9+D3j
 		JMP	loc_12F38A
 ; ---------------------------------------------------------------------------
 
-loc_12F3A4:				; CODE XREF: sub_12F2C9+CCj
+loc_12F3A4:				
 		CMP	#4
 		BNE	loc_12F3B5
 		LDA	byte_372
@@ -15163,13 +15163,13 @@ loc_12F3A4:				; CODE XREF: sub_12F2C9+CCj
 		JMP	loc_12F38A
 ; ---------------------------------------------------------------------------
 
-loc_12F3B5:				; CODE XREF: sub_12F2C9+DDj
-		CMP	#$80 ; '�'
+loc_12F3B5:				
+		CMP	#$80 
 		BEQ	loc_12F3BC
 		JMP	loc_12F38A
 ; ---------------------------------------------------------------------------
 
-loc_12F3BC:				; CODE XREF: sub_12F2C9+EEj
+loc_12F3BC:				
 		LDA	byte_372
 		STA	tilemapTypeUnk_30B
 		PLA
@@ -15191,14 +15191,14 @@ loc_12F3BC:				; CODE XREF: sub_12F2C9+EEj
 		JMP	locret_12F410
 ; ---------------------------------------------------------------------------
 
-loc_12F3E9:				; CODE XREF: sub_12F2C9+10Ej
+loc_12F3E9:				
 		JSR	sub_12F698
 		LDA	#$FF
 		STA	byte_684
 		JMP	loc_12F37E
 ; ---------------------------------------------------------------------------
 
-loc_12F3F4:				; CODE XREF: sub_12F2C9+B3j
+loc_12F3F4:				
 					; sub_12F2C9+10Aj
 		LDA	byte_420
 		CMP	#4
@@ -15211,21 +15211,21 @@ loc_12F3F4:				; CODE XREF: sub_12F2C9+B3j
 		JMP	loc_12F37E
 ; ---------------------------------------------------------------------------
 
-loc_12F40B:				; CODE XREF: sub_12F2C9+130j
+loc_12F40B:				
 		LDA	#$FF
 		STA	byte_41F
 
-locret_12F410:				; CODE XREF: sub_12F2C9+73j
+locret_12F410:				
 					; sub_12F2C9+80j ...
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12F411:				; CODE XREF: sub_12F2C9+42j
-		LDA	#$3C ; '<'
+loc_12F411:				
+		LDA	#$3C 
 		CLC
 		ADC	tilemapTypeUnk_30B
 		STA	ptr_0
-		LDA	#$F4 ; '�'
+		LDA	#$F4 
 		ADC	#0
 		STA	ptr_1
 		LDX	byte_421
@@ -15240,7 +15240,7 @@ loc_12F411:				; CODE XREF: sub_12F2C9+42j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12F438:				; CODE XREF: sub_12F2C9+16Cj
+loc_12F438:				
 		INC	byte_421
 		RTS
 ; End of function sub_12F2C9
@@ -15249,13 +15249,13 @@ loc_12F438:				; CODE XREF: sub_12F2C9+16Cj
 		.BYTE $89,$8A, $E,$8B,$8C,$8D,$8E,$8F,$90,$91,$92,$17,$93,$94,$13,$16
 		.BYTE $95,$15,$14,$96,	7,$97,$98,$99,$9A,$9B,$9C,  5,	5,  5,	5,  5
 byte_12F45C:	.BYTE $10,$16,	4,$11,$13,$18,$14,  8, $E, $F,$1B,  0,$12,  3,	5,  6
-					; DATA XREF: sub_12F2C9+35r
+					
 		.BYTE	7,  9, $A, $B,$FF,$19,$17,  2,$15,  1, $D, $C
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F478:				; CODE XREF: sub_12F2C9+164p
+sub_12F478:				
 		LDA	#0
 		STA	has_ppu_data_to_upload_6F
 		LDX	#0
@@ -15273,7 +15273,7 @@ sub_12F478:				; CODE XREF: sub_12F2C9+164p
 		INX
 		LDY	#0
 
-loc_12F495:				; CODE XREF: sub_12F478+26j
+loc_12F495:				
 		LDA	(ptr_0),Y
 		STA	ppu_data_70,X
 		INX
@@ -15302,7 +15302,7 @@ loc_12F495:				; CODE XREF: sub_12F478+26j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F4C0:				; CODE XREF: sub_12F07D+77p
+sub_12F4C0:				
 		LDA	byte_372
 		CMP	#$A
 		BCC	locret_12F4E3
@@ -15317,7 +15317,7 @@ sub_12F4C0:				; CODE XREF: sub_12F07D+77p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12F4D9:				; CODE XREF: sub_12F4C0+Bj
+loc_12F4D9:				
 					; sub_12F4C0+Dj
 		LDA	byte_372
 		SEC
@@ -15326,7 +15326,7 @@ loc_12F4D9:				; CODE XREF: sub_12F4C0+Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-locret_12F4E3:				; CODE XREF: sub_12F4C0+5j
+locret_12F4E3:				
 					; sub_12F4C0+7j
 		RTS
 ; End of function sub_12F4C0
@@ -15335,7 +15335,7 @@ locret_12F4E3:				; CODE XREF: sub_12F4C0+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F4E4:				; CODE XREF: sub_12F07D+84p
+sub_12F4E4:				
 		LDA	byte_372
 		CMP	#$15
 		BCS	locret_12F513
@@ -15353,7 +15353,7 @@ sub_12F4E4:				; CODE XREF: sub_12F07D+84p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12F503:				; CODE XREF: sub_12F4E4+Bj
+loc_12F503:				
 					; sub_12F4E4+Dj
 		CMP	#$12
 		BCS	locret_12F513
@@ -15365,7 +15365,7 @@ loc_12F503:				; CODE XREF: sub_12F4E4+Bj
 		RTS
 ; ---------------------------------------------------------------------------
 
-locret_12F513:				; CODE XREF: sub_12F4E4+5j
+locret_12F513:				
 					; sub_12F4E4+7j ...
 		RTS
 ; End of function sub_12F4E4
@@ -15374,7 +15374,7 @@ locret_12F513:				; CODE XREF: sub_12F4E4+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F514:				; CODE XREF: sub_12F07D+91p
+sub_12F514:				
 		LDA	byte_372
 		CMP	#0
 		BEQ	locret_12F526
@@ -15384,7 +15384,7 @@ sub_12F514:				; CODE XREF: sub_12F07D+91p
 		BEQ	locret_12F526
 		DEC	byte_372
 
-locret_12F526:				; CODE XREF: sub_12F514+5j
+locret_12F526:				
 					; sub_12F514+9j ...
 		RTS
 ; End of function sub_12F514
@@ -15393,7 +15393,7 @@ locret_12F526:				; CODE XREF: sub_12F514+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F527:				; CODE XREF: sub_12F07D+9Ep
+sub_12F527:				
 		LDA	byte_372
 		CMP	#$A
 		BEQ	locret_12F539
@@ -15403,7 +15403,7 @@ sub_12F527:				; CODE XREF: sub_12F07D+9Ep
 		BEQ	locret_12F539
 		INC	byte_372
 
-locret_12F539:				; CODE XREF: sub_12F527+5j
+locret_12F539:				
 					; sub_12F527+9j ...
 		RTS
 ; End of function sub_12F527
@@ -15414,16 +15414,16 @@ locret_12F539:				; CODE XREF: sub_12F527+5j
 		.WORD byte_12F556
 		.WORD byte_12F55B
 		.WORD byte_12F55F
-byte_12F544:	.BYTE	8,  9,$10, $B,	3,$1B, $B,$17,	5 ; DATA XREF: BANK_12:F53Ao
-byte_12F54D:	.BYTE	8,$19,	7, $F,$10,  8,	6, $C,	2 ; DATA XREF: BANK_12:F53Co
-byte_12F556:	.BYTE	4,$11,	8,$10,$1A ; DATA XREF: BANK_12:F53Eo
-byte_12F55B:	.BYTE	3, $B, $D, $B	; DATA XREF: BANK_12:F540o
-byte_12F55F:	.BYTE	4,$1B,	8,$13,	2 ; DATA XREF: BANK_12:F542o
+byte_12F544:	.BYTE	8,  9,$10, $B,	3,$1B, $B,$17,	5 
+byte_12F54D:	.BYTE	8,$19,	7, $F,$10,  8,	6, $C,	2 
+byte_12F556:	.BYTE	4,$11,	8,$10,$1A 
+byte_12F55B:	.BYTE	3, $B, $D, $B	
+byte_12F55F:	.BYTE	4,$1B,	8,$13,	2 
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F564:				; CODE XREF: sub_12F07D:loc_12F0E1p
+sub_12F564:				
 		LDA	count_unk_465
 		CMP	#$F
 		BCC	locret_12F5B8
@@ -15440,8 +15440,8 @@ sub_12F564:				; CODE XREF: sub_12F07D:loc_12F0E1p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F57D:				; CODE XREF: sub_12F5FCp sub_12F732p
-		LDA	#$F0 ; '�'
+sub_12F57D:				
+		LDA	#$F0 
 		STA	byte_280
 		RTS
 ; End of function sub_12F57D
@@ -15450,25 +15450,25 @@ sub_12F57D:				; CODE XREF: sub_12F5FCp sub_12F732p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F583:				; CODE XREF: sub_12F07D+AEp
+sub_12F583:				
 					; sub_12F2C9+A8p ...
-		LDA	#$3C ; '<'
+		LDA	#$3C 
 		STA	objMapIdx_316
 		LDA	byte_421
 		ASL	A
 		ASL	A
 		ASL	A
 		CLC
-		ADC	#$70 ; 'p'
+		ADC	#$70 
 		STA	byte_36A
-		LDA	#$50 ; 'P'
+		LDA	#$50 
 		STA	byte_366
 		LDA	#0
 		STA	byte_36B
 		STA	byte_367
 		LDA	#5
 		STA	objectIdx_318
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	byte_31A
 		LDA	#0
 		STA	sprite_secondByte_31B
@@ -15476,7 +15476,7 @@ sub_12F583:				; CODE XREF: sub_12F07D+AEp
 		STA	byte_317
 		JSR	exec_b1_c1_128394
 
-locret_12F5B8:				; CODE XREF: sub_12F564+5j
+locret_12F5B8:				
 		RTS
 ; End of function sub_12F583
 
@@ -15484,7 +15484,7 @@ locret_12F5B8:				; CODE XREF: sub_12F564+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F5B9:				; CODE XREF: sub_12F07D+5Cp
+sub_12F5B9:				
 					; sub_12F2C9+A0p
 		LDA	#9
 		STA	ppu_unk_byte_309
@@ -15494,7 +15494,7 @@ sub_12F5B9:				; CODE XREF: sub_12F07D+5Cp
 		STA	byte_35E
 		LDA	#1
 		STA	byte_35F
-		LDA	#$AF ; '�'
+		LDA	#$AF 
 		STA	sprite_secondByte_31B
 ; End of function sub_12F5B9
 
@@ -15502,7 +15502,7 @@ sub_12F5B9:				; CODE XREF: sub_12F07D+5Cp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F5D2:				; CODE XREF: sub_12F5FC+26p
+sub_12F5D2:				
 					; sub_12F5FC+4Cp ...
 		LDA	#0
 		STA	byte_362
@@ -15514,7 +15514,7 @@ sub_12F5D2:				; CODE XREF: sub_12F5FC+26p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F5DC:				; CODE XREF: sub_12F698+30p
+sub_12F5DC:				
 					; sub_12F6D8+30p
 		LDA	#7
 		STA	byte_364
@@ -15536,9 +15536,9 @@ sub_12F5DC:				; CODE XREF: sub_12F698+30p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F5FC:				; CODE XREF: sub_12F2C9:loc_12F37Ep
+sub_12F5FC:				
 		JSR	sub_12F57D
-		LDA	#$2D ; '-'
+		LDA	#$2D 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -15550,10 +15550,10 @@ sub_12F5FC:				; CODE XREF: sub_12F2C9:loc_12F37Ep
 		STA	byte_35E
 		LDA	#4
 		STA	byte_35F
-		LDA	#$AF ; '�'
+		LDA	#$AF 
 		STA	sprite_secondByte_31B
 		JSR	sub_12F5D2
-		LDA	#$2E ; '.'
+		LDA	#$2E 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -15565,10 +15565,10 @@ sub_12F5FC:				; CODE XREF: sub_12F2C9:loc_12F37Ep
 		STA	byte_35E
 		LDA	#1
 		STA	byte_35F
-		LDA	#$D7 ; '�'
+		LDA	#$D7 
 		STA	sprite_secondByte_31B
 		JSR	sub_12F5D2
-		LDA	#$2F ; '/'
+		LDA	#$2F 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -15580,10 +15580,10 @@ sub_12F5FC:				; CODE XREF: sub_12F2C9:loc_12F37Ep
 		STA	byte_35E
 		LDA	#1
 		STA	byte_35F
-		LDA	#$DF ; '�'
+		LDA	#$DF 
 		STA	sprite_secondByte_31B
 		JSR	sub_12F5D2
-		LDA	#$30 ; '0'
+		LDA	#$30 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -15595,7 +15595,7 @@ sub_12F5FC:				; CODE XREF: sub_12F2C9:loc_12F37Ep
 		STA	byte_35E
 		LDA	#1
 		STA	byte_35F
-		LDA	#$E7 ; '�'
+		LDA	#$E7 
 		STA	sprite_secondByte_31B
 		JSR	sub_12F5D2
 		RTS
@@ -15605,10 +15605,10 @@ sub_12F5FC:				; CODE XREF: sub_12F2C9:loc_12F37Ep
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F698:				; CODE XREF: sub_12F2C9:loc_12F3E9p
+sub_12F698:				
 					; sub_12F2C9+132p
 		JSR	sub_12F732
-		LDA	#$32 ; '2'
+		LDA	#$32 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -15620,7 +15620,7 @@ sub_12F698:				; CODE XREF: sub_12F2C9:loc_12F3E9p
 		STA	byte_35E
 		LDA	#2
 		STA	byte_35F
-		LDA	#$B3 ; '�'
+		LDA	#$B3 
 		STA	sprite_secondByte_31B
 		LDA	#0
 		STA	byte_362
@@ -15638,9 +15638,9 @@ sub_12F698:				; CODE XREF: sub_12F2C9:loc_12F3E9p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F6D8:				; CODE XREF: sub_12F2C9+110p
+sub_12F6D8:				
 		JSR	sub_12F732
-		LDA	#$31 ; '1'
+		LDA	#$31 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -15652,14 +15652,14 @@ sub_12F6D8:				; CODE XREF: sub_12F2C9+110p
 		STA	byte_35E
 		LDA	#2
 		STA	byte_35F
-		LDA	#$B3 ; '�'
+		LDA	#$B3 
 		STA	sprite_secondByte_31B
 		LDA	#0
 		STA	byte_362
 		LDA	#1
 		STA	byte_363
 		JSR	sub_12F5DC
-		LDA	#$2C ; ','
+		LDA	#$2C 
 		STA	text_idx_35C
 		LDA	#2
 		STA	char_type_id_35D
@@ -15671,7 +15671,7 @@ sub_12F6D8:				; CODE XREF: sub_12F2C9+110p
 		STA	byte_35E
 		LDA	#1
 		STA	byte_35F
-		LDA	#$F3 ; '�'
+		LDA	#$F3 
 		STA	sprite_secondByte_31B
 		JSR	sub_12F5D2
 		RTS
@@ -15681,9 +15681,9 @@ sub_12F6D8:				; CODE XREF: sub_12F2C9+110p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F732:				; CODE XREF: sub_12F698p sub_12F6D8p
+sub_12F732:				
 		JSR	sub_12F57D
-		LDA	#$74 ; 't'
+		LDA	#$74 
 		STA	text_idx_35C
 		LDA	#0
 		STA	char_type_id_35D
@@ -15695,7 +15695,7 @@ sub_12F732:				; CODE XREF: sub_12F698p sub_12F6D8p
 		STA	byte_35E
 		LDA	#4
 		STA	byte_35F
-		LDA	#$AF ; '�'
+		LDA	#$AF 
 		STA	sprite_secondByte_31B
 		JSR	sub_12F5D2
 		RTS
@@ -15705,11 +15705,11 @@ sub_12F732:				; CODE XREF: sub_12F698p sub_12F6D8p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F75C:				; CODE XREF: sub_12F478+44p
+sub_12F75C:				
 		LDA	#1
 		STA	has_ppu_data_to_upload_6F
 
-loc_12F760:				; CODE XREF: sub_12F75C+6j
+loc_12F760:				
 		LDA	has_ppu_data_to_upload_6F
 		BNE	loc_12F760
 		RTS
@@ -15719,12 +15719,12 @@ loc_12F760:				; CODE XREF: sub_12F75C+6j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F765:				; CODE XREF: sub_12CEAC+84p
+sub_12F765:				
 					; sub_12D4C6+2Ap ...
 		LDA	_PPU_STATUS
 		BMI	sub_12F765
 
-loc_12F76A:				; CODE XREF: sub_12F765+8j
+loc_12F76A:				
 		LDA	_PPU_STATUS
 		BPL	loc_12F76A
 		RTS
@@ -15734,12 +15734,12 @@ loc_12F76A:				; CODE XREF: sub_12F765+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-wait_for_count350_zero_12F770:		; CODE XREF: sub_128A1A+3Bp
+wait_for_count350_zero_12F770:		
 					; sub_12C1C3+1Ap ...
 		LDA	#1
 		STA	frame_render_count_350
 
-loc_12F775:				; CODE XREF: wait_for_count350_zero_12F770+8j
+loc_12F775:				
 		LDA	frame_render_count_350
 		BNE	loc_12F775
 		RTS
@@ -15749,14 +15749,14 @@ loc_12F775:				; CODE XREF: wait_for_count350_zero_12F770+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_12F77B:				; CODE XREF: show_intro_screen_12CB58p
+sub_12F77B:				
 					; sub_12F698+33p ...
 		LDY	#0
 
-loc_12F77D:				; CODE XREF: sub_12F77B+Fj
+loc_12F77D:				
 		LDX	#0
 
-loc_12F77F:				; CODE XREF: sub_12F77B+Cj
+loc_12F77F:				
 		LDA	input_reg1_347
 		CMP	#0
 		BNE	locret_12F78C
@@ -15765,7 +15765,7 @@ loc_12F77F:				; CODE XREF: sub_12F77B+Cj
 		INY
 		BNE	loc_12F77D
 
-locret_12F78C:				; CODE XREF: sub_12F77B+9j
+locret_12F78C:				
 		RTS
 ; End of function sub_12F77B
 
@@ -15773,7 +15773,7 @@ locret_12F78C:				; CODE XREF: sub_12F77B+9j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-wait_for_a_pressed_12F78D:		; CODE XREF: wait_for_a_pressed_12F78D+5j
+wait_for_a_pressed_12F78D:		
 		LDA	input_pressed_34A
 		CMP	#a_80
 		BNE	wait_for_a_pressed_12F78D
@@ -15784,7 +15784,7 @@ wait_for_a_pressed_12F78D:		; CODE XREF: wait_for_a_pressed_12F78D+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-wait_for_b_pressed_12F795:		; CODE XREF: show_tree_screen_12C588+3Fp
+wait_for_b_pressed_12F795:		
 					; sub_12E5E6+3Ep ...
 		LDA	input_pressed_34A
 		CMP	#b_40
@@ -15796,7 +15796,7 @@ wait_for_b_pressed_12F795:		; CODE XREF: show_tree_screen_12C588+3Fp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-wait_for_any_input_12F79D:		; CODE XREF: sub_12EF77+3Bp
+wait_for_any_input_12F79D:		
 					; wait_for_any_input_12F79D+5j
 		LDA	input_pressed_34A
 		CMP	#0
@@ -15808,7 +15808,7 @@ wait_for_any_input_12F79D:		; CODE XREF: sub_12EF77+3Bp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_12F7A5:				; CODE XREF: unused_12F7A5+8j
+unused_12F7A5:				
 		PHA
 		JSR	unused_12F7B0
 		PLA
@@ -15822,7 +15822,7 @@ unused_12F7A5:				; CODE XREF: unused_12F7A5+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_12F7B0:				; CODE XREF: unused_12F7A5+1p
+unused_12F7B0:				
 		PHA
 		TXA
 		PHA
@@ -15830,10 +15830,10 @@ unused_12F7B0:				; CODE XREF: unused_12F7A5+1p
 		PHA
 		LDX	#0
 
-loc_12F7B7:				; CODE XREF: unused_12F7B0+Dj
+loc_12F7B7:				
 		LDY	#0
 
-loc_12F7B9:				; CODE XREF: unused_12F7B0+Aj
+loc_12F7B9:				
 		DEY
 		BNE	loc_12F7B9
 		DEX
@@ -15850,8 +15850,8 @@ loc_12F7B9:				; CODE XREF: unused_12F7B0+Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_12F7C5:				; CODE XREF: NMI_12F823+18p
-		LDA	#$F0 ; '�'
+nmi_sub_12F7C5:				
+		LDA	#$F0 
 		STA	byte_218
 		STA	byte_21C
 		STA	byte_220
@@ -15865,7 +15865,7 @@ nmi_sub_12F7C5:				; CODE XREF: NMI_12F823+18p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_12F7DA:				; CODE XREF: NMI_12F823+30p
+nmi_sub_12F7DA:				
 		LDA	byte_43E
 		BEQ	loc_12F801
 		LDA	byte_203
@@ -15875,7 +15875,7 @@ nmi_sub_12F7DA:				; CODE XREF: NMI_12F823+30p
 		JMP	locret_12F822
 ; ---------------------------------------------------------------------------
 
-loc_12F7EC:				; CODE XREF: nmi_sub_12F7DA+8j
+loc_12F7EC:				
 		LDA	byte_203
 		SEC
 		SBC	#8
@@ -15887,16 +15887,16 @@ loc_12F7EC:				; CODE XREF: nmi_sub_12F7DA+8j
 		JMP	locret_12F822
 ; ---------------------------------------------------------------------------
 
-loc_12F801:				; CODE XREF: nmi_sub_12F7DA+3j
+loc_12F801:				
 		LDA	byte_203
-		CMP	#$F8 ; '�'
+		CMP	#$F8 
 		BNE	loc_12F810
 		LDA	#1
 		STA	byte_43E
 		JMP	locret_12F822
 ; ---------------------------------------------------------------------------
 
-loc_12F810:				; CODE XREF: nmi_sub_12F7DA+2Cj
+loc_12F810:				
 		LDA	byte_203
 		CLC
 		ADC	#8
@@ -15906,7 +15906,7 @@ loc_12F810:				; CODE XREF: nmi_sub_12F7DA+2Cj
 		ADC	#8
 		STA	byte_207
 
-locret_12F822:				; CODE XREF: nmi_sub_12F7DA+Fj
+locret_12F822:				
 					; nmi_sub_12F7DA+24j ...
 		RTS
 ; End of function nmi_sub_12F7DA
@@ -15915,7 +15915,7 @@ locret_12F822:				; CODE XREF: nmi_sub_12F7DA+Fj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-NMI_12F823:				; DATA XREF: BANK_12:FFFAo
+NMI_12F823:				
 		PHP
 		PHA
 		TXA
@@ -15923,19 +15923,19 @@ NMI_12F823:				; DATA XREF: BANK_12:FFFAo
 		TYA
 		PHA
 		LDA	bank_switch_flag_6C
-		CMP	#$88 ; '�'
+		CMP	#$88 
 		BEQ	loc_12F832
 		JMP	loc_12F863
 ; ---------------------------------------------------------------------------
 
-loc_12F832:				; CODE XREF: NMI_12F823+Aj
-		LDA	#$EE ; '�'
+loc_12F832:				
+		LDA	#$EE 
 		STA	bank_switch_flag_6C
 		LDA	sprite_type_306
 		BNE	loc_12F83E
 		JSR	nmi_sub_12F7C5
 
-loc_12F83E:				; CODE XREF: NMI_12F823+16j
+loc_12F83E:				
 		LDA	#2
 		STA	_PPU_OAM_DMA
 		JSR	nmi_sub_12F89B
@@ -15947,18 +15947,18 @@ loc_12F83E:				; CODE XREF: NMI_12F823+16j
 		JSR	nmi_sub_12F7DA
 		JSR	nmi_sub_12F9A6
 
-loc_12F859:				; CODE XREF: NMI_12F823+2Ej
+loc_12F859:				
 		JSR	nmi_sub_12F96C
 		JSR	apu_music_update_12F9FE
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	bank_switch_flag_6C
 
-loc_12F863:				; CODE XREF: NMI_12F823+Cj
+loc_12F863:				
 		LDA	byte_432
 		BEQ	loc_12F86B
 		DEC	byte_432
 
-loc_12F86B:				; CODE XREF: NMI_12F823+43j
+loc_12F86B:				
 		INC	count_unk_463
 		INC	count_unk_464
 		INC	count_unk_465
@@ -15974,7 +15974,7 @@ loc_12F86B:				; CODE XREF: NMI_12F823+43j
 		BEQ	loc_12F894
 		DEC	frame_render_count_350
 
-loc_12F894:				; CODE XREF: NMI_12F823+6Cj
+loc_12F894:				
 		PLA
 		TAY
 		PLA
@@ -15982,7 +15982,7 @@ loc_12F894:				; CODE XREF: NMI_12F823+6Cj
 		PLA
 		PLP
 
-locret_12F89A:				; DATA XREF: BANK_12:FFFEo
+locret_12F89A:				
 		RTI
 ; End of function NMI_12F823
 
@@ -15990,21 +15990,21 @@ locret_12F89A:				; DATA XREF: BANK_12:FFFEo
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_12F89B:				; CODE XREF: NMI_12F823+20p
+nmi_sub_12F89B:				
 		LDA	has_ppu_data_to_upload_6F
 		BNE	loc_12F8A0
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12F8A0:				; CODE XREF: nmi_sub_12F89B+2j
+loc_12F8A0:				
 		LDA	ppu_data_70
 		BEQ	loc_12F8EB
 		STA	ppu_fld0_x_6D
 		LDX	#1
 
-loc_12F8A8:				; CODE XREF: nmi_sub_12F89B+4Dj
+loc_12F8A8:				
 		LDA	ppu_data_70,X
-		AND	#$80 ; '�'
+		AND	#$80 
 		BEQ	loc_12F8BC
 		LDA	ppu_ctrl_31F
 		ORA	#4
@@ -16013,15 +16013,15 @@ loc_12F8A8:				; CODE XREF: nmi_sub_12F89B+4Dj
 		JMP	loc_12F8C7
 ; ---------------------------------------------------------------------------
 
-loc_12F8BC:				; CODE XREF: nmi_sub_12F89B+11j
+loc_12F8BC:				
 		LDA	ppu_ctrl_31F
-		AND	#$FB ; '�'
+		AND	#$FB 
 		STA	ppu_ctrl_31F
 		STA	_PPU_CTRL
 
-loc_12F8C7:				; CODE XREF: nmi_sub_12F89B+1Ej
+loc_12F8C7:				
 		LDA	ppu_data_70,X
-		AND	#$7F ; ''
+		AND	#$7F 
 		STA	ppu_fld1_y_6E
 		INX
 		LDA	ppu_data_70,X
@@ -16030,7 +16030,7 @@ loc_12F8C7:				; CODE XREF: nmi_sub_12F89B+1Ej
 		LDA	ppu_data_70,X
 		STA	_PPU_ADDR
 
-loc_12F8D9:				; CODE XREF: nmi_sub_12F89B+46j
+loc_12F8D9:				
 		INX
 		LDA	ppu_data_70,X
 		STA	_PPU_DATA
@@ -16042,7 +16042,7 @@ loc_12F8D9:				; CODE XREF: nmi_sub_12F89B+46j
 		JMP	loc_12F8A8
 ; ---------------------------------------------------------------------------
 
-loc_12F8EB:				; CODE XREF: nmi_sub_12F89B+7j
+loc_12F8EB:				
 					; nmi_sub_12F89B+4Aj
 		LDA	#0
 		STA	has_ppu_data_to_upload_6F
@@ -16053,7 +16053,7 @@ loc_12F8EB:				; CODE XREF: nmi_sub_12F89B+7j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_12F8F0:				; CODE XREF: NMI_12F823+23p
+nmi_sub_12F8F0:				
 		LDA	ppu_ctrl_31F
 		STA	_PPU_CTRL
 		LDA	ppu_mask_320
@@ -16069,7 +16069,7 @@ nmi_sub_12F8F0:				; CODE XREF: NMI_12F823+23p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_12F909:				; CODE XREF: NMI_12F823+26p
+nmi_sub_12F909:				
 		TYA
 		PHA
 		TYA
@@ -16090,7 +16090,7 @@ nmi_sub_12F909:				; CODE XREF: NMI_12F823+26p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-pad_input_update_12F921:		; CODE XREF: nmi_sub_12F909+4p
+pad_input_update_12F921:		
 		LDX	#1
 		STX	_PAD0_REG
 		DEX
@@ -16098,7 +16098,7 @@ pad_input_update_12F921:		; CODE XREF: nmi_sub_12F909+4p
 		LDA	#0
 		LDY	#8
 
-loc_12F92E:				; CODE XREF: pad_input_update_12F921+1Aj
+loc_12F92E:				
 		PHA
 		LDA	_PAD0_REG,X
 		STA	input_reg0_34E
@@ -16115,7 +16115,7 @@ loc_12F92E:				; CODE XREF: pad_input_update_12F921+1Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-input_func_12F941:			; CODE XREF: nmi_sub_12F909+7p
+input_func_12F941:			
 		LDX	#0
 		LDA	input_reg1_347,X
 		EOR	input_unk_34C,X
@@ -16130,7 +16130,7 @@ input_func_12F941:			; CODE XREF: nmi_sub_12F909+7p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-ppu_update_ctrl_mask_12F956:		; CODE XREF: sub_128955+9Dp
+ppu_update_ctrl_mask_12F956:		
 					; sub_12D21B+2Fp
 		LDA	ppu_ctrl_31F
 		STA	_PPU_CTRL
@@ -16143,7 +16143,7 @@ ppu_update_ctrl_mask_12F956:		; CODE XREF: sub_128955+9Dp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-ppu_reset_ctrl_mask_12F963:		; CODE XREF: sub_128955+39p
+ppu_reset_ctrl_mask_12F963:		
 					; sub_12D21B+3p
 		LDA	#0
 		STA	_PPU_CTRL
@@ -16155,7 +16155,7 @@ ppu_reset_ctrl_mask_12F963:		; CODE XREF: sub_128955+39p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_12F96C:				; CODE XREF: NMI_12F823:loc_12F859p
+nmi_sub_12F96C:				
 		INC	byte_353
 		LDA	byte_353
 		CMP	#$19
@@ -16163,7 +16163,7 @@ nmi_sub_12F96C:				; CODE XREF: NMI_12F823:loc_12F859p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12F977:				; CODE XREF: nmi_sub_12F96C+8j
+loc_12F977:				
 		LDA	#0
 		STA	byte_353
 		LDA	byte_354
@@ -16178,17 +16178,17 @@ loc_12F977:				; CODE XREF: nmi_sub_12F96C+8j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_12F992:				; CODE XREF: nmi_sub_12F96C+23j
+loc_12F992:				
 		DEC	byte_356
 		LDA	#$A
 		STA	byte_355
 
-loc_12F99A:				; CODE XREF: nmi_sub_12F96C+1Cj
+loc_12F99A:				
 		DEC	byte_355
 		LDA	#$A
 		STA	byte_354
 
-loc_12F9A2:				; CODE XREF: nmi_sub_12F96C+15j
+loc_12F9A2:				
 		DEC	byte_354
 		RTS
 ; End of function nmi_sub_12F96C
@@ -16197,25 +16197,25 @@ loc_12F9A2:				; CODE XREF: nmi_sub_12F96C+15j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_12F9A6:				; CODE XREF: NMI_12F823+33p
+nmi_sub_12F9A6:				
 		INC	scroll_offset_x_479
 		LDA	scroll_offset_x_479
 		CMP	#$A
 		BCC	locret_12F9FD
 		LDA	scroll_offset_y_47A
-		EOR	#$80 ; '�'
+		EOR	#$80 
 		STA	scroll_offset_y_47A
 		LDA	scroll_offset_y_47A
-		AND	#$FE ; '�'
+		AND	#$FE 
 		STA	scroll_offset_y_47A
 		LDA	scroll_offset_y_47A
-		AND	#$7F ; ''
+		AND	#$7F 
 		CMP	#0
 		BEQ	locret_12F9FD
 		LDA	scroll_offset_y_47A
 		PHA
 		LDA	scroll_offset_y_47A
-		AND	#$80 ; '�'
+		AND	#$80 
 		CMP	#0
 		BEQ	loc_12F9DE
 		LDA	#0
@@ -16223,16 +16223,16 @@ nmi_sub_12F9A6:				; CODE XREF: NMI_12F823+33p
 		JMP	loc_12F9F0
 ; ---------------------------------------------------------------------------
 
-loc_12F9DE:				; CODE XREF: nmi_sub_12F9A6+2Ej
+loc_12F9DE:				
 		LDA	scroll_offset_y_47A
-		AND	#$7F ; ''
+		AND	#$7F 
 		STA	scroll_offset_y_47A
 		LDA	ppu_scroll_y_305
 		CLC
 		ADC	scroll_offset_y_47A
 		STA	ppu_scroll_y_305
 
-loc_12F9F0:				; CODE XREF: nmi_sub_12F9A6+35j
+loc_12F9F0:				
 		PLA
 		STA	scroll_offset_y_47A
 		LDA	scroll_offset_y_47A
@@ -16240,7 +16240,7 @@ loc_12F9F0:				; CODE XREF: nmi_sub_12F9A6+35j
 		SBC	#2
 		STA	scroll_offset_y_47A
 
-locret_12F9FD:				; CODE XREF: nmi_sub_12F9A6+8j
+locret_12F9FD:				
 					; nmi_sub_12F9A6+21j
 		RTS
 ; End of function nmi_sub_12F9A6
@@ -16249,7 +16249,7 @@ locret_12F9FD:				; CODE XREF: nmi_sub_12F9A6+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-apu_music_update_12F9FE:		; CODE XREF: NMI_12F823+39p
+apu_music_update_12F9FE:		
 		LDA	bank_command_346
 		PHA
 		LDA	bank_to_344
@@ -16258,7 +16258,7 @@ apu_music_update_12F9FE:		; CODE XREF: NMI_12F823+39p
 		PHA
 		LDA	#banks_13
 		STA	bank_to_344
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	bank_command_346
 		JSR	bank_switch_128000
 		PLA

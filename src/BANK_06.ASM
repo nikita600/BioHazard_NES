@@ -5,9 +5,9 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-bank_switch_68000:			; CODE XREF: bank_switch_68000+58j
+bank_switch_68000:			
 					; apu_music_update_6FB8B+16p
-		LDA	#$EE ; '�'
+		LDA	#$EE 
 		STA	bank_switch_flag_6C
 		LDA	bank_to_344
 		CMP	#$10
@@ -22,12 +22,12 @@ bank_switch_68000:			; CODE XREF: bank_switch_68000+58j
 		JMP	loc_68035
 ; ---------------------------------------------------------------------------
 
-loc_6801A:				; CODE XREF: bank_switch_68000+12j
+loc_6801A:				
 		STA	$8081,Y
 		JMP	loc_68035
 ; ---------------------------------------------------------------------------
 
-loc_68020:				; CODE XREF: bank_switch_68000+9j
+loc_68020:				
 		SEC
 		SBC	#$10
 		ASL	A
@@ -40,14 +40,14 @@ loc_68020:				; CODE XREF: bank_switch_68000+9j
 		JMP	loc_68035
 ; ---------------------------------------------------------------------------
 
-loc_68032:				; CODE XREF: bank_switch_68000+2Aj
+loc_68032:				
 		STA	$8181,Y
 
-loc_68035:				; CODE XREF: bank_switch_68000+17j
+loc_68035:				
 					; bank_switch_68000+1Dj ...
 		LDA	bank_to_344
 		STA	bank_prev_345
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	bank_switch_flag_6C
 		LDA	bank_command_346
 		CMP	#0
@@ -55,12 +55,12 @@ loc_68035:				; CODE XREF: bank_switch_68000+17j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_68047:				; CODE XREF: bank_switch_68000+44j
+loc_68047:				
 		JSR	upload_gfx_to_ppu_6F863
 		JMP	loc_6804D
 ; ---------------------------------------------------------------------------
 
-loc_6804D:				; CODE XREF: bank_switch_68000+4Aj
+loc_6804D:				
 		LDA	#$FF
 		STA	bank_command_346
 		LDA	bank_from_343
@@ -69,7 +69,7 @@ loc_6804D:				; CODE XREF: bank_switch_68000+4Aj
 ; End of function bank_switch_68000
 
 ; ---------------------------------------------------------------------------
-GFX_6805B:	.WORD 0			; DATA XREF: BANK_06:FFFCo
+GFX_6805B:	.WORD 0			
 		.WORD 0
 		.WORD 0
 		.WORD 0
@@ -103,7 +103,7 @@ GFX_6805B:	.WORD 0			; DATA XREF: BANK_06:FFFCo
 		.WORD CutsceneEnding_6E3DF
 		.WORD Copyright_6EAD1
 PC_interface_6809D:.BYTE $AF,$9D,  0,  0,  0,  0,  0,  0,  0,  0,$FF,$FF,$FF,$FF,$FF,$FF
-					; DATA XREF: BANK_06:8087o
+					
 		.BYTE $FF,$FF,	0,  0,	0,  0,	0,  0,	0,  0,$FF,$FF,$FF,$FF,$FF,$F8
 		.BYTE $F8,$F8,	0,  0,	0,  0,	0,  0,	0,  0,$FF,$FF,$FF,$FF,$FF,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,$FF,$FF,$FF,$FF,$FF,$1F
@@ -280,7 +280,7 @@ PC_interface_6809D:.BYTE $AF,$9D,  0,  0,  0,  0,  0,  0,  0,  0,$FF,$FF,$FF,$FF
 		.BYTE	0,  0,$BF,$BF,$B7,$B7,$B7,  7,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Environment_68B8F:.BYTE	$BF,  1,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,  0,  0
-					; DATA XREF: BANK_06:8089o
+					
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,$FF,$FF,$FF,$FF,$FF,	0,  0,$FF,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FF,  0,$FF,  0,$FF,  0,$FF,  0,	0,  0,	0,  0,	0,  0
@@ -473,7 +473,7 @@ Environment_68B8F:.BYTE	$BF,  1,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,
 		.BYTE	0,  0,	0,$7F,$7F,$7F,$7F,$7F,$7C,$7C,$FF,$80,$80,$80,$80,$80
 		.BYTE $80,$80
 Environment_69781:.BYTE	$AB, $B,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,  0,  0
-					; DATA XREF: BANK_06:808Bo
+					
 		.BYTE	0,  0,	0,$7F,$7F,$7F,$7F,$7F,$7C,$7C,$FF,$80,$80,$80,$80,$80
 		.BYTE $80,$80,	0,$FF,$FF,$FF,$FF,$FF,	0,  0,$FF,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,$FE,$FE,$FE,$FE,$FE,$3E,$3E,$FF,  1,	1,  1,	1,  1
@@ -646,7 +646,7 @@ Environment_69781:.BYTE	$AB, $B,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,
 		.BYTE $FF,  0, $F,  0,	0,  0,	0,  0,	0,  0,$60,$6F,$6F,$6F,$6F,$6F
 		.BYTE $6F,$6F
 Environment_6A233:.BYTE	$A3,$1A,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,  0,  0
-					; DATA XREF: BANK_06:808Do
+					
 		.BYTE	0,  0,	0,$7F,$7F,$7F,$7F,$7F,$7C,$7C,$FF,$80,$80,$80,$80,$80
 		.BYTE $80,$80,	0,$FF,$FF,$FF,$FF,$FF,	0,  0,$FF,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FF,  0,$FF,  0,$FF,  0,$FF,  0,	0,  0,	0,  0,	0,  0
@@ -811,7 +811,7 @@ Environment_6A233:.BYTE	$A3,$1A,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,
 		.BYTE $59,$AD,$6E,$7F,$7F,$7D,$7C,$7F,$7F,  0,$97,$8F,$BF,$BF,$8F,$A0
 		.BYTE $80,$FF
 Environment_6AC65:.BYTE	$82,  6,$8C,$B1,$D9,$C6,$B4,$D9,$89,$A3,$8C,$B1,$BD,$D9,$86,$CE
-					; DATA XREF: BANK_06:808Fo
+					
 		.BYTE $AC,$80,$A3,$4B,$98,$96,$2B,$55,$A2,$85,$A3,$19,$B8,$E6,$FD,$E9
 		.BYTE $70,$31,$41,$98,$82,$5D,$A7,$90,$82,$EC,$1E,$9D,$81,  3,$B0,$A0
 		.BYTE $80,  0,$C2,$2C,	8,$B3,$19,  0,$66,$30,	6,$C2,$B0,$19,	1,  2
@@ -943,7 +943,7 @@ Environment_6AC65:.BYTE	$82,  6,$8C,$B1,$D9,$C6,$B4,$D9,$89,$A3,$8C,$B1,$BD,$D9,
 		.BYTE $80,$80,$E0,$C0,$A0,  0,$90,$30,$80,$FF,$17,$3F,$5F,$FF,$4F,$DF
 		.BYTE $7F,  0
 Environment_6B487:.BYTE	$C2, $F,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,  0,  0
-					; DATA XREF: BANK_06:8091o
+					
 		.BYTE	0,  0,	0,$7F,$7F,$7F,$7F,$7F,$7C,$7C,$FF,$80,$80,$80,$80,$80
 		.BYTE $80,$80,	0,$FF,$FF,$FF,$FF,$FF,	0,  0,$FF,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,$FE,$FE,$FE,$FE,$FE,$3E,$3E,$FF,  1,	1,  1,	1,  1
@@ -1139,7 +1139,7 @@ Environment_6B487:.BYTE	$C2, $F,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,
 		.BYTE $55,$AA,$FF,  0,$D7,$53,	0,$C4,$80,$55,	0,  0,	1,$84,$10,$13
 		.BYTE $40,$AA
 Environment_6C0A9:.BYTE	$AA,  1,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,  0,  0
-					; DATA XREF: BANK_06:8093o
+					
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,$FF,$FF,$FF,$FF,$FF,	0,  0,$FF,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FF,  0,$FF,  0,$FF,  0,$FF,  0,	0,  0,	0,  0,	0,  0
@@ -1311,7 +1311,7 @@ Environment_6C0A9:.BYTE	$AA,  1,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,
 		.BYTE $20,$20,$FF,$FF,	0,$FF,$FF,$FF,$FF,$FF,	0,  0,$FF,  0,	0,  0
 		.BYTE	0,  0
 Environment_6CB4B:.BYTE	$94,  6,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,  0,  0
-					; DATA XREF: BANK_06:8095o
+					
 		.BYTE	0,  0,	0,$7F,$7F,$7F,$7F,$7F,$7C,$7C,$FF,$80,$80,$80,$80,$80
 		.BYTE $80,$80,	0,$FF,$FF,$FF,$FF,$FF,	0,  0,$FF,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FF,  0,$FF,  0,$FF,  0,$FF,  0,	0,  0,	0,  0,	0,  0
@@ -1461,7 +1461,7 @@ Environment_6CB4B:.BYTE	$94,  6,$55,$55,$55,$55,$55,$55,$55,$55,  0,  0,  0,  0,
 		.BYTE	4,  4,$9F,$9F,$9F,$9F,$9F,$80,$80,$FF,$20,$20,$20,$20,$20,$3F
 		.BYTE	0,  0
 Environment_6D48D:.BYTE	$F5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
-					; DATA XREF: BANK_06:8097o
+					
 		.BYTE	0,  0,	0,$FC,$30,$30,$30,$30,$30,$30,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,$CC,$CC,$CC,$CC,$CC,$CC,$7C,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,$CC,$CC,$CC,$CC,$CC,$78,$30,	0,  0,	0,  0,	0,  0
@@ -1708,7 +1708,7 @@ Environment_6D48D:.BYTE	$F5,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 		.BYTE	0,  0,	0,$CC,$CC,$CC,$78,$30,$30,$30,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 CutsceneEnding_6E3DF:.BYTE $6F,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0
-					; DATA XREF: BANK_06:8099o
+					
 		.BYTE	0,  0,	3,  2,	2,  2,	2,  2,	2,  2,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,$FF,$FF,$FF,$FF,$FF
 		.BYTE $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FC,$F8,	0,$FF,$FF,$FF,$FF,$FF
@@ -1821,7 +1821,7 @@ CutsceneEnding_6E3DF:.BYTE $6F,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	
 		.BYTE	0,  0,$40,$C0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Copyright_6EAD1:.BYTE $D9,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
-					; DATA XREF: BANK_06:809Bo
+					
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  7, $F,$1F
 		.BYTE $3F,$7F,	0,  0,	0,  0,	0,  0,	0,  0,	7,$3F,$FF,$FF,$FF,$F8
 		.BYTE $C0,$80,	0,  0,	0,  0,	0,  0,	0,  0,$F0,$FE,$FF,$FF,$FF, $F
@@ -2043,10 +2043,10 @@ Copyright_6EAD1:.BYTE $D9,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 ; =============== S U B	R O U T	I N E =======================================
 
 
-upload_gfx_to_ppu_6F863:		; CODE XREF: bank_switch_68000:loc_68047p
-		LDA	#$5B ; '['
+upload_gfx_to_ppu_6F863:		
+		LDA	#$5B 
 		STA	ptr_0
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	ptr_1
 		LDA	entry_idx_300
 		STA	data_2
@@ -2079,7 +2079,7 @@ upload_gfx_to_ppu_6F863:		; CODE XREF: bank_switch_68000:loc_68047p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-upload_gfx_to_ppu_6F89C:		; CODE XREF: upload_gfx_to_ppu_6F863+35p
+upload_gfx_to_ppu_6F89C:		
 		LDY	#0
 		LDA	(data_2),Y
 		STA	tilemapWidth_308
@@ -2092,14 +2092,14 @@ upload_gfx_to_ppu_6F89C:		; CODE XREF: upload_gfx_to_ppu_6F863+35p
 		STA	data_3
 		LDX	#0
 
-loc_6F8B2:				; CODE XREF: upload_gfx_to_ppu_6F89C+4Aj
+loc_6F8B2:				
 		LDA	ptr_1
 		STA	_PPU_ADDR
 		LDA	ptr_0
 		STA	_PPU_ADDR
 		LDY	#0
 
-loc_6F8BE:				; CODE XREF: upload_gfx_to_ppu_6F89C+2Aj
+loc_6F8BE:				
 		LDA	(data_2),Y
 		STA	_PPU_DATA
 		INY
@@ -2133,7 +2133,7 @@ unused_6F8E9:
 		LDA	#1
 		STA	has_ppu_data_to_upload_6F
 
-loc_6F8ED:				; CODE XREF: unused_6F8E9+6j
+loc_6F8ED:				
 		LDA	has_ppu_data_to_upload_6F
 		BNE	loc_6F8ED
 		RTS
@@ -2143,11 +2143,11 @@ loc_6F8ED:				; CODE XREF: unused_6F8E9+6j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_6F8F2:				; CODE XREF: unused_6F8F2+3j
+unused_6F8F2:				
 		LDA	_PPU_STATUS
 		BMI	unused_6F8F2
 
-loc_6F8F7:				; CODE XREF: unused_6F8F2+8j
+loc_6F8F7:				
 		LDA	_PPU_STATUS
 		BPL	loc_6F8F7
 		RTS
@@ -2161,7 +2161,7 @@ unused_6F8FD:
 		LDA	#1
 		STA	frame_render_count_350
 
-loc_6F902:				; CODE XREF: unused_6F8FD+8j
+loc_6F902:				
 		LDA	frame_render_count_350
 		BNE	loc_6F902
 		RTS
@@ -2174,10 +2174,10 @@ loc_6F902:				; CODE XREF: unused_6F8FD+8j
 unused_6F908:
 		LDY	#0
 
-loc_6F90A:				; CODE XREF: unused_6F908+Fj
+loc_6F90A:				
 		LDX	#0
 
-loc_6F90C:				; CODE XREF: unused_6F908+Cj
+loc_6F90C:				
 		LDA	input_reg1_347
 		CMP	#0
 		BNE	locret_6F919
@@ -2186,7 +2186,7 @@ loc_6F90C:				; CODE XREF: unused_6F908+Cj
 		INY
 		BNE	loc_6F90A
 
-locret_6F919:				; CODE XREF: unused_6F908+9j
+locret_6F919:				
 		RTS
 ; End of function unused_6F908
 
@@ -2194,9 +2194,9 @@ locret_6F919:				; CODE XREF: unused_6F908+9j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_6F91A:				; CODE XREF: unused_6F91A+5j
+unused_6F91A:				
 		LDA	input_pressed_34A
-		CMP	#$80 ; '�'
+		CMP	#$80 
 		BNE	unused_6F91A
 		RTS
 ; End of function unused_6F91A
@@ -2205,9 +2205,9 @@ unused_6F91A:				; CODE XREF: unused_6F91A+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_6F922:				; CODE XREF: unused_6F922+5j
+unused_6F922:				
 		LDA	input_pressed_34A
-		CMP	#$40 ; '@'
+		CMP	#$40 
 		BNE	unused_6F922
 		RTS
 ; End of function unused_6F922
@@ -2216,7 +2216,7 @@ unused_6F922:				; CODE XREF: unused_6F922+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_6F92A:				; CODE XREF: unused_6F92A+5j
+unused_6F92A:				
 		LDA	input_pressed_34A
 		CMP	#0
 		BEQ	unused_6F92A
@@ -2227,7 +2227,7 @@ unused_6F92A:				; CODE XREF: unused_6F92A+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_6F932:				; CODE XREF: unused_6F932+8j
+unused_6F932:				
 		PHA
 		JSR	unused_6F93D
 		PLA
@@ -2241,7 +2241,7 @@ unused_6F932:				; CODE XREF: unused_6F932+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_6F93D:				; CODE XREF: unused_6F932+1p
+unused_6F93D:				
 		PHA
 		TXA
 		PHA
@@ -2249,10 +2249,10 @@ unused_6F93D:				; CODE XREF: unused_6F932+1p
 		PHA
 		LDX	#0
 
-loc_6F944:				; CODE XREF: unused_6F93D+Dj
+loc_6F944:				
 		LDY	#0
 
-loc_6F946:				; CODE XREF: unused_6F93D+Aj
+loc_6F946:				
 		DEY
 		BNE	loc_6F946
 		DEX
@@ -2269,8 +2269,8 @@ loc_6F946:				; CODE XREF: unused_6F93D+Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_6F952:				; CODE XREF: NMI_6F9B0+18p
-		LDA	#$F0 ; '�'
+nmi_sub_6F952:				
+		LDA	#$F0 
 		STA	byte_218
 		STA	byte_21C
 		STA	byte_220
@@ -2284,7 +2284,7 @@ nmi_sub_6F952:				; CODE XREF: NMI_6F9B0+18p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_6F967:				; CODE XREF: NMI_6F9B0+30p
+nmi_sub_6F967:				
 		LDA	byte_43E
 		BEQ	loc_6F98E
 		LDA	byte_203
@@ -2294,7 +2294,7 @@ nmi_sub_6F967:				; CODE XREF: NMI_6F9B0+30p
 		JMP	locret_6F9AF
 ; ---------------------------------------------------------------------------
 
-loc_6F979:				; CODE XREF: nmi_sub_6F967+8j
+loc_6F979:				
 		LDA	byte_203
 		SEC
 		SBC	#8
@@ -2306,16 +2306,16 @@ loc_6F979:				; CODE XREF: nmi_sub_6F967+8j
 		JMP	locret_6F9AF
 ; ---------------------------------------------------------------------------
 
-loc_6F98E:				; CODE XREF: nmi_sub_6F967+3j
+loc_6F98E:				
 		LDA	byte_203
-		CMP	#$F8 ; '�'
+		CMP	#$F8 
 		BNE	loc_6F99D
 		LDA	#1
 		STA	byte_43E
 		JMP	locret_6F9AF
 ; ---------------------------------------------------------------------------
 
-loc_6F99D:				; CODE XREF: nmi_sub_6F967+2Cj
+loc_6F99D:				
 		LDA	byte_203
 		CLC
 		ADC	#8
@@ -2325,7 +2325,7 @@ loc_6F99D:				; CODE XREF: nmi_sub_6F967+2Cj
 		ADC	#8
 		STA	byte_207
 
-locret_6F9AF:				; CODE XREF: nmi_sub_6F967+Fj
+locret_6F9AF:				
 					; nmi_sub_6F967+24j ...
 		RTS
 ; End of function nmi_sub_6F967
@@ -2334,7 +2334,7 @@ locret_6F9AF:				; CODE XREF: nmi_sub_6F967+Fj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-NMI_6F9B0:				; DATA XREF: BANK_06:FFFAo
+NMI_6F9B0:				
 		PHP
 		PHA
 		TXA
@@ -2342,19 +2342,19 @@ NMI_6F9B0:				; DATA XREF: BANK_06:FFFAo
 		TYA
 		PHA
 		LDA	bank_switch_flag_6C
-		CMP	#$88 ; '�'
+		CMP	#$88 
 		BEQ	loc_6F9BF
 		JMP	loc_6F9F0
 ; ---------------------------------------------------------------------------
 
-loc_6F9BF:				; CODE XREF: NMI_6F9B0+Aj
-		LDA	#$EE ; '�'
+loc_6F9BF:				
+		LDA	#$EE 
 		STA	bank_switch_flag_6C
 		LDA	sprite_type_306
 		BNE	loc_6F9CB
 		JSR	nmi_sub_6F952
 
-loc_6F9CB:				; CODE XREF: NMI_6F9B0+16j
+loc_6F9CB:				
 		LDA	#2
 		STA	_PPU_OAM_DMA
 		JSR	nmi_sub_6FA28
@@ -2366,18 +2366,18 @@ loc_6F9CB:				; CODE XREF: NMI_6F9B0+16j
 		JSR	nmi_sub_6F967
 		JSR	nmi_sub_6FB33
 
-loc_6F9E6:				; CODE XREF: NMI_6F9B0+2Ej
+loc_6F9E6:				
 		JSR	nmi_sub_6FAF9
 		JSR	apu_music_update_6FB8B
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	bank_switch_flag_6C
 
-loc_6F9F0:				; CODE XREF: NMI_6F9B0+Cj
+loc_6F9F0:				
 		LDA	byte_432
 		BEQ	loc_6F9F8
 		DEC	byte_432
 
-loc_6F9F8:				; CODE XREF: NMI_6F9B0+43j
+loc_6F9F8:				
 		INC	count_unk_463
 		INC	count_unk_464
 		INC	count_unk_465
@@ -2393,7 +2393,7 @@ loc_6F9F8:				; CODE XREF: NMI_6F9B0+43j
 		BEQ	loc_6FA21
 		DEC	frame_render_count_350
 
-loc_6FA21:				; CODE XREF: NMI_6F9B0+6Cj
+loc_6FA21:				
 		PLA
 		TAY
 		PLA
@@ -2401,7 +2401,7 @@ loc_6FA21:				; CODE XREF: NMI_6F9B0+6Cj
 		PLA
 		PLP
 
-locret_6FA27:				; DATA XREF: BANK_06:FFFEo
+locret_6FA27:				
 		RTI
 ; End of function NMI_6F9B0
 
@@ -2409,21 +2409,21 @@ locret_6FA27:				; DATA XREF: BANK_06:FFFEo
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_6FA28:				; CODE XREF: NMI_6F9B0+20p
+nmi_sub_6FA28:				
 		LDA	has_ppu_data_to_upload_6F
 		BNE	loc_6FA2D
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_6FA2D:				; CODE XREF: nmi_sub_6FA28+2j
+loc_6FA2D:				
 		LDA	ppu_data_70
 		BEQ	loc_6FA78
 		STA	ppu_fld0_x_6D
 		LDX	#1
 
-loc_6FA35:				; CODE XREF: nmi_sub_6FA28+4Dj
+loc_6FA35:				
 		LDA	ppu_data_70,X
-		AND	#$80 ; '�'
+		AND	#$80 
 		BEQ	loc_6FA49
 		LDA	ppu_ctrl_31F
 		ORA	#4
@@ -2432,15 +2432,15 @@ loc_6FA35:				; CODE XREF: nmi_sub_6FA28+4Dj
 		JMP	loc_6FA54
 ; ---------------------------------------------------------------------------
 
-loc_6FA49:				; CODE XREF: nmi_sub_6FA28+11j
+loc_6FA49:				
 		LDA	ppu_ctrl_31F
-		AND	#$FB ; '�'
+		AND	#$FB 
 		STA	ppu_ctrl_31F
 		STA	_PPU_CTRL
 
-loc_6FA54:				; CODE XREF: nmi_sub_6FA28+1Ej
+loc_6FA54:				
 		LDA	ppu_data_70,X
-		AND	#$7F ; ''
+		AND	#$7F 
 		STA	ppu_fld1_y_6E
 		INX
 		LDA	ppu_data_70,X
@@ -2449,7 +2449,7 @@ loc_6FA54:				; CODE XREF: nmi_sub_6FA28+1Ej
 		LDA	ppu_data_70,X
 		STA	_PPU_ADDR
 
-loc_6FA66:				; CODE XREF: nmi_sub_6FA28+46j
+loc_6FA66:				
 		INX
 		LDA	ppu_data_70,X
 		STA	_PPU_DATA
@@ -2461,7 +2461,7 @@ loc_6FA66:				; CODE XREF: nmi_sub_6FA28+46j
 		JMP	loc_6FA35
 ; ---------------------------------------------------------------------------
 
-loc_6FA78:				; CODE XREF: nmi_sub_6FA28+7j
+loc_6FA78:				
 					; nmi_sub_6FA28+4Aj
 		LDA	#0
 		STA	has_ppu_data_to_upload_6F
@@ -2472,7 +2472,7 @@ loc_6FA78:				; CODE XREF: nmi_sub_6FA28+7j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_6FA7D:				; CODE XREF: NMI_6F9B0+23p
+nmi_sub_6FA7D:				
 		LDA	ppu_ctrl_31F
 		STA	_PPU_CTRL
 		LDA	ppu_mask_320
@@ -2488,7 +2488,7 @@ nmi_sub_6FA7D:				; CODE XREF: NMI_6F9B0+23p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_6FA96:				; CODE XREF: NMI_6F9B0+26p
+nmi_sub_6FA96:				
 		TYA
 		PHA
 		TYA
@@ -2509,7 +2509,7 @@ nmi_sub_6FA96:				; CODE XREF: NMI_6F9B0+26p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-pad_input_update_6FAAE:			; CODE XREF: nmi_sub_6FA96+4p
+pad_input_update_6FAAE:			
 		LDX	#1
 		STX	_PAD0_REG
 		DEX
@@ -2517,7 +2517,7 @@ pad_input_update_6FAAE:			; CODE XREF: nmi_sub_6FA96+4p
 		LDA	#0
 		LDY	#8
 
-loc_6FABB:				; CODE XREF: pad_input_update_6FAAE+1Aj
+loc_6FABB:				
 		PHA
 		LDA	_PAD0_REG,X
 		STA	input_reg0_34E
@@ -2534,7 +2534,7 @@ loc_6FABB:				; CODE XREF: pad_input_update_6FAAE+1Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-input_sub_6FACE:			; CODE XREF: nmi_sub_6FA96+7p
+input_sub_6FACE:			
 		LDX	#0
 		LDA	input_reg1_347,X
 		EOR	input_unk_34C,X
@@ -2572,7 +2572,7 @@ unused_6FAF0:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_6FAF9:				; CODE XREF: NMI_6F9B0:loc_6F9E6p
+nmi_sub_6FAF9:				
 		INC	byte_353
 		LDA	byte_353
 		CMP	#$19
@@ -2580,7 +2580,7 @@ nmi_sub_6FAF9:				; CODE XREF: NMI_6F9B0:loc_6F9E6p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_6FB04:				; CODE XREF: nmi_sub_6FAF9+8j
+loc_6FB04:				
 		LDA	#0
 		STA	byte_353
 		LDA	byte_354
@@ -2595,17 +2595,17 @@ loc_6FB04:				; CODE XREF: nmi_sub_6FAF9+8j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_6FB1F:				; CODE XREF: nmi_sub_6FAF9+23j
+loc_6FB1F:				
 		DEC	byte_356
 		LDA	#$A
 		STA	byte_355
 
-loc_6FB27:				; CODE XREF: nmi_sub_6FAF9+1Cj
+loc_6FB27:				
 		DEC	byte_355
 		LDA	#$A
 		STA	byte_354
 
-loc_6FB2F:				; CODE XREF: nmi_sub_6FAF9+15j
+loc_6FB2F:				
 		DEC	byte_354
 		RTS
 ; End of function nmi_sub_6FAF9
@@ -2614,25 +2614,25 @@ loc_6FB2F:				; CODE XREF: nmi_sub_6FAF9+15j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_6FB33:				; CODE XREF: NMI_6F9B0+33p
+nmi_sub_6FB33:				
 		INC	scroll_offset_x_479
 		LDA	scroll_offset_x_479
 		CMP	#$A
 		BCC	locret_6FB8A
 		LDA	scroll_offset_y_47A
-		EOR	#$80 ; '�'
+		EOR	#$80 
 		STA	scroll_offset_y_47A
 		LDA	scroll_offset_y_47A
-		AND	#$FE ; '�'
+		AND	#$FE 
 		STA	scroll_offset_y_47A
 		LDA	scroll_offset_y_47A
-		AND	#$7F ; ''
+		AND	#$7F 
 		CMP	#0
 		BEQ	locret_6FB8A
 		LDA	scroll_offset_y_47A
 		PHA
 		LDA	scroll_offset_y_47A
-		AND	#$80 ; '�'
+		AND	#$80 
 		CMP	#0
 		BEQ	loc_6FB6B
 		LDA	#0
@@ -2640,16 +2640,16 @@ nmi_sub_6FB33:				; CODE XREF: NMI_6F9B0+33p
 		JMP	loc_6FB7D
 ; ---------------------------------------------------------------------------
 
-loc_6FB6B:				; CODE XREF: nmi_sub_6FB33+2Ej
+loc_6FB6B:				
 		LDA	scroll_offset_y_47A
-		AND	#$7F ; ''
+		AND	#$7F 
 		STA	scroll_offset_y_47A
 		LDA	ppu_scroll_y_305
 		CLC
 		ADC	scroll_offset_y_47A
 		STA	ppu_scroll_y_305
 
-loc_6FB7D:				; CODE XREF: nmi_sub_6FB33+35j
+loc_6FB7D:				
 		PLA
 		STA	scroll_offset_y_47A
 		LDA	scroll_offset_y_47A
@@ -2657,7 +2657,7 @@ loc_6FB7D:				; CODE XREF: nmi_sub_6FB33+35j
 		SBC	#2
 		STA	scroll_offset_y_47A
 
-locret_6FB8A:				; CODE XREF: nmi_sub_6FB33+8j
+locret_6FB8A:				
 					; nmi_sub_6FB33+21j
 		RTS
 ; End of function nmi_sub_6FB33
@@ -2666,7 +2666,7 @@ locret_6FB8A:				; CODE XREF: nmi_sub_6FB33+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-apu_music_update_6FB8B:			; CODE XREF: NMI_6F9B0+39p
+apu_music_update_6FB8B:			
 		LDA	bank_command_346
 		PHA
 		LDA	bank_to_344
@@ -2675,7 +2675,7 @@ apu_music_update_6FB8B:			; CODE XREF: NMI_6F9B0+39p
 		PHA
 		LDA	#banks_13
 		STA	bank_to_344
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	bank_command_346
 		JSR	bank_switch_68000
 		PLA

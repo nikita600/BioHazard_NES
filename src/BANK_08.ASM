@@ -6,9 +6,9 @@
 
 ; Tilemaps
 
-bank_switch_88000:			; CODE XREF: sub_88035+23j
+bank_switch_88000:			
 					; apu_music_update_8FBC8+16p
-		LDA	#$EE ; '�'
+		LDA	#$EE 
 		STA	bank_switch_flag_6C
 		LDA	bank_to_344
 		CMP	#$10
@@ -23,12 +23,12 @@ bank_switch_88000:			; CODE XREF: sub_88035+23j
 		JMP	sub_88035
 ; ---------------------------------------------------------------------------
 
-loc_8801A:				; CODE XREF: bank_switch_88000+12j
+loc_8801A:				
 		STA	$8081,Y
 		JMP	sub_88035
 ; ---------------------------------------------------------------------------
 
-loc_88020:				; CODE XREF: bank_switch_88000+9j
+loc_88020:				
 		SEC
 		SBC	#$10
 		ASL	A
@@ -41,7 +41,7 @@ loc_88020:				; CODE XREF: bank_switch_88000+9j
 		JMP	sub_88035
 ; ---------------------------------------------------------------------------
 
-loc_88032:				; CODE XREF: bank_switch_88000+2Aj
+loc_88032:				
 		STA	$8181,Y
 ; End of function bank_switch_88000
 
@@ -49,11 +49,11 @@ loc_88032:				; CODE XREF: bank_switch_88000+2Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_88035:				; CODE XREF: bank_switch_88000+17j
+sub_88035:				
 					; bank_switch_88000+1Dj ...
 		LDA	bank_to_344
 		STA	bank_prev_345
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	bank_switch_flag_6C
 		LDA	bank_command_346
 		CMP	#0
@@ -61,12 +61,12 @@ sub_88035:				; CODE XREF: bank_switch_88000+17j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_88047:				; CODE XREF: sub_88035+Fj
+loc_88047:				
 		JSR	tilemap_handler_8F897
 		JMP	loc_8804D
 ; ---------------------------------------------------------------------------
 
-loc_8804D:				; CODE XREF: sub_88035+15j
+loc_8804D:				
 		LDA	#$FF
 		STA	bank_command_346
 		LDA	bank_from_343
@@ -75,7 +75,7 @@ loc_8804D:				; CODE XREF: sub_88035+15j
 ; End of function sub_88035
 
 ; ---------------------------------------------------------------------------
-Tilemaps_8805B:	.WORD MansionPianoRoom_1E_88097	; DATA XREF: BANK_08:FFFCo
+Tilemaps_8805B:	.WORD MansionPianoRoom_1E_88097	
 		.WORD Mansion_1F_88497
 		.WORD Mansion_20_88897
 		.WORD Mansion_21_SaveRoom_88C97
@@ -106,7 +106,7 @@ Tilemaps_8805B:	.WORD MansionPianoRoom_1E_88097	; DATA XREF: BANK_08:FFFCo
 		.WORD byte_8F097
 		.WORD byte_8F497
 MansionPianoRoom_1E_88097:.BYTE	3, 4, 5, 5, 5, 5, 5, 5,	5, 5, 5, 5, 5, 5, 5, 5
-					; DATA XREF: BANK_08:Tilemaps_8805Bo
+					
 		.BYTE 5, 5, $AB, $A7, $A6, $A7,	$A6, $A7, $A6, $BC, $10, 3, 1, 1, 1, 1
 		.BYTE 3, 4, 5, 5, 5, 5,	5, 5, 5, 5, 5, 5, 5, 5,	5, 5
 		.BYTE 5, 5, $A9, $AE, $AD, $AE,	$AD, $AE, $AD, $BD, $10, 3, 1, 1, 1, 1
@@ -171,7 +171,7 @@ MansionPianoRoom_1E_88097:.BYTE	3, 4, 5, 5, 5, 5, 5, 5,	5, 5, 5, 5, 5, 5, 5, 5
 		.BYTE 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0
 		.BYTE 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0
 Mansion_1F_88497:.BYTE 1, 1, 1,	1, 1, 1, 1, 1, 1, 1, 1,	1, 1, 1, 1, 1
-					; DATA XREF: BANK_08:805Do
+					
 		.BYTE 3, 4, $AB, $A7, $A6, $BC,	5, 5, 5, 5, 5, 5, 5, 5,	$10, 3
 		.BYTE 1, 1, 1, 1, 1, 1,	1, 1, 1, 1, 1, 1, 1, 1,	1, 1
 		.BYTE 3, 4, $A9, $AE, $AD, $BD,	5, 5, 5, 5, 5, 5, 5, 5,	$10, 3
@@ -236,7 +236,7 @@ Mansion_1F_88497:.BYTE 1, 1, 1,	1, 1, 1, 1, 1, 1, 1, 1,	1, 1, 1, 1, 1
 		.BYTE 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0
 		.BYTE 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0
 Mansion_20_88897:.BYTE 1, 1, 1,	1, 1, 1, 1, 1, 0, 0, 0,	0, 0, 0, 0, 0
-					; DATA XREF: BANK_08:805Fo
+					
 		.BYTE 0, 0, 0, 0, 0, 0,	0, 0, 1, 1, 1, 1, 1, 1,	1, 1
 		.BYTE 1, 1, 1, 1, 1, 1,	1, $BE,	2, 2, 2, 2, 2, 2, 2, 2
 		.BYTE 2, 2, 2, 2, 2, 2,	2, 2, $AC, 1, 1, 1, 1, 1, 1, 1
@@ -301,7 +301,7 @@ Mansion_20_88897:.BYTE 1, 1, 1,	1, 1, 1, 1, 1, 0, 0, 0,	0, 0, 0, 0, 0
 		.BYTE 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, $55, $11, 0, 0, 0, 0
 		.BYTE 0, 0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0
 Mansion_21_SaveRoom_88C97:.BYTE	1, 1, 1, 1, 1, 1, 1, 1,	0, 0, 0, 0, 0, 0, 0, 0
-					; DATA XREF: BANK_08:8061o
+					
 		.BYTE 0, 0, 0, 0, 0, 0,	0, 0, 1, 1, 1, 1, 1, 1,	1, 1
 		.BYTE 1, 1, 1, 1, 1, 1,	1, $BE,	2, 2, 2, 2, 2, 2, 2, 2
 		.BYTE 2, 2, 2, 2, 2, 2,	2, 2, $AC, 1, 1, 1, 1, 1, 1, 1
@@ -365,7 +365,7 @@ Mansion_21_SaveRoom_88C97:.BYTE	1, 1, 1, 1, 1, 1, 1, 1,	0, 0, 0, 0, 0, 0, 0, 0
 		.BYTE 0, 0, $AA, $AA, $AA, $AA,	0, 0, 0, 0, $AA, $AA, $AA, $AA,	0, 0
 		.BYTE 0, 0, $AA, $AA, $AA, $AA,	0, 0, 0, 0, $AA, $AA, $AA, $22,	0, 0
 		.BYTE 0, 0, $AA, $AA, $AA, $AA,	0, 0, 0, 0, 0, 0, 0, 0,	0, 0
-byte_89097:	.BYTE 1			; DATA XREF: BANK_08:8063o
+byte_89097:	.BYTE 1			
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -431,7 +431,7 @@ byte_89097:	.BYTE 1			; DATA XREF: BANK_08:8063o
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0
 byte_89497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:8065o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -496,7 +496,7 @@ byte_89497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_89897:	.BYTE	1,  1,	3,  4,$AB,$A7,$A6,$A7,$A6,$A7,$A6,$BC,$10,  3,	1,  1
-					; DATA XREF: BANK_08:8067o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	3,  4,$A9,$AE,$AD,$AE,$AD,$AE,$AD,$BD,$10,  3,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -561,7 +561,7 @@ byte_89897:	.BYTE	1,  1,	3,  4,$AB,$A7,$A6,$A7,$A6,$A7,$A6,$BC,$10,  3,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_89C97:	.BYTE	1,  1,	1,$A8, $F, $F, $F, $F, $F, $F, $F,$11,$AB,$A7,$A6,$A7
-					; DATA XREF: BANK_08:8069o
+					
 		.BYTE $A6,$A7,$A6,$A7,$A6,$A7,$A6,$A7,$A6,$A7,$A6,$BC, $E,$AA,	1,  1
 		.BYTE	1,  1,	1,  1,	0,  0,	0,  0,	0,  0,	1,  4,$A9,$AE,$AD,$AE
 		.BYTE $AD,$AE,$AD,$AE,$AD,$AE,$AD,$AE,$AD,$AE,$AD,$BD,$10,  3,	1,  1
@@ -626,7 +626,7 @@ byte_89C97:	.BYTE	1,  1,	1,$A8, $F, $F, $F, $F, $F, $F, $F,$11,$AB,$A7,$A6,$A7
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8A097:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:806Bo
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -691,7 +691,7 @@ byte_8A097:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8A497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:806Do
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -756,7 +756,7 @@ byte_8A497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8A897:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:806Fo
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -821,7 +821,7 @@ byte_8A897:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8AC97:	.BYTE	1,  1,	3,  4,$AB,$A7,$A6,$A7,$A6,$A7,$A6,$A7,$A6,$A7,$A6,$BC
-					; DATA XREF: BANK_08:8071o
+					
 		.BYTE $10,  3,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	3,  4,$A9,$AE,$AD,$AE,$AD,$AE,$AD,$AE,$AD,$AE,$AD,$BD
 		.BYTE $10,  3,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -886,7 +886,7 @@ byte_8AC97:	.BYTE	1,  1,	3,  4,$AB,$A7,$A6,$A7,$A6,$A7,$A6,$A7,$A6,$A7,$A6,$BC
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8B097:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:8073o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -951,7 +951,7 @@ byte_8B097:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,$44,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8B497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	0,  0,	0,  0
-					; DATA XREF: BANK_08:8075o
+					
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,$BE,	2,  2,	2,  2
 		.BYTE	2,  2,	2,  2,	2,  2,	2,  2,	2,  2,	2,  2,	2,  2,	2,  2
@@ -1016,7 +1016,7 @@ byte_8B497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,$55,$55,$55,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8B897:	.BYTE	0,  0,	0,  0,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:8077o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	2,  2,	2,  2,$AC,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1081,7 +1081,7 @@ byte_8B897:	.BYTE	0,  0,	0,  0,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8BC97:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	0,  0,	0,  0,	0,  0
-					; DATA XREF: BANK_08:8079o
+					
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,$BE,	2,  2,	2,  2,	2,  2
 		.BYTE	2,  2,	2,  2,	2,  2,	2,  2,$AC,  1,	1,  1,	1,  1,	1,  1
@@ -1146,7 +1146,7 @@ byte_8BC97:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,$44,$55,  0,	0,  0,	0,  0,	0,  4,	5,  0,	0,  0
 byte_8C097:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	3,  4,$AB,$BC,$AB,$BC,$2E,$2F
-					; DATA XREF: BANK_08:807Bo
+					
 		.BYTE $2E,$2F,$2E,$2F,$AB,$A7,$A6,$BC, $E,$AA,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	3,  4,$A9,$AE,$AD,$BD,$39,$3A
 		.BYTE $39,$3A,$39,$3A,$A9,$AE,$AD,$BD,$10,  3,	1,  1,	1,  1,	1,  1
@@ -1211,7 +1211,7 @@ byte_8C097:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	3,  4,$AB,$BC,$AB,$BC,$2E,$2F
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8C497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	0,  0,	0,  0,	0,  0
-					; DATA XREF: BANK_08:807Do
+					
 		.BYTE	0,  0,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,$BE,	2,  2,	2,  2,	2,  2
 		.BYTE	2,  2,$AC,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1276,7 +1276,7 @@ byte_8C497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,$44,$55,  0,	0,  0,	0,  0,	0,  4,	5,  0,	0,  0
 byte_8C897:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	3,  4,$AB,$BC,$AB,$BC,$2E,$2F
-					; DATA XREF: BANK_08:807Fo
+					
 		.BYTE $2E,$2F,$2E,$2F,$AB,$A7,$A6,$BC, $E,$AA,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	3,  4,$A9,$AE,$AD,$BD,$39,$3A
 		.BYTE $39,$3A,$39,$3A,$A9,$AE,$AD,$BD,$10,  3,	1,  1,	1,  1,	1,  1
@@ -1341,7 +1341,7 @@ byte_8C897:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	3,  4,$AB,$BC,$AB,$BC,$2E,$2F
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8CC97:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:8081o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1406,7 +1406,7 @@ byte_8CC97:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8D097:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	0,  0,	0,  0,	0,  0
-					; DATA XREF: BANK_08:8083o
+					
 		.BYTE	0,  0,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,$BE,	2,  2,	2,  2,	2,  2
 		.BYTE	2,  2,$AC,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1471,7 +1471,7 @@ byte_8D097:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8D497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:8085o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1536,7 +1536,7 @@ byte_8D497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  1,	0,  0,	0,  0,	0,  0,	0,  0,$50,$50,$50,$10,	0,  0
 		.BYTE	0,  0,$55,$55,$55,$11,	0,  0,	0,  0,	5,  5,	5,  1,	0,  0
 byte_8D897:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:8087o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1601,7 +1601,7 @@ byte_8D897:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8DC97:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:8089o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1666,7 +1666,7 @@ byte_8DC97:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8E097:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:808Bo
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1731,7 +1731,7 @@ byte_8E097:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8E497:	.BYTE	1,  1,	3,  4,$AB,$A7,$A6,$A7,$A6,$A7,$A6,$A7,$10,  3,	1,  1
-					; DATA XREF: BANK_08:808Do
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,$BE, $D,$A9,$AE,$AD,$AE,$AD,$AE,$AD,$AE,$10,  3,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1796,7 +1796,7 @@ byte_8E497:	.BYTE	1,  1,	3,  4,$AB,$A7,$A6,$A7,$A6,$A7,$A6,$A7,$10,  3,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8E897:	.BYTE	1,  1,	1,  1,	0,  0,	0,  0,	0,  0,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:808Fo
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,$BE,	2,  2,	2,  2,	2,  2,$AC,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1861,7 +1861,7 @@ byte_8E897:	.BYTE	1,  1,	1,  1,	0,  0,	0,  0,	0,  0,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8EC97:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:8091o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1926,7 +1926,7 @@ byte_8EC97:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8F097:	.BYTE	1,  1,	1,  1,	0,  0,	0,  0,	0,  0,	0,  0,	1,  1,	1,  1
-					; DATA XREF: BANK_08:8093o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,$BE,	2,  2,	2,  2,	2,  2,	2,  2,$AC,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -1991,7 +1991,7 @@ byte_8F097:	.BYTE	1,  1,	1,  1,	0,  0,	0,  0,	0,  0,	0,  0,	1,  1,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 byte_8F497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-					; DATA XREF: BANK_08:8095o
+					
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 		.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
@@ -2059,10 +2059,10 @@ byte_8F497:	.BYTE	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 ; =============== S U B	R O U T	I N E =======================================
 
 
-tilemap_handler_8F897:			; CODE XREF: sub_88035:loc_88047p
-		LDA	#$5B ; '['
+tilemap_handler_8F897:			
+		LDA	#$5B 
 		STA	ptr_0
-		LDA	#$80 ; '�'
+		LDA	#$80 
 		STA	ptr_1
 		LDA	entry_idx_300
 		STA	data_2
@@ -2088,20 +2088,20 @@ tilemap_handler_8F897:			; CODE XREF: sub_88035:loc_88047p
 		LDA	data_3
 		STA	ptr_1
 		LDA	tilemap_line_size_51
-		CMP	#$20 ; ' '
+		CMP	#$20 
 		BEQ	loc_8F8DF
 		LDA	ptr_0
 		CLC
-		ADC	#$C0 ; '�'
+		ADC	#$C0 
 		STA	ptr_0
 		LDA	ptr_1
 		ADC	#3
 		STA	ptr_1
 
-loc_8F8DF:				; CODE XREF: tilemap_handler_8F897+39j
+loc_8F8DF:				
 		LDY	tilemap_line_idx_4F
 
-loc_8F8E1:				; CODE XREF: tilemap_handler_8F897+5Cj
+loc_8F8E1:				
 		CPY	#0
 		BEQ	loc_8F8F6
 		LDA	ptr_0
@@ -2115,7 +2115,7 @@ loc_8F8E1:				; CODE XREF: tilemap_handler_8F897+5Cj
 		JMP	loc_8F8E1
 ; ---------------------------------------------------------------------------
 
-loc_8F8F6:				; CODE XREF: tilemap_handler_8F897+4Cj
+loc_8F8F6:				
 		LDA	ptr_0
 		CLC
 		ADC	mapLineSize_50
@@ -2130,7 +2130,7 @@ loc_8F8F6:				; CODE XREF: tilemap_handler_8F897+4Cj
 		LDY	#0
 		LDX	#0
 
-loc_8F90F:				; CODE XREF: tilemap_handler_8F897+8Cj
+loc_8F90F:				
 		LDA	(ptr_0),Y
 		STA	tilemapData_4C,X
 		LDA	ptr_0
@@ -2154,7 +2154,7 @@ sub_8F926:
 		LDA	#1
 		STA	has_ppu_data_to_upload_6F
 
-loc_8F92A:				; CODE XREF: sub_8F926+6j
+loc_8F92A:				
 		LDA	has_ppu_data_to_upload_6F
 		BNE	loc_8F92A
 		RTS
@@ -2164,11 +2164,11 @@ loc_8F92A:				; CODE XREF: sub_8F926+6j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_8F92F:				; CODE XREF: sub_8F92F+3j
+sub_8F92F:				
 		LDA	_PPU_STATUS
 		BMI	sub_8F92F
 
-loc_8F934:				; CODE XREF: sub_8F92F+8j
+loc_8F934:				
 		LDA	_PPU_STATUS
 		BPL	loc_8F934
 		RTS
@@ -2182,7 +2182,7 @@ wait_for_count350_zero_8F93A:
 		LDA	#1
 		STA	frame_render_count_350
 
-loc_8F93F:				; CODE XREF: wait_for_count350_zero_8F93A+8j
+loc_8F93F:				
 		LDA	frame_render_count_350
 		BNE	loc_8F93F
 		RTS
@@ -2195,10 +2195,10 @@ loc_8F93F:				; CODE XREF: wait_for_count350_zero_8F93A+8j
 sub_8F945:
 		LDY	#0
 
-loc_8F947:				; CODE XREF: sub_8F945+Fj
+loc_8F947:				
 		LDX	#0
 
-loc_8F949:				; CODE XREF: sub_8F945+Cj
+loc_8F949:				
 		LDA	input_reg1_347
 		CMP	#0
 		BNE	locret_8F956
@@ -2207,7 +2207,7 @@ loc_8F949:				; CODE XREF: sub_8F945+Cj
 		INY
 		BNE	loc_8F947
 
-locret_8F956:				; CODE XREF: sub_8F945+9j
+locret_8F956:				
 		RTS
 ; End of function sub_8F945
 
@@ -2215,9 +2215,9 @@ locret_8F956:				; CODE XREF: sub_8F945+9j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_8F957:				; CODE XREF: unused_8F957+5j
+unused_8F957:				
 		LDA	input_pressed_34A
-		CMP	#$80 ; '�'
+		CMP	#$80 
 		BNE	unused_8F957
 		RTS
 ; End of function unused_8F957
@@ -2226,9 +2226,9 @@ unused_8F957:				; CODE XREF: unused_8F957+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_8F95F:				; CODE XREF: unused_8F95F+5j
+unused_8F95F:				
 		LDA	input_pressed_34A
-		CMP	#$40 ; '@'
+		CMP	#$40 
 		BNE	unused_8F95F
 		RTS
 ; End of function unused_8F95F
@@ -2237,7 +2237,7 @@ unused_8F95F:				; CODE XREF: unused_8F95F+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-unused_8F967:				; CODE XREF: unused_8F967+5j
+unused_8F967:				
 		LDA	input_pressed_34A
 		CMP	#0
 		BEQ	unused_8F967
@@ -2248,7 +2248,7 @@ unused_8F967:				; CODE XREF: unused_8F967+5j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_8F96F:				; CODE XREF: sub_8F96F+8j
+sub_8F96F:				
 		PHA
 		JSR	sub_8F97A
 		PLA
@@ -2262,7 +2262,7 @@ sub_8F96F:				; CODE XREF: sub_8F96F+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_8F97A:				; CODE XREF: sub_8F96F+1p
+sub_8F97A:				
 		PHA
 		TXA
 		PHA
@@ -2270,10 +2270,10 @@ sub_8F97A:				; CODE XREF: sub_8F96F+1p
 		PHA
 		LDX	#0
 
-loc_8F981:				; CODE XREF: sub_8F97A+Dj
+loc_8F981:				
 		LDY	#0
 
-loc_8F983:				; CODE XREF: sub_8F97A+Aj
+loc_8F983:				
 		DEY
 		BNE	loc_8F983
 		DEX
@@ -2290,8 +2290,8 @@ loc_8F983:				; CODE XREF: sub_8F97A+Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-nmi_sub_8F98F:				; CODE XREF: NMI_8F9ED+18p
-		LDA	#$F0 ; '�'
+nmi_sub_8F98F:				
+		LDA	#$F0 
 		STA	byte_218
 		STA	byte_21C
 		STA	byte_220
@@ -2305,7 +2305,7 @@ nmi_sub_8F98F:				; CODE XREF: NMI_8F9ED+18p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_8F9A4:				; CODE XREF: NMI_8F9ED+30p
+sub_8F9A4:				
 		LDA	byte_43E
 		BEQ	loc_8F9CB
 		LDA	byte_203
@@ -2315,7 +2315,7 @@ sub_8F9A4:				; CODE XREF: NMI_8F9ED+30p
 		JMP	locret_8F9EC
 ; ---------------------------------------------------------------------------
 
-loc_8F9B6:				; CODE XREF: sub_8F9A4+8j
+loc_8F9B6:				
 		LDA	byte_203
 		SEC
 		SBC	#8
@@ -2327,16 +2327,16 @@ loc_8F9B6:				; CODE XREF: sub_8F9A4+8j
 		JMP	locret_8F9EC
 ; ---------------------------------------------------------------------------
 
-loc_8F9CB:				; CODE XREF: sub_8F9A4+3j
+loc_8F9CB:				
 		LDA	byte_203
-		CMP	#$F8 ; '�'
+		CMP	#$F8 
 		BNE	loc_8F9DA
 		LDA	#1
 		STA	byte_43E
 		JMP	locret_8F9EC
 ; ---------------------------------------------------------------------------
 
-loc_8F9DA:				; CODE XREF: sub_8F9A4+2Cj
+loc_8F9DA:				
 		LDA	byte_203
 		CLC
 		ADC	#8
@@ -2346,7 +2346,7 @@ loc_8F9DA:				; CODE XREF: sub_8F9A4+2Cj
 		ADC	#8
 		STA	byte_207
 
-locret_8F9EC:				; CODE XREF: sub_8F9A4+Fj
+locret_8F9EC:				
 					; sub_8F9A4+24j ...
 		RTS
 ; End of function sub_8F9A4
@@ -2355,7 +2355,7 @@ locret_8F9EC:				; CODE XREF: sub_8F9A4+Fj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-NMI_8F9ED:				; DATA XREF: BANK_08:FFFAo
+NMI_8F9ED:				
 		PHP
 		PHA
 		TXA
@@ -2363,19 +2363,19 @@ NMI_8F9ED:				; DATA XREF: BANK_08:FFFAo
 		TYA
 		PHA
 		LDA	bank_switch_flag_6C
-		CMP	#$88 ; '�'
+		CMP	#$88 
 		BEQ	loc_8F9FC
 		JMP	loc_8FA2D
 ; ---------------------------------------------------------------------------
 
-loc_8F9FC:				; CODE XREF: NMI_8F9ED+Aj
-		LDA	#$EE ; '�'
+loc_8F9FC:				
+		LDA	#$EE 
 		STA	bank_switch_flag_6C
 		LDA	sprite_type_306
 		BNE	loc_8FA08
 		JSR	nmi_sub_8F98F
 
-loc_8FA08:				; CODE XREF: NMI_8F9ED+16j
+loc_8FA08:				
 		LDA	#2
 		STA	_PPU_OAM_DMA
 		JSR	sub_8FA65
@@ -2387,18 +2387,18 @@ loc_8FA08:				; CODE XREF: NMI_8F9ED+16j
 		JSR	sub_8F9A4
 		JSR	sub_8FB70
 
-loc_8FA23:				; CODE XREF: NMI_8F9ED+2Ej
+loc_8FA23:				
 		JSR	sub_8FB36
 		JSR	apu_music_update_8FBC8
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	bank_switch_flag_6C
 
-loc_8FA2D:				; CODE XREF: NMI_8F9ED+Cj
+loc_8FA2D:				
 		LDA	byte_432
 		BEQ	loc_8FA35
 		DEC	byte_432
 
-loc_8FA35:				; CODE XREF: NMI_8F9ED+43j
+loc_8FA35:				
 		INC	count_unk_463
 		INC	count_unk_464
 		INC	count_unk_465
@@ -2414,7 +2414,7 @@ loc_8FA35:				; CODE XREF: NMI_8F9ED+43j
 		BEQ	loc_8FA5E
 		DEC	frame_render_count_350
 
-loc_8FA5E:				; CODE XREF: NMI_8F9ED+6Cj
+loc_8FA5E:				
 		PLA
 		TAY
 		PLA
@@ -2422,7 +2422,7 @@ loc_8FA5E:				; CODE XREF: NMI_8F9ED+6Cj
 		PLA
 		PLP
 
-locret_8FA64:				; DATA XREF: BANK_08:FFFEo
+locret_8FA64:				
 		RTI
 ; End of function NMI_8F9ED
 
@@ -2430,21 +2430,21 @@ locret_8FA64:				; DATA XREF: BANK_08:FFFEo
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_8FA65:				; CODE XREF: NMI_8F9ED+20p
+sub_8FA65:				
 		LDA	has_ppu_data_to_upload_6F
 		BNE	loc_8FA6A
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_8FA6A:				; CODE XREF: sub_8FA65+2j
+loc_8FA6A:				
 		LDA	ppu_data_70
 		BEQ	loc_8FAB5
 		STA	ppu_fld0_x_6D
 		LDX	#1
 
-loc_8FA72:				; CODE XREF: sub_8FA65+4Dj
+loc_8FA72:				
 		LDA	ppu_data_70,X
-		AND	#$80 ; '�'
+		AND	#$80 
 		BEQ	loc_8FA86
 		LDA	ppu_ctrl_31F
 		ORA	#4
@@ -2453,15 +2453,15 @@ loc_8FA72:				; CODE XREF: sub_8FA65+4Dj
 		JMP	loc_8FA91
 ; ---------------------------------------------------------------------------
 
-loc_8FA86:				; CODE XREF: sub_8FA65+11j
+loc_8FA86:				
 		LDA	ppu_ctrl_31F
-		AND	#$FB ; '�'
+		AND	#$FB 
 		STA	ppu_ctrl_31F
 		STA	_PPU_CTRL
 
-loc_8FA91:				; CODE XREF: sub_8FA65+1Ej
+loc_8FA91:				
 		LDA	ppu_data_70,X
-		AND	#$7F ; ''
+		AND	#$7F 
 		STA	ppu_fld1_y_6E
 		INX
 		LDA	ppu_data_70,X
@@ -2470,7 +2470,7 @@ loc_8FA91:				; CODE XREF: sub_8FA65+1Ej
 		LDA	ppu_data_70,X
 		STA	_PPU_ADDR
 
-loc_8FAA3:				; CODE XREF: sub_8FA65+46j
+loc_8FAA3:				
 		INX
 		LDA	ppu_data_70,X
 		STA	_PPU_DATA
@@ -2482,7 +2482,7 @@ loc_8FAA3:				; CODE XREF: sub_8FA65+46j
 		JMP	loc_8FA72
 ; ---------------------------------------------------------------------------
 
-loc_8FAB5:				; CODE XREF: sub_8FA65+7j
+loc_8FAB5:				
 					; sub_8FA65+4Aj
 		LDA	#0
 		STA	has_ppu_data_to_upload_6F
@@ -2493,7 +2493,7 @@ loc_8FAB5:				; CODE XREF: sub_8FA65+7j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_8FABA:				; CODE XREF: NMI_8F9ED+23p
+sub_8FABA:				
 		LDA	ppu_ctrl_31F
 		STA	_PPU_CTRL
 		LDA	ppu_mask_320
@@ -2509,7 +2509,7 @@ sub_8FABA:				; CODE XREF: NMI_8F9ED+23p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_8FAD3:				; CODE XREF: NMI_8F9ED+26p
+sub_8FAD3:				
 		TYA
 		PHA
 		TYA
@@ -2530,7 +2530,7 @@ sub_8FAD3:				; CODE XREF: NMI_8F9ED+26p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-pad_input_update_8FAEB:			; CODE XREF: sub_8FAD3+4p
+pad_input_update_8FAEB:			
 		LDX	#1
 		STX	_PAD0_REG
 		DEX
@@ -2538,7 +2538,7 @@ pad_input_update_8FAEB:			; CODE XREF: sub_8FAD3+4p
 		LDA	#0
 		LDY	#8
 
-loc_8FAF8:				; CODE XREF: pad_input_update_8FAEB+1Aj
+loc_8FAF8:				
 		PHA
 		LDA	_PAD0_REG,X
 		STA	input_reg0_34E
@@ -2555,7 +2555,7 @@ loc_8FAF8:				; CODE XREF: pad_input_update_8FAEB+1Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-input_sub_8FB0B:			; CODE XREF: sub_8FAD3+7p
+input_sub_8FB0B:			
 		LDX	#0
 		LDA	input_reg1_347,X
 		EOR	input_unk_34C,X
@@ -2593,7 +2593,7 @@ unused_8FB2D:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_8FB36:				; CODE XREF: NMI_8F9ED:loc_8FA23p
+sub_8FB36:				
 		INC	byte_353
 		LDA	byte_353
 		CMP	#$19
@@ -2601,7 +2601,7 @@ sub_8FB36:				; CODE XREF: NMI_8F9ED:loc_8FA23p
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_8FB41:				; CODE XREF: sub_8FB36+8j
+loc_8FB41:				
 		LDA	#0
 		STA	byte_353
 		LDA	byte_354
@@ -2616,17 +2616,17 @@ loc_8FB41:				; CODE XREF: sub_8FB36+8j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_8FB5C:				; CODE XREF: sub_8FB36+23j
+loc_8FB5C:				
 		DEC	byte_356
 		LDA	#$A
 		STA	byte_355
 
-loc_8FB64:				; CODE XREF: sub_8FB36+1Cj
+loc_8FB64:				
 		DEC	byte_355
 		LDA	#$A
 		STA	byte_354
 
-loc_8FB6C:				; CODE XREF: sub_8FB36+15j
+loc_8FB6C:				
 		DEC	byte_354
 		RTS
 ; End of function sub_8FB36
@@ -2635,25 +2635,25 @@ loc_8FB6C:				; CODE XREF: sub_8FB36+15j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_8FB70:				; CODE XREF: NMI_8F9ED+33p
+sub_8FB70:				
 		INC	scroll_offset_x_479
 		LDA	scroll_offset_x_479
 		CMP	#$A
 		BCC	locret_8FBC7
 		LDA	scroll_offset_y_47A
-		EOR	#$80 ; '�'
+		EOR	#$80 
 		STA	scroll_offset_y_47A
 		LDA	scroll_offset_y_47A
-		AND	#$FE ; '�'
+		AND	#$FE 
 		STA	scroll_offset_y_47A
 		LDA	scroll_offset_y_47A
-		AND	#$7F ; ''
+		AND	#$7F 
 		CMP	#0
 		BEQ	locret_8FBC7
 		LDA	scroll_offset_y_47A
 		PHA
 		LDA	scroll_offset_y_47A
-		AND	#$80 ; '�'
+		AND	#$80 
 		CMP	#0
 		BEQ	loc_8FBA8
 		LDA	#0
@@ -2661,16 +2661,16 @@ sub_8FB70:				; CODE XREF: NMI_8F9ED+33p
 		JMP	loc_8FBBA
 ; ---------------------------------------------------------------------------
 
-loc_8FBA8:				; CODE XREF: sub_8FB70+2Ej
+loc_8FBA8:				
 		LDA	scroll_offset_y_47A
-		AND	#$7F ; ''
+		AND	#$7F 
 		STA	scroll_offset_y_47A
 		LDA	ppu_scroll_y_305
 		CLC
 		ADC	scroll_offset_y_47A
 		STA	ppu_scroll_y_305
 
-loc_8FBBA:				; CODE XREF: sub_8FB70+35j
+loc_8FBBA:				
 		PLA
 		STA	scroll_offset_y_47A
 		LDA	scroll_offset_y_47A
@@ -2678,7 +2678,7 @@ loc_8FBBA:				; CODE XREF: sub_8FB70+35j
 		SBC	#2
 		STA	scroll_offset_y_47A
 
-locret_8FBC7:				; CODE XREF: sub_8FB70+8j
+locret_8FBC7:				
 					; sub_8FB70+21j
 		RTS
 ; End of function sub_8FB70
@@ -2687,7 +2687,7 @@ locret_8FBC7:				; CODE XREF: sub_8FB70+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-apu_music_update_8FBC8:			; CODE XREF: NMI_8F9ED+39p
+apu_music_update_8FBC8:			
 		LDA	bank_command_346
 		PHA
 		LDA	bank_to_344
@@ -2696,7 +2696,7 @@ apu_music_update_8FBC8:			; CODE XREF: NMI_8F9ED+39p
 		PHA
 		LDA	#banks_13
 		STA	bank_to_344
-		LDA	#$88 ; '�'
+		LDA	#$88 
 		STA	bank_command_346
 		JSR	bank_switch_88000 ; Tilemaps
 		PLA

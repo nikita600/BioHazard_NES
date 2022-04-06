@@ -7,44 +7,9 @@
 ; SPRITE_BANK
 
 bank_switch_18000:			
-					; apu_music_update_1F9C0+16p
-		LDA	#$EE 
-		STA	bank_switch_flag_6C
-		LDA	bank_to_344
-		CMP	#$10
-		BCS	loc_18020
-		ASL	A
-		ASL	A
-		ASL	A
-		TAY
-		LDA	mirroring_type_342
-		BNE	loc_1801A
-		STA	$8083,Y
-		JMP	loc_18035
-; ---------------------------------------------------------------------------
+		.include "common\bank_switch_func.asm"
 
-loc_1801A:				
-		STA	$8081,Y
-		JMP	loc_18035
-; ---------------------------------------------------------------------------
-
-loc_18020:				
-		SEC
-		SBC	#$10
-		ASL	A
-		ASL	A
-		ASL	A
-		TAY
-		LDA	mirroring_type_342
-		BNE	loc_18032
-		STA	$8183,Y
-		JMP	loc_18035
-; ---------------------------------------------------------------------------
-
-loc_18032:				
-		STA	$8181,Y
-
-loc_18035:				
+switch_case_8035:				
 					; bank_switch_18000+1Dj ...
 		LDA	bank_to_344
 		STA	bank_prev_345
@@ -1157,59 +1122,59 @@ Sprites:
 		.WORD Helicopter_1ECBB
 
 Jill_193D7:	
-		INCLUDE "\SPRITES\BANK_0\SPR_0.ASM"
+		.include "\SPRITES\BANK_0\SPR_0.ASM"
 Enemy1_199A9:	
-		INCLUDE "\SPRITES\BANK_0\SPR_1.ASM"
+		.include "\SPRITES\BANK_0\SPR_1.ASM"
 Enemy2_19D2B:	
-		INCLUDE "\SPRITES\BANK_0\SPR_2.ASM"
+		.include "\SPRITES\BANK_0\SPR_2.ASM"
 EnvObject_1A13D:
-		INCLUDE "\SPRITES\BANK_0\SPR_3.ASM"
+		.include "\SPRITES\BANK_0\SPR_3.ASM"
 BattleUI_1A26F:	
-		INCLUDE "\SPRITES\BANK_0\SPR_4.ASM"
+		.include "\SPRITES\BANK_0\SPR_4.ASM"
 InventoryUI_1B1C1:
-		INCLUDE "\SPRITES\BANK_0\SPR_5.ASM"
+		.include "\SPRITES\BANK_0\SPR_5.ASM"
 EnvItems_1BF23:	
-		INCLUDE "\SPRITES\BANK_0\SPR_6.ASM"
+		.include "\SPRITES\BANK_0\SPR_6.ASM"
 Barry1_1C0A5:	
-		INCLUDE "\SPRITES\BANK_0\SPR_7.ASM"
+		.include "\SPRITES\BANK_0\SPR_7.ASM"
 Barry2_1C5C7:	
-		INCLUDE "\SPRITES\BANK_0\SPR_8.ASM"
+		.include "\SPRITES\BANK_0\SPR_8.ASM"
 Barry3_1CAE9:	
-		INCLUDE "\SPRITES\BANK_0\SPR_9.ASM"
+		.include "\SPRITES\BANK_0\SPR_9.ASM"
 Enrico_1D00B:	
-		INCLUDE "\SPRITES\BANK_0\SPR_0A.ASM"
+		.include "\SPRITES\BANK_0\SPR_0A.ASM"
 Enemy3_1D0ED:	
-		INCLUDE "\SPRITES\BANK_0\SPR_0B.ASM"
+		.include "\SPRITES\BANK_0\SPR_0B.ASM"
 Particles_1D49F:
-		INCLUDE "\SPRITES\BANK_0\SPR_0C.ASM"
+		.include "\SPRITES\BANK_0\SPR_0C.ASM"
 Dog_1D5B1:	
-		INCLUDE "\SPRITES\BANK_0\SPR_0D.ASM"
+		.include "\SPRITES\BANK_0\SPR_0D.ASM"
 Crow_1D7E3:	
-		INCLUDE "\SPRITES\BANK_0\SPR_0E.ASM"
+		.include "\SPRITES\BANK_0\SPR_0E.ASM"
 Snake_1DA05:	
-		INCLUDE "\SPRITES\BANK_0\SPR_0F.ASM"
+		.include "\SPRITES\BANK_0\SPR_0F.ASM"
 Spider_1DB17:	
-		INCLUDE "\SPRITES\BANK_0\SPR_10.ASM"
+		.include "\SPRITES\BANK_0\SPR_10.ASM"
 Tyrant_1DCA9:	
-		INCLUDE "\SPRITES\BANK_0\SPR_11.ASM"
+		.include "\SPRITES\BANK_0\SPR_11.ASM"
 BallSmall_1E2CB:
-		INCLUDE "\SPRITES\BANK_0\SPR_12.ASM"
+		.include "\SPRITES\BANK_0\SPR_12.ASM"
 BallBig_1E2ED:	
-		INCLUDE "\SPRITES\BANK_0\SPR_13.ASM"
+		.include "\SPRITES\BANK_0\SPR_13.ASM"
 Shotgun_1E61F:	
-		INCLUDE "\SPRITES\BANK_0\SPR_14.ASM"
+		.include "\SPRITES\BANK_0\SPR_14.ASM"
 Numbers_1E661:	
-		INCLUDE "\SPRITES\BANK_0\SPR_15.ASM"
+		.include "\SPRITES\BANK_0\SPR_15.ASM"
 LinesUnk_1E723:	
-		INCLUDE "\SPRITES\BANK_0\SPR_16.ASM"
+		.include "\SPRITES\BANK_0\SPR_16.ASM"
 Candle_1E8B5:	
-		INCLUDE "\SPRITES\BANK_0\SPR_17.ASM"
+		.include "\SPRITES\BANK_0\SPR_17.ASM"
 Piranha_1E927:	
-		INCLUDE "\SPRITES\BANK_0\SPR_18.ASM"
+		.include "\SPRITES\BANK_0\SPR_18.ASM"
 GardenBoss_1EA59:
-		INCLUDE "\SPRITES\BANK_0\SPR_19.ASM"
+		.include "\SPRITES\BANK_0\SPR_19.ASM"
 Helicopter_1ECBB:
-		INCLUDE "\SPRITES\BANK_0\SPR_1A.ASM"
+		.include "\SPRITES\BANK_0\SPR_1A.ASM"
 
 ; =============== S U B	R O U T	I N E =======================================
 

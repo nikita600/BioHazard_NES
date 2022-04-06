@@ -7,50 +7,9 @@
 ; Tilemaps
 
 bank_switch_88000:			
-					; apu_music_update_8FBC8+16p
-		LDA	#$EE 
-		STA	bank_switch_flag_6C
-		LDA	bank_to_344
-		CMP	#$10
-		BCS	loc_88020
-		ASL	A
-		ASL	A
-		ASL	A
-		TAY
-		LDA	mirroring_type_342
-		BNE	loc_8801A
-		STA	$8083,Y
-		JMP	sub_88035
-; ---------------------------------------------------------------------------
-
-loc_8801A:				
-		STA	$8081,Y
-		JMP	sub_88035
-; ---------------------------------------------------------------------------
-
-loc_88020:				
-		SEC
-		SBC	#$10
-		ASL	A
-		ASL	A
-		ASL	A
-		TAY
-		LDA	mirroring_type_342
-		BNE	loc_88032
-		STA	$8183,Y
-		JMP	sub_88035
-; ---------------------------------------------------------------------------
-
-loc_88032:				
-		STA	$8181,Y
-; End of function bank_switch_88000
-
-
-; =============== S U B	R O U T	I N E =======================================
-
-
-sub_88035:				
-					; bank_switch_88000+1Dj ...
+		.include "common\bank_switch_func.asm"
+		
+switch_case_8035:
 		LDA	bank_to_344
 		STA	bank_prev_345
 		LDA	#$88 

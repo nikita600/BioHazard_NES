@@ -6,45 +6,9 @@
 
 
 bank_switch_A8000:			
-					; apu_music_update_AFBC8+16p
-		LDA	#$EE 
-		STA	bank_switch_flag_6C
-		LDA	bank_to_344
-		CMP	#$10
-		BCS	loc_A8020
-		ASL	A
-		ASL	A
-		ASL	A
-		TAY
-		LDA	mirroring_type_342
-		BNE	loc_A801A
-		STA	$8083,Y
-		JMP	loc_A8035
-; ---------------------------------------------------------------------------
+		.include "common\bank_switch_func.asm"
 
-loc_A801A:				
-		STA	$8081,Y
-		JMP	loc_A8035
-; ---------------------------------------------------------------------------
-
-loc_A8020:				
-		SEC
-		SBC	#$10
-		ASL	A
-		ASL	A
-		ASL	A
-		TAY
-		LDA	mirroring_type_342
-		BNE	loc_A8032
-		STA	$8183,Y
-		JMP	loc_A8035
-; ---------------------------------------------------------------------------
-
-loc_A8032:				
-		STA	$8181,Y
-
-loc_A8035:				
-					; bank_switch_A8000+1Dj ...
+switch_case_8035:
 		LDA	bank_to_344
 		STA	bank_prev_345
 		LDA	#$88 

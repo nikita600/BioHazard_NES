@@ -6,44 +6,9 @@
 
 
 bank_switch_138000:			
-					; bank_switch_138000+A9j ...
-		LDA	#$EE 
-		STA	bank_switch_flag_6C
-		LDA	bank_to_344
-		CMP	#$10
-		BCS	loc_138020
-		ASL	A
-		ASL	A
-		ASL	A
-		TAY
-		LDA	mirroring_type_342
-		BNE	loc_13801A
-		STA	$8083,Y
-		JMP	loc_138035
-; ---------------------------------------------------------------------------
+		.include "common\bank_switch_func.asm"
 
-loc_13801A:				
-		STA	$8081,Y
-		JMP	loc_138035
-; ---------------------------------------------------------------------------
-
-loc_138020:				
-		SEC
-		SBC	#$10
-		ASL	A
-		ASL	A
-		ASL	A
-		TAY
-		LDA	mirroring_type_342
-		BNE	loc_138032
-		STA	$8183,Y
-		JMP	loc_138035
-; ---------------------------------------------------------------------------
-
-loc_138032:				
-		STA	$8181,Y
-
-loc_138035:				
+switch_case_8035:				
 					; bank_switch_138000+1Dj ...
 		LDA	bank_command_346
 		CMP	#$88 

@@ -1,12 +1,12 @@
 ; Segment type:	Pure code
-		;.segment BANK_13
+		;.segment BANK_13 (Code + Sprites)
 		* =  $8000
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
 bank_switch_138000:			
-		.include "common\bank_switch_func.asm"
+		.include "common/bank_switch_func.asm"
 
 switch_case_8035:				
 					; bank_switch_138000+1Dj ...

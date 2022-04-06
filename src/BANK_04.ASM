@@ -1,12 +1,12 @@
 ; Segment type:	Pure code
-		;.segment BANK_04
+		;.segment BANK_04 (Text)
 		* =  $8000
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
 bank_switch_48000:			
-		.include "common\bank_switch_func.asm"
+		.include "common/bank_switch_func.asm"
 
 switch_case_8035:
 		LDA	bank_to_344

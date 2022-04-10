@@ -4,7 +4,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-bank_switch_78000:		
+bank_switch_78000:
 		.include "common/bank_switch_func.asm"
 
 switch_case_8035:

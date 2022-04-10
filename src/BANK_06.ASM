@@ -5,7 +5,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-bank_switch_68000:		
+bank_switch_68000:
 		.include "common/bank_switch_func.asm"
 
 switch_case_8035:
@@ -19,12 +19,12 @@ switch_case_8035:
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_68047:			
+loc_68047:
 		JSR	upload_gfx_to_ppu_6F863
 		JMP	loc_6804D
 ; ---------------------------------------------------------------------------
 
-loc_6804D:			
+loc_6804D:
 		LDA	#$FF
 		STA	bank_command_346
 		LDA	bank_from_343
@@ -39,7 +39,7 @@ GFX_6805B:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-upload_gfx_to_ppu_6F863:	
+upload_gfx_to_ppu_6F863:
 		LDA	#$5B 
 		STA	ptr_0
 		LDA	#$80 
@@ -75,7 +75,7 @@ upload_gfx_to_ppu_6F863:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-upload_gfx_to_ppu_6F89C:	
+upload_gfx_to_ppu_6F89C:
 		LDY	#0
 		LDA	(data_2),Y
 		STA	tilemapWidth_308
@@ -88,14 +88,14 @@ upload_gfx_to_ppu_6F89C:
 		STA	data_3
 		LDX	#0
 
-loc_6F8B2:			
+loc_6F8B2:
 		LDA	ptr_1
 		STA	_PPU_ADDR
 		LDA	ptr_0
 		STA	_PPU_ADDR
 		LDY	#0
 
-loc_6F8BE:			
+loc_6F8BE:
 		LDA	(data_2),Y
 		STA	_PPU_DATA
 		INY

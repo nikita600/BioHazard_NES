@@ -163,7 +163,7 @@ command_8_12812B:
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_9_check_level_128131:	
+command_9_check_level_128131:
 		JSR	entry_idx_handler_unk_12AA6D
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
@@ -183,12 +183,12 @@ command_C_128143:
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_D_open_item_128149:	
+command_D_open_item_128149:
 		JSR	sub_12D58C
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_E_load_game_12814F:	
+command_E_load_game_12814F:
 		JSR	com_E_load_game_12CD30
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
@@ -323,7 +323,7 @@ command_28_1281EB:
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_29_open_level_1281F1:	
+command_29_open_level_1281F1:
 		JSR	com_29_start_new_game_12A646
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
@@ -393,7 +393,7 @@ loc_12823F:
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-show_tree_screen_c36_128245:	
+show_tree_screen_c36_128245:
 		JSR	show_tree_screen_12C588
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
@@ -489,7 +489,7 @@ exec_b13_c5_1282B5:
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_44_battle_1282CA:	
+command_44_battle_1282CA:
 		JSR	show_intro_screen_12CB58
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
@@ -509,7 +509,7 @@ loc_1282DC:
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
-command_48_take_item_1282E2:	
+command_48_take_item_1282E2:
 		JSR	comm_48_take_item_12CD1D
 		JMP	return_1282EE
 ; ---------------------------------------------------------------------------
@@ -1485,7 +1485,7 @@ loc_128A20:
 		RTS
 ; ---------------------------------------------------------------------------
 
-game_not_finished_128A43:	
+game_not_finished_128A43:
 		JSR	sub_128B43
 		JSR	sub_128CC0
 		JSR	sub_128D20
@@ -2585,13 +2585,13 @@ byte_129255:.BYTE $78,$1E
 		.BYTE $A0,$28
 		.BYTE $C8,$32
 
-off_129269:	
+off_129269:
 		.include "binary_data/bank_12_9269.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-com_29_start_new_game_12A646:	
+com_29_start_new_game_12A646:
 		LDX	#0
 		LDA	#0
 
@@ -3105,7 +3105,7 @@ exec_b0_c2_12A9A9:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-com_17_player_update_12A9C4:	
+com_17_player_update_12A9C4:
 		LDA	entry_idx_300
 		CMP	#$46 
 		BNE	loc_12AA0E
@@ -3202,7 +3202,7 @@ locret_12AA6C:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-entry_idx_handler_unk_12AA6D:	
+entry_idx_handler_unk_12AA6D:
 		
 		LDA	entry_idx_300
 		CMP	#$83 
@@ -7707,7 +7707,7 @@ loc_12C575:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-show_tree_screen_12C588:	
+show_tree_screen_12C588:
 		LDA	entry_idx_300
 		PHA
 		LDA	ppu_unk_byte_302
@@ -8697,7 +8697,7 @@ locret_12CB57:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-show_intro_screen_12CB58:	
+show_intro_screen_12CB58:
 		JSR	sub_12F77B
 		LDA	#$10
 		STA	image_id_4A4
@@ -8781,7 +8781,7 @@ loc_12CBF7:
 		JMP	loc_12CB96
 ; ---------------------------------------------------------------------------
 
-show_ending_screen_12CC06:	
+show_ending_screen_12CC06:
 		LDA	#$A0 
 		STA	image_id_4A4
 		LDA	#0
@@ -8934,7 +8934,7 @@ return_12CD1C:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-comm_48_take_item_12CD1D:	
+comm_48_take_item_12CD1D:
 		LDA	#$45 
 		STA	text_idx_35C
 		LDA	#2

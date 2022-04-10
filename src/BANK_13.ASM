@@ -1760,7 +1760,7 @@ locret_13D987:
 		RTS
 ; ---------------------------------------------------------------------------
 
-apu_update_noise_13D988:	
+apu_update_noise_13D988:
 		LDA	noise_env_13C231,Y
 		STA	_APU_NOISE_ENV
 		TYA
@@ -1773,7 +1773,7 @@ apu_update_noise_13D988:
 		RTS
 ; ---------------------------------------------------------------------------
 
-apu_update_pulse1_13D99E:	
+apu_update_pulse1_13D99E:
 		LDA	apu_unk_705
 		CMP	#$D
 		BCS	apu_update_pulse1_13D9C1
@@ -1791,7 +1791,7 @@ apu_update_pulse1_13D99E:
 		RTS
 ; ---------------------------------------------------------------------------
 
-apu_update_pulse1_13D9C1:	
+apu_update_pulse1_13D9C1:
 		SBC	#$D
 		TAY
 		LDA	pulse1_env_713
@@ -1806,7 +1806,7 @@ apu_update_pulse1_13D9C1:
 		RTS
 ; ---------------------------------------------------------------------------
 
-apu_update_pulse2_13D9DF:	
+apu_update_pulse2_13D9DF:
 		LDA	apu_unk_705
 		CMP	#$D
 		BCS	apu_update_pulse2_13DA02
@@ -1824,7 +1824,7 @@ apu_update_pulse2_13D9DF:
 		RTS
 ; ---------------------------------------------------------------------------
 
-apu_update_pulse2_13DA02:	
+apu_update_pulse2_13DA02:
 		SBC	#$D
 		TAY
 		LDA	apu_pulse2_env_714
@@ -1839,7 +1839,7 @@ apu_update_pulse2_13DA02:
 		RTS
 ; ---------------------------------------------------------------------------
 
-apu_update_triangle_13DA20:	
+apu_update_triangle_13DA20:
 		LDA	apu_unk_705
 		CMP	#$D
 		BCS	loc_13DA43
@@ -1874,7 +1874,7 @@ loc_13DA43:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-apu_update_pulse1_13DA5B:	
+apu_update_pulse1_13DA5B:
 		LDX	#0
 		JSR	apu_update_pulse1_13DA62
 		LDX	#1
@@ -1884,7 +1884,7 @@ apu_update_pulse1_13DA5B:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-apu_update_pulse1_13DA62:	
+apu_update_pulse1_13DA62:
 		LDA	apu_dat_13D421,X
 		AND	apu_unk_737
 		BEQ	locret_13DADB
@@ -2161,7 +2161,7 @@ loc_13DC18:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-music_update_state_13DC1E:	
+music_update_state_13DC1E:
 		JSR	apu_update_13D4F9
 		LDA	apu_unk_706
 		BEQ	locret_13DC5B
@@ -2295,7 +2295,7 @@ byte_13DF14:.BYTE $4B,$8C,$CD,$30
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_spr_palette_13DF18:	
+load_spr_palette_13DF18:
 		LDA	#$AC 
 		STA	ptr_0
 		LDA	#$80 
@@ -2347,7 +2347,7 @@ loc_13DF5B:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-copy_boss_spr_to_ppu_13DF67:	
+copy_boss_spr_to_ppu_13DF67:
 		JSR	load_boss_sprite_13DFDC
 
 loc_13DF6A:
@@ -2392,7 +2392,7 @@ locret_13DFA7:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_sprite_func_13DFA8:	
+load_sprite_func_13DFA8:
 		JSR	load_boss_sprite_13DFDC
 
 loc_13DFAB:
@@ -2431,7 +2431,7 @@ loc_13DFD1:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_boss_sprite_13DFDC:	
+load_boss_sprite_13DFDC:
 		; load_sprite_func_13DFA8p
 		LDA	#$26 
 		STA	ptr_0

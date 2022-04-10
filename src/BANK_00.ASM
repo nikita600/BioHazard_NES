@@ -1077,7 +1077,7 @@ reset_cheat_idx_88D2:
 inc_cheat_idx_88DA:
 		INC	jill_pos_x_47D
 
-check_cheat_entered_88DD:	
+check_cheat_entered_88DD:
 		LDA	jill_pos_x_47D
 		CMP	#9
 		BNE	gameplay_update_8930
@@ -1429,7 +1429,7 @@ loc_8B59:
 		RTS
 ; ---------------------------------------------------------------------------
 
-update_player_input_8B5F:	
+update_player_input_8B5F:
 		LDA	#0
 		STA	byte_433
 
@@ -1571,7 +1571,7 @@ start_not_pressed_8C44:
 		RTS
 ; ---------------------------------------------------------------------------
 
-select_not_pressed_8C51:	
+select_not_pressed_8C51:
 		LDA	input_reg1_347
 		AND	#$80 
 		CMP	#a_80
@@ -2083,7 +2083,7 @@ loc_8F76:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-start_button_pressed_8F88:	
+start_button_pressed_8F88:
 		LDA	#$FF
 		STA	byte_629
 
@@ -2118,7 +2118,7 @@ loc_8FBB:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-select_button_pressed_8FC4:	
+select_button_pressed_8FC4:
 		LDA	entry_idx_300
 		CMP	#$9A 
 		BEQ	locret_8FDB
@@ -3722,7 +3722,7 @@ locret_9AD8:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-show_hidden_copyright_9AD9:	
+show_hidden_copyright_9AD9:
 		LDA	#$47 
 		STA	text_idx_35C
 		LDA	#2
@@ -3762,13 +3762,13 @@ show_hidden_copyright_9AD9:
 ; ---------------------------------------------------------------------------
 copyright_cheat_sequence_9B29:.BYTE up_8,up_8,down_4,down_4,left_2,left_2,right_1,right_1,a_80,$A
 
-off_9B33:	
+off_9B33:
 		.include "binary_data/bank_0_9B33.asm"
 
 off_9BB5:
 		.include "binary_data/bank_0_9BB5.asm"
 
-unknown_data_BCB6:	
+unknown_data_BCB6:
 		.WORD byte_BCF2
 		.WORD byte_BCF3
 		.WORD byte_BCF4
@@ -4589,7 +4589,7 @@ load_tiles_to_ppu_C83A:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-loadt_obj_tilemaps_C84D:	
+loadt_obj_tilemaps_C84D:
 		LDA	#1
 		STA	bank_command_346
 		LDA	#sprites_1
@@ -4699,7 +4699,7 @@ exec_b2_c1_C8D5:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-exec_b2_c2_text_cuts_C8E8:	
+exec_b2_c2_text_cuts_C8E8:
 		
 		LDA	#2
 		STA	bank_command_346
@@ -5078,7 +5078,7 @@ loc_CB12:
 		JMP	loc_CB12
 ; ---------------------------------------------------------------------------
 
-left_right_pressed_CB2A:	
+left_right_pressed_CB2A:
 		LDA	byte_372
 		EOR	#1
 		STA	byte_372
@@ -5279,7 +5279,7 @@ loc_CC51:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-ppu_upload_unk_data_CC5D:	
+ppu_upload_unk_data_CC5D:
 		
 		LDA	count_unk_465
 		CMP	#5
@@ -10768,7 +10768,7 @@ next_check_EE0E:
 		LDA	#0
 		STA	tilemap_size_307
 
-start_read_tilemap_EE1C:	
+start_read_tilemap_EE1C:
 		LDA	entry_idx_300
 		STA	tilemapData_4C
 		STX	roomUnk1_4D
@@ -10794,7 +10794,7 @@ start_upload_ppu_EE3F:
 		PHA
 		LDY	#0
 
-write_tilemap_to_ppu_EE4D:	
+write_tilemap_to_ppu_EE4D:
 		LDA	tilemapData_4C,Y
 		STA	_PPU_DATA
 		INY
@@ -11268,11 +11268,11 @@ loc_F17F:
 		CPY	tilemapHeight_30A
 		BCC	loc_F17F
 
-set_ppu_upload_flag_F18B:	
+set_ppu_upload_flag_F18B:
 		LDA	#1
 		STA	has_ppu_data_to_upload_6F
 
-wait_for_ppu_finished_F18F:	
+wait_for_ppu_finished_F18F:
 		LDA	has_ppu_data_to_upload_6F
 		BNE	wait_for_ppu_finished_F18F
 		RTS
@@ -11410,7 +11410,7 @@ start_read_tilemap_F23C:
 		BEQ	start_read_tilemap_F290
 		INC	tilemapTypeUnk_30B
 
-start_read_tilemap_F290:	
+start_read_tilemap_F290:
 		LDA	entry_idx_300
 		STA	tilemapData_4C
 		INX
@@ -11592,7 +11592,7 @@ start_read_tilemap_F390:
 		BEQ	start_read_tilemap_F3F2
 		INC	tilemapTypeUnk_30B
 
-start_read_tilemap_F3F2:	
+start_read_tilemap_F3F2:
 		LDA	entry_idx_300
 		STA	tilemapData_4C
 		INY
@@ -11680,7 +11680,7 @@ locret_F471:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-tilemap_read_next_chunk_F472:	
+tilemap_read_next_chunk_F472:
 		
 		TXA
 		PHA

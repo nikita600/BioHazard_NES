@@ -86,7 +86,7 @@ load_obj_tilemap_1F264:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_palettes_to_ram_1F268:	
+load_palettes_to_ram_1F268:
 		LDA	sprite_type_306
 		CMP	#0
 		BEQ	loc_1F2C3
@@ -171,7 +171,7 @@ return_1F2F2:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-get_sprite_palette_ptr_1F2F3:	
+get_sprite_palette_ptr_1F2F3:
 		; load_palettes_to_ram_1F268+17p ...
 		LDA	#$79 
 		STA	ptr_0
@@ -224,7 +224,7 @@ loc_1F31E:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-upload_tiles_to_ppu_1F32A:	
+upload_tiles_to_ppu_1F32A:
 		LDA	sprite_type_306
 		CMP	#0
 		BEQ	loc_1F33D
@@ -268,7 +268,7 @@ locret_1F36C:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_sprite_to_vram_1F36D:	
+load_sprite_to_vram_1F36D:
 		; upload_tiles_to_ppu_1F32A+Cp	...
 		LDA	#$A1 
 		STA	ptr_0
@@ -329,7 +329,7 @@ sub_1F3B1:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_sprite_tilemap_1F3B8:	
+load_sprite_tilemap_1F3B8:
 		; sub_1F3B1p
 		LDA	#$5F 
 		STA	data_2

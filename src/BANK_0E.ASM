@@ -7,7 +7,7 @@
 bank_switch_E8000:
 		.include "common/bank_switch_func.asm"
 
-switch_case_8035:			
+switch_case_8035:
 		.include "common/tilemap_entry_point_func.asm"
 
 ; ---------------------------------------------------------------------------

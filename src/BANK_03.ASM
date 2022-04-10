@@ -19,12 +19,12 @@ switch_case_8035:
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_38047:			
+loc_38047:
 		JSR	sub_3F76B
 		JMP	loc_3804D
 ; ---------------------------------------------------------------------------
 
-loc_3804D:			
+loc_3804D:
 		LDA	#$FF
 		STA	bank_command_346
 		LDA	bank_from_343
@@ -39,7 +39,7 @@ off_3805B:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_3F76B:			
+sub_3F76B:
 		LDA	data_2
 		PHA
 		LDA	data_3
@@ -95,7 +95,7 @@ sub_3F76B:
 		LDA	#0
 		STA	inv_spr_dscr1_30C
 
-loc_3F7CC:			
+loc_3F7CC:
 		LDA	byte_360
 		ASL	A
 		ASL	A
@@ -109,7 +109,7 @@ loc_3F7CC:
 		LDA	#0
 		STA	tilemapTypeUnk_30B
 
-loc_3F7E3:			
+loc_3F7E3:
 		TYA
 		PHA
 		CLC
@@ -127,7 +127,7 @@ loc_3F7E3:
 		JMP	loc_3F820
 ; ---------------------------------------------------------------------------
 
-loc_3F7FE:			
+loc_3F7FE:
 		CMP	#1
 		BNE	loc_3F80F
 		LDA	inv_spr_dscr1_30C
@@ -139,19 +139,19 @@ loc_3F7FE:
 		JMP	loc_3F820
 ; ---------------------------------------------------------------------------
 
-loc_3F80F:			
+loc_3F80F:
 		CMP	#2
 		BNE	loc_3F819
 		JSR	sub_3F938
 		JMP	loc_3F820
 ; ---------------------------------------------------------------------------
 
-loc_3F819:			
+loc_3F819:
 		CMP	#3
 		BNE	loc_3F820
 		JSR	sub_3F955
 
-loc_3F820:			
+loc_3F820:
 					; sub_3F76B+A1j ...
 		PLA
 		TAY
@@ -166,13 +166,13 @@ loc_3F820:
 		JMP	loc_3F7CC
 ; ---------------------------------------------------------------------------
 
-loc_3F839:			
+loc_3F839:
 		JSR	sub_3F972
 		LDA	sprite_secondByte_31B
 		STA	ptr_0
 		LDY	tilemapHeight_30A
 
-loc_3F844:			
+loc_3F844:
 		CPY	#0
 		BEQ	loc_3F856
 		LDA	byte_35E
@@ -185,7 +185,7 @@ loc_3F844:
 		JMP	loc_3F844
 ; ---------------------------------------------------------------------------
 
-loc_3F856:			
+loc_3F856:
 		LDA	tilemapWidth_308
 		ASL	A
 		ASL	A
@@ -195,7 +195,7 @@ loc_3F856:
 		LDA	#0
 		STA	inv_spr_dscr1_30C
 
-loc_3F865:			
+loc_3F865:
 		LDA	data_2
 		PHA
 		LDA	data_3
@@ -229,7 +229,7 @@ loc_3F865:
 		JMP	loc_3F8A8
 ; ---------------------------------------------------------------------------
 
-loc_3F89B:			
+loc_3F89B:
 		LDA	data_2
 		CLC
 		ADC	#1
@@ -238,7 +238,7 @@ loc_3F89B:
 		ADC	#0
 		STA	data_3
 
-loc_3F8A8:			
+loc_3F8A8:
 		LDA	#1
 		STA	ppu_data_70,X
 		INX
@@ -266,7 +266,7 @@ loc_3F8A8:
 		JMP	loc_3F865
 ; ---------------------------------------------------------------------------
 
-loc_3F8D6:			
+loc_3F8D6:
 		JSR	sub_3FA56
 		RTS
 ; End of function sub_3F76B
@@ -279,13 +279,13 @@ byte_3F8DA:.BYTE	2,  2,	0,  2,	2,  0,	0,  0,	1,  2,	3,  2,	1,  0,	3,  0
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_3F8FA:			
+sub_3F8FA:
 		LDA	inv_spr_dscr1_30C
 		PHA
 		LDA	#0
 		STA	inv_spr_dscr1_30C
 
-loc_3F903:			
+loc_3F903:
 		LDA	(ptr_0),Y
 		STA	ppu_data_70,X
 		INX
@@ -303,13 +303,13 @@ loc_3F903:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_3F918:			
+sub_3F918:
 		LDA	inv_spr_dscr1_30C
 		PHA
 		LDA	#0
 		STA	inv_spr_dscr1_30C
 
-loc_3F921:			
+loc_3F921:
 		LDA	(ptr_0),Y
 		EOR	#$FF
 		STA	ppu_data_70,X
@@ -328,13 +328,13 @@ loc_3F921:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_3F938:			
+sub_3F938:
 		LDA	inv_spr_dscr1_30C
 		PHA
 		LDA	#0
 		STA	inv_spr_dscr1_30C
 
-loc_3F941:			
+loc_3F941:
 		LDA	#0
 		STA	ppu_data_70,X
 		INX
@@ -351,13 +351,13 @@ loc_3F941:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_3F955:			
+sub_3F955:
 		LDA	inv_spr_dscr1_30C
 		PHA
 		LDA	#0
 		STA	inv_spr_dscr1_30C
 
-loc_3F95E:			
+loc_3F95E:
 		LDA	#$FF
 		STA	ppu_data_70,X
 		INX
@@ -374,10 +374,10 @@ loc_3F95E:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_3F972:			
+sub_3F972:
 		LDY	tilemapHeight_30A
 
-loc_3F975:			
+loc_3F975:
 		CPY	#0
 		BEQ	loc_3F98D
 		LDA	ppu_unk_byte_309
@@ -390,7 +390,7 @@ loc_3F975:
 		JMP	loc_3F975
 ; ---------------------------------------------------------------------------
 
-loc_3F98D:			
+loc_3F98D:
 		LDA	ppu_unk_byte_303
 		STA	ptr_0
 		LDA	ppu_scroll_x_304
@@ -406,7 +406,7 @@ loc_3F98D:
 		SBC	#$20 
 		STA	tilemap_size_307
 
-loc_3F9A9:			
+loc_3F9A9:
 		LDA	ppu_scroll_y_305
 		LSR	A
 		LSR	A
@@ -421,7 +421,7 @@ loc_3F9A9:
 		STA	ppu_unk_byte_309
 		INC	ptr_0
 
-loc_3F9C2:			
+loc_3F9C2:
 		LDA	ptr_0
 		AND	#1
 		BEQ	loc_3F9D3
@@ -432,16 +432,16 @@ loc_3F9C2:
 		JMP	loc_3F9DB
 ; ---------------------------------------------------------------------------
 
-loc_3F9D3:			
+loc_3F9D3:
 		LDA	#0
 		STA	data_2
 		LDA	#$20 
 		STA	data_3
 
-loc_3F9DB:			
+loc_3F9DB:
 		LDY	ppu_unk_byte_309
 
-loc_3F9DE:			
+loc_3F9DE:
 		CPY	#0
 		BEQ	loc_3F9F3
 		LDA	data_2
@@ -455,11 +455,11 @@ loc_3F9DE:
 		JMP	loc_3F9DE
 ; ---------------------------------------------------------------------------
 
-loc_3F9F3:			
+loc_3F9F3:
 		LDA	#0
 		LDY	tilemapWidth_308
 
-loc_3F9F8:			
+loc_3F9F8:
 		CPY	#0
 		BEQ	loc_3FA07
 		CLC
@@ -470,7 +470,7 @@ loc_3F9F8:
 		JMP	loc_3F9F8
 ; ---------------------------------------------------------------------------
 
-loc_3FA07:			
+loc_3FA07:
 		CLC
 		ADC	tilemap_size_307
 		STA	tilemap_size_307
@@ -480,7 +480,7 @@ loc_3FA07:
 		SBC	#$20 
 		STA	tilemap_size_307
 
-loc_3FA18:			
+loc_3FA18:
 		LDA	data_2
 		CLC
 		ADC	tilemap_size_307
@@ -495,7 +495,7 @@ loc_3FA18:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_3FA27:			
+sub_3FA27:
 		LDA	ppu_unk_byte_309
 		CMP	#$1D
 		BNE	loc_3FA48
@@ -507,18 +507,18 @@ sub_3FA27:
 		JMP	loc_3FA3F
 ; ---------------------------------------------------------------------------
 
-loc_3FA3B:			
+loc_3FA3B:
 		LDA	#$28 
 		STA	data_3
 
-loc_3FA3F:			
+loc_3FA3F:
 		LDA	data_2
 		AND	#$1F
 		STA	data_2
 		JMP	locret_3FA55
 ; ---------------------------------------------------------------------------
 
-loc_3FA48:			
+loc_3FA48:
 		LDA	data_2
 		CLC
 		ADC	#$20 
@@ -527,7 +527,7 @@ loc_3FA48:
 		ADC	#0
 		STA	data_3
 
-locret_3FA55:			
+locret_3FA55:
 		RTS
 ; End of function sub_3FA27
 

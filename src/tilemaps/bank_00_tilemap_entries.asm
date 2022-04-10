@@ -160,533 +160,533 @@
 		.WORD stru_C54C
 		.WORD stru_C550
 		.WORD stru_C554
-stru_C144:	vec2 <	2,   1>		
-		mapEntry <7, 0>
-		mapEntry <7, 0>
-stru_C14A:	vec2 <	1,   1>		
-		mapEntry <7, 1>
-stru_C14E:	vec2 <	1,   1>		
-		mapEntry <7, 2>
-stru_C152:	vec2 <	1,   1>		
-		vec2 <7, 3>
-tilemapEntry_map1f_C156:vec2 <1, 1>	
-		mapEntry <7, 4>
-stru_C15A:	vec2 <	1,   1>		
-		mapEntry <7, 5>
-stru_C15E:	vec2 <	1,   1>		
-		mapEntry <7, 6>
-stru_C162:	vec2 <	1,   1>		
-		mapEntry <7, 7>
-stru_C166:	vec2 <	1,   1>		
-		mapEntry <7, 8>
-stru_C16A:	vec2 <	1,   1>		
-		mapEntry <7, 9>
-stru_C16E:	vec2 <	1,   1>		
-		mapEntry <7, $A>
-stru_C172:	vec2 <	1,   1>		
-		mapEntry <7, $B>
-stru_C176:	vec2 <	1,   1>		
-		mapEntry <7, $C>
-stru_C17A:	vec2 <	1,   1>		
-		mapEntry <7, $D>
-stru_C17E:	vec2 <	1,   1>		
-		mapEntry <7, $E>
-stru_C182:	vec2 <	1,   1>		
-		mapEntry <7, $F>
-stru_C186:	vec2 <	1,   1>		
-		mapEntry <7, $10>
-stru_C18A:	vec2 <	1,   1>		
-		mapEntry <7, $11>
-stru_C18E:	vec2 <	1,   1>		
-		mapEntry <7, $12>
-stru_C192:	vec2 <	1,   1>		
-		mapEntry <7, $13>
-stru_C196:	vec2 <	1,   1>		
-		mapEntry <7, $14>
-stru_C19A:	vec2 <	1,   1>		
-		mapEntry <7, $15>
-stru_C19E:	vec2 <	2,   2>		
-		mapEntry <9, $1B>
-		mapEntry <9, $1C>
-		mapEntry <9, $1D>
-		mapEntry <$A, 0>
-stru_C1A8:	vec2 <	2,   1>		
-		mapEntry <$B, $15>
-		mapEntry <$B, $16>
-stru_C1AE:	vec2 <	3,   1>		
-		mapEntry <$B, $17>
-		mapEntry <$B, $18>
-		mapEntry <$B, $19>
-stru_C1B6:	vec2 <	2,   2>		
-		mapEntry <$11, $F>
-		mapEntry <$A, 2>
-		mapEntry <$A, 1>
-		mapEntry <$A, 3>
-stru_C1C0:	vec2 <	1,   2>		
-		mapEntry <$B, $1A>
-		mapEntry <$B, $1B>
-stru_C1C6:	vec2 <	2,   2>		
-		mapEntry <$A, 4>
-		mapEntry <$A, 5>
-		mapEntry <$A, 6>
-		mapEntry <$A, 7>
-stru_C1D0:	vec2 <	1,   1>		
-		mapEntry <$B, $1C>
-stru_C1D4:	vec2 <	1,   1>		
-		mapEntry <$A, 8>
-stru_C1D8:	vec2 <	2,   1>		
-		mapEntry <$A, 9>
-		mapEntry <$A, $A>
-stru_C1DE:	vec2 <	2,   2>		
-		mapEntry <$A, $B>
-		mapEntry <$A, $C>
-		mapEntry <$A, $D>
-		mapEntry <$11, $F>
-stru_C1E8:	vec2 <	1,   1>		
-		mapEntry <$A, $E>
-stru_C1EC:	vec2 <	1,   1>		
-		mapEntry <$A, $F>
-stru_C1F0:	vec2 <	2,   1>		
-		mapEntry <$A, $10>
-		mapEntry <$A, $11>
-stru_C1F6:	vec2 <	1,   1>		
-		mapEntry <$A, $12>
-stru_C1FA:	vec2 <	2,   1>		
-		mapEntry <$A, $13>
-		mapEntry <$A, $14>
-stru_C200:	vec2 <	2,   2>		
-		mapEntry <$11, $F>
-		mapEntry <$A, $16>
-		mapEntry <$A, $15>
-		mapEntry <$A, $17>
-stru_C20A:	vec2 <	3,   2>		
-		mapEntry <$A, $18>
-		mapEntry <$A, $19>
-		mapEntry <$A, $1A>
-		mapEntry <$11, $F>
-		mapEntry <$11, $F>
-		mapEntry <$A, $1B>
-stru_C218:	vec2 <	2,   2>		
-		mapEntry <$A, $1C>
-		mapEntry <$A, $1D>
-		mapEntry <$11, $F>
-		mapEntry <$B, 0>
-stru_C222:	vec2 <	1,   1>		
-		mapEntry <$B, 1>
-stru_C226:	vec2 <	1,   1>		
-		mapEntry <$B, 2>
-stru_C22A:	vec2 <	1,   1>		
-		mapEntry <$B, 3>
-stru_C22E:	vec2 <	3,   2>		
-		mapEntry <$B, 4>
-		mapEntry <$11, $F>
-		mapEntry <$11, $F>
-		mapEntry <$B, 5>
-		mapEntry <$B, 6>
-		mapEntry <$B, 7>
-stru_C23C:	vec2 <	1,   3>		
-		mapEntry <$B, 8>
-		mapEntry <$B, 9>
-		mapEntry <$B, $A>
-stru_C244:	vec2 <	1,   1>		
-		mapEntry <$B, $B>
-stru_C248:	vec2 <	1,   1>		
-		mapEntry <$B, $C>
-stru_C24C:	vec2 <	2,   1>		
-		mapEntry <$B, $E>
-		mapEntry <$B, $F>
-stru_C252:	vec2 <	1,   3>		
-		mapEntry <$B, $12>
-		mapEntry <$B, $13>
-		mapEntry <$B, $14>
-stru_C25A:	vec2 <	2,   1>		
-		mapEntry <$C, 1>
-		mapEntry <$C, 2>
-stru_C260:	vec2 <	3,   1>		
-		mapEntry <9, $10>
-		mapEntry <9, $11>
-		mapEntry <9, $12>
-stru_C268:	vec2 <	3,   1>		
-		mapEntry <9, $13>
-		mapEntry <9, $14>
-		mapEntry <9, $15>
-stru_C270:	vec2 <	2,   2>		
-		mapEntry <9, $16>
-		mapEntry <$11, $E>
-		mapEntry <9, $17>
-		mapEntry <9, $18>
-stru_C27A:	vec2 <	2,   2>		
-		mapEntry <7, $17>
-		mapEntry <7, $18>
-		mapEntry <7, $19>
-		mapEntry <7, $1A>
-stru_C284:	vec2 <	2,   1>		
-		mapEntry <7, $1B>
-		mapEntry <7, $1C>
-stru_C28A:	vec2 <	1,   3>		
-		mapEntry <7, $1D>
-		mapEntry <8, 0>
-		mapEntry <8, 1>
-stru_C292:	vec2 <	1,   1>		
-		mapEntry <8, 2>
-stru_C296:	vec2 <	2,   3>		
-		mapEntry <8, 4>
-		mapEntry <8, 5>
-		mapEntry <$11, $E>
-		mapEntry <8, 6>
-		mapEntry <$11, $E>
-		mapEntry <8, 7>
-stru_C2A4:	vec2 <	3,   2>		
-		mapEntry <$11, $E>
-		mapEntry <$11, $E>
-		mapEntry <8, $A>
-		mapEntry <8, 8>
-		mapEntry <8, 9>
-		mapEntry <8, $B>
-stru_C2B2:	vec2 <	1,   1>		
-		mapEntry <8, $C>
-stru_C2B6:	vec2 <	2,   1>		
-		mapEntry <8, $D>
-		mapEntry <8, $E>
-stru_C2BC:	vec2 <	1,   2>		
-		mapEntry <8, $11>
-		mapEntry <8, $12>
-stru_C2C2:	vec2 <	1,   1>		
-		mapEntry <8, $13>
-stru_C2C6:	vec2 <	1,   1>		
-		mapEntry <8, $14>
-stru_C2CA:	vec2 <	1,   2>		
-		mapEntry <8, $15>
-		mapEntry <$11, $13>
-stru_C2D0:	vec2 <	2,   2>		
-		mapEntry <8, $16>
-		mapEntry <8, $17>
-		mapEntry <8, $18>
-		mapEntry <8, $19>
-stru_C2DA:	vec2 <	1,   1>		
-		mapEntry <8, $1A>
-stru_C2DE:	vec2 <	2,   1>		
-		mapEntry <8, $1B>
-		mapEntry <8, $1C>
-stru_C2E4:	vec2 <	1,   1>		
-		mapEntry <8, $1D>
-stru_C2E8:	vec2 <	1,   2>		
-		mapEntry <9, 1>
-		mapEntry <9, 2>
-stru_C2EE:	vec2 <	1,   1>		
-		mapEntry <9, 3>
-stru_C2F2:	vec2 <	1,   2>		
-		mapEntry <9, 5>
-		mapEntry <9, 6>
-stru_C2F8:	vec2 <	3,   1>		
-		mapEntry <9, 7>
-		mapEntry <9, 8>
-		mapEntry <9, 9>
-stru_C300:	vec2 <	1,   1>		
-		mapEntry <9, $A>
-stru_C304:	vec2 <	1,   1>		
-		mapEntry <9, $B>
-stru_C308:	vec2 <	1,   1>		
-		mapEntry <9, $C>
-stru_C30C:	vec2 <	1,   1>		
-		mapEntry <9, $D>
-stru_C310:	vec2 <	1,   2>		
-		mapEntry <9, $E>
-		mapEntry <9, $F>
-stru_C316:	vec2 <	2,   3>		
-		mapEntry <$11, $10>
-		mapEntry <$C, 6>
-		mapEntry <$C, 7>
-		mapEntry <$C, 8>
-		mapEntry <$11, $10>
-		mapEntry <$C, 9>
-stru_C324:	vec2 <	2,   2>		
-		mapEntry <$C, $18>
-		mapEntry <$C, $19>
-		mapEntry <$11, $10>
-		mapEntry <$C, $1A>
-stru_C32E:	vec2 <	2,   3>		
-		mapEntry <$C, $D>
-		mapEntry <$C, $E>
-		mapEntry <$C, $F>
-		mapEntry <$C, $10>
-		mapEntry <$11, $10>
-		mapEntry <$C, $11>
-stru_C33C:	vec2 <	3,   2>		
-		mapEntry <$C, $12>
-		mapEntry <$11, $10>
-		mapEntry <$11, $10>
-		mapEntry <$C, $13>
-		mapEntry <$C, $14>
-		mapEntry <$C, $15>
-stru_C34A:	vec2 <	1,   1>		
-		mapEntry <$C, $16>
-stru_C34E:	vec2 <	1,   2>		
-		mapEntry <$C, $1B>
-		mapEntry <$C, $1C>
-stru_C354:	vec2 <	2,   2>		
-		mapEntry <$C, $1D>
-		mapEntry <$D, 0>
-		mapEntry <$11, $10>
-		mapEntry <$D, 1>
-stru_C35E:	mapEntry <  1,	 3>	
-		mapEntry <$D, 2>
-		mapEntry <$D, 3>
-		mapEntry <$D, 4>
-stru_C366:	vec2 <	2,   2>		
-		mapEntry <$D, 5>
-		mapEntry <$11, $10>
-		mapEntry <$D, 6>
-		mapEntry <$D, 7>
-stru_C370:	vec2 <	3,   1>		
-		mapEntry <$D, $B>
-		mapEntry <$D, $C>
-		mapEntry <$D, $D>
-stru_C378:	vec2 <	2,   1>		
-		mapEntry <$D, $E>
-		mapEntry <$D, $F>
-stru_C37E:	vec2 <	3,   1>		
-		mapEntry <$D, $15>
-		mapEntry <$D, $16>
-		mapEntry <$D, $17>
-stru_C386:	vec2 <	1,   1>		
-		mapEntry <$D, $18>
-stru_C38A:	vec2 <	2,   3>		
-		mapEntry <$D, $19>
-		mapEntry <$D, $1A>
-		mapEntry <$11, $10>
-		mapEntry <$D, $1B>
-		mapEntry <$11, $10>
-		mapEntry <$D, $1C>
-stru_C398:	vec2 <	1,   1>		
-		mapEntry <$D, $1D>
-stru_C39C:	vec2 <	3,   2>		
-		mapEntry <$10, 9>
-		mapEntry <$10, $A>
-		mapEntry <$10, $B>
-		mapEntry <$11, $12>
-		mapEntry <$10, $C>
-		mapEntry <$11, $12>
-stru_C3AA:	vec2 <	1,   1>		
-		mapEntry <$10, $D>
-stru_C3AE:	vec2 <	1,   2>		
-		mapEntry <$10, $E>
-		mapEntry <$10, $F>
-stru_C3B4:	vec2 <	1,   1>		
-		mapEntry <$10, $10>
-stru_C3B8:	vec2 <	1,   2>		
-		mapEntry <$10, $11>
-		mapEntry <$10, $12>
-stru_C3BE:	vec2 <	2,   2>		
-		mapEntry <$11, $12>
-		mapEntry <$10, $13>
-		mapEntry <$10, $14>
-		mapEntry <$10, $15>
-stru_C3C8:	vec2 <	3,   2>		
-		mapEntry <$11, $12>
-		mapEntry <$10, $16>
-		mapEntry <$11, $12>
-		mapEntry <$10, $17>
-		mapEntry <$10, $18>
-		mapEntry <$10, $19>
-stru_C3D6:	vec2 <	1,   1>		
-		mapEntry <$10, $1A>
-stru_C3DA:	vec2 <	2,   1>		
-		mapEntry <$10, $1B>
-		mapEntry <$10, $1C>
-stru_C3E0:	vec2 <	1,   1>		
-		mapEntry <$10, $1D>
-stru_C3E4:	vec2 <	2,   1>		
-		mapEntry <$11, 0>
-		mapEntry <$11, 1>
-stru_C3EA:	vec2 <	1,   1>		
-		mapEntry <$11, 2>
-stru_C3EE:	vec2 <	2,   2>		
-		mapEntry <$11, 4>
-		mapEntry <$11, 5>
-		mapEntry <$11, 6>
-		mapEntry <$11, 7>
-stru_C3F8:	vec2 <	2,   2>		
-		mapEntry <$E, 7>
-		mapEntry <$E, 8>
-		mapEntry <$11, $10>
-		mapEntry <$E, 9>
-stru_C402:	vec2 <	2,   2>		
-		mapEntry <$E, $E>
-		mapEntry <$E, $F>
-		mapEntry <$E, $10>
-		mapEntry <$E, $11>
-stru_C40C:	vec2 <	1,   1>		
-		mapEntry <$E, $12>
-stru_C410:	vec2 <	1,   1>		
-		mapEntry <$E, $13>
-stru_C414:	vec2 <	1,   1>		
-		mapEntry <$E, $14>
-stru_C418:	vec2 <	1,   1>		
-		mapEntry <$E, $15>
-stru_C41C:	vec2 <	3,   3>		
-		mapEntry <$E, $16>
-		mapEntry <$11, $11>
-		mapEntry <$11, $11>
-		mapEntry <$E, $17>
-		mapEntry <$E, $18>
-		mapEntry <$11, $11>
-		mapEntry <$11, $11>
-		mapEntry <$E, $19>
-		mapEntry <$E, $1A>
-stru_C430:	vec2 <	1,   1>		
-		mapEntry <$E, $1B>
-stru_C434:	vec2 <	2,   2>		
-		mapEntry <$E, $1C>
-		mapEntry <$11, $11>
-		mapEntry <$E, $1D>
-		mapEntry <$F, 0>
-stru_C43E:	vec2 <	1,   1>		
-		mapEntry <$F, 1>
-stru_C442:	vec2 <	2,   2>		
-		mapEntry <$F, 2>
-		mapEntry <$F, 3>
-		mapEntry <$F, 4>
-		mapEntry <$F, 5>
-stru_C44C:	vec2 <	2,   1>		
-		mapEntry <$F, 6>
-		mapEntry <$F, 7>
-stru_C452:	vec2 <	1,   1>		
-		mapEntry <$F, 8>
-stru_C456:	vec2 <	1,   1>		
-		mapEntry <$F, $A>
-stru_C45A:	vec2 <	1,   2>		
-		mapEntry <$F, $B>
-		mapEntry <$F, $C>
-stru_C460:	vec2 <	1,   1>		
-		mapEntry <$F, $F>
-stru_C464:	vec2 <	1,   1>		
-		mapEntry <$F, $10>
-stru_C468:	vec2 <	1,   1>		
-		mapEntry <$F, $11>
-stru_C46C:	vec2 <	1,   3>		
-		mapEntry <$F, $12>
-		mapEntry <$F, $13>
-		mapEntry <$F, $14>
-stru_C474:	vec2 <	1,   1>		
-		mapEntry <$F, $15>
-stru_C478:	vec2 <	1,   1>		
-		mapEntry <$F, $17>
-stru_C47C:	vec2 <	2,   2>		
-		mapEntry <$F, $18>
-		mapEntry <$F, $1A>
-		mapEntry <$F, $19>
-		mapEntry <$F, $1B>
-stru_C486:	vec2 <	2,   2>		
-		mapEntry <$F, $1C>
-		mapEntry <$F, $1D>
-		mapEntry <$10, 0>
-		mapEntry <$10, 1>
-stru_C490:	vec2 <	2,   2>		
-		mapEntry <$10, 2>
-		mapEntry <$10, 3>
-		mapEntry <$10, 4>
-		mapEntry <$10, 5>
-stru_C49A:	vec2 <	1,   1>		
-		mapEntry <$10, 6>
-stru_C49E:	vec2 <	1,   2>		
-		mapEntry <$10, 7>
-		mapEntry <$10, 8>
-stru_C4A4:	vec2 <	1,   1>		
-		mapEntry <7, $16>
-stru_C4A8:	vec2 <	2,   1>		
-		mapEntry <$C, 3>
-		mapEntry <$C, 4>
-stru_C4AE:	vec2 <	1,   2>		
-		mapEntry <$B, $1D>
-		mapEntry <$C, 0>
-stru_C4B4:	vec2 <	1,   1>		
-		mapEntry <$C, 5>
-stru_C4B8:	vec2 <	1,   1>		
-		mapEntry <$B, $D>
-stru_C4BC:	vec2 <	2,   1>		
-		mapEntry <$B, $10>
-		mapEntry <$B, $11>
-stru_C4C2:	vec2 <	1,   1>		
-		mapEntry <8, 3>
-stru_C4C6:	vec2 <	1,   2>		
-		mapEntry <8, $F>
-		mapEntry <8, $10>
-stru_C4CC:	vec2 <	1,   2>		
-		mapEntry <9, $19>
-		mapEntry <9, $1A>
-stru_C4D2:	vec2 <	2,   2>		
-		mapEntry <$C, $A>
-		mapEntry <$C, $B>
-		mapEntry <$11, $10>
-		mapEntry <$C, $C>
-stru_C4DC:	vec2 <	2,   3>		
-		mapEntry <$D, $10>
-		mapEntry <$D, $11>
-		mapEntry <$D, $12>
-		mapEntry <$D, $13>
-		mapEntry <$11, $10>
-		mapEntry <$D, $14>
-stru_C4EA:	vec2 <	1,   1>		
-		mapEntry <$C, $17>
-stru_C4EE:	vec2 <	1,   2>		
-		mapEntry <$E, 5>
-		mapEntry <$E, 6>
-stru_C4F4:	vec2 <	3,   1>		
-		mapEntry <$D, 8>
-		mapEntry <$D, 9>
-		mapEntry <$D, $A>
-stru_C4FC:	vec2 <	2,   3>		
-		mapEntry <$E, 1>
-		mapEntry <$E, 2>
-		mapEntry <$11, $10>
-		mapEntry <$E, 3>
-		mapEntry <$11, $10>
-		mapEntry <$E, 4>
-stru_C50A:	vec2 <	1,   1>		
-		mapEntry <$E, 0>
-stru_C50E:	vec2 <	1,   1>		
-		mapEntry <$F, 9>
-stru_C512:	vec2 <	1,   1>		
-		mapEntry <$F, $16>
-stru_C516:	vec2 <	1,   2>		
-		mapEntry <$F, $D>
-		mapEntry <$F, $E>
-stru_C51C:	vec2 <	1,   1>		
-		mapEntry <$11, 3>
-stru_C520:	vec2 <	2,   2>		
-		mapEntry <$11, 8>
-		mapEntry <$11, 9>
-		mapEntry <$11, $A>
-		mapEntry <$11, $B>
-stru_C52A:	vec2 <	2,   2>		
-		mapEntry <$E, $A>
-		mapEntry <$E, $B>
-		mapEntry <$E, $C>
-		mapEntry <$E, $D>
+stru_C144:	.byte 	2,   1		
+		.byte 7, 0
+		.byte 7, 0
+stru_C14A:	.byte 	1,   1		
+		.byte 7, 1
+stru_C14E:	.byte 	1,   1		
+		.byte 7, 2
+stru_C152:	.byte 	1,   1		
+		.byte 7, 3
+tilemapEntry_map1f_C156:.byte 1, 1	
+		.byte 7, 4
+stru_C15A:	.byte 	1,   1		
+		.byte 7, 5
+stru_C15E:	.byte 	1,   1		
+		.byte 7, 6
+stru_C162:	.byte 	1,   1		
+		.byte 7, 7
+stru_C166:	.byte 	1,   1		
+		.byte 7, 8
+stru_C16A:	.byte 	1,   1		
+		.byte 7, 9
+stru_C16E:	.byte 	1,   1		
+		.byte 7, $A
+stru_C172:	.byte 	1,   1		
+		.byte 7, $B
+stru_C176:	.byte 	1,   1		
+		.byte 7, $C
+stru_C17A:	.byte 	1,   1		
+		.byte 7, $D
+stru_C17E:	.byte 	1,   1		
+		.byte 7, $E
+stru_C182:	.byte 	1,   1		
+		.byte 7, $F
+stru_C186:	.byte 	1,   1		
+		.byte 7, $10
+stru_C18A:	.byte 	1,   1		
+		.byte 7, $11
+stru_C18E:	.byte 	1,   1		
+		.byte 7, $12
+stru_C192:	.byte 	1,   1		
+		.byte 7, $13
+stru_C196:	.byte 	1,   1		
+		.byte 7, $14
+stru_C19A:	.byte 	1,   1		
+		.byte 7, $15
+stru_C19E:	.byte 	2,   2		
+		.byte 9, $1B
+		.byte 9, $1C
+		.byte 9, $1D
+		.byte $A, 0
+stru_C1A8:	.byte 	2,   1		
+		.byte $B, $15
+		.byte $B, $16
+stru_C1AE:	.byte 	3,   1		
+		.byte $B, $17
+		.byte $B, $18
+		.byte $B, $19
+stru_C1B6:	.byte 	2,   2		
+		.byte $11, $F
+		.byte $A, 2
+		.byte $A, 1
+		.byte $A, 3
+stru_C1C0:	.byte 	1,   2		
+		.byte $B, $1A
+		.byte $B, $1B
+stru_C1C6:	.byte 	2,   2		
+		.byte $A, 4
+		.byte $A, 5
+		.byte $A, 6
+		.byte $A, 7
+stru_C1D0:	.byte 	1,   1		
+		.byte $B, $1C
+stru_C1D4:	.byte 	1,   1		
+		.byte $A, 8
+stru_C1D8:	.byte 	2,   1		
+		.byte $A, 9
+		.byte $A, $A
+stru_C1DE:	.byte 	2,   2		
+		.byte $A, $B
+		.byte $A, $C
+		.byte $A, $D
+		.byte $11, $F
+stru_C1E8:	.byte 	1,   1		
+		.byte $A, $E
+stru_C1EC:	.byte 	1,   1		
+		.byte $A, $F
+stru_C1F0:	.byte 	2,   1		
+		.byte $A, $10
+		.byte $A, $11
+stru_C1F6:	.byte 	1,   1		
+		.byte $A, $12
+stru_C1FA:	.byte 	2,   1		
+		.byte $A, $13
+		.byte $A, $14
+stru_C200:	.byte 	2,   2		
+		.byte $11, $F
+		.byte $A, $16
+		.byte $A, $15
+		.byte $A, $17
+stru_C20A:	.byte 	3,   2		
+		.byte $A, $18
+		.byte $A, $19
+		.byte $A, $1A
+		.byte $11, $F
+		.byte $11, $F
+		.byte $A, $1B
+stru_C218:	.byte 	2,   2		
+		.byte $A, $1C
+		.byte $A, $1D
+		.byte $11, $F
+		.byte $B, 0
+stru_C222:	.byte 	1,   1		
+		.byte $B, 1
+stru_C226:	.byte 	1,   1		
+		.byte $B, 2
+stru_C22A:	.byte 	1,   1		
+		.byte $B, 3
+stru_C22E:	.byte 	3,   2		
+		.byte $B, 4
+		.byte $11, $F
+		.byte $11, $F
+		.byte $B, 5
+		.byte $B, 6
+		.byte $B, 7
+stru_C23C:	.byte 	1,   3		
+		.byte $B, 8
+		.byte $B, 9
+		.byte $B, $A
+stru_C244:	.byte 	1,   1		
+		.byte $B, $B
+stru_C248:	.byte 	1,   1		
+		.byte $B, $C
+stru_C24C:	.byte 	2,   1		
+		.byte $B, $E
+		.byte $B, $F
+stru_C252:	.byte 	1,   3		
+		.byte $B, $12
+		.byte $B, $13
+		.byte $B, $14
+stru_C25A:	.byte 	2,   1		
+		.byte $C, 1
+		.byte $C, 2
+stru_C260:	.byte 	3,   1		
+		.byte 9, $10
+		.byte 9, $11
+		.byte 9, $12
+stru_C268:	.byte 	3,   1		
+		.byte 9, $13
+		.byte 9, $14
+		.byte 9, $15
+stru_C270:	.byte 	2,   2		
+		.byte 9, $16
+		.byte $11, $E
+		.byte 9, $17
+		.byte 9, $18
+stru_C27A:	.byte 	2,   2		
+		.byte 7, $17
+		.byte 7, $18
+		.byte 7, $19
+		.byte 7, $1A
+stru_C284:	.byte 	2,   1		
+		.byte 7, $1B
+		.byte 7, $1C
+stru_C28A:	.byte 	1,   3		
+		.byte 7, $1D
+		.byte 8, 0
+		.byte 8, 1
+stru_C292:	.byte 	1,   1		
+		.byte 8, 2
+stru_C296:	.byte 	2,   3		
+		.byte 8, 4
+		.byte 8, 5
+		.byte $11, $E
+		.byte 8, 6
+		.byte $11, $E
+		.byte 8, 7
+stru_C2A4:	.byte 	3,   2		
+		.byte $11, $E
+		.byte $11, $E
+		.byte 8, $A
+		.byte 8, 8
+		.byte 8, 9
+		.byte 8, $B
+stru_C2B2:	.byte 	1,   1		
+		.byte 8, $C
+stru_C2B6:	.byte 	2,   1		
+		.byte 8, $D
+		.byte 8, $E
+stru_C2BC:	.byte 	1,   2		
+		.byte 8, $11
+		.byte 8, $12
+stru_C2C2:	.byte 	1,   1		
+		.byte 8, $13
+stru_C2C6:	.byte 	1,   1		
+		.byte 8, $14
+stru_C2CA:	.byte 	1,   2		
+		.byte 8, $15
+		.byte $11, $13
+stru_C2D0:	.byte 	2,   2		
+		.byte 8, $16
+		.byte 8, $17
+		.byte 8, $18
+		.byte 8, $19
+stru_C2DA:	.byte 	1,   1		
+		.byte 8, $1A
+stru_C2DE:	.byte 	2,   1		
+		.byte 8, $1B
+		.byte 8, $1C
+stru_C2E4:	.byte 	1,   1		
+		.byte 8, $1D
+stru_C2E8:	.byte 	1,   2		
+		.byte 9, 1
+		.byte 9, 2
+stru_C2EE:	.byte 	1,   1		
+		.byte 9, 3
+stru_C2F2:	.byte 	1,   2		
+		.byte 9, 5
+		.byte 9, 6
+stru_C2F8:	.byte 	3,   1		
+		.byte 9, 7
+		.byte 9, 8
+		.byte 9, 9
+stru_C300:	.byte 	1,   1		
+		.byte 9, $A
+stru_C304:	.byte 	1,   1		
+		.byte 9, $B
+stru_C308:	.byte 	1,   1		
+		.byte 9, $C
+stru_C30C:	.byte 	1,   1		
+		.byte 9, $D
+stru_C310:	.byte 	1,   2		
+		.byte 9, $E
+		.byte 9, $F
+stru_C316:	.byte 	2,   3		
+		.byte $11, $10
+		.byte $C, 6
+		.byte $C, 7
+		.byte $C, 8
+		.byte $11, $10
+		.byte $C, 9
+stru_C324:	.byte 	2,   2		
+		.byte $C, $18
+		.byte $C, $19
+		.byte $11, $10
+		.byte $C, $1A
+stru_C32E:	.byte 	2,   3		
+		.byte $C, $D
+		.byte $C, $E
+		.byte $C, $F
+		.byte $C, $10
+		.byte $11, $10
+		.byte $C, $11
+stru_C33C:	.byte 	3,   2		
+		.byte $C, $12
+		.byte $11, $10
+		.byte $11, $10
+		.byte $C, $13
+		.byte $C, $14
+		.byte $C, $15
+stru_C34A:	.byte 	1,   1		
+		.byte $C, $16
+stru_C34E:	.byte 	1,   2		
+		.byte $C, $1B
+		.byte $C, $1C
+stru_C354:	.byte 	2,   2		
+		.byte $C, $1D
+		.byte $D, 0
+		.byte $11, $10
+		.byte $D, 1
+stru_C35E:	.byte   1,	 3	
+		.byte $D, 2
+		.byte $D, 3
+		.byte $D, 4
+stru_C366:	.byte 	2,   2		
+		.byte $D, 5
+		.byte $11, $10
+		.byte $D, 6
+		.byte $D, 7
+stru_C370:	.byte 	3,   1		
+		.byte $D, $B
+		.byte $D, $C
+		.byte $D, $D
+stru_C378:	.byte 	2,   1		
+		.byte $D, $E
+		.byte $D, $F
+stru_C37E:	.byte 	3,   1		
+		.byte $D, $15
+		.byte $D, $16
+		.byte $D, $17
+stru_C386:	.byte 	1,   1		
+		.byte $D, $18
+stru_C38A:	.byte 	2,   3		
+		.byte $D, $19
+		.byte $D, $1A
+		.byte $11, $10
+		.byte $D, $1B
+		.byte $11, $10
+		.byte $D, $1C
+stru_C398:	.byte 	1,   1		
+		.byte $D, $1D
+stru_C39C:	.byte 	3,   2		
+		.byte $10, 9
+		.byte $10, $A
+		.byte $10, $B
+		.byte $11, $12
+		.byte $10, $C
+		.byte $11, $12
+stru_C3AA:	.byte 	1,   1		
+		.byte $10, $D
+stru_C3AE:	.byte 	1,   2		
+		.byte $10, $E
+		.byte $10, $F
+stru_C3B4:	.byte 	1,   1		
+		.byte $10, $10
+stru_C3B8:	.byte 	1,   2		
+		.byte $10, $11
+		.byte $10, $12
+stru_C3BE:	.byte 	2,   2		
+		.byte $11, $12
+		.byte $10, $13
+		.byte $10, $14
+		.byte $10, $15
+stru_C3C8:	.byte 	3,   2		
+		.byte $11, $12
+		.byte $10, $16
+		.byte $11, $12
+		.byte $10, $17
+		.byte $10, $18
+		.byte $10, $19
+stru_C3D6:	.byte 	1,   1		
+		.byte $10, $1A
+stru_C3DA:	.byte 	2,   1		
+		.byte $10, $1B
+		.byte $10, $1C
+stru_C3E0:	.byte 	1,   1		
+		.byte $10, $1D
+stru_C3E4:	.byte 	2,   1		
+		.byte $11, 0
+		.byte $11, 1
+stru_C3EA:	.byte 	1,   1		
+		.byte $11, 2
+stru_C3EE:	.byte 	2,   2		
+		.byte $11, 4
+		.byte $11, 5
+		.byte $11, 6
+		.byte $11, 7
+stru_C3F8:	.byte 	2,   2		
+		.byte $E, 7
+		.byte $E, 8
+		.byte $11, $10
+		.byte $E, 9
+stru_C402:	.byte 	2,   2		
+		.byte $E, $E
+		.byte $E, $F
+		.byte $E, $10
+		.byte $E, $11
+stru_C40C:	.byte 	1,   1		
+		.byte $E, $12
+stru_C410:	.byte 	1,   1		
+		.byte $E, $13
+stru_C414:	.byte 	1,   1		
+		.byte $E, $14
+stru_C418:	.byte 	1,   1		
+		.byte $E, $15
+stru_C41C:	.byte 	3,   3		
+		.byte $E, $16
+		.byte $11, $11
+		.byte $11, $11
+		.byte $E, $17
+		.byte $E, $18
+		.byte $11, $11
+		.byte $11, $11
+		.byte $E, $19
+		.byte $E, $1A
+stru_C430:	.byte 	1,   1		
+		.byte $E, $1B
+stru_C434:	.byte 	2,   2		
+		.byte $E, $1C
+		.byte $11, $11
+		.byte $E, $1D
+		.byte $F, 0
+stru_C43E:	.byte 	1,   1		
+		.byte $F, 1
+stru_C442:	.byte 	2,   2		
+		.byte $F, 2
+		.byte $F, 3
+		.byte $F, 4
+		.byte $F, 5
+stru_C44C:	.byte 	2,   1		
+		.byte $F, 6
+		.byte $F, 7
+stru_C452:	.byte 	1,   1		
+		.byte $F, 8
+stru_C456:	.byte 	1,   1		
+		.byte $F, $A
+stru_C45A:	.byte 	1,   2		
+		.byte $F, $B
+		.byte $F, $C
+stru_C460:	.byte 	1,   1		
+		.byte $F, $F
+stru_C464:	.byte 	1,   1		
+		.byte $F, $10
+stru_C468:	.byte 	1,   1		
+		.byte $F, $11
+stru_C46C:	.byte 	1,   3		
+		.byte $F, $12
+		.byte $F, $13
+		.byte $F, $14
+stru_C474:	.byte 	1,   1		
+		.byte $F, $15
+stru_C478:	.byte 	1,   1		
+		.byte $F, $17
+stru_C47C:	.byte 	2,   2		
+		.byte $F, $18
+		.byte $F, $1A
+		.byte $F, $19
+		.byte $F, $1B
+stru_C486:	.byte 	2,   2		
+		.byte $F, $1C
+		.byte $F, $1D
+		.byte $10, 0
+		.byte $10, 1
+stru_C490:	.byte 	2,   2		
+		.byte $10, 2
+		.byte $10, 3
+		.byte $10, 4
+		.byte $10, 5
+stru_C49A:	.byte 	1,   1		
+		.byte $10, 6
+stru_C49E:	.byte 	1,   2		
+		.byte $10, 7
+		.byte $10, 8
+stru_C4A4:	.byte 	1,   1		
+		.byte 7, $16
+stru_C4A8:	.byte 	2,   1		
+		.byte $C, 3
+		.byte $C, 4
+stru_C4AE:	.byte 	1,   2		
+		.byte $B, $1D
+		.byte $C, 0
+stru_C4B4:	.byte 	1,   1		
+		.byte $C, 5
+stru_C4B8:	.byte 	1,   1		
+		.byte $B, $D
+stru_C4BC:	.byte 	2,   1		
+		.byte $B, $10
+		.byte $B, $11
+stru_C4C2:	.byte 	1,   1		
+		.byte 8, 3
+stru_C4C6:	.byte 	1,   2		
+		.byte 8, $F
+		.byte 8, $10
+stru_C4CC:	.byte 	1,   2		
+		.byte 9, $19
+		.byte 9, $1A
+stru_C4D2:	.byte 	2,   2		
+		.byte $C, $A
+		.byte $C, $B
+		.byte $11, $10
+		.byte $C, $C
+stru_C4DC:	.byte 	2,   3		
+		.byte $D, $10
+		.byte $D, $11
+		.byte $D, $12
+		.byte $D, $13
+		.byte $11, $10
+		.byte $D, $14
+stru_C4EA:	.byte 	1,   1		
+		.byte $C, $17
+stru_C4EE:	.byte 	1,   2		
+		.byte $E, 5
+		.byte $E, 6
+stru_C4F4:	.byte 	3,   1		
+		.byte $D, 8
+		.byte $D, 9
+		.byte $D, $A
+stru_C4FC:	.byte 	2,   3		
+		.byte $E, 1
+		.byte $E, 2
+		.byte $11, $10
+		.byte $E, 3
+		.byte $11, $10
+		.byte $E, 4
+stru_C50A:	.byte 	1,   1		
+		.byte $E, 0
+stru_C50E:	.byte 	1,   1		
+		.byte $F, 9
+stru_C512:	.byte 	1,   1		
+		.byte $F, $16
+stru_C516:	.byte 	1,   2		
+		.byte $F, $D
+		.byte $F, $E
+stru_C51C:	.byte 	1,   1		
+		.byte $11, 3
+stru_C520:	.byte 	2,   2		
+		.byte $11, 8
+		.byte $11, 9
+		.byte $11, $A
+		.byte $11, $B
+stru_C52A:	.byte 	2,   2		
+		.byte $E, $A
+		.byte $E, $B
+		.byte $E, $C
+		.byte $E, $D
 		
-stru_C534:	vec2 <	1,   2>		
-		mapEntry <$11, $C>
-		mapEntry <$11, $D>
+stru_C534:	.byte 	1,   2		
+		.byte $11, $C
+		.byte $11, $D
 
-stru_C53A:	vec2 <	2,   1>		
-		mapEntry <$11, $14>
-		mapEntry <$11, $15>
+stru_C53A:	.byte 	2,   1		
+		.byte $11, $14
+		.byte $11, $15
 
-stru_C540:	vec2 <	1,   1>		
-		mapEntry <9, 0>
+stru_C540:	.byte 	1,   1		
+		.byte 9, 0
 
-stru_C544:	vec2 <	1,   1>		
-		mapEntry <$11, $16>
+stru_C544:	.byte 	1,   1		
+		.byte $11, $16
 
-stru_C548:	vec2 <	1,   1>		
-		mapEntry <$11, $17>
+stru_C548:	.byte 	1,   1		
+		.byte $11, $17
 
-stru_C54C:	vec2 <	1,   1>		
-		mapEntry <$11, $18>
+stru_C54C:	.byte 	1,   1		
+		.byte $11, $18
 
-stru_C550:	vec2 <	1,   1>		
-		mapEntry <$11, $19>
+stru_C550:	.byte 	1,   1		
+		.byte $11, $19
 
-stru_C554:	vec2 <	1,   1>		
-		mapEntry <$11, $1A>
+stru_C554:	.byte 	1,   1		
+		.byte $11, $1A

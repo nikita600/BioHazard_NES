@@ -1,13 +1,11 @@
-a500A_d_:	.BYTE '500 A.D.',0
-a2500A_d_:	.BYTE '2500 A.D.',0
-aNoneSpecified_18:.BYTE	'<None Specified>',0
-aLinkErrors:	.BYTE $A
-		.BYTE '         Link Errors :  ',0
-aOutputFormat:	.BYTE '         Output Format :  ',0
-aExecutable_18:	.BYTE 'Executable',0
-aIntelHex_18:	.BYTE 'Intel Hex',0
-aExtendedIntelHex_18:.BYTE 'Extended Intel Hex',0
-aTektronixHex_18:.BYTE 'Tektronix Hex',0
-aMotorolaS1_18:	.BYTE 'Motorola S1',0
-		.BYTE	0
-aMotorolaS_18:	.BYTE 'Motorola S'
+.BYTE $35,$30,$30,$20,$41,$2E,$44,$2E,  0,$32,$35,$30,$30,$20,$41,$2E
+.BYTE $44,$2E,  0,$3C,$4E,$6F,$6E,$65,$20,$53,$70,$65,$63,$69,$66,$69
+.BYTE $65,$64,$3E,  0, $A,$20,$20,$20,$20,$20,$20,$20,$20,$20,$4C,$69
+.BYTE $6E,$6B,$20,$45,$72,$72,$6F,$72,$73,$20,$3A,$20,$20,  0,$20,$20
+.BYTE $20,$20,$20,$20,$20,$20,$20,$4F,$75,$74,$70,$75,$74,$20,$46,$6F
+.BYTE $72,$6D,$61,$74,$20,$3A,$20,$20,  0,$45,$78,$65,$63,$75,$74,$61
+.BYTE $62,$6C,$65,  0,$49,$6E,$74,$65,$6C,$20,$48,$65,$78,  0,$45,$78
+.BYTE $74,$65,$6E,$64,$65,$64,$20,$49,$6E,$74,$65,$6C,$20,$48,$65,$78
+.BYTE   0,$54,$65,$6B,$74,$72,$6F,$6E,$69,$78,$20,$48,$65,$78,  0,$4D
+.BYTE $6F,$74,$6F,$72,$6F,$6C,$61,$20,$53,$31,  0,  0,$4D,$6F,$74,$6F
+.BYTE $72,$6F,$6C,$61,$20,$53

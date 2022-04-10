@@ -1,12 +1,13 @@
 ; Segment type:Pure code
-	;.segment BANK_00 (Code)
-	* =  $8000
+;.segment BANK_00 (Code)
+;* =  $8000
+
+    .include "includes\\ram.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 bank_switch_8000:
-	.include "common/bank_switch_func.asm"
+	.include "common\\bank_switch_func.asm"
 
 switch_case_8035:
 	LDA	bank_to_344

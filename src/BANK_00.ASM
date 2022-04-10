@@ -12869,42 +12869,16 @@ loc_FB8C:
 ; End of function upload_text_palette_to_ppu_FB85
 
 ; ---------------------------------------------------------------------------
-TextPalette_FBC2:.BYTE	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,$1D,$30,$27
-		
-TextBg_FBD2:	.BYTE	0,  1,	4,  5,	4,  5,	7,  8,	1,  1,	5,  5,	5,  5,	8,  8
-		
-		.BYTE	1,  2,	5,  6,	5,  6,	8,  9, $A,  3,$FF,$FF,$80,$B3,$B7,$87
-		.BYTE $9F,$BF,	0,$3F,$7F,$6E,$7D,$7D,$7B,$67,$FF,$FF,	0,$FF,$FF,$FF
-		.BYTE $FF,$FF,	0,$FF,$FF,  0,$FF,$FF,$FF,$FF,$FF,$FF,	1,$CD,$ED,$E1
-		.BYTE $F9,$FD,	0,$FC,$FE,$76,$BE,$BE,$DE,$E6,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,$BF,$BF,$BF,$BF,$BF,$BF
-		.BYTE $BF,$BF,$6F,$6F,$6F,$6F,$6F,$6F,$6F,$6F,$FF,$FF,$FF,$FF,$FF,$FF
-		.BYTE $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FB,$FB,$FB,$FB,$FB,$FB
-		.BYTE $FB,$FB,$F6,$F6,$F6,$F6,$F6,$F6,$F6,$F6,$BF,$9F,$87,$B7,$B3,$80
-		.BYTE $FF,$FF,$67,$7B,$7D,$7D,$6E,$7F,$3F,  0,$FF,$FF,$FF,$FF,$FF,  0
-		.BYTE $FF,$FF,$FF,$FF,$FF,$FF,	0,$FF,$FF,  0,$FD,$F9,$E1,$ED,$CD,  1
-		.BYTE $FF,$FF,$E6,$DE,$BE,$BE,$76,$FE,$FC,  0
+		.include "text/bank_00_textbox.asm"
 
 
-Common_Code_00
+Common_Code_00:
 		.include "common/common_funcs.asm"
 
 ; ---------------------------------------------------------------------------
-a500A_d_:	.BYTE '500 A.D.',0
-a2500A_d_:	.BYTE '2500 A.D.',0
-aNoneSpecified_18:.BYTE	'<None Specified>',0
-aLinkErrors:	.BYTE $A
-		.BYTE '         Link Errors :  ',0
-aOutputFormat:	.BYTE '         Output Format :  ',0
-aExecutable_18:	.BYTE 'Executable',0
-aIntelHex_18:	.BYTE 'Intel Hex',0
-aExtendedIntelHex_18:.BYTE 'Extended Intel Hex',0
-aTektronixHex_18:.BYTE 'Tektronix Hex',0
-aMotorolaS1_18:	.BYTE 'Motorola S1',0
-		.BYTE	0
-aMotorolaS_18:	.BYTE 'Motorola S'
+		.include "garbage/bank_00_garbage.asm"
 
-
+Vectors_00:
 		.WORD NMI_FD53
 		.WORD RESET_8177
 		.WORD return_FDCA

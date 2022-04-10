@@ -1,4 +1,4 @@
-; Segment type:	Pure code
+; Segment type:Pure code
 		;.segment BANK_01 (Sprites)
 		* =  $8000
 
@@ -26,23 +26,23 @@ switch_case_8035:
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_18053:	
+loc_18053:
 		JSR	load_tiles_state_1F25D
 		JMP	loc_1806B
 ; ---------------------------------------------------------------------------
 
-loc_18059:	
+loc_18059:
 		JSR	load_obj_tilemap_1F264
 		JMP	loc_1806B
 ; ---------------------------------------------------------------------------
 
-loc_1805F:	
+loc_1805F:
 		JSR	load_sprite_to_vram_1F36D
 		JSR	load_sprite_tilemap_1F3B8
 		JMP	loc_1806B
 ; ---------------------------------------------------------------------------
 
-loc_18068:	
+loc_18068:
 		JMP	loc_1806B
 ; ---------------------------------------------------------------------------
 
@@ -86,7 +86,7 @@ load_obj_tilemap_1F264:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_palettes_to_ram_1F268:		
+load_palettes_to_ram_1F268:	
 		LDA	sprite_type_306
 		CMP	#0
 		BEQ	loc_1F2C3
@@ -138,7 +138,7 @@ palette3_F2AA:
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_1F2C3:	
+loc_1F2C3:
 		LDA	#0
 		STA	objectIdx_318
 		STA	sprPalIdx_319
@@ -146,7 +146,7 @@ loc_1F2C3:
 		JSR	copy_sprite_palette_to_ram_1F316
 		LDX	#0
 
-loop_1F2D3:	
+loop_1F2D3:
 		CPX	objArraySize_373
 		BEQ	return_1F2F2
 		LDA	objIdxArray_375,X
@@ -163,7 +163,7 @@ loop_1F2D3:
 		JMP	loop_1F2D3
 ; ---------------------------------------------------------------------------
 
-return_1F2F2:	
+return_1F2F2:
 		RTS
 ; End of function load_palettes_to_ram_1F268
 
@@ -171,7 +171,7 @@ return_1F2F2:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-get_sprite_palette_ptr_1F2F3:		
+get_sprite_palette_ptr_1F2F3:	
 		; load_palettes_to_ram_1F268+17p ...
 		LDA	#$79 
 		STA	ptr_0
@@ -202,7 +202,7 @@ get_ptr_F30A:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-copy_sprite_palette_to_ram_1F316:	
+copy_sprite_palette_to_ram_1F316:
 		; load_palettes_to_ram_1F268+27p ...
 		LDY	#0
 		LDA	sprPalIdx_319
@@ -210,7 +210,7 @@ copy_sprite_palette_to_ram_1F316:
 		ASL	A
 		TAX
 
-loc_1F31E:	
+loc_1F31E:
 		LDA	(data_2),Y
 		STA	sprite_palette_331,X ; "����������������"
 		INX
@@ -224,7 +224,7 @@ loc_1F31E:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-upload_tiles_to_ppu_1F32A:		
+upload_tiles_to_ppu_1F32A:	
 		LDA	sprite_type_306
 		CMP	#0
 		BEQ	loc_1F33D
@@ -235,7 +235,7 @@ upload_tiles_to_ppu_1F32A:
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_1F33D:	
+loc_1F33D:
 		LDA	#0
 		STA	objectIdx_318
 		STA	sprite_secondByte_31B
@@ -243,7 +243,7 @@ loc_1F33D:
 		JSR	upload_to_ppu_1F6D1
 		LDX	#0
 
-loc_1F34D:	
+loc_1F34D:
 		CPX	objArraySize_373
 		BEQ	locret_1F36C
 		LDA	objIdxArray_375,X
@@ -260,7 +260,7 @@ loc_1F34D:
 		JMP	loc_1F34D
 ; ---------------------------------------------------------------------------
 
-locret_1F36C:	
+locret_1F36C:
 		RTS
 ; End of function upload_tiles_to_ppu_1F32A
 
@@ -268,7 +268,7 @@ locret_1F36C:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_sprite_to_vram_1F36D:		
+load_sprite_to_vram_1F36D:	
 		; upload_tiles_to_ppu_1F32A+Cp	...
 		LDA	#$A1 
 		STA	ptr_0
@@ -319,7 +319,7 @@ get_sprite_descr2_F397:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_1F3B1:	
+sub_1F3B1:
 		JSR	load_sprite_tilemap_1F3B8
 		JSR	sub_1F416
 		RTS
@@ -329,7 +329,7 @@ sub_1F3B1:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_sprite_tilemap_1F3B8:		
+load_sprite_tilemap_1F3B8:	
 		; sub_1F3B1p
 		LDA	#$5F 
 		STA	data_2
@@ -403,7 +403,7 @@ add_offset_F408:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_1F416:	
+sub_1F416:
 		LDA	#0
 		CLC
 		ADC	byte_31A
@@ -418,7 +418,7 @@ sub_1F416:
 		JMP	loc_1F4CA
 ; ---------------------------------------------------------------------------
 
-loc_1F430:	
+loc_1F430:
 		LDA	byte_317
 		AND	#$80 
 		CMP	#$80 
@@ -426,11 +426,11 @@ loc_1F430:
 		JMP	loc_1F559
 ; ---------------------------------------------------------------------------
 
-loc_1F43C:	
+loc_1F43C:
 		LDX	#0
 		LDY	#0
 
-loc_1F440:	
+loc_1F440:
 		LDA	byte_36A
 		PHA
 		LDA	byte_36B
@@ -438,7 +438,7 @@ loc_1F440:
 		LDA	#0
 		STA	tilemapTypeUnk_30B
 
-loc_1F44D:	
+loc_1F44D:
 		JSR	sub_1F5FF
 		LDA	ppu_unk_byte_309
 		STA	(ptr_0),Y
@@ -496,17 +496,17 @@ loc_1F44D:
 		JMP	loc_1F440
 ; ---------------------------------------------------------------------------
 
-loc_1F4C4:	
+loc_1F4C4:
 		LDA	#0
 		STA	byte_317
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_1F4CA:	
+loc_1F4CA:
 		LDX	#0
 		LDY	#0
 
-loc_1F4CE:	
+loc_1F4CE:
 		LDA	byte_36A
 		PHA
 		LDA	byte_36B
@@ -514,7 +514,7 @@ loc_1F4CE:
 		LDA	tilemapWidth_308
 		STA	tilemapTypeUnk_30B
 
-loc_1F4DC:	
+loc_1F4DC:
 		JSR	sub_1F5FF
 		LDA	ppu_unk_byte_309
 		STA	(ptr_0),Y
@@ -573,17 +573,17 @@ loc_1F4DC:
 		JMP	loc_1F4CE
 ; ---------------------------------------------------------------------------
 
-loc_1F553:	
+loc_1F553:
 		LDA	#0
 		STA	byte_317
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_1F559:	
+loc_1F559:
 		LDY	tilemapHeight_30A
 		DEY
 
-loc_1F55D:	
+loc_1F55D:
 		CPY	#0
 		BEQ	loc_1F572
 		LDA	data_2
@@ -597,11 +597,11 @@ loc_1F55D:
 		JMP	loc_1F55D
 ; ---------------------------------------------------------------------------
 
-loc_1F572:	
+loc_1F572:
 		LDX	#0
 		LDY	#0
 
-loc_1F576:	
+loc_1F576:
 		LDA	byte_36A
 		PHA
 		LDA	byte_36B
@@ -609,7 +609,7 @@ loc_1F576:
 		LDA	#0
 		STA	tilemapTypeUnk_30B
 
-loc_1F583:	
+loc_1F583:
 		JSR	sub_1F5FF
 		LDA	ppu_unk_byte_309
 		STA	(ptr_0),Y
@@ -667,7 +667,7 @@ loc_1F583:
 		JMP	loc_1F576
 ; ---------------------------------------------------------------------------
 
-loc_1F5F9:	
+loc_1F5F9:
 		LDA	#0
 		STA	byte_317
 		RTS
@@ -677,7 +677,7 @@ loc_1F5F9:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_1F5FF:	
+sub_1F5FF:
 		; sub_1F416:loc_1F4DCp	...
 		LDA	ppu_scroll_x_304
 		STA	byte_36C
@@ -721,7 +721,7 @@ sub_1F5FF:
 		CMP	byte_36B
 		BEQ	loc_1F68D
 
-loc_1F66B:	
+loc_1F66B:
 		LDA	byte_368
 		SEC
 		SBC	byte_366
@@ -737,14 +737,14 @@ loc_1F66B:
 		JMP	loc_1F693
 ; ---------------------------------------------------------------------------
 
-loc_1F68D:	
+loc_1F68D:
 		; sub_1F5FF+37j ...
 		LDA	#$F0 
 		STA	ppu_unk_byte_309
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_1F693:	
+loc_1F693:
 		; sub_1F5FF+8Bj
 		LDA	byte_36A
 		SEC
@@ -763,14 +763,14 @@ loc_1F693:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_1F6AB:	
+sub_1F6AB:
 		TYA
 		PHA
 		LDY	byte_369
 		LDA	#0
 		STA	byte_369
 
-loc_1F6B5:	
+loc_1F6B5:
 		CPY	#0
 		BEQ	loc_1F6CE
 		LDA	byte_368
@@ -784,7 +784,7 @@ loc_1F6B5:
 		JMP	loc_1F6B5
 ; ---------------------------------------------------------------------------
 
-loc_1F6CE:	
+loc_1F6CE:
 		PLA
 		TAY
 		RTS
@@ -808,14 +808,14 @@ upload_to_ppu_1F6D1:
 		STA	data_3
 		LDX	#0
 
-loc_1F6E7:	
+loc_1F6E7:
 		LDA	ptr_1
 		STA	_PPU_ADDR
 		LDA	ptr_0
 		STA	_PPU_ADDR
 		LDY	#0
 
-loc_1F6F3:	
+loc_1F6F3:
 		LDA	(data_2),Y
 		STA	_PPU_DATA
 		INY

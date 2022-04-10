@@ -1,11 +1,11 @@
-; Segment type:	Pure code
+; Segment type:Pure code
 		;.segment BANK_04 (Text)
 		* =  $8000
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-bank_switch_48000:			
+bank_switch_48000:		
 		.include "common/bank_switch_func.asm"
 
 switch_case_8035:
@@ -25,12 +25,12 @@ switch_case_8035:
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_48053:				
+loc_48053:			
 		JSR	load_palette_4F323
 		JMP	loc_4808F
 ; ---------------------------------------------------------------------------
 
-loc_48059:				
+loc_48059:			
 		LDA	inv_sprite_idx_31C
 		CMP	#$2F 
 		BCC	loc_4807D
@@ -52,22 +52,22 @@ loc_48076:
 		JMP	loc_4808F
 ; ---------------------------------------------------------------------------
 
-loc_4807D:				
+loc_4807D:			
 		JSR	load_inventory_sprite_4F372
 		JMP	loc_4808F
 ; ---------------------------------------------------------------------------
 
-loc_48083:				
+loc_48083:			
 		JSR	load_inventory_sprite_tilemap_4F443
 		JMP	loc_4808F
 ; ---------------------------------------------------------------------------
 
-loc_48089:				
+loc_48089:			
 		JSR	sub_4F3B3
 		JMP	loc_4808F
 ; ---------------------------------------------------------------------------
 
-loc_4808F:				
+loc_4808F:			
 					; bank_switch_48000+7Aj ...
 		LDA	#$FF
 		STA	bank_command_346
@@ -77,19 +77,19 @@ loc_4808F:
 ; End of function bank_switch_48000
 
 ; ---------------------------------------------------------------------------
-Palette_4809D:	
+Palette_4809D:
 		.include "sprites/bank_04_palettes.asm"
 
-TilemapsUnk:	
+TilemapsUnk:
 		.include "sprites/bank_04_tilemaps.asm"
 
-InvItemSprites:	
+InvItemSprites:
 		.include "sprites/bank_04_sprites.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_palette_4F323:			
+load_palette_4F323:		
 		LDA	#$9D 
 		STA	ptr_0
 		LDA	#$80 
@@ -127,7 +127,7 @@ load_palette_4F323:
 		STA	ptr_1
 		LDY	#0
 
-loc_4F366:				
+loc_4F366:			
 		LDA	(data_2),Y
 		STA	palette_bg_321,X ; "����������������"
 		INX
@@ -141,17 +141,17 @@ loc_4F366:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_inventory_sprite_4F372:		
+load_inventory_sprite_4F372:	
 		JSR	get_inventory_sprite_ptr_4F3E7
 
-loc_4F375:				
+loc_4F375:			
 		LDA	ptr_1
 		STA	_PPU_ADDR
 		LDA	ptr_0
 		STA	_PPU_ADDR
 		LDY	#0
 
-loc_4F381:				
+loc_4F381:			
 		LDA	(data_2),Y
 		STA	_PPU_DATA
 		INY
@@ -178,7 +178,7 @@ loc_4F381:
 		JMP	loc_4F375
 ; ---------------------------------------------------------------------------
 
-locret_4F3B2:				
+locret_4F3B2:			
 		RTS
 ; End of function load_inventory_sprite_4F372
 
@@ -186,10 +186,10 @@ locret_4F3B2:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_4F3B3:				
+sub_4F3B3:			
 		JSR	get_inventory_sprite_ptr_4F3E7
 
-loc_4F3B6:				
+loc_4F3B6:			
 		LDA	inv_spr_dscr1_30C
 		CMP	#4
 		BCC	loc_4F3CD
@@ -202,7 +202,7 @@ loc_4F3B6:
 		JMP	loc_4F3DC
 ; ---------------------------------------------------------------------------
 
-loc_4F3CD:				
+loc_4F3CD:			
 		LDA	inv_spr_dscr1_30C
 		ASL	A
 		ASL	A
@@ -212,7 +212,7 @@ loc_4F3CD:
 		LDA	#0
 		STA	inv_spr_dscr1_30C
 
-loc_4F3DC:				
+loc_4F3DC:			
 		JSR	sub_4F583
 		LDA	inv_spr_dscr1_30C
 		CMP	#0
@@ -224,7 +224,7 @@ loc_4F3DC:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-get_inventory_sprite_ptr_4F3E7:		
+get_inventory_sprite_ptr_4F3E7:	
 					; sub_4F3B3p
 		LDA	#$17
 		STA	ptr_0
@@ -287,7 +287,7 @@ skip_2_byte_4f416:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-load_inventory_sprite_tilemap_4F443:	
+load_inventory_sprite_tilemap_4F443:
 		LDA	#$45 
 		STA	ptr_0
 		LDA	#$84 
@@ -361,7 +361,7 @@ get_tilemap_descr_4F48B:
 		STA	data_3
 		LDY	ppu_unk_byte_309
 
-loc_4F4BA:				
+loc_4F4BA:			
 		CPY	#0
 		BEQ	loc_4F4CF
 		LDA	data_2
@@ -375,7 +375,7 @@ loc_4F4BA:
 		JMP	loc_4F4BA
 ; ---------------------------------------------------------------------------
 
-loc_4F4CF:				
+loc_4F4CF:			
 		LDA	data_2
 		CLC
 		ADC	tilemap_size_307
@@ -388,7 +388,7 @@ loc_4F4CF:
 		STA	ppu_unk_byte_309
 		LDA	#$32 
 
-loc_4F4E7:				
+loc_4F4E7:			
 		CMP	tilemapWidth_308
 		BCC	loc_4F4F6
 		SEC
@@ -397,10 +397,10 @@ loc_4F4E7:
 		JMP	loc_4F4E7
 ; ---------------------------------------------------------------------------
 
-loc_4F4F6:				
+loc_4F4F6:			
 		LDA	tilemapHeight_30A
 
-loc_4F4F9:				
+loc_4F4F9:			
 		CMP	inv_spr_dscr1_30C
 		BCC	loc_4F50B
 		SEC
@@ -410,7 +410,7 @@ loc_4F4F9:
 		JMP	loc_4F4F9
 ; ---------------------------------------------------------------------------
 
-loc_4F50B:				
+loc_4F50B:			
 					; load_inventory_sprite_tilemap_4F443+D6j
 		LDA	ppu_unk_byte_309
 		BEQ	loc_4F51B
@@ -419,13 +419,13 @@ loc_4F50B:
 		LDA	ppu_unk_byte_309
 		BNE	loc_4F50B
 
-loc_4F51B:				
+loc_4F51B:			
 		LDA	tilemapHeight_30A
 		BEQ	locret_4F526
 		STA	inv_spr_dscr1_30C
 		JSR	sub_4F527
 
-locret_4F526:				
+locret_4F526:			
 		RTS
 ; End of function load_inventory_sprite_tilemap_4F443
 
@@ -433,7 +433,7 @@ locret_4F526:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_4F527:				
+sub_4F527:			
 					; load_inventory_sprite_tilemap_4F443+E0p
 		LDA	#0
 		STA	tilemapTypeUnk_30B
@@ -444,7 +444,7 @@ sub_4F527:
 		STA	ppu_data_70,X
 		INX
 
-loc_4F538:				
+loc_4F538:			
 		LDA	tilemapWidth_308
 		STA	ppu_data_70,X
 		INX
@@ -456,7 +456,7 @@ loc_4F538:
 		INX
 		LDY	#0
 
-loc_4F54A:				
+loc_4F54A:			
 		LDA	(ptr_0),Y
 		CLC
 		ADC	byte_31E
@@ -491,7 +491,7 @@ loc_4F54A:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_4F583:				
+sub_4F583:			
 		LDA	#0
 		STA	has_ppu_data_to_upload_6F
 		LDX	#0
@@ -509,7 +509,7 @@ sub_4F583:
 		INX
 		LDY	#0
 
-loc_4F5A0:				
+loc_4F5A0:			
 		LDA	(data_2),Y
 		STA	ppu_data_70,X
 		INX

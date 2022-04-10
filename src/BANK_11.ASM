@@ -1,4 +1,4 @@
-; Segment type:	Pure code
+; Segment type:Pure code
 		;.segment BANK_11 (Tilemaps)
 		* =  $8000
 

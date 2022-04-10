@@ -1,4 +1,4 @@
-; Segment type:	Pure code
+; Segment type:Pure code
 		;.segment BANK_10 (Tilemaps)
 		* =  $8000
 
@@ -12,7 +12,7 @@ switch_case_8035:
 
 ; ---------------------------------------------------------------------------
 
-off_10805B:	
+off_10805B:
 		.include "tilemaps/bank_10.asm"
 		
 Code_Tilemaps_10:

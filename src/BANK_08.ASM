@@ -1,10 +1,10 @@
-; Segment type:	Pure code
+; Segment type:Pure code
 		;.segment BANK_08 (Tilemaps)
 		* =  $8000
 
 ; =============== S U B	R O U T	I N E =======================================
 
-bank_switch_88000:			
+bank_switch_88000:		
 		.include "common/bank_switch_func.asm"
 		
 switch_case_8035:
@@ -12,7 +12,7 @@ switch_case_8035:
 
 ; ---------------------------------------------------------------------------
 
-Tilemaps_8805B:	
+Tilemaps_8805B:
 		.include "tilemaps/bank_08.asm"
 		
 Code_Tilemaps_08:
@@ -21,7 +21,7 @@ Code_Tilemaps_08:
 ; ---------------------------------------------------------------------------
 		.include "garbage/bank_08_garbage.asm"
 
-Vectors_08:	
+Vectors_08:
 		.WORD NMI_8F9ED
 		.WORD Tilemaps_8805B
 		.WORD locret_8FA64

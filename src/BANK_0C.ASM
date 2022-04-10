@@ -1,10 +1,10 @@
-; Segment type:	Pure code
+; Segment type:Pure code
 		;.segment BANK_0C (Tilemaps)
 		* =  $8000
 
 ; =============== S U B	R O U T	I N E =======================================
 
-bank_switch_C8000:			
+bank_switch_C8000:		
 		.include "common/bank_switch_func.asm"
 
 switch_case_8035:

@@ -1,4 +1,4 @@
-; Segment type:	Pure code
+; Segment type:Pure code
 		;.segment BANK_0D (Tilemaps)
 		* =  $8000
 
@@ -7,7 +7,7 @@
 bank_switch_D8000:
 		.include "common/bank_switch_func.asm"
 
-switch_case_8035:				
+switch_case_8035:			
 		.include "common/tilemap_entry_point_func.asm"
 
 ; ---------------------------------------------------------------------------

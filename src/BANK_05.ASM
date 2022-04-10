@@ -1,11 +1,11 @@
-; Segment type:	Pure code
+; Segment type:Pure code
 		;.segment BANK_05 (Sprites)
 		* =  $8000
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-bank_switch_58000:			
+bank_switch_58000:		
 		.include "common/bank_switch_func.asm"
 
 switch_case_8035:
@@ -19,12 +19,12 @@ switch_case_8035:
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_58047:				
+loc_58047:			
 		JSR	upload_gfx_to_ppu_5F093
 		JMP	loc_5804D
 ; ---------------------------------------------------------------------------
 
-loc_5804D:				
+loc_5804D:			
 		LDA	#$FF
 		STA	bank_command_346
 		LDA	bank_from_343
@@ -34,13 +34,13 @@ loc_5804D:
 
 ; ---------------------------------------------------------------------------
 
-Sprites3_5805B:	
+Sprites3_5805B:
 		.include "sprites/bank_05_sprites.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-upload_gfx_to_ppu_5F093:		
+upload_gfx_to_ppu_5F093:	
 		LDA	#$5B 
 		STA	ptr_0
 		LDA	#$80 
@@ -76,7 +76,7 @@ upload_gfx_to_ppu_5F093:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-upload_gfx_5F0CC:			
+upload_gfx_5F0CC:		
 		LDY	#0
 		LDA	(data_2),Y
 		STA	tilemapWidth_308
@@ -89,14 +89,14 @@ upload_gfx_5F0CC:
 		STA	data_3
 		LDX	#0
 
-loc_5F0E2:				
+loc_5F0E2:			
 		LDA	ptr_1
 		STA	_PPU_ADDR
 		LDA	ptr_0
 		STA	_PPU_ADDR
 		LDY	#0
 
-loc_5F0EE:				
+loc_5F0EE:			
 		LDA	(data_2),Y
 		STA	_PPU_DATA
 		INY
@@ -131,7 +131,7 @@ Common_Code_05
 
 		.include "garbage/bank_05_garbage.asm"
 
-Vectors_05:	
+Vectors_05:
 		.WORD NMI_5F1E0
 		.WORD Sprites3_5805B
 		.WORD locret_5F257

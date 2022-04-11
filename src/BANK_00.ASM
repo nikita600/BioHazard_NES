@@ -7715,7 +7715,8 @@ locret_DC86:
 	RTS
 ; End of function sub_DC64
 
-; [00000001 BYTES: COLLAPSED FUNCTION nullsub_1. PRESS CTRL-NUMPAD+ TO EXPAND]
+nullsub_1:
+	RTS
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -9557,7 +9558,8 @@ loc_E91D:
 	RTS
 ; End of function sub_E8F8
 
-; [00000001 BYTES: COLLAPSED FUNCTION nullsub_2. PRESS CTRL-NUMPAD+ TO EXPAND]
+nullsub_2:
+	RTS
 
 ; =============== S U B	R O U T	I N E =======================================
 

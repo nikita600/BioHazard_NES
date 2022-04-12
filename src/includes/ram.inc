@@ -1,27 +1,46 @@
+; banks ids
+sprites_1 .SET 1
+text_2 .SET 2
+items_spr_4 .SET 4
+map_inventory_spr_5 .SET 5
+tilemaps_9 .SET 9
+banks_12 .SET $12
+banks_13 .SET $13
 
+; pad ids
+a_80 .SET $80
+b_40 .SET $40
+select_20 .SET $20
+start_10 .SET $10
+right_1 .SET $1
+left_2 .SET $2
+down_4 .SET $4
+up_8 .SET $8
+
+; RAM
 ptr_0 = $0000
 ptr_1 = $0001 
-;data_2 = $0002
-;data_3 = $0003 
-;byte_4 = $0000
-;byte_5 = $0000
-;byte_6 = $0000
-;byte_7 = $0000
-;byte_8 = $0000 
-;unk_9
-;unk_A
-;unk_B
-;unk_C
-;unk_D 
-;byte_E = $0000 
-;unk_17
-;unk_1B
-;unk_1D
-;unk_1F
-;unk_20
-;unk_28
-;unk_30
-;unk_3E 
+data_2 = $0002
+data_3 = $0003 
+byte_4 = $0004
+byte_5 = $0005
+byte_6 = $0006
+byte_7 = $0007
+byte_8 = $0008 
+unk_9 = $0009 
+unk_A = $000A
+unk_B = $000B
+unk_C = $000C
+unk_D = $000D 
+byte_E = $000E 
+unk_17 = $0017
+unk_1B = $001B
+unk_1D = $001D
+unk_1F = $001F
+unk_20 = $0020
+unk_28 = $0028
+unk_30 = $0030
+unk_3E = $003E 
 tilemapData_4C = $004C
 roomUnk1_4D = $004D
 roomUnk2_4E = $004E
@@ -38,49 +57,51 @@ unk_69 = $0069
 bank_switch_flag_6C = $006C
 ppu_fld0_x_6D = $006D
 ppu_fld1_y_6E = $006E
-;has_ppu_data_to_upload_6F = 	0 
-;ppu_data_70 = $0000
-;unk_7B
-;unk_7F
-;unk_80
-;unk_83
-;unk_85
-;unk_86
-;unk_95
-;unk_A0
-;unk_A2
-;unk_A3
-;unk_B0
-;unk_B3
-;unk_C0
-;unk_C7
-;unk_E0
-;unk_F0
-;unk_F8
-;apu_unk_FE = $0000
-;apu_unk_FF = $0000
-;byte_100 = $0000
-;byte_101 = $0000
-;byte_102 = $0000
-;byte_103 = $0000
-;byte_104 = $0000
-;byte_105 = $0000
-;unk_106
-;unk_108
-;unk_10A
-;unk_10F
-;unk_111
-;unk_115
-;unk_13F
-;unk_140
-;unk_17F
-;unk_1A2
-;byte_200 = $0000
-;byte_201 = $0000
-;byte_202 = $0000
-;byte_203 = $0000
-;byte_204 = $0000
-;unk_205
+has_ppu_data_to_upload_6F = $006F
+ppu_data_70 = $0070
+unk_7B = $007B
+unk_7F = $007F
+unk_80 = $0080
+unk_83 = $0083
+unk_85 = $0085
+unk_86 = $0086
+unk_95 = $0095
+unk_A0 = $00A0
+unk_A2 = $00A2
+unk_A3 = $00A3
+unk_B0 = $00B0
+unk_B3 = $00B3
+unk_C0 = $00C0
+unk_C7 = $00C7
+unk_E0 = $00E0
+unk_F0 = $00F0
+unk_F8 = $00F8
+apu_unk_FE = $00FE
+apu_unk_FF = $00FF
+
+byte_100 = $0100
+byte_101 = $0101
+byte_102 = $0102
+byte_103 = $0103
+byte_104 = $0104
+byte_105 = $0105
+unk_106 = $0106
+unk_108 = $0108
+unk_10A = $010A
+unk_10F = $010F
+unk_111 = $0111
+unk_115 = $0115
+unk_13F = $013F
+unk_140 = $0140
+unk_17F = $017F
+unk_1A2 = $01A2
+
+byte_200 = $0200
+byte_201 = $0201
+byte_202 = $0202
+byte_203 = $0203
+byte_204 = $0204
+unk_205  = $0100
 byte_207 = $0207
 byte_208 = $0208
 byte_20C = $020C
@@ -92,86 +113,89 @@ byte_218 = $0218
 byte_21C = $021C
 byte_220 = $0220
 byte_224 = $0224
-;unk_258
-;unk_269
-;unk_27F
-;byte_280 = $0000
-;unk_285
-;unk_28C
-;unk_2B1
+unk_258 = $0258
+unk_269 = $0269
+unk_27F = $027F
+byte_280 = $0280
+unk_285 = $0285
+unk_28C = $028C
+unk_2B1 = $02B1
 byte_2E8 = $02E8
 byte_2EC = $02EC
 unk_2FC = $02FC
-;entry_idx_300 = $0000
-;byte_301 = $0000
-;ppu_unk = _302 = $0000 
-;ppu_unk = _303 = $0000 
-;ppu_scroll_x_304 = $0000 
-;ppu_scroll_y_305 = $0000 
-;sprite_type_306 = $0000 
-;tilemap_size_307 = $0000 
-;tilemapWidth_308 = $0000 
-;ppu_unk = _309 = $0000 
-;tilemapHeight_30A = 	0 
-;tilemapTypeUnk_30B = $0000 
-;inv_spr_dscr1_30C = 	0 
+
+entry_idx_300 = $0300
+byte_301 = $0301
+ppu_unk_byte_302 = $0302 
+ppu_unk_byte_303 = $0303 
+ppu_scroll_x_304 = $0304 
+ppu_scroll_y_305 = $0305 
+sprite_type_306 = $0306 
+tilemap_size_307 = $0307 
+tilemapWidth_308 = $0308 
+ppu_unk_byte_309 = $0309 
+tilemapHeight_30A = $030A 
+tilemapTypeUnk_30B = $030B 
+inv_spr_dscr1_30C = $030C 
 tilemapFrameCount_30D = $030D 
 byte_30E = $030E 
-;sprite_length_30F = 	0 
-;byte_310 = $0000 
-;tilemaps_horiz_count_311 = $0000 
-;tilemaps_vert_count_312 = $0000 
-;byte_313 = $0000 
-;byte_314 = $0000 
-;byte_315 = $0000 
-;objMapIdx_316 = $0000 
-;byte_317 = $0000 
-;objectIdx_318 = $0000 
-;sprPalIdx_319 = $0000 
-;byte_31A = $0000 
-;sprite_secon = _31B = $0000 
-;inv_sprite_idx_31C = $0000 
-;inv_itemPrev_idx_31D = $0000 
-; 
-;byte_31E = $0000 
-;ppu_ctrl_31F = $0000 
-;ppu_mask_320 = $0000 
-;palette_bg_321 = 
-; 
-;sprite_palette_331 = 
-;byte_341 = $0000 
-;mirroring_type_342 = $0000 
-;bank_from_343 = $0000 
-;bank_to_344 = $0000 
-;bank_prev_345 = $0000 
-;bank_command_346 = $0000 
+sprite_length_30F = $030F 
+byte_310 = $0310
+tilemaps_horiz_count_311 = $0311 
+tilemaps_vert_count_312 = $0312 
+byte_313 = $0313 
+byte_314 = $0314 
+byte_315 = $0315 
+objMapIdx_316 = $0316 
+byte_317 = $0317 
+objectIdx_318 = $0318 
+sprPalIdx_319 = $0319 
+byte_31A = $031A 
+sprite_secondByte_31B = $031B 
+inv_sprite_idx_31C = $031C 
+inv_itemPrev_idx_31D = $031D 
+ 
+byte_31E = $031E 
+ppu_ctrl_31F = $031F 
+ppu_mask_320 = $0320 
+palette_bg_321 = $0321
+ 
+sprite_palette_331 = $0331
+byte_341 = $0341 
+mirroring_type_342 = $0342 
+bank_from_343 = $0343 
+bank_to_344 = $0344 
+bank_prev_345 = $0345 
+bank_command_346 = $0346 
 input_reg1_347 = $0347 
 input_unk_349 = $0349 
-;input_pressed_34A = 	0 
+input_pressed_34A = $034A
 input_unk_34B = $034B 
 input_unk_34C = $034C
 input_reg0_34E = $034E 
+
 frame_render_count_350 = $0350 
-;byte_351 = $0000 
-;byte_352 = $0000 
+byte_351 = $0351 
+byte_352 = $0352 
 byte_353 = $0353
 byte_354 = $0354
 byte_355 = $0355
 byte_356 = $0356
-;byte_357 = $0000 
-;byte_358 = $0000 
-;byte_359 = $0000 
-;byte_35A = $0000 
-;text_unk_35B = $0000 
-;text_idx_35C = $0000 
-;char_type_id_35D = $0000 
-;byte_35E = $0000 
-;byte_35F = $0000 
-;byte_360 = $0000 
-;byte_361 = $0000 
-;byte_362 = $0000 
-;byte_363 = $0000 
-;byte_364 = $0000 
+byte_357 = $0357 
+byte_358 = $0358 
+byte_359 = $0359 
+byte_35A = $035A 
+text_unk_35B = $035B 
+text_idx_35C = $035C 
+char_type_id_35D = $035D 
+byte_35E = $035E 
+byte_35F = $035F 
+
+byte_360 = $0360 
+byte_361 = $0361 
+byte_362 = $0362 
+byte_363 = $0363 
+byte_364 = $0364 
 count_unk_365 = $0365 
 byte_366 = $0366 
 byte_367 = $0367 
@@ -185,22 +209,22 @@ byte_36E = $036E
 byte_36F = $036F 
 byte_370 = $0370 
 byte_371 = $0371 
-;byte_372 = $0000 
-;objArraySize_373 = $0000 
-;objIdxArray_375 
-;unk_37F = $0000
-;unk_385
-;unk_389 
-;objCreatedArray_393 
-;array_unk_39D 
-;unk_3A5
-;array_unk_3A7 
-;array_unk_3BB 
-;array_unk_3C5 = $0000 
-;byte_3C6 = $0000 
-;array_unk_3CF 
-;array_unk_3D9 = $0000 
-;byte_3DA = $0000 
+byte_372 = $0372 
+objArraySize_373 = $0373 
+objIdxArray_375 = $0375 
+unk_37F = $037F
+unk_385 = $0385
+unk_389 = $0389 
+objCreatedArray_393 = $0393 
+array_unk_39D = $039D 
+unk_3A5= $03A5 
+array_unk_3A7 = $03A7 
+array_unk_3BB = $03BB 
+array_unk_3C5 = $03C5 
+byte_3C6 = $03C6 
+array_unk_3CF  = $03CF
+array_unk_3D9 = $03D9 
+byte_3DA = $03DA 
 unk_3E3 = $03E3 
 unk_3ED = $03ED 
 objPalIdxArray_3F7 = $03F7 
@@ -216,45 +240,50 @@ unk_40B = $040B
 unk_40E = $040E 
 obj_array_unk_415 = $0415
 byte_41F = $041F 
+
 byte_420 = $0420 
-;byte_421 = $0000 
-;unk_422 
-;byte_42A = $0000 
-;byte_42B = $0000 
-;byte_42C = $0000 
-;byte_42D = $0000 
-;byte_42E = $0000 
-;byte_42F = $0000 
-;byte_430 = $0000 
-;byte_431 = $0000 
-;byte_432 = $0000 
-;byte_433 = $0000 
-;byte_434 = $0000 
-;byte_435 = $0000 
-;byte_436 = $0000 
-;byte_437 = $0000 
-;byte_438 = $0000 
-;byte_439 = $0000 
-;cur_obj_idx_unk_43A = $0000 
-;map_show_43B = $0000 
+byte_421 = $0421 
+unk_422 = $0422
+byte_42A = $042A 
+byte_42B = $042B 
+byte_42C = $042C 
+byte_42D = $042D 
+byte_42E = $042E 
+byte_42F = $042F 
+
+byte_430 = $0430 
+byte_431 = $0431 
+byte_432 = $0432 
+byte_433 = $0433 
+byte_434 = $0434 
+byte_435 = $0435 
+byte_436 = $0436 
+byte_437 = $0437 
+byte_438 = $0438 
+byte_439 = $0439 
+cur_obj_idx_unk_43A = $043A 
+map_show_43B = $043B 
 byte_43E = $043E 
-;byte_43F = $0000 
-;byte_440 = $0000 
-;byte_441 = $0000 
-;byte_443 = $0000 
-;byte_445 = $0000 
-;array_unk_446 
-;unk_447 
-;unk_448 
-;unk_449 
-;array_unk_452 
-;unk_456 
-;unk_457 
-;unk_458 
-;unk_459 
-;obj_array_unk_45E 
-;unk_460 
-;obj_idx_unk_462 = $0000 
+byte_43F = $043F 
+
+byte_440 = $0440 
+byte_441 = $0441 
+byte_443 = $0443 
+byte_445 = $0445 
+array_unk_446 = $0446
+unk_447 = $0447
+unk_448 = $0448
+unk_449 = $0449
+
+array_unk_452 = $0452
+unk_456 = $0456
+unk_457 = $0457
+unk_458 = $0458
+unk_459 = $0459
+obj_array_unk_45E = $045E
+
+unk_460 = $0460
+obj_idx_unk_462 = $0462 
 count_unk_463 = $0463 
 count_unk_464 = $0464 
 count_unk_465 = $0465 
@@ -265,322 +294,346 @@ count_unk_469 = $0469
 count_unk_46A = $046A 
 count_unk_46B = $046B 
 count_unk_46C = $046C 
-;byte_46D = $0000 
-;byte_46E = $0000 
-byte_46F = $046F 
+byte_46D = $046D 
+byte_46E = $046E 
+byte_46F = $046F
+
 byte_470 = $0470 
-;byte_471 = $0000 
-;byte_472 = $0000 
-;byte_473 = $0000 
-;byte_474 = $0000 
-;byte_475 = $0000 
-;byte_476 = $0000 
-;byte_477 = $0000 
-;byte_478 = $0000 
+byte_471 = $0471 
+byte_472 = $0472 
+byte_473 = $0473 
+byte_474 = $0474 
+byte_475 = $0475 
+byte_476 = $0476 
+byte_477 = $0477 
+byte_478 = $0478 
 scroll_offset_x_479 = $0479
 scroll_offset_y_47A = $047A
-;byte_47B = $0000 
-;byte_47C = $0000 
-;jill_pos_x_47D = $0000 
-;jill_pos_y_47E = $0000 
-byte_47F = $047F 
-;unk_48E
-;byte_4A0 = $0000 
-;byte_4A1 = $0000 
-;byte_4A2 = $0000 
-;byte_4A3 = $0000 
-;image_id_4A4 = $0000 
-;image_offset_4A5 = $0000 
-;ppu_prev_unk_4A6 = $0000 
-;ppu_prev_scroll_x_unk_4A7 = 	0 
-;ppu_prev_scroll_y_unk_4A8 = 	0 
-;prev_sprite_type_4A9 = $0000 
-;byte_4AA = $0000 
-;byte_4AD = $0000 
-;byte_4AE = $0000 
-;byte_4AF = $0000 
-;byte_4B4 = $0000 
-;byte_4B5 = $0000 
-;unk_4B6 
-;byte_4C1 = $0000 
-;unk_4C2 
-;byte_4D0 = $0000 
-;unk_4D2 
-;unk_500 
-;unk_501
-;unk_502 
-;unk_504
-;unk_505
-;unk_506
-;unk_50B
-;unk_50F
-;byte_532 = $0000 
-;byte_533 = $0000 
-;byte_534 = $0000 
-;byte_535 = $0000 
-;unk_53B 
-;byte_53C = $0000 
-;byte_543 = $0000 
-;byte_544 = $0000 
-;byte_545 = $0000 
-;byte_546 = $0000 
-;byte_547 = $0000 
-;byte_549 = $0000 
-;byte_54A = $0000 
-;byte_54B = $0000 
-;byte_54C = $0000 
-;byte_54D = $0000 
-;byte_54E = $0000 
-;byte_550 = $0000 
-;byte_551 = $0000 
-;byte_552 = $0000 
-;byte_553 = $0000 
+byte_47B = $047B 
+byte_47C = $047C 
+jill_pos_x_47D = $047D 
+jill_pos_y_47E = $047E 
+byte_47F = $047F
+
+unk_48E = $048E
+
+byte_4A0 = $04A0 
+byte_4A1 = $04A1 
+byte_4A2 = $04A2 
+byte_4A3 = $04A3 
+image_id_4A4 = $04A4 
+image_offset_4A5 = $04A5 
+ppu_prev_unk_4A6 = $04A6 
+ppu_prev_scroll_x_unk_4A7 = $04A7
+ppu_prev_scroll_y_unk_4A8 = $04A8 
+prev_sprite_type_4A9 = $04A9 
+byte_4AA = $04AA 
+byte_4AD = $04AD 
+byte_4AE = $04AE 
+byte_4AF = $04AF 
+
+byte_4B4 = $04B4 
+byte_4B5 = $04B5 
+unk_4B6 = $04B6
+
+byte_4C1 = $04C1 
+unk_4C2 = $04C2 
+byte_4D0 = $04D0 
+unk_4D2 = $04D2 
+
+unk_500 = $0500
+unk_501 = $0501
+unk_502 = $0502
+unk_504 = $0504
+unk_505 = $0505
+unk_506 = $0506
+unk_50B = $050B
+unk_50F = $050F
+byte_532 = $0532 
+byte_533 = $0533 
+byte_534 = $0534 
+byte_535 = $0535 
+unk_53B = $053B
+byte_53C = $053C 
+
+byte_543 = $0543 
+byte_544 = $0544 
+byte_545 = $0545 
+byte_546 = $0546 
+byte_547 = $0547 
+byte_549 = $0549 
+byte_54A = $054A 
+byte_54B = $054B 
+byte_54C = $054C 
+byte_54D = $054D 
+byte_54E = $054E 
+
+byte_550 = $0550 
+byte_551 = $0551 
+byte_552 = $0552 
+byte_553 = $0553 
 byte_554 = $0554 
-;byte_555 = $0000 
-;byte_556 = $0000 
-;byte_557 = $0000 
-;byte_558 = $0000 
-;byte_559 = $0000 
-;byte_55A = $0000 
-;byte_55B = $0000 
-;byte_55C = $0000 
-;byte_55D = $0000 
-;byte_55F = $0000 
-;byte_560 = $0000 
-;is_game_finished_561 = $0000 
+byte_555 = $0555 
+byte_556 = $0556 
+byte_557 = $0557 
+byte_558 = $0558 
+byte_559 = $0559 
+byte_55A = $055A 
+byte_55B = $055B 
+byte_55C = $055C 
+byte_55D = $055D 
+byte_55F = $055F 
+
+byte_560 = $0560 
+is_game_finished_561 = $0561 
 byte_562 = $0562 
-;byte_563 = $0000 
-;byte_564 = $0000 
-;byte_565 = $0000 
-;byte_566 = $0000 
-;byte_567 = $0000 
-;byte_568 = $0000 
-;byte_569 = $0000 
-;byte_56A = $0000 
-;byte_56B = $0000 
-;byte_56C = $0000 
-;byte_56D = $0000 
-;byte_56E = $0000 
-;byte_56F = $0000 
-;byte_570 = $0000 
-;byte_571 = $0000 
-;byte_572 = $0000 
-;byte_573 = $0000 
-;byte_574 = $0000 
-;byte_575 = $0000 
-;byte_576 = $0000 
-;byte_577 = $0000 
-;byte_578 = $0000 
-;byte_579 = $0000 
-;byte_57A = $0000 
-;byte_57B = $0000 
-;byte_57C = $0000 
-;byte_57D = $0000 
-;byte_57E = $0000 
-;byte_580 = $0000 
-;byte_581 = $0000 
-;unk_582
-;byte_583 = $0000 
-;byte_584 = $0000 
-;byte_585 = $0000 
-;byte_586 = $0000 
+byte_563 = $0563 
+byte_564 = $0564 
+byte_565 = $0565 
+byte_566 = $0566 
+byte_567 = $0567 
+byte_568 = $0568 
+byte_569 = $0569 
+byte_56A = $056A 
+byte_56B = $056B 
+byte_56C = $056C 
+byte_56D = $056D 
+byte_56E = $056E 
+byte_56F = $056F 
+
+byte_570 = $0570 
+byte_571 = $0571 
+byte_572 = $0572 
+byte_573 = $0573 
+byte_574 = $0574 
+byte_575 = $0575 
+byte_576 = $0576 
+byte_577 = $0577 
+byte_578 = $0578 
+byte_579 = $0579 
+byte_57A = $057A 
+byte_57B = $057B 
+byte_57C = $057C 
+byte_57D = $057D 
+byte_57E = $057E 
+
+byte_580 = $0580 
+byte_581 = $0581 
+unk_582  = $0582 
+byte_583 = $0583 
+byte_584 = $0584 
+byte_585 = $0585 
+byte_586 = $0586 
 byte_587 = $0587 
-;byte_588 = $0000 
-;byte_589 = $0000 
-;byte_58A = $0000 
-;byte_58B = $0000 
-;byte_58C = $0000 
+byte_588 = $0588 
+byte_589 = $0589 
+byte_58A = $058A 
+byte_58B = $058B 
+byte_58C = $058C 
 byte_58D = $058D 
 byte_58E = $058E 
-;byte_58F = $0000 
-;byte_590 = $0000 
-;byte_591 = $0000 
-;byte_592 = $0000 
-;byte_593 = $0000 
-;byte_594 = $0000 
-;byte_595 = $0000 
-;byte_596 = $0000 
-;byte_597 = $0000 
-;byte_598 = $0000 
-;byte_599 = $0000 
-;byte_59A = $0000 
-;byte_59B = $0000 
-;byte_59C = $0000 
-;byte_59D = $0000 
-;byte_59E = $0000 
-;byte_59F = $0000 
-;byte_5A0 = $0000 
-;byte_5A1 = $0000 
-;byte_5A2 = $0000 
-;byte_5A3 = $0000 
-;byte_5A4 = $0000 
-;byte_5A5 = $0000 
-;byte_5A6 = $0000 
-;byte_5A8 = $0000 
-;byte_5A9 = $0000 
-;byte_5AA = $0000 
+byte_58F = $058F 
+
+byte_590 = $0590 
+byte_591 = $0591 
+byte_592 = $0592 
+byte_593 = $0593 
+byte_594 = $0594 
+byte_595 = $0595 
+byte_596 = $0596 
+byte_597 = $0597 
+byte_598 = $0598 
+byte_599 = $0599 
+byte_59A = $059A 
+byte_59B = $059B 
+byte_59C = $059C 
+byte_59D = $059D 
+byte_59E = $059E 
+byte_59F = $059F 
+
+byte_5A0 = $05A0 
+byte_5A1 = $05A1 
+byte_5A2 = $05A2 
+byte_5A3 = $05A3 
+byte_5A4 = $05A4 
+byte_5A5 = $05A5 
+byte_5A6 = $05A6 
+byte_5A8 = $05A8 
+byte_5A9 = $05A9 
+byte_5AA = $05A0 
 byte_5AB = $05AB 
-;byte_5AC = $0000 
-;byte_5AD = $0000 
-;byte_5AF = $0000 
-;byte_5B0 = $0000 
-;byte_5B1 = $0000 
-;byte_5B2 = $0000 
-;byte_5B3 = $0000 
-;byte_5B4 = $0000 
-;byte_5B5 = $0000 
-;byte_5B6 = $0000 
-;byte_5B7 = $0000 
-;byte_5B8 = $0000 
-;byte_5B9 = $0000 
-;byte_5BA = $0000 
-;byte_5BB = $0000 
-;byte_5BC = $0000 
-;byte_5BD = $0000 
-;byte_5BE = $0000 
-;byte_5BF = $0000 
-;byte_5C0 = $0000 
-;byte_5C1 = $0000 
-;byte_5C2 = $0000 
-;byte_5C3 = $0000 
-;byte_5C4 = $0000 
-;byte_5C5 = $0000 
-;byte_5C6 = $0000 
-;byte_5C8 = $0000 
-;byte_5C9 = $0000 
-;byte_5CA = $0000 
-;byte_5CB = $0000 
-;byte_5CC = $0000 
-;byte_5CD = $0000 
-;byte_5CE = $0000 
-;byte_5CF = $0000 
-;byte_5D0 = $0000 
-;byte_5D1 = $0000 
-;byte_5D3 = $0000 
-;byte_5D4 = $0000 
-;byte_5D5 = $0000 
-;byte_5D6 = $0000 
-;byte_5D7 = $0000 
-;byte_5D8 = $0000 
-;byte_5D9 = $0000 
-;byte_5DA = $0000 
-;byte_5DB = $0000 
-;byte_5DC = $0000 
-;byte_5DD = $0000 
-;byte_5DE = $0000 
-;byte_5DF = $0000 
-;byte_5E0 = $0000 
-;byte_5E1 = $0000 
-;byte_5E2 = $0000 
-;byte_5E3 = $0000 
-;byte_5E4 = $0000 
-;byte_5E5 = $0000 
-;byte_5E6 = $0000 
-;byte_5E7 = $0000 
-;byte_5E8 = $0000 
-;byte_5E9 = $0000 
-;byte_5EA = $0000 
-;byte_5EB = $0000 
-;byte_5EC = $0000 
-;byte_5ED = $0000 
-;byte_5EE = $0000 
-;byte_5EF = $0000 
-;byte_5F0 = $0000 
-;byte_5F1 = $0000 
-;byte_5F2 = $0000 
-;byte_5F3 = $0000 
-;byte_5F4 = $0000 
-;byte_5F5 = $0000 
-;byte_5F6 = $0000 
-;byte_5F7 = $0000 
-;byte_5F8 = $0000 
-;byte_5F9 = $0000 
-;byte_5FA = $0000 
-;byte_5FB = $0000 
-;byte_5FC = $0000 
-;byte_5FD = $0000 
-;byte_5FE = $0000 
-;byte_5FF = $0000 
-;byte_600 = $0000 
-;byte_601 = $0000 
-;byte_602 = $0000 
-;byte_603 = $0000 
-;byte_604 = $0000 
-;byte_605 = $0000 
-;byte_606 = $0000 
+byte_5AC = $05AC 
+byte_5AD = $05AD 
+byte_5AF = $05AF 
+
+byte_5B0 = $05B0 
+byte_5B1 = $05B1 
+byte_5B2 = $05B2 
+byte_5B3 = $05B3 
+byte_5B4 = $05B4 
+byte_5B5 = $05B5 
+byte_5B6 = $05B6 
+byte_5B7 = $05B7 
+byte_5B8 = $05B8 
+byte_5B9 = $05B9 
+byte_5BA = $05BA 
+byte_5BB = $05BB 
+byte_5BC = $05BC 
+byte_5BD = $05BD 
+byte_5BE = $05BE 
+byte_5BF = $05BF
+
+byte_5C0 = $05C0 
+byte_5C1 = $05C1 
+byte_5C2 = $05C2 
+byte_5C3 = $05C3 
+byte_5C4 = $05C4 
+byte_5C5 = $05C5 
+byte_5C6 = $05C6 
+byte_5C8 = $05C8 
+byte_5C9 = $05C9 
+byte_5CA = $05CA 
+byte_5CB = $05CB 
+byte_5CC = $05CC 
+byte_5CD = $05CD 
+byte_5CE = $05CE 
+byte_5CF = $05CF
+
+byte_5D0 = $05D0 
+byte_5D1 = $05D1 
+byte_5D3 = $05D3 
+byte_5D4 = $05D4 
+byte_5D5 = $05D5 
+byte_5D6 = $05D6 
+byte_5D7 = $05D7 
+byte_5D8 = $05D8 
+byte_5D9 = $05D9 
+byte_5DA = $05DA 
+byte_5DB = $05DB 
+byte_5DC = $05DC 
+byte_5DD = $05DD 
+byte_5DE = $05DE 
+byte_5DF = $05DF
+
+byte_5E0 = $05E0 
+byte_5E1 = $05E1 
+byte_5E2 = $05E2 
+byte_5E3 = $05E3 
+byte_5E4 = $05E4 
+byte_5E5 = $05E5 
+byte_5E6 = $05E6 
+byte_5E7 = $05E7 
+byte_5E8 = $05E8 
+byte_5E9 = $05E9 
+byte_5EA = $05EA 
+byte_5EB = $05EB 
+byte_5EC = $05EC 
+byte_5ED = $05ED 
+byte_5EE = $05EE 
+byte_5EF = $05EF
+
+byte_5F0 = $05F0 
+byte_5F1 = $05F1 
+byte_5F2 = $05F2 
+byte_5F3 = $05F3 
+byte_5F4 = $05F4 
+byte_5F5 = $05F5 
+byte_5F6 = $05F6 
+byte_5F7 = $05F7 
+byte_5F8 = $05F8 
+byte_5F9 = $05F9 
+byte_5FA = $05FA 
+byte_5FB = $05FB 
+byte_5FC = $05FC 
+byte_5FD = $05FD 
+byte_5FE = $05FE 
+byte_5FF = $05FF
+
+byte_600 = $0600 
+byte_601 = $0601 
+byte_602 = $0602 
+byte_603 = $0603 
+byte_604 = $0604 
+byte_605 = $0605 
+byte_606 = $0606 
 byte_607 = $0607 
-;byte_608 = $0000 
-;byte_609 = $0000 
-;byte_60A = $0000 
-;byte_60B = $0000 
-;byte_60C = $0000 
-;byte_60D = $0000 
-;byte_60E = $0000 
-;byte_60F = $0000 
-;byte_610 = $0000 
-;byte_611 = $0000 
-;byte_612 = $0000 
-;byte_613 = $0000 
-;byte_614 = $0000 
-;byte_615 = $0000 
-;byte_616 = $0000 
-;byte_617 = $0000 
-;byte_618 = $0000 
-;byte_619 = $0000 
-;byte_61A = $0000 
-;byte_61B = $0000 
-;byte_61C = $0000 
-;byte_61D = $0000 
-;byte_61E = $0000 
-;byte_61F = $0000 
-;byte_620 = $0000 
-;byte_621 = $0000 
-;byte_622 = $0000 
-;byte_623 = $0000 
-;byte_624 = $0000 
-;byte_625 = $0000 
-;byte_626 = $0000 
-;byte_627 = $0000 
-;byte_628 = $0000 
-;byte_629 = $0000 
-;byte_62A = $0000 
-;byte_62B = $0000 
-;byte_62C = $0000 
-;byte_62D = $0000 
-;byte_62E = $0000 
-;byte_62F = $0000 
-;byte_630 = $0000 
-;byte_631 = $0000 
-;byte_632 = $0000 
-;byte_633 = $0000 
-;byte_634 = $0000 
-;byte_635 = $0000 
-;byte_636 = $0000 
-;byte_637 = $0000 
-;byte_638 = $0000 
-;byte_639 = $0000 
-;byte_63A = $0000 
-;byte_63B = $0000 
-;byte_63C = $0000 
-;byte_63D = $0000 
-;byte_63E = $0000 
-;byte_63F = $0000 
-;byte_640 = $0000 
-;byte_641 = $0000 
-;byte_642 = $0000 
-;byte_643 = $0000 
-;byte_644 = $0000 
-;byte_645 = $0000 
-;byte_646 = $0000 
-;byte_647 = $0000 
-;byte_648 = $0000 
-;byte_649 = $0000 
-;byte_64A = $0000 
-;byte_64B = $0000 
-;byte_64C = $0000 
-;byte_64D = $0000 
-;byte_64E = $0000 
-;byte_64F = $0000 
+byte_608 = $0608 
+byte_609 = $0609 
+byte_60A = $060A 
+byte_60B = $060B 
+byte_60C = $060C 
+byte_60D = $060D 
+byte_60E = $060E 
+byte_60F = $060F
+
+byte_610 = $0610 
+byte_611 = $0611 
+byte_612 = $0612 
+byte_613 = $0613 
+byte_614 = $0614 
+byte_615 = $0615 
+byte_616 = $0616 
+byte_617 = $0617 
+byte_618 = $0618 
+byte_619 = $0619 
+byte_61A = $061A 
+byte_61B = $061B 
+byte_61C = $061C 
+byte_61D = $061D 
+byte_61E = $061E 
+byte_61F = $061F
+
+byte_620 = $0620 
+byte_621 = $0621 
+byte_622 = $0622 
+byte_623 = $0623 
+byte_624 = $0624 
+byte_625 = $0625 
+byte_626 = $0626 
+byte_627 = $0627 
+byte_628 = $0628 
+byte_629 = $0629 
+byte_62A = $062A 
+byte_62B = $062B 
+byte_62C = $062C 
+byte_62D = $062D 
+byte_62E = $062E 
+byte_62F = $062F 
+
+byte_630 = $0630 
+byte_631 = $0631 
+byte_632 = $0632 
+byte_633 = $0633 
+byte_634 = $0634 
+byte_635 = $0635 
+byte_636 = $0636 
+byte_637 = $0637 
+byte_638 = $0638 
+byte_639 = $0639 
+byte_63A = $063A 
+byte_63B = $063B 
+byte_63C = $063C 
+byte_63D = $063D 
+byte_63E = $063E 
+byte_63F = $063F 
+
+byte_640 = $0640 
+byte_641 = $0641 
+byte_642 = $0642 
+byte_643 = $0643 
+byte_644 = $0644 
+byte_645 = $0645 
+byte_646 = $0646 
+byte_647 = $0647 
+byte_648 = $0648 
+byte_649 = $0649 
+byte_64A = $064A 
+byte_64B = $064B 
+byte_64C = $064C 
+byte_64D = $064D 
+byte_64E = $064E 
+byte_64F = $064F 
+
 byte_650 = $0650 
 byte_651 = $0651 
 byte_652 = $0652 
@@ -610,163 +663,177 @@ byte_66C = $066C
 byte_66D = $066D 
 byte_66E = $066E 
 byte_66F = $066F 
-;byte_670 = $0000 
-;byte_671 = $0000 
-;byte_672 = $0000
-;byte_673 = $0000
-;byte_674 = $0000
-;byte_675 = $0000
-;byte_676 = $0000
-;byte_677 = $0000
-;byte_678 = $0000
-;byte_679 = $0000
-;byte_67A = $0000
-;byte_67B = $0000
-;byte_67C = $0000
-;byte_67D = $0000
-;byte_67E = $0000
-;byte_67F = $0000
-;byte_680 = $0000
-;byte_681 = $0000
-;byte_682 = $0000
-;byte_683 = $0000
-;byte_684 = $0000
-;byte_685 = $0000
-;byte_686 = $0000
-;byte_687 = $0000
-;byte_688 = $0000
-;byte_689 = $0000
-;byte_68A = $0000
-;byte_68B = $0000
-;byte_68C = $0000
-;byte_68D = $0000
-;byte_68E = $0000
-;byte_68F = $0000
-;byte_690 = $0000
-;byte_691 = $0000
-;byte_692 = $0000
-;byte_693 = $0000
-;byte_694 = $0000
-;byte_695 = $0000
-;byte_696 = $0000
-;byte_697 = $0000
-;byte_698 = $0000
-;byte_699 = $0000
-;byte_69A = $0000
-;byte_69B = $0000
-;byte_69C = $0000
-;byte_69D = $0000
-;byte_69E = $0000
-;byte_69F = $0000
-;byte_6A0 = $0000
-;byte_6A1 = $0000
-;byte_6A2 = $0000
-;byte_6A3 = $0000
-;byte_6A4 = $0000
-;byte_6A5 = $0000
-;byte_6A6 = $0000
-;byte_6A7 = $0000
-;byte_6A8 = $0000
-;byte_6A9 = $0000
-;byte_6AA = $0000
-;byte_6AB = $0000
-;byte_6AC = $0000
-;byte_6AD = $0000
-;byte_6AE = $0000
-;byte_6AF = $0000
-;byte_6B0 = $0000
-;byte_6B1 = $0000
-;byte_6B2 = $0000
-;byte_6B3 = $0000
-;byte_6B4 = $0000
-;byte_6B5 = $0000
-;byte_6B6 = $0000
-;byte_6B7 = $0000
-;byte_6B8 = $0000
-;byte_6B9 = $0000
-;byte_6BA = $0000
-;byte_6BB = $0000
-;byte_6BC = $0000
+
+byte_670 = $0670 
+byte_671 = $0671 
+byte_672 = $0672
+byte_673 = $0673
+byte_674 = $0674
+byte_675 = $0675
+byte_676 = $0676
+byte_677 = $0677
+byte_678 = $0678
+byte_679 = $0679
+byte_67A = $067A
+byte_67B = $067B
+byte_67C = $067C
+byte_67D = $067D
+byte_67E = $067E
+byte_67F = $067F
+
+byte_680 = $0680
+byte_681 = $0681
+byte_682 = $0682
+byte_683 = $0683
+byte_684 = $0684
+byte_685 = $0685
+byte_686 = $0686
+byte_687 = $0687
+byte_688 = $0688
+byte_689 = $0689
+byte_68A = $068A
+byte_68B = $068B
+byte_68C = $068C
+byte_68D = $068D
+byte_68E = $068E
+byte_68F = $068F
+
+byte_690 = $0690
+byte_691 = $0691
+byte_692 = $0692
+byte_693 = $0693
+byte_694 = $0694
+byte_695 = $0695
+byte_696 = $0696
+byte_697 = $0697
+byte_698 = $0698
+byte_699 = $0699
+byte_69A = $069A
+byte_69B = $069B
+byte_69C = $069C
+byte_69D = $069D
+byte_69E = $069E
+byte_69F = $069F
+
+byte_6A0 = $06A0
+byte_6A1 = $06A1
+byte_6A2 = $06A2
+byte_6A3 = $06A3
+byte_6A4 = $06A4
+byte_6A5 = $06A5
+byte_6A6 = $06A6
+byte_6A7 = $06A7
+byte_6A8 = $06A8
+byte_6A9 = $06A9
+byte_6AA = $06AA
+byte_6AB = $06AB
+byte_6AC = $06AC
+byte_6AD = $06AD
+byte_6AE = $06AE
+byte_6AF = $06AF
+
+byte_6B0 = $06B0 
+byte_6B1 = $06B1 
+byte_6B2 = $06B2 
+byte_6B3 = $06B3 
+byte_6B4 = $06B4 
+byte_6B5 = $06B5 
+byte_6B6 = $06B6 
+byte_6B7 = $06B7 
+byte_6B8 = $06B8 
+byte_6B9 = $06B9 
+byte_6BA = $06BA 
+byte_6BB = $06BB 
+byte_6BC = $06BC 
 byte_6BD = $06BD
-;byte_6C1 = $0000
-;byte_6C2 = $0000
-;byte_6C3 = $0000
-;byte_6C4 = $0000
-;byte_6C5 = $0000
-;byte_6C6 = $0000
-;byte_6C7 = $0000
-;byte_6C8 = $0000
-;byte_6C9 = $0000
-;byte_6CA = $0000
-;unk_6D0 
-;apu_unk_700 = $0000
-;apu_unk_701 = $0000
-;apu_unk_702 = $0000
-;apu_unk_703 = $0000
-;apu_unk_704 = $0000
-;apu_unk_705 = $0000
-;apu_unk_706 = $0000
-;apu_unk_707 = $0000
-;apu_unk_708
-;apu_unk_70C
-;apu_unk_70F
-;apu_unk_710 = $0000
-;apu_unk_711 = $0000
-;apu_unk_712 = $0000
-;pulse1_env_713 = $0000
-;apu_pulse2_env_714 = $0000 
-;apu_unk_715 = $0000
-;apu_unk_716 = $0000
-;pulse1_sweep_717 = $0000 
-;apu_pulse2_sweep_718 = $0000 
-;apu_unk_719 = $0000
-;apu_unk_71B = $0000
-;apu_unk_71C = $0000
-;apu_unk_71D = $0000
-;apu_unk_71F = $0000
-;apu_unk_721 = $0000
-;apu_unk_723 = $0000
-;apu_unk_725 = $0000
-;apu_unk_727 = $0000
-;apu_unk_728 = $0000
-;apu_unk_729 = $0000
-;apu_unk_72A = $0000
-;apu_unk_72B = $0000
-;apu_unk_72F = $0000
-;apu_unk_733 = $0000
-;apu_unk_737 = $0000
-;apu_unk_738 = $0000
-;apu_unk_739 = $0000
-;apu_unk_73D = $0000
-;apu_unk_741 = $0000
-;apu_unk_742 = $0000
-;apu_unk_743 = $0000
-;apu_pulse1_env_744 = $0000 
-;apu_unk_745 = $0000
-;tri_count_746 = $0000
-;apu_unk_747 = $0000
-;apu_unk_748 = $0000
-;apu_unk_749 = $0000
-;apu_unk_74A = $0000
-;apu_unk_74C = $0000
-;apu_unk_74E = $0000
-;apu_unk_750 = $0000
-;apu_unk_752 = $0000
-;apu_unk_754 = $0000
-;apu_unk_756 = $0000
-;apu_unk_758 = $0000
-;apu_unk_759 = $0000
-;apu_unk_75A = $0000
-;apu_unk_75B = $0000
-;apu_unk_75C = $0000
-;apu_unk_760 = $0000
-;apu_unk_764 = $0000
-;apu_ptr_768 = $0000
-;apu_ptr_769 = $0000
-;apu_unk_76A = $0000
-;apu_unk_76B = $0000
-;apu_unk_76C = $0000
-;apu_unk_76D = $0000 
+
+byte_6C1 = $06C1
+byte_6C2 = $06C2
+byte_6C3 = $06C3
+byte_6C4 = $06C4
+byte_6C5 = $06C5
+byte_6C6 = $06C6
+byte_6C7 = $06C7
+byte_6C8 = $06C8
+byte_6C9 = $06C9
+byte_6CA = $06CA
+
+unk_6D0 = $06D0
+
+apu_unk_700 = $0700
+apu_unk_701 = $0701
+apu_unk_702 = $0702
+apu_unk_703 = $0703
+apu_unk_704 = $0704
+apu_unk_705 = $0705
+apu_unk_706 = $0706
+apu_unk_707 = $0707
+apu_unk_708 = $0708
+apu_unk_70C = $070C
+apu_unk_70F = $070F
+
+apu_unk_710 = $0710
+apu_unk_711 = $0711
+apu_unk_712 = $0712
+pulse1_env_713 = $0713
+apu_pulse2_env_714 = $0714 
+apu_unk_715 = $0715
+apu_unk_716 = $0716
+pulse1_sweep_717 = $0717 
+apu_pulse2_sweep_718 = $0718 
+apu_unk_719 = $0719
+apu_unk_71B = $071B
+apu_unk_71C = $071C
+apu_unk_71D = $071D
+apu_unk_71F = $071F
+
+apu_unk_721 = $0721
+apu_unk_723 = $0723
+apu_unk_725 = $0725
+apu_unk_727 = $0727
+apu_unk_728 = $0728
+apu_unk_729 = $0729
+apu_unk_72A = $072A
+apu_unk_72B = $072B
+apu_unk_72F = $072F
+
+apu_unk_733 = $0733
+apu_unk_737 = $0737
+apu_unk_738 = $0738
+apu_unk_739 = $0739
+apu_unk_73D = $073D
+
+apu_unk_741 = $0741
+apu_unk_742 = $0742
+apu_unk_743 = $0743
+apu_pulse1_env_744 = $0744 
+apu_unk_746 = $0746
+tri_count_746 = $0746
+apu_unk_747 = $0747
+apu_unk_748 = $0748
+apu_unk_749 = $0749
+apu_unk_74A = $074A
+apu_unk_74C = $074C
+apu_unk_74E = $074E
+
+apu_unk_750 = $0750
+apu_unk_752 = $0752
+apu_unk_754 = $0754
+apu_unk_756 = $0756
+apu_unk_758 = $0758
+apu_unk_759 = $0759
+apu_unk_75A = $075A
+apu_unk_75B = $075B
+apu_unk_75C = $075C
+
+apu_unk_760 = $0760
+apu_unk_764 = $0764
+apu_ptr_768 = $0768
+apu_ptr_769 = $0769
+apu_unk_76A = $076A
+apu_unk_76B = $076B
+apu_unk_76C = $076C
+apu_unk_76D = $076D 
 
 ; PPU REGS
 _PPU_CTRL = $2000

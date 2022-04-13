@@ -7,7 +7,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-bank_switch_38000:
+bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
@@ -31,8 +31,8 @@ loc_3804D:
 	STA	bank_command_346
 	LDA	bank_from_343
 	STA	bank_to_344
-	JMP	bank_switch_38000
-; End of function bank_switch_38000
+	JMP	bank_switch_8000
+; End of function bank_switch_8000
 
 ; ---------------------------------------------------------------------------
 off_3805B:
@@ -269,7 +269,7 @@ loc_3F8A8:
 ; ---------------------------------------------------------------------------
 
 loc_3F8D6:
-	JSR	sub_3FA56
+	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_3F76B
 
@@ -534,10 +534,8 @@ locret_3FA55:
 ; End of function sub_3FA27
 
 
-
-Common_Code_03
+Common_Code_03:
 	.include "common/common_funcs.asm"
-
 
 ; ---------------------------------------------------------------------------
 	.include "garbage/bank_03_garbage.asm"

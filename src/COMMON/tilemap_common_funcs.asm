@@ -95,5 +95,5 @@ write_tilemap_line_7F90F:
 		RTS
 ; End of function load_tilemap_chunk_in_ram_7F897
 
-Common_Code_Tilemap
+Common_Code_Tilemap:
 		.include "common/common_funcs.asm"

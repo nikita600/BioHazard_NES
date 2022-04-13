@@ -7,7 +7,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-bank_switch_68000:
+bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
@@ -31,8 +31,8 @@ loc_6804D:
 	STA	bank_command_346
 	LDA	bank_from_343
 	STA	bank_to_344
-	JMP	bank_switch_68000
-; End of function bank_switch_68000
+	JMP	bank_switch_8000
+; End of function bank_switch_8000
 
 ; ---------------------------------------------------------------------------
 GFX_6805B:
@@ -123,11 +123,8 @@ loc_6F8BE:
 	RTS
 ; End of function upload_gfx_to_ppu_6F89C
 
-
-
-Common_Code_00
+Common_Code_06:
 	.include "common/common_funcs.asm"
-
 
 ; ---------------------------------------------------------------------------
 	.include "garbage/bank_06_garbage.asm"

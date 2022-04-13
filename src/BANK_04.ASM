@@ -7,7 +7,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-bank_switch_48000:
+bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
@@ -46,7 +46,7 @@ exec_b13_c1_48064:
 	STA	bank_to_344
 	LDA	#4
 	STA	bank_from_343
-	JSR	bank_switch_48000
+	JSR	bank_switch_8000
 
 loc_48076:
 	PLA
@@ -70,13 +70,13 @@ loc_48089:
 ; ---------------------------------------------------------------------------
 
 loc_4808F:
-			; bank_switch_48000+7Aj ...
+			; bank_switch_8000+7Aj ...
 	LDA	#$FF
 	STA	bank_command_346
 	LDA	bank_from_343
 	STA	bank_to_344
-	JMP	bank_switch_48000
-; End of function bank_switch_48000
+	JMP	bank_switch_8000
+; End of function bank_switch_8000
 
 ; ---------------------------------------------------------------------------
 Palette_4809D:
@@ -485,7 +485,7 @@ loc_4F54A:
 	LDA	tilemapTypeUnk_30B
 	CMP	inv_spr_dscr1_30C
 	BCC	loc_4F538
-	JSR	sub_4F5CB
+	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_4F527
 
@@ -532,13 +532,13 @@ loc_4F5A0:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
-	JSR	sub_4F5CB
+	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_4F583
 
 
 
-Common_Code_04
+Common_Code_04:
 	.include "common/common_funcs.asm"
 
 ; ---------------------------------------------------------------------------

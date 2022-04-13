@@ -1,12 +1,14 @@
 ; Segment type:Pure code
 	;.segment BANK_01 (Sprites)
-	* =  $8000
+	;* =  $8000
 
 ; =============== S U B	R O U T	I N E =======================================
 
 ; SPRITE_BANK
 
-bank_switch_18000:
+    .include "includes\\ram.inc"
+
+bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
@@ -51,8 +53,8 @@ loc_1806B:
 	STA	bank_command_346
 	LDA	bank_from_343
 	STA	bank_to_344
-	JMP	bank_switch_18000 ; SPRITE_BANK
-; End of function bank_switch_18000
+	JMP	bank_switch_8000 ; SPRITE_BANK
+; End of function bank_switch_8000
 
 ; ---------------------------------------------------------------------------
 SpritePalettes_18079:
@@ -841,16 +843,16 @@ loc_1F6F3:
 	RTS
 ; End of function upload_to_ppu_1F6D1
 
-Common_Code_01
+Common_Code_01:
 	.include "common/common_funcs.asm"
 
 ; ---------------------------------------------------------------------------
 	.include "garbage/bank_01_garbage.asm"
 
 Vectors_01:
-	.WORD NMI_1F7E5
+	.WORD NMI_FD53
 	.WORD SpritePalettes_18079
-	.WORD exit_1F85C
+	.WORD return_FDCA
 ; end of 'BANK_01'
 
 ; ===========================================================================

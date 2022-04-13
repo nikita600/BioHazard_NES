@@ -1,8 +1,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-wait_for_ppu_data_upload_FC8C:		
-					; sub_F1A2:loc_F2E0p ...
+wait_for_ppu_data_upload_FC8C:
 		LDA	#1
 		STA	has_ppu_data_to_upload_6F
 

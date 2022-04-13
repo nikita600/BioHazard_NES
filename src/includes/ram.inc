@@ -1,21 +1,22 @@
 ; banks ids
-sprites_1 .SET 1
-text_2 .SET 2
-items_spr_4 .SET 4
-map_inventory_spr_5 .SET 5
-tilemaps_9 .SET 9
-banks_12 .SET $12
-banks_13 .SET $13
+sprites_1               .SET 1
+text_2                  .SET 2
+glyphs_3                .SET 3
+items_spr_4             .SET 4
+map_inventory_spr_5     .SET 5
+tilemaps_9              .SET 9
+banks_12                .SET $12
+banks_13                .SET $13
 
 ; pad ids
-a_80 .SET $80
-b_40 .SET $40
-select_20 .SET $20
-start_10 .SET $10
-right_1 .SET $1
-left_2 .SET $2
-down_4 .SET $4
-up_8 .SET $8
+a_80        .SET $80
+b_40        .SET $40
+select_20   .SET $20
+start_10    .SET $10
+right_1     .SET $1
+left_2      .SET $2
+down_4      .SET $4
+up_8        .SET $8
 
 ; RAM
 ptr_0 = $0000

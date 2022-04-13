@@ -6,7 +6,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-bank_switch_28000:
+bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
@@ -68,13 +68,13 @@ loc_28083:
 ; ---------------------------------------------------------------------------
 
 loc_28089:
-			; bank_switch_28000+68j ...
+			; bank_switch_8000+68j ...
 	LDA	#$FF
 	STA	bank_command_346
 	LDA	bank_from_343
 	STA	bank_to_344
-	JMP	bank_switch_28000
-; End of function bank_switch_28000
+	JMP	bank_switch_8000
+; End of function bank_switch_8000
 
 ; ---------------------------------------------------------------------------
 off_28097:
@@ -385,12 +385,12 @@ loc_2D31B:
 	AND	#8
 	CMP	#0
 	BEQ	loc_2D339
-	JSR	sub_2E7DA
-	JSR	sub_2E7DA
-	JSR	sub_2E7DA
-	JSR	sub_2E7DA
-	JSR	sub_2E7DA
-	JSR	sub_2E7DA
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
 	JMP	loc_2D33C
 ; ---------------------------------------------------------------------------
 
@@ -408,12 +408,12 @@ loc_2D342:
 	AND	#8
 	CMP	#0
 	BEQ	loc_2D360
-	JSR	sub_2E7DA
-	JSR	sub_2E7DA
-	JSR	sub_2E7DA
-	JSR	sub_2E7DA
-	JSR	sub_2E7DA
-	JSR	sub_2E7DA
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
 	JMP	loc_2D36C
 ; ---------------------------------------------------------------------------
 
@@ -643,7 +643,7 @@ loc_2D4C3:
 ; ---------------------------------------------------------------------------
 
 loc_2D4D3:
-	JSR	sub_2E7BB
+	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_2D401
 
@@ -671,7 +671,7 @@ exec_b3_c0_D4E7:
 	STA	bank_from_343
 	LDA	#glyphs_3
 	STA	bank_to_344
-	JSR	bank_switch_28000
+	JSR	bank_switch_8000
 
 loc_2D4FA:
 	PLA
@@ -984,7 +984,7 @@ loc_2E381:
 ; ---------------------------------------------------------------------------
 
 loc_2E3AF:
-	JSR	sub_2E7BB
+	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_2E244
 
@@ -1391,7 +1391,7 @@ loc_2E7B0:
 
 
 
-Common_Code_02
+Common_Code_02:
 	.include "common/common_funcs.asm"
 
 ; ---------------------------------------------------------------------------
@@ -1399,7 +1399,7 @@ Common_Code_02
 
 Vectors_02:
 	.WORD NMI_FD53
-	.WORD off_2805B
+	.WORD off_28097
 	.WORD return_FDCA
 ; end of 'BANK_02'
 

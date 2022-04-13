@@ -7,7 +7,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-bank_switch_128000:
+bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
@@ -32,7 +32,7 @@ switch_case_8035:
 
 locret_12805A:
 	RTS
-; End of function bank_switch_128000
+; End of function bank_switch_8000
 
 ; ---------------------------------------------------------------------------
 CommandPtrs_12805B:
@@ -473,7 +473,7 @@ exec_b13_c5_12829C:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 
 loc_1282AE:
 	JSR	sub_128955
@@ -487,7 +487,7 @@ exec_b13_c5_1282B5:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
@@ -529,7 +529,7 @@ return_1282EE:
 	STA	bank_command_346
 	LDA	bank_from_343
 	STA	bank_to_344
-	JMP	bank_switch_128000
+	JMP	bank_switch_8000
 ; End of function command_0_1280FB
 
 
@@ -544,7 +544,7 @@ exec_b2_c1_128300:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b2_c1_128300
 
@@ -560,7 +560,7 @@ exec_b2_c3_128313:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b2_c3_128313
 
@@ -620,7 +620,7 @@ exec_b4_c3_128375:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 
 loc_128387:
 	PLA
@@ -644,7 +644,7 @@ exec_b1_c1_128394:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b1_c1_128394
 
@@ -660,7 +660,7 @@ exec_b4_c2_1283A7:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b4_c2_1283A7
 
@@ -695,7 +695,7 @@ exec_b2_c2_1283DF:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b2_c2_1283DF
 
@@ -711,7 +711,7 @@ exec_b2_c4_1283F2:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b2_c4_1283F2
 
@@ -726,7 +726,7 @@ exec_b2_c5_128405:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b2_c5_128405
 
@@ -742,7 +742,7 @@ exec_b0_c3_128418:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b0_c3_128418
 
@@ -758,7 +758,7 @@ exec_b0_c4_12842B:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b0_c4_12842B
 
@@ -775,7 +775,7 @@ exec_b0_c5_12843E:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -794,7 +794,7 @@ exec_b0_c6_128459:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -813,7 +813,7 @@ exec_b0_c7_128474:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -832,7 +832,7 @@ exec_b0_c8_12848F:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -852,7 +852,7 @@ exec_b0_c9_1284AA:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -872,7 +872,7 @@ exec_b0_cA_1284C5:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -892,7 +892,7 @@ exec_b0_cB_1284E0:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -911,7 +911,7 @@ exec_b0_cC_1284FB:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -930,7 +930,7 @@ exec_b0_cD_128516:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -972,11 +972,11 @@ loc_128549:
 	BCS	loc_128571
 	LDA	apu_pulse_timer1_12861A,X
 	STA	_APU_PULSE1_ENV,Y
-	LDA	apu_pulse_timer1_12861A.length,X
+	LDA	apu_pulse_timer1_12861A+1,X
 	STA	_APU_PULSE1_SWEEP,Y
-	LDA	apu_pulse_timer1_12861A.envelope,X
+	LDA	apu_pulse_timer1_12861A+2,X
 	STA	_APU_PULSE1_TIME,Y
-	LDA	apu_pulse_timer1_12861A.sweep,X
+	LDA	apu_pulse_timer1_12861A+3,X
 	STA	_APU_PULSE1_LEN,Y
 	RTS
 ; ---------------------------------------------------------------------------
@@ -984,103 +984,18 @@ loc_128549:
 loc_128571:
 	LDA	stru_12871A,X
 	STA	_APU_PULSE1_ENV,Y
-	LDA	stru_12871A.length,X
+	LDA	stru_12871A+1,X
 	STA	_APU_PULSE1_SWEEP,Y
-	LDA	stru_12871A.envelope,X
+	LDA	stru_12871A+2,X
 	STA	_APU_PULSE1_TIME,Y
-	LDA	stru_12871A.sweep,X
+	LDA	stru_12871A+3,X
 	STA	_APU_PULSE1_LEN,Y
 	RTS
 ; End of function sub_128531
 
 ; ---------------------------------------------------------------------------
-byte_12858A:
-	.BYTE	2,  2,	2,  8,	8,  2,	2,  8,	8,  8,	8,  2,	2,  2,	2,  2
-	.BYTE	2,  2,	8,  8,	8,  8,	2,  2,	2,  2,	2,  2,	2,  2,	8,  2
-	.BYTE	8,  2,	2,  2,	2,  8,	2,  2,	2,  8,	8,  2,	2,  2,	8,  2
-	.BYTE	2,  2,	2,  2,	8,  2,	2,  2,	2,  2,	2,  2,	8,  2,	2,  2
-	.BYTE	2,  2,	8,  8,	2,  2,	1,  2
-byte_1285D2:
-	.BYTE	4,  4,	4, $C, $C,  4,	4, $C, $C, $C, $C,  4,	4,  4,	4,  4
-	.BYTE	4,  4, $C, $C, $C, $C,	4,  4,	4,  4,	4,  4,	4,  4, $C,  4
-	.BYTE  $C,  4,	4,  4,	4, $C,	4,  4,	4, $C, $C,  4,	4,  4, $C,  4
-	.BYTE	4,  4,	4,  4, $C,  4,	4,  4,	4,  4,	4,  4, $C,  4,	4,  4
-	.BYTE	4,  4, $C, $C,	4,  4,	0,  4
-apu_pulse_timer1_12861A:
-	pulse_entry <$9F, $BA, $F4, $F1> 
-	
-	pulse_entry <$81, $99, $8D, $A>
-	pulse_entry <$88, $93, $2E, 0>
-	pulse_entry <$1F, $7A, $3A, $96>
-	pulse_entry <$4F, $94, $4C, $6C>
-	pulse_entry <$DF, $B3, $5A, $20>
-	pulse_entry <$49, $93, $1B, $30>
-	pulse_entry <$8F, $94, $39, $6C>
-	pulse_entry <$DF, $B3, $26, $17>
-	pulse_entry <$DF, $78, $49, $94>
-	pulse_entry <$4F, $94, $4C, $6C>
-	pulse_entry <$9F, $A9, 3, $A1>
-	pulse_entry <$5F, $CA, $9C, $98>
-	pulse_entry <$DF, $FA, $14, $D1>
-	pulse_entry <$9F, $AA, 4, $A2>
-	pulse_entry <$9F, $FC, $14, $E9>
-	pulse_entry <$DF, $9A, $FB, 9>
-	pulse_entry <$9F, $F3, $4F, $A1>
-	pulse_entry <$80, $E, $1E, $11>
-	pulse_entry <$9F, $1A, $37, $1F>
-	pulse_entry <$F, $B6, $F, $10>
-	pulse_entry <$9D, $68, 7, $15>
-	pulse_entry <$4F, $B4, $33, $F8>
-	pulse_entry <$DF, $E1, $4E, $A9>
-	pulse_entry <$4F, $F2, $1F, 8>
-	pulse_entry <$8F, $F9, $FB, $F9>
-	pulse_entry <$9F, $AA, 4, $A1>
-	pulse_entry <$4F, $B2, $1A, $C0>
-	pulse_entry <$4F, $BB, $33, $E9>
-	pulse_entry <$CF, $B3, $5A, $90>
-	pulse_entry <$DF, $E4, $42, $1A>
-	pulse_entry <$56, $A9, $6A, $B0>
-	pulse_entry <0,	0, 8, 0>
-	pulse_entry <$81, $99, $8D, $A>
-	pulse_entry <$8D, $CA, $EA, $D0>
-	pulse_entry <$AB, $C5, $51, $D2>
-	pulse_entry <$88, $84, $5F, $30>
-	pulse_entry <$8F, $A1, 9, $F0>
-	pulse_entry <$88, $93, $2E, 0>
-	pulse_entry <$4B, $6F, $FB, $D0>
-	pulse_entry <$FF, $AF, 2, $E3>
-	pulse_entry <$DF, $E4, $42, $1A>
-	pulse_entry <$80, $E, $1E, $11>
-	pulse_entry <$4F, $B4, $33, $F8>
-	pulse_entry <$DF, $E1, $4E, $A9>
-	pulse_entry <$4B, $8C, $CD, $30>
-	pulse_entry <$B, $C4, $8D, $30>
-	pulse_entry <$4F, $C4, $3F, 8>
-	pulse_entry <$4C, $9A, $5C, $B0>
-	pulse_entry <$4F, $9A, $2E, 8>
-	pulse_entry <$45, $A9, 8, 9>
-	pulse_entry <$4A, $9A, $D2, $D0>
-	pulse_entry <$D, 0, $8E, $D0>
-	pulse_entry <$CC, $8C, $7E, $A9>
-	pulse_entry <$8C, $D2, $3C, 8>
-	pulse_entry <$49, $BA, $7E, $21>
-	pulse_entry <$4C, 0, $6C, $F0>
-	pulse_entry <$4C, 0, $4F, $F0>
-	pulse_entry <$8D, $AA, $A6, $F1>
-	pulse_entry <$1A, $89, $13, 4>
-	pulse_entry <0,	0, 8, 0>
-	pulse_entry <$81, $99, $8D, $A>
-	pulse_entry <$8D, $CA, $EA, $D0>
-	pulse_entry <$AB, $C5, $51, $D2>
-stru_12871A:pulse_entry <$88, $84, $5F, $30> 
-	
-	pulse_entry <$88, $93, $2E, 0>
-	pulse_entry <$8F, $A1, 9, $F0>
-	pulse_entry <$B, $83, $E, $40>
-	pulse_entry <$49, $F2, $C4, 8>
-	pulse_entry <$9F, $BA, $CC, $20>
-	pulse_entry <$8D, $AA, $A6, $F1>
-	pulse_entry <$4F, $C3, $2D, 8>
+
+	.include "music\\bank_12_apu.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -1396,7 +1311,7 @@ loc_128986:
 	LDA	#0
 	STA	byte_43E
 	JSR	sub_12EEAE
-	JSR	ppu_reset_ctrl_mask_12F963
+	JSR	ppu_reset_ctrl_mask_FE93
 	LDA	#$28 
 	STA	_PPU_ADDR
 	LDA	#0
@@ -1441,7 +1356,7 @@ ppu_clear_ram_1289A1:
 	LDA	ppu_ctrl_31F
 	AND	#$FC 
 	STA	ppu_ctrl_31F
-	JSR	ppu_update_ctrl_mask_12F956
+	JSR	ppu_update_ctrl_mask_FE86
 	JSR	exec_b0_cD_128516
 	JSR	sub_12EDF5
 	LDA	#0
@@ -1494,7 +1409,7 @@ game_not_finished_128A43:
 	JSR	sub_128E24
 	JSR	sub_128EC2
 	JSR	sub_129019
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	LDA	input_pressed_34A
 	CMP	#$20 
 	BNE	loc_128A72
@@ -3057,7 +2972,7 @@ exec_b0_c0_12A973:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -3077,7 +2992,7 @@ exec_b0_c1_12A98E:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -3097,7 +3012,7 @@ exec_b0_c2_12A9A9:
 	STA	bank_to_344
 	LDA	#$12
 	STA	bank_from_343
-	JSR	bank_switch_128000
+	JSR	bank_switch_8000
 	PLA
 	STA	bank_from_343
 	RTS
@@ -7057,10 +6972,10 @@ sub_12C1C3:
 	TXA
 	PHA
 	JSR	exec_b0_c5_12843E
-	JSR	wait_for_count350_zero_12F770
-	JSR	wait_for_count350_zero_12F770
-	JSR	wait_for_count350_zero_12F770
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
+	JSR	wait_for_frame_rendered_FCA0
+	JSR	wait_for_frame_rendered_FCA0
+	JSR	wait_for_frame_rendered_FCA0
 	PLA
 	TAX
 	PLA
@@ -7741,7 +7656,7 @@ loc_12C5B1:
 	LDA	#$FF
 	STA	prev_sprite_type_4A9
 	JSR	exec_b0_c2_12A9A9
-	JSR	wait_for_b_pressed_12F795
+	JSR	wait_for_b_pressed_FCC5
 	PLA
 	STA	prev_sprite_type_4A9
 	PLA
@@ -8700,7 +8615,7 @@ locret_12CB57:
 
 
 show_intro_screen_12CB58:
-	JSR	sub_12F77B
+	JSR	wait_any_input_65k_cycles_FCAB
 	LDA	#$10
 	STA	image_id_4A4
 	LDA	#0
@@ -8727,10 +8642,10 @@ show_intro_screen_12CB58:
 loc_12CB96:
 	; show_intro_screen_12CB58:loc_12CBD6j	...
 	JSR	sub_12CC34
-	JSR	wait_for_count350_zero_12F770
-	JSR	wait_for_count350_zero_12F770
-	JSR	wait_for_count350_zero_12F770
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
+	JSR	wait_for_frame_rendered_FCA0
+	JSR	wait_for_frame_rendered_FCA0
+	JSR	wait_for_frame_rendered_FCA0
 	LDA	byte_42E
 	CMP	#$26 
 	BEQ	loc_12CBB2
@@ -9054,7 +8969,7 @@ loc_12CE00:
 loc_12CE05:
 	; com_E_load_game_12CD30+10Bj ...
 	JSR	sub_12D0C2
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	LDA	input_pressed_34A
 	CMP	#8
 	BNE	loc_12CE25
@@ -9217,7 +9132,7 @@ loc_12CEBA:
 loc_12CF2D:
 	
 	JSR	sub_12D070
-	JSR	sub_12F765
+	JSR	wait_for_vblank_FC95
 	LDA	input_pressed_34A
 	CMP	#2
 	BNE	loc_12CF48
@@ -9654,7 +9569,7 @@ loc_12D210:
 sub_12D21B:
 	
 	JSR	sub_12EEAE
-	JSR	ppu_reset_ctrl_mask_12F963
+	JSR	ppu_reset_ctrl_mask_FE93
 	JSR	sub_12D261
 	LDA	#$10
 	STA	_PPU_ADDR
@@ -9680,7 +9595,7 @@ loc_12D23F:
 	INX
 	CPX	#$10
 	BNE	loc_12D23F
-	JSR	ppu_update_ctrl_mask_12F956
+	JSR	ppu_update_ctrl_mask_FE86
 	JSR	sub_12EDF5
 	RTS
 ; End of function sub_12D21B
@@ -10097,7 +10012,7 @@ loc_12D4E7:
 	JSR	sub_12DE49
 	JSR	sub_12DEB5
 	JSR	sub_12DD0A
-	JSR	sub_12F765
+	JSR	wait_for_vblank_FC95
 	LDA	input_pressed_34A
 	CMP	#8
 	BNE	loc_12D512
@@ -10349,7 +10264,7 @@ loc_12D699:
 	LDA	#$DC 
 	STA	ppu_unk_byte_309
 	JSR	sub_12E829
-	JSR	sub_12F765
+	JSR	wait_for_vblank_FC95
 	LDA	input_pressed_34A
 	CMP	#2
 	BNE	loc_12D6E3
@@ -10410,7 +10325,7 @@ sub_12D700:
 loc_12D72F:
 	
 	JSR	sub_12DD0A
-	JSR	sub_12F765
+	JSR	wait_for_vblank_FC95
 	LDA	input_pressed_34A
 	CMP	#8
 	BNE	loc_12D76F
@@ -11032,7 +10947,7 @@ loc_12DAE4:
 	ADC	byte_547
 	STA	ppu_unk_byte_309
 	JSR	sub_12E829
-	JSR	sub_12F765
+	JSR	wait_for_vblank_FC95
 	LDA	input_pressed_34A
 	CMP	#0
 	BNE	loc_12DB1A
@@ -11116,7 +11031,7 @@ loc_12DB83:
 
 loc_12DB8E:
 	
-	JSR	sub_12F765
+	JSR	wait_for_vblank_FC95
 	LDA	input_pressed_34A
 	CMP	#8
 	BNE	loc_12DBB0
@@ -11266,7 +11181,7 @@ sub_12DC76:
 
 loc_12DC79:
 	
-	JSR	sub_12F765
+	JSR	wait_for_vblank_FC95
 	LDA	input_reg1_347
 	CMP	#8
 	BNE	loc_12DC97
@@ -12366,7 +12281,7 @@ locret_12E3D3:
 
 sub_12E3D4:
 	
-	JSR	sub_12F765
+	JSR	wait_for_vblank_FC95
 	LDA	input_pressed_34A
 	CMP	#$40 
 	BNE	sub_12E3D4
@@ -12429,7 +12344,7 @@ locret_12E427:
 sub_12E428:
 	
 	JSR	sub_12E4CD
-	JSR	sub_12F765
+	JSR	wait_for_vblank_FC95
 	LDA	input_pressed_34A
 	CMP	#8
 	BNE	loc_12E450
@@ -12688,7 +12603,7 @@ loc_12E616:
 	JSR	sub_12E7F0
 	LDA	byte_4C1
 	BNE	loc_12E62A
-	JSR	wait_for_b_pressed_12F795
+	JSR	wait_for_b_pressed_FCC5
 	JMP	loc_12E67A
 ; ---------------------------------------------------------------------------
 
@@ -12799,7 +12714,7 @@ loc_12E6E0:
 	JSR	sub_12E7F0
 	LDA	byte_4D0
 	BNE	loc_12E6F7
-	JSR	wait_for_b_pressed_12F795
+	JSR	wait_for_b_pressed_FCC5
 	JSR	sub_12ED29
 	JMP	loc_12E776
 ; ---------------------------------------------------------------------------
@@ -12863,7 +12778,7 @@ loc_12E75B:
 	JSR	exec_b2_c3_128313
 
 loc_12E763:
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	LDA	input_pressed_34A
 	CMP	#$40 
 	BNE	loc_12E763
@@ -13746,7 +13661,7 @@ set_inventory_screen_12ED5D:
 
 loc_12ED90:
 	
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	LDA	input_pressed_34A
 	CMP	#8
 	BNE	loc_12EDC0
@@ -13902,7 +13817,7 @@ loc_12EE7D:
 	CMP	#0
 	BEQ	loc_12EE9C
 	LDA	byte_341
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	JMP	loc_12EE04
 ; ---------------------------------------------------------------------------
 
@@ -13910,14 +13825,14 @@ loc_12EE9C:
 	LDA	byte_341
 	CMP	#0
 	BEQ	loc_12EEA7
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12EEA7:
 	CLC
 	ADC	#1
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; End of function sub_12EDF5
 
@@ -14027,7 +13942,7 @@ loc_12EF35:
 	CMP	#$FF
 	BEQ	loc_12EF54
 	LDA	byte_341
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	JMP	write_ppu_entry_12EEB3
 ; ---------------------------------------------------------------------------
 
@@ -14035,14 +13950,14 @@ loc_12EF54:
 	LDA	byte_341
 	CMP	#0
 	BEQ	loc_12EF5F
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12EF5F:
 	CLC
 	ADC	#1
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; End of function sub_12EEAE
 
@@ -14094,7 +14009,7 @@ sub_12EF77:
 	LDA	#2
 	STA	prev_sprite_type_4A9
 	JSR	exec_b0_c2_12A9A9
-	JSR	wait_for_any_input_12F79D
+	JSR	wait_for_any_input_FCCD
 	PLA
 	STA	prev_sprite_type_4A9
 	PLA
@@ -14181,7 +14096,7 @@ loc_12F0E1:
 	
 	JSR	sub_12F564
 	JSR	sub_12F168
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	LDA	input_pressed_34A
 	CMP	#8
 	BNE	loc_12F0FA
@@ -14529,7 +14444,7 @@ loc_12F37E:
 
 loc_12F38A:
 	
-	JSR	wait_for_count350_zero_12F770
+	JSR	wait_for_frame_rendered_FCA0
 	JSR	sub_12F168
 	LDA	input_pressed_34A
 	CMP	#8
@@ -14682,7 +14597,7 @@ loc_12F495:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
-	JSR	sub_12F75C
+	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_12F478
 
@@ -15015,10 +14930,10 @@ sub_12F698:
 	LDA	#1
 	STA	byte_363
 	JSR	sub_12F5DC
-	JSR	sub_12F77B
-	JSR	sub_12F77B
-	JSR	sub_12F77B
-	JSR	sub_12F77B
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
+	JSR	wait_any_input_65k_cycles_FCAB
 	RTS
 ; End of function sub_12F698
 
@@ -15090,7 +15005,7 @@ sub_12F732:
 ; End of function sub_12F732
 
 
-Common_Code_12
+Common_Code_12:
 	.include "common/common_funcs.asm"
 
 ; ---------------------------------------------------------------------------
@@ -15098,7 +15013,7 @@ Common_Code_12
 
 Vectors_12:
 	.WORD NMI_FD53
-	.WORD bank_switch_128000
+	.WORD bank_switch_8000
 	.WORD return_FDCA
 ; end of 'BANK_12'
 

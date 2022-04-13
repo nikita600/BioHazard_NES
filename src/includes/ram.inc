@@ -1,4 +1,5 @@
 ; banks ids
+code_0                  .SET 0
 sprites_1               .SET 1
 text_2                  .SET 2
 glyphs_3                .SET 3
@@ -461,7 +462,7 @@ byte_5A5 = $05A5
 byte_5A6 = $05A6 
 byte_5A8 = $05A8 
 byte_5A9 = $05A9 
-byte_5AA = $05A0 
+byte_5AA = $05AA 
 byte_5AB = $05AB 
 byte_5AC = $05AC 
 byte_5AD = $05AD 

@@ -1,6 +1,8 @@
 ; Segment type:Pure code
 	;.segment BANK_04 (Text)
-	* =  $8000
+	;* =  $8000
+
+	.include "includes\\ram.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -543,9 +545,9 @@ Common_Code_04
 	.include "garbage/bank_04_garbage.asm"
 
 Vectors_04:
-	.WORD NMI_4F692
+	.WORD NMI_FD53
 	.WORD Palette_4809D
-	.WORD locret_4F709
+	.WORD return_FDCA
 ; end of 'BANK_04'
 
 ; ===========================================================================

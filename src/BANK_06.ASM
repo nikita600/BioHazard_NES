@@ -1,6 +1,8 @@
 ; Segment type:Pure code
 	;.segment BANK_06 (Sprites)
-	* =  $8000
+	;* =  $8000
+
+	.include "includes\\ram.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -131,9 +133,9 @@ Common_Code_00
 	.include "garbage/bank_06_garbage.asm"
 
 Vectors_06:
-	.WORD NMI_6F9B0
+	.WORD NMI_FD53
 	.WORD GFX_6805B
-	.WORD locret_6FA27
+	.WORD return_FDCA
 ; end of 'BANK_06'
 
 ; ===========================================================================

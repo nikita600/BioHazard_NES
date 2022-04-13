@@ -1,6 +1,8 @@
 ; Segment type:Pure code
 	;.segment BANK_13 (Code + Sprites)
-	* =  $8000
+	;* =  $8000
+
+	.include "includes\\ram.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -2731,7 +2733,7 @@ Common_Code_00
 	.include "garbage/bank_13_garbage.asm"
 
 Vectors_13:
-	.WORD NMI_E287
+	.WORD NMI_FD53
 	.WORD Palette_1380AC
-	.WORD return_13E2FE
+	.WORD return_FDCA
 ; end of 'BANK_13'

@@ -1,9 +1,10 @@
 ; Segment type:Pure code
 	;.segment BANK_02 (Sprites)
-	* =  $8000
+	;* =  $8000
+
+	.include "includes\\ram.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 bank_switch_28000:
 	.include "common/bank_switch_func.asm"
@@ -1397,9 +1398,9 @@ Common_Code_02
 	.include "garbage/bank_02_garbage.asm"
 
 Vectors_02:
-	.WORD NMI_2E882
-	.WORD off_28097
-	.WORD locret_2E8F9
+	.WORD NMI_FD53
+	.WORD off_2805B
+	.WORD return_FDCA
 ; end of 'BANK_02'
 
 ; ===========================================================================

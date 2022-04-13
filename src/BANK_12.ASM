@@ -1,6 +1,8 @@
 ; Segment type:Pure code
 	;.segment BANK_12 (Code + Music)
-	* =  $8000
+	;* =  $8000
+
+	.include "includes\\ram.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -15095,9 +15097,9 @@ Common_Code_12
 	.include "garbage/bank_12_garbage.asm"
 
 Vectors_12:
-	.WORD NMI_12F823
+	.WORD NMI_FD53
 	.WORD bank_switch_128000
-	.WORD locret_12F89A
+	.WORD return_FDCA
 ; end of 'BANK_12'
 
 ; ===========================================================================

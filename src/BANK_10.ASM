@@ -1,6 +1,8 @@
 ; Segment type:Pure code
 	;.segment BANK_10 (Tilemaps)
-	* =  $8000
+	;* =  $8000
+
+	.include "includes\\ram.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -22,9 +24,10 @@ Code_Tilemaps_10:
 	.include "garbage/bank_10_garbage.asm"
 
 Vectors_10:
-	.WORD NMI_10F9ED
+	.WORD NMI_FD53
 	.WORD off_10805B
-	.WORD locret_10FA64
+	.WORD return_FDCA
+
 ; end of 'BANK_10'
 
 ; ===========================================================================

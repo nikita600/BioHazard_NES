@@ -809,7 +809,7 @@ apu_unk_741 = $0741
 apu_unk_742 = $0742
 apu_unk_743 = $0743
 apu_pulse1_env_744 = $0744 
-apu_unk_746 = $0746
+apu_unk_745 = $0745
 tri_count_746 = $0746
 apu_unk_747 = $0747
 apu_unk_748 = $0748
@@ -859,7 +859,7 @@ _APU_PULSE2_TIME = $4006
 _APU_PULSE2_LEN = $4007 
 
 _APU_TRI_COUNT = $4008
-_APU_TRI_UNUSED = $0009
+_APU_TRI_UNUSED = $4009
 _APU_TRI_TIME = $400A
 _APU_TRI_LEN = $400B
 

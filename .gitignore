@@ -352,3 +352,4 @@ cc65/
 Temp/
 !Files/
 assets/
+ROM.*

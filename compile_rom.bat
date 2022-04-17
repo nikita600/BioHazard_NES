@@ -25,7 +25,7 @@ call :compile_bank 13
 
 call :merge_banks Temp ROM.BIN
 
-copy /b HEAD.BIN+ROM.BIN+TAIL.BIN ROM.NES
+copy /b bin\HEAD.BIN+ROM.BIN+bin\TAIL.BIN ROM.NES
 
 goto :finish
 

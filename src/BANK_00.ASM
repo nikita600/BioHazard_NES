@@ -2,12 +2,13 @@
 ;.segment BANK_00 (Code)
 ;* =  $8000
 
-    .include "includes\\ram.inc"
+    .include "includes/ram.inc"
+	.include "includes/macros.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
 bank_switch_8000:
-	.include "common\\bank_switch_func.asm"
+	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
 	LDA	bank_to_344
@@ -725,10 +726,9 @@ loc_866D:
 	LDA	byte_372
 	CMP	#0
 	BEQ	loc_86B7
-	LDA	#0
-	STA	ptr_0
-	LDA	#$69 
-	STA	ptr_1
+
+	load_ptr $6900
+
 	LDY	#0
 
 loc_867E:
@@ -3569,6 +3569,7 @@ sub_999A:
 	LDA	#0
 	STA	byte_584
 	JSR	sub_C7C7
+	
 	LDA	byte_366
 	CLC
 	ADC	#8
@@ -3577,18 +3578,19 @@ sub_999A:
 	ADC	#0
 	STA	byte_367
 	JSR	sub_9824
+
 	LDA	byte_36A
 	STA	tilemapWidth_308
 	LDA	byte_36B
 	STA	tilemap_size_307
+
 	LDA	byte_366
 	STA	tilemapHeight_30A
 	LDA	byte_367
 	STA	ppu_unk_byte_309
-	LDA	#$32 
-	STA	ptr_0
-	LDA	#$9B 
-	STA	ptr_1
+
+	load_ptr off_9B32
+
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	tilemapTypeUnk_30B
@@ -3761,10 +3763,11 @@ show_hidden_copyright_9AD9:
 ; End of function show_hidden_copyright_9AD9
 
 ; ---------------------------------------------------------------------------
-copyright_cheat_sequence_9B29:.BYTE up_8,up_8,down_4,down_4,left_2,left_2,right_1,right_1,a_80,$A
+copyright_cheat_sequence_9B29:
+	.BYTE up_8, up_8, down_4, down_4, left_2, left_2, right_1, right_1, a_80
 
-off_9B33:
-	.include "binary_data/bank_0_9B33.asm"
+off_9B32:
+	.include "binary_data/bank_0_9B32.asm"
 
 off_9BB5:
 	.include "binary_data/bank_0_9BB5.asm"
@@ -4621,13 +4624,11 @@ exec_b1_c2_C860:
 
 
 sub_C873:
-	; load_image_C6D2+4Cp
 	LDA	entry_idx_300
 	PHA
-	LDA	#$58 
-	STA	ptr_0
-	LDA	#$C5 
-	STA	ptr_1
+
+	load_ptr unknown_entries_C558
+
 	LDA	entry_idx_300
 	STA	data_2
 	LDA	#0
@@ -4748,13 +4749,11 @@ exec_b2_c4_C90E:
 
 
 sub_C921:
-	; load_image_C6D2+4Fp
 	LDA	entry_idx_300
 	PHA
-	LDA	#$58 
-	STA	ptr_0
-	LDA	#$C5 
-	STA	ptr_1
+
+	load_ptr unknown_entries_C558
+
 	LDA	entry_idx_300
 	STA	data_2
 	LDA	#0
@@ -4855,10 +4854,9 @@ loc_C9B7:
 
 
 ppu_upload_data_1000_C9BF:
-	LDA	#0
-	STA	ptr_0
-	LDA	#$10
-	STA	ptr_1
+
+	load_ptr $1000
+
 ; End of function ppu_upload_data_1000_C9BF
 
 
@@ -8111,10 +8109,9 @@ read_tilemap_DF23:
 	JSR	tilemap_read_next_chunk_F472
 
 load_from_C558_DF4B:
-	LDA	#$58 
-	STA	ptr_0
-	LDA	#$C5 
-	STA	ptr_1
+
+	load_ptr unknown_entries_C558
+
 	LDA	entry_idx_300
 	STA	data_2
 	LDA	#0
@@ -8139,10 +8136,9 @@ load_from_C558_DF4B:
 	STA	entry_idx_300
 
 load_from_BCB6_DF7F:
-	LDA	#$B6 
-	STA	ptr_0
-	LDA	#$BC 
-	STA	ptr_1
+
+	load_ptr unknown_data_BCB6
+
 	LDA	entry_idx_300
 	ASL	A
 	TAY
@@ -8185,13 +8181,10 @@ loc_DFAC:
 
 
 sub_DFC1:
-	; a_button_pressed_8FDC:loc_900Bp
 	LDA	#$FF
 	STA	byte_36E
-	LDA	#$B5 
-	STA	ptr_0
-	LDA	#$9B 
-	STA	ptr_1
+
+	load_ptr off_9BB5
 
 get_offset_DFCE:
 	LDA	entry_idx_300
@@ -9382,10 +9375,9 @@ sub_E7F8:
 	PHA
 	TYA
 	PHA
-	LDA	#$98 
-	STA	ptr_0
-	LDA	#5
-	STA	ptr_1
+
+	load_ptr $598
+
 	LDA	ptr_0
 	CLC
 	ADC	tilemapFrameCount_30D
@@ -9416,10 +9408,9 @@ sub_E827:
 	PHA
 	TYA
 	PHA
-	LDA	#$98 
-	STA	ptr_0
-	LDA	#5
-	STA	ptr_1
+
+	load_ptr $598
+
 	LDA	ptr_0
 	CLC
 	ADC	tilemapFrameCount_30D
@@ -11138,15 +11129,13 @@ locret_F09C:
 
 
 ppu_unk_func_F09D:
-	; load_image_C6D2+93p ...
 	LDA	ppu_unk_byte_303
 	AND	#1
 	CMP	#1
 	BEQ	loc_F0B9
-	LDA	#$C0 
-	STA	ptr_0
-	LDA	#$23 
-	STA	ptr_1
+
+	load_ptr $23C0
+
 	LDA	#$C0 
 	STA	data_2
 	LDA	#$2B 
@@ -11159,10 +11148,8 @@ loc_F0B9:
 	STA	data_2
 	LDA	#$23 
 	STA	data_3
-	LDA	#$C0 
-	STA	ptr_0
-	LDA	#$2B 
-	STA	ptr_1
+
+	load_ptr $2BC0
 
 loc_F0C9:
 	LDA	ppu_unk_byte_302
@@ -11701,10 +11688,8 @@ tilemap_read_next_chunk_F472:
 	PHA
 
 get_tilemap_entries_ptr_F486:
-	LDA	#0
-	STA	ptr_0
-	LDA	#$C0 
-	STA	ptr_1	; ptr =	0xC000
+
+	load_ptr tilemap_entries_C000
 
 get_tilemap_entry_offset_F48E:
 	LDA	entry_idx_300

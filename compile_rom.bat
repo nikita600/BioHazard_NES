@@ -2,6 +2,8 @@
 
 set cc65_folder=bin\cc65\bin
 
+::call :compile_bank TEMP
+
 call :compile_bank 00
 call :compile_bank 01
 call :compile_bank 02
@@ -38,14 +40,19 @@ set OBJ_FILE="Temp\BANK_%1.OBJ"
 set BIN_FILE="Temp\BANK_%1.BIN"
 set OLD_FILE="BANKS\%1.BIN"
 
-echo "Compile %ASM_FILE% -> %OBJ_FILE%"
-%cc65_folder%\ca65.exe %ASM_FILE% -g -o %OBJ_FILE%
-echo "Linking %OBJ_FILE% -> %BIN_FILE%"
-%cc65_folder%\ld65.exe -o %BIN_FILE% -C "src\memory.cfg" %OBJ_FILE%
-echo "OLD:"
-bin\m3checksum.exe %OLD_FILE%
-echo "NEW:"
-bin\m3checksum.exe %BIN_FILE%
+del %OBJ_FILE%
+del %BIN_FILE%
+
+if exist %ASM_FILE% echo "Compile %ASM_FILE% -> %OBJ_FILE%"
+if exist %ASM_FILE% %cc65_folder%\ca65.exe %ASM_FILE% -g -o %OBJ_FILE% --listing %OBJ_FILE%.ASM
+
+if exist %OBJ_FILE% echo "Linking %OBJ_FILE% -> %BIN_FILE%"
+if exist %OBJ_FILE% %cc65_folder%\ld65.exe -o %BIN_FILE% -C "src\memory.cfg" %OBJ_FILE%
+
+if exist %OLD_FILE% echo "OLD:"
+if exist %OLD_FILE% bin\m3checksum.exe %OLD_FILE%
+if exist %BIN_FILE% echo "NEW:"
+if exist %BIN_FILE% bin\m3checksum.exe %BIN_FILE%
 echo.
 
 goto :eof

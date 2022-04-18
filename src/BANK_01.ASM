@@ -6,7 +6,8 @@
 
 ; SPRITE_BANK
 
-    .include "includes\\ram.inc"
+    .include "includes/ram.inc"
+	.include "includes/macros.inc"
 
 bank_switch_8000:
 	.include "common/bank_switch_func.asm"
@@ -174,11 +175,8 @@ return_1F2F2:
 
 
 get_sprite_palette_ptr_1F2F3:
-	; load_palettes_to_ram_1F268+17p ...
-	LDA	#$79 
-	STA	ptr_0
-	LDA	#$80 
-	STA	ptr_1
+
+	load_ptr SpritePalettes_18079
 
 get_offset_F2FB:
 	LDA	objectIdx_318
@@ -271,12 +269,8 @@ locret_1F36C:
 
 
 load_sprite_to_vram_1F36D:
-	; upload_tiles_to_ppu_1F32A+Cp	...
-	LDA	#$A1 
-	STA	ptr_0
-	INY
-	LDA	#$93 
-	STA	ptr_1
+
+	load_ptr_iny Sprites
 
 get_offset_F376:; spriteIdx
 	LDA	objectIdx_318

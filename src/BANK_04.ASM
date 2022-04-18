@@ -2,7 +2,8 @@
 	;.segment BANK_04 (Text)
 	;* =  $8000
 
-	.include "includes\\ram.inc"
+	.include "includes/ram.inc"
+	.include "includes/macros.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -92,10 +93,9 @@ InvItemSprites:
 
 
 load_palette_4F323:
-	LDA	#$9D 
-	STA	ptr_0
-	LDA	#$80 
-	STA	ptr_1
+
+	load_ptr Palette_4809D
+
 	LDA	#0
 	STA	data_2
 	LDA	inv_sprite_idx_31C
@@ -113,10 +113,9 @@ load_palette_4F323:
 	INY
 	LDA	(ptr_0),Y
 	STA	data_3
-	LDA	#0
-	STA	ptr_0
-	LDA	#$3F 
-	STA	ptr_1
+
+	load_ptr $3F00
+
 	LDA	sprPalIdx_319
 	ASL	A
 	ASL	A
@@ -227,11 +226,8 @@ loc_4F3DC:
 
 
 get_inventory_sprite_ptr_4F3E7:
-			; sub_4F3B3p
-	LDA	#$17
-	STA	ptr_0
-	LDA	#$98 
-	STA	ptr_1
+
+	load_ptr $9817
 
 get_offset_4F3EF:
 	LDA	#0
@@ -290,10 +286,8 @@ skip_2_byte_4f416:
 
 
 load_inventory_sprite_tilemap_4F443:
-	LDA	#$45 
-	STA	ptr_0
-	LDA	#$84 
-	STA	ptr_1
+
+	load_ptr $8445
 
 get_offset_4F44B:
 	LDA	#0

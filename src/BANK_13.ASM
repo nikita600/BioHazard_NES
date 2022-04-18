@@ -2,7 +2,8 @@
 	;.segment BANK_13 (Code + Sprites)
 	;* =  $8000
 
-	.include "includes\\ram.inc"
+	.include "includes/ram.inc"
+	.include "includes/macros.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -1528,10 +1529,9 @@ byte_13DF14:.BYTE $4B,$8C,$CD,$30
 
 
 load_spr_palette_13DF18:
-	LDA	#$AC 
-	STA	ptr_0
-	LDA	#$80 
-	STA	ptr_1
+	
+	load_ptr $80AC
+
 	LDA	#0
 	STA	data_2
 	LDA	inv_sprite_idx_31C
@@ -1549,10 +1549,9 @@ load_spr_palette_13DF18:
 	INY
 	LDA	(ptr_0),Y
 	STA	data_3
-	LDA	#0
-	STA	ptr_0
-	LDA	#$3F 
-	STA	ptr_1
+
+	load_ptr $3F00
+
 	LDA	sprPalIdx_319
 	ASL	A
 	ASL	A
@@ -1664,11 +1663,9 @@ loc_13DFD1:
 
 
 load_boss_sprite_13DFDC:
-	; load_sprite_func_13DFA8p
-	LDA	#$26 
-	STA	ptr_0
-	LDA	#$98 
-	STA	ptr_1
+	
+	load_ptr $9826
+
 	LDA	#0
 	STA	data_2
 	LDA	inv_sprite_idx_31C
@@ -1719,10 +1716,9 @@ load_boss_sprite_13DFDC:
 
 
 load_sprite_map_13E038:
-	LDA	#$54 
-	STA	ptr_0
-	LDA	#$84 
-	STA	ptr_1
+
+	load_ptr $8454
+
 	LDA	#0
 	STA	data_2
 	LDA	inv_sprite_idx_31C

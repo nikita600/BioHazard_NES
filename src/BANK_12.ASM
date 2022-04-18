@@ -2,7 +2,8 @@
 	;.segment BANK_12 (Code + Music)
 	;* =  $8000
 
-	.include "includes\\ram.inc"
+	.include "includes/ram.inc"
+	.include "includes/macros.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -2517,10 +2518,9 @@ loc_12A64A:
 	INX
 	CPX	#$AC 
 	BNE	loc_12A64A
-	LDA	#$69 
-	STA	ptr_0
-	LDA	#$92 
-	STA	ptr_1
+
+	load_ptr $9269
+
 	LDA	entry_idx_300
 	STA	data_2
 	LDA	#0
@@ -2935,10 +2935,9 @@ sub_12A944:
 	PHA
 	TYA
 	PHA
-	LDA	#$98 
-	STA	ptr_0
-	LDA	#5
-	STA	ptr_1
+
+	load_ptr $598
+
 	LDA	ptr_0
 	CLC
 	ADC	tilemapFrameCount_30D
@@ -9413,10 +9412,8 @@ loc_12D133:
 
 sub_12D139:
 	
-	LDA	#0
-	STA	ptr_0
-	LDA	#$69 
-	STA	ptr_1
+	load_ptr $6900
+
 	LDA	ptr_0
 	CLC
 	ADC	#$14
@@ -9449,10 +9446,9 @@ locret_12D166:
 
 
 sub_12D167:
-	LDA	#0
-	STA	ptr_0
-	LDA	#$69 
-	STA	ptr_1
+
+	load_ptr $6900
+
 	LDY	#0
 
 loc_12D171:
@@ -14371,10 +14367,9 @@ loc_12F2ED:
 ; ---------------------------------------------------------------------------
 
 loc_12F30E:
-	LDA	#$3A 
-	STA	ptr_0
-	LDA	#$F5 
-	STA	ptr_1
+	
+	load_ptr $F53A
+
 	LDA	byte_420
 	ASL	A
 	CLC

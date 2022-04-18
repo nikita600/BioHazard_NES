@@ -2,7 +2,8 @@
 	;.segment BANK_08 (Tilemaps)
 	;* =  $8000
 
-	.include "includes\\ram.inc"
+	.include "includes/ram.inc"
+	.include "includes/macros.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 

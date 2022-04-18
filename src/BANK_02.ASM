@@ -2,7 +2,8 @@
 	;.segment BANK_02 (Sprites)
 	;* =  $8000
 
-	.include "includes\\ram.inc"
+	.include "includes/ram.inc"
+	.include "includes/macros.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -1251,6 +1252,8 @@ locret_2E52E:
 ; End of function sub_2E500
 
 ; ---------------------------------------------------------------------------
+
+off_2E52F:
 	.WORD byte_2E571
 	.WORD byte_2E581
 	.WORD byte_2E591
@@ -1355,10 +1358,9 @@ byte_2E771:.BYTE $3E,  1,$16,$21,$3E,  0,$27,$30,	0,  0,	0,  0,	0,  0,	0,  0
 
 
 sub_2E781:
-	LDA	#$2F 
-	STA	ptr_0
-	LDA	#$E5 
-	STA	ptr_1
+
+	load_ptr off_2E52F
+
 	LDA	entry_idx_300
 	STA	data_2
 	LDA	#0
@@ -1382,7 +1384,7 @@ sub_2E781:
 
 loc_2E7B0:
 	LDA	(data_2),Y
-	STA	palette_bg_321,Y ; "����������������"
+	STA	palette_bg_321,Y
 	INY
 	CPY	#$10
 	BCC	loc_2E7B0

@@ -2,7 +2,8 @@
 	;.segment BANK_06 (Sprites)
 	;* =  $8000
 
-	.include "includes\\ram.inc"
+	.include "includes/ram.inc"
+	.include "includes/macros.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -42,10 +43,9 @@ GFX_6805B:
 
 
 upload_gfx_to_ppu_6F863:
-	LDA	#$5B 
-	STA	ptr_0
-	LDA	#$80 
-	STA	ptr_1
+	
+	load_ptr $805B
+
 	LDA	entry_idx_300
 	STA	data_2
 	LDA	#0
@@ -65,10 +65,9 @@ upload_gfx_to_ppu_6F863:
 	INY
 	LDA	(ptr_0),Y
 	STA	data_3
-	LDA	#0
-	STA	ptr_0
-	LDA	#$10
-	STA	ptr_1
+	
+	load_ptr $1000
+
 	JSR	upload_gfx_to_ppu_6F89C
 	RTS
 ; End of function upload_gfx_to_ppu_6F863

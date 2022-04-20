@@ -45,7 +45,7 @@ Sprites3_5805B:
 
 upload_gfx_to_ppu_5F093:
 	
-	load_ptr $805B
+	load_ptr Sprites3_5805B
 
 	LDA	entry_idx_300
 	STA	data_2
@@ -67,7 +67,7 @@ upload_gfx_to_ppu_5F093:
 	LDA	(ptr_0),Y
 	STA	data_3
 
-	load_ptr $1000
+	load_ptr _PPU_PAT_TBL_1
 
 	JSR	upload_gfx_5F0CC
 	RTS

@@ -727,7 +727,7 @@ loc_866D:
 	CMP	#0
 	BEQ	loc_86B7
 
-	load_ptr $6900
+	load_ptr _SAVE_RAM
 
 	LDY	#0
 
@@ -4855,7 +4855,7 @@ loc_C9B7:
 
 ppu_upload_data_1000_C9BF:
 
-	load_ptr $1000
+	load_ptr _PPU_PAT_TBL_1
 
 ; End of function ppu_upload_data_1000_C9BF
 
@@ -9376,7 +9376,7 @@ sub_E7F8:
 	TYA
 	PHA
 
-	load_ptr $598
+	load_ptr byte_598
 
 	LDA	ptr_0
 	CLC
@@ -9409,7 +9409,7 @@ sub_E827:
 	TYA
 	PHA
 
-	load_ptr $598
+	load_ptr byte_598
 
 	LDA	ptr_0
 	CLC
@@ -11134,22 +11134,16 @@ ppu_unk_func_F09D:
 	CMP	#1
 	BEQ	loc_F0B9
 
-	load_ptr $23C0
+	load_ptr _PPU_ATTR_TBL_0
+	load_data _PPU_ATTR_TBL_1
 
-	LDA	#$C0 
-	STA	data_2
-	LDA	#$2B 
-	STA	data_3
 	JMP	loc_F0C9
 ; ---------------------------------------------------------------------------
 
 loc_F0B9:
-	LDA	#$C0 
-	STA	data_2
-	LDA	#$23 
-	STA	data_3
 
-	load_ptr $2BC0
+	load_data _PPU_ATTR_TBL_0
+	load_ptr _PPU_ATTR_TBL_1
 
 loc_F0C9:
 	LDA	ppu_unk_byte_302

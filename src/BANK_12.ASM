@@ -2519,7 +2519,7 @@ loc_12A64A:
 	CPX	#$AC 
 	BNE	loc_12A64A
 
-	load_ptr $9269
+	load_ptr off_129269
 
 	LDA	entry_idx_300
 	STA	data_2
@@ -2936,7 +2936,7 @@ sub_12A944:
 	TYA
 	PHA
 
-	load_ptr $598
+	load_ptr byte_598
 
 	LDA	ptr_0
 	CLC
@@ -9412,7 +9412,7 @@ loc_12D133:
 
 sub_12D139:
 	
-	load_ptr $6900
+	load_ptr _SAVE_RAM
 
 	LDA	ptr_0
 	CLC
@@ -9447,7 +9447,7 @@ locret_12D166:
 
 sub_12D167:
 
-	load_ptr $6900
+	load_ptr _SAVE_RAM
 
 	LDY	#0
 
@@ -14368,7 +14368,7 @@ loc_12F2ED:
 
 loc_12F30E:
 	
-	load_ptr $F53A
+	load_ptr off_12F53A
 
 	LDA	byte_420
 	ASL	A
@@ -14707,6 +14707,7 @@ locret_12F539:
 ; End of function sub_12F527
 
 ; ---------------------------------------------------------------------------
+off_12F53A:
 	.WORD byte_12F544
 	.WORD byte_12F54D
 	.WORD byte_12F556

@@ -100,7 +100,7 @@ Palette_1380AC:
 SpriteMaps_138454:
 	.include "sprites/bank_13_tilemaps.asm"
 
-BossImages:
+BossImages_129826:
 	.include "sprites/bank_13_sprites.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -1530,7 +1530,7 @@ byte_13DF14:.BYTE $4B,$8C,$CD,$30
 
 load_spr_palette_13DF18:
 	
-	load_ptr $80AC
+	load_ptr Palette_1380AC
 
 	LDA	#0
 	STA	data_2
@@ -1550,7 +1550,7 @@ load_spr_palette_13DF18:
 	LDA	(ptr_0),Y
 	STA	data_3
 
-	load_ptr $3F00
+	load_ptr _PPU_PALETTE
 
 	LDA	sprPalIdx_319
 	ASL	A
@@ -1664,7 +1664,7 @@ loc_13DFD1:
 
 load_boss_sprite_13DFDC:
 	
-	load_ptr $9826
+	load_ptr BossImages_129826
 
 	LDA	#0
 	STA	data_2
@@ -1717,7 +1717,7 @@ load_boss_sprite_13DFDC:
 
 load_sprite_map_13E038:
 
-	load_ptr $8454
+	load_ptr SpriteMaps_138454
 
 	LDA	#0
 	STA	data_2

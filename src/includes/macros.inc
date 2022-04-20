@@ -7,6 +7,16 @@
 	STA	ptr_1
 .endmacro
 
+.macro load_data addr
+
+	LDA	#.LOBYTE(addr)
+	STA	data_2
+
+	LDA	#.HIBYTE(addr)
+	STA	data_3
+
+.endmacro
+
 .macro load_ptr_iny addr
 
     LDA	#.LOBYTE(addr)

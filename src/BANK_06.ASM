@@ -44,7 +44,7 @@ GFX_6805B:
 
 upload_gfx_to_ppu_6F863:
 	
-	load_ptr $805B
+	load_ptr GFX_6805B
 
 	LDA	entry_idx_300
 	STA	data_2
@@ -66,7 +66,7 @@ upload_gfx_to_ppu_6F863:
 	LDA	(ptr_0),Y
 	STA	data_3
 	
-	load_ptr $1000
+	load_ptr _PPU_PAT_TBL_1
 
 	JSR	upload_gfx_to_ppu_6F89C
 	RTS

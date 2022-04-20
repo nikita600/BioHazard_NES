@@ -71,7 +71,6 @@ loc_48089:
 ; ---------------------------------------------------------------------------
 
 loc_4808F:
-			; bank_switch_8000+7Aj ...
 	LDA	#$FF
 	STA	bank_command_346
 	LDA	bank_from_343
@@ -80,13 +79,13 @@ loc_4808F:
 ; End of function bank_switch_8000
 
 ; ---------------------------------------------------------------------------
-Palette_4809D:
+Palette_809D:
 	.include "sprites/bank_04_palettes.asm"
 
-TilemapsUnk:
+TilemapsUnk_8445:
 	.include "sprites/bank_04_tilemaps.asm"
 
-InvItemSprites:
+InvItemSprites_9817:
 	.include "sprites/bank_04_sprites.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -114,7 +113,7 @@ load_palette_4F323:
 	LDA	(ptr_0),Y
 	STA	data_3
 
-	load_ptr $3F00
+	load_ptr _PPU_PALETTE
 
 	LDA	sprPalIdx_319
 	ASL	A
@@ -227,7 +226,7 @@ loc_4F3DC:
 
 get_inventory_sprite_ptr_4F3E7:
 
-	load_ptr $9817
+	load_ptr InvItemSprites_9817
 
 get_offset_4F3EF:
 	LDA	#0
@@ -287,7 +286,7 @@ skip_2_byte_4f416:
 
 load_inventory_sprite_tilemap_4F443:
 
-	load_ptr $8445
+	load_ptr TilemapsUnk_8445
 
 get_offset_4F44B:
 	LDA	#0

@@ -1,10 +1,8 @@
 ; =============== S U B	R O U T	I N E =======================================
 
-load_tilemap_chunk_in_ram_7F897:	
-		LDA	#$5B 
-		STA	ptr_0
-		LDA	#$80 
-		STA	ptr_1
+load_tilemap_chunk_in_ram_7F897:
+
+		load_ptr $805B
 
 getTilemapPtr:
 		LDA	entry_idx_300

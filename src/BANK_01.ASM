@@ -104,39 +104,27 @@ palette1_F27A:
 	LDA	#1
 	STA	sprPalIdx_319
 	JSR	get_sprite_palette_ptr_1F2F3
-	LDA	data_2
-	CLC
-	ADC	#4
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $4
+
 	JSR	copy_sprite_palette_to_ram_1F316
 
 palette2_F292:
 	LDA	#2
 	STA	sprPalIdx_319
 	JSR	get_sprite_palette_ptr_1F2F3
-	LDA	data_2
-	CLC
-	ADC	#8
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $8
+
 	JSR	copy_sprite_palette_to_ram_1F316
 
 palette3_F2AA:
 	LDA	#3
 	STA	sprPalIdx_319
 	JSR	get_sprite_palette_ptr_1F2F3
-	LDA	data_2
-	CLC
-	ADC	#$C
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	
+	add_to_data $C
+
 	JSR	copy_sprite_palette_to_ram_1F316
 	RTS
 ; ---------------------------------------------------------------------------
@@ -385,13 +373,7 @@ get_frame_count_F403:
 	STA	tilemapFrameCount_30D
 
 add_offset_F408:
-	LDA	data_2
-	CLC
-	ADC	#3
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_data $3
 	RTS
 ; End of function load_sprite_tilemap_1F3B8
 
@@ -795,13 +777,9 @@ upload_to_ppu_1F6D1:
 	LDY	#0
 	LDA	(data_2),Y
 	STA	tilemapWidth_308
-	LDA	data_2
-	CLC
-	ADC	#2
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $2
+
 	LDX	#0
 
 loc_1F6E7:
@@ -824,13 +802,9 @@ loc_1F6F3:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
-	LDA	data_2
-	CLC
-	ADC	#$10
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $10
+
 	INX
 	CPX	tilemapWidth_308
 	BCC	loc_1F6E7

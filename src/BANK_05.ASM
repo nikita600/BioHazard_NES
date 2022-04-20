@@ -81,13 +81,9 @@ upload_gfx_5F0CC:
 	LDY	#0
 	LDA	(data_2),Y
 	STA	tilemapWidth_308
-	LDA	data_2
-	CLC
-	ADC	#2
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $2
+
 	LDX	#0
 
 loc_5F0E2:
@@ -110,13 +106,9 @@ loc_5F0EE:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
-	LDA	data_2
-	CLC
-	ADC	#$10
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $10
+
 	INX
 	CPX	tilemapWidth_308
 	BCC	loc_5F0E2

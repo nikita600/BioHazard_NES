@@ -79,7 +79,7 @@ loc_4808F:
 ; End of function bank_switch_8000
 
 ; ---------------------------------------------------------------------------
-Palette_809D:
+Palette_4809D:
 	.include "sprites/bank_04_palettes.asm"
 
 TilemapsUnk_8445:
@@ -157,13 +157,9 @@ loc_4F381:
 	INY
 	CPY	#$10
 	BCC	loc_4F381
-	LDA	data_2
-	CLC
-	ADC	#$10
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $10
+
 	LDA	ptr_0
 	CLC
 	ADC	#$10
@@ -255,13 +251,9 @@ get_sprite_descr_4F40F:
 	STA	inv_spr_dscr1_30C
 
 skip_2_byte_4f416:
-	LDA	data_2
-	CLC
-	ADC	#2
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $2
+
 	LDA	byte_31E
 	STA	ptr_0
 	LDA	#0
@@ -359,13 +351,9 @@ get_tilemap_descr_4F48B:
 loc_4F4BA:
 	CPY	#0
 	BEQ	loc_4F4CF
-	LDA	data_2
-	CLC
-	ADC	#$20 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $20
+
 	DEY
 	JMP	loc_4F4BA
 ; ---------------------------------------------------------------------------
@@ -460,13 +448,9 @@ loc_4F54A:
 	INY
 	CPY	tilemapWidth_308
 	BCC	loc_4F54A
-	LDA	data_2
-	CLC
-	ADC	#$20 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $20
+
 	LDA	ptr_0
 	CLC
 	ADC	tilemapWidth_308

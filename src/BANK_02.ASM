@@ -293,13 +293,9 @@ loc_2D260:
 loc_2D284:
 	CPY	#0
 	BEQ	loc_2D299
-	LDA	data_2
-	CLC
-	ADC	#$40 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $40
+
 	DEY
 	JMP	loc_2D284
 ; ---------------------------------------------------------------------------
@@ -343,13 +339,9 @@ loc_2D29C:
 	STA	ptr_1
 	PLA
 	STA	ptr_0
-	LDA	data_2
-	CLC
-	ADC	#$40 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $40
+
 	INC	tilemapWidth_308
 	LDA	tilemapWidth_308
 	CMP	byte_35E
@@ -948,13 +940,7 @@ loc_2E33E:
 ; ---------------------------------------------------------------------------
 
 loc_2E374:
-	LDA	data_2
-	CLC
-	ADC	#1
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_data $1
 
 loc_2E381:
 	LDA	#1
@@ -1163,13 +1149,9 @@ loc_2E4B4:
 loc_2E4B7:
 	CPY	#0
 	BEQ	loc_2E4CC
-	LDA	data_2
-	CLC
-	ADC	#$20 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $20
+	
 	DEY
 	JMP	loc_2E4B7
 ; ---------------------------------------------------------------------------
@@ -1239,13 +1221,7 @@ loc_2E518:
 ; ---------------------------------------------------------------------------
 
 loc_2E521:
-	LDA	data_2
-	CLC
-	ADC	#$20 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_data $20
 
 locret_2E52E:
 	RTS

@@ -4867,13 +4867,9 @@ ppu_upload_data_C9C7:
 	LDY	#0
 	LDA	(data_2),Y
 	STA	tilemapWidth_308
-	LDA	data_2
-	CLC
-	ADC	#2
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data 2
+
 	LDX	#0
 
 loc_C9DD:
@@ -4896,13 +4892,9 @@ loc_C9E9:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
-	LDA	data_2
-	CLC
-	ADC	#$10
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	
+	add_to_data $10
+
 	INX
 	CPX	tilemapWidth_308
 	BCC	loc_C9DD
@@ -8213,13 +8205,9 @@ read_entry_DFF3:
 	LDY	#0
 	LDA	(data_2),Y
 	STA	tilemapTypeUnk_30B
-	LDA	data_2
-	CLC
-	ADC	#1
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $1
+
 	JSR	sub_C7C7
 	LDA	byte_366
 	CLC
@@ -9291,13 +9279,8 @@ sub_E747:
 ; ---------------------------------------------------------------------------
 
 loc_E775:
-	LDA	data_2
-	CLC
-	ADC	#1
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_data $1
+	
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 
@@ -11267,13 +11250,8 @@ wait_for_ppu_finished_F18F:
 
 
 sub_F194:
-	LDA	data_2
-	CLC
-	ADC	#$20 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_data $20
+
 	RTS
 ; End of function sub_F194
 
@@ -11846,13 +11824,9 @@ loc_F54E:
 	INX
 	LDA	tilemapData_4C,Y
 	STA	ppu_data_70,X
-	LDA	data_2
-	CLC
-	ADC	#8
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $8
+	
 	INX
 	INY
 	CPY	tilemapTypeUnk_30B
@@ -11868,13 +11842,8 @@ loc_F54E:
 
 sub_F57B:
 	
-	LDA	data_2
-	CLC
-	ADC	#$C0 
-	STA	data_2
-	LDA	data_3
-	ADC	#3
-	STA	data_3
+	add_to_data $3C0
+
 	RTS
 ; End of function sub_F57B
 
@@ -11889,13 +11858,9 @@ sub_F589:
 loc_F58C:
 	CPY	#0
 	BEQ	locret_F5A1
-	LDA	data_2
-	CLC
-	ADC	#8
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $8
+
 	DEY
 	JMP	loc_F58C
 ; ---------------------------------------------------------------------------
@@ -12494,13 +12459,9 @@ sub_F972:
 loc_F975:
 	CPY	#0
 	BEQ	locret_F98A
-	LDA	data_2
-	CLC
-	ADC	#8
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	
+	add_to_data $8
+
 	DEY
 	JMP	loc_F975
 ; ---------------------------------------------------------------------------

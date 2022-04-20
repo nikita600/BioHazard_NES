@@ -233,13 +233,7 @@ loc_3F865:
 ; ---------------------------------------------------------------------------
 
 loc_3F89B:
-	LDA	data_2
-	CLC
-	ADC	#1
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_data $1
 
 loc_3F8A8:
 	LDA	#1
@@ -447,13 +441,9 @@ loc_3F9DB:
 loc_3F9DE:
 	CPY	#0
 	BEQ	loc_3F9F3
-	LDA	data_2
-	CLC
-	ADC	#$20 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $20
+
 	DEY
 	JMP	loc_3F9DE
 ; ---------------------------------------------------------------------------
@@ -522,13 +512,7 @@ loc_3FA3F:
 ; ---------------------------------------------------------------------------
 
 loc_3FA48:
-	LDA	data_2
-	CLC
-	ADC	#$20 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_data $20
 
 locret_3FA55:
 	RTS

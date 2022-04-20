@@ -2549,13 +2549,9 @@ loc_12A64A:
 ; ---------------------------------------------------------------------------
 
 loc_12A68B:
-	LDA	data_2
-	CLC
-	ADC	#1
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $1
+
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 
@@ -2851,13 +2847,9 @@ sub_12A893:
 ; ---------------------------------------------------------------------------
 
 loc_12A8C1:
-	LDA	data_2
-	CLC
-	ADC	#1
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $1
+
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 

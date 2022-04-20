@@ -1594,13 +1594,9 @@ loc_13DF76:
 	INY
 	CPY	#$10
 	BCC	loc_13DF76
-	LDA	data_2
-	CLC
-	ADC	#$10
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $10
+
 	LDA	ptr_0
 	CLC
 	ADC	#$10
@@ -1686,13 +1682,9 @@ load_boss_sprite_13DFDC:
 	LDY	#0
 	LDA	(data_2),Y
 	STA	inv_spr_dscr1_30C
-	LDA	data_2
-	CLC
-	ADC	#2
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $2
+
 	LDA	byte_31E
 	STA	ptr_0
 	LDA	#0
@@ -1781,13 +1773,9 @@ load_sprite_map_13E038:
 loc_13E0AF:
 	CPY	#0
 	BEQ	loc_13E0C4
-	LDA	data_2
-	CLC
-	ADC	#$20 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $20
+
 	DEY
 	JMP	loc_13E0AF
 ; ---------------------------------------------------------------------------
@@ -1882,13 +1870,9 @@ loc_13E13F:
 	INY
 	CPY	tilemapWidth_308
 	BCC	loc_13E13F
-	LDA	data_2
-	CLC
-	ADC	#$20 
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $20
+
 	LDA	ptr_0
 	CLC
 	ADC	tilemapWidth_308

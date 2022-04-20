@@ -7,6 +7,17 @@
 	STA	ptr_1
 .endmacro
 
+.macro load_ptr_iny addr
+
+    LDA	#.LOBYTE(addr)
+	STA	ptr_0
+
+	INY
+
+	LDA	#.HIBYTE(addr)
+	STA	ptr_1
+.endmacro
+
 .macro load_data addr
 
 	LDA	#.LOBYTE(addr)
@@ -17,13 +28,15 @@
 
 .endmacro
 
-.macro load_ptr_iny addr
+.macro add_to_data value
 
-    LDA	#.LOBYTE(addr)
-	STA	ptr_0
+	LDA	data_2
+	CLC
+	ADC	#.LOBYTE(value)
+	STA	data_2
 
-	INY
+	LDA	data_3
+	ADC	#.HIBYTE(value)
+	STA	data_3
 
-	LDA	#.HIBYTE(addr)
-	STA	ptr_1
 .endmacro

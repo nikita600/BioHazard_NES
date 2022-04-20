@@ -80,13 +80,9 @@ upload_gfx_to_ppu_6F89C:
 	LDY	#0
 	LDA	(data_2),Y
 	STA	tilemapWidth_308
-	LDA	data_2
-	CLC
-	ADC	#2
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $2
+
 	LDX	#0
 
 loc_6F8B2:
@@ -109,13 +105,9 @@ loc_6F8BE:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
-	LDA	data_2
-	CLC
-	ADC	#$10
-	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+
+	add_to_data $10
+
 	INX
 	CPX	tilemapWidth_308
 	BCC	loc_6F8B2

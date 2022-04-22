@@ -11,10 +11,9 @@ bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
-	LDA	bank_to_344
-	STA	bank_prev_345
-	LDA	#$88 
-	STA	bank_switch_flag_6C
+	set bank_prev_345, bank_to_344
+	set bank_switch_flag_6C, #$88 
+
 	LDA	bank_command_346
 	CMP	#0
 	BEQ	case0_8096
@@ -217,11 +216,9 @@ loc_815B:
 ; ---------------------------------------------------------------------------
 
 loc_8169:
-	; bank_switch_8000+B2j	...
-	LDA	#$FF
-	STA	bank_command_346
-	LDA	bank_from_343
-	STA	bank_to_344
+	set bank_command_346, #$FF
+	set bank_to_344, bank_from_343
+
 	JMP	bank_switch_8000
 ; End of function bank_switch_8000
 
@@ -386,6 +383,7 @@ reset_values_82C0:
 	STA	byte_5BB
 	STA	byte_5BC
 	STA	byte_5BF
+
 	STA	byte_5C0
 	STA	byte_5C3
 	STA	byte_5C4
@@ -397,6 +395,7 @@ reset_values_82C0:
 	STA	byte_5CD
 	STA	byte_5CE
 	STA	byte_5CF
+
 	STA	byte_5D0
 	STA	byte_5D1
 	STA	byte_5D6
@@ -407,6 +406,7 @@ reset_values_82C0:
 	STA	byte_5DD
 	STA	byte_5DE
 	STA	byte_5DF
+
 	STA	byte_5E0
 	STA	byte_5E1
 	STA	byte_5E2
@@ -423,6 +423,7 @@ reset_values_82C0:
 	STA	byte_5ED
 	STA	byte_5EE
 	STA	byte_5EF
+
 	STA	byte_5F0
 	STA	byte_5F1
 	STA	byte_5F2
@@ -439,6 +440,7 @@ reset_values_82C0:
 	STA	byte_5FD
 	STA	byte_5FE
 	STA	byte_5FF
+
 	STA	byte_600
 	STA	byte_601
 	STA	byte_602
@@ -454,6 +456,7 @@ reset_values_82C0:
 	STA	byte_60D
 	STA	byte_60E
 	STA	byte_60F
+
 	STA	byte_610
 	STA	byte_611
 	STA	byte_612
@@ -468,6 +471,7 @@ reset_values_82C0:
 	STA	byte_61D
 	STA	byte_61E
 	STA	byte_61F
+
 	STA	byte_620
 	STA	byte_621
 	STA	byte_622
@@ -481,6 +485,7 @@ reset_values_82C0:
 	STA	byte_62D
 	STA	byte_62E
 	STA	byte_62F
+
 	STA	byte_630
 	STA	byte_631
 	STA	byte_632
@@ -495,6 +500,7 @@ reset_values_82C0:
 	STA	byte_63D
 	STA	byte_63E
 	STA	byte_63F
+
 	STA	byte_640
 	STA	byte_641
 	STA	byte_642
@@ -510,6 +516,7 @@ reset_values_82C0:
 	STA	byte_64D
 	STA	byte_64E
 	STA	byte_64F
+
 	STA	byte_650
 	STA	byte_651
 	STA	byte_654
@@ -524,6 +531,7 @@ reset_values_82C0:
 	STA	byte_65D
 	STA	byte_65E
 	STA	byte_65F
+
 	STA	byte_660
 	STA	byte_661
 	STA	byte_662
@@ -536,6 +544,7 @@ reset_values_82C0:
 	STA	byte_66D
 	STA	byte_66E
 	STA	byte_66F
+
 	STA	byte_670
 	STA	byte_671
 	STA	byte_672
@@ -550,6 +559,7 @@ reset_values_82C0:
 	STA	byte_67D
 	STA	byte_67E
 	STA	byte_67F
+
 	STA	byte_680
 	STA	byte_681
 	STA	byte_682
@@ -562,6 +572,7 @@ reset_values_82C0:
 	STA	byte_68A
 	STA	byte_68B
 	STA	byte_68C
+
 	STA	byte_691
 	STA	byte_692
 	STA	byte_693
@@ -576,6 +587,7 @@ reset_values_82C0:
 	STA	byte_69C
 	STA	byte_69D
 	STA	byte_69F
+
 	STA	byte_6A2
 	STA	byte_6A3
 	STA	byte_6A5
@@ -587,6 +599,7 @@ reset_values_82C0:
 	STA	byte_6AD
 	STA	byte_6AE
 	STA	byte_6AF
+
 	STA	byte_6B0
 	STA	byte_6B1
 	STA	byte_6B2
@@ -600,6 +613,7 @@ reset_values_82C0:
 	STA	byte_6BA
 	STA	byte_6BB
 	STA	byte_6BC
+	
 	STA	byte_6C1
 	STA	byte_6C2
 	STA	byte_6C3
@@ -3579,15 +3593,10 @@ sub_999A:
 	STA	byte_367
 	JSR	sub_9824
 
-	LDA	byte_36A
-	STA	tilemapWidth_308
-	LDA	byte_36B
-	STA	tilemap_size_307
-
-	LDA	byte_366
-	STA	tilemapHeight_30A
-	LDA	byte_367
-	STA	ppu_unk_byte_309
+	set tilemapWidth_308, byte_36A
+	set tilemap_size_307, byte_36B
+	set tilemapHeight_30A, byte_366
+	set ppu_unk_byte_309, byte_367
 
 	load_ptr off_9B32
 
@@ -4629,10 +4638,9 @@ sub_C873:
 
 	load_ptr unknown_entries_C558
 
-	LDA	entry_idx_300
-	STA	data_2
-	LDA	#0
-	STA	data_3
+	set_data2 entry_idx_300
+	set_data3 #0
+
 	ASL	data_2
 	ROL	data_3
 	LDA	ptr_0

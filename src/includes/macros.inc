@@ -40,3 +40,22 @@
 	STA	data_3
 
 .endmacro
+
+.macro set_data2 value
+
+	set data_2, value
+
+.endmacro
+
+.macro set_data3 value
+
+	set data_3, value
+	
+.endmacro
+
+.macro set dst, src
+
+	LDA	src
+	STA	dst
+
+.endmacro

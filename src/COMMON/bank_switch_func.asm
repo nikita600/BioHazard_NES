@@ -1,6 +1,7 @@
 bank_switch:
-		LDA	#$EE 
-		STA	bank_switch_flag_6C
+
+		set bank_switch_flag_6C, #$EE 
+
 		LDA	bank_to_344
 		CMP	#$10
 		BCS	bank_idx_greater_10_8020

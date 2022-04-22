@@ -29,6 +29,8 @@ call :merge_banks Temp ROM.BIN
 
 copy /b bin\HEAD.BIN+ROM.BIN+bin\TAIL.BIN ROM.NES
 
+call :check_checksum ORIG.NES ROM.NES
+
 goto :finish
 
 
@@ -49,11 +51,19 @@ if exist %ASM_FILE% %cc65_folder%\ca65.exe %ASM_FILE% -g -o %OBJ_FILE% --listing
 if exist %OBJ_FILE% echo "Linking %OBJ_FILE% -> %BIN_FILE%"
 if exist %OBJ_FILE% %cc65_folder%\ld65.exe -o %BIN_FILE% -C "src\memory.cfg" %OBJ_FILE%
 
-if exist %OLD_FILE% echo "OLD:"
-if exist %OLD_FILE% bin\m3checksum.exe %OLD_FILE%
-if exist %BIN_FILE% echo "NEW:"
-if exist %BIN_FILE% bin\m3checksum.exe %BIN_FILE%
+call :check_checksum %OLD_FILE% %BIN_FILE%
+
 echo.
+
+goto :eof
+
+:check_checksum
+
+if exist %1 echo "OLD:"
+if exist %1 bin\m3checksum.exe %1
+
+if exist %2 echo "NEW:"
+if exist %2 bin\m3checksum.exe %2
 
 goto :eof
 

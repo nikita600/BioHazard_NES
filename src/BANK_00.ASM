@@ -85,8 +85,7 @@ locret_8095:
 ; ---------------------------------------------------------------------------
 
 case0_8096:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	LDX	tilemapTypeUnk_30B
 	JSR	sub_CF13
 	PLA
@@ -95,8 +94,7 @@ case0_8096:
 ; ---------------------------------------------------------------------------
 
 case1_80A7:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	sub_CAA9
 	PLA
 	STA	bank_from_343
@@ -104,8 +102,7 @@ case1_80A7:
 ; ---------------------------------------------------------------------------
 
 case2_80B5:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	load_image_C6D2
 	PLA
 	STA	bank_from_343
@@ -113,8 +110,7 @@ case2_80B5:
 ; ---------------------------------------------------------------------------
 
 case3_80C3:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	sub_DBE2
 	PLA
 	STA	bank_from_343
@@ -122,8 +118,7 @@ case3_80C3:
 ; ---------------------------------------------------------------------------
 
 case4_80D1:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	sub_CBC2
 	PLA
 	STA	bank_from_343
@@ -131,8 +126,7 @@ case4_80D1:
 ; ---------------------------------------------------------------------------
 
 case5_80DF:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	objects_func_D52A
 	PLA
 	STA	bank_from_343
@@ -140,8 +134,7 @@ case5_80DF:
 ; ---------------------------------------------------------------------------
 
 loc_80ED:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	sub_C873
 	JSR	sub_C921
 	JSR	sub_ECCC
@@ -152,8 +145,7 @@ loc_80ED:
 ; ---------------------------------------------------------------------------
 
 loc_8104:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	exec_b4_c0_CA4B
 	JSR	exec_b4_c1_CA5E
 	PLA
@@ -162,8 +154,7 @@ loc_8104:
 ; ---------------------------------------------------------------------------
 
 loc_8115:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	load_tiles_to_ppu_C83A
 	PLA
 	STA	bank_from_343
@@ -171,8 +162,7 @@ loc_8115:
 ; ---------------------------------------------------------------------------
 
 loc_8123:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	sub_91B6
 	PLA
 	STA	bank_from_343
@@ -180,8 +170,7 @@ loc_8123:
 ; ---------------------------------------------------------------------------
 
 loc_8131:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	sub_D055
 	PLA
 	STA	bank_from_343
@@ -189,8 +178,7 @@ loc_8131:
 ; ---------------------------------------------------------------------------
 
 loc_813F:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	sub_CF42
 	PLA
 	STA	bank_from_343
@@ -198,8 +186,7 @@ loc_813F:
 ; ---------------------------------------------------------------------------
 
 loc_814D:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	sub_D359
 	PLA
 	STA	bank_from_343
@@ -207,8 +194,7 @@ loc_814D:
 ; ---------------------------------------------------------------------------
 
 loc_815B:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 	JSR	ppu_unk_func_F09D
 	PLA
 	STA	bank_from_343
@@ -741,7 +727,7 @@ loc_866D:
 	CMP	#0
 	BEQ	loc_86B7
 
-	load_ptr _SAVE_RAM
+	set_ptr _SAVE_RAM
 
 	LDY	#0
 
@@ -939,14 +925,10 @@ locret_87CD:
 
 
 sub_87CE:
-	LDA	byte_36A
-	PHA
-	LDA	byte_36B
-	PHA
-	LDA	byte_366
-	PHA
-	LDA	byte_367
-	PHA
+	to_stack byte_36A
+	to_stack byte_36B
+	to_stack byte_366
+	to_stack byte_367
 	LDA	tilemapWidth_308
 	LSR	A
 	ASL	A
@@ -1101,18 +1083,12 @@ show_copyright_screen_88E4:
 	LDA	#0
 	STA	jill_pos_x_47D
 	JSR	cache_prev_data_CA84
-	LDA	image_id_4A4
-	PHA
-	LDA	image_offset_4A5
-	PHA
-	LDA	ppu_prev_unk_4A6
-	PHA
-	LDA	ppu_prev_scroll_x_unk_4A7
-	PHA
-	LDA	ppu_prev_scroll_y_unk_4A8
-	PHA
-	LDA	prev_sprite_type_4A9
-	PHA
+	to_stack image_id_4A4
+	to_stack image_offset_4A5
+	to_stack ppu_prev_unk_4A6
+	to_stack ppu_prev_scroll_x_unk_4A7
+	to_stack ppu_prev_scroll_y_unk_4A8
+	to_stack prev_sprite_type_4A9
 	JSR	exec_b12_c4A_ECB6
 	JSR	show_hidden_copyright_9AD9
 	PLA
@@ -1384,8 +1360,7 @@ loc_8AE0:
 	STA	objMapIdx_316
 
 loc_8AF1:
-	LDA	objMapIdx_316
-	PHA
+	to_stack objMapIdx_316
 	LDA	byte_313
 	ASL	A
 	ASL	A
@@ -2211,8 +2186,7 @@ loc_9042:
 	LDA	tilemapTypeUnk_30B
 	CMP	#$1F
 	BNE	loc_9061
-	LDA	tilemapTypeUnk_30B
-	PHA
+	to_stack tilemapTypeUnk_30B
 	LDA	#$32 
 	STA	inv_sprite_idx_31C
 	JSR	sub_EC86
@@ -2242,8 +2216,7 @@ loc_9061:
 	LDA	#0
 	ADC	#2
 	STA	char_type_id_35D
-	LDA	tilemapTypeUnk_30B
-	PHA
+	to_stack tilemapTypeUnk_30B
 	LDX	#1
 	JSR	sub_CF13
 	LDA	#$1F
@@ -2293,8 +2266,7 @@ loc_90BB:
 	STA	char_type_id_35D
 
 loc_90E6:
-	LDA	tilemapTypeUnk_30B
-	PHA
+	to_stack tilemapTypeUnk_30B
 	LDX	#1
 	JSR	sub_CF13
 	LDA	#$1F
@@ -2615,16 +2587,11 @@ loc_9308:
 ; ---------------------------------------------------------------------------
 
 loc_931C:
-	LDA	byte_36A
-	PHA
-	LDA	byte_36B
-	PHA
-	LDA	byte_366
-	PHA
-	LDA	byte_367
-	PHA
-	LDA	sprite_length_30F
-	PHA
+	to_stack byte_36A
+	to_stack byte_36B
+	to_stack byte_366
+	to_stack byte_367
+	to_stack sprite_length_30F
 	JSR	sub_935A
 	PLA
 	STA	sprite_length_30F
@@ -2792,10 +2759,8 @@ locret_9449:
 sub_944A:
 	LDA	#0
 	STA	sprite_length_30F
-	LDA	byte_430
-	PHA
-	LDA	byte_431
-	PHA
+	to_stack byte_430
+	to_stack byte_431
 	LDA	byte_313
 	CMP	#0
 	BEQ	loc_9469
@@ -3250,8 +3215,7 @@ loc_9773:
 ; ---------------------------------------------------------------------------
 
 loc_9797:
-	LDA	byte_313
-	PHA
+	to_stack byte_313
 	JSR	sub_D9B9
 	PLA
 	STA	byte_313
@@ -3269,8 +3233,7 @@ loc_9797:
 ; ---------------------------------------------------------------------------
 
 loc_97B9:
-	LDA	byte_313
-	PHA
+	to_stack byte_313
 	JSR	sub_D9B9
 	PLA
 	STA	byte_313
@@ -3598,18 +3561,22 @@ sub_999A:
 	set tilemapHeight_30A, byte_366
 	set ppu_unk_byte_309, byte_367
 
-	load_ptr off_9B32
+	set_ptr off_9B32
 
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	tilemapTypeUnk_30B
-	LDA	ptr_0
-	CLC
-	ADC	#1
-	STA	ptr_0
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+
+	;LDA	ptr_0
+	;CLC
+	;ADC	#1
+	;STA	ptr_0
+	;LDA	ptr_1
+	;ADC	#0
+	;STA	ptr_1
+
+	add_to_ptr 1
+
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 
@@ -3755,10 +3722,8 @@ show_hidden_copyright_9AD9:
 	STA	byte_363
 	LDA	#$A0 
 	STA	sprite_secondByte_31B
-	LDA	byte_360
-	PHA
-	LDA	byte_361
-	PHA
+	to_stack byte_360
+	to_stack byte_361
 	LDA	#0
 	STA	byte_360
 	LDA	#3
@@ -4504,8 +4469,7 @@ loc_C78E:
 	LDA	#0
 	STA	objectIdx_318
 	JSR	sub_C7C7
-	LDA	byte_317
-	PHA
+	to_stack byte_317
 	JSR	loadt_obj_tilemaps_C84D
 	PLA
 	STA	byte_317
@@ -4633,23 +4597,26 @@ exec_b1_c2_C860:
 
 
 sub_C873:
-	LDA	entry_idx_300
-	PHA
+	to_stack entry_idx_300
 
-	load_ptr unknown_entries_C558
+	set_ptr unknown_entries_C558
 
 	set_data2 entry_idx_300
 	set_data3 #0
 
 	ASL	data_2
 	ROL	data_3
-	LDA	ptr_0
-	CLC
-	ADC	data_2
-	STA	ptr_0
-	LDA	ptr_1
-	ADC	data_3
-	STA	ptr_1
+
+	;LDA	ptr_0
+	;CLC
+	;ADC	data_2
+	;STA	ptr_0
+	;LDA	ptr_1
+	;ADC	data_3
+	;STA	ptr_1
+
+	add_to_ptr_addr data_2
+
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	data_2
@@ -4757,10 +4724,9 @@ exec_b2_c4_C90E:
 
 
 sub_C921:
-	LDA	entry_idx_300
-	PHA
+	to_stack entry_idx_300
 
-	load_ptr unknown_entries_C558
+	set_ptr unknown_entries_C558
 
 	LDA	entry_idx_300
 	STA	data_2
@@ -4768,6 +4734,7 @@ sub_C921:
 	STA	data_3
 	ASL	data_2
 	ROL	data_3
+
 	LDA	ptr_0
 	CLC
 	ADC	data_2
@@ -4775,6 +4742,7 @@ sub_C921:
 	LDA	ptr_1
 	ADC	data_3
 	STA	ptr_1
+
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	data_2
@@ -4822,8 +4790,7 @@ loc_C985:
 
 
 sub_C98A:
-	LDA	tilemapTypeUnk_30B
-	PHA
+	to_stack tilemapTypeUnk_30B
 	LDX	#0
 	LDA	byte_BD10,X
 	STA	tilemapTypeUnk_30B
@@ -4861,17 +4828,17 @@ loc_C9B7:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-ppu_upload_data_1000_C9BF:
+ppu_upset_data_1000_C9BF:
 
-	load_ptr _PPU_PAT_TBL_1
+	set_ptr _PPU_PAT_TBL_1
 
-; End of function ppu_upload_data_1000_C9BF
+; End of function ppu_upset_data_1000_C9BF
 
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-ppu_upload_data_C9C7:
+ppu_upset_data_C9C7:
 	LDY	#0
 	LDA	(data_2),Y
 	STA	tilemapWidth_308
@@ -4885,6 +4852,7 @@ loc_C9DD:
 	STA	_PPU_ADDR
 	LDA	ptr_0
 	STA	_PPU_ADDR
+
 	LDY	#0
 
 loc_C9E9:
@@ -4893,6 +4861,7 @@ loc_C9E9:
 	INY
 	CPY	#$10
 	BCC	loc_C9E9
+
 	LDA	ptr_0
 	CLC
 	ADC	#$10
@@ -4907,7 +4876,7 @@ loc_C9E9:
 	CPX	tilemapWidth_308
 	BCC	loc_C9DD
 	RTS
-; End of function ppu_upload_data_C9C7
+; End of function ppu_upset_data_C9C7
 
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -5118,10 +5087,8 @@ sub_CB58:
 	STA	byte_317
 	LDA	#$12
 	STA	objMapIdx_316
-	LDA	byte_4AD
-	PHA
-	LDA	byte_4AE
-	PHA
+	to_stack byte_4AD
+	to_stack byte_4AE
 	LDA	byte_372
 	ASL	A
 	TAX
@@ -5193,8 +5160,7 @@ locret_CBE1:
 
 
 sub_CBE2:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 
 exec_c12_b29_CBE6:
 	LDA	#$29 
@@ -5266,8 +5232,7 @@ loc_CC47:
 	BCC	loc_CC47
 
 loc_CC51:
-	LDA	byte_372
-	PHA
+	to_stack byte_372
 	JSR	ppu_unk_func_F09D
 	PLA
 	STA	byte_372
@@ -5692,10 +5657,8 @@ loc_CEDC:
 
 sub_CF13:
 	; a_button_pressed_8FDC+AEp ...
-	LDA	text_idx_35C
-	PHA
-	LDA	char_type_id_35D
-	PHA
+	to_stack text_idx_35C
+	to_stack char_type_id_35D
 	TXA
 	PHA
 	JSR	sub_9132
@@ -5878,8 +5841,7 @@ locret_D01E:
 
 
 sub_D01F:
-	LDA	tilemapTypeUnk_30B
-	PHA
+	to_stack tilemapTypeUnk_30B
 	TXA
 	ASL	A
 	ASL	A
@@ -5912,10 +5874,8 @@ byte_D041:.BYTE  $B, $B, $D, $D, $A,  6,	6,  8,	8,  5,	1,  1,	2,  2,	0,  1
 
 sub_D055:
 	
-	LDA	tilemapTypeUnk_30B
-	PHA
-	LDA	byte_313
-	PHA
+	to_stack tilemapTypeUnk_30B
+	to_stack byte_313
 	LDA	#8
 	STA	byte_315
 	LDA	#0
@@ -5967,8 +5927,7 @@ loc_D097:
 
 
 sub_D0AD:
-	LDA	tilemapTypeUnk_30B
-	PHA
+	to_stack tilemapTypeUnk_30B
 	JSR	sub_C7C7
 	LDA	byte_366
 	CLC
@@ -6137,14 +6096,10 @@ sub_D1EE:
 	PHA
 	TYA
 	PHA
-	LDA	byte_36A
-	PHA
-	LDA	byte_36B
-	PHA
-	LDA	byte_366
-	PHA
-	LDA	byte_367
-	PHA
+	to_stack byte_36A
+	to_stack byte_36B
+	to_stack byte_366
+	to_stack byte_367
 	TXA
 	PHA
 	LDA	array_unk_3A7,X
@@ -6901,8 +6856,7 @@ loc_D702:
 
 loc_D730:
 	; objects_func_D644+C7j ...
-	LDA	byte_313
-	PHA
+	to_stack byte_313
 	TXA
 	PHA
 	JSR	sub_D9B9
@@ -6924,8 +6878,7 @@ loc_D730:
 ; ---------------------------------------------------------------------------
 
 loc_D75D:
-	LDA	byte_313
-	PHA
+	to_stack byte_313
 	TXA
 	PHA
 	JSR	sub_D9B9
@@ -6948,8 +6901,7 @@ loc_D75D:
 
 loc_D78C:
 	JSR	sub_DADA
-	LDA	byte_313
-	PHA
+	to_stack byte_313
 	TXA
 	PHA
 	JSR	sub_D9B9
@@ -7208,8 +7160,7 @@ sub_D913:
 
 
 sub_D929:
-	LDA	tilemapWidth_308
-	PHA
+	to_stack tilemapWidth_308
 	ASL	A
 	ASL	A
 	ASL	A
@@ -7231,8 +7182,7 @@ sub_D929:
 
 
 sub_D94A:
-	LDA	tilemapHeight_30A
-	PHA
+	to_stack tilemapHeight_30A
 	ASL	A
 	ASL	A
 	ASL	A
@@ -7720,8 +7670,7 @@ nullsub_1:
 
 
 sub_DC88:
-	LDA	inv_spr_dscr1_30C
-	PHA
+	to_stack inv_spr_dscr1_30C
 	LDA	byte_58E
 	BEQ	loc_DCE6
 	LDA	entry_idx_300
@@ -8071,16 +8020,11 @@ locret_DEF9:
 
 
 map_update_DEFA:
-	LDA	entry_idx_300
-	PHA
-	LDA	byte_36A
-	PHA
-	LDA	byte_36B
-	PHA
-	LDA	byte_366
-	PHA
-	LDA	byte_367
-	PHA
+	to_stack entry_idx_300
+	to_stack byte_36A
+	to_stack byte_36B
+	to_stack byte_366
+	to_stack byte_367
 	JSR	sub_CA14
 	LSR	byte_36A
 	LSR	byte_36A
@@ -8110,7 +8054,7 @@ read_tilemap_DF23:
 
 load_from_C558_DF4B:
 
-	load_ptr unknown_entries_C558
+	set_ptr unknown_entries_C558
 
 	LDA	entry_idx_300
 	STA	data_2
@@ -8118,6 +8062,7 @@ load_from_C558_DF4B:
 	STA	data_3
 	ASL	data_2
 	ROL	data_3
+
 	LDA	ptr_0
 	CLC
 	ADC	data_2
@@ -8125,6 +8070,7 @@ load_from_C558_DF4B:
 	LDA	ptr_1
 	ADC	data_3
 	STA	ptr_1
+
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	data_2
@@ -8137,7 +8083,7 @@ load_from_C558_DF4B:
 
 load_from_BCB6_DF7F:
 
-	load_ptr unknown_data_BCB6
+	set_ptr unknown_data_BCB6
 
 	LDA	entry_idx_300
 	ASL	A
@@ -8184,7 +8130,7 @@ sub_DFC1:
 	LDA	#$FF
 	STA	byte_36E
 
-	load_ptr off_9BB5
+	set_ptr off_9BB5
 
 get_offset_DFCE:
 	LDA	entry_idx_300
@@ -8193,6 +8139,7 @@ get_offset_DFCE:
 	STA	data_3
 	ASL	data_2
 	ROL	data_3
+
 	LDA	ptr_0
 	CLC
 	ADC	data_2
@@ -9268,14 +9215,10 @@ sub_E747:
 	STA	byte_371
 	TYA
 	PHA
-	LDA	ptr_0
-	PHA
-	LDA	ptr_1
-	PHA
-	LDA	tilemapTypeUnk_30B
-	PHA
-	LDA	inv_spr_dscr1_30C
-	PHA
+	to_stack ptr_0
+	to_stack ptr_1
+	to_stack tilemapTypeUnk_30B
+	to_stack inv_spr_dscr1_30C
 	LDY	#0
 	LDA	(data_2),Y
 	STA	tilemapTypeUnk_30B
@@ -9360,14 +9303,12 @@ loc_E7E7:
 
 
 sub_E7F8:
-	LDA	ptr_0
-	PHA
-	LDA	ptr_1
-	PHA
+	to_stack ptr_0
+	to_stack ptr_1
 	TYA
 	PHA
 
-	load_ptr byte_598
+	set_ptr byte_598
 
 	LDA	ptr_0
 	CLC
@@ -9393,14 +9334,12 @@ sub_E7F8:
 
 
 sub_E827:
-	LDA	ptr_0
-	PHA
-	LDA	ptr_1
-	PHA
+	to_stack ptr_0
+	to_stack ptr_1
 	TYA
 	PHA
 
-	load_ptr byte_598
+	set_ptr byte_598
 
 	LDA	ptr_0
 	CLC
@@ -9409,6 +9348,7 @@ sub_E827:
 	LDA	ptr_1
 	ADC	byte_30E
 	STA	ptr_1
+
 	LDY	#0
 	LDA	#$FF
 	STA	(ptr_0),Y
@@ -9511,10 +9451,8 @@ loc_E8D1:
 
 
 sub_E8F8:
-	LDA	data_2
-	PHA
-	LDA	data_3
-	PHA
+	to_stack data_2
+	to_stack data_3
 	LDA	#0
 	STA	sprite_length_30F
 	LDA	entry_idx_300
@@ -10719,10 +10657,8 @@ exit_EDE3:
 ; ---------------------------------------------------------------------------
 
 loc_EDE4:
-	LDA	ppu_unk_byte_309
-	PHA
-	LDA	tilemap_size_307
-	PHA
+	to_stack ppu_unk_byte_309
+	to_stack tilemap_size_307
 	LDA	tilemapTypeUnk_30B
 	CMP	#3
 	BNE	next_check_EDF6
@@ -10819,8 +10755,7 @@ sub_EE72:
 	SBC	ppu_unk_byte_309
 	STA	tilemapHeight_30A
 	LDX	tilemap_size_307
-	LDA	ppu_unk_byte_309
-	PHA
+	to_stack ppu_unk_byte_309
 
 loc_EE9A:
 	TXA
@@ -10876,8 +10811,7 @@ loc_EEEF:
 	SBC	ppu_unk_byte_309
 	STA	tilemapHeight_30A
 	LDX	#0
-	LDA	ppu_unk_byte_309
-	PHA
+	to_stack ppu_unk_byte_309
 
 loc_EF04:
 	TXA
@@ -10970,8 +10904,7 @@ loc_EF94:
 	CLC
 	ADC	tilemap_size_307
 	TAX
-	LDA	ppu_unk_byte_309
-	PHA
+	to_stack ppu_unk_byte_309
 	LDA	#0
 	STA	ppu_unk_byte_309
 
@@ -11041,8 +10974,7 @@ loc_F019:
 	ASL	A
 	ASL	A
 	TAX
-	LDA	ppu_unk_byte_309
-	PHA
+	to_stack ppu_unk_byte_309
 	LDA	#0
 	STA	ppu_unk_byte_309
 
@@ -11125,16 +11057,16 @@ ppu_unk_func_F09D:
 	CMP	#1
 	BEQ	loc_F0B9
 
-	load_ptr _PPU_ATTR_TBL_0
-	load_data _PPU_ATTR_TBL_1
+	set_ptr _PPU_ATTR_TBL_0
+	set_data _PPU_ATTR_TBL_1
 
 	JMP	loc_F0C9
 ; ---------------------------------------------------------------------------
 
 loc_F0B9:
 
-	load_data _PPU_ATTR_TBL_0
-	load_ptr _PPU_ATTR_TBL_1
+	set_data _PPU_ATTR_TBL_0
+	set_ptr _PPU_ATTR_TBL_1
 
 loc_F0C9:
 	LDA	ppu_unk_byte_302
@@ -11656,20 +11588,15 @@ tilemap_read_next_chunk_F472:
 	PHA
 	TYA
 	PHA
-	LDA	ptr_0
-	PHA
-	LDA	ptr_1
-	PHA
-	LDA	data_2
-	PHA
-	LDA	data_3
-	PHA
-	LDA	entry_idx_300
-	PHA
+	to_stack ptr_0
+	to_stack ptr_1
+	to_stack data_2
+	to_stack data_3
+	to_stack entry_idx_300
 
 get_tilemap_entries_ptr_F486:
 
-	load_ptr tilemap_entries_C000
+	set_ptr tilemap_entries_C000
 
 get_tilemap_entry_offset_F48E:
 	LDA	entry_idx_300
@@ -11678,6 +11605,7 @@ get_tilemap_entry_offset_F48E:
 	STA	data_3
 	ASL	data_2
 	ROL	data_3
+	
 	LDA	ptr_0
 	CLC
 	ADC	data_2
@@ -12295,8 +12223,7 @@ loc_F865:
 	INY
 
 loc_F86E:
-	LDA	tilemapTypeUnk_30B
-	PHA
+	to_stack tilemapTypeUnk_30B
 	LDA	#0
 	STA	tilemapTypeUnk_30B
 
@@ -12330,20 +12257,16 @@ locret_F8A0:
 
 
 sub_F8A1:
-	LDA	ppu_unk_byte_309
-	PHA
-	LDA	tilemap_size_307
-	PHA
+	to_stack ppu_unk_byte_309
+	to_stack tilemap_size_307
 	LDA	#0
 	STA	tilemapTypeUnk_30B
 
 loc_F8AE:
 	TXA
 	PHA
-	LDA	ppu_unk_byte_309
-	PHA
-	LDA	tilemap_size_307
-	PHA
+	to_stack ppu_unk_byte_309
+	to_stack tilemap_size_307
 	JSR	sub_F98B
 
 start_read_tilemap_F8BB:
@@ -12411,10 +12334,8 @@ loc_F918:
 sub_F921:
 	TXA
 	PHA
-	LDA	ppu_unk_byte_309
-	PHA
-	LDA	tilemap_size_307
-	PHA
+	to_stack ppu_unk_byte_309
+	to_stack tilemap_size_307
 	JSR	sub_F98B
 	JSR	sub_F504
 	JSR	sub_ED8F
@@ -12435,10 +12356,8 @@ sub_F921:
 sub_F942:
 	TXA
 	PHA
-	LDA	ppu_unk_byte_309
-	PHA
-	LDA	tilemap_size_307
-	PHA
+	to_stack ppu_unk_byte_309
+	to_stack tilemap_size_307
 	JSR	sub_F98B
 	LSR	ppu_unk_byte_309
 	LSR	ppu_unk_byte_309
@@ -12523,10 +12442,8 @@ locret_F9C1:
 
 
 sub_F9C2:
-	LDA	ppu_unk_byte_309
-	PHA
-	LDA	tilemap_size_307
-	PHA
+	to_stack ppu_unk_byte_309
+	to_stack tilemap_size_307
 	JSR	sub_FA61
 	LDA	ppu_unk_byte_309
 	AND	#3
@@ -12670,10 +12587,8 @@ loc_FA99:
 sub_FAAF:
 	TXA
 	PHA
-	LDA	ppu_unk_byte_309
-	PHA
-	LDA	tilemap_size_307
-	PHA
+	to_stack ppu_unk_byte_309
+	to_stack tilemap_size_307
 	JSR	sub_F98B
 	LSR	ppu_unk_byte_309
 	LSR	ppu_unk_byte_309
@@ -12700,10 +12615,8 @@ start_read_tilemap_FAC8:
 	STA	tilemap_size_307
 	PLA
 	STA	ppu_unk_byte_309
-	LDA	ppu_unk_byte_309
-	PHA
-	LDA	tilemap_size_307
-	PHA
+	to_stack ppu_unk_byte_309
+	to_stack tilemap_size_307
 	JSR	sub_FA61
 	LDA	ppu_unk_byte_309
 	AND	#3
@@ -12812,7 +12725,7 @@ loc_FB8C:
 	LDA	ptr_1
 	ORA	#$10
 	STA	ptr_1
-	JSR	ppu_upload_data_C9C7
+	JSR	ppu_upset_data_C9C7
 	RTS
 ; End of function upload_text_palette_to_ppu_FB85
 

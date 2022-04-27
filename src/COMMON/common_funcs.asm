@@ -236,7 +236,7 @@ loc_FD62:
 battle_screen_update_FD6E:		
 		LDA	#2
 		STA	_PPU_OAM_DMA
-		JSR	ppu_upload_data_FDCB
+		JSR	ppu_upset_data_FDCB
 		JSR	ppu_update_FE20
 		JSR	input_update_FE39
 		LDA	sprite_type_306
@@ -288,7 +288,7 @@ return_FDCA:
 ; =============== S U B	R O U T	I N E =======================================
 
 
-ppu_upload_data_FDCB:			
+ppu_upset_data_FDCB:			
 		LDA	has_ppu_data_to_upload_6F
 		BNE	loc_FDD0
 		RTS
@@ -341,11 +341,11 @@ loc_FE09:
 ; ---------------------------------------------------------------------------
 
 loc_FE1B:				
-					; ppu_upload_data_FDCB+4Aj
+					; ppu_upset_data_FDCB+4Aj
 		LDA	#0
 		STA	has_ppu_data_to_upload_6F
 		RTS
-; End of function ppu_upload_data_FDCB
+; End of function ppu_upset_data_FDCB
 
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -508,8 +508,7 @@ scroll_update_FED6:
 		AND	#$7F 
 		CMP	#0
 		BEQ	locret_FF2D
-		LDA	scroll_offset_y_47A
-		PHA
+		to_stack scroll_offset_y_47A
 		LDA	scroll_offset_y_47A
 		AND	#$80 
 		CMP	#0
@@ -546,12 +545,9 @@ locret_FF2D:
 
 
 apu_update_music_FF2E:			
-		LDA	bank_command_346
-		PHA
-		LDA	bank_to_344
-		PHA
-		LDA	bank_from_343
-		PHA
+		to_stack bank_command_346
+		to_stack bank_to_344
+		to_stack bank_from_343
 		LDA	#banks_13
 		STA	bank_to_344
 		LDA	#$88 

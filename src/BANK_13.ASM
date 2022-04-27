@@ -1530,7 +1530,7 @@ byte_13DF14:.BYTE $4B,$8C,$CD,$30
 
 load_spr_palette_13DF18:
 	
-	load_ptr Palette_1380AC
+	set_ptr Palette_1380AC
 
 	LDA	#0
 	STA	data_2
@@ -1550,7 +1550,7 @@ load_spr_palette_13DF18:
 	LDA	(ptr_0),Y
 	STA	data_3
 
-	load_ptr _PPU_PALETTE
+	set_ptr _PPU_PALETTE
 
 	LDA	sprPalIdx_319
 	ASL	A
@@ -1604,6 +1604,7 @@ loc_13DF76:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
+
 	DEC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	CMP	#0
@@ -1660,7 +1661,7 @@ loc_13DFD1:
 
 load_boss_sprite_13DFDC:
 	
-	load_ptr BossImages_129826
+	set_ptr BossImages_129826
 
 	LDA	#0
 	STA	data_2
@@ -1709,7 +1710,7 @@ load_boss_sprite_13DFDC:
 
 load_sprite_map_13E038:
 
-	load_ptr SpriteMaps_138454
+	set_ptr SpriteMaps_138454
 
 	LDA	#0
 	STA	data_2
@@ -1751,6 +1752,7 @@ load_sprite_map_13E038:
 	INY
 	LDA	(ptr_0),Y
 	STA	tilemapHeight_30A
+
 	LDA	ptr_0
 	CLC
 	ADC	#2
@@ -1758,6 +1760,7 @@ load_sprite_map_13E038:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
+
 	LDA	#0
 	STA	data_2
 	LDA	#$20 
@@ -1880,6 +1883,7 @@ loc_13E13F:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
+
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
 	CMP	inv_spr_dscr1_30C
@@ -1924,6 +1928,7 @@ loc_13E195:
 	LDA	data_3
 	ADC	#0
 	STA	data_3
+
 	LDA	ptr_0
 	CLC
 	ADC	tilemapTypeUnk_30B
@@ -1931,6 +1936,7 @@ loc_13E195:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
+	
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sprites_func_13E178

@@ -1,57 +1,6 @@
-.macro load_ptr addr
 
-    LDA	#.LOBYTE(addr)
-	STA	ptr_0
 
-	LDA	#.HIBYTE(addr)
-	STA	ptr_1
-.endmacro
-
-.macro load_ptr_iny addr
-
-    LDA	#.LOBYTE(addr)
-	STA	ptr_0
-
-	INY
-
-	LDA	#.HIBYTE(addr)
-	STA	ptr_1
-.endmacro
-
-.macro load_data addr
-
-	LDA	#.LOBYTE(addr)
-	STA	data_2
-
-	LDA	#.HIBYTE(addr)
-	STA	data_3
-
-.endmacro
-
-.macro add_to_data value
-
-	LDA	data_2
-	CLC
-	ADC	#.LOBYTE(value)
-	STA	data_2
-
-	LDA	data_3
-	ADC	#.HIBYTE(value)
-	STA	data_3
-
-.endmacro
-
-.macro set_data2 value
-
-	set data_2, value
-
-.endmacro
-
-.macro set_data3 value
-
-	set data_3, value
-	
-.endmacro
+; ---------------------------------------------------------------------------
 
 .macro set dst, src
 
@@ -59,3 +8,33 @@
 	STA	dst
 
 .endmacro
+
+.include "includes/macros/set_macros.inc"
+
+; ---------------------------------------------------------------------------
+
+.macro add_to dst_lo, dst_hi, src_lo, src_hi
+
+	LDA	dst_lo
+	CLC
+	ADC	src_lo
+	STA	dst_lo
+
+	LDA	dst_hi
+	ADC	src_hi
+	STA	dst_hi
+
+.endmacro
+
+.include "includes/macros/add_to_macros.inc"
+
+; ---------------------------------------------------------------------------
+
+.macro to_stack src
+
+	LDA src
+	PHA
+
+.endmacro
+
+; ---------------------------------------------------------------------------

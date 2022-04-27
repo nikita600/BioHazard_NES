@@ -37,8 +37,7 @@ loc_48059:
 	LDA	inv_sprite_idx_31C
 	CMP	#$2F 
 	BCC	loc_4807D
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 
 exec_b13_c1_48064:
 	LDA	#1
@@ -93,7 +92,7 @@ InvItemSprites_9817:
 
 load_palette_4F323:
 
-	load_ptr Palette_4809D
+	set_ptr Palette_4809D
 
 	LDA	#0
 	STA	data_2
@@ -113,7 +112,7 @@ load_palette_4F323:
 	LDA	(ptr_0),Y
 	STA	data_3
 
-	load_ptr _PPU_PALETTE
+	set_ptr _PPU_PALETTE
 
 	LDA	sprPalIdx_319
 	ASL	A
@@ -167,6 +166,7 @@ loc_4F381:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
+
 	DEC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	CMP	#0
@@ -222,7 +222,7 @@ loc_4F3DC:
 
 get_inventory_sprite_ptr_4F3E7:
 
-	load_ptr InvItemSprites_9817
+	set_ptr InvItemSprites_9817
 
 get_offset_4F3EF:
 	LDA	#0
@@ -278,7 +278,7 @@ skip_2_byte_4f416:
 
 load_inventory_sprite_tilemap_4F443:
 
-	load_ptr TilemapsUnk_8445
+	set_ptr TilemapsUnk_8445
 
 get_offset_4F44B:
 	LDA	#0
@@ -329,6 +329,7 @@ get_tilemap_descr_4F48B:
 	INY
 	LDA	(ptr_0),Y
 	STA	tilemapHeight_30A
+
 	LDA	ptr_0
 	CLC
 	ADC	#2
@@ -336,6 +337,7 @@ get_tilemap_descr_4F48B:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
+
 	LDA	#0
 	STA	data_2
 	LDA	#$20 
@@ -458,6 +460,7 @@ loc_4F54A:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
+
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
 	CMP	inv_spr_dscr1_30C
@@ -502,6 +505,7 @@ loc_4F5A0:
 	LDA	data_3
 	ADC	#0
 	STA	data_3
+
 	LDA	ptr_0
 	CLC
 	ADC	tilemapTypeUnk_30B
@@ -509,6 +513,7 @@ loc_4F5A0:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
+	
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_4F583

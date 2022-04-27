@@ -2,7 +2,7 @@
 
 load_tilemap_chunk_in_ram_7F897:
 
-	load_ptr $805B
+	set_ptr $805B
 
 getTilemapPtr:
 
@@ -11,6 +11,7 @@ getTilemapPtr:
 
 	ASL	data_2
 	ROL	data_3
+
 	LDA	ptr_0
 	CLC
 	ADC	data_2
@@ -34,6 +35,7 @@ getOffset_F8CC: ; unk data
 	LDA	tilemap_line_size_51
 	CMP	#$20 
 	BEQ	size_20_7F8DF
+	
 	LDA	ptr_0
 	CLC
 	ADC	#$C0 
@@ -48,13 +50,18 @@ size_20_7F8DF:
 add_size_7F8E1:
 	CPY	#0
 	BEQ	addOffset_7F8F6
-	LDA	ptr_0
-	CLC
-	ADC	tilemap_line_size_51
-	STA	ptr_0
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+
+	;LDA	ptr_0
+	;CLC
+	;ADC	tilemap_line_size_51
+	;STA	ptr_0
+	;
+	;LDA	ptr_1
+	;ADC	#0
+	;STA	ptr_1
+
+	add_to_ptr_byte tilemap_line_size_51
+
 	DEY
 	JMP	add_size_7F8E1
 ; ---------------------------------------------------------------------------
@@ -64,6 +71,7 @@ addOffset_7F8F6:
 	CLC
 	ADC	mapLineSize_50
 	STA	ptr_0
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
@@ -78,6 +86,7 @@ init_F903:
 write_tilemap_line_7F90F:	
 	LDA	(ptr_0),Y
 	STA	tilemapData_4C,X
+
 	LDA	ptr_0
 	CLC
 	ADC	data_3	; entrySize
@@ -85,6 +94,7 @@ write_tilemap_line_7F90F:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
+	
 	INX
 	CPX	data_2	; lineSize
 	BCC	write_tilemap_line_7F90F

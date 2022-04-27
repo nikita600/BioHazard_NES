@@ -44,7 +44,7 @@ GFX_6805B:
 
 upload_gfx_to_ppu_6F863:
 	
-	load_ptr GFX_6805B
+	set_ptr GFX_6805B
 
 	LDA	entry_idx_300
 	STA	data_2
@@ -52,6 +52,7 @@ upload_gfx_to_ppu_6F863:
 	STA	data_3
 	ASL	data_2
 	ROL	data_3
+
 	LDA	ptr_0
 	CLC
 	ADC	data_2
@@ -59,6 +60,7 @@ upload_gfx_to_ppu_6F863:
 	LDA	ptr_1
 	ADC	data_3
 	STA	ptr_1
+
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	data_2
@@ -66,7 +68,7 @@ upload_gfx_to_ppu_6F863:
 	LDA	(ptr_0),Y
 	STA	data_3
 	
-	load_ptr _PPU_PAT_TBL_1
+	set_ptr _PPU_PAT_TBL_1
 
 	JSR	upload_gfx_to_ppu_6F89C
 	RTS
@@ -98,6 +100,7 @@ loc_6F8BE:
 	INY
 	CPY	#$10
 	BCC	loc_6F8BE
+	
 	LDA	ptr_0
 	CLC
 	ADC	#$10

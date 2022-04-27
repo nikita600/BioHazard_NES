@@ -45,7 +45,7 @@ Sprites3_5805B:
 
 upload_gfx_to_ppu_5F093:
 	
-	load_ptr Sprites3_5805B
+	set_ptr Sprites3_5805B
 
 	LDA	entry_idx_300
 	STA	data_2
@@ -53,6 +53,7 @@ upload_gfx_to_ppu_5F093:
 	STA	data_3
 	ASL	data_2
 	ROL	data_3
+
 	LDA	ptr_0
 	CLC
 	ADC	data_2
@@ -60,6 +61,7 @@ upload_gfx_to_ppu_5F093:
 	LDA	ptr_1
 	ADC	data_3
 	STA	ptr_1
+
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	data_2
@@ -67,7 +69,7 @@ upload_gfx_to_ppu_5F093:
 	LDA	(ptr_0),Y
 	STA	data_3
 
-	load_ptr _PPU_PAT_TBL_1
+	set_ptr _PPU_PAT_TBL_1
 
 	JSR	upload_gfx_5F0CC
 	RTS
@@ -99,6 +101,7 @@ loc_5F0EE:
 	INY
 	CPY	#$10
 	BCC	loc_5F0EE
+	
 	LDA	ptr_0
 	CLC
 	ADC	#$10

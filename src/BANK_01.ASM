@@ -164,7 +164,7 @@ return_1F2F2:
 
 get_sprite_palette_ptr_1F2F3:
 
-	load_ptr SpritePalettes_18079
+	set_ptr SpritePalettes_18079
 
 get_offset_F2FB:
 	LDA	objectIdx_318
@@ -258,7 +258,7 @@ locret_1F36C:
 
 load_sprite_to_vram_1F36D:
 
-	load_ptr_iny Sprites
+	set_ptr_iny Sprites
 
 get_offset_F376:; spriteIdx
 	LDA	objectIdx_318
@@ -409,10 +409,8 @@ loc_1F43C:
 	LDY	#0
 
 loc_1F440:
-	LDA	byte_36A
-	PHA
-	LDA	byte_36B
-	PHA
+	to_stack byte_36A
+	to_stack byte_36B
 	LDA	#0
 	STA	tilemapTypeUnk_30B
 
@@ -485,10 +483,8 @@ loc_1F4CA:
 	LDY	#0
 
 loc_1F4CE:
-	LDA	byte_36A
-	PHA
-	LDA	byte_36B
-	PHA
+	to_stack byte_36A
+	to_stack byte_36B
 	LDA	tilemapWidth_308
 	STA	tilemapTypeUnk_30B
 
@@ -580,10 +576,8 @@ loc_1F572:
 	LDY	#0
 
 loc_1F576:
-	LDA	byte_36A
-	PHA
-	LDA	byte_36B
-	PHA
+	to_stack byte_36A
+	to_stack byte_36B
 	LDA	#0
 	STA	tilemapTypeUnk_30B
 
@@ -795,6 +789,7 @@ loc_1F6F3:
 	INY
 	CPY	#$10
 	BCC	loc_1F6F3
+	
 	LDA	ptr_0
 	CLC
 	ADC	#$10

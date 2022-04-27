@@ -184,10 +184,8 @@ sub_2D196:
 
 sub_2D1CB:
 			; sub_2D131+37j ...
-	LDA	text_idx_35C
-	PHA
-	LDA	char_type_id_35D
-	PHA
+	to_stack text_idx_35C
+	to_stack char_type_id_35D
 	LDA	byte_364
 	AND	#1
 	CMP	#0
@@ -277,6 +275,7 @@ loc_2D260:
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
+
 	LDA	tilemapWidth_308
 	ASL	A
 	CLC
@@ -314,18 +313,12 @@ loc_2D29C:
 	INY
 	ASL	text_idx_35C
 	ROL	char_type_id_35D
-	LDA	ptr_0
-	PHA
-	LDA	ptr_1
-	PHA
-	LDA	data_2
-	PHA
-	LDA	data_3
-	PHA
-	LDA	tilemap_size_307
-	PHA
-	LDA	ppu_unk_byte_309
-	PHA
+	to_stack ptr_0
+	to_stack ptr_1
+	to_stack data_2
+	to_stack data_3
+	to_stack tilemap_size_307
+	to_stack ppu_unk_byte_309
 	JSR	sub_2D4D7
 	PLA
 	STA	ppu_unk_byte_309
@@ -448,20 +441,13 @@ loc_2D378:
 
 sub_2D397:
 			; sub_2D1CB+11p ...
-	LDA	tilemapWidth_308
-	PHA
-	LDA	ppu_unk_byte_309
-	PHA
-	LDA	tilemap_size_307
-	PHA
-	LDA	ptr_0
-	PHA
-	LDA	ptr_1
-	PHA
-	LDA	data_2
-	PHA
-	LDA	data_3
-	PHA
+	to_stack tilemapWidth_308
+	to_stack ppu_unk_byte_309
+	to_stack tilemap_size_307
+	to_stack ptr_0
+	to_stack ptr_1
+	to_stack data_2
+	to_stack data_3
 	LDA	byte_35F
 	STA	tilemapTypeUnk_30B
 	LDA	#0
@@ -470,12 +456,9 @@ sub_2D397:
 loc_2D3BA:
 	LDA	#0
 	STA	tilemapWidth_308
-	LDA	tilemapTypeUnk_30B
-	PHA
-	LDA	ppu_unk_byte_309
-	PHA
-	LDA	tilemap_size_307
-	PHA
+	to_stack tilemapTypeUnk_30B
+	to_stack ppu_unk_byte_309
+	to_stack tilemap_size_307
 	JSR	sub_2E44B
 	PLA
 	STA	tilemap_size_307
@@ -541,10 +524,8 @@ loc_2D40B:
 
 loc_2D435:
 			; sub_2D401+1Bj
-	LDA	data_2
-	PHA
-	LDA	data_3
-	PHA
+	to_stack data_2
+	to_stack data_3
 	LDA	byte_35E
 	ASL	A
 	STA	tilemapTypeUnk_30B
@@ -588,10 +569,8 @@ loc_2D471:
 	LSR	A
 	CMP	byte_35E
 	BEQ	loc_2D4C3
-	LDA	data_2
-	PHA
-	LDA	data_3
-	PHA
+	to_stack data_2
+	to_stack data_3
 	LDA	data_2
 	AND	#$E0 
 	STA	data_2
@@ -654,8 +633,7 @@ sub_2D4D7:
 ; ---------------------------------------------------------------------------
 
 loc_2D4E3:
-	LDA	bank_from_343
-	PHA
+	to_stack bank_from_343
 
 exec_b3_c0_D4E7:
 	LDA	#0
@@ -750,10 +728,8 @@ Fonts:
 
 
 sub_2E244:
-	LDA	data_2
-	PHA
-	LDA	data_3
-	PHA
+	to_stack data_2
+	to_stack data_3
 	LDA	#$50 
 	CLC
 	ADC	char_type_id_35D
@@ -906,10 +882,8 @@ loc_2E32F:
 	STA	inv_spr_dscr1_30C
 
 loc_2E33E:
-	LDA	data_2
-	PHA
-	LDA	data_3
-	PHA
+	to_stack data_2
+	to_stack data_3
 	LDA	#1
 	STA	ppu_data_70,X
 	INX
@@ -984,8 +958,7 @@ byte_2E3B3:.BYTE	2,  2,	0,  2,	2,  0,	0,  0,	1,  2,	3,  2,	1,  0,	3,  0
 
 
 sub_2E3D3:
-	LDA	inv_spr_dscr1_30C
-	PHA
+	to_stack inv_spr_dscr1_30C
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 
@@ -1008,8 +981,7 @@ loc_2E3DC:
 
 
 sub_2E3F1:
-	LDA	inv_spr_dscr1_30C
-	PHA
+	to_stack inv_spr_dscr1_30C
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 
@@ -1033,8 +1005,7 @@ loc_2E3FA:
 
 
 sub_2E411:
-	LDA	inv_spr_dscr1_30C
-	PHA
+	to_stack inv_spr_dscr1_30C
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 
@@ -1056,8 +1027,7 @@ loc_2E41A:
 
 
 sub_2E42E:
-	LDA	inv_spr_dscr1_30C
-	PHA
+	to_stack inv_spr_dscr1_30C
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 
@@ -1335,7 +1305,7 @@ byte_2E771:.BYTE $3E,  1,$16,$21,$3E,  0,$27,$30,	0,  0,	0,  0,	0,  0,	0,  0
 
 sub_2E781:
 
-	load_ptr off_2E52F
+	set_ptr off_2E52F
 
 	LDA	entry_idx_300
 	STA	data_2
@@ -1343,6 +1313,7 @@ sub_2E781:
 	STA	data_3
 	ASL	data_2
 	ROL	data_3
+
 	LDA	ptr_0
 	CLC
 	ADC	data_2
@@ -1350,6 +1321,7 @@ sub_2E781:
 	LDA	ptr_1
 	ADC	data_3
 	STA	ptr_1
+	
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	data_2

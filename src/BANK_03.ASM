@@ -43,10 +43,8 @@ off_3805B:
 
 
 sub_3F76B:
-	LDA	data_2
-	PHA
-	LDA	data_3
-	PHA
+	to_stack data_2
+	to_stack data_3
 	LDA	#$5B 
 	CLC
 	ADC	char_type_id_35D
@@ -199,10 +197,8 @@ loc_3F856:
 	STA	inv_spr_dscr1_30C
 
 loc_3F865:
-	LDA	data_2
-	PHA
-	LDA	data_3
-	PHA
+	to_stack data_2
+	to_stack data_3
 	LDA	#1
 	STA	ppu_data_70,X
 	INX
@@ -277,8 +273,7 @@ byte_3F8DA:.BYTE	2,  2,	0,  2,	2,  0,	0,  0,	1,  2,	3,  2,	1,  0,	3,  0
 
 
 sub_3F8FA:
-	LDA	inv_spr_dscr1_30C
-	PHA
+	to_stack inv_spr_dscr1_30C
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 
@@ -301,8 +296,7 @@ loc_3F903:
 
 
 sub_3F918:
-	LDA	inv_spr_dscr1_30C
-	PHA
+	to_stack inv_spr_dscr1_30C
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 
@@ -326,8 +320,7 @@ loc_3F921:
 
 
 sub_3F938:
-	LDA	inv_spr_dscr1_30C
-	PHA
+	to_stack inv_spr_dscr1_30C
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 
@@ -349,8 +342,7 @@ loc_3F941:
 
 
 sub_3F955:
-	LDA	inv_spr_dscr1_30C
-	PHA
+	to_stack inv_spr_dscr1_30C
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 

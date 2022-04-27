@@ -15,4 +15,4 @@ data:
     NOP
 
 start:
-    load_ptr data
+    set_ptr data

@@ -12,10 +12,8 @@ bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
-	LDA	bank_to_344
-	STA	bank_prev_345
-	LDA	#$88 
-	STA	bank_switch_flag_6C
+	set bank_prev_345, bank_to_344
+	set bank_switch_flag_6C, #$88 
 	LDA	bank_command_346
 	CMP	#0
 	BEQ	loc_38047
@@ -28,10 +26,8 @@ loc_38047:
 ; ---------------------------------------------------------------------------
 
 loc_3804D:
-	LDA	#$FF
-	STA	bank_command_346
-	LDA	bank_from_343
-	STA	bank_to_344
+	set bank_command_346, #$FF
+	set bank_to_344, bank_from_343
 	JMP	bank_switch_8000
 ; End of function bank_switch_8000
 
@@ -53,43 +49,33 @@ sub_3F76B:
 	ADC	#0
 	STA	ptr_1
 	LDY	#0
-	LDA	(ptr_0),Y
-	STA	data_2
+	set data_2, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	data_3
+	set data_3, {(ptr_0),Y}
 	add_to_byte_clc data_2, text_idx_35C
 
 	add_to_byte data_3, #0
 
 	LDY	#0
-	LDA	(data_2),Y
-	STA	ptr_0
+	set ptr_0, {(data_2),Y}
 	INY
-	LDA	(data_2),Y
-	STA	ptr_1
+	set ptr_1, {(data_2),Y}
 	from_stack data_3
 	from_stack data_2
 	LDY	#0
-	LDA	#0
-	STA	has_ppu_data_to_upload_6F
+	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	LDA	#5
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #5
 	INX
-	LDA	#$40 
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #$40 
 	INX
 	INX
-	LDA	data_2
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, data_2
 	DEX
-	LDA	data_3
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, data_3
 	INX
 	INX
-	LDA	#0
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #0
 
 loc_3F7CC:
 	LDA	byte_360
@@ -102,8 +88,7 @@ loc_3F7CC:
 	CLC
 	ADC	tilemapTypeUnk_30B
 	TAY
-	LDA	#0
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, #0
 
 loc_3F7E3:
 	TYA
@@ -163,8 +148,7 @@ loc_3F820:
 
 loc_3F839:
 	JSR	sub_3F972
-	LDA	sprite_secondByte_31B
-	STA	ptr_0
+	set ptr_0, sprite_secondByte_31B
 	LDY	tilemapHeight_30A
 
 loc_3F844:
@@ -187,25 +171,20 @@ loc_3F856:
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
-	LDA	#0
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #0
 
 loc_3F865:
 	to_stack data_2
 	to_stack data_3
-	LDA	#1
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #1
 	INX
 	INX
-	LDA	data_2
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, data_2
 	DEX
-	LDA	data_3
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, data_3
 	INX
 	INX
-	LDA	ptr_0
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, ptr_0
 	INX
 	INC	ptr_0
 	LDA	data_2
@@ -226,19 +205,15 @@ loc_3F89B:
 	add_to_data $1
 
 loc_3F8A8:
-	LDA	#1
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #1
 	INX
 	INX
-	LDA	data_2
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, data_2
 	DEX
-	LDA	data_3
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, data_3
 	INX
 	INX
-	LDA	ptr_0
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, ptr_0
 	INX
 	from_stack data_3
 	from_stack data_2
@@ -266,12 +241,10 @@ byte_3F8DA:.BYTE	2,  2,	0,  2,	2,  0,	0,  0,	1,  2,	3,  2,	1,  0,	3,  0
 
 sub_3F8FA:
 	to_stack inv_spr_dscr1_30C
-	LDA	#0
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #0
 
 loc_3F903:
-	LDA	(ptr_0),Y
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, {(ptr_0),Y}
 	INX
 	INY
 	INC	inv_spr_dscr1_30C
@@ -288,8 +261,7 @@ loc_3F903:
 
 sub_3F918:
 	to_stack inv_spr_dscr1_30C
-	LDA	#0
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #0
 
 loc_3F921:
 	LDA	(ptr_0),Y
@@ -311,12 +283,10 @@ loc_3F921:
 
 sub_3F938:
 	to_stack inv_spr_dscr1_30C
-	LDA	#0
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #0
 
 loc_3F941:
-	LDA	#0
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #0
 	INX
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
@@ -332,12 +302,10 @@ loc_3F941:
 
 sub_3F955:
 	to_stack inv_spr_dscr1_30C
-	LDA	#0
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #0
 
 loc_3F95E:
-	LDA	#$FF
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #$FF
 	INX
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
@@ -366,8 +334,7 @@ loc_3F975:
 ; ---------------------------------------------------------------------------
 
 loc_3F98D:
-	LDA	ppu_unk_byte_303
-	STA	ptr_0
+	set ptr_0, ppu_unk_byte_303
 	LDA	ppu_scroll_x_304
 	LSR	A
 	LSR	A
@@ -400,18 +367,14 @@ loc_3F9C2:
 	LDA	ptr_0
 	AND	#1
 	BEQ	loc_3F9D3
-	LDA	#0
-	STA	data_2
-	LDA	#$28 
-	STA	data_3
+	set data_2, #0
+	set data_3, #$28 
 	JMP	loc_3F9DB
 ; ---------------------------------------------------------------------------
 
 loc_3F9D3:
-	LDA	#0
-	STA	data_2
-	LDA	#$20 
-	STA	data_3
+	set data_2, #0
+	set data_3, #$20 
 
 loc_3F9DB:
 	LDY	ppu_unk_byte_309
@@ -470,14 +433,12 @@ sub_3FA27:
 	LDA	data_3
 	CMP	#$28 
 	BCC	loc_3FA3B
-	LDA	#$20 
-	STA	data_3
+	set data_3, #$20 
 	JMP	loc_3FA3F
 ; ---------------------------------------------------------------------------
 
 loc_3FA3B:
-	LDA	#$28 
-	STA	data_3
+	set data_3, #$28 
 
 loc_3FA3F:
 	LDA	data_2

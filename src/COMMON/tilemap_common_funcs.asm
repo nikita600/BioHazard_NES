@@ -19,11 +19,9 @@ getTilemapPtr:
 
 getPtrToTilemap: ; getPtrToTilemap
 	LDY	#0
-	LDA	(ptr_0),Y
-	STA	data_2
+	set data_2, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	data_3
+	set data_3, {(ptr_0),Y}
 
 	set ptr_0, data_2
 	set ptr_1, data_3
@@ -66,8 +64,7 @@ init_F903:
 	LDX	#0
 
 write_tilemap_line_7F90F:	
-	LDA	(ptr_0),Y
-	STA	tilemapData_4C,X
+	set {tilemapData_4C,X}, {(ptr_0),Y}
 
 	add_to_byte_clc ptr_0, data_3	; entrySize
 

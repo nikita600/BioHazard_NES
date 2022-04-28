@@ -12,20 +12,16 @@ bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
-	LDA	bank_to_344
-	STA	bank_prev_345
-	LDA	#$88 
-	STA	bank_switch_flag_6C
+	set bank_prev_345, bank_to_344
+	set bank_switch_flag_6C, #$88 
 	LDA	bank_command_346
 	CMP	#$FF
 	BEQ	locret_12805A
 	ASL	A
 	TAX
-	LDA	CommandPtrs_12805B,X
-	STA	ptr_0
+	set ptr_0, {CommandPtrs_12805B,X}
 	INX
-	LDA	CommandPtrs_12805B,X
-	STA	ptr_1
+	set ptr_1, {CommandPtrs_12805B,X}
 	to_stack bank_from_343
 	JMP	(ptr_0)
 ; ---------------------------------------------------------------------------
@@ -462,16 +458,12 @@ loc_12828D:
 
 loc_128293:
 	to_stack apu_unk_76C
-	LDA	#5
-	STA	apu_unk_76C
+	set apu_unk_76C, #5
 
 exec_b13_c5_12829C:
-	LDA	#5
-	STA	bank_command_346
-	LDA	#banks_13
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #5
+	set bank_to_344, #banks_13
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 
 loc_1282AE:
@@ -479,12 +471,9 @@ loc_1282AE:
 	from_stack apu_unk_76C
 
 exec_b13_c5_1282B5:
-	LDA	#5
-	STA	bank_command_346
-	LDA	#banks_13
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #5
+	set bank_to_344, #banks_13
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	JMP	return_1282EE
 ; ---------------------------------------------------------------------------
@@ -522,10 +511,8 @@ loc_1282E8:
 return_1282EE:
 	; command_0_1280FB+9j ...
 	from_stack bank_from_343
-	LDA	#$FF
-	STA	bank_command_346
-	LDA	bank_from_343
-	STA	bank_to_344
+	set bank_command_346, #$FF
+	set bank_to_344, bank_from_343
 	JMP	bank_switch_8000
 ; End of function command_0_1280FB
 
@@ -535,12 +522,9 @@ return_1282EE:
 
 exec_b2_c1_128300:
 	
-	LDA	#1
-	STA	bank_command_346
-	LDA	#text_2
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #1
+	set bank_to_344, #text_2
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b2_c1_128300
@@ -551,12 +535,9 @@ exec_b2_c1_128300:
 
 exec_b2_c3_128313:
 	
-	LDA	#3
-	STA	bank_command_346
-	LDA	#2
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #3
+	set bank_to_344, #2
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b2_c3_128313
@@ -570,14 +551,10 @@ sub_128326:
 	to_stack inv_itemPrev_idx_31D
 	to_stack ppu_unk_byte_309
 	to_stack tilemap_size_307
-	LDA	#0
-	STA	byte_36E
-	LDA	inv_itemPrev_idx_31D
-	STA	inv_sprite_idx_31C
-	LDA	#0
-	STA	inv_itemPrev_idx_31D
-	LDA	sprite_secondByte_31B
-	STA	byte_31E
+	set byte_36E, #0
+	set inv_sprite_idx_31C, inv_itemPrev_idx_31D
+	set inv_itemPrev_idx_31D, #0
+	set byte_31E, sprite_secondByte_31B
 	JSR	exec_b4_c2_1283A7
 	from_stack tilemap_size_307
 	from_stack ppu_unk_byte_309
@@ -594,20 +571,14 @@ sub_128358:
 	to_stack inv_itemPrev_idx_31D
 	to_stack ppu_unk_byte_309
 	to_stack tilemap_size_307
-	LDA	inv_itemPrev_idx_31D
-	STA	inv_sprite_idx_31C
-	LDA	#0
-	STA	inv_itemPrev_idx_31D
-	LDA	sprite_secondByte_31B
-	STA	byte_31E
+	set inv_sprite_idx_31C, inv_itemPrev_idx_31D
+	set inv_itemPrev_idx_31D, #0
+	set byte_31E, sprite_secondByte_31B
 
 exec_b4_c3_128375:
-	LDA	#3
-	STA	bank_command_346
-	LDA	#items_spr_4
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #3
+	set bank_to_344, #items_spr_4
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 
 loc_128387:
@@ -623,12 +594,9 @@ loc_128387:
 
 exec_b1_c1_128394:
 	
-	LDA	#1
-	STA	bank_command_346
-	LDA	#sprites_1
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #1
+	set bank_to_344, #sprites_1
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b1_c1_128394
@@ -639,12 +607,9 @@ exec_b1_c1_128394:
 
 exec_b4_c2_1283A7:
 	
-	LDA	#2
-	STA	bank_command_346
-	LDA	#items_spr_4
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #2
+	set bank_to_344, #items_spr_4
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b4_c2_1283A7
@@ -654,18 +619,12 @@ exec_b4_c2_1283A7:
 
 
 sub_1283BA:
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
-	LDA	sprite_type_306
-	STA	prev_sprite_type_4A9
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
+	set prev_sprite_type_4A9, sprite_type_306
 	RTS
 ; End of function sub_1283BA
 
@@ -674,12 +633,9 @@ sub_1283BA:
 
 
 exec_b2_c2_1283DF:
-	LDA	#2
-	STA	bank_command_346
-	LDA	#text_2
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #2
+	set bank_to_344, #text_2
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b2_c2_1283DF
@@ -690,12 +646,9 @@ exec_b2_c2_1283DF:
 
 exec_b2_c4_1283F2:
 	
-	LDA	#4
-	STA	bank_command_346
-	LDA	#text_2
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #4
+	set bank_to_344, #text_2
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b2_c4_1283F2
@@ -705,12 +658,9 @@ exec_b2_c4_1283F2:
 
 
 exec_b2_c5_128405:
-	LDA	#5
-	STA	bank_command_346
-	LDA	#text_2
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #5
+	set bank_to_344, #text_2
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b2_c5_128405
@@ -721,12 +671,9 @@ exec_b2_c5_128405:
 
 exec_b0_c3_128418:
 	
-	LDA	#3
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #3
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b0_c3_128418
@@ -737,12 +684,9 @@ exec_b0_c3_128418:
 
 exec_b0_c4_12842B:
 	
-	LDA	#4
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #4
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b0_c4_12842B
@@ -753,12 +697,9 @@ exec_b0_c4_12842B:
 
 exec_b0_c5_12843E:
 	to_stack bank_from_343
-	LDA	#5
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #5
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -770,12 +711,9 @@ exec_b0_c5_12843E:
 
 exec_b0_c6_128459:
 	to_stack bank_from_343
-	LDA	#6
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #6
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -787,12 +725,9 @@ exec_b0_c6_128459:
 
 exec_b0_c7_128474:
 	to_stack bank_from_343
-	LDA	#7
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #7
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -804,12 +739,9 @@ exec_b0_c7_128474:
 
 exec_b0_c8_12848F:
 	to_stack bank_from_343
-	LDA	#8
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #8
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -822,12 +754,9 @@ exec_b0_c8_12848F:
 exec_b0_c9_1284AA:
 	
 	to_stack bank_from_343
-	LDA	#9
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #9
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -840,12 +769,9 @@ exec_b0_c9_1284AA:
 exec_b0_cA_1284C5:
 	
 	to_stack bank_from_343
-	LDA	#$A
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #$A
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -858,12 +784,9 @@ exec_b0_cA_1284C5:
 exec_b0_cB_1284E0:
 	
 	to_stack bank_from_343
-	LDA	#$B
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #$B
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -875,12 +798,9 @@ exec_b0_cB_1284E0:
 
 exec_b0_cC_1284FB:
 	to_stack bank_from_343
-	LDA	#$C
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #$C
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -892,12 +812,9 @@ exec_b0_cC_1284FB:
 
 exec_b0_cD_128516:
 	to_stack bank_from_343
-	LDA	#$D
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #$D
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -937,26 +854,18 @@ loc_128549:
 	PLA
 	CMP	#$40 
 	BCS	loc_128571
-	LDA	apu_pulse_timer1_12861A,X
-	STA	_APU_PULSE1_ENV,Y
-	LDA	apu_pulse_timer1_12861A+1,X
-	STA	_APU_PULSE1_SWEEP,Y
-	LDA	apu_pulse_timer1_12861A+2,X
-	STA	_APU_PULSE1_TIME,Y
-	LDA	apu_pulse_timer1_12861A+3,X
-	STA	_APU_PULSE1_LEN,Y
+	set {_APU_PULSE1_ENV,Y}, {apu_pulse_timer1_12861A,X}
+	set {_APU_PULSE1_SWEEP,Y}, {apu_pulse_timer1_12861A+1,X}
+	set {_APU_PULSE1_TIME,Y}, {apu_pulse_timer1_12861A+2,X}
+	set {_APU_PULSE1_LEN,Y}, {apu_pulse_timer1_12861A+3,X}
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_128571:
-	LDA	stru_12871A,X
-	STA	_APU_PULSE1_ENV,Y
-	LDA	stru_12871A+1,X
-	STA	_APU_PULSE1_SWEEP,Y
-	LDA	stru_12871A+2,X
-	STA	_APU_PULSE1_TIME,Y
-	LDA	stru_12871A+3,X
-	STA	_APU_PULSE1_LEN,Y
+	set {_APU_PULSE1_ENV,Y}, {stru_12871A,X}
+	set {_APU_PULSE1_SWEEP,Y}, {stru_12871A+1,X}
+	set {_APU_PULSE1_TIME,Y}, {stru_12871A+2,X}
+	set {_APU_PULSE1_LEN,Y}, {stru_12871A+3,X}
 	RTS
 ; End of function sub_128531
 
@@ -977,8 +886,7 @@ sub_12873A:
 	LDA	byte_54E
 	CMP	#3
 	BNE	loc_12875A
-	LDA	#0
-	STA	byte_54E
+	set byte_54E, #0
 	JSR	exec_b0_cC_1284FB
 	JMP	locret_128954
 ; ---------------------------------------------------------------------------
@@ -998,8 +906,7 @@ loc_128768:
 	LDA	entry_idx_300
 	CMP	#$63 
 	BNE	loc_128774
-	LDA	#$FF
-	STA	byte_5D5
+	set byte_5D5, #$FF
 
 loc_128774:
 	JMP	locret_128954
@@ -1012,8 +919,7 @@ loc_128777:
 	LDA	entry_idx_300
 	CMP	#$18
 	BNE	loc_12878A
-	LDA	#$FF
-	STA	byte_5D4
+	set byte_5D4, #$FF
 
 loc_12878A:
 	JMP	locret_128954
@@ -1026,8 +932,7 @@ loc_12878D:
 	LDA	entry_idx_300
 	CMP	#$18
 	BNE	loc_1287A0
-	LDA	#$FF
-	STA	byte_5D3
+	set byte_5D3, #$FF
 
 loc_1287A0:
 	JMP	locret_128954
@@ -1040,8 +945,7 @@ loc_1287A3:
 	LDA	entry_idx_300
 	CMP	#$74 
 	BNE	loc_1287B6
-	LDA	#$FF
-	STA	byte_690
+	set byte_690, #$FF
 
 loc_1287B6:
 	JMP	locret_128954
@@ -1057,33 +961,22 @@ loc_1287B9:
 	LDA	byte_6A2
 	CMP	#0
 	BNE	loc_128814
-	LDA	#1
-	STA	byte_313
+	set byte_313, #1
 	JSR	exec_b0_c9_1284AA
-	LDA	#$FF
-	STA	byte_690
-	LDA	#0
-	STA	cur_obj_idx_unk_43A
+	set byte_690, #$FF
+	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
-	LDA	#1
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
-	LDA	#$80 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$80 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	#2
-	STA	tilemapTypeUnk_30B
-	LDA	#2
-	STA	byte_313
+	set tilemapTypeUnk_30B, #2
+	set byte_313, #2
 	JSR	exec_b0_cA_1284C5
-	LDA	#$FF
-	STA	byte_551
-	LDA	#$FF
-	STA	byte_553
+	set byte_551, #$FF
+	set byte_553, #$FF
 
 loc_128814:
 	
@@ -1112,80 +1005,51 @@ loc_12882B:
 ; ---------------------------------------------------------------------------
 
 loc_128835:
-	LDA	#$FF
-	STA	byte_597
-	LDA	#8
-	STA	tilemapTypeUnk_30B
-	LDA	#2
-	STA	byte_313
+	set byte_597, #$FF
+	set tilemapTypeUnk_30B, #8
+	set byte_313, #2
 	JSR	exec_b0_cA_1284C5
-	LDA	#0
-	STA	byte_313
+	set byte_313, #0
 	JSR	exec_b0_c9_1284AA
-	LDA	#$40 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#$11
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$40 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #$11
 	JSR	exec_b0_c0_12A973
-	LDA	#1
-	STA	tilemapData_4C
-	LDA	#2
-	STA	roomUnk1_4D
-	LDA	#2
-	STA	roomUnk2_4E
-	LDA	#1
-	STA	tilemap_line_idx_4F
+	set tilemapData_4C, #1
+	set roomUnk1_4D, #2
+	set roomUnk2_4E, #2
+	set tilemap_line_idx_4F, #1
 	JSR	exec_b0_cB_1284E0
-	LDA	#1
-	STA	tilemapData_4C
-	LDA	#2
-	STA	roomUnk1_4D
-	LDA	#8
-	STA	roomUnk2_4E
-	LDA	#3
-	STA	tilemap_line_idx_4F
+	set tilemapData_4C, #1
+	set roomUnk1_4D, #2
+	set roomUnk2_4E, #8
+	set tilemap_line_idx_4F, #3
 	JSR	exec_b0_cB_1284E0
-	LDA	#2
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #2
 	JSR	exec_b0_c3_128418
-	LDA	#$51 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#$E
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$51 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #$E
 	JSR	exec_b0_c0_12A973
-	LDA	#5
-	STA	tilemapTypeUnk_30B
-	LDA	#1
-	STA	byte_313
+	set tilemapTypeUnk_30B, #5
+	set byte_313, #1
 	JSR	exec_b0_cA_1284C5
-	LDA	#0
-	STA	byte_6C3
+	set byte_6C3, #0
 	STA	byte_6C4
 
 set_tyrant_level_1288B6:
-	LDA	#$83 
-	STA	image_id_4A4
-	LDA	#0
-	STA	image_offset_4A5
+	set image_id_4A4, #$83 
+	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
 	STA	ppu_prev_scroll_x_unk_4A7
 	STA	ppu_prev_scroll_y_unk_4A8
 	STA	prev_sprite_type_4A9
-	LDA	#$40 
-	STA	byte_4AD
-	LDA	#$50 
-	STA	byte_4AE
+	set byte_4AD, #$40 
+	set byte_4AE, #$50 
 	JSR	exec_b0_c2_12A9A9
-	LDA	#$3F 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$3F 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
 loc_1288EB:
@@ -1203,36 +1067,24 @@ loc_1288EE:
 	LDA	byte_6C6
 	CMP	#0
 	BEQ	loc_128951
-	LDA	#2
-	STA	tilemapTypeUnk_30B
-	LDA	#1
-	STA	byte_313
+	set tilemapTypeUnk_30B, #2
+	set byte_313, #1
 	JSR	exec_b0_cA_1284C5
-	LDA	#1
-	STA	tilemapTypeUnk_30B
-	LDA	#2
-	STA	byte_313
+	set tilemapTypeUnk_30B, #1
+	set byte_313, #2
 	JSR	exec_b0_cA_1284C5
-	LDA	#3
-	STA	tilemapTypeUnk_30B
-	LDA	#1
-	STA	byte_313
+	set tilemapTypeUnk_30B, #3
+	set byte_313, #1
 	JSR	exec_b0_cA_1284C5
-	LDA	#2
-	STA	byte_313
+	set byte_313, #2
 	JSR	exec_b0_c9_1284AA
-	LDA	#$78 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#3
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$78 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #3
 	JSR	exec_b0_c0_12A973
-	LDA	#$FF
-	STA	byte_552
+	set byte_552, #$FF
 	STA	byte_6C5
-	LDA	#0
-	STA	byte_6C6
+	set byte_6C6, #0
 
 loc_128951:
 	
@@ -1262,21 +1114,16 @@ sub_128955:
 	SBC	#$2A 
 	ASL	A
 	TAX
-	LDA	byte_129255,X
-	STA	byte_475
-	LDA	#0
-	STA	byte_43F
+	set byte_475, {byte_129255,X}
+	set byte_43F, #0
 	STA	byte_472
 
 loc_128986:
-	LDA	#0
-	STA	byte_43E
+	set byte_43E, #0
 	JSR	sub_12EEAE
 	JSR	ppu_reset_ctrl_mask_FE93
-	LDA	#$28 
-	STA	_PPU_ADDR
-	LDA	#0
-	STA	_PPU_ADDR
+	set _PPU_ADDR, #$28 
+	set _PPU_ADDR, #0
 	LDA	#0
 	LDX	#0
 
@@ -1290,29 +1137,19 @@ ppu_clear_ram_1289A1:
 	INX
 	CPX	#4
 	BNE	loc_12899F
-	LDA	#1
-	STA	byte_341
-	LDA	#0
-	STA	entry_idx_300
-	LDA	#0
-	STA	ppu_unk_byte_302
-	LDA	#0
-	STA	ppu_unk_byte_303
-	LDA	#0
-	STA	ppu_scroll_x_304
-	LDA	#0
-	STA	ppu_scroll_y_305
-	LDA	#1
-	STA	sprite_type_306
+	set byte_341, #1
+	set entry_idx_300, #0
+	set ppu_unk_byte_302, #0
+	set ppu_unk_byte_303, #0
+	set ppu_scroll_x_304, #0
+	set ppu_scroll_y_305, #0
+	set sprite_type_306, #1
 	JSR	sub_12D261
 	JSR	exec_b0_c6_128459
-	LDA	#0
-	STA	sprPalIdx_319
-	LDA	#4
-	STA	byte_31E
+	set sprPalIdx_319, #0
+	set byte_31E, #4
 	JSR	exec_b0_c7_128474
-	LDA	#4
-	STA	objectIdx_318
+	set objectIdx_318, #4
 	JSR	exec_b0_c8_12848F
 	LDA	ppu_ctrl_31F
 	AND	#$FC 
@@ -1320,18 +1157,13 @@ ppu_clear_ram_1289A1:
 	JSR	ppu_update_ctrl_mask_FE86
 	JSR	exec_b0_cD_128516
 	JSR	sub_12EDF5
-	LDA	#0
-	STA	inv_itemPrev_idx_31D
-	LDA	#$B
-	STA	tilemap_size_307
-	LDA	#4
-	STA	ppu_unk_byte_309
-	LDA	#0
-	STA	byte_36E
+	set inv_itemPrev_idx_31D, #0
+	set tilemap_size_307, #$B
+	set ppu_unk_byte_309, #4
+	set byte_36E, #0
 	JSR	exec_b4_c2_1283A7
 	JSR	sub_128B0F
-	LDA	#0
-	STA	count_unk_465
+	set count_unk_465, #0
 ; End of function sub_128955
 
 
@@ -1372,8 +1204,7 @@ game_not_finished_128A43:
 	LDA	byte_472
 	EOR	#1
 	STA	byte_472
-	LDA	#0
-	STA	byte_440
+	set byte_440, #0
 	JMP	loc_128A20
 ; ---------------------------------------------------------------------------
 
@@ -1425,15 +1256,13 @@ loc_128AA5:
 	LDA	image_id_4A4
 	CMP	#$96 
 	BNE	loc_128ADA
-	LDA	#$FF
-	STA	byte_6C9
+	set byte_6C9, #$FF
 
 loc_128ADA:
 	LDA	image_id_4A4
 	CMP	#$9A 
 	BNE	loc_128AE6
-	LDA	#$88 
-	STA	is_game_finished_561
+	set is_game_finished_561, #$88 
 
 loc_128AE6:
 	JMP	loc_128B01
@@ -1449,11 +1278,9 @@ loc_128AE9:
 
 loc_128B01:
 	
-	LDA	#$FF
-	STA	map_show_43B
+	set map_show_43B, #$FF
 	JSR	exec_b0_c2_12A9A9
-	LDA	#0
-	STA	map_show_43B
+	set map_show_43B, #0
 	RTS
 ; End of function sub_128A1A
 
@@ -1462,24 +1289,16 @@ loc_128B01:
 
 
 sub_128B0F:
-	LDA	#$80 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	ppu_scroll_x_304
-	STA	byte_36A
-	LDA	#0
-	STA	byte_36B
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set byte_366, #$80 
+	set byte_367, #0
+	set byte_36A, ppu_scroll_x_304
+	set byte_36B, #0
+	set sprite_secondByte_31B, #0
 	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
-	LDA	#$21 
-	STA	objMapIdx_316
+	set objectIdx_318, #4
+	set objMapIdx_316, #$21 
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_128B0F
@@ -1495,10 +1314,8 @@ sub_128B43:
 ; ---------------------------------------------------------------------------
 
 loc_128B4B:
-	LDA	#8
-	STA	byte_31A
-	LDA	#8
-	STA	tilemapWidth_308
+	set byte_31A, #8
+	set tilemapWidth_308, #8
 	JSR	sub_12D26B
 	LDA	inv_sprite_idx_31C
 	SEC
@@ -1519,21 +1336,14 @@ loc_128B4B:
 	LDA	#0
 	SBC	#0
 	STA	byte_36B
-	LDA	#$80 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$10
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
-	LDA	#$26 
-	STA	objMapIdx_316
+	set byte_366, #$80 
+	set byte_367, #0
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$10
+	set objectIdx_318, #4
+	set objMapIdx_316, #$26 
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	LDA	inv_sprite_idx_31C
 	SEC
@@ -1554,45 +1364,29 @@ loc_128B4B:
 	LDA	#0
 	ADC	#0
 	STA	byte_36B
-	LDA	#$80 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$18
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
-	LDA	#$27 
-	STA	objMapIdx_316
+	set byte_366, #$80 
+	set byte_367, #0
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$18
+	set objectIdx_318, #4
+	set objMapIdx_316, #$27 
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_128BFB:
-	LDA	#$80 
-	STA	byte_36A
-	LDA	#0
-	STA	byte_36B
-	LDA	#$80 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#8
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
-	LDA	#$28 
-	STA	objMapIdx_316
+	set byte_36A, #$80 
+	set byte_36B, #0
+	set byte_366, #$80 
+	set byte_367, #0
+	set sprite_secondByte_31B, #0
+	set byte_31A, #8
+	set objectIdx_318, #4
+	set objMapIdx_316, #$28 
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	LDA	byte_43F
 	CLC
@@ -1608,21 +1402,14 @@ loc_128BFB:
 	LDA	#0
 	SBC	#0
 	STA	byte_36B
-	LDA	#$80 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$10
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
-	LDA	#$26 
-	STA	objMapIdx_316
+	set byte_366, #$80 
+	set byte_367, #0
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$10
+	set objectIdx_318, #4
+	set objMapIdx_316, #$26 
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	LDA	byte_43F
 	CLC
@@ -1638,21 +1425,14 @@ loc_128BFB:
 	LDA	#0
 	ADC	#0
 	STA	byte_36B
-	LDA	#$80 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$18
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
-	LDA	#$27 
-	STA	objMapIdx_316
+	set byte_366, #$80 
+	set byte_367, #0
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$18
+	set objectIdx_318, #4
+	set objMapIdx_316, #$27 
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_128B43
@@ -1665,40 +1445,30 @@ sub_128CC0:
 	LDA	byte_543
 	CMP	#0
 	BNE	loc_128CD5
-	LDA	#$38 
-	STA	byte_31A
-	LDA	#$40 
-	STA	tilemapWidth_308
+	set byte_31A, #$38 
+	set tilemapWidth_308, #$40 
 	JSR	sub_12D26B
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_128CD5:
-	LDA	#$A0 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	ppu_scroll_x_304
-	STA	byte_36A
-	LDA	#0
-	STA	byte_36B
+	set byte_366, #$A0 
+	set byte_367, #0
+	set byte_36A, ppu_scroll_x_304
+	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$C0 
 
 	add_to_byte byte_36B, #0
 
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$38 
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$38 
+	set objectIdx_318, #4
 	LDA	#$1A
 	CLC
 	ADC	byte_543
 	STA	objMapIdx_316
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_128CC0
@@ -1711,45 +1481,33 @@ sub_128D20:
 	LDA	byte_543
 	CMP	#0
 	BNE	loc_128D35
-	LDA	#$78 
-	STA	byte_31A
-	LDA	#8
-	STA	tilemapWidth_308
+	set byte_31A, #$78 
+	set tilemapWidth_308, #8
 	JSR	sub_12D26B
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_128D35:
 	LDX	byte_544
-	LDA	unk_53B,X
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, {unk_53B,X}
 	JSR	sub_128F1B
 	LDA	byte_543
 	CMP	#1
 	BNE	loc_128D8F
-	LDA	#$33 
-	STA	objMapIdx_316
-	LDA	#$C0 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	ppu_scroll_x_304
-	STA	byte_36A
-	LDA	#0
-	STA	byte_36B
+	set objMapIdx_316, #$33 
+	set byte_366, #$C0 
+	set byte_367, #0
+	set byte_36A, ppu_scroll_x_304
+	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$C8 
 
 	add_to_byte byte_36B, #0
 
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$78 
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$78 
+	set objectIdx_318, #4
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 
 loc_128D8B:
 	JSR	exec_b1_c1_128394
@@ -1761,53 +1519,37 @@ loc_128D8F:
 	CLC
 	ADC	#$29 
 	STA	objMapIdx_316
-	LDA	#$C0 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	ppu_scroll_x_304
-	STA	byte_36A
-	LDA	#0
-	STA	byte_36B
+	set byte_366, #$C0 
+	set byte_367, #0
+	set byte_36A, ppu_scroll_x_304
+	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$C8 
 
 	add_to_byte byte_36B, #0
 
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$78 
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$78 
+	set objectIdx_318, #4
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	LDA	byte_354
 	CLC
 	ADC	#$29 
 	STA	objMapIdx_316
-	LDA	#$C0 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	ppu_scroll_x_304
-	STA	byte_36A
-	LDA	#0
-	STA	byte_36B
+	set byte_366, #$C0 
+	set byte_367, #0
+	set byte_36A, ppu_scroll_x_304
+	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$D0 
 
 	add_to_byte byte_36B, #0
 
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$7C 
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$7C 
+	set objectIdx_318, #4
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_128D20
@@ -1817,60 +1559,48 @@ loc_128D8F:
 
 
 sub_128E24:
-	LDA	#$A0 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	ppu_scroll_x_304
-	STA	byte_36A
-	LDA	#0
-	STA	byte_36B
+	set byte_366, #$A0 
+	set byte_367, #0
+	set byte_36A, ppu_scroll_x_304
+	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$20 
 
 	add_to_byte byte_36B, #0
 
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$88 
-	STA	byte_31A
-	LDA	#0
-	STA	objMapIdx_316
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$88 
+	set objMapIdx_316, #0
 	LDA	byte_549
 	CMP	#$55 
 	BCC	loc_128E7D
 	CMP	#$AA 
 	BCC	loc_128E6C
-	LDA	#0
-	STA	byte_54B
+	set byte_54B, #0
 	JMP	loc_128E8B
 ; ---------------------------------------------------------------------------
 
 loc_128E6C:
 	add_to_byte_clc objMapIdx_316, #7
 
-	LDA	#1
-	STA	byte_54B
+	set byte_54B, #1
 	JMP	loc_128E8B
 ; ---------------------------------------------------------------------------
 
 loc_128E7D:
 	add_to_byte_clc objMapIdx_316, #$E
 
-	LDA	#2
-	STA	byte_54B
+	set byte_54B, #2
 
 loc_128E8B:
 	
 	LDA	count_unk_465
 	CMP	#$A
 	BCC	loc_128EA6
-	LDA	#0
-	STA	count_unk_465
+	set count_unk_465, #0
 	LDA	byte_54C
 	CMP	#6
 	BCC	loc_128EA3
-	LDA	#$FF
-	STA	byte_54C
+	set byte_54C, #$FF
 
 loc_128EA3:
 	INC	byte_54C
@@ -1878,11 +1608,9 @@ loc_128EA3:
 loc_128EA6:
 	add_to_byte_clc objMapIdx_316, byte_54C
 
-	LDA	#4
-	STA	objectIdx_318
+	set objectIdx_318, #4
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_128E24
@@ -1892,24 +1620,17 @@ loc_128EA6:
 
 
 sub_128EC2:
-	LDA	#$B8 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	ppu_scroll_x_304
-	STA	byte_36A
-	LDA	#0
-	STA	byte_36B
+	set byte_366, #$B8 
+	set byte_367, #0
+	set byte_36A, ppu_scroll_x_304
+	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$20 
 
 	add_to_byte byte_36B, #0
 
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$B8 
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$B8 
+	set objectIdx_318, #4
 	LDA	#$15
 	CLC
 	ADC	byte_54B
@@ -1921,8 +1642,7 @@ sub_128EC2:
 
 loc_128F0E:
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_128EC2
@@ -1932,8 +1652,7 @@ loc_128F0E:
 
 
 sub_128F1B:
-	LDA	#0
-	STA	byte_354
+	set byte_354, #0
 	STA	byte_355
 	STA	byte_356
 
@@ -1963,8 +1682,7 @@ loc_128F3C:
 ; ---------------------------------------------------------------------------
 
 loc_128F52:
-	LDA	tilemapTypeUnk_30B
-	STA	byte_354
+	set byte_354, tilemapTypeUnk_30B
 	RTS
 ; End of function sub_128F1B
 
@@ -1986,18 +1704,14 @@ sub_128FC1:
 	LDA	count_unk_467
 	CMP	#$32 
 	BCC	locret_129004
-	LDA	#0
-	STA	count_unk_467
+	set count_unk_467, #0
 	LDA	#0
 	CLC
 	ADC	byte_43F
 	STA	inv_itemPrev_idx_31D
-	LDA	#$B
-	STA	tilemap_size_307
-	LDA	#4
-	STA	ppu_unk_byte_309
-	LDA	#0
-	STA	byte_36E
+	set tilemap_size_307, #$B
+	set ppu_unk_byte_309, #4
+	set byte_36E, #0
 	JSR	exec_b4_c2_1283A7
 	INC	byte_43F
 	LDA	inv_sprite_idx_31C
@@ -2008,8 +1722,7 @@ sub_128FC1:
 	LDA	byte_129006,Y
 	CMP	byte_43F
 	BNE	locret_129004
-	LDA	byte_129005,Y
-	STA	byte_43F
+	set byte_43F, {byte_129005,Y}
 	JSR	sub_129155
 
 locret_129004:
@@ -2030,19 +1743,15 @@ byte_129006:.BYTE	6,  1,	4,  1,	3,  1,	4,  1,	4,  1,	4,  1,	4,  1,	4,  2
 sub_129019:
 	LDA	byte_440
 	BNE	loc_12902C
-	LDA	#$C8 
-	STA	byte_31A
-	LDA	#$38 
-	STA	tilemapWidth_308
+	set byte_31A, #$C8 
+	set tilemapWidth_308, #$38 
 	JSR	sub_12D26B
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12902C:
-	LDA	#$40 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
+	set byte_366, #$40 
+	set byte_367, #0
 	LDA	byte_441
 	SEC
 	SBC	#4
@@ -2050,12 +1759,9 @@ loc_12902C:
 	LDA	#0
 	SBC	#0
 	STA	byte_36B
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$C8 
-	STA	byte_31A
-	LDA	#4
-	STA	objectIdx_318
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$C8 
+	set objectIdx_318, #4
 	LDA	byte_472
 	BEQ	loc_12905F
 	LDA	#0
@@ -2082,25 +1788,21 @@ loc_129071:
 	CLC
 	ADC	byte_443
 	STA	objMapIdx_316
-	LDA	#4
-	STA	byte_478
+	set byte_478, #4
 	LDX	objMapIdx_316
-	LDA	byte_128F59,X
-	STA	byte_317
+	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 
 loc_12908C:
 	LDA	count_unk_466
 	CMP	#5
 	BCC	locret_1290A8
-	LDA	#0
-	STA	count_unk_466
+	set count_unk_466, #0
 	INC	byte_443
 	LDA	byte_443
 	CMP	byte_478
 	BCC	locret_1290A8
-	LDA	#0
-	STA	byte_440
+	set byte_440, #0
 
 locret_1290A8:
 	
@@ -2139,8 +1841,7 @@ locret_1290A8:
 
 
 sub_1290C3:
-	LDA	#0
-	STA	sprite_length_30F
+	set sprite_length_30F, #0
 	LDA	byte_472
 	BNE	loc_1290EA
 	LDA	byte_543
@@ -2165,24 +1866,20 @@ loc_1290E7:
 
 loc_1290EA:
 	
-	LDA	#0
-	STA	byte_443
-	LDA	#$FF
-	STA	byte_440
+	set byte_443, #0
+	set byte_440, #$FF
 	LDA	ppu_scroll_x_304
 	CLC
 	ADC	byte_203
 	STA	byte_441
-	LDA	#0
-	STA	byte_476
+	set byte_476, #0
 	LDA	byte_441
 	CMP	byte_473
 	BCC	loc_129117
 	CMP	byte_474
 	BEQ	loc_129117
 	BCS	loc_129117
-	LDA	#$FF
-	STA	byte_476
+	set byte_476, #$FF
 
 loc_129117:
 	
@@ -2196,8 +1893,7 @@ loc_129120:
 	JSR	sub_12ED20
 	LDA	byte_472
 	BEQ	loc_12912E
-	LDA	#$FE 
-	STA	sprite_length_30F
+	set sprite_length_30F, #$FE 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2213,15 +1909,13 @@ loc_12912E:
 ; ---------------------------------------------------------------------------
 
 loc_129143:
-	LDA	#0
-	STA	byte_475
+	set byte_475, #0
 
 loc_129148:
 	LDA	byte_475
 	CMP	#0
 	BNE	locret_129154
-	LDA	#$FF
-	STA	sprite_length_30F
+	set sprite_length_30F, #$FF
 
 locret_129154:
 	RTS
@@ -2232,10 +1926,8 @@ locret_129154:
 
 
 sub_129155:
-	LDA	#$10
-	STA	scroll_offset_y_47A
-	LDA	#0
-	STA	is_game_finished_561
+	set scroll_offset_y_47A, #$10
+	set is_game_finished_561, #0
 	JSR	sub_129186
 	LDA	byte_549
 	CMP	byte_477
@@ -2247,15 +1939,13 @@ sub_129155:
 ; ---------------------------------------------------------------------------
 
 loc_129174:
-	LDA	#0
-	STA	byte_549
+	set byte_549, #0
 
 loc_129179:
 	LDA	byte_549
 	CMP	#0
 	BNE	locret_129185
-	LDA	#$FF
-	STA	is_game_finished_561
+	set is_game_finished_561, #$FF
 
 locret_129185:
 	RTS
@@ -2274,8 +1964,7 @@ sub_129186:
 	INX
 
 loc_12918F:
-	LDA	byte_129255,X
-	STA	byte_477
+	set byte_477, {byte_129255,X}
 	RTS
 ; End of function sub_129186
 
@@ -2284,8 +1973,7 @@ loc_12918F:
 
 
 sub_129196:
-	LDA	#0
-	STA	byte_477
+	set byte_477, #0
 	LDA	byte_476
 	CMP	#$FF
 	BNE	locret_1291F4
@@ -2309,8 +1997,7 @@ loc_1291B7:
 ; ---------------------------------------------------------------------------
 
 loc_1291C3:
-	LDA	#0
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, #0
 
 loc_1291C8:
 	
@@ -2321,8 +2008,7 @@ loc_1291C8:
 	LDA	byte_301
 	CMP	#$9A 
 	BNE	loc_1291DE
-	LDA	byte_543
-	STA	byte_477
+	set byte_477, byte_543
 
 loc_1291DE:
 	LDA	byte_477
@@ -2435,10 +2121,8 @@ loc_12A64A:
 
 	set_ptr off_129269
 
-	LDA	entry_idx_300
-	STA	data_2
-	LDA	#0
-	STA	data_3
+	set data_2, entry_idx_300
+	set data_3, #0
 	ASL	data_2
 	ROL	data_3
 
@@ -2448,14 +2132,11 @@ loc_12A64A:
 
 
 	LDY	#0
-	LDA	(ptr_0),Y
-	STA	data_2
+	set data_2, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	data_3
+	set data_3, {(ptr_0),Y}
 	LDY	#0
-	LDA	(data_2),Y
-	STA	objArraySize_373
+	set objArraySize_373, {(data_2),Y}
 	CMP	#0
 	BNE	loc_12A68B
 	RTS
@@ -2465,8 +2146,7 @@ loc_12A68B:
 
 	add_to_data $1
 
-	LDA	#0
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #0
 
 loc_12A69D:
 	to_stack data_2
@@ -2479,30 +2159,22 @@ loc_12A69D:
 	add_to_byte data_3, #0
 
 	LDY	#0
-	LDA	(data_2),Y
-	STA	ptr_0
+	set ptr_0, {(data_2),Y}
 	INY
-	LDA	(data_2),Y
-	STA	ptr_1
+	set ptr_1, {(data_2),Y}
 	LDX	inv_spr_dscr1_30C
 	LDY	#0
-	LDA	(ptr_0),Y
-	STA	array_unk_3C5,X
+	set {array_unk_3C5,X}, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	array_unk_3BB,X
+	set {array_unk_3BB,X}, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	array_unk_3D9,X
+	set {array_unk_3D9,X}, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	array_unk_3CF,X
+	set {array_unk_3CF,X}, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	objIdxArray_375,X
+	set {objIdxArray_375,X}, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	array_unk_39D,X
+	set {array_unk_39D,X}, {(ptr_0),Y}
 	INY
 	LDA	entry_idx_300
 	CMP	#$65 
@@ -2510,14 +2182,10 @@ loc_12A69D:
 	LDA	objIdxArray_375,X
 	CMP	#3
 	BNE	loc_12A70C
-	LDA	byte_567
-	STA	array_unk_3C5,X
-	LDA	byte_568
-	STA	array_unk_3BB,X
-	LDA	byte_569
-	STA	array_unk_3D9,X
-	LDA	byte_56A
-	STA	array_unk_3CF,X
+	set {array_unk_3C5,X}, byte_567
+	set {array_unk_3BB,X}, byte_568
+	set {array_unk_3D9,X}, byte_569
+	set {array_unk_3CF,X}, byte_56A
 
 loc_12A70C:
 	; com_29_start_new_game_12A646+ACj
@@ -2527,14 +2195,10 @@ loc_12A70C:
 	LDA	objIdxArray_375,X
 	CMP	#3
 	BNE	loc_12A732
-	LDA	byte_56B
-	STA	array_unk_3C5,X
-	LDA	byte_56C
-	STA	array_unk_3BB,X
-	LDA	byte_56D
-	STA	array_unk_3D9,X
-	LDA	byte_56E
-	STA	array_unk_3CF,X
+	set {array_unk_3C5,X}, byte_56B
+	set {array_unk_3BB,X}, byte_56C
+	set {array_unk_3D9,X}, byte_56D
+	set {array_unk_3CF,X}, byte_56E
 
 loc_12A732:
 	; com_29_start_new_game_12A646+D2j
@@ -2544,14 +2208,10 @@ loc_12A732:
 	LDA	objIdxArray_375,X
 	CMP	#3
 	BNE	loc_12A758
-	LDA	byte_56F
-	STA	array_unk_3C5,X
-	LDA	byte_570
-	STA	array_unk_3BB,X
-	LDA	byte_571
-	STA	array_unk_3D9,X
-	LDA	byte_572
-	STA	array_unk_3CF,X
+	set {array_unk_3C5,X}, byte_56F
+	set {array_unk_3BB,X}, byte_570
+	set {array_unk_3D9,X}, byte_571
+	set {array_unk_3CF,X}, byte_572
 
 loc_12A758:
 	; com_29_start_new_game_12A646+F8j
@@ -2577,19 +2237,14 @@ loc_12A758:
 
 loc_12A781:
 	; com_29_start_new_game_12A646+132j ...
-	LDA	#$40 
-	STA	byte_56F
+	set byte_56F, #$40 
 
 loc_12A786:
 	; com_29_start_new_game_12A646+127j ...
-	LDA	byte_56F
-	STA	array_unk_3C5,X
-	LDA	byte_570
-	STA	array_unk_3BB,X
-	LDA	byte_571
-	STA	array_unk_3D9,X
-	LDA	byte_572
-	STA	array_unk_3CF,X
+	set {array_unk_3C5,X}, byte_56F
+	set {array_unk_3BB,X}, byte_570
+	set {array_unk_3D9,X}, byte_571
+	set {array_unk_3CF,X}, byte_572
 
 loc_12A79E:
 	; com_29_start_new_game_12A646+11Ej
@@ -2616,43 +2271,31 @@ loc_12A79E:
 
 loc_12A7CB:
 	; com_29_start_new_game_12A646+172j ...
-	LDA	#0
-	STA	byte_573
-	LDA	#1
-	STA	byte_574
-	LDA	#$60 
-	STA	byte_575
-	LDA	#0
-	STA	byte_576
+	set byte_573, #0
+	set byte_574, #1
+	set byte_575, #$60 
+	set byte_576, #0
 
 loc_12A7DF:
-	LDA	byte_573
-	STA	array_unk_3C5,X
-	LDA	byte_574
-	STA	array_unk_3BB,X
-	LDA	byte_575
-	STA	array_unk_3D9,X
-	LDA	byte_576
-	STA	array_unk_3CF,X
+	set {array_unk_3C5,X}, byte_573
+	set {array_unk_3BB,X}, byte_574
+	set {array_unk_3D9,X}, byte_575
+	set {array_unk_3CF,X}, byte_576
 
 loc_12A7F7:
 	; com_29_start_new_game_12A646+164j
 	LDA	objIdxArray_375,X
 	CMP	#6
 	BNE	loc_12A809
-	LDA	array_unk_39D,X
-	STA	obj_array_unk_415,X
-	LDA	#0
-	STA	array_unk_39D,X
+	set {obj_array_unk_415,X}, {array_unk_39D,X}
+	set {array_unk_39D,X}, #0
 
 loc_12A809:
 	LDA	objIdxArray_375,X
 	CMP	#7
 	BNE	loc_12A81B
-	LDA	array_unk_39D,X
-	STA	obj_array_unk_415,X
-	LDA	#0
-	STA	array_unk_39D,X
+	set {obj_array_unk_415,X}, {array_unk_39D,X}
+	set {array_unk_39D,X}, #0
 
 loc_12A81B:
 	TYA
@@ -2667,8 +2310,7 @@ loc_12A81B:
 	CMP	#0
 	BNE	loc_12A839
 	LDX	inv_spr_dscr1_30C
-	LDA	#$FF
-	STA	objCreatedArray_393,X
+	set {objCreatedArray_393,X}, #$FF
 
 loc_12A839:
 	from_stack data_3
@@ -2702,14 +2344,10 @@ loc_12A85F:
 ; ---------------------------------------------------------------------------
 
 loc_12A86D:
-	LDA	byte_578,Y
-	STA	array_unk_3C5,X
-	LDA	byte_57B,Y
-	STA	array_unk_3BB,X
-	LDA	byte_57E,Y
-	STA	array_unk_3D9,X
-	LDA	byte_581,Y
-	STA	array_unk_3CF,X
+	set {array_unk_3C5,X}, {byte_578,Y}
+	set {array_unk_3BB,X}, {byte_57B,Y}
+	set {array_unk_3D9,X}, {byte_57E,Y}
+	set {array_unk_3CF,X}, {byte_581,Y}
 	INY
 	INX
 	CPX	objArraySize_373
@@ -2718,8 +2356,7 @@ loc_12A86D:
 ; ---------------------------------------------------------------------------
 
 loc_12A88D:
-	LDA	#0
-	STA	byte_577
+	set byte_577, #0
 
 locret_12A892:
 	RTS
@@ -2730,8 +2367,7 @@ locret_12A892:
 
 
 sub_12A893:
-	LDA	#0
-	STA	byte_36F
+	set byte_36F, #0
 	STA	byte_370
 	STA	byte_371
 	TYA
@@ -2741,12 +2377,10 @@ sub_12A893:
 	to_stack tilemapTypeUnk_30B
 	to_stack inv_spr_dscr1_30C
 	LDY	#0
-	LDA	(data_2),Y
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, {(data_2),Y}
 	CMP	#0
 	BNE	loc_12A8C1
-	LDA	#$FF
-	STA	byte_36F
+	set byte_36F, #$FF
 	JMP	loc_12A933
 ; ---------------------------------------------------------------------------
 
@@ -2754,26 +2388,21 @@ loc_12A8C1:
 
 	add_to_data $1
 
-	LDA	#0
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #0
 
 loc_12A8D3:
 	LDA	inv_spr_dscr1_30C
 	ASL	A
 	TAY
-	LDA	(data_2),Y
-	STA	ptr_0
+	set ptr_0, {(data_2),Y}
 	INY
-	LDA	(data_2),Y
-	STA	ptr_1
+	set ptr_1, {(data_2),Y}
 	LDY	#0
 
 loc_12A8E3:
-	LDA	(ptr_0),Y
-	STA	tilemapFrameCount_30D
+	set tilemapFrameCount_30D, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	byte_30E
+	set byte_30E, {(ptr_0),Y}
 	INY
 	LDA	tilemapFrameCount_30D
 	CMP	#$FF
@@ -2830,8 +2459,7 @@ sub_12A944:
 
 
 	LDY	#0
-	LDA	(ptr_0),Y
-	STA	tilemapFrameCount_30D
+	set tilemapFrameCount_30D, {(ptr_0),Y}
 	from_stack_to_y
 	from_stack ptr_1
 	from_stack ptr_0
@@ -2845,12 +2473,9 @@ sub_12A944:
 exec_b0_c0_12A973:
 	
 	to_stack bank_from_343
-	LDA	#0
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #0
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -2863,12 +2488,9 @@ exec_b0_c0_12A973:
 exec_b0_c1_12A98E:
 	
 	to_stack bank_from_343
-	LDA	#1
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #1
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -2881,12 +2503,9 @@ exec_b0_c1_12A98E:
 exec_b0_c2_12A9A9:
 	
 	to_stack bank_from_343
-	LDA	#2
-	STA	bank_command_346
-	LDA	#code_0
-	STA	bank_to_344
-	LDA	#$12
-	STA	bank_from_343
+	set bank_command_346, #2
+	set bank_to_344, #code_0
+	set bank_from_343, #$12
 	JSR	bank_switch_8000
 	from_stack bank_from_343
 	RTS
@@ -2912,10 +2531,8 @@ com_17_player_update_12A9C4:
 	LDA	byte_356
 	CMP	#0
 	BNE	locret_12AA0D
-	LDA	#$A
-	STA	byte_354
-	LDA	#0
-	STA	byte_355
+	set byte_354, #$A
+	set byte_355, #0
 	STA	byte_356
 	LDA	byte_54B
 	AND	#$F
@@ -2927,8 +2544,7 @@ com_17_player_update_12A9C4:
 	BCC	locret_12AA0D
 
 set_game_finished_12AA08:
-	LDA	#$FF
-	STA	is_game_finished_561
+	set is_game_finished_561, #$FF
 
 locret_12AA0D:
 	; com_17_player_update_12A9C4+13j ...
@@ -2939,8 +2555,7 @@ loc_12AA0E:
 	LDA	entry_idx_300
 	CMP	#$41 
 	BNE	loc_12AA1B
-	LDA	#0
-	STA	byte_560
+	set byte_560, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2964,18 +2579,13 @@ loc_12AA1B:
 
 loc_12AA3E:
 	; com_17_player_update_12A9C4+75j
-	LDA	#$20 
-	STA	byte_56F
-	LDA	#0
-	STA	byte_570
-	LDA	#$A0 
-	STA	byte_571
-	LDA	#0
-	STA	byte_572
+	set byte_56F, #$20 
+	set byte_570, #0
+	set byte_571, #$A0 
+	set byte_572, #0
 
 loc_12AA52:
-	LDA	#0
-	STA	byte_555
+	set byte_555, #0
 	STA	byte_556
 	STA	byte_557
 	STA	byte_558
@@ -3001,8 +2611,7 @@ entry_idx_handler_unk_12AA6D:
 	LDA	byte_595
 	CMP	#0
 	BEQ	locret_12AA80
-	LDA	#$96 
-	STA	entry_idx_300
+	set entry_idx_300, #$96 
 
 locret_12AA80:
 	RTS
@@ -3015,8 +2624,7 @@ check_room_7D_12AA81:
 	LDA	byte_594
 	CMP	#0
 	BEQ	locret_12AA94
-	LDA	#$95 
-	STA	entry_idx_300
+	set entry_idx_300, #$95 
 
 locret_12AA94:
 	RTS
@@ -3029,8 +2637,7 @@ check_room_95_12AA95:
 	LDA	byte_594
 	CMP	#0
 	BNE	locret_12AAA8
-	LDA	#$7D 
-	STA	entry_idx_300
+	set entry_idx_300, #$7D 
 
 locret_12AAA8:
 	RTS
@@ -3043,8 +2650,7 @@ check_room_76_12AAA9:
 	LDA	byte_593
 	CMP	#0
 	BEQ	locret_12AABC
-	LDA	#$94 
-	STA	entry_idx_300
+	set entry_idx_300, #$94 
 
 locret_12AABC:
 	RTS
@@ -3057,8 +2663,7 @@ check_room_94_12AABD:
 	LDA	byte_593
 	CMP	#0
 	BNE	locret_12AAD0
-	LDA	#$76 
-	STA	entry_idx_300
+	set entry_idx_300, #$76 
 
 locret_12AAD0:
 	RTS
@@ -3071,8 +2676,7 @@ check_room_53_12AAD1:
 	LDA	byte_58C
 	CMP	#$FF
 	BNE	locret_12AAE4
-	LDA	#$90 
-	STA	entry_idx_300
+	set entry_idx_300, #$90 
 
 locret_12AAE4:
 	RTS
@@ -3085,8 +2689,7 @@ check_room_90_12AAE5:
 	LDA	byte_58C
 	CMP	#$FF
 	BEQ	locret_12AAF8
-	LDA	#$53 
-	STA	entry_idx_300
+	set entry_idx_300, #$53 
 
 locret_12AAF8:
 	RTS
@@ -3099,8 +2702,7 @@ check_room_3D_12AAF9:
 	LDA	byte_58A
 	CMP	#$FF
 	BNE	locret_12AB0C
-	LDA	#$8B 
-	STA	entry_idx_300
+	set entry_idx_300, #$8B 
 
 locret_12AB0C:
 	RTS
@@ -3113,8 +2715,7 @@ check_room_44_12AB0D:
 	LDA	byte_58B
 	CMP	#0
 	BEQ	locret_12AB20
-	LDA	#$9C 
-	STA	entry_idx_300
+	set entry_idx_300, #$9C 
 
 locret_12AB20:
 	RTS
@@ -3127,8 +2728,7 @@ check_room_9C_12AB21:
 	LDA	byte_58B
 	CMP	#0
 	BNE	locret_12AB34
-	LDA	#$44 
-	STA	entry_idx_300
+	set entry_idx_300, #$44 
 
 locret_12AB34:
 	RTS
@@ -3141,8 +2741,7 @@ check_room_38_12AB35:
 	LDA	byte_589
 	CMP	#0
 	BEQ	locret_12AB48
-	LDA	#$8A 
-	STA	entry_idx_300
+	set entry_idx_300, #$8A 
 
 locret_12AB48:
 	RTS
@@ -3155,8 +2754,7 @@ check_room_8A_12AB49:
 	LDA	byte_589
 	CMP	#$FF
 	BEQ	locret_12AB5C
-	LDA	#$38 
-	STA	entry_idx_300
+	set entry_idx_300, #$38 
 
 locret_12AB5C:
 	RTS
@@ -3169,8 +2767,7 @@ check_room_2F_12AB5D:
 	LDA	byte_55B
 	CMP	#0
 	BEQ	check_room_1A_12AB71
-	LDA	#$89 
-	STA	entry_idx_300
+	set entry_idx_300, #$89 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3182,8 +2779,7 @@ check_room_1A_12AB71:
 	LDA	byte_55F
 	CMP	#0
 	BEQ	check_room_17_12AB85
-	LDA	#$86 
-	STA	entry_idx_300
+	set entry_idx_300, #$86 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3195,8 +2791,7 @@ check_room_17_12AB85:
 	LDA	byte_5A9
 	CMP	#0
 	BEQ	check_room_4F_12AB99
-	LDA	#$85 
-	STA	entry_idx_300
+	set entry_idx_300, #$85 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3208,8 +2803,7 @@ check_room_4F_12AB99:
 	LDA	byte_565
 	CMP	#0
 	BEQ	check_room_50_12ABAD
-	LDA	#$8D 
-	STA	entry_idx_300
+	set entry_idx_300, #$8D 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3221,8 +2815,7 @@ check_room_50_12ABAD:
 	LDA	byte_565
 	CMP	#0
 	BNE	check_room_8D_12ABC1
-	LDA	#$8E 
-	STA	entry_idx_300
+	set entry_idx_300, #$8E 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3234,8 +2827,7 @@ check_room_8D_12ABC1:
 	LDA	byte_565
 	CMP	#0
 	BNE	check_room_8E_12ABD5
-	LDA	#$4F 
-	STA	entry_idx_300
+	set entry_idx_300, #$4F 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3247,8 +2839,7 @@ check_room_8E_12ABD5:
 	LDA	byte_565
 	CMP	#0
 	BEQ	check_room_60_12ABE9
-	LDA	#$50 
-	STA	entry_idx_300
+	set entry_idx_300, #$50 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3260,8 +2851,7 @@ check_room_60_12ABE9:
 	LDA	byte_566
 	CMP	#0
 	BEQ	check_room_6B_12ABFD
-	LDA	#$97 
-	STA	entry_idx_300
+	set entry_idx_300, #$97 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3273,8 +2863,7 @@ check_room_6B_12ABFD:
 	LDA	byte_585
 	CMP	#0
 	BEQ	check_room_67_12AC11
-	LDA	#$99 
-	STA	entry_idx_300
+	set entry_idx_300, #$99 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3286,8 +2875,7 @@ check_room_67_12AC11:
 	LDA	byte_586
 	CMP	#0
 	BEQ	check_room_69_12AC25
-	LDA	#$9B 
-	STA	entry_idx_300
+	set entry_idx_300, #$9B 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3299,8 +2887,7 @@ check_room_69_12AC25:
 	LDA	byte_587
 	CMP	#0
 	BEQ	check_room_1C_12AC39
-	LDA	#$98 
-	STA	entry_idx_300
+	set entry_idx_300, #$98 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3312,8 +2899,7 @@ check_room_1C_12AC39:
 	LDA	byte_588
 	CMP	#0
 	BEQ	check_room_57_12AC4D
-	LDA	#$87 
-	STA	entry_idx_300
+	set entry_idx_300, #$87 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3325,8 +2911,7 @@ check_room_57_12AC4D:
 	LDA	byte_646
 	CMP	#0
 	BNE	check_room_91_12AC61
-	LDA	#$91 
-	STA	entry_idx_300
+	set entry_idx_300, #$91 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3338,8 +2923,7 @@ check_room_91_12AC61:
 	LDA	byte_646
 	CMP	#0
 	BEQ	check_room_5B_12AC75
-	LDA	#$57 
-	STA	entry_idx_300
+	set entry_idx_300, #$57 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3351,8 +2935,7 @@ check_room_5B_12AC75:
 	LDA	byte_58F
 	CMP	#0
 	BEQ	check_room_5C_12AC89
-	LDA	#$92 
-	STA	entry_idx_300
+	set entry_idx_300, #$92 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3364,8 +2947,7 @@ check_room_5C_12AC89:
 	LDA	byte_590
 	CMP	#0
 	BEQ	check_room_92_12AC9D
-	LDA	#$93 
-	STA	entry_idx_300
+	set entry_idx_300, #$93 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3377,8 +2959,7 @@ check_room_92_12AC9D:
 	LDA	byte_58F
 	CMP	#0
 	BNE	check_room_93_12ACB1
-	LDA	#$5B 
-	STA	entry_idx_300
+	set entry_idx_300, #$5B 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3390,8 +2971,7 @@ check_room_93_12ACB1:
 	LDA	byte_590
 	CMP	#0
 	BNE	check_room_52_12ACC5
-	LDA	#$5C 
-	STA	entry_idx_300
+	set entry_idx_300, #$5C 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3403,8 +2983,7 @@ check_room_52_12ACC5:
 	LDA	byte_591
 	AND	byte_592
 	BEQ	locret_12ACDA
-	LDA	#$8F 
-	STA	entry_idx_300
+	set entry_idx_300, #$8F 
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3431,14 +3010,11 @@ loc_12ACE6:
 	LDA	byte_46E
 	CMP	#$2F 
 	BNE	loc_12AD06
-	LDA	#$FF
-	STA	byte_6A6
+	set byte_6A6, #$FF
 	STA	byte_6A7
-	LDA	#1
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
-	LDA	#2
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #2
 	JSR	sub_12BF29
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3450,11 +3026,9 @@ loc_12AD06:
 	LDA	entry_idx_300
 	CMP	#$77 
 	BNE	loc_12AD27
-	LDA	#$FF
-	STA	byte_68D
+	set byte_68D, #$FF
 	LDX	byte_4D0
-	LDA	#$4D 
-	STA	unk_4C2,X
+	set {unk_4C2,X}, #$4D 
 	INC	byte_4D0
 	JMP	loc_12AD58
 ; ---------------------------------------------------------------------------
@@ -3463,11 +3037,9 @@ loc_12AD27:
 	LDA	entry_idx_300
 	CMP	#$7B 
 	BNE	loc_12AD41
-	LDA	#$FF
-	STA	byte_68E
+	set byte_68E, #$FF
 	LDX	byte_4D0
-	LDA	#$4E 
-	STA	unk_4C2,X
+	set {unk_4C2,X}, #$4E 
 	INC	byte_4D0
 	JMP	loc_12AD58
 ; ---------------------------------------------------------------------------
@@ -3476,11 +3048,9 @@ loc_12AD41:
 	LDA	entry_idx_300
 	CMP	#$80 
 	BNE	locret_12AD64
-	LDA	#$FF
-	STA	byte_68F
+	set byte_68F, #$FF
 	LDX	byte_4D0
-	LDA	#$4F 
-	STA	unk_4C2,X
+	set {unk_4C2,X}, #$4F 
 	INC	byte_4D0
 
 loc_12AD58:
@@ -3498,23 +3068,17 @@ loc_12AD65:
 	LDA	byte_46E
 	CMP	#$27 
 	BNE	loc_12ADA0
-	LDA	#$FF
-	STA	byte_591
+	set byte_591, #$FF
 	LDA	byte_591
 	AND	byte_592
 	CMP	#0
 	BEQ	locret_12AD9F
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 
 locret_12AD9F:
@@ -3525,23 +3089,17 @@ loc_12ADA0:
 	LDA	byte_46E
 	CMP	#$28 
 	BNE	loc_12ADDB
-	LDA	#$FF
-	STA	byte_592
+	set byte_592, #$FF
 	LDA	byte_591
 	AND	byte_592
 	CMP	#0
 	BEQ	locret_12ADDA
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 
 locret_12ADDA:
@@ -3552,8 +3110,7 @@ loc_12ADDB:
 	LDA	byte_46E
 	CMP	#$39 
 	BNE	loc_12ADE8
-	LDA	#$FF
-	STA	byte_587
+	set byte_587, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3561,8 +3118,7 @@ loc_12ADE8:
 	LDA	byte_46E
 	CMP	#0
 	BNE	loc_12ADF5
-	LDA	#$FF
-	STA	byte_64C
+	set byte_64C, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3570,8 +3126,7 @@ loc_12ADF5:
 	LDA	byte_46E
 	CMP	#$15
 	BNE	loc_12AE02
-	LDA	#$FF
-	STA	byte_59B
+	set byte_59B, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3579,8 +3134,7 @@ loc_12AE02:
 	LDA	byte_46E
 	CMP	#$16
 	BNE	loc_12AE0F
-	LDA	#$FF
-	STA	byte_59C
+	set byte_59C, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3620,16 +3174,11 @@ loc_12AE3F:
 loc_12AE47:
 	
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3645,64 +3194,43 @@ loc_12AE76:
 	LDA	entry_idx_300
 	CMP	#$70 
 	BEQ	loc_12AE86
-	LDA	#$FF
-	STA	byte_636
+	set byte_636, #$FF
 	STA	byte_633
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12AE86:
-	LDA	#$FF
-	STA	byte_6CA
-	LDA	#1
-	STA	byte_313
+	set byte_6CA, #$FF
+	set byte_313, #1
 	JSR	exec_b0_c9_1284AA
-	LDA	#$81 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#2
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$81 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #2
 	JSR	exec_b0_c0_12A973
-	LDA	#1
-	STA	tilemapData_4C
-	LDA	#1
-	STA	roomUnk1_4D
-	LDA	#3
-	STA	roomUnk2_4E
-	LDA	#3
-	STA	tilemap_line_idx_4F
+	set tilemapData_4C, #1
+	set roomUnk1_4D, #1
+	set roomUnk2_4E, #3
+	set tilemap_line_idx_4F, #3
 	JSR	exec_b0_cB_1284E0
-	LDA	#1
-	STA	tilemapData_4C
-	LDA	#1
-	STA	roomUnk1_4D
-	LDA	#3
-	STA	roomUnk2_4E
-	LDA	#1
-	STA	tilemap_line_idx_4F
+	set tilemapData_4C, #1
+	set roomUnk1_4D, #1
+	set roomUnk2_4E, #3
+	set tilemap_line_idx_4F, #1
 	JSR	exec_b0_cB_1284E0
-	LDA	#$84 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#6
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$84 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #6
 	JSR	exec_b0_c0_12A973
 
 set_helipad_level_12AEDD:
-	LDA	#$9A 
-	STA	image_id_4A4
-	LDA	#0
-	STA	image_offset_4A5
+	set image_id_4A4, #$9A 
+	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
 	STA	ppu_prev_scroll_x_unk_4A7
 	STA	ppu_prev_scroll_y_unk_4A8
 	STA	prev_sprite_type_4A9
-	LDA	#$40 
-	STA	byte_4AD
-	LDA	#$50 
-	STA	byte_4AE
+	set byte_4AD, #$40 
+	set byte_4AE, #$50 
 	JSR	exec_b0_c2_12A9A9
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3711,10 +3239,8 @@ loc_12AF01:
 	LDA	byte_46E
 	CMP	#2
 	BNE	loc_12AF16
-	LDA	#$FF
-	STA	byte_5EF
-	LDA	#0
-	STA	cur_obj_idx_unk_43A
+	set byte_5EF, #$FF
+	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3723,10 +3249,8 @@ loc_12AF16:
 	LDA	byte_46E
 	CMP	#$3B 
 	BNE	loc_12AF2B
-	LDA	#$FF
-	STA	byte_5F9
-	LDA	#0
-	STA	cur_obj_idx_unk_43A
+	set byte_5F9, #$FF
+	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3735,24 +3259,16 @@ loc_12AF2B:
 	LDA	byte_46E
 	CMP	#$2C 
 	BNE	loc_12AF69
-	LDA	#0
-	STA	byte_5E7
-	LDA	#8
-	STA	cur_obj_idx_unk_43A
+	set byte_5E7, #0
+	set cur_obj_idx_unk_43A, #8
 	JSR	exec_b0_c3_128418
-	LDA	#9
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #9
 	JSR	exec_b0_c3_128418
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3761,19 +3277,13 @@ loc_12AF69:
 	LDA	byte_46E
 	CMP	#$24 
 	BNE	loc_12AF9A
-	LDA	#$FF
-	STA	byte_586
+	set byte_586, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3782,8 +3292,7 @@ loc_12AF9A:
 	LDA	byte_46E
 	CMP	#$17
 	BNE	loc_12AFA7
-	LDA	#$FF
-	STA	byte_5CB
+	set byte_5CB, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3791,8 +3300,7 @@ loc_12AFA7:
 	LDA	byte_46E
 	CMP	#$18
 	BNE	loc_12AFB4
-	LDA	#$FF
-	STA	byte_59D
+	set byte_59D, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3800,8 +3308,7 @@ loc_12AFB4:
 	LDA	byte_46E
 	CMP	#$13
 	BNE	loc_12AFC1
-	LDA	#$FF
-	STA	byte_599
+	set byte_599, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3809,8 +3316,7 @@ loc_12AFC1:
 	LDA	byte_46E
 	CMP	#$14
 	BNE	loc_12AFCE
-	LDA	#$FF
-	STA	byte_59A
+	set byte_59A, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3818,10 +3324,8 @@ loc_12AFCE:
 	LDA	byte_46E
 	CMP	#$22 
 	BNE	loc_12AFE3
-	LDA	#$FF
-	STA	byte_5D9
-	LDA	#0
-	STA	cur_obj_idx_unk_43A
+	set byte_5D9, #$FF
+	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3830,10 +3334,8 @@ loc_12AFE3:
 	LDA	byte_46E
 	CMP	#$23 
 	BNE	loc_12AFF8
-	LDA	#$FF
-	STA	byte_5B3
-	LDA	#1
-	STA	cur_obj_idx_unk_43A
+	set byte_5B3, #$FF
+	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3842,26 +3344,17 @@ loc_12AFF8:
 	LDA	byte_46E
 	CMP	#$2D 
 	BNE	loc_12B03B
-	LDA	#$BC 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$BC 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	#$FF
-	STA	byte_55F
+	set byte_55F, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3872,26 +3365,19 @@ loc_12B03B:
 	LDA	entry_idx_300
 	CMP	#$1E
 	BEQ	loc_12B054
-	LDA	#$FF
-	STA	byte_5A8
-	LDA	#0
-	STA	cur_obj_idx_unk_43A
+	set byte_5A8, #$FF
+	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B054:
-	LDA	#$FF
-	STA	byte_5BD
-	LDA	#7
-	STA	cur_obj_idx_unk_43A
+	set byte_5BD, #$FF
+	set cur_obj_idx_unk_43A, #7
 	JSR	sub_12BF29
-	LDA	#6
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #6
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3902,47 +3388,33 @@ loc_12B074:
 	LDA	entry_idx_300
 	CMP	#$1E
 	BEQ	loc_12B0C2
-	LDA	#$FF
-	STA	byte_5A9
-	LDA	#2
-	STA	cur_obj_idx_unk_43A
+	set byte_5A9, #$FF
+	set cur_obj_idx_unk_43A, #2
 	LDA	entry_idx_300
 	CMP	#$17
 	BEQ	loc_12B095
-	LDA	#1
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #1
 
 loc_12B095:
 	JSR	sub_12BF29
-	LDA	#$FF
-	STA	byte_5BE
+	set byte_5BE, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B0C2:
-	LDA	#$FF
-	STA	byte_5BC
-	LDA	#6
-	STA	cur_obj_idx_unk_43A
+	set byte_5BC, #$FF
+	set cur_obj_idx_unk_43A, #6
 	JSR	sub_12BF29
-	LDA	#6
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #6
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3950,17 +3422,12 @@ loc_12B0C2:
 loc_12B0E2:
 	CMP	#$1B
 	BNE	loc_12B106
-	LDA	#6
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#4
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #6
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #4
 	JSR	exec_b0_c0_12A973
-	LDA	#1
-	STA	byte_545
-	LDA	#$FF
-	STA	byte_562
+	set byte_545, #1
+	set byte_562, #$FF
 	STA	byte_6C7
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3968,8 +3435,7 @@ loc_12B0E2:
 loc_12B106:
 	CMP	#$1E
 	BNE	loc_12B11F
-	LDA	#$FF
-	STA	byte_59F
+	set byte_59F, #$FF
 	LDA	byte_59F
 	AND	byte_5A0
 	AND	byte_5A1
@@ -3981,8 +3447,7 @@ loc_12B106:
 loc_12B11F:
 	CMP	#$1F
 	BNE	loc_12B138
-	LDA	#$FF
-	STA	byte_5A0
+	set byte_5A0, #$FF
 	LDA	byte_59F
 	AND	byte_5A0
 	AND	byte_5A1
@@ -3994,8 +3459,7 @@ loc_12B11F:
 loc_12B138:
 	CMP	#$20 
 	BNE	loc_12B151
-	LDA	#$FF
-	STA	byte_5A1
+	set byte_5A1, #$FF
 	LDA	byte_59F
 	AND	byte_5A0
 	AND	byte_5A1
@@ -4007,8 +3471,7 @@ loc_12B138:
 loc_12B151:
 	CMP	#$21 
 	BNE	loc_12B16A
-	LDA	#$FF
-	STA	byte_5A2
+	set byte_5A2, #$FF
 	LDA	byte_59F
 	AND	byte_5A0
 	AND	byte_5A1
@@ -4023,16 +3486,14 @@ loc_12B16A:
 	LDA	entry_idx_300
 	CMP	#$4F 
 	BNE	loc_12B17D
-	LDA	#$FF
-	STA	byte_565
+	set byte_565, #$FF
 	JMP	loc_12B18A
 ; ---------------------------------------------------------------------------
 
 loc_12B17D:
 	CMP	#$8D 
 	BNE	locret_12B189
-	LDA	#0
-	STA	byte_565
+	set byte_565, #0
 	JMP	loc_12B18A
 ; ---------------------------------------------------------------------------
 
@@ -4043,16 +3504,11 @@ locret_12B189:
 loc_12B18A:
 	
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4073,12 +3529,9 @@ sub_12B1B0:
 ; ---------------------------------------------------------------------------
 
 loc_12B1B8:
-	LDA	#$AA 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$AA 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; End of function sub_12B1B0
@@ -4119,21 +3572,15 @@ sub_12B1E3:
 ; ---------------------------------------------------------------------------
 
 loc_12B1EB:
-	LDA	#$AB 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$AB 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	LDA	byte_55B
 	BNE	locret_12B224
-	LDA	#$B3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -4159,21 +3606,15 @@ sub_12B225:
 ; ---------------------------------------------------------------------------
 
 loc_12B22D:
-	LDA	#$AC 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$AC 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	LDA	byte_55B
 	BNE	locret_12B266
-	LDA	#$B3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -4199,21 +3640,15 @@ sub_12B267:
 ; ---------------------------------------------------------------------------
 
 loc_12B26F:
-	LDA	#$AD 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$AD 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	LDA	byte_55B
 	BNE	locret_12B2A8
-	LDA	#$B3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -4239,21 +3674,15 @@ sub_12B2A9:
 ; ---------------------------------------------------------------------------
 
 loc_12B2B1:
-	LDA	#$AE 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$AE 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	LDA	byte_55B
 	BNE	locret_12B2EA
-	LDA	#$B3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -4279,21 +3708,15 @@ sub_12B2EB:
 ; ---------------------------------------------------------------------------
 
 loc_12B2F3:
-	LDA	#$AF 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$AF 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	LDA	byte_55B
 	BNE	locret_12B32C
-	LDA	#$B3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -4319,21 +3742,15 @@ sub_12B32D:
 ; ---------------------------------------------------------------------------
 
 loc_12B335:
-	LDA	#$B0 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B0 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	LDA	byte_55B
 	BNE	locret_12B36E
-	LDA	#$B3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -4365,19 +3782,13 @@ loc_12B377:
 ; ---------------------------------------------------------------------------
 
 loc_12B37F:
-	LDA	#$B1 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B1 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	#$B3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -4392,32 +3803,23 @@ loc_12B3AF:
 	INX
 	CPX	#6
 	BCC	loc_12B3AF
-	LDA	#$F
-	STA	byte_55B
+	set byte_55B, #$F
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 	JMP	locret_12B403
 ; ---------------------------------------------------------------------------
 
 loc_12B3E8:
-	LDA	#$FF
-	STA	byte_627
+	set byte_627, #$FF
 	STA	byte_628
-	LDA	#0
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
-	LDA	#1
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
 	JMP	locret_12B403
 ; ---------------------------------------------------------------------------
@@ -4435,12 +3837,9 @@ sub_12B404:
 	LDA	byte_471
 	CMP	#0
 	BNE	loc_12B41E
-	LDA	#$A7 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$A7 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4463,8 +3862,7 @@ loc_12B41E:
 
 loc_12B43B:
 	
-	LDA	#$1E
-	STA	byte_46D
+	set byte_46D, #$1E
 	RTS
 ; End of function sub_12B404
 
@@ -4480,14 +3878,12 @@ sub_12B441:
 	LDA	obj_array_unk_415,X
 	CMP	#$1A
 	BNE	loc_12B458
-	LDA	#0
-	STA	byte_5E2
+	set byte_5E2, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B458:
-	LDA	#0
-	STA	byte_6B0
+	set byte_6B0, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4499,16 +3895,14 @@ loc_12B45E:
 	LDA	obj_array_unk_415,X
 	CMP	#$1A
 	BNE	loc_12B475
-	LDA	#0
-	STA	byte_5E3
+	set byte_5E3, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B475:
 	CMP	#6
 	BNE	locret_12B47E
-	LDA	#0
-	STA	byte_5E6
+	set byte_5E6, #0
 
 locret_12B47E:
 	RTS
@@ -4525,14 +3919,12 @@ loc_12B47F:
 	LDA	byte_434
 	CMP	#4
 	BNE	loc_12B49D
-	LDA	#0
-	STA	byte_5B9
+	set byte_5B9, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B49D:
-	LDA	#0
-	STA	byte_5BA
+	set byte_5BA, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4542,24 +3934,21 @@ loc_12B4A3:
 	LDA	byte_434
 	CMP	#1
 	BNE	loc_12B4B4
-	LDA	#0
-	STA	byte_5B6
+	set byte_5B6, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B4B4:
 	CMP	#2
 	BNE	loc_12B4BE
-	LDA	#0
-	STA	byte_5B7
+	set byte_5B7, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B4BE:
 	CMP	#3
 	BNE	locret_12B4C7
-	LDA	#0
-	STA	byte_5B8
+	set byte_5B8, #0
 
 locret_12B4C7:
 	RTS
@@ -4568,8 +3957,7 @@ locret_12B4C7:
 loc_12B4C8:
 	CMP	#$13
 	BNE	loc_12B4D2
-	LDA	#0
-	STA	byte_5B5
+	set byte_5B5, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4592,16 +3980,14 @@ loc_12B4D9:
 	LDA	byte_434
 	CMP	#1
 	BNE	loc_12B4FA
-	LDA	#0
-	STA	byte_5CD
+	set byte_5CD, #0
 	RTS
 ; ---------------------------------------------------------------------------
 	JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 
 loc_12B4FA:
-	LDA	#0
-	STA	byte_5CE
+	set byte_5CE, #0
 	RTS
 ; ---------------------------------------------------------------------------
 	JMP	loc_12BD54
@@ -4613,24 +3999,21 @@ loc_12B503:
 	LDA	byte_434
 	CMP	#2
 	BNE	loc_12B517
-	LDA	#0
-	STA	byte_5CF
+	set byte_5CF, #0
 	RTS
 ; ---------------------------------------------------------------------------
 	JMP	loc_12BD54
 ; ---------------------------------------------------------------------------
 
 loc_12B517:
-	LDA	#0
-	STA	byte_5D0
+	set byte_5D0, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B51D:
 	CMP	#$17
 	BNE	locret_12B527
-	LDA	#0
-	STA	byte_5CC
+	set byte_5CC, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4648,8 +4031,7 @@ loc_12B52B:
 	LDA	obj_array_unk_415,X
 	CMP	#6
 	BNE	loc_12B545
-	LDA	#0
-	STA	byte_5D7
+	set byte_5D7, #0
 	RTS
 ; ---------------------------------------------------------------------------
 	JMP	loc_12BD54
@@ -4660,8 +4042,7 @@ loc_12B545:
 	LDA	obj_array_unk_415,X
 	CMP	#7
 	BNE	loc_12B552
-	LDA	#0
-	STA	byte_5D6
+	set byte_5D6, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4669,22 +4050,15 @@ loc_12B552:
 	LDA	obj_array_unk_415,X
 	CMP	#$47 
 	BNE	locret_12B58A
-	LDA	#0
-	STA	byte_6A8
-	LDA	#$FF
-	STA	byte_588
+	set byte_6A8, #0
+	set byte_588, #$FF
 	STA	byte_5D8
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 
 locret_12B58A:
@@ -4701,8 +4075,7 @@ loc_12B58E:
 	LDA	obj_array_unk_415,X
 	CMP	#6
 	BNE	loc_12B545
-	LDA	#0
-	STA	byte_5D7
+	set byte_5D7, #0
 	RTS
 ; ---------------------------------------------------------------------------
 	JMP	loc_12BD54
@@ -4716,8 +4089,7 @@ loc_12B5A8:
 	LDA	obj_array_unk_415,X
 	CMP	#6
 	BNE	loc_12B5BF
-	LDA	#0
-	STA	byte_5DD
+	set byte_5DD, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4725,8 +4097,7 @@ loc_12B5BF:
 	LDA	obj_array_unk_415,X
 	CMP	#$3B 
 	BNE	locret_12B5CB
-	LDA	#0
-	STA	byte_5DC
+	set byte_5DC, #0
 
 locret_12B5CB:
 	RTS
@@ -4740,8 +4111,7 @@ loc_12B5CC:
 	LDA	obj_array_unk_415,X
 	CMP	#$1A
 	BNE	loc_12B5E3
-	LDA	#0
-	STA	byte_5DE
+	set byte_5DE, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4749,8 +4119,7 @@ loc_12B5E3:
 	LDA	obj_array_unk_415,X
 	CMP	#$1B
 	BNE	locret_12B5EF
-	LDA	#0
-	STA	byte_5C3
+	set byte_5C3, #0
 
 locret_12B5EF:
 	RTS
@@ -4764,8 +4133,7 @@ loc_12B5F0:
 	LDA	obj_array_unk_415,X
 	CMP	#$1A
 	BNE	loc_12B606
-	LDA	#0
-	STA	byte_5EA
+	set byte_5EA, #0
 
 loc_12B606:
 	
@@ -4776,8 +4144,7 @@ loc_12B606:
 	LDA	obj_array_unk_415,X
 	CMP	#$B
 	BNE	loc_12B61C
-	LDA	#0
-	STA	byte_5EB
+	set byte_5EB, #0
 
 loc_12B61C:
 	
@@ -4787,14 +4154,12 @@ loc_12B61C:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12B630
-	LDA	#0
-	STA	byte_5EC
+	set byte_5EC, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B630:
-	LDA	#0
-	STA	byte_5ED
+	set byte_5ED, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4806,8 +4171,7 @@ loc_12B636:
 	LDA	obj_array_unk_415,X
 	CMP	#6
 	BNE	loc_12B64C
-	LDA	#0
-	STA	byte_5EE
+	set byte_5EE, #0
 
 loc_12B64C:
 	
@@ -4818,8 +4182,7 @@ loc_12B64C:
 	LDA	obj_array_unk_415,X
 	CMP	#$14
 	BNE	loc_12B662
-	LDA	#0
-	STA	byte_5EF
+	set byte_5EF, #0
 
 loc_12B662:
 	
@@ -4830,8 +4193,7 @@ loc_12B662:
 	LDA	obj_array_unk_415,X
 	CMP	#$B
 	BNE	loc_12B678
-	LDA	#0
-	STA	byte_5F3
+	set byte_5F3, #0
 
 loc_12B678:
 	
@@ -4842,8 +4204,7 @@ loc_12B678:
 	LDA	obj_array_unk_415,X
 	CMP	#8
 	BNE	loc_12B68F
-	LDA	#0
-	STA	byte_5F4
+	set byte_5F4, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4851,8 +4212,7 @@ loc_12B68F:
 	LDA	obj_array_unk_415,X
 	CMP	#$25 
 	BNE	locret_12B69B
-	LDA	#0
-	STA	byte_5F5
+	set byte_5F5, #0
 
 locret_12B69B:
 	RTS
@@ -4865,22 +4225,19 @@ loc_12B69C:
 	LDA	byte_434
 	CMP	#1
 	BNE	loc_12B6B0
-	LDA	#0
-	STA	byte_5F7
+	set byte_5F7, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B6B0:
 	CMP	#2
 	BNE	loc_12B6BA
-	LDA	#0
-	STA	byte_5F8
+	set byte_5F8, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B6BA:
-	LDA	#0
-	STA	byte_5B4
+	set byte_5B4, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4891,24 +4248,21 @@ loc_12B6C0:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12B6D4
-	LDA	#0
-	STA	byte_5FB
+	set byte_5FB, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B6D4:
 	CMP	#1
 	BNE	loc_12B6DE
-	LDA	#0
-	STA	byte_5FA
+	set byte_5FA, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B6DE:
 	CMP	#3
 	BNE	locret_12B6E7
-	LDA	#0
-	STA	byte_6B2
+	set byte_6B2, #0
 
 locret_12B6E7:
 	RTS
@@ -4922,8 +4276,7 @@ loc_12B6E8:
 	LDA	obj_array_unk_415,X
 	CMP	#7
 	BNE	loc_12B6FF
-	LDA	#0
-	STA	byte_601
+	set byte_601, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4936,16 +4289,14 @@ loc_12B6FF:
 	LDA	obj_array_unk_415,X
 	CMP	#7
 	BNE	loc_12B716
-	LDA	#0
-	STA	byte_604
+	set byte_604, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B716:
 	CMP	#$52 
 	BNE	loc_12B720
-	LDA	#0
-	STA	byte_6AE
+	set byte_6AE, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4953,8 +4304,7 @@ loc_12B720:
 	LDA	obj_array_unk_415,X
 	CMP	#8
 	BNE	locret_12B72C
-	LDA	#0
-	STA	byte_605
+	set byte_605, #0
 
 locret_12B72C:
 	RTS
@@ -4967,14 +4317,12 @@ loc_12B72D:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12B741
-	LDA	#0
-	STA	byte_608
+	set byte_608, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B741:
-	LDA	#0
-	STA	byte_609
+	set byte_609, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4985,40 +4333,35 @@ loc_12B747:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12B75B
-	LDA	#0
-	STA	byte_60D
+	set byte_60D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B75B:
 	CMP	#1
 	BNE	loc_12B765
-	LDA	#0
-	STA	byte_60E
+	set byte_60E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B765:
 	CMP	#2
 	BNE	loc_12B76F
-	LDA	#0
-	STA	byte_611
+	set byte_611, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B76F:
 	CMP	#3
 	BNE	loc_12B779
-	LDA	#0
-	STA	byte_610
+	set byte_610, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B779:
 	CMP	#4
 	BNE	locret_12B782
-	LDA	#0
-	STA	byte_60F
+	set byte_60F, #0
 
 locret_12B782:
 	RTS
@@ -5032,16 +4375,14 @@ loc_12B783:
 	LDA	obj_array_unk_415,X
 	CMP	#8
 	BNE	loc_12B79A
-	LDA	#0
-	STA	byte_613
+	set byte_613, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B79A:
 	CMP	#$4A 
 	BNE	locret_12B7A3
-	LDA	#0
-	STA	byte_6AB
+	set byte_6AB, #0
 
 locret_12B7A3:
 	RTS
@@ -5055,8 +4396,7 @@ loc_12B7A4:
 	LDA	obj_array_unk_415,X
 	CMP	#6
 	BNE	locret_12B7BA
-	LDA	#0
-	STA	byte_615
+	set byte_615, #0
 
 locret_12B7BA:
 	RTS
@@ -5069,16 +4409,14 @@ loc_12B7BB:
 	LDA	byte_434
 	CMP	#1
 	BNE	loc_12B7CF
-	LDA	#0
-	STA	byte_61C
+	set byte_61C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B7CF:
 	CMP	#2
 	BNE	locret_12B7D8
-	LDA	#0
-	STA	byte_61B
+	set byte_61B, #0
 
 locret_12B7D8:
 	RTS
@@ -5092,8 +4430,7 @@ loc_12B7D9:
 	LDA	obj_array_unk_415,X
 	CMP	#9
 	BNE	locret_12B7EF
-	LDA	#0
-	STA	byte_61D
+	set byte_61D, #0
 
 locret_12B7EF:
 	RTS
@@ -5107,16 +4444,14 @@ loc_12B7F0:
 	LDA	obj_array_unk_415,X
 	CMP	#7
 	BNE	loc_12B807
-	LDA	#0
-	STA	byte_61E
+	set byte_61E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B807:
 	CMP	#$1F
 	BNE	locret_12B810
-	LDA	#0
-	STA	byte_5C4
+	set byte_5C4, #0
 
 locret_12B810:
 	RTS
@@ -5130,16 +4465,14 @@ loc_12B811:
 	LDA	obj_array_unk_415,X
 	CMP	#7
 	BNE	loc_12B828
-	LDA	#0
-	STA	byte_61F
+	set byte_61F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B828:
 	CMP	#$53 
 	BNE	locret_12B831
-	LDA	#0
-	STA	byte_6AF
+	set byte_6AF, #0
 
 locret_12B831:
 	RTS
@@ -5153,16 +4486,14 @@ loc_12B832:
 	LDA	obj_array_unk_415,X
 	CMP	#$2B 
 	BNE	loc_12B849
-	LDA	#0
-	STA	byte_622
+	set byte_622, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B849:
 	CMP	#$C
 	BNE	locret_12B852
-	LDA	#0
-	STA	byte_623
+	set byte_623, #0
 
 locret_12B852:
 	RTS
@@ -5176,24 +4507,21 @@ loc_12B853:
 	LDA	obj_array_unk_415,X
 	CMP	#9
 	BNE	loc_12B86A
-	LDA	#0
-	STA	byte_624
+	set byte_624, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B86A:
 	CMP	#6
 	BNE	loc_12B874
-	LDA	#0
-	STA	byte_625
+	set byte_625, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B874:
 	CMP	#$48 
 	BNE	locret_12B87D
-	LDA	#0
-	STA	byte_6A9
+	set byte_6A9, #0
 
 locret_12B87D:
 	RTS
@@ -5207,16 +4535,14 @@ loc_12B87E:
 	LDA	obj_array_unk_415,X
 	CMP	#$B
 	BNE	loc_12B895
-	LDA	#0
-	STA	byte_626
+	set byte_626, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B895:
 	CMP	#$3E 
 	BNE	locret_12B89E
-	LDA	#0
-	STA	byte_6B1
+	set byte_6B1, #0
 
 locret_12B89E:
 	RTS
@@ -5229,40 +4555,35 @@ loc_12B89F:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12B8B3
-	LDA	#0
-	STA	byte_62A
+	set byte_62A, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8B3:
 	CMP	#1
 	BNE	loc_12B8BD
-	LDA	#0
-	STA	byte_62B
+	set byte_62B, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8BD:
 	CMP	#2
 	BNE	loc_12B8C7
-	LDA	#0
-	STA	byte_62C
+	set byte_62C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8C7:
 	CMP	#3
 	BNE	loc_12B8D1
-	LDA	#0
-	STA	byte_62D
+	set byte_62D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8D1:
 	CMP	#4
 	BNE	locret_12B8DA
-	LDA	#0
-	STA	byte_6B3
+	set byte_6B3, #0
 
 locret_12B8DA:
 	RTS
@@ -5275,32 +4596,28 @@ loc_12B8DB:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12B8EF
-	LDA	#0
-	STA	byte_637
+	set byte_637, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8EF:
 	CMP	#1
 	BNE	loc_12B8F9
-	LDA	#0
-	STA	byte_638
+	set byte_638, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8F9:
 	CMP	#2
 	BNE	loc_12B903
-	LDA	#0
-	STA	byte_639
+	set byte_639, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B903:
 	CMP	#3
 	BNE	locret_12B90C
-	LDA	#0
-	STA	byte_63A
+	set byte_63A, #0
 
 locret_12B90C:
 	RTS
@@ -5314,8 +4631,7 @@ loc_12B90D:
 	LDA	obj_array_unk_415,X
 	CMP	#$1A
 	BNE	locret_12B923
-	LDA	#0
-	STA	byte_63D
+	set byte_63D, #0
 
 locret_12B923:
 	RTS
@@ -5329,8 +4645,7 @@ loc_12B924:
 	LDA	obj_array_unk_415,X
 	CMP	#$1A
 	BNE	locret_12B93A
-	LDA	#0
-	STA	byte_63D
+	set byte_63D, #0
 
 locret_12B93A:
 	RTS
@@ -5344,16 +4659,14 @@ loc_12B93B:
 	LDA	obj_array_unk_415,X
 	CMP	#$12
 	BNE	loc_12B952
-	LDA	#0
-	STA	byte_641
+	set byte_641, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B952:
 	CMP	#9
 	BNE	locret_12B95B
-	LDA	#0
-	STA	byte_642
+	set byte_642, #0
 
 locret_12B95B:
 	RTS
@@ -5367,16 +4680,14 @@ loc_12B95C:
 	LDA	obj_array_unk_415,X
 	CMP	#$2A 
 	BNE	loc_12B973
-	LDA	#0
-	STA	byte_643
+	set byte_643, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B973:
 	CMP	#9
 	BNE	locret_12B97C
-	LDA	#0
-	STA	byte_644
+	set byte_644, #0
 
 locret_12B97C:
 	RTS
@@ -5390,8 +4701,7 @@ loc_12B97D:
 	LDA	obj_array_unk_415,X
 	CMP	#9
 	BNE	locret_12B993
-	LDA	#0
-	STA	byte_645
+	set byte_645, #0
 
 locret_12B993:
 	RTS
@@ -5405,8 +4715,7 @@ loc_12B994:
 	LDA	obj_array_unk_415,X
 	CMP	#9
 	BNE	locret_12B9AA
-	LDA	#0
-	STA	byte_645
+	set byte_645, #0
 
 locret_12B9AA:
 	RTS
@@ -5420,8 +4729,7 @@ loc_12B9AB:
 	LDA	obj_array_unk_415,X
 	CMP	#0
 	BNE	locret_12B9C1
-	LDA	#0
-	STA	byte_64B
+	set byte_64B, #0
 
 locret_12B9C1:
 	RTS
@@ -5435,24 +4743,21 @@ loc_12B9C2:
 	LDA	obj_array_unk_415,X
 	CMP	#$C
 	BNE	loc_12B9D9
-	LDA	#0
-	STA	byte_64D
+	set byte_64D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B9D9:
 	CMP	#$1A
 	BNE	loc_12B9E3
-	LDA	#0
-	STA	byte_64F
+	set byte_64F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B9E3:
 	CMP	#$12
 	BNE	locret_12B9EC
-	LDA	#0
-	STA	byte_64E
+	set byte_64E, #0
 
 locret_12B9EC:
 	RTS
@@ -5466,16 +4771,14 @@ loc_12B9ED:
 	LDA	obj_array_unk_415,X
 	CMP	#$30 
 	BNE	loc_12BA04
-	LDA	#0
-	STA	byte_650
+	set byte_650, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA04:
 	CMP	#$40 
 	BNE	locret_12BA0D
-	LDA	#0
-	STA	byte_6B4
+	set byte_6B4, #0
 
 locret_12BA0D:
 	RTS
@@ -5489,8 +4792,7 @@ loc_12BA0E:
 	LDA	obj_array_unk_415,X
 	CMP	#$30 
 	BNE	locret_12BA24
-	LDA	#0
-	STA	byte_650
+	set byte_650, #0
 
 locret_12BA24:
 	RTS
@@ -5503,32 +4805,28 @@ loc_12BA25:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12BA39
-	LDA	#0
-	STA	byte_655
+	set byte_655, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA39:
 	CMP	#1
 	BNE	loc_12BA43
-	LDA	#0
-	STA	byte_656
+	set byte_656, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA43:
 	CMP	#2
 	BNE	loc_12BA4D
-	LDA	#0
-	STA	byte_657
+	set byte_657, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA4D:
 	CMP	#3
 	BNE	locret_12BA56
-	LDA	#0
-	STA	byte_658
+	set byte_658, #0
 
 locret_12BA56:
 	RTS
@@ -5542,16 +4840,14 @@ loc_12BA57:
 	LDA	obj_array_unk_415,X
 	CMP	#9
 	BNE	loc_12BA6E
-	LDA	#0
-	STA	byte_65A
+	set byte_65A, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA6E:
 	CMP	#$12
 	BNE	locret_12BA77
-	LDA	#0
-	STA	byte_65B
+	set byte_65B, #0
 
 locret_12BA77:
 	RTS
@@ -5565,16 +4861,14 @@ loc_12BA78:
 	LDA	obj_array_unk_415,X
 	CMP	#$24 
 	BNE	loc_12BA8F
-	LDA	#0
-	STA	byte_5C5
+	set byte_5C5, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA8F:
 	CMP	#7
 	BNE	locret_12BA98
-	LDA	#0
-	STA	byte_65C
+	set byte_65C, #0
 
 locret_12BA98:
 	RTS
@@ -5588,16 +4882,14 @@ loc_12BA99:
 	LDA	obj_array_unk_415,X
 	CMP	#9
 	BNE	loc_12BAB0
-	LDA	#0
-	STA	byte_65D
+	set byte_65D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BAB0:
 	CMP	#$18
 	BNE	locret_12BAB9
-	LDA	#0
-	STA	byte_5C8
+	set byte_5C8, #0
 
 locret_12BAB9:
 	RTS
@@ -5611,16 +4903,14 @@ loc_12BABA:
 	LDA	obj_array_unk_415,X
 	CMP	#9
 	BNE	loc_12BAD1
-	LDA	#0
-	STA	byte_65D
+	set byte_65D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BAD1:
 	CMP	#$18
 	BNE	locret_12BADA
-	LDA	#0
-	STA	byte_5C8
+	set byte_5C8, #0
 
 locret_12BADA:
 	RTS
@@ -5634,24 +4924,21 @@ loc_12BADB:
 	LDA	obj_array_unk_415,X
 	CMP	#6
 	BNE	loc_12BAF2
-	LDA	#0
-	STA	byte_65F
+	set byte_65F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BAF2:
 	CMP	#$55 
 	BNE	loc_12BAFC
-	LDA	#0
-	STA	byte_6BC
+	set byte_6BC, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BAFC:
 	CMP	#$1A
 	BNE	locret_12BB05
-	LDA	#0
-	STA	byte_660
+	set byte_660, #0
 
 locret_12BB05:
 	RTS
@@ -5664,16 +4951,14 @@ loc_12BB06:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12BB1A
-	LDA	#0
-	STA	byte_663
+	set byte_663, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BB1A:
 	CMP	#1
 	BNE	locret_12BB23
-	LDA	#0
-	STA	byte_664
+	set byte_664, #0
 
 locret_12BB23:
 	RTS
@@ -5687,24 +4972,21 @@ loc_12BB24:
 	LDA	obj_array_unk_415,X
 	CMP	#8
 	BNE	loc_12BB3B
-	LDA	#0
-	STA	byte_66D
+	set byte_66D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BB3B:
 	CMP	#$41 
 	BNE	loc_12BB45
-	LDA	#0
-	STA	byte_6B5
+	set byte_6B5, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BB45:
 	CMP	#$49 
 	BNE	locret_12BB4E
-	LDA	#0
-	STA	byte_6AA
+	set byte_6AA, #0
 
 locret_12BB4E:
 	RTS
@@ -5718,16 +5000,14 @@ loc_12BB4F:
 	LDA	obj_array_unk_415,X
 	CMP	#7
 	BNE	loc_12BB66
-	LDA	#0
-	STA	byte_66F
+	set byte_66F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BB66:
 	CMP	#$4C 
 	BNE	locret_12BB6F
-	LDA	#0
-	STA	byte_6AC
+	set byte_6AC, #0
 
 locret_12BB6F:
 	RTS
@@ -5741,8 +5021,7 @@ loc_12BB70:
 	LDA	obj_array_unk_415,X
 	CMP	#7
 	BNE	locret_12BB86
-	LDA	#0
-	STA	byte_66F
+	set byte_66F, #0
 
 locret_12BB86:
 	RTS
@@ -5756,8 +5035,7 @@ loc_12BB87:
 	LDA	obj_array_unk_415,X
 	CMP	#9
 	BNE	locret_12BB9D
-	LDA	#0
-	STA	byte_671
+	set byte_671, #0
 
 locret_12BB9D:
 	RTS
@@ -5770,24 +5048,21 @@ loc_12BB9E:
 	LDA	byte_434
 	CMP	#3
 	BNE	loc_12BBB2
-	LDA	#0
-	STA	byte_672
+	set byte_672, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBB2:
 	CMP	#4
 	BNE	loc_12BBBC
-	LDA	#0
-	STA	byte_673
+	set byte_673, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBBC:
 	CMP	#5
 	BNE	locret_12BBC5
-	LDA	#0
-	STA	byte_6B6
+	set byte_6B6, #0
 
 locret_12BBC5:
 	RTS
@@ -5807,40 +5082,35 @@ loc_12BBD4:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12BBE1
-	LDA	#0
-	STA	byte_675
+	set byte_675, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBE1:
 	CMP	#1
 	BNE	loc_12BBEB
-	LDA	#0
-	STA	byte_676
+	set byte_676, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBEB:
 	CMP	#2
 	BNE	loc_12BBF5
-	LDA	#0
-	STA	byte_677
+	set byte_677, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBF5:
 	CMP	#3
 	BNE	loc_12BBFF
-	LDA	#0
-	STA	byte_678
+	set byte_678, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBFF:
 	CMP	#4
 	BNE	locret_12BC08
-	LDA	#0
-	STA	byte_679
+	set byte_679, #0
 
 locret_12BC08:
 	RTS
@@ -5853,32 +5123,28 @@ loc_12BC09:
 	LDA	byte_434
 	CMP	#2
 	BNE	loc_12BC1D
-	LDA	#0
-	STA	byte_67E
+	set byte_67E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BC1D:
 	CMP	#3
 	BNE	loc_12BC27
-	LDA	#0
-	STA	byte_67F
+	set byte_67F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BC27:
 	CMP	#4
 	BNE	loc_12BC31
-	LDA	#0
-	STA	byte_680
+	set byte_680, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BC31:
 	CMP	#5
 	BNE	locret_12BC3A
-	LDA	#0
-	STA	byte_681
+	set byte_681, #0
 
 locret_12BC3A:
 	RTS
@@ -5892,8 +5158,7 @@ loc_12BC3B:
 	LDA	obj_array_unk_415,X
 	CMP	#$2E 
 	BNE	locret_12BC51
-	LDA	#0
-	STA	byte_682
+	set byte_682, #0
 
 locret_12BC51:
 	RTS
@@ -5907,8 +5172,7 @@ loc_12BC52:
 	LDA	obj_array_unk_415,X
 	CMP	#$43 
 	BNE	locret_12BC68
-	LDA	#0
-	STA	byte_6B7
+	set byte_6B7, #0
 
 locret_12BC68:
 	RTS
@@ -5922,8 +5186,7 @@ loc_12BC69:
 	LDA	obj_array_unk_415,X
 	CMP	#$44 
 	BNE	locret_12BC7F
-	LDA	#0
-	STA	byte_6B8
+	set byte_6B8, #0
 
 locret_12BC7F:
 	RTS
@@ -5937,8 +5200,7 @@ loc_12BC80:
 	LDA	obj_array_unk_415,X
 	CMP	#$45 
 	BNE	locret_12BC96
-	LDA	#0
-	STA	byte_6B9
+	set byte_6B9, #0
 
 locret_12BC96:
 	RTS
@@ -5952,8 +5214,7 @@ loc_12BC97:
 	LDA	obj_array_unk_415,X
 	CMP	#$46 
 	BNE	locret_12BCAD
-	LDA	#0
-	STA	byte_6BA
+	set byte_6BA, #0
 
 locret_12BCAD:
 	RTS
@@ -5973,22 +5234,19 @@ loc_12BCBC:
 	LDA	byte_434
 	CMP	#1
 	BNE	loc_12BCC9
-	LDA	#0
-	STA	byte_685
+	set byte_685, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BCC9:
 	CMP	#2
 	BNE	loc_12BCD2
-	LDA	#0
-	STA	byte_686
+	set byte_686, #0
 
 loc_12BCD2:
 	CMP	#3
 	BNE	locret_12BCDB
-	LDA	#0
-	STA	byte_687
+	set byte_687, #0
 
 locret_12BCDB:
 	RTS
@@ -6001,24 +5259,21 @@ loc_12BCDC:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12BCF0
-	LDA	#0
-	STA	byte_68B
+	set byte_68B, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BCF0:
 	CMP	#1
 	BNE	loc_12BCFA
-	LDA	#0
-	STA	byte_68C
+	set byte_68C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BCFA:
 	CMP	#5
 	BNE	locret_12BD03
-	LDA	#0
-	STA	byte_69F
+	set byte_69F, #0
 
 locret_12BD03:
 	RTS
@@ -6031,32 +5286,28 @@ loc_12BD04:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12BD18
-	LDA	#0
-	STA	byte_691
+	set byte_691, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD18:
 	CMP	#1
 	BNE	loc_12BD22
-	LDA	#0
-	STA	byte_692
+	set byte_692, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD22:
 	CMP	#2
 	BNE	loc_12BD2C
-	LDA	#0
-	STA	byte_693
+	set byte_693, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD2C:
 	CMP	#3
 	BNE	locret_12BD35
-	LDA	#0
-	STA	byte_694
+	set byte_694, #0
 
 locret_12BD35:
 	RTS
@@ -6069,16 +5320,14 @@ loc_12BD36:
 	LDA	byte_434
 	CMP	#0
 	BNE	loc_12BD4A
-	LDA	#0
-	STA	byte_6A5
+	set byte_6A5, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD4A:
 	CMP	#1
 	BNE	locret_12BD53
-	LDA	#0
-	STA	byte_6A6
+	set byte_6A6, #0
 
 locret_12BD53:
 	RTS
@@ -6090,8 +5339,7 @@ loc_12BD54:
 	LDA	obj_array_unk_415,X
 	CMP	#$20 
 	BNE	loc_12BD64
-	LDA	#0
-	STA	byte_5AD
+	set byte_5AD, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -6101,20 +5349,15 @@ loc_12BD64:
 	LDA	entry_idx_300
 	CMP	#$1E
 	BEQ	loc_12BD75
-	LDA	#0
-	STA	byte_5A8
+	set byte_5A8, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD75:
-	LDA	#0
-	STA	byte_5BD
-	LDA	#5
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set byte_5BD, #0
+	set text_idx_35C, #5
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6122,58 +5365,50 @@ loc_12BD75:
 loc_12BD8D:
 	CMP	#$19
 	BNE	loc_12BD9C
-	LDA	#0
-	STA	byte_683
-	LDA	#$FF
-	STA	byte_59E
+	set byte_683, #0
+	set byte_59E, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD9C:
 	CMP	#$39 
 	BNE	loc_12BDA6
-	LDA	#0
-	STA	byte_6BB
+	set byte_6BB, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDA6:
 	CMP	#$50 
 	BNE	loc_12BDB0
-	LDA	#0
-	STA	byte_6AD
+	set byte_6AD, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDB0:
 	CMP	#$21 
 	BNE	loc_12BDBA
-	LDA	#0
-	STA	byte_5B3
+	set byte_5B3, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDBA:
 	CMP	#$16
 	BNE	loc_12BDC4
-	LDA	#0
-	STA	byte_5C9
+	set byte_5C9, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDC4:
 	CMP	#$2D 
 	BNE	loc_12BDCE
-	LDA	#0
-	STA	byte_5BB
+	set byte_5BB, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDCE:
 	CMP	#$30 
 	BNE	loc_12BDD8
-	LDA	#0
-	STA	byte_614
+	set byte_614, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -6183,20 +5418,15 @@ loc_12BDD8:
 	LDA	entry_idx_300
 	CMP	#$1E
 	BEQ	loc_12BDE9
-	LDA	#0
-	STA	byte_5A9
+	set byte_5A9, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDE9:
-	LDA	#0
-	STA	byte_5BC
-	LDA	#5
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set byte_5BC, #0
+	set text_idx_35C, #5
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6204,26 +5434,22 @@ loc_12BDE9:
 loc_12BE01:
 	CMP	#$14
 	BNE	loc_12BE0B
-	LDA	#0
-	STA	byte_5BE
+	set byte_5BE, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BE0B:
 	CMP	#$23 
 	BNE	loc_12BE15
-	LDA	#0
-	STA	byte_5AA
+	set byte_5AA, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BE15:
 	CMP	#$15
 	BNE	loc_12BE5D
-	LDA	#0
-	STA	byte_5D1
-	LDA	#$FF
-	STA	byte_596
+	set byte_5D1, #0
+	set byte_596, #$FF
 	STA	byte_5DA
 	STA	byte_5DB
 	STA	byte_5E0
@@ -6249,8 +5475,7 @@ loc_12BE15:
 loc_12BE5D:
 	CMP	#3
 	BNE	loc_12BE67
-	LDA	#0
-	STA	byte_5D9
+	set byte_5D9, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -6260,38 +5485,31 @@ loc_12BE67:
 	LDA	byte_5F9
 	CMP	#$FF
 	BEQ	loc_12BE78
-	LDA	#0
-	STA	byte_5EF
+	set byte_5EF, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BE78:
-	LDA	#0
-	STA	byte_5F9
+	set byte_5F9, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BE7E:
 	CMP	#$22 
 	BNE	loc_12BE88
-	LDA	#0
-	STA	byte_606
+	set byte_606, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BE88:
 	CMP	#4
 	BNE	loc_12BEAA
-	LDA	#0
-	STA	byte_616
-	LDA	#$FF
-	STA	byte_617
+	set byte_616, #0
+	set byte_617, #$FF
 	STA	byte_618
-	LDA	#1
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
-	LDA	#2
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #2
 	JSR	sub_12BF29
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6299,8 +5517,7 @@ loc_12BE88:
 loc_12BEAA:
 	CMP	#$26 
 	BNE	locret_12BEB4
-	LDA	#0
-	STA	byte_654
+	set byte_654, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -6315,12 +5532,9 @@ locret_12BEB4:
 sub_12BEB5:
 	LDA	byte_5B0
 	BEQ	locret_12BEF9
-	LDA	#0
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #0
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -6345,10 +5559,8 @@ loc_12BEE2:
 loc_12BEE9:
 	STX	cur_obj_idx_unk_43A
 	JSR	exec_b0_c3_128418
-	LDA	#0
-	STA	byte_5B0
-	LDA	#$FF
-	STA	byte_5AA
+	set byte_5B0, #0
+	set byte_5AA, #$FF
 
 locret_12BEF9:
 	
@@ -6363,12 +5575,9 @@ sub_12BEFA:
 	LDA	byte_471
 	CMP	#0
 	BNE	loc_12BF14
-	LDA	#$39 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$39 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6385,8 +5594,7 @@ loc_12BF14:
 
 loc_12BF23:
 	
-	LDA	#$22 
-	STA	byte_46D
+	set byte_46D, #$22 
 	RTS
 ; End of function sub_12BEFA
 
@@ -6397,8 +5605,7 @@ loc_12BF23:
 sub_12BF29:
 	
 	LDX	cur_obj_idx_unk_43A
-	LDA	#0
-	STA	objCreatedArray_393,X
+	set {objCreatedArray_393,X}, #0
 	RTS
 ; End of function sub_12BF29
 
@@ -6410,19 +5617,15 @@ sub_12BF32:
 	LDA	byte_471
 	CMP	#0
 	BNE	loc_12BF4C
-	LDA	#$37 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$37 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BF4C:
-	LDA	#$2C 
-	STA	byte_46D
+	set byte_46D, #$2C 
 	RTS
 ; End of function sub_12BF32
 
@@ -6437,20 +5640,16 @@ sub_12BF52:
 	LDA	byte_55F
 	CMP	#$FF
 	BEQ	locret_12BF65
-	LDA	#$2D 
-	STA	byte_46D
+	set byte_46D, #$2D 
 
 locret_12BF65:
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BF66:
-	LDA	#$BE 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$BE 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; End of function sub_12BF52
@@ -6464,8 +5663,7 @@ sub_12BF79:
 	BNE	locret_12BF88
 	LDA	byte_5BD
 	BNE	locret_12BF88
-	LDA	#$1C
-	STA	byte_46D
+	set byte_46D, #$1C
 
 locret_12BF88:
 	
@@ -6481,8 +5679,7 @@ sub_12BF89:
 	BNE	locret_12BF98
 	LDA	byte_5A9
 	BNE	locret_12BF98
-	LDA	#$1C
-	STA	byte_46D
+	set byte_46D, #$1C
 
 locret_12BF98:
 	
@@ -6503,13 +5700,11 @@ sub_12BF99:
 	LDA	byte_59F
 	CMP	#0
 	BNE	locret_12BFC0
-	LDA	#$1E
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, #$1E
 	JSR	sub_12D58C
 	LDA	sprite_length_30F
 	BEQ	locret_12BFC0
-	LDA	#1
-	STA	byte_59F
+	set byte_59F, #1
 
 locret_12BFC0:
 	
@@ -6518,15 +5713,11 @@ locret_12BFC0:
 
 loc_12BFC1:
 	
-	LDA	#$FF
-	STA	byte_560
+	set byte_560, #$FF
 	JSR	exec_b0_c4_12842B
-	LDA	#1
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #1
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c4_12842B
 	RTS
@@ -6540,8 +5731,7 @@ sub_12BFDF:
 	LDA	byte_471
 	CMP	#0
 	BEQ	loc_12BFEC
-	LDA	#$1B
-	STA	byte_46D
+	set byte_46D, #$1B
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -6549,27 +5739,20 @@ loc_12BFEC:
 	LDA	byte_562
 	CMP	#0
 	BNE	loc_12C00B
-	LDA	#$FF
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#7
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$FF
+	set char_type_id_35D, #0
+	set tilemapTypeUnk_30B, #7
 	JSR	exec_b0_c0_12A973
-	LDA	#$F
-	STA	byte_562
+	set byte_562, #$F
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C00B:
 	CMP	#$F
 	BNE	locret_12C021
-	LDA	#5
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #5
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
 locret_12C021:
@@ -6589,44 +5772,29 @@ sub_12C022:
 	LDA	byte_5C4
 	CMP	#$FF
 	BEQ	locret_12C095
-	LDA	#$FF
-	STA	byte_563
-	LDA	#2
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set byte_563, #$FF
+	set text_idx_35C, #2
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	sub_12D21B
-	LDA	#3
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
+	set text_idx_35C, #3
+	set char_type_id_35D, #2
 	JSR	exec_b2_c3_128313
 
 set_mansion_saveroom_12C05C:
-	LDA	#$21 
-	STA	image_id_4A4
-	LDA	#0
-	STA	image_offset_4A5
-	LDA	#0
-	STA	ppu_prev_unk_4A6
-	LDA	#0
-	STA	ppu_prev_scroll_x_unk_4A7
+	set image_id_4A4, #$21 
+	set image_offset_4A5, #0
+	set ppu_prev_unk_4A6, #0
+	set ppu_prev_scroll_x_unk_4A7, #0
 	STA	ppu_prev_scroll_y_unk_4A8
 	STA	prev_sprite_type_4A9
-	LDA	#$60 
-	STA	byte_4AD
-	LDA	#$70 
-	STA	byte_4AE
+	set byte_4AD, #$60 
+	set byte_4AE, #$70 
 	JSR	exec_b0_c2_12A9A9
-	LDA	#$B
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
 locret_12C095:
@@ -6641,13 +5809,11 @@ locret_12C095:
 sub_12C096:
 	LDA	byte_564
 	BNE	locret_12C0AD
-	LDA	#$29 
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, #$29 
 	JSR	sub_12D58C
 	LDA	sprite_length_30F
 	BEQ	locret_12C0AD
-	LDA	#$FF
-	STA	byte_564
+	set byte_564, #$FF
 
 locret_12C0AD:
 	
@@ -6662,18 +5828,14 @@ sub_12C0AE:
 	LDA	byte_471
 	CMP	#0
 	BEQ	loc_12C0BB
-	LDA	#$29 
-	STA	byte_46D
+	set byte_46D, #$29 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C0BB:
-	LDA	#$CB 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$CB 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; End of function sub_12C0AE
@@ -6686,29 +5848,20 @@ sub_12C0CE:
 	LDA	byte_566
 	CMP	#0
 	BNE	locret_12C118
-	LDA	#$D6 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$D6 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
 	BNE	locret_12C118
-	LDA	#$FF
-	STA	byte_566
+	set byte_566, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 
 locret_12C118:
@@ -6780,14 +5933,10 @@ sub_12C13C:
 	BCC	locret_12C1B7
 	JSR	sub_12C1B8
 	LDY	byte_577
-	LDA	array_unk_3C5,X
-	STA	byte_578,Y
-	LDA	array_unk_3BB,X
-	STA	byte_57B,Y
-	LDA	array_unk_3D9,X
-	STA	byte_57E,Y
-	LDA	array_unk_3CF,X
-	STA	byte_581,Y
+	set {byte_578,Y}, {array_unk_3C5,X}
+	set {byte_57B,Y}, {array_unk_3BB,X}
+	set {byte_57E,Y}, {array_unk_3D9,X}
+	set {byte_581,Y}, {array_unk_3CF,X}
 	INC	byte_577
 	LDA	byte_577
 	CMP	#3
@@ -6802,8 +5951,7 @@ sub_12C13C:
 	BNE	locret_12C1B7
 	CMP	byte_57D
 	BNE	locret_12C1B7
-	LDA	#$FF
-	STA	byte_577
+	set byte_577, #$FF
 
 locret_12C1B7:
 	
@@ -6871,18 +6019,14 @@ loc_12C1FA:
 	LDA	byte_585
 	CMP	#$FF
 	BEQ	locret_12C220
-	LDA	#$E2 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$E2 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
 	BNE	locret_12C220
-	LDA	#$FF
-	STA	byte_585
+	set byte_585, #$FF
 
 locret_12C220:
 	
@@ -6901,22 +6045,16 @@ sub_12C221:
 ; ---------------------------------------------------------------------------
 
 loc_12C229:
-	LDA	#$E3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$E3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
 	BNE	locret_12C25D
-	LDA	#$E4 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$E4 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	LDA	byte_5CA
 	EOR	#$FF
@@ -6934,18 +6072,14 @@ sub_12C25E:
 	LDA	byte_471
 	CMP	#0
 	BEQ	loc_12C26B
-	LDA	#$24 
-	STA	byte_46D
+	set byte_46D, #$24 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C26B:
-	LDA	#$42 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$42 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; End of function sub_12C25E
@@ -6962,25 +6096,18 @@ sub_12C27E:
 ; ---------------------------------------------------------------------------
 
 loc_12C286:
-	LDA	#$33 
-	STA	inv_sprite_idx_31C
+	set inv_sprite_idx_31C, #$33 
 	JSR	sub_128955
 	LDA	is_game_finished_561
 	CMP	#$FF
 	BEQ	return_12C2BE
-	LDA	#$FF
-	STA	byte_587
+	set byte_587, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 
 return_12C2BE:
@@ -6999,8 +6126,7 @@ sub_12C2BF:
 	ORA	byte_5F9
 	CMP	#0
 	BNE	locret_12C2D5
-	LDA	#2
-	STA	byte_46D
+	set byte_46D, #2
 
 locret_12C2D5:
 	
@@ -7015,12 +6141,9 @@ sub_12C2D6:
 	LDA	byte_471
 	CMP	#0
 	BNE	locret_12C323
-	LDA	#$E3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$E3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -7029,16 +6152,11 @@ sub_12C2D6:
 	EOR	#$FF
 	STA	byte_589
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 
 locret_12C323:
@@ -7054,12 +6172,9 @@ sub_12C324:
 	LDA	byte_471
 	CMP	#0
 	BNE	locret_12C371
-	LDA	#$E3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$E3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -7068,16 +6183,11 @@ sub_12C324:
 	EOR	#$FF
 	STA	byte_58B
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 
 locret_12C371:
@@ -7101,18 +6211,14 @@ sub_12C373:
 	LDA	byte_471
 	CMP	#0
 	BEQ	loc_12C380
-	LDA	#$2A 
-	STA	byte_46D
+	set byte_46D, #$2A 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C380:
-	LDA	#$B
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; End of function sub_12C373
@@ -7125,21 +6231,16 @@ sub_12C393:
 	LDA	byte_471
 	CMP	#0
 	BNE	loc_12C3AD
-	LDA	#$BA 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$BA 
+	set char_type_id_35D, #0
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C3AD:
-	LDA	#3
-	STA	byte_47F
-	LDA	#$1A
-	STA	byte_46D
+	set byte_47F, #3
+	set byte_46D, #$1A
 	RTS
 ; End of function sub_12C393
 
@@ -7148,8 +6249,7 @@ loc_12C3AD:
 
 
 sub_12C3B8:
-	LDA	#$FF
-	STA	byte_58D
+	set byte_58D, #$FF
 	RTS
 ; End of function sub_12C3B8
 
@@ -7160,8 +6260,7 @@ sub_12C3B8:
 sub_12C3BE:
 	LDA	byte_58D
 	BEQ	locret_12C3C8
-	LDA	#$FF
-	STA	byte_58E
+	set byte_58E, #$FF
 
 locret_12C3C8:
 	RTS
@@ -7175,21 +6274,16 @@ sub_12C3C9:
 	LDA	byte_471
 	CMP	#0
 	BNE	loc_12C3E3
-	LDA	#$BA 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$BA 
+	set char_type_id_35D, #0
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C3E3:
-	LDA	#1
-	STA	byte_47F
-	LDA	#$1A
-	STA	byte_46D
+	set byte_47F, #1
+	set byte_46D, #$1A
 	RTS
 ; End of function sub_12C3C9
 
@@ -7201,21 +6295,16 @@ sub_12C3EE:
 	LDA	byte_471
 	CMP	#0
 	BNE	loc_12C408
-	LDA	#$BA 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$BA 
+	set char_type_id_35D, #0
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C408:
-	LDA	#2
-	STA	byte_47F
-	LDA	#$1A
-	STA	byte_46D
+	set byte_47F, #2
+	set byte_46D, #$1A
 	RTS
 ; End of function sub_12C3EE
 
@@ -7227,21 +6316,16 @@ sub_12C413:
 	LDA	byte_471
 	CMP	#0
 	BNE	loc_12C42D
-	LDA	#$BA 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$BA 
+	set char_type_id_35D, #0
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C42D:
-	LDA	#4
-	STA	byte_47F
-	LDA	#$1A
-	STA	byte_46D
+	set byte_47F, #4
+	set byte_46D, #$1A
 	RTS
 ; End of function sub_12C413
 
@@ -7263,18 +6347,14 @@ sub_12C43F:
 	LDA	byte_471
 	CMP	#0
 	BEQ	loc_12C44C
-	LDA	#$2A 
-	STA	byte_46D
+	set byte_46D, #$2A 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C44C:
-	LDA	#$B
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$B
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; End of function sub_12C43F
@@ -7287,8 +6367,7 @@ sub_12C45F:
 	LDA	byte_651
 	CMP	#0
 	BEQ	locret_12C46B
-	LDA	#$FF
-	STA	byte_58D
+	set byte_58D, #$FF
 
 locret_12C46B:
 	RTS
@@ -7318,14 +6397,11 @@ sub_12C46C:
 	LDX	#4
 	LDY	#$10
 	JSR	sub_12C1C3
-	LDA	#5
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #5
 	JSR	exec_b0_c3_128418
-	LDA	#6
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #6
 	JSR	exec_b0_c3_128418
-	LDA	#0
-	STA	byte_659
+	set byte_659, #0
 
 locret_12C4AD:
 	
@@ -7340,21 +6416,16 @@ sub_12C4AE:
 	LDA	byte_471
 	CMP	#0
 	BNE	loc_12C4C8
-	LDA	#$BA 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$BA 
+	set char_type_id_35D, #0
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C4C8:
-	LDA	#5
-	STA	byte_47F
-	LDA	#$1A
-	STA	byte_46D
+	set byte_47F, #5
+	set byte_46D, #$1A
 	RTS
 ; End of function sub_12C4AE
 
@@ -7366,14 +6437,11 @@ sub_12C4D3:
 	LDA	byte_313
 	CMP	#1
 	BNE	locret_12C4F2
-	LDA	#1
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
-	LDA	#2
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #2
 	JSR	sub_12BF29
-	LDA	#3
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #3
 	JSR	sub_12BF29
 
 locret_12C4F2:
@@ -7391,18 +6459,14 @@ sub_12C4F3:
 	LDA	byte_471
 	CMP	#0
 	BEQ	loc_12C507
-	LDA	#$39 
-	STA	byte_46D
+	set byte_46D, #$39 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C507:
-	LDA	#$D
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$D
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
 locret_12C519:
@@ -7420,18 +6484,14 @@ sub_12C51A:
 	LDA	byte_471
 	CMP	#0
 	BEQ	loc_12C52E
-	LDA	#$27 
-	STA	byte_46D
+	set byte_46D, #$27 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C52E:
-	LDA	#$E
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$E
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
 locret_12C540:
@@ -7449,18 +6509,14 @@ sub_12C541:
 	LDA	byte_471
 	CMP	#0
 	BEQ	loc_12C555
-	LDA	#$28 
-	STA	byte_46D
+	set byte_46D, #$28 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C555:
-	LDA	#$F
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$F
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
 locret_12C567:
@@ -7475,18 +6531,14 @@ sub_12C568:
 	LDA	byte_471
 	CMP	#0
 	BEQ	loc_12C575
-	LDA	#$2E 
-	STA	byte_46D
+	set byte_46D, #$2E 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C575:
-	LDA	#$12
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$12
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; End of function sub_12C568
@@ -7504,22 +6556,18 @@ show_tree_screen_12C588:
 	to_stack sprite_type_306
 
 set_tree_screen_12C5A0:
-	LDA	#$9D 
-	STA	image_id_4A4
+	set image_id_4A4, #$9D 
 	LDA	byte_593
 	CMP	#0
 	BEQ	loc_12C5B1
-	LDA	#$9E 
-	STA	image_id_4A4
+	set image_id_4A4, #$9E 
 
 loc_12C5B1:
-	LDA	#0
-	STA	image_offset_4A5
+	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
 	STA	ppu_prev_scroll_x_unk_4A7
 	STA	ppu_prev_scroll_y_unk_4A8
-	LDA	#$FF
-	STA	prev_sprite_type_4A9
+	set prev_sprite_type_4A9, #$FF
 	JSR	exec_b0_c2_12A9A9
 	JSR	wait_for_b_pressed_FCC5
 	from_stack prev_sprite_type_4A9
@@ -7528,11 +6576,9 @@ loc_12C5B1:
 	from_stack ppu_prev_unk_4A6
 	from_stack image_offset_4A5
 	from_stack image_id_4A4
-	LDA	#$FF
-	STA	map_show_43B
+	set map_show_43B, #$FF
 	JSR	exec_b0_c2_12A9A9
-	LDA	#0
-	STA	map_show_43B
+	set map_show_43B, #0
 	RTS
 ; End of function show_tree_screen_12C588
 
@@ -7541,12 +6587,9 @@ loc_12C5B1:
 
 
 sub_12C5F0:
-	LDA	#$E3 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$E3 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -7555,16 +6598,11 @@ sub_12C5F0:
 	EOR	#$FF
 	STA	byte_593
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 
 locret_12C636:
@@ -7603,30 +6641,23 @@ loc_12C661:
 	LDA	byte_471
 	CMP	#0
 	BEQ	loc_12C66E
-	LDA	#$30 
-	STA	byte_46D
+	set byte_46D, #$30 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C66E:
-	LDA	#$20 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$20 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C681:
 	
-	LDA	#$21 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$21 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; End of function sub_12C637
@@ -7636,19 +6667,15 @@ loc_12C681:
 
 
 sub_12C694:
-	LDA	#$24 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$24 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
 	CMP	#1
 	BEQ	locret_12C6B8
-	LDA	#2
-	STA	byte_420
+	set byte_420, #2
 	JSR	sub_12F07D
 
 locret_12C6B8:
@@ -7663,21 +6690,16 @@ sub_12C6B9:
 	LDA	byte_471
 	CMP	#0
 	BNE	loc_12C6D3
-	LDA	#$BA 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$BA 
+	set char_type_id_35D, #0
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C6D3:
-	LDA	#6
-	STA	byte_47F
-	LDA	#$1A
-	STA	byte_46D
+	set byte_47F, #6
+	set byte_46D, #$1A
 	RTS
 ; End of function sub_12C6B9
 
@@ -7686,19 +6708,15 @@ loc_12C6D3:
 
 
 sub_12C6DE:
-	LDA	#$2A 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$2A 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
 	CMP	#1
 	BEQ	locret_12C6FF
-	LDA	#$FF
-	STA	byte_67B
+	set byte_67B, #$FF
 
 locret_12C6FF:
 	RTS
@@ -7712,12 +6730,9 @@ sub_12C700:
 	LDA	byte_67A
 	CMP	#$FF
 	BEQ	loc_12C72A
-	LDA	#$27 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$27 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -7728,25 +6743,18 @@ sub_12C700:
 	BNE	loc_12C742
 
 loc_12C72A:
-	LDA	#$28 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$28 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	#$FF
-	STA	byte_67A
+	set byte_67A, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C742:
-	LDA	#$29 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$29 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
 locret_12C754:
@@ -7758,12 +6766,9 @@ locret_12C754:
 
 
 sub_12C755:
-	LDA	#$26 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$26 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	LDA	byte_372
@@ -7772,18 +6777,14 @@ sub_12C755:
 	LDA	byte_67A
 	CMP	#0
 	BEQ	loc_12C77E
-	LDA	#$FF
-	STA	byte_6A0
+	set byte_6A0, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C77E:
-	LDA	#$33 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$33 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
@@ -7800,22 +6801,15 @@ sub_12C792:
 	LDA	byte_595
 	CMP	#$FF
 	BEQ	locret_12C7CA
-	LDA	#$FF
-	STA	byte_595
+	set byte_595, #$FF
 	STA	byte_6A1
-	LDA	#0
-	STA	byte_6A3
+	set byte_6A3, #0
 	JSR	entry_idx_handler_unk_12AA6D
-	LDA	entry_idx_300
-	STA	image_id_4A4
-	LDA	ppu_unk_byte_302
-	STA	image_offset_4A5
-	LDA	ppu_unk_byte_303
-	STA	ppu_prev_unk_4A6
-	LDA	ppu_scroll_x_304
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	ppu_scroll_y_305
-	STA	ppu_prev_scroll_y_unk_4A8
+	set image_id_4A4, entry_idx_300
+	set image_offset_4A5, ppu_unk_byte_302
+	set ppu_prev_unk_4A6, ppu_unk_byte_303
+	set ppu_prev_scroll_x_unk_4A7, ppu_scroll_x_304
+	set ppu_prev_scroll_y_unk_4A8, ppu_scroll_y_305
 	JSR	exec_b0_c2_12A9A9
 
 locret_12C7CA:
@@ -7827,12 +6821,9 @@ locret_12C7CA:
 
 
 sub_12C7CB:
-	LDA	#$35 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$35 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; End of function sub_12C7CB
@@ -7846,8 +6837,7 @@ sub_12C7DE:
 	LDA	image_id_4A4
 	CMP	#$18
 	BNE	loc_12C7EB
-	LDA	#2
-	STA	byte_54E
+	set byte_54E, #2
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7858,14 +6848,12 @@ loc_12C7EB:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12C7FF
-	LDA	#0
-	STA	byte_5E8
+	set byte_5E8, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C7FF:
-	LDA	#0
-	STA	byte_5E9
+	set byte_5E9, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7873,8 +6861,7 @@ loc_12C805:
 	LDA	image_id_4A4
 	CMP	#$87 
 	BNE	loc_12C812
-	LDA	#0
-	STA	byte_5D8
+	set byte_5D8, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7885,14 +6872,12 @@ loc_12C812:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12C826
-	LDA	#0
-	STA	byte_5DA
+	set byte_5DA, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C826:
-	LDA	#0
-	STA	byte_5DB
+	set byte_5DB, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7900,8 +6885,7 @@ loc_12C82C:
 	LDA	image_id_4A4
 	CMP	#$22 
 	BNE	loc_12C839
-	LDA	#0
-	STA	byte_5E0
+	set byte_5E0, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7909,8 +6893,7 @@ loc_12C839:
 	LDA	image_id_4A4
 	CMP	#$23 
 	BNE	loc_12C846
-	LDA	#0
-	STA	byte_5E1
+	set byte_5E1, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7921,14 +6904,12 @@ loc_12C846:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#1
 	BNE	loc_12C85A
-	LDA	#0
-	STA	byte_5E4
+	set byte_5E4, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C85A:
-	LDA	#0
-	STA	byte_5E5
+	set byte_5E5, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7939,14 +6920,12 @@ loc_12C860:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12C874
-	LDA	#0
-	STA	byte_5F0
+	set byte_5F0, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C874:
-	LDA	#0
-	STA	byte_5F1
+	set byte_5F1, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7954,8 +6933,7 @@ loc_12C87A:
 	LDA	image_id_4A4
 	CMP	#$2C 
 	BNE	loc_12C887
-	LDA	#0
-	STA	byte_5F2
+	set byte_5F2, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7963,8 +6941,7 @@ loc_12C887:
 	LDA	image_id_4A4
 	CMP	#$30 
 	BNE	loc_12C894
-	LDA	#0
-	STA	byte_5F6
+	set byte_5F6, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7975,14 +6952,12 @@ loc_12C894:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#1
 	BNE	loc_12C8A8
-	LDA	#0
-	STA	byte_5B2
+	set byte_5B2, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C8A8:
-	LDA	#0
-	STA	byte_5B1
+	set byte_5B1, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7993,14 +6968,12 @@ loc_12C8AE:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12C8C2
-	LDA	#0
-	STA	byte_602
+	set byte_602, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C8C2:
-	LDA	#0
-	STA	byte_603
+	set byte_603, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8008,8 +6981,7 @@ loc_12C8C8:
 	LDA	image_id_4A4
 	CMP	#$3C 
 	BNE	loc_12C8D5
-	LDA	#0
-	STA	byte_612
+	set byte_612, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8020,22 +6992,19 @@ loc_12C8D5:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#2
 	BNE	loc_12C8E9
-	LDA	#0
-	STA	byte_60A
+	set byte_60A, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C8E9:
 	CMP	#3
 	BNE	loc_12C8F3
-	LDA	#0
-	STA	byte_60B
+	set byte_60B, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C8F3:
-	LDA	#0
-	STA	byte_60C
+	set byte_60C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8046,14 +7015,12 @@ loc_12C8F9:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12C90D
-	LDA	#0
-	STA	byte_619
+	set byte_619, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C90D:
-	LDA	#0
-	STA	byte_61A
+	set byte_61A, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8064,14 +7031,12 @@ loc_12C913:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12C927
-	LDA	#0
-	STA	byte_620
+	set byte_620, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C927:
-	LDA	#0
-	STA	byte_621
+	set byte_621, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8079,8 +7044,7 @@ loc_12C92D:
 	LDA	image_id_4A4
 	CMP	#$32 
 	BNE	loc_12C93A
-	LDA	#0
-	STA	byte_5FC
+	set byte_5FC, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8091,14 +7055,12 @@ loc_12C93A:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12C94E
-	LDA	#0
-	STA	byte_5FD
+	set byte_5FD, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C94E:
-	LDA	#0
-	STA	byte_5FE
+	set byte_5FE, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8109,14 +7071,12 @@ loc_12C954:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12C968
-	LDA	#0
-	STA	byte_5FF
+	set byte_5FF, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C968:
-	LDA	#0
-	STA	byte_600
+	set byte_600, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8127,22 +7087,19 @@ loc_12C96E:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#6
 	BNE	loc_12C982
-	LDA	#0
-	STA	byte_630
+	set byte_630, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C982:
 	CMP	#7
 	BNE	loc_12C98C
-	LDA	#0
-	STA	byte_631
+	set byte_631, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C98C:
-	LDA	#0
-	STA	byte_632
+	set byte_632, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8153,14 +7110,12 @@ loc_12C992:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12C9A6
-	LDA	#0
-	STA	byte_634
+	set byte_634, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C9A6:
-	LDA	#0
-	STA	byte_634
+	set byte_634, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8171,14 +7126,12 @@ loc_12C9AC:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#4
 	BNE	loc_12C9C0
-	LDA	#0
-	STA	byte_63B
+	set byte_63B, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C9C0:
-	LDA	#0
-	STA	byte_63C
+	set byte_63C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8186,8 +7139,7 @@ loc_12C9C6:
 	LDA	image_id_4A4
 	CMP	#$54 
 	BNE	loc_12C9D3
-	LDA	#0
-	STA	byte_63E
+	set byte_63E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8198,14 +7150,12 @@ loc_12C9D3:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12C9E7
-	LDA	#0
-	STA	byte_63F
+	set byte_63F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C9E7:
-	LDA	#0
-	STA	byte_640
+	set byte_640, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8213,8 +7163,7 @@ loc_12C9ED:
 	LDA	image_id_4A4
 	CMP	#$91 
 	BNE	loc_12C9FA
-	LDA	#0
-	STA	byte_647
+	set byte_647, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8225,22 +7174,19 @@ loc_12C9FA:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12CA0E
-	LDA	#0
-	STA	byte_648
+	set byte_648, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CA0E:
 	CMP	#1
 	BNE	loc_12CA18
-	LDA	#0
-	STA	byte_649
+	set byte_649, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CA18:
-	LDA	#0
-	STA	byte_64A
+	set byte_64A, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8248,8 +7194,7 @@ loc_12CA1E:
 	LDA	image_id_4A4
 	CMP	#$60 
 	BNE	loc_12CA2B
-	LDA	#0
-	STA	byte_65E
+	set byte_65E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8260,14 +7205,12 @@ loc_12CA2B:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#2
 	BNE	loc_12CA3F
-	LDA	#0
-	STA	byte_661
+	set byte_661, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CA3F:
-	LDA	#0
-	STA	byte_662
+	set byte_662, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8278,14 +7221,12 @@ loc_12CA45:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#2
 	BNE	loc_12CA59
-	LDA	#0
-	STA	byte_668
+	set byte_668, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CA59:
-	LDA	#0
-	STA	byte_669
+	set byte_669, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8296,14 +7237,12 @@ loc_12CA5F:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#1
 	BNE	loc_12CA73
-	LDA	#0
-	STA	byte_66B
+	set byte_66B, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CA73:
-	LDA	#0
-	STA	byte_66C
+	set byte_66C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8311,8 +7250,7 @@ loc_12CA79:
 	LDA	image_id_4A4
 	CMP	#$66 
 	BNE	loc_12CA86
-	LDA	#0
-	STA	byte_66E
+	set byte_66E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8320,8 +7258,7 @@ loc_12CA86:
 	LDA	image_id_4A4
 	CMP	#$68 
 	BNE	loc_12CA93
-	LDA	#0
-	STA	byte_670
+	set byte_670, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8332,14 +7269,12 @@ loc_12CA93:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12CAA7
-	LDA	#0
-	STA	byte_67C
+	set byte_67C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CAA7:
-	LDA	#0
-	STA	byte_67D
+	set byte_67D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8350,22 +7285,19 @@ loc_12CAAD:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12CAC1
-	LDA	#0
-	STA	byte_688
+	set byte_688, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CAC1:
 	CMP	#1
 	BNE	loc_12CACB
-	LDA	#0
-	STA	byte_689
+	set byte_689, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CACB:
-	LDA	#0
-	STA	byte_68A
+	set byte_68A, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8376,22 +7308,19 @@ loc_12CAD1:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12CAE5
-	LDA	#0
-	STA	byte_695
+	set byte_695, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CAE5:
 	CMP	#1
 	BNE	loc_12CAEF
-	LDA	#0
-	STA	byte_696
+	set byte_696, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CAEF:
-	LDA	#0
-	STA	byte_697
+	set byte_697, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8402,30 +7331,26 @@ loc_12CAF5:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12CB09
-	LDA	#0
-	STA	byte_698
+	set byte_698, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CB09:
 	CMP	#1
 	BNE	loc_12CB13
-	LDA	#0
-	STA	byte_699
+	set byte_699, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CB13:
 	CMP	#2
 	BNE	loc_12CB1D
-	LDA	#0
-	STA	byte_69A
+	set byte_69A, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CB1D:
-	LDA	#0
-	STA	byte_69B
+	set byte_69B, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8436,14 +7361,12 @@ loc_12CB23:
 	LDA	cur_obj_idx_unk_43A
 	CMP	#0
 	BNE	loc_12CB37
-	LDA	#0
-	STA	byte_69C
+	set byte_69C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CB37:
-	LDA	#0
-	STA	byte_69D
+	set byte_69D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8451,8 +7374,7 @@ loc_12CB3D:
 	LDA	image_id_4A4
 	CMP	#$9A 
 	BNE	loc_12CB4A
-	LDA	#0
-	STA	byte_6A7
+	set byte_6A7, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8460,8 +7382,7 @@ loc_12CB4A:
 	LDA	image_id_4A4
 	CMP	#$96 
 	BNE	locret_12CB57
-	LDA	#0
-	STA	byte_6A1
+	set byte_6A1, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8475,24 +7396,17 @@ locret_12CB57:
 
 show_intro_screen_12CB58:
 	JSR	wait_any_input_65k_cycles_FCAB
-	LDA	#$10
-	STA	image_id_4A4
-	LDA	#0
-	STA	image_offset_4A5
+	set image_id_4A4, #$10
+	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
 	STA	ppu_prev_scroll_x_unk_4A7
 	STA	ppu_prev_scroll_y_unk_4A8
-	LDA	#2
-	STA	prev_sprite_type_4A9
-	LDA	#$1A
-	STA	objectIdx_318
+	set prev_sprite_type_4A9, #2
+	set objectIdx_318, #$1A
 	JSR	exec_b0_c2_12A9A9
-	LDA	#$88 
-	STA	byte_42C
-	LDA	#$26 
-	STA	byte_42E
-	LDA	#0
-	STA	byte_430
+	set byte_42C, #$88 
+	set byte_42E, #$26 
+	set byte_430, #0
 	STA	byte_431
 	STA	byte_433
 	STA	byte_434
@@ -8525,8 +7439,7 @@ loc_12CBB2:
 	LDA	count_unk_468
 	CMP	#$14
 	BCC	loc_12CBD6
-	LDA	#0
-	STA	count_unk_468
+	set count_unk_468, #0
 	INC	byte_434
 
 loc_12CBD6:
@@ -8538,8 +7451,7 @@ loc_12CBD9:
 	LDA	count_unk_469
 	CMP	#$A
 	BCC	loc_12CBF7
-	LDA	#0
-	STA	count_unk_469
+	set count_unk_469, #0
 	LDA	byte_434
 	EOR	#1
 	STA	byte_434
@@ -8558,22 +7470,16 @@ loc_12CBF7:
 ; ---------------------------------------------------------------------------
 
 show_ending_screen_12CC06:
-	LDA	#$A0 
-	STA	image_id_4A4
-	LDA	#0
-	STA	image_offset_4A5
+	set image_id_4A4, #$A0 
+	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
 	STA	ppu_prev_scroll_x_unk_4A7
 	STA	ppu_prev_scroll_y_unk_4A8
-	LDA	#2
-	STA	prev_sprite_type_4A9
-	LDA	#$1A
-	STA	objectIdx_318
+	set prev_sprite_type_4A9, #2
+	set objectIdx_318, #$1A
 	JSR	exec_b0_c2_12A9A9
-	LDA	#$46 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
+	set text_idx_35C, #$46 
+	set char_type_id_35D, #2
 	JSR	exec_b2_c2_1283DF
 	RTS
 ; End of function show_intro_screen_12CB58
@@ -8586,8 +7492,7 @@ sub_12CC34:
 	LDA	count_unk_465
 	CMP	#$A
 	BCC	loc_12CC48
-	LDA	#0
-	STA	count_unk_465
+	set count_unk_465, #0
 	LDA	byte_430
 	EOR	#1
 	STA	byte_430
@@ -8596,8 +7501,7 @@ loc_12CC48:
 	LDA	count_unk_466
 	CMP	#$F
 	BCC	loc_12CC5C
-	LDA	#0
-	STA	count_unk_466
+	set count_unk_466, #0
 	LDA	byte_431
 	EOR	#1
 	STA	byte_431
@@ -8606,8 +7510,7 @@ loc_12CC5C:
 	LDA	count_unk_467
 	CMP	#$A
 	BCC	loc_12CC70
-	LDA	#0
-	STA	count_unk_467
+	set count_unk_467, #0
 	LDA	byte_433
 	EOR	#1
 	STA	byte_433
@@ -8621,20 +7524,16 @@ loc_12CC70:
 	CLC
 	ADC	byte_431
 	STA	byte_366
-	LDA	#0
-	STA	byte_367
+	set byte_367, #0
 	STA	byte_36B
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set sprite_secondByte_31B, #0
 	STA	byte_31A
-	LDA	#$1A
-	STA	objectIdx_318
+	set objectIdx_318, #$1A
 	LDA	#0
 	CLC
 	ADC	byte_433
 	STA	objMapIdx_316
-	LDA	#0
-	STA	byte_317
+	set byte_317, #0
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_12CC34
@@ -8645,27 +7544,18 @@ loc_12CC70:
 
 sub_12CCAB:
 	; show_intro_screen_12CB58+A8p
-	LDA	#$70 
-	STA	byte_36A
-	LDA	#0
-	STA	byte_36B
-	LDA	#$50 
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#$8C 
-	STA	byte_31A
-	LDA	#$1A
-	STA	objectIdx_318
-	LDA	#1
-	STA	byte_317
+	set byte_36A, #$70 
+	set byte_36B, #0
+	set byte_366, #$50 
+	set byte_367, #0
+	set sprite_secondByte_31B, #0
+	set byte_31A, #$8C 
+	set objectIdx_318, #$1A
+	set byte_317, #1
 	LDA	objMapIdx_316
 	CMP	#6
 	BCC	loc_12CCDF
-	LDA	#2
-	STA	byte_317
+	set byte_317, #2
 
 loc_12CCDF:
 	JSR	exec_b1_c1_128394
@@ -8680,27 +7570,18 @@ comm_46_12CCE3:
 	LDA	byte_6C5
 	CMP	#0
 	BEQ	return_12CD1C
-	LDA	#$7B 
-	STA	text_idx_35C
-	LDA	#1
-	STA	char_type_id_35D
-	LDA	#4
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$7B 
+	set char_type_id_35D, #1
+	set tilemapTypeUnk_30B, #4
 	JSR	exec_b0_c0_12A973
-	LDA	#1
-	STA	tilemapData_4C
-	LDA	#0
-	STA	roomUnk1_4D
-	LDA	#8
-	STA	roomUnk2_4E
-	LDA	#1
-	STA	tilemap_line_idx_4F
+	set tilemapData_4C, #1
+	set roomUnk1_4D, #0
+	set roomUnk2_4E, #8
+	set tilemap_line_idx_4F, #1
 	JSR	exec_b0_cB_1284E0
-	LDA	#0
-	STA	cur_obj_idx_unk_43A
+	set cur_obj_idx_unk_43A, #0
 	JSR	exec_b0_c3_128418
-	LDA	#0
-	STA	byte_6C5
+	set byte_6C5, #0
 
 return_12CD1C:
 	RTS
@@ -8711,12 +7592,9 @@ return_12CD1C:
 
 
 comm_48_take_item_12CD1D:
-	LDA	#$45 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set text_idx_35C, #$45 
+	set char_type_id_35D, #2
+	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; End of function comm_48_take_item_12CD1D
@@ -8727,45 +7605,31 @@ comm_48_take_item_12CD1D:
 
 com_E_load_game_12CD30:
 	
-	LDA	image_id_4A4
-	STA	byte_100
-	LDA	image_offset_4A5
-	STA	byte_101
-	LDA	ppu_prev_unk_4A6
-	STA	byte_102
-	LDA	ppu_prev_scroll_x_unk_4A7
-	STA	byte_103
-	LDA	ppu_prev_scroll_y_unk_4A8
-	STA	byte_104
-	LDA	prev_sprite_type_4A9
-	STA	byte_105
+	set byte_100, image_id_4A4
+	set byte_101, image_offset_4A5
+	set byte_102, ppu_prev_unk_4A6
+	set byte_103, ppu_prev_scroll_x_unk_4A7
+	set byte_104, ppu_prev_scroll_y_unk_4A8
+	set byte_105, prev_sprite_type_4A9
 	to_stack image_id_4A4
 	to_stack image_offset_4A5
 	to_stack ppu_prev_unk_4A6
 	to_stack ppu_prev_scroll_x_unk_4A7
 	to_stack ppu_prev_scroll_y_unk_4A8
 	to_stack prev_sprite_type_4A9
-	LDA	#5
-	STA	objectIdx_318
-	LDA	#0
-	STA	byte_360
-	LDA	#3
-	STA	byte_361
-	LDA	#$B
-	STA	image_id_4A4
-	LDA	#0
-	STA	image_offset_4A5
+	set objectIdx_318, #5
+	set byte_360, #0
+	set byte_361, #3
+	set image_id_4A4, #$B
+	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
 	STA	ppu_prev_scroll_x_unk_4A7
 	STA	ppu_prev_scroll_y_unk_4A8
-	LDA	#2
-	STA	prev_sprite_type_4A9
+	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
 	LDY	#0
-	LDA	#$B
-	STA	ppu_unk_byte_309
-	LDA	#$7A 
-	STA	sprite_secondByte_31B
+	set ppu_unk_byte_309, #$B
+	set sprite_secondByte_31B, #$7A 
 
 loc_12CDA2:
 	CPY	#4
@@ -8776,22 +7640,14 @@ loc_12CDA2:
 	CLC
 	ADC	#$7E 
 	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#8
-	STA	tilemap_size_307
-	LDA	#8
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#0
-	STA	byte_362
-	LDA	#0
-	STA	byte_363
-	LDA	#7
-	STA	byte_364
-	LDA	#0
-	STA	byte_310
+	set char_type_id_35D, #0
+	set tilemap_size_307, #8
+	set byte_35E, #8
+	set byte_35F, #1
+	set byte_362, #0
+	set byte_363, #0
+	set byte_364, #7
+	set byte_310, #0
 	TYA
 	PHA
 	to_stack ppu_unk_byte_309
@@ -8809,8 +7665,7 @@ loc_12CDEA:
 ; ---------------------------------------------------------------------------
 
 loc_12CE00:
-	LDA	#0
-	STA	byte_372
+	set byte_372, #0
 
 loc_12CE05:
 	; com_E_load_game_12CD30+10Bj ...
@@ -8821,8 +7676,7 @@ loc_12CE05:
 	BNE	loc_12CE25
 	LDA	byte_372
 	BNE	loc_12CE1C
-	LDA	#4
-	STA	byte_372
+	set byte_372, #4
 
 loc_12CE1C:
 	DEC	byte_372
@@ -8836,8 +7690,7 @@ loc_12CE25:
 	LDA	byte_372
 	CMP	#3
 	BNE	loc_12CE35
-	LDA	#$FF
-	STA	byte_372
+	set byte_372, #$FF
 
 loc_12CE35:
 	INC	byte_372
@@ -8883,11 +7736,9 @@ loc_12CE69:
 	from_stack ppu_prev_unk_4A6
 	from_stack image_offset_4A5
 	from_stack image_id_4A4
-	LDA	#$FF
-	STA	map_show_43B
+	set map_show_43B, #$FF
 	JSR	exec_b0_c2_12A9A9
-	LDA	#0
-	STA	map_show_43B
+	set map_show_43B, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8895,8 +7746,7 @@ loc_12CE99:
 	LDA	sprite_length_30F
 	CMP	#$FF
 	BNE	loc_12CEA5
-	LDA	#0
-	STA	jill_pos_y_47E
+	set jill_pos_y_47E, #0
 
 loc_12CEA5:
 	PLA
@@ -8922,51 +7772,30 @@ sub_12CEAC:
 ; ---------------------------------------------------------------------------
 
 loc_12CEBA:
-	LDA	#$1B
-	STA	ppu_unk_byte_309
-	LDA	#6
-	STA	tilemap_size_307
-	LDA	#$DA 
-	STA	sprite_secondByte_31B
-	LDA	#$85 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#$C
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#0
-	STA	byte_362
-	LDA	#0
-	STA	byte_363
-	LDA	#7
-	STA	byte_364
-	LDA	#0
-	STA	byte_310
+	set ppu_unk_byte_309, #$1B
+	set tilemap_size_307, #6
+	set sprite_secondByte_31B, #$DA 
+	set text_idx_35C, #$85 
+	set char_type_id_35D, #0
+	set byte_35E, #$C
+	set byte_35F, #1
+	set byte_362, #0
+	set byte_363, #0
+	set byte_364, #7
+	set byte_310, #0
 	JSR	exec_b2_c4_1283F2
-	LDA	#$1B
-	STA	ppu_unk_byte_309
-	LDA	#$15
-	STA	tilemap_size_307
-	LDA	#$F2 
-	STA	sprite_secondByte_31B
-	LDA	#$86 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#3
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#6
-	STA	byte_364
-	LDA	#0
-	STA	byte_310
+	set ppu_unk_byte_309, #$1B
+	set tilemap_size_307, #$15
+	set sprite_secondByte_31B, #$F2 
+	set text_idx_35C, #$86 
+	set char_type_id_35D, #0
+	set byte_35E, #3
+	set byte_35F, #1
+	set byte_364, #6
+	set byte_310, #0
 	JSR	exec_b2_c4_1283F2
 	to_stack byte_372
-	LDA	#1
-	STA	byte_372
+	set byte_372, #1
 
 loc_12CF2D:
 	
@@ -9000,8 +7829,7 @@ loc_12CF5A:
 
 loc_12CF61:
 	JSR	sub_12ED20
-	LDA	#$F0 
-	STA	byte_204
+	set byte_204, #$F0 
 	LDA	byte_372
 	BNE	loc_12CF76
 	from_stack byte_372
@@ -9010,32 +7838,20 @@ loc_12CF61:
 ; ---------------------------------------------------------------------------
 
 loc_12CF76:
-	LDA	#$1B
-	STA	ppu_unk_byte_309
-	LDA	#6
-	STA	tilemap_size_307
-	LDA	#$DA 
-	STA	sprite_secondByte_31B
-	LDA	#$74 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#$C
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#0
-	STA	byte_362
-	LDA	#0
-	STA	byte_363
-	LDA	#7
-	STA	byte_364
-	LDA	#0
-	STA	byte_310
+	set ppu_unk_byte_309, #$1B
+	set tilemap_size_307, #6
+	set sprite_secondByte_31B, #$DA 
+	set text_idx_35C, #$74 
+	set char_type_id_35D, #0
+	set byte_35E, #$C
+	set byte_35F, #1
+	set byte_362, #0
+	set byte_363, #0
+	set byte_364, #7
+	set byte_310, #0
 	JSR	exec_b2_c4_1283F2
 	from_stack byte_372
-	LDA	#0
-	STA	sprite_length_30F
+	set sprite_length_30F, #0
 	RTS
 ; End of function sub_12CEAC
 
@@ -9045,16 +7861,12 @@ loc_12CF76:
 
 sub_12CFBA:
 	
-	LDA	#$F0 
-	STA	byte_204
+	set byte_204, #$F0 
 	LDY	byte_372
-	LDA	byte_47F
-	STA	byte_4A0,Y
+	set {byte_4A0,Y}, byte_47F
 	to_stack byte_372
-	LDA	#$B
-	STA	ppu_unk_byte_309
-	LDA	#$7A 
-	STA	sprite_secondByte_31B
+	set ppu_unk_byte_309, #$B
+	set sprite_secondByte_31B, #$7A 
 	LDA	#$7E 
 	CLC
 	ADC	byte_47F
@@ -9075,48 +7887,29 @@ loc_12CFE6:
 ; ---------------------------------------------------------------------------
 
 loc_12D003:
-	LDA	#8
-	STA	tilemap_size_307
-	LDA	#8
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#0
-	STA	byte_362
-	LDA	#0
-	STA	byte_363
-	LDA	#7
-	STA	byte_364
-	LDA	#0
-	STA	byte_310
+	set tilemap_size_307, #8
+	set byte_35E, #8
+	set byte_35F, #1
+	set byte_362, #0
+	set byte_363, #0
+	set byte_364, #7
+	set byte_310, #0
 	JSR	exec_b2_c4_1283F2
-	LDA	#$1B
-	STA	ppu_unk_byte_309
-	LDA	#6
-	STA	tilemap_size_307
-	LDA	#$DA 
-	STA	sprite_secondByte_31B
-	LDA	#$87 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#$C
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#0
-	STA	byte_362
-	LDA	#0
-	STA	byte_363
-	LDA	#7
-	STA	byte_364
-	LDA	#0
-	STA	byte_310
+	set ppu_unk_byte_309, #$1B
+	set tilemap_size_307, #6
+	set sprite_secondByte_31B, #$DA 
+	set text_idx_35C, #$87 
+	set char_type_id_35D, #0
+	set byte_35E, #$C
+	set byte_35F, #1
+	set byte_362, #0
+	set byte_363, #0
+	set byte_364, #7
+	set byte_310, #0
 	JSR	exec_b2_c4_1283F2
 	from_stack byte_372
 	JSR	sub_12D167
-	LDA	#$FF
-	STA	sprite_length_30F
+	set sprite_length_30F, #$FF
 	RTS
 ; End of function sub_12CFBA
 
@@ -9128,15 +7921,13 @@ sub_12D070:
 	LDA	count_unk_466
 	CMP	#$A
 	BCC	loc_12D084
-	LDA	#0
-	STA	count_unk_466
+	set count_unk_466, #0
 	LDA	byte_547
 	EOR	#1
 	STA	byte_547
 
 loc_12D084:
-	LDA	#$25 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$25 
 	LDA	byte_372
 	ASL	A
 	TAY
@@ -9149,17 +7940,12 @@ loc_12D084:
 	CLC
 	ADC	#2
 	STA	byte_366
-	LDA	#0
-	STA	byte_36B
+	set byte_36B, #0
 	STA	byte_367
-	LDA	#5
-	STA	objectIdx_318
-	LDA	#4
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_317
+	set objectIdx_318, #5
+	set byte_31A, #4
+	set sprite_secondByte_31B, #0
+	set byte_317, #0
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_12D070
@@ -9172,15 +7958,13 @@ sub_12D0C2:
 	LDA	count_unk_465
 	CMP	#$A
 	BCC	loc_12D0D6
-	LDA	#0
-	STA	count_unk_465
+	set count_unk_465, #0
 	LDA	byte_547
 	EOR	#1
 	STA	byte_547
 
 loc_12D0D6:
-	LDA	#$25 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$25 
 	LDA	byte_372
 	ASL	A
 	TAY
@@ -9193,17 +7977,12 @@ loc_12D0D6:
 	CLC
 	ADC	#2
 	STA	byte_366
-	LDA	#0
-	STA	byte_36B
+	set byte_36B, #0
 	STA	byte_367
-	LDA	#5
-	STA	objectIdx_318
-	LDA	#0
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_317
+	set objectIdx_318, #5
+	set byte_31A, #0
+	set sprite_secondByte_31B, #0
+	set byte_317, #0
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_12D0C2
@@ -9227,14 +8006,12 @@ sub_12D120:
 	CMP	#$FF
 	BEQ	loc_12D133
 	JSR	sub_12D1E9
-	LDA	#$FF
-	STA	sprite_length_30F
+	set sprite_length_30F, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12D133:
-	LDA	#0
-	STA	sprite_length_30F
+	set sprite_length_30F, #0
 	RTS
 ; End of function sub_12D120
 
@@ -9289,8 +8066,7 @@ loc_12D171:
 	LDX	#0
 
 loc_12D17B:
-	LDA	byte_4A0,X
-	STA	(ptr_0),Y
+	set {(ptr_0),Y}, {byte_4A0,X}
 	INX
 	INY
 	CPX	#4
@@ -9301,24 +8077,17 @@ loc_12D17B:
 	add_to_byte ptr_1, #0
 
 
-	LDA	byte_100
-	STA	image_id_4A4
-	LDA	byte_101
-	STA	image_offset_4A5
-	LDA	byte_102
-	STA	ppu_prev_unk_4A6
-	LDA	byte_103
-	STA	ppu_prev_scroll_x_unk_4A7
-	LDA	byte_104
-	STA	ppu_prev_scroll_y_unk_4A8
-	LDA	byte_105
-	STA	prev_sprite_type_4A9
+	set image_id_4A4, byte_100
+	set image_offset_4A5, byte_101
+	set ppu_prev_unk_4A6, byte_102
+	set ppu_prev_scroll_x_unk_4A7, byte_103
+	set ppu_prev_scroll_y_unk_4A8, byte_104
+	set prev_sprite_type_4A9, byte_105
 	JSR	sub_12D139
 	LDY	#0
 
 loc_12D1BC:
-	LDA	image_id_4A4,Y
-	STA	(ptr_0),Y
+	set {(ptr_0),Y}, {image_id_4A4,Y}
 	INY
 	CPY	#0
 	BNE	loc_12D1BC
@@ -9326,8 +8095,7 @@ loc_12D1BC:
 
 
 loc_12D1CD:
-	LDA	byte_5A4,Y
-	STA	(ptr_0),Y
+	set {(ptr_0),Y}, {byte_5A4,Y}
 	INY
 	CPY	#0
 	BNE	loc_12D1CD
@@ -9335,8 +8103,7 @@ loc_12D1CD:
 
 
 loc_12D1DE:
-	LDA	byte_6A4,Y
-	STA	(ptr_0),Y
+	set {(ptr_0),Y}, {byte_6A4,Y}
 	INY
 	CPY	#$44 
 	BNE	loc_12D1DE
@@ -9352,8 +8119,7 @@ sub_12D1E9:
 	LDY	#0
 
 loc_12D1EE:
-	LDA	(ptr_0),Y
-	STA	image_id_4A4,Y
+	set {image_id_4A4,Y}, {(ptr_0),Y}
 	INY
 	CPY	#0
 	BNE	loc_12D1EE
@@ -9361,8 +8127,7 @@ loc_12D1EE:
 
 
 loc_12D1FF:
-	LDA	(ptr_0),Y
-	STA	byte_5A4,Y
+	set {byte_5A4,Y}, {(ptr_0),Y}
 	INY
 	CPY	#0
 	BNE	loc_12D1FF
@@ -9370,8 +8135,7 @@ loc_12D1FF:
 
 
 loc_12D210:
-	LDA	(ptr_0),Y
-	STA	byte_6A4,Y
+	set {byte_6A4,Y}, {(ptr_0),Y}
 	INY
 	CPY	#$44 
 	BNE	loc_12D210
@@ -9387,18 +8151,15 @@ sub_12D21B:
 	JSR	sub_12EEAE
 	JSR	ppu_reset_ctrl_mask_FE93
 	JSR	sub_12D261
-	LDA	#$10
-	STA	_PPU_ADDR
-	LDA	#0
-	STA	_PPU_ADDR
+	set _PPU_ADDR, #$10
+	set _PPU_ADDR, #0
 	LDX	#$20 
 
 loc_12D230:
 	LDY	#0
 
 loc_12D232:
-	LDA	#0
-	STA	_PPU_DATA
+	set _PPU_DATA, #0
 	INY
 	BNE	loc_12D232
 	DEX
@@ -9406,8 +8167,7 @@ loc_12D232:
 	LDX	#0
 
 loc_12D23F:
-	LDA	byte_12D251,X
-	STA	palette_bg_321,X 
+	set {palette_bg_321,X}, {byte_12D251,X}
 	INX
 	CPX	#$10
 	BNE	loc_12D23F
@@ -9427,10 +8187,8 @@ byte_12D251:.BYTE $3E,  7,$37,$30
 
 sub_12D261:
 	
-	LDA	#0
-	STA	tilemapWidth_308
-	LDA	#0
-	STA	byte_31A
+	set tilemapWidth_308, #0
+	set byte_31A, #0
 ; End of function sub_12D261
 
 
@@ -9444,8 +8202,7 @@ sub_12D26B:
 	LDY	byte_31A
 
 loc_12D278:
-	LDA	#$F0 
-	STA	byte_200,Y
+	set {byte_200,Y}, #$F0 
 	INY
 	INY
 	INY
@@ -9461,36 +8218,26 @@ loc_12D278:
 
 sub_12D287:
 	
-	LDA	#0
-	STA	sprite_length_30F
-	LDA	#0
-	STA	byte_42C
+	set sprite_length_30F, #0
+	set byte_42C, #0
 	STA	byte_42E
-	LDA	#5
-	STA	objectIdx_318
-	LDA	#0
-	STA	byte_360
-	LDA	#1
-	STA	byte_361
+	set objectIdx_318, #5
+	set byte_360, #0
+	set byte_361, #1
 
 set_inventory_screen_12D2A3:
-	LDA	#8
-	STA	image_id_4A4
-	LDA	#0
-	STA	image_offset_4A5
+	set image_id_4A4, #8
+	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
 	STA	ppu_prev_scroll_x_unk_4A7
 	STA	ppu_prev_scroll_y_unk_4A8
-	LDA	#2
-	STA	prev_sprite_type_4A9
+	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
 	JSR	sub_12DC52
 	JSR	sub_12DE49
 	JSR	sub_12DEB5
-	LDA	#0
-	STA	byte_372
-	LDA	#$3C 
-	STA	sprite_secondByte_31B
+	set byte_372, #0
+	set sprite_secondByte_31B, #$3C 
 	LDA	byte_532
 	BEQ	loc_12D315
 
@@ -9498,8 +8245,7 @@ loc_12D2D6:
 	LDY	byte_372
 	LDA	byte_533,Y
 	TAX
-	LDA	byte_12E869,X
-	STA	inv_itemPrev_idx_31D
+	set inv_itemPrev_idx_31D, {byte_12E869,X}
 	LDA	byte_372
 	ASL	A
 	TAY
@@ -9535,10 +8281,8 @@ loc_12D315:
 sub_12D319:
 	
 	JSR	sub_12DD0A
-	LDA	#$80 
-	STA	byte_31A
-	LDA	#$C
-	STA	tilemapWidth_308
+	set byte_31A, #$80 
+	set tilemapWidth_308, #$C
 	JSR	sub_12D26B
 ; End of function sub_12D319
 
@@ -9563,8 +8307,7 @@ loc_12D33A:
 	LDA	tilemapTypeUnk_30B
 	ASL	A
 	TAX
-	LDA	byte_12E851,X
-	STA	tilemap_size_307
+	set tilemap_size_307, {byte_12E851,X}
 	INX
 	LDA	byte_12E851,X
 	CLC
@@ -9605,12 +8348,9 @@ loc_12D383:
 
 loc_12D394:
 	LDY	tilemapTypeUnk_30B
-	LDA	byte_533,Y
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#7
-	STA	byte_364
+	set text_idx_35C, {byte_533,Y}
+	set char_type_id_35D, #0
+	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	RTS
 ; End of function sub_12D329
@@ -9622,8 +8362,7 @@ loc_12D394:
 sub_12D3AB:
 	
 	STA	ptr_0
-	LDA	#0
-	STA	data_2
+	set data_2, #0
 	STA	data_3
 
 loc_12D3B3:
@@ -9660,12 +8399,9 @@ loc_12D3D7:
 	CLC
 	ADC	#$32 
 	STA	objMapIdx_316
-	LDA	#0
-	STA	byte_317
-	LDA	#$80 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set byte_317, #0
+	set byte_31A, #$80 
+	set sprite_secondByte_31B, #0
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	to_stack data_2
@@ -9694,12 +8430,9 @@ loc_12D434:
 	CLC
 	ADC	#$32 
 	STA	objMapIdx_316
-	LDA	#0
-	STA	byte_317
-	LDA	#$84 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set byte_317, #0
+	set byte_31A, #$84 
+	set sprite_secondByte_31B, #0
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	to_stack data_2
@@ -9729,12 +8462,9 @@ loc_12D484:
 	CLC
 	ADC	#$32 
 	STA	objMapIdx_316
-	LDA	#0
-	STA	byte_317
-	LDA	#$88 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set byte_317, #0
+	set byte_31A, #$88 
+	set sprite_secondByte_31B, #0
 	JSR	sub_12E829
 	RTS
 ; End of function sub_12D3AB
@@ -9745,14 +8475,10 @@ loc_12D484:
 
 sub_12D49F:
 	
-	LDA	#0
-	STA	byte_310
-	LDA	#$A
-	STA	byte_35E
-	LDA	#$1B
-	STA	ppu_unk_byte_309
-	LDA	#4
-	STA	tilemap_size_307
+	set byte_310, #0
+	set byte_35E, #$A
+	set ppu_unk_byte_309, #$1B
+	set tilemap_size_307, #4
 ; End of function sub_12D49F
 
 
@@ -9761,12 +8487,9 @@ sub_12D49F:
 
 sub_12D4B3:
 	
-	LDA	#1
-	STA	byte_35F
-	LDA	#0
-	STA	byte_362
-	LDA	#0
-	STA	byte_363
+	set byte_35F, #1
+	set byte_362, #0
+	set byte_363, #0
 	JSR	exec_b2_c5_128405
 	RTS
 ; End of function sub_12D4B3
@@ -9799,8 +8522,7 @@ loc_12D4E7:
 	LDA	byte_42E
 	CMP	#0
 	BNE	loc_12D506
-	LDA	#6
-	STA	byte_42E
+	set byte_42E, #6
 
 loc_12D506:
 	DEC	byte_42E
@@ -9815,8 +8537,7 @@ loc_12D512:
 	LDA	byte_42E
 	CMP	#5
 	BNE	loc_12D522
-	LDA	#$FF
-	STA	byte_42E
+	set byte_42E, #$FF
 
 loc_12D522:
 	INC	byte_42E
@@ -9892,69 +8613,51 @@ sub_12D58C:
 	JSR	sub_12D287
 	from_stack tilemapTypeUnk_30B
 	to_stack tilemapTypeUnk_30B
-	LDA	tilemapTypeUnk_30B
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
+	set text_idx_35C, tilemapTypeUnk_30B
+	set char_type_id_35D, #0
 	LDA	tilemapTypeUnk_30B
 	CMP	#$3B 
 	BNE	loc_12D5D2
-	LDA	#7
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
+	set text_idx_35C, #7
+	set char_type_id_35D, #2
 
 loc_12D5D2:
 	LDY	tilemapTypeUnk_30B
-	LDA	byte_12E869,Y
-	STA	inv_itemPrev_idx_31D
-	LDA	#$A
-	STA	tilemap_size_307
-	LDA	#8
-	STA	ppu_unk_byte_309
-	LDA	#$C4 
-	STA	sprite_secondByte_31B
+	set inv_itemPrev_idx_31D, {byte_12E869,Y}
+	set tilemap_size_307, #$A
+	set ppu_unk_byte_309, #8
+	set sprite_secondByte_31B, #$C4 
 	JSR	sub_128358
 	JSR	sub_128326
-	LDA	#7
-	STA	byte_364
+	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12DAD0
 	from_stack tilemapTypeUnk_30B
 	LDA	byte_532
 	CMP	#8
 	BCC	loc_12D623
-	LDA	#$7D 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#7
-	STA	byte_364
+	set text_idx_35C, #$7D 
+	set char_type_id_35D, #0
+	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12DAD0
-	LDA	#0
-	STA	sprite_length_30F
+	set sprite_length_30F, #0
 	JMP	loc_12D652
 ; ---------------------------------------------------------------------------
 
 loc_12D623:
-	LDA	#$7A 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#7
-	STA	byte_364
+	set text_idx_35C, #$7A 
+	set char_type_id_35D, #0
+	set byte_364, #7
 	to_stack tilemapTypeUnk_30B
 	JSR	exec_b2_c1_128300
 	JSR	sub_12D680
 	from_stack tilemapTypeUnk_30B
-	LDA	#0
-	STA	sprite_length_30F
+	set sprite_length_30F, #0
 	LDA	byte_372
 	BNE	loc_12D652
 	JSR	sub_12D82B
-	LDA	#$FF
-	STA	sprite_length_30F
+	set sprite_length_30F, #$FF
 
 loc_12D652:
 	
@@ -9964,13 +8667,11 @@ loc_12D652:
 	from_stack ppu_prev_unk_4A6
 	from_stack image_offset_4A5
 	from_stack image_id_4A4
-	LDA	#$FF
-	STA	map_show_43B
+	set map_show_43B, #$FF
 	to_stack sprite_length_30F
 	JSR	exec_b0_c2_12A9A9
 	from_stack sprite_length_30F
-	LDA	#0
-	STA	map_show_43B
+	set map_show_43B, #0
 	RTS
 ; End of function sub_12D58C
 
@@ -9979,29 +8680,23 @@ loc_12D652:
 
 
 sub_12D680:
-	LDA	#0
-	STA	byte_372
+	set byte_372, #0
 
 loc_12D685:
 	
 	LDA	byte_546
 	CMP	#$A
 	BCC	loc_12D699
-	LDA	#0
-	STA	byte_546
+	set byte_546, #0
 	LDA	byte_547
 	EOR	#1
 	STA	byte_547
 
 loc_12D699:
-	LDA	#$70 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_317
-	LDA	#$30 
-	STA	objMapIdx_316
+	set byte_31A, #$70 
+	set sprite_secondByte_31B, #0
+	set byte_317, #0
+	set objMapIdx_316, #$30 
 	LDA	byte_372
 	ASL	A
 	ASL	A
@@ -10015,8 +8710,7 @@ loc_12D699:
 	CLC
 	ADC	byte_547
 	STA	tilemap_size_307
-	LDA	#$DC 
-	STA	ppu_unk_byte_309
+	set ppu_unk_byte_309, #$DC 
 	JSR	sub_12E829
 	JSR	wait_for_vblank_FC95
 	LDA	input_pressed_34A
@@ -10064,8 +8758,7 @@ sub_12D700:
 	to_stack prev_sprite_type_4A9
 	JSR	sub_12D287
 	JSR	sub_12D319
-	LDA	#0
-	STA	byte_372
+	set byte_372, #0
 	JSR	sub_12DF32
 	JSR	sub_12DCCC
 	JSR	sub_12DCE9
@@ -10083,22 +8776,19 @@ loc_12D72F:
 	LDA	byte_42C
 	CMP	#1
 	BNE	loc_12D752
-	LDA	#6
-	STA	byte_42E
+	set byte_42E, #6
 	JMP	loc_12D757
 ; ---------------------------------------------------------------------------
 
 loc_12D752:
-	LDA	#4
-	STA	byte_42E
+	set byte_42E, #4
 
 loc_12D757:
 	
 	LDA	byte_42E
 	CMP	#5
 	BNE	loc_12D763
-	LDA	#4
-	STA	byte_42E
+	set byte_42E, #4
 
 loc_12D763:
 	DEC	byte_42E
@@ -10116,22 +8806,19 @@ loc_12D76F:
 	LDA	byte_42C
 	CMP	#1
 	BNE	loc_12D789
-	LDA	#4
-	STA	byte_42E
+	set byte_42E, #4
 	JMP	loc_12D78E
 ; ---------------------------------------------------------------------------
 
 loc_12D789:
-	LDA	#$FF
-	STA	byte_42E
+	set byte_42E, #$FF
 
 loc_12D78E:
 	
 	LDA	byte_42E
 	CMP	#5
 	BNE	loc_12D79A
-	LDA	#$FF
-	STA	byte_42E
+	set byte_42E, #$FF
 
 loc_12D79A:
 	INC	byte_42E
@@ -10203,11 +8890,9 @@ loc_12D802:
 	from_stack ppu_prev_unk_4A6
 	from_stack image_offset_4A5
 	from_stack image_id_4A4
-	LDA	#$FF
-	STA	map_show_43B
+	set map_show_43B, #$FF
 	JSR	exec_b0_c2_12A9A9
-	LDA	#0
-	STA	map_show_43B
+	set map_show_43B, #0
 	RTS
 ; End of function sub_12D700
 
@@ -10217,72 +8902,61 @@ loc_12D802:
 
 sub_12D82B:
 	LDY	byte_532
-	LDA	tilemapTypeUnk_30B
-	STA	byte_533,Y
+	set {byte_533,Y}, tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
 	CMP	#1
 	BNE	loc_12D840
-	LDA	#$F
-	STA	unk_53B,Y
+	set {unk_53B,Y}, #$F
 
 loc_12D840:
 	LDA	tilemapTypeUnk_30B
 	CMP	#2
 	BNE	loc_12D84C
-	LDA	#6
-	STA	unk_53B,Y
+	set {unk_53B,Y}, #6
 
 loc_12D84C:
 	LDA	tilemapTypeUnk_30B
 	CMP	#3
 	BNE	loc_12D858
-	LDA	#6
-	STA	unk_53B,Y
+	set {unk_53B,Y}, #6
 
 loc_12D858:
 	LDA	tilemapTypeUnk_30B
 	CMP	#4
 	BNE	loc_12D864
-	LDA	#6
-	STA	unk_53B,Y
+	set {unk_53B,Y}, #6
 
 loc_12D864:
 	LDA	tilemapTypeUnk_30B
 	CMP	#5
 	BNE	loc_12D870
-	LDA	#6
-	STA	unk_53B,Y
+	set {unk_53B,Y}, #6
 
 loc_12D870:
 	LDA	tilemapTypeUnk_30B
 	CMP	#6
 	BNE	loc_12D87C
-	LDA	#$F
-	STA	unk_53B,Y
+	set {unk_53B,Y}, #$F
 
 loc_12D87C:
 	CMP	#7
 	BNE	loc_12D885
-	LDA	#6
-	STA	unk_53B,Y
+	set {unk_53B,Y}, #6
 
 loc_12D885:
 	CMP	#8
 	BNE	loc_12D88E
-	LDA	#6
-	STA	unk_53B,Y
+	set {unk_53B,Y}, #6
 
 loc_12D88E:
 	CMP	#9
 	BNE	loc_12D897
-	LDA	#6
-	STA	unk_53B,Y
+	set {unk_53B,Y}, #6
 
 loc_12D897:
 	CMP	#$1A
 	BNE	loc_12D8A0
-	LDA	#3
-	STA	unk_53B,Y
+	set {unk_53B,Y}, #3
 
 loc_12D8A0:
 	LDA	byte_4B4
@@ -10317,10 +8991,8 @@ loc_12D8BC:
 loc_12D8C3:
 	CPX	byte_532
 	BEQ	loc_12D8D9
-	LDA	byte_533,X
-	STA	byte_533,Y
-	LDA	unk_53B,X
-	STA	unk_53B,Y
+	set {byte_533,Y}, {byte_533,X}
+	set {unk_53B,Y}, {unk_53B,X}
 	INX
 	INY
 	JMP	loc_12D8C3
@@ -10348,18 +9020,15 @@ sub_12D8DD:
 	CMP	byte_532
 	BCC	loc_12D900
 	LDX	byte_372
-	LDA	#$3A 
-	STA	unk_4D2,X
+	set {unk_4D2,X}, #$3A 
 	JMP	loc_12D910
 ; ---------------------------------------------------------------------------
 
 loc_12D900:
 	TAY
 	LDX	byte_372
-	LDA	byte_533,Y
-	STA	unk_4D2,X
-	LDA	unk_53B,Y
-	STA	unk_502,X
+	set {unk_4D2,X}, {byte_533,Y}
+	set {unk_502,X}, {unk_53B,Y}
 
 loc_12D910:
 	JSR	sub_12DF2B
@@ -10380,10 +9049,8 @@ loc_12D910:
 
 loc_12D931:
 	LDY	byte_532
-	LDA	tilemapTypeUnk_30B
-	STA	byte_533,Y
-	LDA	inv_spr_dscr1_30C
-	STA	unk_53B,Y
+	set {byte_533,Y}, tilemapTypeUnk_30B
+	set {unk_53B,Y}, inv_spr_dscr1_30C
 	INC	byte_532
 	JMP	loc_12D9A3
 ; ---------------------------------------------------------------------------
@@ -10404,10 +9071,8 @@ loc_12D946:
 
 loc_12D966:
 	
-	LDA	inv_spr_dscr1_30C
-	STA	unk_53B,Y
-	LDA	tilemapTypeUnk_30B
-	STA	byte_533,Y
+	set {unk_53B,Y}, inv_spr_dscr1_30C
+	set {byte_533,Y}, tilemapTypeUnk_30B
 	CMP	#$3A 
 	BNE	loc_12D9A3
 	TYA
@@ -10420,10 +9085,8 @@ loc_12D979:
 	INX
 	CPX	byte_532
 	BEQ	loc_12D991
-	LDA	byte_533,X
-	STA	byte_533,Y
-	LDA	unk_53B,X
-	STA	unk_53B,Y
+	set {byte_533,Y}, {byte_533,X}
+	set {unk_53B,Y}, {unk_53B,X}
 	INY
 	JMP	loc_12D979
 ; ---------------------------------------------------------------------------
@@ -10445,18 +9108,15 @@ loc_12D9A3:
 	PHA
 	TAX
 	INY
-	LDA	#$A
-	STA	sprite_secondByte_31B
+	set sprite_secondByte_31B, #$A
 	JSR	sub_12D9F7
 	from_stack_to_y
 	from_stack tilemapTypeUnk_30B
 	LDX	tilemapTypeUnk_30B
-	LDA	byte_12E869,X
-	STA	inv_itemPrev_idx_31D
+	set inv_itemPrev_idx_31D, {byte_12E869,X}
 	TYA
 	TAX
-	LDA	#$3C 
-	STA	sprite_secondByte_31B
+	set sprite_secondByte_31B, #$3C 
 
 loc_12D9C9:
 	CPX	#0
@@ -10514,10 +9174,8 @@ loc_12D9FB:
 	LSR	A
 	LSR	A
 	STA	ppu_unk_byte_309
-	LDA	#$29 
-	STA	inv_itemPrev_idx_31D
-	LDA	#$A
-	STA	sprite_secondByte_31B
+	set inv_itemPrev_idx_31D, #$29 
+	set sprite_secondByte_31B, #$A
 	TYA
 	PHA
 	JSR	sub_128326
@@ -10550,8 +9208,7 @@ sub_12DA33:
 ; ---------------------------------------------------------------------------
 
 loc_12DA43:
-	LDA	#$3C 
-	STA	sprite_secondByte_31B
+	set sprite_secondByte_31B, #$3C 
 
 loc_12DA48:
 	LDA	tilemapTypeUnk_30B
@@ -10569,8 +9226,7 @@ loc_12DA5E:
 	PHA
 	LDA	byte_533,X
 	TAX
-	LDA	byte_12E869,X
-	STA	inv_itemPrev_idx_31D
+	set inv_itemPrev_idx_31D, {byte_12E869,X}
 	from_stack_to_x
 	PHA
 	ASL	A
@@ -10601,10 +9257,8 @@ loc_12DA5E:
 	CMP	byte_543
 	BNE	loc_12DABA
 	STX	byte_544
-	LDA	#$10
-	STA	tilemap_size_307
-	LDA	#$14
-	STA	ppu_unk_byte_309
+	set tilemap_size_307, #$10
+	set ppu_unk_byte_309, #$14
 	to_stack tilemapTypeUnk_30B
 	TYA
 	PHA
@@ -10635,23 +9289,17 @@ sub_12DAD0:
 	LDA	byte_546
 	CMP	#$A
 	BCC	loc_12DAE4
-	LDA	#0
-	STA	byte_546
+	set byte_546, #0
 	LDA	byte_547
 	EOR	#1
 	STA	byte_547
 
 loc_12DAE4:
-	LDA	#$70 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_317
-	LDA	#$2F 
-	STA	objMapIdx_316
-	LDA	#$C4 
-	STA	tilemap_size_307
+	set byte_31A, #$70 
+	set sprite_secondByte_31B, #0
+	set byte_317, #0
+	set objMapIdx_316, #$2F 
+	set tilemap_size_307, #$C4 
 	LDA	#$E0 
 	CLC
 	ADC	byte_547
@@ -10703,12 +9351,9 @@ loc_12DB3A:
 	LDA	byte_545
 	BEQ	locret_12DB6B
 	JSR	sub_12ED20
-	LDA	#$44 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#7
-	STA	byte_364
+	set text_idx_35C, #$44 
+	set char_type_id_35D, #2
+	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
 	JSR	sub_12ED29
@@ -10720,8 +9365,7 @@ locret_12DB6B:
 
 loc_12DB6C:
 	JSR	sub_12ED29
-	LDA	#$FF
-	STA	sprite_length_30F
+	set sprite_length_30F, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -10737,8 +9381,7 @@ loc_12DB75:
 
 loc_12DB83:
 	JSR	sub_12ED20
-	LDA	#0
-	STA	byte_372
+	set byte_372, #0
 	JSR	sub_12DC31
 
 loc_12DB8E:
@@ -10750,8 +9393,7 @@ loc_12DB8E:
 	LDA	byte_372
 	CMP	#0
 	BNE	loc_12DBA4
-	LDA	#3
-	STA	byte_372
+	set byte_372, #3
 
 loc_12DBA4:
 	DEC	byte_372
@@ -10766,8 +9408,7 @@ loc_12DBB0:
 	LDA	byte_372
 	CMP	#2
 	BNE	loc_12DBC0
-	LDA	#$FF
-	STA	byte_372
+	set byte_372, #$FF
 
 loc_12DBC0:
 	INC	byte_372
@@ -10822,10 +9463,8 @@ loc_12DC0F:
 loc_12DC16:
 	
 	JSR	sub_12ED29
-	LDA	#$60 
-	STA	tilemapWidth_308
-	LDA	#$A0 
-	STA	byte_31A
+	set tilemapWidth_308, #$60 
+	set byte_31A, #$A0 
 	JSR	sub_12D26B
 	LDA	sprite_length_30F
 	CMP	#$FF
@@ -10846,14 +9485,10 @@ sub_12DC31:
 	CLC
 	ADC	#$20 
 	STA	objMapIdx_316
-	LDA	#$80 
-	STA	tilemap_size_307
-	LDA	#$50 
-	STA	ppu_unk_byte_309
-	LDA	#$A0 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set tilemap_size_307, #$80 
+	set ppu_unk_byte_309, #$50 
+	set byte_31A, #$A0 
+	set sprite_secondByte_31B, #0
 	JSR	sub_12E829
 	RTS
 ; End of function sub_12DC31
@@ -10867,15 +9502,11 @@ sub_12DC52:
 	CLC
 	ADC	#$1B
 	STA	objMapIdx_316
-	LDA	#$40 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set byte_31A, #$40 
+	set sprite_secondByte_31B, #0
 	STA	byte_317
-	LDA	#$B0 
-	STA	tilemap_size_307
-	LDA	#$1F
-	STA	ppu_unk_byte_309
+	set tilemap_size_307, #$B0 
+	set ppu_unk_byte_309, #$1F
 	JSR	sub_12E829
 	RTS
 ; End of function sub_12DC52
@@ -10941,16 +9572,11 @@ loc_12DCC8:
 
 
 sub_12DCCC:
-	LDA	#$23 
-	STA	objMapIdx_316
-	LDA	#$90 
-	STA	tilemap_size_307
-	LDA	#$30 
-	STA	ppu_unk_byte_309
-	LDA	#$A8 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set objMapIdx_316, #$23 
+	set tilemap_size_307, #$90 
+	set ppu_unk_byte_309, #$30 
+	set byte_31A, #$A8 
+	set sprite_secondByte_31B, #0
 	JSR	sub_12E829
 	RTS
 ; End of function sub_12DCCC
@@ -10961,18 +9587,14 @@ sub_12DCCC:
 
 sub_12DCE9:
 	
-	LDA	#$24 
-	STA	objMapIdx_316
-	LDA	#$90 
-	STA	tilemap_size_307
+	set objMapIdx_316, #$24 
+	set tilemap_size_307, #$90 
 	LDA	#$38 
 	CLC
 	ADC	byte_372
 	STA	ppu_unk_byte_309
-	LDA	#$A0 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set byte_31A, #$A0 
+	set sprite_secondByte_31B, #0
 	JSR	sub_12E829
 	RTS
 ; End of function sub_12DCE9
@@ -10986,8 +9608,7 @@ sub_12DD0A:
 	LDA	byte_546
 	CMP	#$A
 	BCC	loc_12DD1E
-	LDA	#0
-	STA	byte_546
+	set byte_546, #0
 	LDA	byte_547
 	EOR	#1
 	STA	byte_547
@@ -11001,19 +9622,13 @@ loc_12DD1E:
 	CLC
 	ADC	byte_42C
 	TAY
-	LDA	byte_12E851,Y
-	STA	tilemap_size_307
+	set tilemap_size_307, {byte_12E851,Y}
 	INY
-	LDA	byte_12E851,Y
-	STA	ppu_unk_byte_309
-	LDA	#$60 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_317
-	LDA	#$2A 
-	STA	objMapIdx_316
+	set ppu_unk_byte_309, {byte_12E851,Y}
+	set byte_31A, #$60 
+	set sprite_secondByte_31B, #0
+	set byte_317, #0
+	set objMapIdx_316, #$2A 
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	add_to_byte_clc ppu_unk_byte_309, byte_547
@@ -11025,8 +9640,7 @@ loc_12DD1E:
 	from_stack tilemap_size_307
 	add_to_byte_clc byte_31A, #4
 
-	LDA	#$2B 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$2B 
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	add_to_byte_clc ppu_unk_byte_309, byte_547
@@ -11042,8 +9656,7 @@ loc_12DD1E:
 	from_stack tilemap_size_307
 	add_to_byte_clc byte_31A, #4
 
-	LDA	#$2C 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$2C 
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	LDA	ppu_unk_byte_309
@@ -11068,8 +9681,7 @@ loc_12DDE9:
 	from_stack tilemap_size_307
 	add_to_byte_clc byte_31A, #4
 
-	LDA	#$2D 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$2D 
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	LDA	tilemap_size_307
@@ -11110,52 +9722,43 @@ sub_12DE49:
 	LDA	count_unk_465
 	CMP	#5
 	BCC	locret_12DEB4
-	LDA	#0
-	STA	count_unk_465
+	set count_unk_465, #0
 	INC	byte_54D
 	LDA	byte_54D
 	CMP	#7
 	BCC	loc_12DE64
-	LDA	#0
-	STA	byte_54D
+	set byte_54D, #0
 
 loc_12DE64:
-	LDA	byte_54D
-	STA	objMapIdx_316
+	set objMapIdx_316, byte_54D
 	LDA	byte_549
 	CMP	#$55 
 	BCC	loc_12DE8E
 	CMP	#$AA 
 	BCC	loc_12DE7D
-	LDA	#0
-	STA	byte_54B
+	set byte_54B, #0
 	JMP	loc_12DE9C
 ; ---------------------------------------------------------------------------
 
 loc_12DE7D:
 	add_to_byte_clc objMapIdx_316, #7
 
-	LDA	#1
-	STA	byte_54B
+	set byte_54B, #1
 	JMP	loc_12DE9C
 ; ---------------------------------------------------------------------------
 
 loc_12DE8E:
 	add_to_byte_clc objMapIdx_316, #$E
 
-	LDA	#2
-	STA	byte_54B
+	set byte_54B, #2
 
 loc_12DE9C:
 	
-	LDA	#0
-	STA	byte_31A
+	set byte_31A, #0
 	STA	sprite_secondByte_31B
 	STA	byte_317
-	LDA	#$40 
-	STA	tilemap_size_307
-	LDA	#$A0 
-	STA	ppu_unk_byte_309
+	set tilemap_size_307, #$40 
+	set ppu_unk_byte_309, #$A0 
 	JSR	sub_12E829
 
 locret_12DEB4:
@@ -11168,8 +9771,7 @@ locret_12DEB4:
 
 sub_12DEB5:
 	
-	LDA	byte_54B
-	STA	objMapIdx_316
+	set objMapIdx_316, byte_54B
 	LDA	byte_54A
 	BEQ	loc_12DEC9
 	add_to_byte_clc objMapIdx_316, #3
@@ -11178,15 +9780,11 @@ sub_12DEB5:
 loc_12DEC9:
 	add_to_byte_clc objMapIdx_316, #$15
 
-	LDA	#$30 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set byte_31A, #$30 
+	set sprite_secondByte_31B, #0
 	STA	byte_317
-	LDA	#$40 
-	STA	tilemap_size_307
-	LDA	#$B8 
-	STA	ppu_unk_byte_309
+	set tilemap_size_307, #$40 
+	set ppu_unk_byte_309, #$B8 
 	JSR	sub_12E829
 	RTS
 ; End of function sub_12DEB5
@@ -11214,26 +9812,18 @@ sub_12DF2B:
 
 sub_12DF32:
 	
-	LDA	#$A
-	STA	tilemap_size_307
-	LDA	#8
-	STA	ppu_unk_byte_309
-	LDA	#$29 
-	STA	inv_itemPrev_idx_31D
-	LDA	#$A
-	STA	sprite_secondByte_31B
+	set tilemap_size_307, #$A
+	set ppu_unk_byte_309, #8
+	set inv_itemPrev_idx_31D, #$29 
+	set sprite_secondByte_31B, #$A
 	JSR	sub_128326
 	LDX	byte_372
 	LDA	unk_4D2,X
 	TAY
-	LDA	byte_12E869,Y
-	STA	inv_itemPrev_idx_31D
-	LDA	#$A
-	STA	tilemap_size_307
-	LDA	#8
-	STA	ppu_unk_byte_309
-	LDA	#$C4 
-	STA	sprite_secondByte_31B
+	set inv_itemPrev_idx_31D, {byte_12E869,Y}
+	set tilemap_size_307, #$A
+	set ppu_unk_byte_309, #8
+	set sprite_secondByte_31B, #$C4 
 	JSR	sub_128358
 	JSR	sub_128326
 	RTS
@@ -11245,30 +9835,23 @@ sub_12DF32:
 
 sub_12DF6C:
 	LDX	byte_372
-	LDA	unk_4D2,X
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
+	set text_idx_35C, {unk_4D2,X}
+	set char_type_id_35D, #0
 	LDA	inv_itemPrev_idx_31D
 	CMP	#$29 
 	BNE	loc_12DF8B
-	LDA	#$75 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
+	set text_idx_35C, #$75 
+	set char_type_id_35D, #0
 
 loc_12DF8B:
 	LDA	inv_itemPrev_idx_31D
 	CMP	#$15
 	BNE	loc_12DF9C
-	LDA	#7
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
+	set text_idx_35C, #7
+	set char_type_id_35D, #2
 
 loc_12DF9C:
-	LDA	#7
-	STA	byte_364
+	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	RTS
 ; End of function sub_12DF6C
@@ -11287,8 +9870,7 @@ sub_12DFA5:
 	CLC
 	ADC	byte_42C
 	TAY
-	LDA	byte_533,Y
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, {byte_533,Y}
 	LDA	tilemapTypeUnk_30B
 	CMP	#6
 	BCC	loc_12DFC6
@@ -11338,16 +9920,11 @@ loc_12DFE8:
 
 sub_12DFFC:
 	
-	LDA	#0
-	STA	byte_543
-	LDA	#$10
-	STA	tilemap_size_307
-	LDA	#$14
-	STA	ppu_unk_byte_309
-	LDA	#$29 
-	STA	inv_itemPrev_idx_31D
-	LDA	#$A
-	STA	sprite_secondByte_31B
+	set byte_543, #0
+	set tilemap_size_307, #$10
+	set ppu_unk_byte_309, #$14
+	set inv_itemPrev_idx_31D, #$29 
+	set sprite_secondByte_31B, #$A
 	JSR	sub_128326
 	RTS
 ; End of function sub_12DFFC
@@ -11356,12 +9933,9 @@ sub_12DFFC:
 ; START	OF FUNCTION CHUNK FOR sub_12DFA5
 
 loc_12E019:
-	LDA	#$77 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#7
-	STA	byte_364
+	set text_idx_35C, #$77 
+	set char_type_id_35D, #0
+	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
 	JSR	sub_12ED29
@@ -11385,10 +9959,8 @@ loc_12E035:
 
 loc_12E04D:
 	
-	LDA	#$FF
-	STA	byte_549
-	LDA	#0
-	STA	byte_54A
+	set byte_549, #$FF
+	set byte_54A, #0
 	STA	byte_4B5
 	JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
@@ -11401,8 +9973,7 @@ loc_12E05D:
 	LDA	byte_54A
 	CMP	#0
 	BEQ	loc_12E076
-	LDA	#0
-	STA	byte_54A
+	set byte_54A, #0
 	STA	byte_4B5
 	JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
@@ -11423,8 +9994,7 @@ loc_12E076:
 
 loc_12E08E:
 	
-	LDA	#0
-	STA	byte_54A
+	set byte_54A, #0
 	STA	byte_4B5
 	LDA	#$AA 
 	JSR	sub_12E156
@@ -11447,8 +10017,7 @@ loc_12E09E:
 
 loc_12E0B6:
 	
-	LDA	#0
-	STA	byte_54A
+	set byte_54A, #0
 	STA	byte_4B5
 	LDA	#$55 
 	JSR	sub_12E156
@@ -11509,12 +10078,9 @@ loc_12E108:
 
 loc_12E11E:
 	
-	LDA	#$78 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#7
-	STA	byte_364
+	set text_idx_35C, #$78 
+	set char_type_id_35D, #0
+	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
 	JSR	sub_12ED29
@@ -11527,8 +10093,7 @@ loc_12E13A:
 	LDX	byte_47B
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47B
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47B
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDY	byte_532
@@ -11544,8 +10109,7 @@ sub_12E156:
 	CLC
 	ADC	byte_549
 	BCC	loc_12E162
-	LDA	#$FF
-	STA	byte_549
+	set byte_549, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -11805,12 +10369,9 @@ loc_12E2E1:
 	LDA	byte_598
 	CMP	#0
 	BNE	loc_12E308
-	LDA	#$B7 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#7
-	STA	byte_364
+	set text_idx_35C, #$B7 
+	set char_type_id_35D, #0
+	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
 	JSR	sub_12ED29
@@ -11831,8 +10392,7 @@ loc_12E312:
 
 loc_12E315:
 	
-	LDA	tilemapTypeUnk_30B
-	STA	byte_46E
+	set byte_46E, tilemapTypeUnk_30B
 	CMP	#0
 	BEQ	loc_12E362
 	CMP	#$13
@@ -11873,19 +10433,15 @@ loc_12E35C:
 
 loc_12E362:
 	
-	LDA	#$FF
-	STA	sprite_length_30F
+	set sprite_length_30F, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12E368:
 	
-	LDA	#$76 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#7
-	STA	byte_364
+	set text_idx_35C, #$76 
+	set char_type_id_35D, #0
+	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
 	JSR	sub_12ED29
@@ -11906,10 +10462,8 @@ sub_12E384:
 	CLC
 	ADC	#$3A 
 	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#7
-	STA	byte_364
+	set char_type_id_35D, #0
+	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
 	JSR	sub_12ED29
@@ -11921,16 +10475,14 @@ sub_12E384:
 	LDA	byte_533,Y
 	CMP	#$25 
 	BNE	loc_12E3C1
-	LDA	#$27 
-	STA	byte_533,Y
+	set {byte_533,Y}, #$27 
 	JMP	loc_12E3CA
 ; ---------------------------------------------------------------------------
 
 loc_12E3C1:
 	CMP	#$26 
 	BNE	locret_12E3D3
-	LDA	#$28 
-	STA	byte_533,Y
+	set {byte_533,Y}, #$28 
 
 loc_12E3CA:
 	TYA
@@ -11965,17 +10517,14 @@ sub_12E3DF:
 	LDA	byte_543
 	CMP	#0
 	BEQ	locret_12E427
-	LDA	#$10
-	STA	tilemap_size_307
-	LDA	#$14
-	STA	ppu_unk_byte_309
+	set tilemap_size_307, #$10
+	set ppu_unk_byte_309, #$14
 	LDA	byte_543
 	SEC
 	SBC	#1
 	STA	tilemapTypeUnk_30B
 	LDY	tilemapTypeUnk_30B
-	LDA	byte_12E869,Y
-	STA	inv_itemPrev_idx_31D
+	set inv_itemPrev_idx_31D, {byte_12E869,Y}
 	LDY	#0
 
 loc_12E404:
@@ -11984,8 +10533,7 @@ loc_12E404:
 	CMP	tilemapTypeUnk_30B
 	BNE	loc_12E404
 	DEY
-	LDA	#$3C 
-	STA	sprite_secondByte_31B
+	set sprite_secondByte_31B, #$3C 
 
 loc_12E413:
 	CPY	#0
@@ -12017,8 +10565,7 @@ sub_12E428:
 	LDA	byte_42E
 	CMP	#0
 	BNE	loc_12E441
-	LDA	#4
-	STA	byte_42E
+	set byte_42E, #4
 
 loc_12E441:
 	DEC	byte_42E
@@ -12034,8 +10581,7 @@ loc_12E450:
 	LDA	byte_42E
 	CMP	#3
 	BCC	loc_12E460
-	LDA	#$FF
-	STA	byte_42E
+	set byte_42E, #$FF
 
 loc_12E460:
 	INC	byte_42E
@@ -12088,13 +10634,10 @@ loc_12E4B0:
 loc_12E4B7:
 	
 	JSR	sub_12ED29
-	LDA	#$10
-	STA	tilemapWidth_308
-	LDA	#$70 
-	STA	byte_31A
+	set tilemapWidth_308, #$10
+	set byte_31A, #$70 
 	JSR	sub_12D26B
-	LDA	#0
-	STA	sprite_length_30F
+	set sprite_length_30F, #0
 	RTS
 ; End of function sub_12E428
 
@@ -12104,16 +10647,13 @@ loc_12E4B7:
 
 sub_12E4CD:
 	
-	LDA	#$80 
-	STA	byte_31A
-	LDA	#$C
-	STA	tilemapWidth_308
+	set byte_31A, #$80 
+	set tilemapWidth_308, #$C
 	JSR	sub_12D26B
 	LDA	byte_546
 	CMP	#$A
 	BCC	loc_12E4EE
-	LDA	#0
-	STA	byte_546
+	set byte_546, #0
 	LDA	byte_547
 	EOR	#1
 	STA	byte_547
@@ -12127,19 +10667,13 @@ loc_12E4EE:
 	CLC
 	ADC	byte_42C
 	TAY
-	LDA	byte_12E851,Y
-	STA	tilemap_size_307
+	set tilemap_size_307, {byte_12E851,Y}
 	INY
-	LDA	byte_12E851,Y
-	STA	ppu_unk_byte_309
-	LDA	#$70 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_317
-	LDA	#$2F 
-	STA	objMapIdx_316
+	set ppu_unk_byte_309, {byte_12E851,Y}
+	set byte_31A, #$70 
+	set sprite_secondByte_31B, #0
+	set byte_317, #0
+	set objMapIdx_316, #$2F 
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	add_to_byte_clc tilemap_size_307, #$C
@@ -12151,8 +10685,7 @@ loc_12E4EE:
 	from_stack tilemap_size_307
 	add_to_byte_clc byte_31A, #4
 
-	LDA	#$2E 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$2E 
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	add_to_byte_clc tilemap_size_307, #$C
@@ -12168,8 +10701,7 @@ loc_12E4EE:
 	from_stack tilemap_size_307
 	add_to_byte_clc byte_31A, #4
 
-	LDA	#$30 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$30 
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	add_to_byte_clc ppu_unk_byte_309, #$C
@@ -12181,8 +10713,7 @@ loc_12E4EE:
 	from_stack tilemap_size_307
 	add_to_byte_clc byte_31A, #4
 
-	LDA	#$31 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$31 
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	LDA	tilemap_size_307
@@ -12205,15 +10736,12 @@ loc_12E4EE:
 
 sub_12E5E6:
 	to_stack byte_372
-	LDA	#0
-	STA	byte_372
+	set byte_372, #0
 	LDA	byte_4C1
 	CMP	#0
 	BNE	loc_12E603
-	LDA	#$75 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
+	set text_idx_35C, #$75 
+	set char_type_id_35D, #0
 	JMP	loc_12E616
 ; ---------------------------------------------------------------------------
 
@@ -12285,14 +10813,10 @@ loc_12E664:
 loc_12E67A:
 	
 	JSR	sub_12ED29
-	LDA	#$A
-	STA	byte_310
-	LDA	#8
-	STA	byte_35E
-	LDA	#9
-	STA	ppu_unk_byte_309
-	LDA	#4
-	STA	tilemap_size_307
+	set byte_310, #$A
+	set byte_35E, #8
+	set ppu_unk_byte_309, #9
+	set tilemap_size_307, #4
 	JSR	sub_12D4B3
 	JSR	sub_12E80D
 	JSR	sub_12E81B
@@ -12306,15 +10830,12 @@ loc_12E67A:
 
 sub_12E69F:
 	to_stack byte_372
-	LDA	#0
-	STA	byte_372
+	set byte_372, #0
 	LDA	byte_4D0
 	CMP	#0
 	BNE	loc_12E6BC
-	LDA	#$75 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
+	set text_idx_35C, #$75 
+	set char_type_id_35D, #0
 	JMP	loc_12E6E0
 ; ---------------------------------------------------------------------------
 
@@ -12331,10 +10852,8 @@ loc_12E6BC:
 	LDA	unk_4C2,X
 	CMP	#$E
 	BNE	loc_12E6E0
-	LDA	#$3A 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
+	set text_idx_35C, #$3A 
+	set char_type_id_35D, #2
 
 loc_12E6E0:
 	
@@ -12396,14 +10915,11 @@ loc_12E731:
 	LDA	unk_4C2,X
 	CMP	#$E
 	BNE	loc_12E75B
-	LDA	#$3B 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
+	set text_idx_35C, #$3B 
+	set char_type_id_35D, #2
 
 loc_12E75B:
-	LDA	#0
-	STA	byte_310
+	set byte_310, #0
 	JSR	exec_b2_c3_128313
 
 loc_12E763:
@@ -12417,14 +10933,10 @@ loc_12E763:
 
 loc_12E776:
 	
-	LDA	#$A
-	STA	byte_310
-	LDA	#8
-	STA	byte_35E
-	LDA	#9
-	STA	ppu_unk_byte_309
-	LDA	#4
-	STA	tilemap_size_307
+	set byte_310, #$A
+	set byte_35E, #8
+	set ppu_unk_byte_309, #9
+	set tilemap_size_307, #4
 	JSR	sub_12D4B3
 	JSR	sub_12E80D
 	JSR	sub_12E81B
@@ -12438,28 +10950,17 @@ loc_12E776:
 
 sub_12E798:
 	
-	LDA	#4
-	STA	tilemap_size_307
-	LDA	#9
-	STA	ppu_unk_byte_309
-	LDA	#8
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#0
-	STA	byte_362
-	LDA	#0
-	STA	byte_363
-	LDA	#7
-	STA	byte_364
-	LDA	#$C4 
-	STA	sprite_secondByte_31B
-	LDA	#$A
-	STA	byte_310
-	LDA	#1
-	STA	byte_360
-	LDA	#0
-	STA	byte_361
+	set tilemap_size_307, #4
+	set ppu_unk_byte_309, #9
+	set byte_35E, #8
+	set byte_35F, #1
+	set byte_362, #0
+	set byte_363, #0
+	set byte_364, #7
+	set sprite_secondByte_31B, #$C4 
+	set byte_310, #$A
+	set byte_360, #1
+	set byte_361, #0
 	JSR	exec_b2_c4_1283F2
 	RTS
 ; End of function sub_12E798
@@ -12470,18 +10971,14 @@ sub_12E798:
 
 sub_12E7D3:
 	
-	LDA	#$2E 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$2E 
 	LDA	#$54 
 
 loc_12E7DA:
 	STA	tilemap_size_307
-	LDA	#$38 
-	STA	ppu_unk_byte_309
-	LDA	#$A0 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set ppu_unk_byte_309, #$38 
+	set byte_31A, #$A0 
+	set sprite_secondByte_31B, #0
 	JSR	sub_12E829
 	RTS
 ; End of function sub_12E7D3
@@ -12492,16 +10989,11 @@ loc_12E7DA:
 
 sub_12E7F0:
 	
-	LDA	#$2F 
-	STA	objMapIdx_316
-	LDA	#$54 
-	STA	tilemap_size_307
-	LDA	#$60 
-	STA	ppu_unk_byte_309
-	LDA	#$A4 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
+	set objMapIdx_316, #$2F 
+	set tilemap_size_307, #$54 
+	set ppu_unk_byte_309, #$60 
+	set byte_31A, #$A4 
+	set sprite_secondByte_31B, #0
 	JSR	sub_12E829
 	RTS
 ; End of function sub_12E7F0
@@ -12512,10 +11004,8 @@ sub_12E7F0:
 
 sub_12E80D:
 	
-	LDA	#$A0 
-	STA	byte_31A
-	LDA	#4
-	STA	tilemapWidth_308
+	set byte_31A, #$A0 
+	set tilemapWidth_308, #4
 	JSR	sub_12D26B
 	RTS
 ; End of function sub_12E80D
@@ -12526,10 +11016,8 @@ sub_12E80D:
 
 sub_12E81B:
 	
-	LDA	#$A4 
-	STA	byte_31A
-	LDA	#4
-	STA	tilemapWidth_308
+	set byte_31A, #$A4 
+	set tilemapWidth_308, #4
 	JSR	sub_12D26B
 	RTS
 ; End of function sub_12E81B
@@ -12540,19 +11028,13 @@ sub_12E81B:
 
 sub_12E829:
 	
-	LDA	tilemap_size_307
-	STA	byte_36A
-	LDA	#0
-	STA	byte_36B
-	LDA	ppu_unk_byte_309
-	STA	byte_366
-	LDA	#0
-	STA	byte_367
-	LDA	#5
-	STA	objectIdx_318
+	set byte_36A, tilemap_size_307
+	set byte_36B, #0
+	set byte_366, ppu_unk_byte_309
+	set byte_367, #0
+	set objectIdx_318, #5
 	LDX	objMapIdx_316
-	LDA	byte_12DEED,X
-	STA	byte_317
+	set byte_317, {byte_12DEED,X}
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_12E829
@@ -12611,8 +11093,7 @@ loc_12E8C5:
 	SEC
 	SBC	tilemapTypeUnk_30B
 	STA	unk_53B,Y
-	LDA	#$F
-	STA	unk_53B,X
+	set {unk_53B,X}, #$F
 	JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
@@ -12625,8 +11106,7 @@ loc_12E8FB:
 	LDX	byte_47C
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47C
 	LDY	byte_532
@@ -12664,8 +11144,7 @@ loc_12E92A:
 	SEC
 	SBC	tilemapTypeUnk_30B
 	STA	unk_53B,Y
-	LDA	#6
-	STA	unk_53B,X
+	set {unk_53B,X}, #6
 	JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
@@ -12678,8 +11157,7 @@ loc_12E960:
 	LDX	byte_47C
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47C
 	LDY	byte_532
@@ -12717,8 +11195,7 @@ loc_12E98F:
 	SEC
 	SBC	tilemapTypeUnk_30B
 	STA	unk_53B,Y
-	LDA	#6
-	STA	unk_53B,X
+	set {unk_53B,X}, #6
 	JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
@@ -12731,8 +11208,7 @@ loc_12E9C5:
 	LDX	byte_47C
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47C
 	LDY	byte_532
@@ -12770,8 +11246,7 @@ loc_12E9F4:
 	SEC
 	SBC	tilemapTypeUnk_30B
 	STA	unk_53B,Y
-	LDA	#6
-	STA	unk_53B,X
+	set {unk_53B,X}, #6
 	JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
 
@@ -12784,8 +11259,7 @@ loc_12EA2A:
 	LDX	byte_47C
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47C
 	LDY	byte_532
@@ -12805,8 +11279,7 @@ loc_12EA55:
 	CMP	#1
 	BNE	loc_12EA77
 	to_stack byte_47C
-	LDA	byte_47B
-	STA	byte_47C
+	set byte_47C, byte_47B
 	from_stack byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
@@ -12824,8 +11297,7 @@ loc_12EA7A:
 	CMP	#2
 	BNE	loc_12EA9C
 	to_stack byte_47C
-	LDA	byte_47B
-	STA	byte_47C
+	set byte_47C, byte_47B
 	from_stack byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
@@ -12843,8 +11315,7 @@ loc_12EA9F:
 	CMP	#3
 	BNE	loc_12EAC1
 	to_stack byte_47C
-	LDA	byte_47B
-	STA	byte_47C
+	set byte_47C, byte_47B
 	from_stack byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
@@ -12862,8 +11333,7 @@ loc_12EAC4:
 	CMP	#4
 	BNE	loc_12EAE6
 	to_stack byte_47C
-	LDA	byte_47B
-	STA	byte_47C
+	set byte_47C, byte_47B
 	from_stack byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
@@ -12880,16 +11350,14 @@ loc_12EAE9:
 	LDA	byte_533,Y
 	CMP	#$B
 	BNE	loc_12EAFC
-	LDA	#$D
-	STA	byte_533,X
+	set {byte_533,X}, #$D
 	JMP	loc_12EB05
 ; ---------------------------------------------------------------------------
 
 loc_12EAFC:
 	CMP	#$11
 	BNE	loc_12EB39
-	LDA	#$E
-	STA	byte_533,X
+	set {byte_533,X}, #$E
 
 loc_12EB05:
 	LDX	byte_47B
@@ -12901,8 +11369,7 @@ loc_12EB05:
 loc_12EB13:
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
@@ -12926,8 +11393,7 @@ loc_12EB3C:
 	LDA	byte_533,Y
 	CMP	#$A
 	BNE	loc_12EB4F
-	LDA	#$D
-	STA	byte_533,X
+	set {byte_533,X}, #$D
 	JMP	loc_12EB78
 ; ---------------------------------------------------------------------------
 
@@ -12937,8 +11403,7 @@ loc_12EB4F:
 	LDA	byte_47B
 	CMP	byte_47C
 	BEQ	loc_12EB63
-	LDA	#$F
-	STA	byte_533,X
+	set {byte_533,X}, #$F
 	JMP	loc_12EB78
 ; ---------------------------------------------------------------------------
 
@@ -12946,16 +11411,14 @@ loc_12EB63:
 	
 	CMP	#$C
 	BNE	loc_12EB6F
-	LDA	#$11
-	STA	byte_533,X
+	set {byte_533,X}, #$11
 	JMP	loc_12EB78
 ; ---------------------------------------------------------------------------
 
 loc_12EB6F:
 	CMP	#$F
 	BNE	loc_12EBAC
-	LDA	#$10
-	STA	byte_533,X
+	set {byte_533,X}, #$10
 
 loc_12EB78:
 	
@@ -12968,8 +11431,7 @@ loc_12EB78:
 loc_12EB86:
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
@@ -12997,8 +11459,7 @@ loc_12EBB6:
 	LDA	byte_533,Y
 	CMP	#$B
 	BNE	loc_12EBF6
-	LDA	#$11
-	STA	byte_533,X
+	set {byte_533,X}, #$11
 	LDX	byte_47B
 	LDA	byte_47B
 	CMP	byte_47C
@@ -13008,8 +11469,7 @@ loc_12EBB6:
 loc_12EBD0:
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
@@ -13027,8 +11487,7 @@ loc_12EBF6:
 	LDA	byte_533,Y
 	CMP	#$D
 	BNE	loc_12EC36
-	LDA	#$E
-	STA	byte_533,X
+	set {byte_533,X}, #$E
 	LDX	byte_47B
 	LDA	byte_47B
 	CMP	byte_47C
@@ -13038,8 +11497,7 @@ loc_12EBF6:
 loc_12EC10:
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
@@ -13063,8 +11521,7 @@ loc_12EC39:
 	LDA	byte_533,Y
 	CMP	#$C
 	BNE	loc_12EC7D
-	LDA	#$E
-	STA	byte_533,X
+	set {byte_533,X}, #$E
 	LDX	byte_47B
 	LDA	byte_47B
 	CMP	byte_47C
@@ -13074,8 +11531,7 @@ loc_12EC39:
 loc_12EC57:
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
@@ -13099,8 +11555,7 @@ loc_12EC80:
 	LDA	byte_533,Y
 	CMP	#$B
 	BNE	loc_12ECC4
-	LDA	#$10
-	STA	byte_533,X
+	set {byte_533,X}, #$10
 	LDX	byte_47B
 	LDA	byte_47B
 	CMP	byte_47C
@@ -13110,8 +11565,7 @@ loc_12EC80:
 loc_12EC9E:
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
@@ -13135,8 +11589,7 @@ loc_12ECC7:
 	LDA	byte_533,Y
 	CMP	#$A
 	BNE	loc_12ED0B
-	LDA	#$E
-	STA	byte_533,X
+	set {byte_533,X}, #$E
 	LDX	byte_47B
 	LDA	byte_47B
 	CMP	byte_47C
@@ -13146,8 +11599,7 @@ loc_12ECC7:
 loc_12ECE5:
 	LDY	byte_532
 	JSR	sub_12D9F7
-	LDA	byte_47C
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
@@ -13168,16 +11620,14 @@ loc_12ED0B:
 loc_12ED0E:
 	
 	JSR	sub_12ED29
-	LDA	#0
-	STA	sprite_length_30F
+	set sprite_length_30F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12ED17:
 	
 	JSR	sub_12ED20
-	LDA	#$FF
-	STA	sprite_length_30F
+	set sprite_length_30F, #$FF
 	RTS
 ; End of function sub_12E8A5
 
@@ -13248,24 +11698,18 @@ loc_12ED4D:
 
 
 sub_12ED58:
-	LDA	#5
-	STA	objectIdx_318
+	set objectIdx_318, #5
 
 set_inventory_screen_12ED5D:
-	LDA	#8
-	STA	image_id_4A4
-	LDA	#0
-	STA	image_offset_4A5
+	set image_id_4A4, #8
+	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
 	STA	ppu_prev_scroll_x_unk_4A7
 	STA	ppu_prev_scroll_y_unk_4A8
-	LDA	#2
-	STA	prev_sprite_type_4A9
+	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
-	LDA	#0
-	STA	tilemapTypeUnk_30B
-	LDA	#$80 
-	STA	tilemap_size_307
+	set tilemapTypeUnk_30B, #0
+	set tilemap_size_307, #$80 
 	STA	ppu_unk_byte_309
 	to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
@@ -13281,8 +11725,7 @@ loc_12ED90:
 	CMP	#0
 	BEQ	loc_12ED90
 	DEC	tilemapTypeUnk_30B
-	LDA	#$80 
-	STA	tilemap_size_307
+	set tilemap_size_307, #$80 
 	STA	ppu_unk_byte_309
 	JSR	sub_12D261
 	to_stack tilemapTypeUnk_30B
@@ -13299,8 +11742,7 @@ loc_12EDC0:
 	CMP	#$47 
 	BEQ	loc_12ED90
 	INC	tilemapTypeUnk_30B
-	LDA	#$80 
-	STA	tilemap_size_307
+	set tilemap_size_307, #$80 
 	STA	ppu_unk_byte_309
 	to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
@@ -13332,30 +11774,23 @@ sub_12EDF5:
 	LDA	palette_bg_321,X 
 	LDX	#$10
 	STA	palette_bg_321,X 
-	LDA	#4
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #4
 
 loc_12EE04:
-	LDA	#0
-	STA	has_ppu_data_to_upload_6F
+	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	LDA	#1
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #1
 	INX
-	LDA	#$20 
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #$20 
 	INX
-	LDA	#$3F 
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #$3F 
 	INX
-	LDA	#0
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #0
 	INX
 	LDA	byte_341
 	CMP	#0
 	BNE	loc_12EE2A
-	LDA	#1
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #1
 
 loc_12EE2A:
 	LDY	#0
@@ -13418,8 +11853,7 @@ loc_12EE7D:
 	INY
 	CPY	#$20 
 	BCC	loc_12EE2C
-	LDA	#1
-	STA	has_ppu_data_to_upload_6F
+	set has_ppu_data_to_upload_6F, #1
 	DEC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	CMP	#0
@@ -13450,30 +11884,23 @@ loc_12EEA7:
 
 sub_12EEAE:
 	
-	LDA	#4
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #4
 
 write_ppu_entry_12EEB3:
-	LDA	#0
-	STA	has_ppu_data_to_upload_6F
+	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	LDA	#1
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #1
 	INX
-	LDA	#$20 
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #$20 
 	INX
-	LDA	#$3F 
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #$3F 
 	INX
-	LDA	#0
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #0
 	INX
 	LDA	byte_341
 	CMP	#0
 	BNE	loc_12EED9
-	LDA	#0
-	STA	inv_spr_dscr1_30C
+	set inv_spr_dscr1_30C, #0
 
 loc_12EED9:
 	LDY	#0
@@ -13543,8 +11970,7 @@ loc_12EF35:
 	INY
 	CPY	#$20 
 	BCC	loc_12EEDB
-	LDA	#1
-	STA	has_ppu_data_to_upload_6F
+	set has_ppu_data_to_upload_6F, #1
 	DEC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	CMP	#$FF
@@ -13579,8 +12005,7 @@ sub_12EF66:
 	TAY
 	CPY	#$F
 	BNE	sub_12EF77
-	LDA	#$FF
-	STA	sprite_length_30F
+	set sprite_length_30F, #$FF
 	RTS
 ; End of function sub_12EF66
 
@@ -13600,15 +12025,12 @@ sub_12EF77:
 	to_stack ppu_prev_scroll_x_unk_4A7
 	to_stack ppu_prev_scroll_y_unk_4A8
 	to_stack prev_sprite_type_4A9
-	LDA	map_sequence_12F072,Y
-	STA	image_id_4A4
-	LDA	#0
-	STA	image_offset_4A5
+	set image_id_4A4, {map_sequence_12F072,Y}
+	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
 	STA	ppu_prev_scroll_x_unk_4A7
 	STA	ppu_prev_scroll_y_unk_4A8
-	LDA	#2
-	STA	prev_sprite_type_4A9
+	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
 	JSR	wait_for_any_input_FCCD
 	from_stack prev_sprite_type_4A9
@@ -13617,8 +12039,7 @@ sub_12EF77:
 	from_stack ppu_prev_unk_4A6
 	from_stack image_offset_4A5
 	from_stack image_id_4A4
-	LDA	#0
-	STA	sprite_length_30F
+	set sprite_length_30F, #0
 	RTS
 ; End of function sub_12EF77
 
@@ -13643,8 +12064,7 @@ map_sequence_12F072:.BYTE   4,	6,  5,	7,  3,$14,$15, $C, $D, $E, $F
 
 sub_12F07D:
 	
-	LDA	#0
-	STA	byte_41F
+	set byte_41F, #0
 	STA	byte_421
 	STA	byte_547
 	JSR	sub_1283BA
@@ -13654,32 +12074,22 @@ sub_12F07D:
 	to_stack ppu_prev_scroll_x_unk_4A7
 	to_stack ppu_prev_scroll_y_unk_4A8
 	to_stack prev_sprite_type_4A9
-	LDA	#5
-	STA	objectIdx_318
-	LDA	#0
-	STA	byte_360
-	LDA	#3
-	STA	byte_361
+	set objectIdx_318, #5
+	set byte_360, #0
+	set byte_361, #3
 
 show_computer_12F0B2:
-	LDA	#$84 
-	STA	image_id_4A4
-	LDA	#0
-	STA	image_offset_4A5
+	set image_id_4A4, #$84 
+	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
-	LDA	#0
-	STA	ppu_prev_scroll_x_unk_4A7
+	set ppu_prev_scroll_x_unk_4A7, #0
 	STA	ppu_prev_scroll_y_unk_4A8
-	LDA	#2
-	STA	prev_sprite_type_4A9
+	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
-	LDA	#$2B 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
+	set text_idx_35C, #$2B 
+	set char_type_id_35D, #2
 	JSR	sub_12F5B9
-	LDA	#0
-	STA	byte_372
+	set byte_372, #0
 
 loc_12F0E1:
 	
@@ -13745,11 +12155,9 @@ loc_12F13F:
 	from_stack ppu_prev_unk_4A6
 	from_stack image_offset_4A5
 	from_stack image_id_4A4
-	LDA	#$FF
-	STA	map_show_43B
+	set map_show_43B, #$FF
 	JSR	exec_b0_c2_12A9A9
-	LDA	#0
-	STA	map_show_43B
+	set map_show_43B, #0
 	RTS
 ; End of function sub_12F07D
 
@@ -13759,30 +12167,21 @@ loc_12F13F:
 
 sub_12F168:
 	
-	LDA	#$2A 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$2A 
 	LDA	byte_372
 	ASL	A
 	TAY
-	LDA	byte_12F28B,Y
-	STA	byte_36A
+	set byte_36A, {byte_12F28B,Y}
 	INY
-	LDA	byte_12F28B,Y
-	STA	byte_366
-	LDA	#0
-	STA	byte_36B
+	set byte_366, {byte_12F28B,Y}
+	set byte_36B, #0
 	STA	byte_367
-	LDA	#5
-	STA	objectIdx_318
-	LDA	#0
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_317
+	set objectIdx_318, #5
+	set byte_31A, #0
+	set sprite_secondByte_31B, #0
+	set byte_317, #0
 	JSR	exec_b1_c1_128394
-	LDA	#$2B 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$2B 
 	LDA	byte_372
 	ASL	A
 	TAY
@@ -13809,46 +12208,32 @@ loc_12F1C7:
 
 loc_12F1D0:
 	INY
-	LDA	byte_12F28B,Y
-	STA	byte_366
-	LDA	#0
-	STA	byte_36B
+	set byte_366, {byte_12F28B,Y}
+	set byte_36B, #0
 	STA	byte_367
-	LDA	#5
-	STA	objectIdx_318
-	LDA	#4
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_317
+	set objectIdx_318, #5
+	set byte_31A, #4
+	set sprite_secondByte_31B, #0
+	set byte_317, #0
 	JSR	exec_b1_c1_128394
-	LDA	#$2C 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$2C 
 	LDA	byte_372
 	ASL	A
 	TAY
-	LDA	byte_12F28B,Y
-	STA	byte_36A
+	set byte_36A, {byte_12F28B,Y}
 	INY
 	LDA	byte_12F28B,Y
 	CLC
 	ADC	#8
 	STA	byte_366
-	LDA	#0
-	STA	byte_36B
+	set byte_36B, #0
 	STA	byte_367
-	LDA	#5
-	STA	objectIdx_318
-	LDA	#8
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_317
+	set objectIdx_318, #5
+	set byte_31A, #8
+	set sprite_secondByte_31B, #0
+	set byte_317, #0
 	JSR	exec_b1_c1_128394
-	LDA	#$2D 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$2D 
 	LDA	byte_372
 	ASL	A
 	TAY
@@ -13879,17 +12264,12 @@ loc_12F261:
 	CLC
 	ADC	#8
 	STA	byte_366
-	LDA	#0
-	STA	byte_36B
+	set byte_36B, #0
 	STA	byte_367
-	LDA	#5
-	STA	objectIdx_318
-	LDA	#$C
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_317
+	set objectIdx_318, #5
+	set byte_31A, #$C
+	set sprite_secondByte_31B, #0
+	set byte_317, #0
 	JSR	exec_b1_c1_128394
 	RTS
 ; End of function sub_12F168
@@ -13941,8 +12321,7 @@ loc_12F2ED:
 	ADC	#0
 	STA	data_3
 	LDX	byte_372
-	LDA	byte_12F45C,X
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, {byte_12F45C,X}
 	LDA	tilemapTypeUnk_30B
 	CMP	#$FF
 	BEQ	loc_12F30E
@@ -13961,14 +12340,11 @@ loc_12F30E:
 	add_to_byte ptr_1, #0
 
 	LDY	#0
-	LDA	(ptr_0),Y
-	STA	data_2
+	set data_2, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	data_3
+	set data_3, {(ptr_0),Y}
 	LDY	#0
-	LDA	(data_2),Y
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, {(data_2),Y}
 	CMP	byte_421
 	BEQ	loc_12F33F
 	JMP	locret_12F410
@@ -13993,15 +12369,11 @@ loc_12F34C:
 	LDA	byte_420
 	CMP	#2
 	BNE	loc_12F377
-	LDA	#3
-	STA	byte_420
-	LDA	#$2C 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
+	set byte_420, #3
+	set text_idx_35C, #$2C 
+	set char_type_id_35D, #2
 	JSR	sub_12F5B9
-	LDA	#0
-	STA	byte_421
+	set byte_421, #0
 	JSR	sub_12F583
 	JMP	locret_12F410
 ; ---------------------------------------------------------------------------
@@ -14015,8 +12387,7 @@ loc_12F37E:
 	
 	JSR	sub_12F5FC
 	to_stack byte_372
-	LDA	#$1C
-	STA	byte_372
+	set byte_372, #$1C
 
 loc_12F38A:
 	
@@ -14049,8 +12420,7 @@ loc_12F3B5:
 ; ---------------------------------------------------------------------------
 
 loc_12F3BC:
-	LDA	byte_372
-	STA	tilemapTypeUnk_30B
+	set tilemapTypeUnk_30B, byte_372
 	from_stack byte_372
 	to_stack tilemapTypeUnk_30B
 	JSR	sub_12F168
@@ -14060,17 +12430,14 @@ loc_12F3BC:
 	CMP	#$1D
 	BEQ	loc_12F3E9
 	JSR	sub_12F6D8
-	LDA	#4
-	STA	byte_420
-	LDA	#0
-	STA	byte_421
+	set byte_420, #4
+	set byte_421, #0
 	JMP	locret_12F410
 ; ---------------------------------------------------------------------------
 
 loc_12F3E9:
 	JSR	sub_12F698
-	LDA	#$FF
-	STA	byte_684
+	set byte_684, #$FF
 	JMP	loc_12F37E
 ; ---------------------------------------------------------------------------
 
@@ -14080,16 +12447,13 @@ loc_12F3F4:
 	CMP	#4
 	BNE	loc_12F40B
 	JSR	sub_12F698
-	LDA	#$FF
-	STA	byte_69E
-	LDA	#3
-	STA	byte_420
+	set byte_69E, #$FF
+	set byte_420, #3
 	JMP	loc_12F37E
 ; ---------------------------------------------------------------------------
 
 loc_12F40B:
-	LDA	#$FF
-	STA	byte_41F
+	set byte_41F, #$FF
 
 locret_12F410:
 	
@@ -14105,10 +12469,8 @@ loc_12F411:
 	ADC	#0
 	STA	ptr_1
 	LDX	byte_421
-	LDA	byte_372
-	STA	unk_422,X
-	LDA	#1
-	STA	tilemapTypeUnk_30B
+	set {unk_422,X}, byte_372
+	set tilemapTypeUnk_30B, #1
 	JSR	sub_12F478
 	LDA	byte_372
 	CMP	#$A
@@ -14132,26 +12494,20 @@ byte_12F45C:.BYTE $10,$16,	4,$11,$13,$18,$14,  8, $E, $F,$1B,  0,$12,  3,	5,  6
 
 
 sub_12F478:
-	LDA	#0
-	STA	has_ppu_data_to_upload_6F
+	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	LDA	#1
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, #1
 	INX
-	LDA	tilemapTypeUnk_30B
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, tilemapTypeUnk_30B
 	INX
-	LDA	data_3
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, data_3
 	INX
-	LDA	data_2
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, data_2
 	INX
 	LDY	#0
 
 loc_12F495:
-	LDA	(ptr_0),Y
-	STA	ppu_data_70,X
+	set {ppu_data_70,X}, {(ptr_0),Y}
 	INX
 	INY
 	CPY	tilemapTypeUnk_30B
@@ -14296,8 +12652,7 @@ sub_12F564:
 	LDA	count_unk_465
 	CMP	#$F
 	BCC	locret_12F5B8
-	LDA	#0
-	STA	count_unk_465
+	set count_unk_465, #0
 	LDA	byte_547
 	EOR	#1
 	STA	byte_547
@@ -14310,8 +12665,7 @@ sub_12F564:
 
 
 sub_12F57D:
-	LDA	#$F0 
-	STA	byte_280
+	set byte_280, #$F0 
 	RTS
 ; End of function sub_12F57D
 
@@ -14321,8 +12675,7 @@ sub_12F57D:
 
 sub_12F583:
 	
-	LDA	#$3C 
-	STA	objMapIdx_316
+	set objMapIdx_316, #$3C 
 	LDA	byte_421
 	ASL	A
 	ASL	A
@@ -14330,19 +12683,13 @@ sub_12F583:
 	CLC
 	ADC	#$70 
 	STA	byte_36A
-	LDA	#$50 
-	STA	byte_366
-	LDA	#0
-	STA	byte_36B
+	set byte_366, #$50 
+	set byte_36B, #0
 	STA	byte_367
-	LDA	#5
-	STA	objectIdx_318
-	LDA	#$80 
-	STA	byte_31A
-	LDA	#0
-	STA	sprite_secondByte_31B
-	LDA	#2
-	STA	byte_317
+	set objectIdx_318, #5
+	set byte_31A, #$80 
+	set sprite_secondByte_31B, #0
+	set byte_317, #2
 	JSR	exec_b1_c1_128394
 
 locret_12F5B8:
@@ -14355,16 +12702,11 @@ locret_12F5B8:
 
 sub_12F5B9:
 	
-	LDA	#9
-	STA	ppu_unk_byte_309
-	LDA	#9
-	STA	tilemap_size_307
-	LDA	#8
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#$AF 
-	STA	sprite_secondByte_31B
+	set ppu_unk_byte_309, #9
+	set tilemap_size_307, #9
+	set byte_35E, #8
+	set byte_35F, #1
+	set sprite_secondByte_31B, #$AF 
 ; End of function sub_12F5B9
 
 
@@ -14373,10 +12715,8 @@ sub_12F5B9:
 
 sub_12F5D2:
 	
-	LDA	#0
-	STA	byte_362
-	LDA	#0
-	STA	byte_363
+	set byte_362, #0
+	set byte_363, #0
 ; End of function sub_12F5D2
 
 
@@ -14385,15 +12725,11 @@ sub_12F5D2:
 
 sub_12F5DC:
 	
-	LDA	#7
-	STA	byte_364
-	LDA	#1
-	STA	byte_360
-	LDA	#0
-	STA	byte_361
+	set byte_364, #7
+	set byte_360, #1
+	set byte_361, #0
 	to_stack byte_310
-	LDA	#5
-	STA	byte_310
+	set byte_310, #5
 	JSR	exec_b2_c4_1283F2
 	from_stack byte_310
 	RTS
@@ -14405,65 +12741,37 @@ sub_12F5DC:
 
 sub_12F5FC:
 	JSR	sub_12F57D
-	LDA	#$2D 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#3
-	STA	ppu_unk_byte_309
-	LDA	#5
-	STA	tilemap_size_307
-	LDA	#$B
-	STA	byte_35E
-	LDA	#4
-	STA	byte_35F
-	LDA	#$AF 
-	STA	sprite_secondByte_31B
+	set text_idx_35C, #$2D 
+	set char_type_id_35D, #2
+	set ppu_unk_byte_309, #3
+	set tilemap_size_307, #5
+	set byte_35E, #$B
+	set byte_35F, #4
+	set sprite_secondByte_31B, #$AF 
 	JSR	sub_12F5D2
-	LDA	#$2E 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#5
-	STA	ppu_unk_byte_309
-	LDA	#$E
-	STA	tilemap_size_307
-	LDA	#2
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#$D7 
-	STA	sprite_secondByte_31B
+	set text_idx_35C, #$2E 
+	set char_type_id_35D, #2
+	set ppu_unk_byte_309, #5
+	set tilemap_size_307, #$E
+	set byte_35E, #2
+	set byte_35F, #1
+	set sprite_secondByte_31B, #$D7 
 	JSR	sub_12F5D2
-	LDA	#$2F 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#7
-	STA	ppu_unk_byte_309
-	LDA	#$E
-	STA	tilemap_size_307
-	LDA	#2
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#$DF 
-	STA	sprite_secondByte_31B
+	set text_idx_35C, #$2F 
+	set char_type_id_35D, #2
+	set ppu_unk_byte_309, #7
+	set tilemap_size_307, #$E
+	set byte_35E, #2
+	set byte_35F, #1
+	set sprite_secondByte_31B, #$DF 
 	JSR	sub_12F5D2
-	LDA	#$30 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#9
-	STA	ppu_unk_byte_309
-	LDA	#$E
-	STA	tilemap_size_307
-	LDA	#2
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#$E7 
-	STA	sprite_secondByte_31B
+	set text_idx_35C, #$30 
+	set char_type_id_35D, #2
+	set ppu_unk_byte_309, #9
+	set tilemap_size_307, #$E
+	set byte_35E, #2
+	set byte_35F, #1
+	set sprite_secondByte_31B, #$E7 
 	JSR	sub_12F5D2
 	RTS
 ; End of function sub_12F5FC
@@ -14475,24 +12783,15 @@ sub_12F5FC:
 sub_12F698:
 	
 	JSR	sub_12F732
-	LDA	#$32 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#5
-	STA	ppu_unk_byte_309
-	LDA	#5
-	STA	tilemap_size_307
-	LDA	#$B
-	STA	byte_35E
-	LDA	#2
-	STA	byte_35F
-	LDA	#$B3 
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_362
-	LDA	#1
-	STA	byte_363
+	set text_idx_35C, #$32 
+	set char_type_id_35D, #2
+	set ppu_unk_byte_309, #5
+	set tilemap_size_307, #5
+	set byte_35E, #$B
+	set byte_35F, #2
+	set sprite_secondByte_31B, #$B3 
+	set byte_362, #0
+	set byte_363, #1
 	JSR	sub_12F5DC
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
@@ -14507,39 +12806,23 @@ sub_12F698:
 
 sub_12F6D8:
 	JSR	sub_12F732
-	LDA	#$31 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#3
-	STA	ppu_unk_byte_309
-	LDA	#5
-	STA	tilemap_size_307
-	LDA	#$B
-	STA	byte_35E
-	LDA	#2
-	STA	byte_35F
-	LDA	#$B3 
-	STA	sprite_secondByte_31B
-	LDA	#0
-	STA	byte_362
-	LDA	#1
-	STA	byte_363
+	set text_idx_35C, #$31 
+	set char_type_id_35D, #2
+	set ppu_unk_byte_309, #3
+	set tilemap_size_307, #5
+	set byte_35E, #$B
+	set byte_35F, #2
+	set sprite_secondByte_31B, #$B3 
+	set byte_362, #0
+	set byte_363, #1
 	JSR	sub_12F5DC
-	LDA	#$2C 
-	STA	text_idx_35C
-	LDA	#2
-	STA	char_type_id_35D
-	LDA	#9
-	STA	ppu_unk_byte_309
-	LDA	#9
-	STA	tilemap_size_307
-	LDA	#3
-	STA	byte_35E
-	LDA	#1
-	STA	byte_35F
-	LDA	#$F3 
-	STA	sprite_secondByte_31B
+	set text_idx_35C, #$2C 
+	set char_type_id_35D, #2
+	set ppu_unk_byte_309, #9
+	set tilemap_size_307, #9
+	set byte_35E, #3
+	set byte_35F, #1
+	set sprite_secondByte_31B, #$F3 
 	JSR	sub_12F5D2
 	RTS
 ; End of function sub_12F6D8
@@ -14550,20 +12833,13 @@ sub_12F6D8:
 
 sub_12F732:
 	JSR	sub_12F57D
-	LDA	#$74 
-	STA	text_idx_35C
-	LDA	#0
-	STA	char_type_id_35D
-	LDA	#3
-	STA	ppu_unk_byte_309
-	LDA	#5
-	STA	tilemap_size_307
-	LDA	#$B
-	STA	byte_35E
-	LDA	#4
-	STA	byte_35F
-	LDA	#$AF 
-	STA	sprite_secondByte_31B
+	set text_idx_35C, #$74 
+	set char_type_id_35D, #0
+	set ppu_unk_byte_309, #3
+	set tilemap_size_307, #5
+	set byte_35E, #$B
+	set byte_35F, #4
+	set sprite_secondByte_31B, #$AF 
 	JSR	sub_12F5D2
 	RTS
 ; End of function sub_12F732

@@ -12,10 +12,8 @@ bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
-	LDA	bank_to_344
-	STA	bank_prev_345
-	LDA	#$88 
-	STA	bank_switch_flag_6C
+	set bank_prev_345, bank_to_344
+	set bank_switch_flag_6C, #$88 
 	LDA	bank_command_346
 	CMP	#0
 	BEQ	loc_58047
@@ -28,10 +26,8 @@ loc_58047:
 ; ---------------------------------------------------------------------------
 
 loc_5804D:
-	LDA	#$FF
-	STA	bank_command_346
-	LDA	bank_from_343
-	STA	bank_to_344
+	set bank_command_346, #$FF
+	set bank_to_344, bank_from_343
 	JMP	bank_switch_8000
 ; End of function bank_switch_8000
 
@@ -47,10 +43,8 @@ upload_gfx_to_ppu_5F093:
 	
 	set_ptr Sprites3_5805B
 
-	LDA	entry_idx_300
-	STA	data_2
-	LDA	#0
-	STA	data_3
+	set data_2, entry_idx_300
+	set data_3, #0
 	ASL	data_2
 	ROL	data_3
 
@@ -60,11 +54,9 @@ upload_gfx_to_ppu_5F093:
 
 
 	LDY	#0
-	LDA	(ptr_0),Y
-	STA	data_2
+	set data_2, {(ptr_0),Y}
 	INY
-	LDA	(ptr_0),Y
-	STA	data_3
+	set data_3, {(ptr_0),Y}
 
 	set_ptr _PPU_PAT_TBL_1
 
@@ -78,23 +70,19 @@ upload_gfx_to_ppu_5F093:
 
 upload_gfx_5F0CC:
 	LDY	#0
-	LDA	(data_2),Y
-	STA	tilemapWidth_308
+	set tilemapWidth_308, {(data_2),Y}
 
 	add_to_data $2
 
 	LDX	#0
 
 loc_5F0E2:
-	LDA	ptr_1
-	STA	_PPU_ADDR
-	LDA	ptr_0
-	STA	_PPU_ADDR
+	set _PPU_ADDR, ptr_1
+	set _PPU_ADDR, ptr_0
 	LDY	#0
 
 loc_5F0EE:
-	LDA	(data_2),Y
-	STA	_PPU_DATA
+	set _PPU_DATA, {(data_2),Y}
 	INY
 	CPY	#$10
 	BCC	loc_5F0EE

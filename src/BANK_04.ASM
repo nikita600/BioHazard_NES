@@ -49,8 +49,7 @@ exec_b13_c1_48064:
 	JSR	bank_switch_8000
 
 loc_48076:
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	JMP	loc_4808F
 ; ---------------------------------------------------------------------------
 

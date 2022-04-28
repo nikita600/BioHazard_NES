@@ -320,18 +320,12 @@ loc_2D29C:
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	JSR	sub_2D4D7
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemap_size_307
-	PLA
-	STA	data_3
-	PLA
-	STA	data_2
-	PLA
-	STA	ptr_1
-	PLA
-	STA	ptr_0
+	from_stack ppu_unk_byte_309
+	from_stack tilemap_size_307
+	from_stack data_3
+	from_stack data_2
+	from_stack ptr_1
+	from_stack ptr_0
 
 	add_to_data $40
 
@@ -419,10 +413,8 @@ loc_2D36C:
 	JSR	sub_2D397
 
 loc_2D378:
-	PLA
-	STA	char_type_id_35D
-	PLA
-	STA	text_idx_35C
+	from_stack char_type_id_35D
+	from_stack text_idx_35C
 	LDA	text_idx_35C
 	CLC
 	ADC	#1
@@ -460,31 +452,21 @@ loc_2D3BA:
 	to_stack ppu_unk_byte_309
 	to_stack tilemap_size_307
 	JSR	sub_2E44B
-	PLA
-	STA	tilemap_size_307
+	from_stack tilemap_size_307
 	JSR	sub_2D401
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack ppu_unk_byte_309
+	from_stack tilemapTypeUnk_30B
 	INC	tilemapHeight_30A
 	LDA	tilemapHeight_30A
 	CMP	tilemapTypeUnk_30B
 	BNE	loc_2D3BA
-	PLA
-	STA	data_3
-	PLA
-	STA	data_2
-	PLA
-	STA	ptr_1
-	PLA
-	STA	ptr_0
-	PLA
-	STA	tilemap_size_307
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemapWidth_308
+	from_stack data_3
+	from_stack data_2
+	from_stack ptr_1
+	from_stack ptr_0
+	from_stack tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack tilemapWidth_308
 	RTS
 ; End of function sub_2D397
 
@@ -600,10 +582,8 @@ loc_2D4B1:
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_2D4B1
-	PLA
-	STA	data_3
-	PLA
-	STA	data_2
+	from_stack data_3
+	from_stack data_2
 
 loc_2D4C3:
 	JSR	sub_2E500
@@ -645,8 +625,7 @@ exec_b3_c0_D4E7:
 	JSR	bank_switch_8000
 
 loc_2D4FA:
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function sub_2D4D7
 
@@ -756,10 +735,8 @@ sub_2E244:
 	INY
 	LDA	(data_2),Y
 	STA	ptr_1
-	PLA
-	STA	data_3
-	PLA
-	STA	data_2
+	from_stack data_3
+	from_stack data_2
 	LDY	#0
 	LDA	#0
 	STA	has_ppu_data_to_upload_6F
@@ -931,10 +908,8 @@ loc_2E381:
 	LDA	ptr_0
 	STA	ppu_data_70,X
 	INX
-	PLA
-	STA	data_3
-	PLA
-	STA	data_2
+	from_stack data_3
+	from_stack data_2
 	INC	ptr_0
 	JSR	sub_2E500
 	INC	inv_spr_dscr1_30C
@@ -971,8 +946,7 @@ loc_2E3DC:
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
 	BCC	loc_2E3DC
-	PLA
-	STA	inv_spr_dscr1_30C
+	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E3D3
 
@@ -995,8 +969,7 @@ loc_2E3FA:
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
 	BCC	loc_2E3FA
-	PLA
-	STA	inv_spr_dscr1_30C
+	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E3F1
 
@@ -1017,8 +990,7 @@ loc_2E41A:
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
 	BCC	loc_2E41A
-	PLA
-	STA	inv_spr_dscr1_30C
+	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E411
 
@@ -1039,8 +1011,7 @@ loc_2E437:
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
 	BCC	loc_2E437
-	PLA
-	STA	inv_spr_dscr1_30C
+	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E42E
 

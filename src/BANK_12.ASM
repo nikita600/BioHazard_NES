@@ -476,8 +476,7 @@ exec_b13_c5_12829C:
 
 loc_1282AE:
 	JSR	sub_128955
-	PLA
-	STA	apu_unk_76C
+	from_stack apu_unk_76C
 
 exec_b13_c5_1282B5:
 	LDA	#5
@@ -522,8 +521,7 @@ loc_1282E8:
 
 return_1282EE:
 	; command_0_1280FB+9j ...
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	LDA	#$FF
 	STA	bank_command_346
 	LDA	bank_from_343
@@ -581,12 +579,9 @@ sub_128326:
 	LDA	sprite_secondByte_31B
 	STA	byte_31E
 	JSR	exec_b4_c2_1283A7
-	PLA
-	STA	tilemap_size_307
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	inv_itemPrev_idx_31D
+	from_stack tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack inv_itemPrev_idx_31D
 	RTS
 ; End of function sub_128326
 
@@ -616,12 +611,9 @@ exec_b4_c3_128375:
 	JSR	bank_switch_8000
 
 loc_128387:
-	PLA
-	STA	tilemap_size_307
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	inv_itemPrev_idx_31D
+	from_stack tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack inv_itemPrev_idx_31D
 	RTS
 ; End of function sub_128358
 
@@ -768,8 +760,7 @@ exec_b0_c5_12843E:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_c5_12843E
 
@@ -786,8 +777,7 @@ exec_b0_c6_128459:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_c6_128459
 
@@ -804,8 +794,7 @@ exec_b0_c7_128474:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_c7_128474
 
@@ -822,8 +811,7 @@ exec_b0_c8_12848F:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_c8_12848F
 
@@ -841,8 +829,7 @@ exec_b0_c9_1284AA:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_c9_1284AA
 
@@ -860,8 +847,7 @@ exec_b0_cA_1284C5:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_cA_1284C5
 
@@ -879,8 +865,7 @@ exec_b0_cB_1284E0:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_cB_1284E0
 
@@ -897,8 +882,7 @@ exec_b0_cC_1284FB:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_cC_1284FB
 
@@ -915,8 +899,7 @@ exec_b0_cD_128516:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_cD_128516
 
@@ -1365,18 +1348,12 @@ loc_128A20:
 	LDA	is_game_finished_561
 	CMP	#0
 	BEQ	game_not_finished_128A43
-	PLA
-	STA	prev_sprite_type_4A9
-	PLA
-	STA	ppu_prev_scroll_y_unk_4A8
-	PLA
-	STA	ppu_prev_scroll_x_unk_4A7
-	PLA
-	STA	ppu_prev_unk_4A6
-	PLA
-	STA	image_offset_4A5
-	PLA
-	STA	image_id_4A4
+	from_stack prev_sprite_type_4A9
+	from_stack ppu_prev_scroll_y_unk_4A8
+	from_stack ppu_prev_scroll_x_unk_4A7
+	from_stack ppu_prev_unk_4A6
+	from_stack image_offset_4A5
+	from_stack image_id_4A4
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1406,8 +1383,7 @@ loc_128A72:
 	JSR	sub_12ED44
 	to_stack inv_sprite_idx_31C
 	JSR	sub_12D4C6
-	PLA
-	STA	inv_sprite_idx_31C
+	from_stack inv_sprite_idx_31C
 	JMP	loc_128986
 ; ---------------------------------------------------------------------------
 
@@ -1433,18 +1409,12 @@ loc_128A9F:
 ; ---------------------------------------------------------------------------
 
 loc_128AA5:
-	PLA
-	STA	prev_sprite_type_4A9
-	PLA
-	STA	ppu_prev_scroll_y_unk_4A8
-	PLA
-	STA	ppu_prev_scroll_x_unk_4A7
-	PLA
-	STA	ppu_prev_unk_4A6
-	PLA
-	STA	image_offset_4A5
-	PLA
-	STA	image_id_4A4
+	from_stack prev_sprite_type_4A9
+	from_stack ppu_prev_scroll_y_unk_4A8
+	from_stack ppu_prev_scroll_x_unk_4A7
+	from_stack ppu_prev_unk_4A6
+	from_stack image_offset_4A5
+	from_stack image_id_4A4
 	LDA	image_id_4A4
 	CMP	#$17
 	BEQ	loc_128B01
@@ -1470,18 +1440,12 @@ loc_128AE6:
 ; ---------------------------------------------------------------------------
 
 loc_128AE9:
-	PLA
-	STA	prev_sprite_type_4A9
-	PLA
-	STA	ppu_prev_scroll_y_unk_4A8
-	PLA
-	STA	ppu_prev_scroll_x_unk_4A7
-	PLA
-	STA	ppu_prev_unk_4A6
-	PLA
-	STA	image_offset_4A5
-	PLA
-	STA	image_id_4A4
+	from_stack prev_sprite_type_4A9
+	from_stack ppu_prev_scroll_y_unk_4A8
+	from_stack ppu_prev_scroll_x_unk_4A7
+	from_stack ppu_prev_unk_4A6
+	from_stack image_offset_4A5
+	from_stack image_id_4A4
 
 loc_128B01:
 	
@@ -2737,10 +2701,8 @@ loc_12A81B:
 	STA	objCreatedArray_393,X
 
 loc_12A839:
-	PLA
-	STA	data_3
-	PLA
-	STA	data_2
+	from_stack data_3
+	from_stack data_2
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	CMP	objArraySize_373
@@ -2875,14 +2837,10 @@ loc_12A91F:
 	BCC	loc_12A8D3
 
 loc_12A933:
-	PLA
-	STA	inv_spr_dscr1_30C
-	PLA
-	STA	tilemapTypeUnk_30B
-	PLA
-	STA	ptr_1
-	PLA
-	STA	ptr_0
+	from_stack inv_spr_dscr1_30C
+	from_stack tilemapTypeUnk_30B
+	from_stack ptr_1
+	from_stack ptr_0
 	PLA
 	TAY
 	RTS
@@ -2913,10 +2871,8 @@ sub_12A944:
 	STA	tilemapFrameCount_30D
 	PLA
 	TAY
-	PLA
-	STA	ptr_1
-	PLA
-	STA	ptr_0
+	from_stack ptr_1
+	from_stack ptr_0
 	RTS
 ; End of function sub_12A944
 
@@ -2934,8 +2890,7 @@ exec_b0_c0_12A973:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_c0_12A973
 
@@ -2953,8 +2908,7 @@ exec_b0_c1_12A98E:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_c1_12A98E
 
@@ -2972,8 +2926,7 @@ exec_b0_c2_12A9A9:
 	LDA	#$12
 	STA	bank_from_343
 	JSR	bank_switch_8000
-	PLA
-	STA	bank_from_343
+	from_stack bank_from_343
 	RTS
 ; End of function exec_b0_c2_12A9A9
 
@@ -7610,18 +7563,12 @@ loc_12C5B1:
 	STA	prev_sprite_type_4A9
 	JSR	exec_b0_c2_12A9A9
 	JSR	wait_for_b_pressed_FCC5
-	PLA
-	STA	prev_sprite_type_4A9
-	PLA
-	STA	ppu_prev_scroll_y_unk_4A8
-	PLA
-	STA	ppu_prev_scroll_x_unk_4A7
-	PLA
-	STA	ppu_prev_unk_4A6
-	PLA
-	STA	image_offset_4A5
-	PLA
-	STA	image_id_4A4
+	from_stack prev_sprite_type_4A9
+	from_stack ppu_prev_scroll_y_unk_4A8
+	from_stack ppu_prev_scroll_x_unk_4A7
+	from_stack ppu_prev_unk_4A6
+	from_stack image_offset_4A5
+	from_stack image_id_4A4
 	LDA	#$FF
 	STA	map_show_43B
 	JSR	exec_b0_c2_12A9A9
@@ -8890,8 +8837,7 @@ loc_12CDA2:
 	PHA
 	to_stack ppu_unk_byte_309
 	JSR	exec_b2_c4_1283F2
-	PLA
-	STA	ppu_unk_byte_309
+	from_stack ppu_unk_byte_309
 	PLA
 	TAY
 
@@ -8977,18 +8923,12 @@ loc_12CE69:
 	LDA	jill_pos_y_47E
 	CMP	#$FF
 	BEQ	loc_12CE99
-	PLA
-	STA	prev_sprite_type_4A9
-	PLA
-	STA	ppu_prev_scroll_y_unk_4A8
-	PLA
-	STA	ppu_prev_scroll_x_unk_4A7
-	PLA
-	STA	ppu_prev_unk_4A6
-	PLA
-	STA	image_offset_4A5
-	PLA
-	STA	image_id_4A4
+	from_stack prev_sprite_type_4A9
+	from_stack ppu_prev_scroll_y_unk_4A8
+	from_stack ppu_prev_scroll_x_unk_4A7
+	from_stack ppu_prev_unk_4A6
+	from_stack image_offset_4A5
+	from_stack image_id_4A4
 	LDA	#$FF
 	STA	map_show_43B
 	JSR	exec_b0_c2_12A9A9
@@ -9110,8 +9050,7 @@ loc_12CF61:
 	STA	byte_204
 	LDA	byte_372
 	BNE	loc_12CF76
-	PLA
-	STA	byte_372
+	from_stack byte_372
 	JSR	sub_12CFBA
 	RTS
 ; ---------------------------------------------------------------------------
@@ -9140,8 +9079,7 @@ loc_12CF76:
 	LDA	#0
 	STA	byte_310
 	JSR	exec_b2_c4_1283F2
-	PLA
-	STA	byte_372
+	from_stack byte_372
 	LDA	#0
 	STA	sprite_length_30F
 	RTS
@@ -9225,8 +9163,7 @@ loc_12D003:
 	LDA	#0
 	STA	byte_310
 	JSR	exec_b2_c4_1283F2
-	PLA
-	STA	byte_372
+	from_stack byte_372
 	JSR	sub_12D167
 	LDA	#$FF
 	STA	sprite_length_30F
@@ -9735,8 +9672,7 @@ loc_12D383:
 	LDY	tilemapTypeUnk_30B
 	LDA	unk_53B,Y
 	JSR	sub_12D3AB
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 
 loc_12D394:
 	LDY	tilemapTypeUnk_30B
@@ -9809,14 +9745,10 @@ loc_12D3D7:
 	to_stack data_3
 	to_stack ptr_0
 	JSR	sub_12E829
-	PLA
-	STA	ptr_0
-	PLA
-	STA	data_3
-	PLA
-	STA	data_2
-	PLA
-	STA	ppu_unk_byte_309
+	from_stack ptr_0
+	from_stack data_3
+	from_stack data_2
+	from_stack ppu_unk_byte_309
 	PLA
 	CLC
 	ADC	#8
@@ -9849,14 +9781,10 @@ loc_12D434:
 	to_stack data_3
 	to_stack ptr_0
 	JSR	sub_12E829
-	PLA
-	STA	ptr_0
-	PLA
-	STA	data_3
-	PLA
-	STA	data_2
-	PLA
-	STA	ppu_unk_byte_309
+	from_stack ptr_0
+	from_stack data_3
+	from_stack data_2
+	from_stack ppu_unk_byte_309
 	PLA
 	CLC
 	ADC	#8
@@ -10015,18 +9943,12 @@ loc_12D569:
 loc_12D570:
 	
 	JSR	sub_12ED29
-	PLA
-	STA	prev_sprite_type_4A9
-	PLA
-	STA	ppu_prev_scroll_y_unk_4A8
-	PLA
-	STA	ppu_prev_scroll_x_unk_4A7
-	PLA
-	STA	ppu_prev_unk_4A6
-	PLA
-	STA	image_offset_4A5
-	PLA
-	STA	image_id_4A4
+	from_stack prev_sprite_type_4A9
+	from_stack ppu_prev_scroll_y_unk_4A8
+	from_stack ppu_prev_scroll_x_unk_4A7
+	from_stack ppu_prev_unk_4A6
+	from_stack image_offset_4A5
+	from_stack image_id_4A4
 	RTS
 ; End of function sub_12D4C6
 
@@ -10045,8 +9967,7 @@ sub_12D58C:
 	to_stack prev_sprite_type_4A9
 	to_stack tilemapTypeUnk_30B
 	JSR	sub_12D287
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 	to_stack tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
 	STA	text_idx_35C
@@ -10076,8 +9997,7 @@ loc_12D5D2:
 	STA	byte_364
 	JSR	exec_b2_c1_128300
 	JSR	sub_12DAD0
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 	LDA	byte_532
 	CMP	#8
 	BCC	loc_12D623
@@ -10104,8 +10024,7 @@ loc_12D623:
 	to_stack tilemapTypeUnk_30B
 	JSR	exec_b2_c1_128300
 	JSR	sub_12D680
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 	LDA	#0
 	STA	sprite_length_30F
 	LDA	byte_372
@@ -10116,24 +10035,17 @@ loc_12D623:
 
 loc_12D652:
 	
-	PLA
-	STA	prev_sprite_type_4A9
-	PLA
-	STA	ppu_prev_scroll_y_unk_4A8
-	PLA
-	STA	ppu_prev_scroll_x_unk_4A7
-	PLA
-	STA	ppu_prev_unk_4A6
-	PLA
-	STA	image_offset_4A5
-	PLA
-	STA	image_id_4A4
+	from_stack prev_sprite_type_4A9
+	from_stack ppu_prev_scroll_y_unk_4A8
+	from_stack ppu_prev_scroll_x_unk_4A7
+	from_stack ppu_prev_unk_4A6
+	from_stack image_offset_4A5
+	from_stack image_id_4A4
 	LDA	#$FF
 	STA	map_show_43B
 	to_stack sprite_length_30F
 	JSR	exec_b0_c2_12A9A9
-	PLA
-	STA	sprite_length_30F
+	from_stack sprite_length_30F
 	LDA	#0
 	STA	map_show_43B
 	RTS
@@ -10362,18 +10274,12 @@ loc_12D7FB:
 loc_12D802:
 	
 	JSR	sub_12ED29
-	PLA
-	STA	prev_sprite_type_4A9
-	PLA
-	STA	ppu_prev_scroll_y_unk_4A8
-	PLA
-	STA	ppu_prev_scroll_x_unk_4A7
-	PLA
-	STA	ppu_prev_unk_4A6
-	PLA
-	STA	image_offset_4A5
-	PLA
-	STA	image_id_4A4
+	from_stack prev_sprite_type_4A9
+	from_stack ppu_prev_scroll_y_unk_4A8
+	from_stack ppu_prev_scroll_x_unk_4A7
+	from_stack ppu_prev_unk_4A6
+	from_stack image_offset_4A5
+	from_stack image_id_4A4
 	LDA	#$FF
 	STA	map_show_43B
 	JSR	exec_b0_c2_12A9A9
@@ -10534,10 +10440,8 @@ loc_12D900:
 
 loc_12D910:
 	JSR	sub_12DF2B
-	PLA
-	STA	inv_spr_dscr1_30C
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack inv_spr_dscr1_30C
+	from_stack tilemapTypeUnk_30B
 	LDA	byte_42E
 	ASL	A
 	CLC
@@ -10573,10 +10477,8 @@ loc_12D946:
 	JSR	sub_12DFFC
 	PLA
 	TAY
-	PLA
-	STA	inv_spr_dscr1_30C
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack inv_spr_dscr1_30C
+	from_stack tilemapTypeUnk_30B
 
 loc_12D966:
 	
@@ -10627,8 +10529,7 @@ loc_12D9A3:
 	JSR	sub_12D9F7
 	PLA
 	TAY
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 	LDX	tilemapTypeUnk_30B
 	LDA	byte_12E869,X
 	STA	inv_itemPrev_idx_31D
@@ -10801,8 +10702,7 @@ loc_12DA5E:
 	JSR	sub_128326
 	PLA
 	TAY
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 
 loc_12DABA:
 	LDA	sprite_secondByte_31B
@@ -11002,10 +10902,8 @@ loc_12DBF5:
 	to_stack byte_42C
 	to_stack byte_42E
 	JSR	sub_12E428
-	PLA
-	STA	byte_42E
-	PLA
-	STA	byte_42C
+	from_stack byte_42E
+	from_stack byte_42C
 
 loc_12DC0C:
 	
@@ -11224,10 +11122,8 @@ loc_12DD1E:
 	ADC	byte_547
 	STA	tilemap_size_307
 	JSR	sub_12E829
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack tilemap_size_307
 	LDA	byte_31A
 	CLC
 	ADC	#4
@@ -11247,10 +11143,8 @@ loc_12DD1E:
 	SBC	byte_547
 	STA	tilemap_size_307
 	JSR	sub_12E829
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack tilemap_size_307
 	LDA	byte_31A
 	CLC
 	ADC	#4
@@ -11279,10 +11173,8 @@ loc_12DD1E:
 
 loc_12DDE9:
 	JSR	sub_12E829
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack tilemap_size_307
 	LDA	byte_31A
 	CLC
 	ADC	#4
@@ -11313,10 +11205,8 @@ loc_12DDE9:
 
 loc_12DE34:
 	JSR	sub_12E829
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack tilemap_size_307
 	LDA	byte_31A
 	CLC
 	ADC	#4
@@ -12384,10 +12274,8 @@ loc_12E4EE:
 	ADC	byte_547
 	STA	ppu_unk_byte_309
 	JSR	sub_12E829
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack tilemap_size_307
 	LDA	byte_31A
 	CLC
 	ADC	#4
@@ -12407,10 +12295,8 @@ loc_12E4EE:
 	SBC	byte_547
 	STA	ppu_unk_byte_309
 	JSR	sub_12E829
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack tilemap_size_307
 	LDA	byte_31A
 	CLC
 	ADC	#4
@@ -12428,10 +12314,8 @@ loc_12E4EE:
 	ADC	byte_547
 	STA	tilemap_size_307
 	JSR	sub_12E829
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack tilemap_size_307
 	LDA	byte_31A
 	CLC
 	ADC	#4
@@ -12451,10 +12335,8 @@ loc_12E4EE:
 	ADC	#$C
 	STA	ppu_unk_byte_309
 	JSR	sub_12E829
-	PLA
-	STA	ppu_unk_byte_309
-	PLA
-	STA	tilemap_size_307
+	from_stack ppu_unk_byte_309
+	from_stack tilemap_size_307
 	RTS
 ; End of function sub_12E4CD
 
@@ -12555,8 +12437,7 @@ loc_12E67A:
 	JSR	sub_12D4B3
 	JSR	sub_12E80D
 	JSR	sub_12E81B
-	PLA
-	STA	byte_372
+	from_stack byte_372
 	RTS
 ; End of function sub_12E5E6
 
@@ -12688,8 +12569,7 @@ loc_12E776:
 	JSR	sub_12D4B3
 	JSR	sub_12E80D
 	JSR	sub_12E81B
-	PLA
-	STA	byte_372
+	from_stack byte_372
 	RTS
 ; End of function sub_12E69F
 
@@ -13068,8 +12948,7 @@ loc_12EA55:
 	to_stack byte_47C
 	LDA	byte_47B
 	STA	byte_47C
-	PLA
-	STA	byte_47B
+	from_stack byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
 	JMP	loc_12E8C5
@@ -13088,8 +12967,7 @@ loc_12EA7A:
 	to_stack byte_47C
 	LDA	byte_47B
 	STA	byte_47C
-	PLA
-	STA	byte_47B
+	from_stack byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
 	JMP	loc_12E92A
@@ -13108,8 +12986,7 @@ loc_12EA9F:
 	to_stack byte_47C
 	LDA	byte_47B
 	STA	byte_47C
-	PLA
-	STA	byte_47B
+	from_stack byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
 	JMP	loc_12E98F
@@ -13128,8 +13005,7 @@ loc_12EAC4:
 	to_stack byte_47C
 	LDA	byte_47B
 	STA	byte_47C
-	PLA
-	STA	byte_47B
+	from_stack byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
 	JMP	loc_12E9F4
@@ -13504,8 +13380,7 @@ loc_12ED4D:
 	
 	STA	tilemapTypeUnk_30B
 	JSR	sub_128531
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 	RTS
 ; End of function sub_12ED44
 
@@ -13535,8 +13410,7 @@ set_inventory_screen_12ED5D:
 	STA	ppu_unk_byte_309
 	to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 
 loc_12ED90:
 	
@@ -13554,8 +13428,7 @@ loc_12ED90:
 	JSR	sub_12D261
 	to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 	JSR	sub_128531
 	JMP	loc_12ED90
 ; ---------------------------------------------------------------------------
@@ -13572,8 +13445,7 @@ loc_12EDC0:
 	STA	ppu_unk_byte_309
 	to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 	JSR	sub_128531
 	JMP	loc_12ED90
 ; ---------------------------------------------------------------------------
@@ -13881,18 +13753,12 @@ sub_12EF77:
 	STA	prev_sprite_type_4A9
 	JSR	exec_b0_c2_12A9A9
 	JSR	wait_for_any_input_FCCD
-	PLA
-	STA	prev_sprite_type_4A9
-	PLA
-	STA	ppu_prev_scroll_y_unk_4A8
-	PLA
-	STA	ppu_prev_scroll_x_unk_4A7
-	PLA
-	STA	ppu_prev_unk_4A6
-	PLA
-	STA	image_offset_4A5
-	PLA
-	STA	image_id_4A4
+	from_stack prev_sprite_type_4A9
+	from_stack ppu_prev_scroll_y_unk_4A8
+	from_stack ppu_prev_scroll_x_unk_4A7
+	from_stack ppu_prev_unk_4A6
+	from_stack image_offset_4A5
+	from_stack image_id_4A4
 	LDA	#0
 	STA	sprite_length_30F
 	RTS
@@ -14015,18 +13881,12 @@ loc_12F138:
 loc_12F13F:
 	
 	JSR	sub_12ED29
-	PLA
-	STA	prev_sprite_type_4A9
-	PLA
-	STA	ppu_prev_scroll_y_unk_4A8
-	PLA
-	STA	ppu_prev_scroll_x_unk_4A7
-	PLA
-	STA	ppu_prev_unk_4A6
-	PLA
-	STA	image_offset_4A5
-	PLA
-	STA	image_id_4A4
+	from_stack prev_sprite_type_4A9
+	from_stack ppu_prev_scroll_y_unk_4A8
+	from_stack ppu_prev_scroll_x_unk_4A7
+	from_stack ppu_prev_unk_4A6
+	from_stack image_offset_4A5
+	from_stack image_id_4A4
 	LDA	#$FF
 	STA	map_show_43B
 	JSR	exec_b0_c2_12A9A9
@@ -14338,12 +14198,10 @@ loc_12F3B5:
 loc_12F3BC:
 	LDA	byte_372
 	STA	tilemapTypeUnk_30B
-	PLA
-	STA	byte_372
+	from_stack byte_372
 	to_stack tilemapTypeUnk_30B
 	JSR	sub_12F168
-	PLA
-	STA	tilemapTypeUnk_30B
+	from_stack tilemapTypeUnk_30B
 	CMP	#$1E
 	BEQ	loc_12F3F4
 	CMP	#$1D
@@ -14694,8 +14552,7 @@ sub_12F5DC:
 	LDA	#5
 	STA	byte_310
 	JSR	exec_b2_c4_1283F2
-	PLA
-	STA	byte_310
+	from_stack byte_310
 	RTS
 ; End of function sub_12F5DC
 

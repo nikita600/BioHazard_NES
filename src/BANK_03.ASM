@@ -71,10 +71,8 @@ sub_3F76B:
 	INY
 	LDA	(data_2),Y
 	STA	ptr_1
-	PLA
-	STA	data_3
-	PLA
-	STA	data_2
+	from_stack data_3
+	from_stack data_2
 	LDY	#0
 	LDA	#0
 	STA	has_ppu_data_to_upload_6F
@@ -246,10 +244,8 @@ loc_3F8A8:
 	LDA	ptr_0
 	STA	ppu_data_70,X
 	INX
-	PLA
-	STA	data_3
-	PLA
-	STA	data_2
+	from_stack data_3
+	from_stack data_2
 	INC	ptr_0
 	JSR	sub_3FA27
 	INC	inv_spr_dscr1_30C
@@ -286,8 +282,7 @@ loc_3F903:
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
 	BCC	loc_3F903
-	PLA
-	STA	inv_spr_dscr1_30C
+	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F8FA
 
@@ -310,8 +305,7 @@ loc_3F921:
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
 	BCC	loc_3F921
-	PLA
-	STA	inv_spr_dscr1_30C
+	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F918
 
@@ -332,8 +326,7 @@ loc_3F941:
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
 	BCC	loc_3F941
-	PLA
-	STA	inv_spr_dscr1_30C
+	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F938
 
@@ -354,8 +347,7 @@ loc_3F95E:
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
 	BCC	loc_3F95E
-	PLA
-	STA	inv_spr_dscr1_30C
+	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F955
 

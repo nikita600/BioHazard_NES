@@ -448,10 +448,8 @@ loc_1F44D:
 	LDA	tilemapTypeUnk_30B
 	CMP	tilemapWidth_308
 	BCC	loc_1F44D
-	PLA
-	STA	byte_36B
-	PLA
-	STA	byte_36A
+	from_stack byte_36B
+	from_stack byte_36A
 	LDA	data_2
 	CLC
 	ADC	tilemapWidth_308
@@ -523,10 +521,8 @@ loc_1F4DC:
 	LDA	tilemapTypeUnk_30B
 	CMP	#0
 	BNE	loc_1F4DC
-	PLA
-	STA	byte_36B
-	PLA
-	STA	byte_36A
+	from_stack byte_36B
+	from_stack byte_36A
 	LDA	data_2
 	CLC
 	ADC	tilemapWidth_308
@@ -615,10 +611,8 @@ loc_1F583:
 	LDA	tilemapTypeUnk_30B
 	CMP	#0
 	BNE	loc_1F583
-	PLA
-	STA	byte_36B
-	PLA
-	STA	byte_36A
+	from_stack byte_36B
+	from_stack byte_36A
 	LDA	data_2
 	SEC
 	SBC	tilemapWidth_308

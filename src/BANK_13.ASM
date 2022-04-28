@@ -549,8 +549,7 @@ loc_13D68F:
 	INY
 	LDA	(apu_unk_FE),Y
 	STA	apu_unk_FF
-	PLA
-	STA	apu_unk_FE
+	from_stack apu_unk_FE
 	LDY	apu_unk_764,X
 	LDA	(apu_unk_FE),Y
 	EOR	#$E
@@ -941,8 +940,7 @@ loc_13D91E:
 	INY
 	LDA	(apu_unk_FE),Y
 	STA	apu_unk_FF
-	PLA
-	STA	apu_unk_FE
+	from_stack apu_unk_FE
 	LDY	apu_unk_733,X
 	LDA	(apu_unk_FE),Y
 	EOR	#$E

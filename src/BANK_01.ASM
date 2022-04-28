@@ -148,8 +148,7 @@ loop_1F2D3:
 	PHA
 	JSR	get_sprite_palette_ptr_1F2F3
 	JSR	copy_sprite_palette_to_ram_1F316
-	PLA
-	TAX
+	from_stack_to_x
 	INX
 	JMP	loop_1F2D3
 ; ---------------------------------------------------------------------------
@@ -242,8 +241,7 @@ loc_1F34D:
 	PHA
 	JSR	load_sprite_to_vram_1F36D
 	JSR	upload_to_ppu_1F6D1
-	PLA
-	TAX
+	from_stack_to_x
 	INX
 	JMP	loc_1F34D
 ; ---------------------------------------------------------------------------

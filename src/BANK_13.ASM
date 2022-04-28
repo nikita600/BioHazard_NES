@@ -1363,8 +1363,7 @@ loc_13DBB1:
 	INY
 	LDA	(apu_unk_FE),Y
 	STA	_APU_PULSE1_LEN,X
-	PLA
-	TAX
+	from_stack_to_x
 	JMP	loc_13DC18
 ; ---------------------------------------------------------------------------
 

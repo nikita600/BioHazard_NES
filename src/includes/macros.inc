@@ -43,7 +43,12 @@
 
 	PLA
 	STA dst
-	
+
+.endmacro
+
+.macro from_stack_to_x
+	PLA
+	TAX
 .endmacro
 
 ; ---------------------------------------------------------------------------

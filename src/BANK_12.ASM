@@ -6778,8 +6778,7 @@ loc_12C12E:
 	TXA
 	PHA
 	JSR	sub_12C13C
-	PLA
-	TAX
+	from_stack_to_x
 	INX
 	CPX	objArraySize_373
 	BCC	loc_12C11B
@@ -6888,8 +6887,7 @@ sub_12C1C3:
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
-	PLA
-	TAX
+	from_stack_to_x
 	PLA
 	TAY
 	CPY	#0
@@ -10507,8 +10505,7 @@ loc_12D979:
 ; ---------------------------------------------------------------------------
 
 loc_12D991:
-	PLA
-	TAX
+	from_stack_to_x
 	LDY	byte_532
 	JSR	sub_12D9F7
 	DEC	byte_532
@@ -10606,15 +10603,13 @@ loc_12D9FB:
 	PLA
 	TAY
 	STY	tilemapTypeUnk_30B
-	PLA
-	TAX
+	from_stack_to_x
 	INX
 	CPX	tilemapTypeUnk_30B
 	BCC	loc_12D9FB
 	PLA
 	TAY
-	PLA
-	TAX
+	from_stack_to_x
 	RTS
 ; End of function sub_12D9F7
 
@@ -10659,8 +10654,7 @@ loc_12DA5E:
 	TAX
 	LDA	byte_12E869,X
 	STA	inv_itemPrev_idx_31D
-	PLA
-	TAX
+	from_stack_to_x
 	PHA
 	ASL	A
 	TAX
@@ -10682,8 +10676,7 @@ loc_12DA5E:
 	PLA
 	TAY
 	STA	tilemapTypeUnk_30B
-	PLA
-	TAX
+	from_stack_to_x
 	TXA
 	PHA
 	LDA	byte_533,X
@@ -10709,8 +10702,7 @@ loc_12DABA:
 	CLC
 	ADC	#$11
 	STA	sprite_secondByte_31B
-	PLA
-	TAX
+	from_stack_to_x
 	INX
 	CPX	tilemapTypeUnk_30B
 	BCC	loc_12DA5E
@@ -10718,8 +10710,7 @@ loc_12DABA:
 loc_12DACB:
 	PLA
 	TAY
-	PLA
-	TAX
+	from_stack_to_x
 	RTS
 ; End of function sub_12DA33
 

@@ -2435,8 +2435,7 @@ case0_923C:
 	TXA
 	PHA
 	JSR	sub_D894
-	PLA
-	TAX
+	from_stack_to_x
 	STX	cur_obj_idx_unk_43A
 	LDA	sprite_length_30F
 	CMP	#$FF
@@ -3188,8 +3187,7 @@ loc_9797:
 	TXA
 	PHA
 	JSR	sub_8762
-	PLA
-	TAX
+	from_stack_to_x
 	LDA	sprite_length_30F
 	CMP	#$FF
 	BNE	loc_97B9
@@ -3203,8 +3201,7 @@ loc_97B9:
 	TXA
 	PHA
 	JSR	sub_DDDA
-	PLA
-	TAX
+	from_stack_to_x
 	LDA	sprite_length_30F
 	CMP	#$FF
 	BNE	loc_97ED
@@ -3484,8 +3481,7 @@ loc_9956:
 
 loc_9986:
 	JSR	sub_D894
-	PLA
-	TAX
+	from_stack_to_x
 	STX	byte_434
 	LDA	sprite_length_30F
 	CMP	#$FF
@@ -4082,8 +4078,7 @@ loc_BED9:
 loc_BEEE:
 	LDA	byte_351
 	STA	byte_352
-	PLA
-	TAX
+	from_stack_to_x
 	RTS
 ; End of function sub_BEB6
 
@@ -5615,8 +5610,7 @@ sub_CF13:
 	TXA
 	PHA
 	JSR	sub_9132
-	PLA
-	TAX
+	from_stack_to_x
 	from_stack char_type_id_35D
 	from_stack text_idx_35C
 	LDA	text_idx_35C
@@ -5730,16 +5724,14 @@ loc_CFCA:
 	PHA
 	LDX	byte_313
 	JSR	sub_D01F
-	PLA
-	TAX
+	from_stack_to_x
 	TYA
 	STA	array_unk_39D,X
 	JSR	objects_func_D52A
 	JSR	wait_for_frame_rendered_FCA0
 	PLA
 	TAY
-	PLA
-	TAX
+	from_stack_to_x
 	INY
 	CPY	#8
 	BEQ	loc_CFEE
@@ -5749,8 +5741,7 @@ loc_CFCA:
 loc_CFEE:
 	PLA
 	TAY
-	PLA
-	TAX
+	from_stack_to_x
 
 loc_CFF2:
 	INX
@@ -5884,8 +5875,7 @@ sub_D0AD:
 	LDA	byte_367
 	ADC	#0
 	STA	byte_367
-	PLA
-	TAX
+	from_stack_to_x
 
 loc_D0C7:
 	LDA	array_unk_3C5,X
@@ -6053,8 +6043,7 @@ sub_D1EE:
 	LDA	array_unk_3A7,X
 	TAX
 	JSR	sub_D01F
-	PLA
-	TAX
+	from_stack_to_x
 	TYA
 	STA	array_unk_39D,X
 	JSR	objects_func_D52A
@@ -6064,8 +6053,7 @@ sub_D1EE:
 	from_stack byte_36A
 	PLA
 	TAY
-	PLA
-	TAX
+	from_stack_to_x
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; End of function sub_D1EE
@@ -6159,8 +6147,7 @@ loc_D2C4:
 	STA	byte_313
 	JSR	sub_D055
 	JSR	sub_C7C7
-	PLA
-	TAX
+	from_stack_to_x
 	LDA	byte_366
 	CLC
 	ADC	#8
@@ -6372,8 +6359,7 @@ loc_D454:
 	TXA
 	PHA
 	JSR	exec_b1_c2_C860
-	PLA
-	TAX
+	from_stack_to_x
 	LDA	tilemapFrameCount_30D
 	STA	unk_389,X
 	LDA	sprite_length_30F
@@ -6398,8 +6384,7 @@ loc_D490:
 ; ---------------------------------------------------------------------------
 
 loc_D4A2:
-	PLA
-	TAX
+	from_stack_to_x
 	INX
 	CPX	objArraySize_373
 	BEQ	loc_D4AD
@@ -6806,8 +6791,7 @@ loc_D730:
 	JSR	sub_D9B9
 	JSR	sub_D9E4
 	JSR	sub_DDDA
-	PLA
-	TAX
+	from_stack_to_x
 	from_stack byte_313
 	LDA	sprite_length_30F
 	CMP	#$FF
@@ -6827,8 +6811,7 @@ loc_D75D:
 	JSR	sub_D9B9
 	STX	tilemapTypeUnk_30B
 	JSR	sub_D874
-	PLA
-	TAX
+	from_stack_to_x
 	from_stack byte_313
 	LDA	sprite_length_30F
 	CMP	#$FF
@@ -6848,8 +6831,7 @@ loc_D78C:
 	PHA
 	JSR	sub_D9B9
 	JSR	sub_DACD
-	PLA
-	TAX
+	from_stack_to_x
 	from_stack byte_313
 	STX	cur_obj_idx_unk_43A
 	LDA	byte_439
@@ -7636,8 +7618,7 @@ loc_DCB5:
 	TXA
 	PHA
 	JSR	sub_C7C7
-	PLA
-	TAX
+	from_stack_to_x
 	JSR	sub_DD40
 	LDA	array_unk_3C5,X
 	CLC
@@ -11177,8 +11158,7 @@ start_read_tilemap_F1FA:
 	JSR	tilemap_read_next_chunk_F472
 	JSR	sub_F504
 	JSR	sub_ED8F
-	PLA
-	TAX
+	from_stack_to_x
 	JSR	sub_F51D
 
 loc_F228:
@@ -11212,8 +11192,7 @@ start_read_tilemap_F23C:
 	JSR	sub_F57B
 	JSR	sub_F589
 	JSR	sub_EDA2
-	PLA
-	TAX
+	from_stack_to_x
 	JSR	sub_F51D
 	LDA	ppu_scroll_x_304
 	BEQ	loc_F2E0
@@ -11249,8 +11228,7 @@ start_read_tilemap_F290:
 	JSR	sub_F504
 	JSR	sub_F57B
 	JSR	sub_F589
-	PLA
-	TAX
+	from_stack_to_x
 	JSR	sub_F51D
 	LDA	ppu_scroll_x_304
 	AND	#$1F
@@ -11343,8 +11321,7 @@ start_read_tilemap_F344:
 	JSR	tilemap_read_next_chunk_F472
 	JSR	sub_F504
 	JSR	sub_EDA2
-	PLA
-	TAX
+	from_stack_to_x
 	LDA	tilemapTypeUnk_30B
 	ORA	#$80 
 	STA	tilemapTypeUnk_30B
@@ -11434,8 +11411,7 @@ start_read_tilemap_F3F2:
 	JSR	sub_F504
 	JSR	sub_F57B
 	JSR	sub_EDA2
-	PLA
-	TAX
+	from_stack_to_x
 	JSR	sub_F54A
 
 loc_F42B:
@@ -11586,8 +11562,7 @@ exitFunc_F4EF:
 	from_stack ptr_0
 	PLA
 	TAY
-	PLA
-	TAX
+	from_stack_to_x
 	RTS
 ; End of function tilemap_read_next_chunk_F472
 
@@ -11763,8 +11738,7 @@ loc_F5D2:
 	INX
 	CPX	#8
 	BCC	loc_F5D2
-	PLA
-	TAX
+	from_stack_to_x
 	LDA	entry_idx_300
 	STA	tilemapData_4C
 	LDA	byte_313
@@ -12198,8 +12172,7 @@ start_read_tilemap_F8BB:
 	JSR	tilemap_read_next_chunk_F472
 	from_stack tilemap_size_307
 	from_stack ppu_unk_byte_309
-	PLA
-	TAX
+	from_stack_to_x
 	INC	ppu_data_70
 	LDA	#2
 	STA	ppu_data_70,X
@@ -12249,8 +12222,7 @@ sub_F921:
 	JSR	sub_EDA2
 	from_stack tilemap_size_307
 	from_stack ppu_unk_byte_309
-	PLA
-	TAX
+	from_stack_to_x
 	RTS
 ; End of function sub_F921
 
@@ -12274,8 +12246,7 @@ sub_F942:
 	JSR	sub_EDA2
 	from_stack tilemap_size_307
 	from_stack ppu_unk_byte_309
-	PLA
-	TAX
+	from_stack_to_x
 	RTS
 ; End of function sub_F942
 
@@ -12570,8 +12541,7 @@ loc_FB51:
 loc_FB63:
 	from_stack tilemap_size_307
 	from_stack ppu_unk_byte_309
-	PLA
-	TAX
+	from_stack_to_x
 	INC	ppu_data_70
 	LDA	#1
 	STA	ppu_data_70,X

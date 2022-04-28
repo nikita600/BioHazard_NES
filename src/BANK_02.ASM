@@ -209,10 +209,8 @@ loc_2D1DF:
 	INY
 	LDA	(ptr_0),Y
 	STA	data_3
-	LDA	data_2
-	CLC
-	ADC	text_idx_35C
-	STA	data_2
+	add_to_byte_clc data_2, text_idx_35C
+
 	LDA	data_3
 	ADC	#0
 	STA	data_3
@@ -268,10 +266,8 @@ loc_2D251:
 ; ---------------------------------------------------------------------------
 
 loc_2D260:
-	LDA	ptr_0
-	CLC
-	ADC	#2
-	STA	ptr_0
+	add_to_byte_clc ptr_0, #2
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
@@ -415,10 +411,8 @@ loc_2D36C:
 loc_2D378:
 	from_stack char_type_id_35D
 	from_stack text_idx_35C
-	LDA	text_idx_35C
-	CLC
-	ADC	#1
-	STA	text_idx_35C
+	add_to_byte_clc text_idx_35C, #1
+
 	LDA	char_type_id_35D
 	ADC	#0
 	STA	char_type_id_35D
@@ -722,10 +716,8 @@ sub_2E244:
 	INY
 	LDA	(ptr_0),Y
 	STA	data_3
-	LDA	data_2
-	CLC
-	ADC	text_idx_35C
-	STA	data_2
+	add_to_byte_clc data_2, text_idx_35C
+
 	LDA	data_3
 	ADC	#0
 	STA	data_3
@@ -1025,10 +1017,8 @@ sub_2E44B:
 loc_2E44E:
 	CPY	#0
 	BEQ	loc_2E466
-	LDA	ppu_unk_byte_309
-	CLC
-	ADC	byte_363
-	STA	ppu_unk_byte_309
+	add_to_byte_clc ppu_unk_byte_309, byte_363
+
 	INC	ppu_unk_byte_309
 	INC	ppu_unk_byte_309
 	DEY
@@ -1122,10 +1112,8 @@ loc_2E4E0:
 	STA	tilemap_size_307
 
 loc_2E4F1:
-	LDA	data_2
-	CLC
-	ADC	tilemap_size_307
-	STA	data_2
+	add_to_byte_clc data_2, tilemap_size_307
+
 	LDA	data_3
 	ADC	#0
 	STA	data_3
@@ -1284,10 +1272,8 @@ sub_2E781:
 	ASL	data_2
 	ROL	data_3
 
-	LDA	ptr_0
-	CLC
-	ADC	data_2
-	STA	ptr_0
+	add_to_byte_clc ptr_0, data_2
+
 	LDA	ptr_1
 	ADC	data_3
 	STA	ptr_1

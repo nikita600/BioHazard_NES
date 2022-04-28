@@ -1682,10 +1682,8 @@ loc_128CD5:
 	STA	byte_36A
 	LDA	#0
 	STA	byte_36B
-	LDA	byte_36A
-	CLC
-	ADC	#$C0 
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #$C0 
+
 	LDA	byte_36B
 	ADC	#0
 	STA	byte_36B
@@ -1740,10 +1738,8 @@ loc_128D35:
 	STA	byte_36A
 	LDA	#0
 	STA	byte_36B
-	LDA	byte_36A
-	CLC
-	ADC	#$C8 
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #$C8 
+
 	LDA	byte_36B
 	ADC	#0
 	STA	byte_36B
@@ -1775,10 +1771,8 @@ loc_128D8F:
 	STA	byte_36A
 	LDA	#0
 	STA	byte_36B
-	LDA	byte_36A
-	CLC
-	ADC	#$C8 
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #$C8 
+
 	LDA	byte_36B
 	ADC	#0
 	STA	byte_36B
@@ -1804,10 +1798,8 @@ loc_128D8F:
 	STA	byte_36A
 	LDA	#0
 	STA	byte_36B
-	LDA	byte_36A
-	CLC
-	ADC	#$D0 
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #$D0 
+
 	LDA	byte_36B
 	ADC	#0
 	STA	byte_36B
@@ -1837,10 +1829,8 @@ sub_128E24:
 	STA	byte_36A
 	LDA	#0
 	STA	byte_36B
-	LDA	byte_36A
-	CLC
-	ADC	#$20 
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #$20 
+
 	LDA	byte_36B
 	ADC	#0
 	STA	byte_36B
@@ -1861,20 +1851,16 @@ sub_128E24:
 ; ---------------------------------------------------------------------------
 
 loc_128E6C:
-	LDA	objMapIdx_316
-	CLC
-	ADC	#7
-	STA	objMapIdx_316
+	add_to_byte_clc objMapIdx_316, #7
+
 	LDA	#1
 	STA	byte_54B
 	JMP	loc_128E8B
 ; ---------------------------------------------------------------------------
 
 loc_128E7D:
-	LDA	objMapIdx_316
-	CLC
-	ADC	#$E
-	STA	objMapIdx_316
+	add_to_byte_clc objMapIdx_316, #$E
+
 	LDA	#2
 	STA	byte_54B
 
@@ -1895,10 +1881,8 @@ loc_128EA3:
 	INC	byte_54C
 
 loc_128EA6:
-	LDA	objMapIdx_316
-	CLC
-	ADC	byte_54C
-	STA	objMapIdx_316
+	add_to_byte_clc objMapIdx_316, byte_54C
+
 	LDA	#4
 	STA	objectIdx_318
 	LDX	objMapIdx_316
@@ -1921,10 +1905,8 @@ sub_128EC2:
 	STA	byte_36A
 	LDA	#0
 	STA	byte_36B
-	LDA	byte_36A
-	CLC
-	ADC	#$20 
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #$20 
+
 	LDA	byte_36B
 	ADC	#0
 	STA	byte_36B
@@ -1940,10 +1922,8 @@ sub_128EC2:
 	STA	objMapIdx_316
 	LDA	byte_54A
 	BEQ	loc_128F0E
-	LDA	objMapIdx_316
-	CLC
-	ADC	#3
-	STA	objMapIdx_316
+	add_to_byte_clc objMapIdx_316, #3
+
 
 loc_128F0E:
 	LDX	objMapIdx_316
@@ -2468,10 +2448,8 @@ loc_12A64A:
 	ASL	data_2
 	ROL	data_3
 
-	LDA	ptr_0
-	CLC
-	ADC	data_2
-	STA	ptr_0
+	add_to_byte_clc ptr_0, data_2
+
 	LDA	ptr_1
 	ADC	data_3
 	STA	ptr_1
@@ -2813,10 +2791,8 @@ loc_12A8E3:
 	BEQ	loc_12A91F
 
 loc_12A8FD:
-	LDA	byte_370
-	CLC
-	ADC	tilemapFrameCount_30D
-	STA	byte_370
+	add_to_byte_clc byte_370, tilemapFrameCount_30D
+
 	LDA	byte_371
 	ADC	byte_30E
 	STA	byte_371
@@ -2857,10 +2833,8 @@ sub_12A944:
 
 	set_ptr byte_598
 
-	LDA	ptr_0
-	CLC
-	ADC	tilemapFrameCount_30D
-	STA	ptr_0
+	add_to_byte_clc ptr_0, tilemapFrameCount_30D
+
 	LDA	ptr_1
 	ADC	byte_30E
 	STA	ptr_1
@@ -8836,14 +8810,10 @@ loc_12CDA2:
 	from_stack_to_y
 
 loc_12CDEA:
-	LDA	ppu_unk_byte_309
-	CLC
-	ADC	#4
-	STA	ppu_unk_byte_309
-	LDA	sprite_secondByte_31B
-	CLC
-	ADC	#$18
-	STA	sprite_secondByte_31B
+	add_to_byte_clc ppu_unk_byte_309, #4
+
+	add_to_byte_clc sprite_secondByte_31B, #$18
+
 	INY
 	JMP	loc_12CDA2
 ; ---------------------------------------------------------------------------
@@ -9106,14 +9076,10 @@ sub_12CFBA:
 loc_12CFE6:
 	LDA	byte_372
 	BEQ	loc_12D003
-	LDA	ppu_unk_byte_309
-	CLC
-	ADC	#4
-	STA	ppu_unk_byte_309
-	LDA	sprite_secondByte_31B
-	CLC
-	ADC	#$18
-	STA	sprite_secondByte_31B
+	add_to_byte_clc ppu_unk_byte_309, #4
+
+	add_to_byte_clc sprite_secondByte_31B, #$18
+
 	DEC	byte_372
 	JMP	loc_12CFE6
 ; ---------------------------------------------------------------------------
@@ -9290,10 +9256,8 @@ sub_12D139:
 	
 	set_ptr _SAVE_RAM
 
-	LDA	ptr_0
-	CLC
-	ADC	#$14
-	STA	ptr_0
+	add_to_byte_clc ptr_0, #$14
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
@@ -9304,10 +9268,8 @@ loc_12D151:
 	CPY	#0
 	BEQ	locret_12D166
 
-	LDA	ptr_0
-	CLC
-	ADC	#$58 
-	STA	ptr_0
+	add_to_byte_clc ptr_0, #$58 
+
 	LDA	ptr_1
 	ADC	#2
 	STA	ptr_1
@@ -9346,10 +9308,8 @@ loc_12D17B:
 	CPX	#4
 	BCC	loc_12D17B
 
-	LDA	ptr_0
-	CLC
-	ADC	#$14
-	STA	ptr_0
+	add_to_byte_clc ptr_0, #$14
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
@@ -9375,10 +9335,8 @@ loc_12D1BC:
 	INY
 	CPY	#0
 	BNE	loc_12D1BC
-	LDA	ptr_1
-	CLC
-	ADC	#4
-	STA	ptr_1
+	add_to_byte_clc ptr_1, #4
+
 
 loc_12D1CD:
 	LDA	byte_5A4,Y
@@ -9386,10 +9344,8 @@ loc_12D1CD:
 	INY
 	CPY	#0
 	BNE	loc_12D1CD
-	LDA	ptr_1
-	CLC
-	ADC	#4
-	STA	ptr_1
+	add_to_byte_clc ptr_1, #4
+
 
 loc_12D1DE:
 	LDA	byte_6A4,Y
@@ -9414,10 +9370,8 @@ loc_12D1EE:
 	INY
 	CPY	#0
 	BNE	loc_12D1EE
-	LDA	ptr_1
-	CLC
-	ADC	#4
-	STA	ptr_1
+	add_to_byte_clc ptr_1, #4
+
 
 loc_12D1FF:
 	LDA	(ptr_0),Y
@@ -9425,10 +9379,8 @@ loc_12D1FF:
 	INY
 	CPY	#0
 	BNE	loc_12D1FF
-	LDA	ptr_1
-	CLC
-	ADC	#4
-	STA	ptr_1
+	add_to_byte_clc ptr_1, #4
+
 
 loc_12D210:
 	LDA	(ptr_0),Y
@@ -9500,10 +9452,8 @@ sub_12D261:
 
 sub_12D26B:
 	
-	LDA	tilemapWidth_308
-	CLC
-	ADC	byte_31A
-	STA	tilemapWidth_308
+	add_to_byte_clc tilemapWidth_308, byte_31A
+
 	LDY	byte_31A
 
 loc_12D278:
@@ -9579,10 +9529,8 @@ loc_12D2D6:
 	STA	ppu_unk_byte_309
 	JSR	sub_128358
 	JSR	sub_128326
-	LDA	sprite_secondByte_31B
-	CLC
-	ADC	#$11
-	STA	sprite_secondByte_31B
+	add_to_byte_clc sprite_secondByte_31B, #$11
+
 	INC	byte_372
 	LDA	byte_372
 	CMP	byte_532
@@ -9719,10 +9667,8 @@ loc_12D3C5:
 loc_12D3D7:
 	LDA	data_3
 	BEQ	loc_12D423
-	LDA	tilemap_size_307
-	CLC
-	ADC	#4
-	STA	tilemap_size_307
+	add_to_byte_clc tilemap_size_307, #4
+
 	LDA	data_3
 	CLC
 	ADC	#$32 
@@ -9753,10 +9699,8 @@ loc_12D423:
 	BNE	loc_12D434
 	LDA	data_2
 	BEQ	loc_12D473
-	LDA	tilemap_size_307
-	CLC
-	ADC	#8
-	STA	tilemap_size_307
+	add_to_byte_clc tilemap_size_307, #8
+
 
 loc_12D434:
 	LDA	data_2
@@ -9789,10 +9733,8 @@ loc_12D473:
 	BNE	loc_12D484
 	LDA	data_2
 	BNE	loc_12D484
-	LDA	tilemap_size_307
-	CLC
-	ADC	#$C
-	STA	tilemap_size_307
+	add_to_byte_clc tilemap_size_307, #$C
+
 
 loc_12D484:
 	
@@ -10532,10 +10474,8 @@ loc_12D9A3:
 loc_12D9C9:
 	CPX	#0
 	BEQ	loc_12D9DA
-	LDA	sprite_secondByte_31B
-	CLC
-	ADC	#$11
-	STA	sprite_secondByte_31B
+	add_to_byte_clc sprite_secondByte_31B, #$11
+
 	DEX
 	JMP	loc_12D9C9
 ; ---------------------------------------------------------------------------
@@ -10630,10 +10570,8 @@ loc_12DA48:
 	LDA	tilemapTypeUnk_30B
 	CMP	#0
 	BEQ	loc_12DA5E
-	LDA	sprite_secondByte_31B
-	CLC
-	ADC	#$11
-	STA	sprite_secondByte_31B
+	add_to_byte_clc sprite_secondByte_31B, #$11
+
 	DEC	tilemapTypeUnk_30B
 	JMP	loc_12DA48
 ; ---------------------------------------------------------------------------
@@ -10688,10 +10626,8 @@ loc_12DA5E:
 	from_stack tilemapTypeUnk_30B
 
 loc_12DABA:
-	LDA	sprite_secondByte_31B
-	CLC
-	ADC	#$11
-	STA	sprite_secondByte_31B
+	add_to_byte_clc sprite_secondByte_31B, #$11
+
 	from_stack_to_x
 	INX
 	CPX	tilemapTypeUnk_30B
@@ -11093,29 +11029,21 @@ loc_12DD1E:
 	STA	objMapIdx_316
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
-	LDA	ppu_unk_byte_309
-	CLC
-	ADC	byte_547
-	STA	ppu_unk_byte_309
-	LDA	tilemap_size_307
-	CLC
-	ADC	byte_547
-	STA	tilemap_size_307
+	add_to_byte_clc ppu_unk_byte_309, byte_547
+
+	add_to_byte_clc tilemap_size_307, byte_547
+
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
-	LDA	byte_31A
-	CLC
-	ADC	#4
-	STA	byte_31A
+	add_to_byte_clc byte_31A, #4
+
 	LDA	#$2B 
 	STA	objMapIdx_316
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
-	LDA	ppu_unk_byte_309
-	CLC
-	ADC	byte_547
-	STA	ppu_unk_byte_309
+	add_to_byte_clc ppu_unk_byte_309, byte_547
+
 	LDA	tilemap_size_307
 	CLC
 	ADC	#$18
@@ -11125,10 +11053,8 @@ loc_12DD1E:
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
-	LDA	byte_31A
-	CLC
-	ADC	#4
-	STA	byte_31A
+	add_to_byte_clc byte_31A, #4
+
 	LDA	#$2C 
 	STA	objMapIdx_316
 	to_stack tilemap_size_307
@@ -11139,10 +11065,8 @@ loc_12DD1E:
 	SEC
 	SBC	byte_547
 	STA	ppu_unk_byte_309
-	LDA	tilemap_size_307
-	CLC
-	ADC	byte_547
-	STA	tilemap_size_307
+	add_to_byte_clc tilemap_size_307, byte_547
+
 	LDA	byte_42E
 	CMP	#4
 	BCC	loc_12DDE9
@@ -11155,10 +11079,8 @@ loc_12DDE9:
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
-	LDA	byte_31A
-	CLC
-	ADC	#4
-	STA	byte_31A
+	add_to_byte_clc byte_31A, #4
+
 	LDA	#$2D 
 	STA	objMapIdx_316
 	to_stack tilemap_size_307
@@ -11187,10 +11109,8 @@ loc_12DE34:
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
-	LDA	byte_31A
-	CLC
-	ADC	#4
-	STA	byte_31A
+	add_to_byte_clc byte_31A, #4
+
 	RTS
 ; End of function sub_12DD0A
 
@@ -11226,20 +11146,16 @@ loc_12DE64:
 ; ---------------------------------------------------------------------------
 
 loc_12DE7D:
-	LDA	objMapIdx_316
-	CLC
-	ADC	#7
-	STA	objMapIdx_316
+	add_to_byte_clc objMapIdx_316, #7
+
 	LDA	#1
 	STA	byte_54B
 	JMP	loc_12DE9C
 ; ---------------------------------------------------------------------------
 
 loc_12DE8E:
-	LDA	objMapIdx_316
-	CLC
-	ADC	#$E
-	STA	objMapIdx_316
+	add_to_byte_clc objMapIdx_316, #$E
+
 	LDA	#2
 	STA	byte_54B
 
@@ -11269,16 +11185,12 @@ sub_12DEB5:
 	STA	objMapIdx_316
 	LDA	byte_54A
 	BEQ	loc_12DEC9
-	LDA	objMapIdx_316
-	CLC
-	ADC	#3
-	STA	objMapIdx_316
+	add_to_byte_clc objMapIdx_316, #3
+
 
 loc_12DEC9:
-	LDA	objMapIdx_316
-	CLC
-	ADC	#$15
-	STA	objMapIdx_316
+	add_to_byte_clc objMapIdx_316, #$15
+
 	LDA	#$30 
 	STA	byte_31A
 	LDA	#0
@@ -12091,10 +12003,8 @@ loc_12E404:
 loc_12E413:
 	CPY	#0
 	BEQ	loc_12E424
-	LDA	sprite_secondByte_31B
-	CLC
-	ADC	#$11
-	STA	sprite_secondByte_31B
+	add_to_byte_clc sprite_secondByte_31B, #$11
+
 	DEY
 	JMP	loc_12E413
 ; ---------------------------------------------------------------------------
@@ -12245,29 +12155,21 @@ loc_12E4EE:
 	STA	objMapIdx_316
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
-	LDA	tilemap_size_307
-	CLC
-	ADC	#$C
-	STA	tilemap_size_307
-	LDA	ppu_unk_byte_309
-	CLC
-	ADC	byte_547
-	STA	ppu_unk_byte_309
+	add_to_byte_clc tilemap_size_307, #$C
+
+	add_to_byte_clc ppu_unk_byte_309, byte_547
+
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
-	LDA	byte_31A
-	CLC
-	ADC	#4
-	STA	byte_31A
+	add_to_byte_clc byte_31A, #4
+
 	LDA	#$2E 
 	STA	objMapIdx_316
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
-	LDA	tilemap_size_307
-	CLC
-	ADC	#$C
-	STA	tilemap_size_307
+	add_to_byte_clc tilemap_size_307, #$C
+
 	LDA	ppu_unk_byte_309
 	CLC
 	ADC	#$18
@@ -12277,29 +12179,21 @@ loc_12E4EE:
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
-	LDA	byte_31A
-	CLC
-	ADC	#4
-	STA	byte_31A
+	add_to_byte_clc byte_31A, #4
+
 	LDA	#$30 
 	STA	objMapIdx_316
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
-	LDA	ppu_unk_byte_309
-	CLC
-	ADC	#$C
-	STA	ppu_unk_byte_309
-	LDA	tilemap_size_307
-	CLC
-	ADC	byte_547
-	STA	tilemap_size_307
+	add_to_byte_clc ppu_unk_byte_309, #$C
+
+	add_to_byte_clc tilemap_size_307, byte_547
+
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
-	LDA	byte_31A
-	CLC
-	ADC	#4
-	STA	byte_31A
+	add_to_byte_clc byte_31A, #4
+
 	LDA	#$31 
 	STA	objMapIdx_316
 	to_stack tilemap_size_307
@@ -12310,10 +12204,8 @@ loc_12E4EE:
 	SEC
 	SBC	byte_547
 	STA	tilemap_size_307
-	LDA	ppu_unk_byte_309
-	CLC
-	ADC	#$C
-	STA	ppu_unk_byte_309
+	add_to_byte_clc ppu_unk_byte_309, #$C
+
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
@@ -13925,10 +13817,8 @@ sub_12F168:
 
 loc_12F1C7:
 	
-	LDA	byte_36A
-	CLC
-	ADC	#$10
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #$10
+
 
 loc_12F1D0:
 	INY
@@ -13993,10 +13883,8 @@ loc_12F1D0:
 
 loc_12F258:
 	
-	LDA	byte_36A
-	CLC
-	ADC	#$10
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #$10
+
 
 loc_12F261:
 	INY
@@ -14282,18 +14170,14 @@ loc_12F495:
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_12F495
-	LDA	data_2
-	CLC
-	ADC	tilemapTypeUnk_30B
-	STA	data_2
+	add_to_byte_clc data_2, tilemapTypeUnk_30B
+
 	LDA	data_3
 	ADC	#0
 	STA	data_3
 	
-	LDA	ptr_0
-	CLC
-	ADC	tilemapTypeUnk_30B
-	STA	ptr_0
+	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
@@ -14350,10 +14234,8 @@ sub_12F4E4:
 	CMP	#$A
 	BCS	locret_12F513
 	BEQ	locret_12F513
-	LDA	byte_372
-	CLC
-	ADC	#$B
-	STA	byte_372
+	add_to_byte_clc byte_372, #$B
+
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -14362,10 +14244,8 @@ loc_12F503:
 	CMP	#$12
 	BCS	locret_12F513
 	BEQ	locret_12F513
-	LDA	byte_372
-	CLC
-	ADC	#$A
-	STA	byte_372
+	add_to_byte_clc byte_372, #$A
+
 	RTS
 ; ---------------------------------------------------------------------------
 

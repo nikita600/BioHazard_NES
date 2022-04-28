@@ -12,10 +12,8 @@ getTilemapPtr:
 	ASL	data_2
 	ROL	data_3
 
-	LDA	ptr_0
-	CLC
-	ADC	data_2
-	STA	ptr_0
+	add_to_byte_clc ptr_0, data_2
+
 	LDA	ptr_1
 	ADC	data_3
 	STA	ptr_1
@@ -36,10 +34,8 @@ getOffset_F8CC: ; unk data
 	CMP	#$20 
 	BEQ	size_20_7F8DF
 	
-	LDA	ptr_0
-	CLC
-	ADC	#$C0 
-	STA	ptr_0
+	add_to_byte_clc ptr_0, #$C0 
+
 	LDA	ptr_1
 	ADC	#3
 	STA	ptr_1
@@ -50,16 +46,7 @@ size_20_7F8DF:
 add_size_7F8E1:
 	CPY	#0
 	BEQ	addOffset_7F8F6
-
-	;LDA	ptr_0
-	;CLC
-	;ADC	tilemap_line_size_51
-	;STA	ptr_0
-	;
-	;LDA	ptr_1
-	;ADC	#0
-	;STA	ptr_1
-
+	
 	add_to_ptr_byte tilemap_line_size_51
 
 	DEY
@@ -67,10 +54,8 @@ add_size_7F8E1:
 ; ---------------------------------------------------------------------------
 
 addOffset_7F8F6:
-	LDA	ptr_0
-	CLC
-	ADC	mapLineSize_50
-	STA	ptr_0
+	add_to_byte_clc ptr_0, mapLineSize_50
+
 
 	LDA	ptr_1
 	ADC	#0
@@ -87,10 +72,8 @@ write_tilemap_line_7F90F:
 	LDA	(ptr_0),Y
 	STA	tilemapData_4C,X
 
-	LDA	ptr_0
-	CLC
-	ADC	data_3	; entrySize
-	STA	ptr_0
+	add_to_byte_clc ptr_0, data_3	; entrySize
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1

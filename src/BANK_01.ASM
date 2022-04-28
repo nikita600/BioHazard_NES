@@ -434,10 +434,8 @@ loc_1F44D:
 	LDA	tilemap_size_307
 	STA	(ptr_0),Y
 	INY
-	LDA	byte_36A
-	CLC
-	ADC	#8
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #8
+
 	LDA	byte_36B
 	ADC	#0
 	STA	byte_36B
@@ -447,17 +445,13 @@ loc_1F44D:
 	BCC	loc_1F44D
 	from_stack byte_36B
 	from_stack byte_36A
-	LDA	data_2
-	CLC
-	ADC	tilemapWidth_308
-	STA	data_2
+	add_to_byte_clc data_2, tilemapWidth_308
+
 	LDA	data_3
 	ADC	#0
 	STA	data_3
-	LDA	byte_366
-	CLC
-	ADC	#8
-	STA	byte_366
+	add_to_byte_clc byte_366, #8
+
 	LDA	byte_367
 	ADC	#0
 	STA	byte_367
@@ -506,10 +500,8 @@ loc_1F4DC:
 	LDA	tilemap_size_307
 	STA	(ptr_0),Y
 	INY
-	LDA	byte_36A
-	CLC
-	ADC	#8
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #8
+
 	LDA	byte_36B
 	ADC	#0
 	STA	byte_36B
@@ -519,17 +511,13 @@ loc_1F4DC:
 	BNE	loc_1F4DC
 	from_stack byte_36B
 	from_stack byte_36A
-	LDA	data_2
-	CLC
-	ADC	tilemapWidth_308
-	STA	data_2
+	add_to_byte_clc data_2, tilemapWidth_308
+
 	LDA	data_3
 	ADC	#0
 	STA	data_3
-	LDA	byte_366
-	CLC
-	ADC	#8
-	STA	byte_366
+	add_to_byte_clc byte_366, #8
+
 	LDA	byte_367
 	ADC	#0
 	STA	byte_367
@@ -552,10 +540,8 @@ loc_1F559:
 loc_1F55D:
 	CPY	#0
 	BEQ	loc_1F572
-	LDA	data_2
-	CLC
-	ADC	tilemapWidth_308
-	STA	data_2
+	add_to_byte_clc data_2, tilemapWidth_308
+
 	LDA	data_3
 	CLC
 	STA	data_3
@@ -595,10 +581,8 @@ loc_1F583:
 	LDA	tilemap_size_307
 	STA	(ptr_0),Y
 	INY
-	LDA	byte_36A
-	CLC
-	ADC	#8
-	STA	byte_36A
+	add_to_byte_clc byte_36A, #8
+
 	LDA	byte_36B
 	ADC	#0
 	STA	byte_36B
@@ -615,10 +599,8 @@ loc_1F583:
 	LDA	data_3
 	SBC	#0
 	STA	data_3
-	LDA	byte_366
-	CLC
-	ADC	#8
-	STA	byte_366
+	add_to_byte_clc byte_366, #8
+
 	LDA	byte_367
 	ADC	#0
 	STA	byte_367
@@ -662,10 +644,8 @@ sub_1F5FF:
 	SBC	byte_369
 	BCC	loc_1F68D
 	INC	byte_36D
-	LDA	byte_368
-	CLC
-	ADC	#$F0 
-	STA	byte_368
+	add_to_byte_clc byte_368, #$F0 
+
 	LDA	byte_369
 	ADC	#0
 	STA	byte_369
@@ -734,10 +714,8 @@ sub_1F6AB:
 loc_1F6B5:
 	CPY	#0
 	BEQ	loc_1F6CE
-	LDA	byte_368
-	CLC
-	ADC	#$F0 
-	STA	byte_368
+	add_to_byte_clc byte_368, #$F0 
+
 	LDA	byte_369
 	ADC	#0
 	STA	byte_369
@@ -778,10 +756,8 @@ loc_1F6F3:
 	CPY	#$10
 	BCC	loc_1F6F3
 	
-	LDA	ptr_0
-	CLC
-	ADC	#$10
-	STA	ptr_0
+	add_to_byte_clc ptr_0, #$10
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1

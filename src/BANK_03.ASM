@@ -58,10 +58,8 @@ sub_3F76B:
 	INY
 	LDA	(ptr_0),Y
 	STA	data_3
-	LDA	data_2
-	CLC
-	ADC	text_idx_35C
-	STA	data_2
+	add_to_byte_clc data_2, text_idx_35C
+
 	LDA	data_3
 	ADC	#0
 	STA	data_3
@@ -360,10 +358,8 @@ sub_3F972:
 loc_3F975:
 	CPY	#0
 	BEQ	loc_3F98D
-	LDA	ppu_unk_byte_309
-	CLC
-	ADC	byte_363
-	STA	ppu_unk_byte_309
+	add_to_byte_clc ppu_unk_byte_309, byte_363
+
 	INC	ppu_unk_byte_309
 	INC	ppu_unk_byte_309
 	DEY
@@ -457,10 +453,8 @@ loc_3FA07:
 	STA	tilemap_size_307
 
 loc_3FA18:
-	LDA	data_2
-	CLC
-	ADC	tilemap_size_307
-	STA	data_2
+	add_to_byte_clc data_2, tilemap_size_307
+
 	LDA	data_3
 	ADC	#0
 	STA	data_3

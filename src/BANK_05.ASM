@@ -54,10 +54,8 @@ upload_gfx_to_ppu_5F093:
 	ASL	data_2
 	ROL	data_3
 
-	LDA	ptr_0
-	CLC
-	ADC	data_2
-	STA	ptr_0
+	add_to_byte_clc ptr_0, data_2
+
 	LDA	ptr_1
 	ADC	data_3
 	STA	ptr_1
@@ -102,10 +100,8 @@ loc_5F0EE:
 	CPY	#$10
 	BCC	loc_5F0EE
 	
-	LDA	ptr_0
-	CLC
-	ADC	#$10
-	STA	ptr_0
+	add_to_byte_clc ptr_0, #$10
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1

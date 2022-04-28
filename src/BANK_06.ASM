@@ -53,10 +53,8 @@ upload_gfx_to_ppu_6F863:
 	ASL	data_2
 	ROL	data_3
 
-	LDA	ptr_0
-	CLC
-	ADC	data_2
-	STA	ptr_0
+	add_to_byte_clc ptr_0, data_2
+
 	LDA	ptr_1
 	ADC	data_3
 	STA	ptr_1
@@ -101,10 +99,8 @@ loc_6F8BE:
 	CPY	#$10
 	BCC	loc_6F8BE
 	
-	LDA	ptr_0
-	CLC
-	ADC	#$10
-	STA	ptr_0
+	add_to_byte_clc ptr_0, #$10
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1

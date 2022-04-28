@@ -158,10 +158,8 @@ loc_4F381:
 
 	add_to_data $10
 
-	LDA	ptr_0
-	CLC
-	ADC	#$10
-	STA	ptr_0
+	add_to_byte_clc ptr_0, #$10
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
@@ -329,10 +327,8 @@ get_tilemap_descr_4F48B:
 	LDA	(ptr_0),Y
 	STA	tilemapHeight_30A
 
-	LDA	ptr_0
-	CLC
-	ADC	#2
-	STA	ptr_0
+	add_to_byte_clc ptr_0, #2
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
@@ -360,10 +356,8 @@ loc_4F4BA:
 ; ---------------------------------------------------------------------------
 
 loc_4F4CF:
-	LDA	data_2
-	CLC
-	ADC	tilemap_size_307
-	STA	data_2
+	add_to_byte_clc data_2, tilemap_size_307
+
 	LDA	data_3
 	ADC	#0
 	STA	data_3
@@ -452,10 +446,8 @@ loc_4F54A:
 
 	add_to_data $20
 
-	LDA	ptr_0
-	CLC
-	ADC	tilemapWidth_308
-	STA	ptr_0
+	add_to_byte_clc ptr_0, tilemapWidth_308
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1
@@ -497,18 +489,14 @@ loc_4F5A0:
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_4F5A0
-	LDA	data_2
-	CLC
-	ADC	tilemapTypeUnk_30B
-	STA	data_2
+	add_to_byte_clc data_2, tilemapTypeUnk_30B
+
 	LDA	data_3
 	ADC	#0
 	STA	data_3
 
-	LDA	ptr_0
-	CLC
-	ADC	tilemapTypeUnk_30B
-	STA	ptr_0
+	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
+
 	LDA	ptr_1
 	ADC	#0
 	STA	ptr_1

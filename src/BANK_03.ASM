@@ -49,31 +49,26 @@ sub_3F76B:
 	ADC	#0
 	STA	ptr_1
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	add_to_byte_clc data_2, text_idx_35C
 
 	add_to_byte data_3, #0
 
 	LDY	#0
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 	from_stack data_3
 	from_stack data_2
 	LDY	#0
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, #5
-	INX
-	set {ppu_data_70,X}, #$40 
-	INX
+	set_inx {ppu_data_70,X}, #5
+	set_inx {ppu_data_70,X}, #$40 
 	INX
 	set {ppu_data_70,X}, data_2
 	DEX
-	set {ppu_data_70,X}, data_3
-	INX
+	set_inx {ppu_data_70,X}, data_3
 	INX
 	set inv_spr_dscr1_30C, #0
 
@@ -176,16 +171,13 @@ loc_3F856:
 loc_3F865:
 	to_stack data_2
 	to_stack data_3
-	set {ppu_data_70,X}, #1
-	INX
+	set_inx {ppu_data_70,X}, #1
 	INX
 	set {ppu_data_70,X}, data_2
 	DEX
-	set {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_3
 	INX
-	INX
-	set {ppu_data_70,X}, ptr_0
-	INX
+	set_inx {ppu_data_70,X}, ptr_0
 	INC	ptr_0
 	LDA	data_2
 	AND	#$1F
@@ -205,16 +197,13 @@ loc_3F89B:
 	add_to_data $1
 
 loc_3F8A8:
-	set {ppu_data_70,X}, #1
-	INX
+	set_inx {ppu_data_70,X}, #1
 	INX
 	set {ppu_data_70,X}, data_2
 	DEX
-	set {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_3
 	INX
-	INX
-	set {ppu_data_70,X}, ptr_0
-	INX
+	set_inx {ppu_data_70,X}, ptr_0
 	from_stack data_3
 	from_stack data_2
 	INC	ptr_0
@@ -244,8 +233,7 @@ sub_3F8FA:
 	set inv_spr_dscr1_30C, #0
 
 loc_3F903:
-	set {ppu_data_70,X}, {(ptr_0),Y}
-	INX
+	set_inx {ppu_data_70,X}, {(ptr_0),Y}
 	INY
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
@@ -286,8 +274,7 @@ sub_3F938:
 	set inv_spr_dscr1_30C, #0
 
 loc_3F941:
-	set {ppu_data_70,X}, #0
-	INX
+	set_inx {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
@@ -305,8 +292,7 @@ sub_3F955:
 	set inv_spr_dscr1_30C, #0
 
 loc_3F95E:
-	set {ppu_data_70,X}, #$FF
-	INX
+	set_inx {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	CMP	#8

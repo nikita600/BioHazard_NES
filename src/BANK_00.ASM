@@ -252,14 +252,12 @@ continue_816E:
 	LDX	#0
 
 loc_8206:
-	set {unk_4D2,X}, #$3A 
-	INX
+	set_inx {unk_4D2,X}, #$3A 
 	CPX	#$30 
 	BCC	loc_8206
 	LDX	#0
 	set {unk_4D2,X}, #6
-	set {unk_502,X}, #$F
-	INX
+	set_inx {unk_502,X}, #$F
 	set {unk_4D2,X}, #6
 	set {unk_502,X}, #$F
 	set byte_532, #3
@@ -663,8 +661,7 @@ loc_867E:
 	LDX	#0
 
 loc_868F:
-	set {byte_4A0,X}, {(ptr_0),Y}
-	INX
+	set_inx {byte_4A0,X}, {(ptr_0),Y}
 	INY
 	CPX	#4
 	BCC	loc_868F
@@ -3222,30 +3219,21 @@ loc_99EF:
 	LDA	inv_spr_dscr1_30C
 	ASL	A
 	TAY
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 	LDA	(data_2),Y
 	CMP	entry_idx_300
 	BNE	loc_9A7F
 	INY
-	set byte_36A, {(data_2),Y}
-	INY
-	set byte_36B, {(data_2),Y}
-	INY
-	set byte_366, {(data_2),Y}
-	INY
-	set byte_367, {(data_2),Y}
-	INY
-	set byte_36C, {(data_2),Y}
-	INY
-	set byte_36D, {(data_2),Y}
-	INY
-	set byte_368, {(data_2),Y}
-	INY
-	set byte_369, {(data_2),Y}
-	INY
+	set_iny byte_36A, {(data_2),Y}
+	set_iny byte_36B, {(data_2),Y}
+	set_iny byte_366, {(data_2),Y}
+	set_iny byte_367, {(data_2),Y}
+	set_iny byte_36C, {(data_2),Y}
+	set_iny byte_36D, {(data_2),Y}
+	set_iny byte_368, {(data_2),Y}
+	set_iny byte_369, {(data_2),Y}
 	LDA	tilemapWidth_308
 	SEC
 	SBC	byte_36A
@@ -3270,8 +3258,7 @@ loc_99EF:
 	LDA	byte_369
 	SBC	ppu_unk_byte_309
 	BCC	loc_9A7F
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 	JMP	(ptr_0)
 ; ---------------------------------------------------------------------------
@@ -3439,8 +3426,7 @@ sub_BD29:
 	LDY	byte_31A
 
 loc_BD36:
-	set {byte_200,Y}, #$F0 
-	INY
+	set_iny {byte_200,Y}, #$F0 
 	INY
 	INY
 	INY
@@ -3463,14 +3449,10 @@ sub_BD45:
 loc_BD54:
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, #$20 
-	INX
-	set {ppu_data_70,X}, #$3F 
-	INX
-	set {ppu_data_70,X}, #0
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, #$20 
+	set_inx {ppu_data_70,X}, #$3F 
+	set_inx {ppu_data_70,X}, #0
 	LDA	byte_341
 	CMP	#0
 	BNE	loc_BD7A
@@ -3570,14 +3552,10 @@ sub_BDFE:
 loc_BE03:
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, #$20 
-	INX
-	set {ppu_data_70,X}, #$3F 
-	INX
-	set {ppu_data_70,X}, #0
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, #$20 
+	set_inx {ppu_data_70,X}, #$3F 
+	set_inx {ppu_data_70,X}, #0
 	LDA	byte_341
 	CMP	#0
 	BNE	loc_BE29
@@ -4166,8 +4144,7 @@ sub_C873:
 	add_to_ptr_addr data_2
 
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
@@ -4265,14 +4242,12 @@ sub_C921:
 
 
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
 	LDX	#0
-	set tilemapTypeUnk_30B, {byte_BD1C,X}
-	INX
+	set_inx tilemapTypeUnk_30B, {byte_BD1C,X}
 
 loc_C962:
 	LDA	entry_idx_300
@@ -4306,8 +4281,7 @@ loc_C985:
 sub_C98A:
 	to_stack tilemapTypeUnk_30B
 	LDX	#0
-	set tilemapTypeUnk_30B, {byte_BD10,X}
-	INX
+	set_inx tilemapTypeUnk_30B, {byte_BD10,X}
 
 loc_C997:
 	LDA	entry_idx_300
@@ -4363,8 +4337,7 @@ loc_C9DD:
 	LDY	#0
 
 loc_C9E9:
-	set _PPU_DATA, {(data_2),Y}
-	INY
+	set_iny _PPU_DATA, {(data_2),Y}
 	CPY	#$10
 	BCC	loc_C9E9
 
@@ -4550,8 +4523,7 @@ sub_CB58:
 	LDA	byte_372
 	ASL	A
 	TAX
-	set byte_4AD, {off_CBBE,X}
-	INX
+	set_inx byte_4AD, {off_CBBE,X}
 	LDA	off_CBBE,X
 	CLC
 	ADC	#4
@@ -4598,8 +4570,7 @@ sub_CBC2:
 	LDX	#0
 
 loc_CBD5:
-	set {byte_4,X}, #$AA 
-	INX
+	set_inx {byte_4,X}, #$AA 
 	CPX	#$48 
 	BCC	loc_CBD5
 	JSR	ppu_unk_func_F09D
@@ -4643,15 +4614,13 @@ sub_CC17:
 	LDX	#$20 
 
 loc_CC22:
-	set {byte_4,X}, #$55 
-	INX
+	set_inx {byte_4,X}, #$55 
 	INY
 	CPY	#8
 	BCC	loc_CC22
 
 loc_CC2C:
-	set {byte_4,X}, #$A5 
-	INX
+	set_inx {byte_4,X}, #$A5 
 	INY
 	CPY	#$10
 	BCC	loc_CC2C
@@ -4663,15 +4632,13 @@ loc_CC39:
 	LDX	#$20 
 
 loc_CC3D:
-	set {byte_4,X}, #$AA 
-	INX
+	set_inx {byte_4,X}, #$AA 
 	INY
 	CPY	#8
 	BCC	loc_CC3D
 
 loc_CC47:
-	set {byte_4,X}, #$5A 
-	INX
+	set_inx {byte_4,X}, #$5A 
 	INY
 	CPY	#$10
 	BCC	loc_CC47
@@ -4694,14 +4661,10 @@ ppu_upload_unk_data_CC5D:
 	BCC	locret_CC99
 	set count_unk_465, #0
 	LDX	#0
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, #$3F 
-	INX
-	set {ppu_data_70,X}, #7
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, #$3F 
+	set_inx {ppu_data_70,X}, #7
 	LDY	byte_421
 	set {ppu_data_70,X}, {unk_CC9A,Y}
 	JSR	wait_for_ppu_data_upload_FC8C
@@ -5038,14 +5001,10 @@ loc_CEDC:
 	TAY
 	set {array_unk_3A7,Y}, byte_4AF
 	set {array_unk_39D,Y}, byte_4AA
-	set {array_unk_3C5,Y}, {array_unk_452,X}
-	INX
-	set {array_unk_3BB,Y}, {array_unk_452,X}
-	INX
-	set {array_unk_3D9,Y}, {array_unk_452,X}
-	INX
-	set {array_unk_3CF,Y}, {array_unk_452,X}
-	INX
+	set_inx {array_unk_3C5,Y}, {array_unk_452,X}
+	set_inx {array_unk_3BB,Y}, {array_unk_452,X}
+	set_inx {array_unk_3D9,Y}, {array_unk_452,X}
+	set_inx {array_unk_3CF,Y}, {array_unk_452,X}
 	from_stack_to_y
 	INY
 	CPY	obj_idx_unk_462
@@ -5346,8 +5305,7 @@ loc_D0FD:
 	LDA	array_unk_3BB,X
 	ADC	#0
 	STA	array_unk_3BB,X
-	set {array_unk_3A7,X}, #3
-	INY
+	set_iny {array_unk_3A7,X}, #3
 	JSR	sub_D1EE
 	CPY	#8
 	BCC	loc_D0FD
@@ -5376,8 +5334,7 @@ loc_D139:
 	LDA	array_unk_3BB,X
 	SBC	#0
 	STA	array_unk_3BB,X
-	set {array_unk_3A7,X}, #2
-	INY
+	set_iny {array_unk_3A7,X}, #2
 	JSR	sub_D1EE
 	CPY	#8
 	BCC	loc_D139
@@ -5414,8 +5371,7 @@ loc_D190:
 	LDA	array_unk_3CF,X
 	ADC	#0
 	STA	array_unk_3CF,X
-	set {array_unk_3A7,X}, #1
-	INY
+	set_iny {array_unk_3A7,X}, #1
 	JSR	sub_D1EE
 	CPY	#8
 	BCC	loc_D190
@@ -5444,8 +5400,7 @@ loc_D1CC:
 	LDA	array_unk_3CF,X
 	SBC	#0
 	STA	array_unk_3CF,X
-	set {array_unk_3A7,X}, #0
-	INY
+	set_iny {array_unk_3A7,X}, #0
 	JSR	sub_D1EE
 	CPY	#8
 	BCC	loc_D1CC
@@ -7208,8 +7163,7 @@ load_from_C558_DF4B:
 
 
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
@@ -7221,8 +7175,7 @@ load_from_BCB6_DF7F:
 	LDA	entry_idx_300
 	ASL	A
 	TAY
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 	LDA	(data_2),Y
@@ -7268,8 +7221,7 @@ get_offset_DFCE:
 
 get_ptr_DFE8:
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 
 read_entry_DFF3:
@@ -7301,26 +7253,17 @@ loc_E046:
 	LDA	inv_spr_dscr1_30C
 	ASL	A
 	TAY
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 	LDY	#0
-	set byte_36A, {(ptr_0),Y}
-	INY
-	set byte_36B, {(ptr_0),Y}
-	INY
-	set byte_366, {(ptr_0),Y}
-	INY
-	set byte_367, {(ptr_0),Y}
-	INY
-	set byte_36C, {(ptr_0),Y}
-	INY
-	set byte_36D, {(ptr_0),Y}
-	INY
-	set byte_368, {(ptr_0),Y}
-	INY
-	set byte_369, {(ptr_0),Y}
-	INY
+	set_iny byte_36A, {(ptr_0),Y}
+	set_iny byte_36B, {(ptr_0),Y}
+	set_iny byte_366, {(ptr_0),Y}
+	set_iny byte_367, {(ptr_0),Y}
+	set_iny byte_36C, {(ptr_0),Y}
+	set_iny byte_36D, {(ptr_0),Y}
+	set_iny byte_368, {(ptr_0),Y}
+	set_iny byte_369, {(ptr_0),Y}
 	LDA	tilemapWidth_308
 	SEC
 	SBC	byte_36A
@@ -7354,8 +7297,7 @@ loc_E0C5:
 ; ---------------------------------------------------------------------------
 
 loc_E0CB:
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	JSR	sub_E747
 	LDA	byte_370
@@ -8166,8 +8108,7 @@ loc_E705:
 loc_E70C:
 	
 	INY
-	set byte_36E, {(ptr_0),Y}
-	INY
+	set_iny byte_36E, {(ptr_0),Y}
 	LDA	byte_36E
 	CMP	#0
 	BNE	loc_E725
@@ -8232,16 +8173,13 @@ loc_E787:
 	LDA	inv_spr_dscr1_30C
 	ASL	A
 	TAY
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 	LDY	#0
 
 loc_E797:
-	set tilemapFrameCount_30D, {(ptr_0),Y}
-	INY
-	set byte_30E, {(ptr_0),Y}
-	INY
+	set_iny tilemapFrameCount_30D, {(ptr_0),Y}
+	set_iny byte_30E, {(ptr_0),Y}
 	LDA	tilemapFrameCount_30D
 	CMP	#$FF
 	BNE	loc_E7B1
@@ -8333,8 +8271,7 @@ sub_E827:
 
 
 sub_E855:
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	JSR	sub_E8F8
 	LDA	sprite_length_30F
@@ -8346,16 +8283,11 @@ loc_E867:
 	set byte_46F, entry_idx_300
 	set byte_470, inv_spr_dscr1_30C
 	LDY	#0
-	set entry_idx_300, {(data_2),Y}
-	INY
-	set byte_4AD, {(data_2),Y}
-	INY
-	set tilemap_size_307, {(data_2),Y}
-	INY
-	set byte_4AE, {(data_2),Y}
-	INY
-	set ppu_unk_byte_309, {(data_2),Y}
-	INY
+	set_iny entry_idx_300, {(data_2),Y}
+	set_iny byte_4AD, {(data_2),Y}
+	set_iny tilemap_size_307, {(data_2),Y}
+	set_iny byte_4AE, {(data_2),Y}
+	set_iny ppu_unk_byte_309, {(data_2),Y}
 	set byte_313, {(data_2),Y}
 	set ppu_unk_byte_302, tilemap_size_307
 	set ppu_unk_byte_303, #0
@@ -8433,8 +8365,7 @@ nullsub_2:
 
 
 sub_E925:
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	JMP	(data_2)
 ; End of function sub_E925
@@ -9523,8 +9454,7 @@ start_upload_ppu_EE3F:
 	LDY	#0
 
 write_tilemap_to_ppu_EE4D:
-	set _PPU_DATA, {tilemapData_4C,Y}
-	INY
+	set_iny _PPU_DATA, {tilemapData_4C,Y}
 	CPY	tilemapWidth_308
 	BCC	write_tilemap_to_ppu_EE4D
 	from_stack_to_y
@@ -9577,8 +9507,7 @@ start_read_tilemap_EE9C:
 	LDY	#0
 
 loc_EEC7:
-	set {byte_4,X}, {tilemapData_4C,Y}
-	INX
+	set_inx {byte_4,X}, {tilemapData_4C,Y}
 	INY
 	CPY	tilemapWidth_308
 	BCC	loc_EEC7
@@ -9630,8 +9559,7 @@ start_read_tilemap_EF06:
 loc_EF36:
 	CPY	tilemapWidth_308
 	BEQ	loc_EF45
-	set {byte_4,X}, {tilemapData_4C,Y}
-	INX
+	set_inx {byte_4,X}, {tilemapData_4C,Y}
 	INY
 	JMP	loc_EF36
 ; ---------------------------------------------------------------------------
@@ -9710,8 +9638,7 @@ start_read_tilemap_EFAD:
 	LDY	#0
 
 loc_EFDB:
-	set {byte_4,X}, {tilemapData_4C,Y}
-	INX
+	set_inx {byte_4,X}, {tilemapData_4C,Y}
 	INY
 	CPY	tilemapWidth_308
 	BCC	loc_EFDB
@@ -9776,8 +9703,7 @@ start_read_tilemap_F02E:
 loc_F061:
 	CPY	tilemapWidth_308
 	BEQ	loc_F070
-	set {byte_4,X}, {tilemapData_4C,Y}
-	INX
+	set_inx {byte_4,X}, {tilemapData_4C,Y}
 	INY
 	JMP	loc_F061
 ; ---------------------------------------------------------------------------
@@ -9884,37 +9810,28 @@ loc_F11A:
 loc_F134:
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, tilemapTypeUnk_30B
-	INX
-	set {ppu_data_70,X}, inv_spr_dscr1_30C
-	INX
-	set {ppu_data_70,X}, ptr_1
-	INX
-	set {ppu_data_70,X}, ptr_0
-	INX
+	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
+	set_inx {ppu_data_70,X}, inv_spr_dscr1_30C
+	set_inx {ppu_data_70,X}, ptr_1
+	set_inx {ppu_data_70,X}, ptr_0
 	LDY	#0
 
 loc_F152:
-	set {ppu_data_70,X}, {byte_4,Y}
-	INX
+	set_inx {ppu_data_70,X}, {byte_4,Y}
 	INY
 	CPY	inv_spr_dscr1_30C
 	BCC	loc_F152
 	LDA	tilemapTypeUnk_30B
 	CMP	#1
 	BEQ	set_ppu_upload_flag_F18B
-	set {ppu_data_70,X}, tilemapHeight_30A
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
+	set_inx {ppu_data_70,X}, tilemapHeight_30A
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
 	add_to_byte_clc tilemapHeight_30A, inv_spr_dscr1_30C
 
 
 loc_F17F:
-	set {ppu_data_70,X}, {byte_4,Y}
-	INX
+	set_inx {ppu_data_70,X}, {byte_4,Y}
 	INY
 	CPY	tilemapHeight_30A
 	BCC	loc_F17F
@@ -9965,8 +9882,7 @@ start_read_tilemap_F1B1:
 	JSR	sub_ED8F
 	JSR	sub_EDA2
 	LDX	#0
-	set ppu_data_70, #0
-	INX
+	set_inx ppu_data_70, #0
 	JSR	sub_F51D
 	LDA	ppu_scroll_x_304
 	BEQ	loc_F228
@@ -9977,8 +9893,7 @@ start_read_tilemap_F1B1:
 	set tilemapTypeUnk_30B, tilemap_size_307
 
 start_read_tilemap_F1FA:
-	set tilemapData_4C, entry_idx_300
-	INX
+	set_inx tilemapData_4C, entry_idx_300
 	STX	roomUnk1_4D
 	STY	roomUnk2_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
@@ -10033,8 +9948,7 @@ start_read_tilemap_F23C:
 	INC	tilemapTypeUnk_30B
 
 start_read_tilemap_F290:
-	set tilemapData_4C, entry_idx_300
-	INX
+	set_inx tilemapData_4C, entry_idx_300
 	STX	roomUnk1_4D
 	STY	roomUnk2_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
@@ -10098,8 +10012,7 @@ start_read_tilemap_F2F3:
 	JSR	sub_ED8F
 	JSR	sub_EDA2
 	LDX	#0
-	set ppu_data_70, #0
-	INX
+	set_inx ppu_data_70, #0
 	LDA	tilemapTypeUnk_30B
 	ORA	#$80 
 	STA	tilemapTypeUnk_30B
@@ -10167,8 +10080,7 @@ start_read_tilemap_F390:
 	JSR	sub_F589
 	JSR	sub_EDA2
 	LDX	#0
-	set ppu_data_70, #0
-	INX
+	set_inx ppu_data_70, #0
 	JSR	sub_F54A
 	LDA	ppu_scroll_y_305
 	BEQ	loc_F42B
@@ -10184,8 +10096,7 @@ start_read_tilemap_F390:
 	INC	tilemapTypeUnk_30B
 
 start_read_tilemap_F3F2:
-	set tilemapData_4C, entry_idx_300
-	INY
+	set_iny tilemapData_4C, entry_idx_300
 	STX	roomUnk1_4D
 	STY	roomUnk2_4E
 	set tilemap_line_idx_4F, #0
@@ -10290,14 +10201,12 @@ get_tilemap_entry_offset_F48E:
 
 get_tilemap_entry_ptr_F4A8:
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 
 read_tilemap_entry_data_F4B3:
 	LDY	#0
-	set tilemaps_horiz_count_311, {(data_2),Y}
-	INY
+	set_iny tilemaps_horiz_count_311, {(data_2),Y}
 	set tilemaps_vert_count_312, {(data_2),Y}
 	LDA	#0
 	LDY	roomUnk2_4E
@@ -10320,8 +10229,7 @@ next_F4D0:
 	INY
 
 exec_bN_c0_F4D7:
-	set bank_to_344, {(data_2),Y}
-	INY
+	set_iny bank_to_344, {(data_2),Y}
 	set entry_idx_300, {(data_2),Y}
 	set bank_command_346, #0
 	set bank_from_343, #0
@@ -10367,20 +10275,16 @@ sub_F51D:
 	TYA
 	PHA
 	INC	ppu_data_70
-	set {ppu_data_70,X}, tilemapTypeUnk_30B
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
+	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
 	LDA	tilemapTypeUnk_30B
 	AND	#$7F 
 	STA	tilemapTypeUnk_30B
 	LDY	#0
 
 loc_F53B:
-	set {ppu_data_70,X}, {tilemapData_4C,Y}
-	INX
+	set_inx {ppu_data_70,X}, {tilemapData_4C,Y}
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_F53B
@@ -10399,12 +10303,9 @@ sub_F54A:
 
 loc_F54E:
 	INC	ppu_data_70
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
 	set {ppu_data_70,X}, {tilemapData_4C,Y}
 
 	add_to_data $8
@@ -10491,8 +10392,7 @@ loc_F5CE:
 	LDX	#0
 
 loc_F5D2:
-	set {unk_5C,X}, {tilemapData_4C,X}
-	INX
+	set_inx {unk_5C,X}, {tilemapData_4C,X}
 	CPX	#8
 	BCC	loc_F5D2
 	from_stack_to_x
@@ -10663,8 +10563,7 @@ loc_F700:
 
 loc_F70A:
 	LDX	#0
-	set ppu_data_70, #0
-	INX
+	set_inx ppu_data_70, #0
 	set tilemapHeight_30A, #0
 	JSR	sub_F921
 	JSR	text_unk_func_F80C
@@ -10732,8 +10631,7 @@ loc_F7A6:
 
 loc_F7B0:
 	LDX	#0
-	set ppu_data_70, #0
-	INX
+	set_inx ppu_data_70, #0
 	set tilemapHeight_30A, #0
 	JSR	sub_F921
 	JSR	sub_F8A1
@@ -10772,12 +10670,9 @@ text_unk_func_F80C:
 
 loc_F811:
 	INC	ppu_data_70
-	set {ppu_data_70,X}, #2
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
+	set_inx {ppu_data_70,X}, #2
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
 	LDA	inv_spr_dscr1_30C
 	CLC
 	ADC	#2
@@ -10890,17 +10785,13 @@ start_read_tilemap_F8BB:
 	from_stack ppu_unk_byte_309
 	from_stack_to_x
 	INC	ppu_data_70
-	set {ppu_data_70,X}, #2
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
+	set_inx {ppu_data_70,X}, #2
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
 	LDY	#0
 
 loc_F8FA:
-	set {ppu_data_70,X}, {tilemapData_4C,Y}
-	INY
+	set_iny {ppu_data_70,X}, {tilemapData_4C,Y}
 	INX
 	CPY	#2
 	BCC	loc_F8FA
@@ -11092,14 +10983,10 @@ loc_FA2A:
 loc_FA3B:
 	set tilemapTypeUnk_30B, {byte_4,Y}
 	INC	ppu_data_70
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
-	set {ppu_data_70,X}, tilemapTypeUnk_30B
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
+	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
 	from_stack tilemap_size_307
 	from_stack ppu_unk_byte_309
 	RTS
@@ -11244,14 +11131,10 @@ loc_FB63:
 	from_stack ppu_unk_byte_309
 	from_stack_to_x
 	INC	ppu_data_70
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
-	set {ppu_data_70,X}, {byte_4,Y}
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
+	set_inx {ppu_data_70,X}, {byte_4,Y}
 	RTS
 ; End of function sub_FAAF
 
@@ -11264,8 +11147,7 @@ upload_text_palette_to_ppu_FB85:
 	LDY	#$C
 
 loc_FB8C:
-	set {palette_bg_321,Y}, {TextPalette_FBC2,Y}
-	INY
+	set_iny {palette_bg_321,Y}, {TextPalette_FBC2,Y}
 	CPY	#$10
 	BCC	loc_FB8C
 	set data_2, #$EA 

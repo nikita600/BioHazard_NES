@@ -9,6 +9,22 @@
 
 .endmacro
 
+.macro set_inx dst, src
+
+	LDA	src
+	STA	dst
+	INX
+
+.endmacro
+
+.macro set_iny dst, src
+
+	LDA	src
+	STA	dst
+	INY
+
+.endmacro
+
 .include "includes/macros/set_macros.inc"
 
 ; ---------------------------------------------------------------------------

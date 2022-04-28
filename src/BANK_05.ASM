@@ -54,8 +54,7 @@ upload_gfx_to_ppu_5F093:
 
 
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 
 	set_ptr _PPU_PAT_TBL_1
@@ -82,8 +81,7 @@ loc_5F0E2:
 	LDY	#0
 
 loc_5F0EE:
-	set _PPU_DATA, {(data_2),Y}
-	INY
+	set_iny _PPU_DATA, {(data_2),Y}
 	CPY	#$10
 	BCC	loc_5F0EE
 	

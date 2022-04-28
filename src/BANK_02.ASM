@@ -168,16 +168,14 @@ loc_2D1DF:
 	ADC	#0
 	STA	ptr_1
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	add_to_byte_clc data_2, text_idx_35C
 
 	add_to_byte data_3, #0
 
 	LDY	#0
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 
 loc_2D21A:
@@ -254,10 +252,8 @@ loc_2D299:
 
 loc_2D29C:
 			; sub_2D1CB+92j
-	set char_type_id_35D, {(ptr_0),Y}
-	INY
-	set text_idx_35C, {(ptr_0),Y}
-	INY
+	set_iny char_type_id_35D, {(ptr_0),Y}
+	set_iny text_idx_35C, {(ptr_0),Y}
 	ASL	text_idx_35C
 	ROL	char_type_id_35D
 	to_stack ptr_0
@@ -466,17 +462,13 @@ loc_2D445:
 	SBC	tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 	INC	ppu_data_70
-	set {ppu_data_70,X}, tilemapTypeUnk_30B
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
+	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
 	LDY	#0
 
 loc_2D471:
-	set {ppu_data_70,X}, byte_310
-	INX
+	set_inx {ppu_data_70,X}, byte_310
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_2D471
@@ -497,17 +489,13 @@ loc_2D471:
 
 loc_2D49D:
 	INC	ppu_data_70
-	set {ppu_data_70,X}, tilemapTypeUnk_30B
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
+	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
 	LDY	#0
 
 loc_2D4B1:
-	set {ppu_data_70,X}, byte_310
-	INX
+	set_inx {ppu_data_70,X}, byte_310
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_2D4B1
@@ -637,31 +625,26 @@ sub_2E244:
 	ADC	#0
 	STA	ptr_1
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	add_to_byte_clc data_2, text_idx_35C
 
 	add_to_byte data_3, #0
 
 	LDY	#0
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 	from_stack data_3
 	from_stack data_2
 	LDY	#0
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, #5
-	INX
-	set {ppu_data_70,X}, #$40 
-	INX
+	set_inx {ppu_data_70,X}, #5
+	set_inx {ppu_data_70,X}, #$40 
 	INX
 	set {ppu_data_70,X}, data_2
 	DEX
-	set {ppu_data_70,X}, data_3
-	INX
+	set_inx {ppu_data_70,X}, data_3
 	INX
 	set inv_spr_dscr1_30C, #0
 
@@ -764,16 +747,13 @@ loc_2E32F:
 loc_2E33E:
 	to_stack data_2
 	to_stack data_3
-	set {ppu_data_70,X}, #1
-	INX
+	set_inx {ppu_data_70,X}, #1
 	INX
 	set {ppu_data_70,X}, data_2
 	DEX
-	set {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_3
 	INX
-	INX
-	set {ppu_data_70,X}, ptr_0
-	INX
+	set_inx {ppu_data_70,X}, ptr_0
 	INC	ptr_0
 	LDA	data_2
 	AND	#$1F
@@ -793,16 +773,13 @@ loc_2E374:
 	add_to_data $1
 
 loc_2E381:
-	set {ppu_data_70,X}, #1
-	INX
+	set_inx {ppu_data_70,X}, #1
 	INX
 	set {ppu_data_70,X}, data_2
 	DEX
-	set {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_3
 	INX
-	INX
-	set {ppu_data_70,X}, ptr_0
-	INX
+	set_inx {ppu_data_70,X}, ptr_0
 	from_stack data_3
 	from_stack data_2
 	INC	ptr_0
@@ -832,8 +809,7 @@ sub_2E3D3:
 	set inv_spr_dscr1_30C, #0
 
 loc_2E3DC:
-	set {ppu_data_70,X}, {(ptr_0),Y}
-	INX
+	set_inx {ppu_data_70,X}, {(ptr_0),Y}
 	INY
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
@@ -874,8 +850,7 @@ sub_2E411:
 	set inv_spr_dscr1_30C, #0
 
 loc_2E41A:
-	set {ppu_data_70,X}, #0
-	INX
+	set_inx {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
@@ -893,8 +868,7 @@ sub_2E42E:
 	set inv_spr_dscr1_30C, #0
 
 loc_2E437:
-	set {ppu_data_70,X}, #$FF
-	INX
+	set_inx {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	CMP	#8
@@ -1165,14 +1139,12 @@ sub_2E781:
 
 	
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 
 loc_2E7B0:
-	set {palette_bg_321,Y}, {(data_2),Y}
-	INY
+	set_iny {palette_bg_321,Y}, {(data_2),Y}
 	CPY	#$10
 	BCC	loc_2E7B0
 	RTS

@@ -306,8 +306,7 @@ loc_FDF7:
 	AND	#$7F 
 	STA	ppu_fld1_y_6E
 	INX
-	set _PPU_ADDR, {ppu_data_70,X}
-	INX
+	set_inx _PPU_ADDR, {ppu_data_70,X}
 	set _PPU_ADDR, {ppu_data_70,X}
 
 loc_FE09:		

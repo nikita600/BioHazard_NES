@@ -96,8 +96,7 @@ load_palette_4F323:
 	add_to_byte ptr_1, data_2
 
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 
 	set_ptr _PPU_PALETTE
@@ -114,8 +113,7 @@ load_palette_4F323:
 	LDY	#0
 
 loc_4F366:
-	set {palette_bg_321,X}, {(data_2),Y}
-	INX
+	set_inx {palette_bg_321,X}, {(data_2),Y}
 	INY
 	CPY	#4
 	BCC	loc_4F366
@@ -135,8 +133,7 @@ loc_4F375:
 	LDY	#0
 
 loc_4F381:
-	set _PPU_DATA, {(data_2),Y}
-	INY
+	set_iny _PPU_DATA, {(data_2),Y}
 	CPY	#$10
 	BCC	loc_4F381
 
@@ -215,8 +212,7 @@ get_offset_4F3EF:
 
 get_sprite_ptr_4F404:
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 
 get_sprite_descr_4F40F:
@@ -264,8 +260,7 @@ get_offset_4F44B:
 
 get_ptr_4F460:
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 
 get_tilemap_offset_4F46B:
@@ -281,14 +276,12 @@ get_tilemap_offset_4F46B:
 
 get_tilemap_ptr_4F480:
 	LDY	#0
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 
 get_tilemap_descr_4F48B:
 	LDY	#0
-	set tilemapWidth_308, {(ptr_0),Y}
-	INY
+	set_iny tilemapWidth_308, {(ptr_0),Y}
 	set tilemapHeight_30A, {(ptr_0),Y}
 
 	add_to_byte_clc ptr_0, #2
@@ -375,16 +368,12 @@ sub_4F527:
 	set tilemapTypeUnk_30B, #0
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, inv_spr_dscr1_30C
-	INX
+	set_inx {ppu_data_70,X}, inv_spr_dscr1_30C
 
 loc_4F538:
-	set {ppu_data_70,X}, tilemapWidth_308
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
+	set_inx {ppu_data_70,X}, tilemapWidth_308
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
 	LDY	#0
 
 loc_4F54A:
@@ -419,19 +408,14 @@ loc_4F54A:
 sub_4F583:
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, tilemapTypeUnk_30B
-	INX
-	set {ppu_data_70,X}, ptr_1
-	INX
-	set {ppu_data_70,X}, ptr_0
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
+	set_inx {ppu_data_70,X}, ptr_1
+	set_inx {ppu_data_70,X}, ptr_0
 	LDY	#0
 
 loc_4F5A0:
-	set {ppu_data_70,X}, {(data_2),Y}
-	INX
+	set_inx {ppu_data_70,X}, {(data_2),Y}
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_4F5A0

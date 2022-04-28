@@ -166,8 +166,7 @@ get_offset_F2FB:
 
 get_ptr_F30A:
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	RTS
 ; End of function get_sprite_palette_ptr_1F2F3
@@ -185,8 +184,7 @@ copy_sprite_palette_to_ram_1F316:
 	TAX
 
 loc_1F31E:
-	set {sprite_palette_331,X}, {(data_2),Y}
-	INX
+	set_inx {sprite_palette_331,X}, {(data_2),Y}
 	INY
 	CPY	#4
 	BCC	loc_1F31E
@@ -252,8 +250,7 @@ get_offset_F376:; spriteIdx
 
 get_ptr_F385:
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 
 get_sprite_length_F390:
@@ -290,8 +287,7 @@ sub_1F3B1:
 
 load_sprite_tilemap_1F3B8:
 
-	set data_2, #$5F 
-	INY
+	set_iny data_2, #$5F 
 	set data_3, #$82 
 
 get_container_offset_F3C1:
@@ -306,8 +302,7 @@ get_container_offset_F3C1:
 
 get_container_ptr_F3D0:
 	LDY	#0
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 
 get_tilemap_offset_F3DB:
@@ -322,18 +317,15 @@ get_tilemap_offset_F3DB:
 
 get_tilemap_ptr_F3EA:
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 
 get_width_F3F5:
 	LDY	#0
-	set tilemapWidth_308, {(data_2),Y}
-	INY
+	set_iny tilemapWidth_308, {(data_2),Y}
 
 get_height_F3FD:
-	set tilemapHeight_30A, {(data_2),Y}
-	INY
+	set_iny tilemapHeight_30A, {(data_2),Y}
 
 get_frame_count_F403:
 	set tilemapFrameCount_30D, {(data_2),Y}
@@ -381,8 +373,7 @@ loc_1F440:
 
 loc_1F44D:
 	JSR	sub_1F5FF
-	set {(ptr_0),Y}, ppu_unk_byte_309
-	INY
+	set_iny {(ptr_0),Y}, ppu_unk_byte_309
 	TYA
 	PHA
 	LDY	tilemapTypeUnk_30B
@@ -391,12 +382,9 @@ loc_1F44D:
 	ADC	sprite_secondByte_31B
 	STA	inv_spr_dscr1_30C
 	from_stack_to_y
-	set {(ptr_0),Y}, inv_spr_dscr1_30C
-	INY
-	set {(ptr_0),Y}, byte_317
-	INY
-	set {(ptr_0),Y}, tilemap_size_307
-	INY
+	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
+	set_iny {(ptr_0),Y}, byte_317
+	set_iny {(ptr_0),Y}, tilemap_size_307
 	LDA	byte_36A
 	CLC
 	ADC	#8
@@ -446,8 +434,7 @@ loc_1F4CE:
 
 loc_1F4DC:
 	JSR	sub_1F5FF
-	set {(ptr_0),Y}, ppu_unk_byte_309
-	INY
+	set_iny {(ptr_0),Y}, ppu_unk_byte_309
 	TYA
 	PHA
 	LDY	tilemapTypeUnk_30B
@@ -457,12 +444,9 @@ loc_1F4DC:
 	ADC	sprite_secondByte_31B
 	STA	inv_spr_dscr1_30C
 	from_stack_to_y
-	set {(ptr_0),Y}, inv_spr_dscr1_30C
-	INY
-	set {(ptr_0),Y}, byte_317
-	INY
-	set {(ptr_0),Y}, tilemap_size_307
-	INY
+	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
+	set_iny {(ptr_0),Y}, byte_317
+	set_iny {(ptr_0),Y}, tilemap_size_307
 	LDA	byte_36A
 	CLC
 	ADC	#8
@@ -530,8 +514,7 @@ loc_1F576:
 
 loc_1F583:
 	JSR	sub_1F5FF
-	set {(ptr_0),Y}, ppu_unk_byte_309
-	INY
+	set_iny {(ptr_0),Y}, ppu_unk_byte_309
 	TYA
 	PHA
 	LDY	tilemapTypeUnk_30B
@@ -540,12 +523,9 @@ loc_1F583:
 	ADC	sprite_secondByte_31B
 	STA	inv_spr_dscr1_30C
 	from_stack_to_y
-	set {(ptr_0),Y}, inv_spr_dscr1_30C
-	INY
-	set {(ptr_0),Y}, byte_317
-	INY
-	set {(ptr_0),Y}, tilemap_size_307
-	INY
+	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
+	set_iny {(ptr_0),Y}, byte_317
+	set_iny {(ptr_0),Y}, tilemap_size_307
 	LDA	byte_36A
 	CLC
 	ADC	#8
@@ -713,8 +693,7 @@ loc_1F6E7:
 	LDY	#0
 
 loc_1F6F3:
-	set _PPU_DATA, {(data_2),Y}
-	INY
+	set_iny _PPU_DATA, {(data_2),Y}
 	CPY	#$10
 	BCC	loc_1F6F3
 	

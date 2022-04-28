@@ -19,8 +19,7 @@ switch_case_8035:
 	BEQ	locret_12805A
 	ASL	A
 	TAX
-	set ptr_0, {CommandPtrs_12805B,X}
-	INX
+	set_inx ptr_0, {CommandPtrs_12805B,X}
 	set ptr_1, {CommandPtrs_12805B,X}
 	to_stack bank_from_343
 	JMP	(ptr_0)
@@ -2132,8 +2131,7 @@ loc_12A64A:
 
 
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 	set objArraySize_373, {(data_2),Y}
@@ -2159,23 +2157,16 @@ loc_12A69D:
 	add_to_byte data_3, #0
 
 	LDY	#0
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 	LDX	inv_spr_dscr1_30C
 	LDY	#0
-	set {array_unk_3C5,X}, {(ptr_0),Y}
-	INY
-	set {array_unk_3BB,X}, {(ptr_0),Y}
-	INY
-	set {array_unk_3D9,X}, {(ptr_0),Y}
-	INY
-	set {array_unk_3CF,X}, {(ptr_0),Y}
-	INY
-	set {objIdxArray_375,X}, {(ptr_0),Y}
-	INY
-	set {array_unk_39D,X}, {(ptr_0),Y}
-	INY
+	set_iny {array_unk_3C5,X}, {(ptr_0),Y}
+	set_iny {array_unk_3BB,X}, {(ptr_0),Y}
+	set_iny {array_unk_3D9,X}, {(ptr_0),Y}
+	set_iny {array_unk_3CF,X}, {(ptr_0),Y}
+	set_iny {objIdxArray_375,X}, {(ptr_0),Y}
+	set_iny {array_unk_39D,X}, {(ptr_0),Y}
 	LDA	entry_idx_300
 	CMP	#$65 
 	BNE	loc_12A70C
@@ -2347,8 +2338,7 @@ loc_12A86D:
 	set {array_unk_3C5,X}, {byte_578,Y}
 	set {array_unk_3BB,X}, {byte_57B,Y}
 	set {array_unk_3D9,X}, {byte_57E,Y}
-	set {array_unk_3CF,X}, {byte_581,Y}
-	INY
+	set_iny {array_unk_3CF,X}, {byte_581,Y}
 	INX
 	CPX	objArraySize_373
 	BCC	loc_12A85F
@@ -2394,16 +2384,13 @@ loc_12A8D3:
 	LDA	inv_spr_dscr1_30C
 	ASL	A
 	TAY
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 	LDY	#0
 
 loc_12A8E3:
-	set tilemapFrameCount_30D, {(ptr_0),Y}
-	INY
-	set byte_30E, {(ptr_0),Y}
-	INY
+	set_iny tilemapFrameCount_30D, {(ptr_0),Y}
+	set_iny byte_30E, {(ptr_0),Y}
 	LDA	tilemapFrameCount_30D
 	CMP	#$FF
 	BNE	loc_12A8FD
@@ -8066,8 +8053,7 @@ loc_12D171:
 	LDX	#0
 
 loc_12D17B:
-	set {(ptr_0),Y}, {byte_4A0,X}
-	INX
+	set_inx {(ptr_0),Y}, {byte_4A0,X}
 	INY
 	CPX	#4
 	BCC	loc_12D17B
@@ -8087,24 +8073,21 @@ loc_12D17B:
 	LDY	#0
 
 loc_12D1BC:
-	set {(ptr_0),Y}, {image_id_4A4,Y}
-	INY
+	set_iny {(ptr_0),Y}, {image_id_4A4,Y}
 	CPY	#0
 	BNE	loc_12D1BC
 	add_to_byte_clc ptr_1, #4
 
 
 loc_12D1CD:
-	set {(ptr_0),Y}, {byte_5A4,Y}
-	INY
+	set_iny {(ptr_0),Y}, {byte_5A4,Y}
 	CPY	#0
 	BNE	loc_12D1CD
 	add_to_byte_clc ptr_1, #4
 
 
 loc_12D1DE:
-	set {(ptr_0),Y}, {byte_6A4,Y}
-	INY
+	set_iny {(ptr_0),Y}, {byte_6A4,Y}
 	CPY	#$44 
 	BNE	loc_12D1DE
 	RTS
@@ -8119,24 +8102,21 @@ sub_12D1E9:
 	LDY	#0
 
 loc_12D1EE:
-	set {image_id_4A4,Y}, {(ptr_0),Y}
-	INY
+	set_iny {image_id_4A4,Y}, {(ptr_0),Y}
 	CPY	#0
 	BNE	loc_12D1EE
 	add_to_byte_clc ptr_1, #4
 
 
 loc_12D1FF:
-	set {byte_5A4,Y}, {(ptr_0),Y}
-	INY
+	set_iny {byte_5A4,Y}, {(ptr_0),Y}
 	CPY	#0
 	BNE	loc_12D1FF
 	add_to_byte_clc ptr_1, #4
 
 
 loc_12D210:
-	set {byte_6A4,Y}, {(ptr_0),Y}
-	INY
+	set_iny {byte_6A4,Y}, {(ptr_0),Y}
 	CPY	#$44 
 	BNE	loc_12D210
 	RTS
@@ -8159,16 +8139,14 @@ loc_12D230:
 	LDY	#0
 
 loc_12D232:
-	set _PPU_DATA, #0
-	INY
+	set_iny _PPU_DATA, #0
 	BNE	loc_12D232
 	DEX
 	BNE	loc_12D230
 	LDX	#0
 
 loc_12D23F:
-	set {palette_bg_321,X}, {byte_12D251,X}
-	INX
+	set_inx {palette_bg_321,X}, {byte_12D251,X}
 	CPX	#$10
 	BNE	loc_12D23F
 	JSR	ppu_update_ctrl_mask_FE86
@@ -8202,8 +8180,7 @@ sub_12D26B:
 	LDY	byte_31A
 
 loc_12D278:
-	set {byte_200,Y}, #$F0 
-	INY
+	set_iny {byte_200,Y}, #$F0 
 	INY
 	INY
 	INY
@@ -8307,8 +8284,7 @@ loc_12D33A:
 	LDA	tilemapTypeUnk_30B
 	ASL	A
 	TAX
-	set tilemap_size_307, {byte_12E851,X}
-	INX
+	set_inx tilemap_size_307, {byte_12E851,X}
 	LDA	byte_12E851,X
 	CLC
 	ADC	#$10
@@ -8992,8 +8968,7 @@ loc_12D8C3:
 	CPX	byte_532
 	BEQ	loc_12D8D9
 	set {byte_533,Y}, {byte_533,X}
-	set {unk_53B,Y}, {unk_53B,X}
-	INX
+	set_inx {unk_53B,Y}, {unk_53B,X}
 	INY
 	JMP	loc_12D8C3
 ; ---------------------------------------------------------------------------
@@ -9086,8 +9061,7 @@ loc_12D979:
 	CPX	byte_532
 	BEQ	loc_12D991
 	set {byte_533,Y}, {byte_533,X}
-	set {unk_53B,Y}, {unk_53B,X}
-	INY
+	set_iny {unk_53B,Y}, {unk_53B,X}
 	JMP	loc_12D979
 ; ---------------------------------------------------------------------------
 
@@ -9622,8 +9596,7 @@ loc_12DD1E:
 	CLC
 	ADC	byte_42C
 	TAY
-	set tilemap_size_307, {byte_12E851,Y}
-	INY
+	set_iny tilemap_size_307, {byte_12E851,Y}
 	set ppu_unk_byte_309, {byte_12E851,Y}
 	set byte_31A, #$60 
 	set sprite_secondByte_31B, #0
@@ -10667,8 +10640,7 @@ loc_12E4EE:
 	CLC
 	ADC	byte_42C
 	TAY
-	set tilemap_size_307, {byte_12E851,Y}
-	INY
+	set_iny tilemap_size_307, {byte_12E851,Y}
 	set ppu_unk_byte_309, {byte_12E851,Y}
 	set byte_31A, #$70 
 	set sprite_secondByte_31B, #0
@@ -11779,14 +11751,10 @@ sub_12EDF5:
 loc_12EE04:
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, #$20 
-	INX
-	set {ppu_data_70,X}, #$3F 
-	INX
-	set {ppu_data_70,X}, #0
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, #$20 
+	set_inx {ppu_data_70,X}, #$3F 
+	set_inx {ppu_data_70,X}, #0
 	LDA	byte_341
 	CMP	#0
 	BNE	loc_12EE2A
@@ -11889,14 +11857,10 @@ sub_12EEAE:
 write_ppu_entry_12EEB3:
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, #$20 
-	INX
-	set {ppu_data_70,X}, #$3F 
-	INX
-	set {ppu_data_70,X}, #0
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, #$20 
+	set_inx {ppu_data_70,X}, #$3F 
+	set_inx {ppu_data_70,X}, #0
 	LDA	byte_341
 	CMP	#0
 	BNE	loc_12EED9
@@ -12171,8 +12135,7 @@ sub_12F168:
 	LDA	byte_372
 	ASL	A
 	TAY
-	set byte_36A, {byte_12F28B,Y}
-	INY
+	set_iny byte_36A, {byte_12F28B,Y}
 	set byte_366, {byte_12F28B,Y}
 	set byte_36B, #0
 	STA	byte_367
@@ -12220,8 +12183,7 @@ loc_12F1D0:
 	LDA	byte_372
 	ASL	A
 	TAY
-	set byte_36A, {byte_12F28B,Y}
-	INY
+	set_iny byte_36A, {byte_12F28B,Y}
 	LDA	byte_12F28B,Y
 	CLC
 	ADC	#8
@@ -12340,8 +12302,7 @@ loc_12F30E:
 	add_to_byte ptr_1, #0
 
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
@@ -12496,19 +12457,14 @@ byte_12F45C:.BYTE $10,$16,	4,$11,$13,$18,$14,  8, $E, $F,$1B,  0,$12,  3,	5,  6
 sub_12F478:
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, tilemapTypeUnk_30B
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
 	LDY	#0
 
 loc_12F495:
-	set {ppu_data_70,X}, {(ptr_0),Y}
-	INX
+	set_inx {ppu_data_70,X}, {(ptr_0),Y}
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_12F495

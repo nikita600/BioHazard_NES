@@ -167,18 +167,15 @@ loc_13D429:
 	set apu_unk_FF, {apu_off_13DEA2+1,X}
 	LDY	#0
 	STY	apu_unk_76D
-	set apu_unk_737, {(apu_unk_FE),Y}
-	INY
+	set_iny apu_unk_737, {(apu_unk_FE),Y}
 	LDX	#0
 
 loc_13D459:
 	LDA	apu_dat_13D421,X
 	AND	apu_unk_737
 	BEQ	loc_13D46D
-	set {apu_unk_739,X}, {(apu_unk_FE),Y}
-	INY
-	set {apu_unk_73D,X}, {(apu_unk_FE),Y}
-	INY
+	set_iny {apu_unk_739,X}, {(apu_unk_FE),Y}
+	set_iny {apu_unk_73D,X}, {(apu_unk_FE),Y}
 
 loc_13D46D:
 	INX
@@ -221,18 +218,15 @@ loc_13D493:
 	set apu_unk_FE, {apu_off_13DEA2,X}
 	set apu_unk_FF, {apu_off_13DEA2+1,X}
 	LDY	#0
-	set apu_unk_706, {(apu_unk_FE),Y}
-	INY
+	set_iny apu_unk_706, {(apu_unk_FE),Y}
 	LDX	#0
 
 loc_13D4C0:
 	LDA	apu_dat_13D421,X
 	AND	apu_unk_706
 	BEQ	loc_13D4D4
-	set {apu_unk_708,X}, {(apu_unk_FE),Y}
-	INY
-	set {apu_unk_70C,X}, {(apu_unk_FE),Y}
-	INY
+	set_iny {apu_unk_708,X}, {(apu_unk_FE),Y}
+	set_iny {apu_unk_70C,X}, {(apu_unk_FE),Y}
 
 loc_13D4D4:
 	INX
@@ -397,14 +391,10 @@ loc_13D5C2:
 
 loc_13D5D4:
 	INY
-	set {apu_unk_748,X}, {(apu_unk_FE),Y}
-	INY
-	set {apu_unk_74A,X}, {(apu_unk_FE),Y}
-	INY
-	set {apu_unk_74C,X}, {(apu_unk_FE),Y}
-	INY
-	set {apu_unk_74E,X}, {(apu_unk_FE),Y}
-	INY
+	set_iny {apu_unk_748,X}, {(apu_unk_FE),Y}
+	set_iny {apu_unk_74A,X}, {(apu_unk_FE),Y}
+	set_iny {apu_unk_74C,X}, {(apu_unk_FE),Y}
+	set_iny {apu_unk_74E,X}, {(apu_unk_FE),Y}
 	set {apu_unk_750,X}, {(apu_unk_FE),Y}
 	JMP	loc_13D5BA
 ; ---------------------------------------------------------------------------
@@ -745,14 +735,10 @@ loc_13D851:
 
 loc_13D863:
 	INY
-	set {pulse1_sweep_717,X}, {(apu_unk_FE),Y}
-	INY
-	set {apu_unk_719,X}, {(apu_unk_FE),Y}
-	INY
-	set {apu_unk_71B,X}, {(apu_unk_FE),Y}
-	INY
-	set {apu_unk_71D,X}, {(apu_unk_FE),Y}
-	INY
+	set_iny {pulse1_sweep_717,X}, {(apu_unk_FE),Y}
+	set_iny {apu_unk_719,X}, {(apu_unk_FE),Y}
+	set_iny {apu_unk_71B,X}, {(apu_unk_FE),Y}
+	set_iny {apu_unk_71D,X}, {(apu_unk_FE),Y}
 	set {apu_unk_71F,X}, {(apu_unk_FE),Y}
 	JMP	loc_13D849
 ; ---------------------------------------------------------------------------
@@ -1223,12 +1209,9 @@ loc_13DBB1:
 	TXA
 	ASL	A
 	TAX
-	set {_APU_PULSE1_ENV,X}, {(apu_unk_FE),Y}
-	INY
-	set {_APU_PULSE1_SWEEP,X}, {(apu_unk_FE),Y}
-	INY
-	set {_APU_PULSE1_TIME,X}, {(apu_unk_FE),Y}
-	INY
+	set_iny {_APU_PULSE1_ENV,X}, {(apu_unk_FE),Y}
+	set_iny {_APU_PULSE1_SWEEP,X}, {(apu_unk_FE),Y}
+	set_iny {_APU_PULSE1_TIME,X}, {(apu_unk_FE),Y}
 	set {_APU_PULSE1_LEN,X}, {(apu_unk_FE),Y}
 	from_stack_to_x
 	JMP	loc_13DC18
@@ -1405,8 +1388,7 @@ load_spr_palette_13DF18:
 	add_to_byte ptr_1, data_2
 
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 
 	set_ptr _PPU_PALETTE
@@ -1423,8 +1405,7 @@ load_spr_palette_13DF18:
 	LDY	#0
 
 loc_13DF5B:
-	set {palette_bg_321,X}, {(data_2),Y}
-	INX
+	set_inx {palette_bg_321,X}, {(data_2),Y}
 	INY
 	CPY	#4
 	BCC	loc_13DF5B
@@ -1444,8 +1425,7 @@ loc_13DF6A:
 	LDY	#0
 
 loc_13DF76:
-	set _PPU_DATA, {(data_2),Y}
-	INY
+	set_iny _PPU_DATA, {(data_2),Y}
 	CPY	#$10
 	BCC	loc_13DF76
 
@@ -1522,8 +1502,7 @@ load_boss_sprite_13DFDC:
 	add_to_byte ptr_1, data_2
 
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 	set inv_spr_dscr1_30C, {(data_2),Y}
@@ -1564,8 +1543,7 @@ load_sprite_map_13E038:
 	add_to_byte ptr_1, data_2
 
 	LDY	#0
-	set data_2, {(ptr_0),Y}
-	INY
+	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	set ptr_0, #0
 	LDA	inv_itemPrev_idx_31D
@@ -1577,12 +1555,10 @@ load_sprite_map_13E038:
 	add_to_byte data_3, ptr_0
 
 	LDY	#0
-	set ptr_0, {(data_2),Y}
-	INY
+	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 	LDY	#0
-	set tilemapWidth_308, {(ptr_0),Y}
-	INY
+	set_iny tilemapWidth_308, {(ptr_0),Y}
 	set tilemapHeight_30A, {(ptr_0),Y}
 
 	add_to_byte_clc ptr_0, #2
@@ -1669,16 +1645,12 @@ sprites_func_13E11C:
 	set tilemapTypeUnk_30B, #0
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, inv_spr_dscr1_30C
-	INX
+	set_inx {ppu_data_70,X}, inv_spr_dscr1_30C
 
 loc_13E12D:
-	set {ppu_data_70,X}, tilemapWidth_308
-	INX
-	set {ppu_data_70,X}, data_3
-	INX
-	set {ppu_data_70,X}, data_2
-	INX
+	set_inx {ppu_data_70,X}, tilemapWidth_308
+	set_inx {ppu_data_70,X}, data_3
+	set_inx {ppu_data_70,X}, data_2
 	LDY	#0
 
 loc_13E13F:
@@ -1713,19 +1685,14 @@ loc_13E13F:
 sprites_func_13E178:
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set {ppu_data_70,X}, #1
-	INX
-	set {ppu_data_70,X}, tilemapTypeUnk_30B
-	INX
-	set {ppu_data_70,X}, ptr_1
-	INX
-	set {ppu_data_70,X}, ptr_0
-	INX
+	set_inx {ppu_data_70,X}, #1
+	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
+	set_inx {ppu_data_70,X}, ptr_1
+	set_inx {ppu_data_70,X}, ptr_0
 	LDY	#0
 
 loc_13E195:
-	set {ppu_data_70,X}, {(data_2),Y}
-	INX
+	set_inx {ppu_data_70,X}, {(data_2),Y}
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_13E195

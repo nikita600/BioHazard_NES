@@ -52,8 +52,8 @@
 .endmacro
 
 .macro from_stack_to_y
-    PLA
-    TAY
+	PLA
+	TAY
 .endmacro
 
 ; ---------------------------------------------------------------------------

@@ -152,8 +152,7 @@ loc_3F819:
 
 loc_3F820:
 			; sub_3F76B+A1j ...
-	PLA
-	TAY
+	from_stack_to_y
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
 	CMP	#2

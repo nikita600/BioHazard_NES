@@ -2841,8 +2841,7 @@ loc_12A933:
 	from_stack tilemapTypeUnk_30B
 	from_stack ptr_1
 	from_stack ptr_0
-	PLA
-	TAY
+	from_stack_to_y
 	RTS
 ; End of function sub_12A893
 
@@ -2869,8 +2868,7 @@ sub_12A944:
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	tilemapFrameCount_30D
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack ptr_1
 	from_stack ptr_0
 	RTS
@@ -6888,8 +6886,7 @@ sub_12C1C3:
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
 	from_stack_to_x
-	PLA
-	TAY
+	from_stack_to_y
 	CPY	#0
 	BNE	sub_12C1C3
 	RTS
@@ -8836,8 +8833,7 @@ loc_12CDA2:
 	to_stack ppu_unk_byte_309
 	JSR	exec_b2_c4_1283F2
 	from_stack ppu_unk_byte_309
-	PLA
-	TAY
+	from_stack_to_y
 
 loc_12CDEA:
 	LDA	ppu_unk_byte_309
@@ -10473,8 +10469,7 @@ loc_12D946:
 	TYA
 	PHA
 	JSR	sub_12DFFC
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack inv_spr_dscr1_30C
 	from_stack tilemapTypeUnk_30B
 
@@ -10524,8 +10519,7 @@ loc_12D9A3:
 	LDA	#$A
 	STA	sprite_secondByte_31B
 	JSR	sub_12D9F7
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack tilemapTypeUnk_30B
 	LDX	tilemapTypeUnk_30B
 	LDA	byte_12E869,X
@@ -10600,15 +10594,13 @@ loc_12D9FB:
 	TYA
 	PHA
 	JSR	sub_128326
-	PLA
-	TAY
+	from_stack_to_y
 	STY	tilemapTypeUnk_30B
 	from_stack_to_x
 	INX
 	CPX	tilemapTypeUnk_30B
 	BCC	loc_12D9FB
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack_to_x
 	RTS
 ; End of function sub_12D9F7
@@ -10673,8 +10665,7 @@ loc_12DA5E:
 	PHA
 	JSR	sub_128358
 	JSR	sub_128326
-	PLA
-	TAY
+	from_stack_to_y
 	STA	tilemapTypeUnk_30B
 	from_stack_to_x
 	TXA
@@ -10693,8 +10684,7 @@ loc_12DA5E:
 	TYA
 	PHA
 	JSR	sub_128326
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack tilemapTypeUnk_30B
 
 loc_12DABA:
@@ -10708,8 +10698,7 @@ loc_12DABA:
 	BCC	loc_12DA5E
 
 loc_12DACB:
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack_to_x
 	RTS
 ; End of function sub_12DA33
@@ -13725,8 +13714,7 @@ sub_12EF77:
 	TYA
 	PHA
 	JSR	sub_1283BA
-	PLA
-	TAY
+	from_stack_to_y
 	to_stack image_id_4A4
 	to_stack image_offset_4A5
 	to_stack ppu_prev_unk_4A6

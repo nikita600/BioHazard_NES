@@ -424,8 +424,7 @@ loc_1F44D:
 	CLC
 	ADC	sprite_secondByte_31B
 	STA	inv_spr_dscr1_30C
-	PLA
-	TAY
+	from_stack_to_y
 	LDA	inv_spr_dscr1_30C
 	STA	(ptr_0),Y
 	INY
@@ -497,8 +496,7 @@ loc_1F4DC:
 	CLC
 	ADC	sprite_secondByte_31B
 	STA	inv_spr_dscr1_30C
-	PLA
-	TAY
+	from_stack_to_y
 	LDA	inv_spr_dscr1_30C
 	STA	(ptr_0),Y
 	INY
@@ -587,8 +585,7 @@ loc_1F583:
 	CLC
 	ADC	sprite_secondByte_31B
 	STA	inv_spr_dscr1_30C
-	PLA
-	TAY
+	from_stack_to_y
 	LDA	inv_spr_dscr1_30C
 	STA	(ptr_0),Y
 	INY
@@ -749,8 +746,7 @@ loc_1F6B5:
 ; ---------------------------------------------------------------------------
 
 loc_1F6CE:
-	PLA
-	TAY
+	from_stack_to_y
 	RTS
 ; End of function sub_1F6AB
 

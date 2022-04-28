@@ -4482,8 +4482,7 @@ loc_C7FB:
 ; ---------------------------------------------------------------------------
 
 loc_C814:
-	PLA
-	TAY
+	from_stack_to_y
 	LDA	byte_368
 	CLC
 	ADC	byte_4AE
@@ -4866,8 +4865,7 @@ loc_CA34:
 
 loc_CA45:
 	STY	byte_367
-	PLA
-	TAY
+	from_stack_to_y
 	RTS
 ; End of function sub_CA14
 
@@ -5330,8 +5328,7 @@ loc_CD2A:
 	PHA
 	LDY	obj_idx_unk_462
 	STA	obj_array_unk_45E,Y
-	PLA
-	TAY
+	from_stack_to_y
 	INC	obj_idx_unk_462
 	LDA	array_unk_3C5,Y
 	STA	array_unk_446,X
@@ -5591,8 +5588,7 @@ loc_CEDC:
 	LDA	array_unk_452,X
 	STA	array_unk_3CF,Y
 	INX
-	PLA
-	TAY
+	from_stack_to_y
 	INY
 	CPY	obj_idx_unk_462
 	BCC	loc_CEDC
@@ -5729,8 +5725,7 @@ loc_CFCA:
 	STA	array_unk_39D,X
 	JSR	objects_func_D52A
 	JSR	wait_for_frame_rendered_FCA0
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack_to_x
 	INY
 	CPY	#8
@@ -5739,8 +5734,7 @@ loc_CFCA:
 ; ---------------------------------------------------------------------------
 
 loc_CFEE:
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack_to_x
 
 loc_CFF2:
@@ -6051,8 +6045,7 @@ sub_D1EE:
 	from_stack byte_366
 	from_stack byte_36B
 	from_stack byte_36A
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack_to_x
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
@@ -6619,8 +6612,7 @@ loc_D629:
 
 loc_D62C:
 	; objects_func_D52A+7Dj
-	PLA
-	TAY
+	from_stack_to_y
 	INY
 	CPY	objArraySize_373
 	BEQ	loc_D637
@@ -7799,8 +7791,7 @@ loc_DDFE:
 	TYA
 	PHA
 	JSR	map_update_DEFA
-	PLA
-	TAY
+	from_stack_to_y
 	LDA	sprite_length_30F
 	BNE	locret_DE21
 	LDA	byte_36A
@@ -7841,8 +7832,7 @@ loc_DE46:
 	TYA
 	PHA
 	JSR	map_update_DEFA
-	PLA
-	TAY
+	from_stack_to_y
 	LDA	sprite_length_30F
 	BNE	locret_DE69
 	LDA	byte_36A
@@ -9203,8 +9193,7 @@ loc_E7E7:
 	from_stack tilemapTypeUnk_30B
 	from_stack ptr_1
 	from_stack ptr_0
-	PLA
-	TAY
+	from_stack_to_y
 	RTS
 ; End of function sub_E747
 
@@ -9230,8 +9219,7 @@ sub_E7F8:
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	tilemapFrameCount_30D
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack ptr_1
 	from_stack ptr_0
 	RTS
@@ -9260,8 +9248,7 @@ sub_E827:
 	LDY	#0
 	LDA	#$FF
 	STA	(ptr_0),Y
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack ptr_1
 	from_stack ptr_0
 	RTS
@@ -10490,8 +10477,7 @@ loc_ED94:
 ; ---------------------------------------------------------------------------
 
 loc_ED9F:
-	PLA
-	TAY
+	from_stack_to_y
 	RTS
 ; End of function sub_ED8F
 
@@ -10625,8 +10611,7 @@ write_tilemap_to_ppu_EE4D:
 	INY
 	CPY	tilemapWidth_308
 	BCC	write_tilemap_to_ppu_EE4D
-	PLA
-	TAY
+	from_stack_to_y
 	INC	ppu_unk_byte_309
 	JSR	sub_F194
 	DEC	tilemapHeight_30A
@@ -11560,8 +11545,7 @@ exitFunc_F4EF:
 	from_stack data_2
 	from_stack ptr_1
 	from_stack ptr_0
-	PLA
-	TAY
+	from_stack_to_y
 	from_stack_to_x
 	RTS
 ; End of function tilemap_read_next_chunk_F472
@@ -11620,8 +11604,7 @@ loc_F53B:
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_F53B
-	PLA
-	TAY
+	from_stack_to_y
 	RTS
 ; End of function sub_F51D
 
@@ -11654,8 +11637,7 @@ loc_F54E:
 	INY
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_F54E
-	PLA
-	TAY
+	from_stack_to_y
 	RTS
 ; End of function sub_F54A
 

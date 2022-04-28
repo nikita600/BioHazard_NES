@@ -816,8 +816,7 @@ loc_2E2F2:
 
 loc_2E2F9:
 			; sub_2E244+A1j ...
-	PLA
-	TAY
+	from_stack_to_y
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
 	CMP	#2

@@ -211,9 +211,8 @@ loc_2D1DF:
 	STA	data_3
 	add_to_byte_clc data_2, text_idx_35C
 
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_byte data_3, #0
+
 	LDY	#0
 	LDA	(data_2),Y
 	STA	ptr_0
@@ -268,18 +267,16 @@ loc_2D251:
 loc_2D260:
 	add_to_byte_clc ptr_0, #2
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 
 	LDA	tilemapWidth_308
 	ASL	A
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 	LDA	byte_35E
 	SEC
 	SBC	tilemapWidth_308
@@ -340,9 +337,8 @@ loc_2D2F6:
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 
 loc_2D305:
 	LDY	#0
@@ -413,9 +409,8 @@ loc_2D378:
 	from_stack text_idx_35C
 	add_to_byte_clc text_idx_35C, #1
 
-	LDA	char_type_id_35D
-	ADC	#0
-	STA	char_type_id_35D
+	add_to_byte char_type_id_35D, #0
+
 	LDA	#0
 	STA	byte_364
 	RTS
@@ -718,9 +713,8 @@ sub_2E244:
 	STA	data_3
 	add_to_byte_clc data_2, text_idx_35C
 
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_byte data_3, #0
+
 	LDY	#0
 	LDA	(data_2),Y
 	STA	ptr_0
@@ -1114,9 +1108,8 @@ loc_2E4E0:
 loc_2E4F1:
 	add_to_byte_clc data_2, tilemap_size_307
 
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_byte data_3, #0
+
 	RTS
 ; End of function sub_2E44B
 
@@ -1274,9 +1267,8 @@ sub_2E781:
 
 	add_to_byte_clc ptr_0, data_2
 
-	LDA	ptr_1
-	ADC	data_3
-	STA	ptr_1
+	add_to_byte ptr_1, data_3
+
 	
 	LDY	#0
 	LDA	(ptr_0),Y

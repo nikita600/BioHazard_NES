@@ -1684,9 +1684,8 @@ loc_128CD5:
 	STA	byte_36B
 	add_to_byte_clc byte_36A, #$C0 
 
-	LDA	byte_36B
-	ADC	#0
-	STA	byte_36B
+	add_to_byte byte_36B, #0
+
 	LDA	#0
 	STA	sprite_secondByte_31B
 	LDA	#$38 
@@ -1740,9 +1739,8 @@ loc_128D35:
 	STA	byte_36B
 	add_to_byte_clc byte_36A, #$C8 
 
-	LDA	byte_36B
-	ADC	#0
-	STA	byte_36B
+	add_to_byte byte_36B, #0
+
 	LDA	#0
 	STA	sprite_secondByte_31B
 	LDA	#$78 
@@ -1773,9 +1771,8 @@ loc_128D8F:
 	STA	byte_36B
 	add_to_byte_clc byte_36A, #$C8 
 
-	LDA	byte_36B
-	ADC	#0
-	STA	byte_36B
+	add_to_byte byte_36B, #0
+
 	LDA	#0
 	STA	sprite_secondByte_31B
 	LDA	#$78 
@@ -1800,9 +1797,8 @@ loc_128D8F:
 	STA	byte_36B
 	add_to_byte_clc byte_36A, #$D0 
 
-	LDA	byte_36B
-	ADC	#0
-	STA	byte_36B
+	add_to_byte byte_36B, #0
+
 	LDA	#0
 	STA	sprite_secondByte_31B
 	LDA	#$7C 
@@ -1831,9 +1827,8 @@ sub_128E24:
 	STA	byte_36B
 	add_to_byte_clc byte_36A, #$20 
 
-	LDA	byte_36B
-	ADC	#0
-	STA	byte_36B
+	add_to_byte byte_36B, #0
+
 	LDA	#0
 	STA	sprite_secondByte_31B
 	LDA	#$88 
@@ -1907,9 +1902,8 @@ sub_128EC2:
 	STA	byte_36B
 	add_to_byte_clc byte_36A, #$20 
 
-	LDA	byte_36B
-	ADC	#0
-	STA	byte_36B
+	add_to_byte byte_36B, #0
+
 	LDA	#0
 	STA	sprite_secondByte_31B
 	LDA	#$B8 
@@ -2450,9 +2444,8 @@ loc_12A64A:
 
 	add_to_byte_clc ptr_0, data_2
 
-	LDA	ptr_1
-	ADC	data_3
-	STA	ptr_1
+	add_to_byte ptr_1, data_3
+
 
 	LDY	#0
 	LDA	(ptr_0),Y
@@ -2483,9 +2476,8 @@ loc_12A69D:
 	CLC
 	ADC	data_2
 	STA	data_2
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_byte data_3, #0
+
 	LDY	#0
 	LDA	(data_2),Y
 	STA	ptr_0
@@ -2793,9 +2785,8 @@ loc_12A8E3:
 loc_12A8FD:
 	add_to_byte_clc byte_370, tilemapFrameCount_30D
 
-	LDA	byte_371
-	ADC	byte_30E
-	STA	byte_371
+	add_to_byte byte_371, byte_30E
+
 	JSR	sub_12A944
 	LDA	byte_36F
 	ORA	tilemapFrameCount_30D
@@ -2835,9 +2826,8 @@ sub_12A944:
 
 	add_to_byte_clc ptr_0, tilemapFrameCount_30D
 
-	LDA	ptr_1
-	ADC	byte_30E
-	STA	ptr_1
+	add_to_byte ptr_1, byte_30E
+
 
 	LDY	#0
 	LDA	(ptr_0),Y
@@ -9258,9 +9248,8 @@ sub_12D139:
 
 	add_to_byte_clc ptr_0, #$14
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 
 	LDY	byte_372
 
@@ -9270,9 +9259,8 @@ loc_12D151:
 
 	add_to_byte_clc ptr_0, #$58 
 
-	LDA	ptr_1
-	ADC	#2
-	STA	ptr_1
+	add_to_byte ptr_1, #2
+
 
 	DEY
 	JMP	loc_12D151
@@ -9310,9 +9298,8 @@ loc_12D17B:
 
 	add_to_byte_clc ptr_0, #$14
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 
 	LDA	byte_100
 	STA	image_id_4A4
@@ -13971,9 +13958,8 @@ loc_12F30E:
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	data_2
@@ -14172,15 +14158,13 @@ loc_12F495:
 	BCC	loc_12F495
 	add_to_byte_clc data_2, tilemapTypeUnk_30B
 
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_byte data_3, #0
+
 	
 	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS

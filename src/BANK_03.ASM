@@ -60,9 +60,8 @@ sub_3F76B:
 	STA	data_3
 	add_to_byte_clc data_2, text_idx_35C
 
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_byte data_3, #0
+
 	LDY	#0
 	LDA	(data_2),Y
 	STA	ptr_0
@@ -455,9 +454,8 @@ loc_3FA07:
 loc_3FA18:
 	add_to_byte_clc data_2, tilemap_size_307
 
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_byte data_3, #0
+
 	RTS
 ; End of function sub_3F972
 

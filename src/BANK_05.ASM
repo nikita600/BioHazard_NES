@@ -56,9 +56,8 @@ upload_gfx_to_ppu_5F093:
 
 	add_to_byte_clc ptr_0, data_2
 
-	LDA	ptr_1
-	ADC	data_3
-	STA	ptr_1
+	add_to_byte ptr_1, data_3
+
 
 	LDY	#0
 	LDA	(ptr_0),Y
@@ -102,9 +101,8 @@ loc_5F0EE:
 	
 	add_to_byte_clc ptr_0, #$10
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 
 	add_to_data $10
 

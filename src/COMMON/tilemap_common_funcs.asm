@@ -14,9 +14,8 @@ getTilemapPtr:
 
 	add_to_byte_clc ptr_0, data_2
 
-	LDA	ptr_1
-	ADC	data_3
-	STA	ptr_1
+	add_to_byte ptr_1, data_3
+
 
 getPtrToTilemap: ; getPtrToTilemap
 	LDY	#0
@@ -36,9 +35,8 @@ getOffset_F8CC: ; unk data
 	
 	add_to_byte_clc ptr_0, #$C0 
 
-	LDA	ptr_1
-	ADC	#3
-	STA	ptr_1
+	add_to_byte ptr_1, #3
+
 
 size_20_7F8DF:
 	LDY	tilemap_line_idx_4F
@@ -57,9 +55,8 @@ addOffset_7F8F6:
 	add_to_byte_clc ptr_0, mapLineSize_50
 
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 
 init_F903:
 	set data_2, mapLineWidth_52
@@ -74,9 +71,8 @@ write_tilemap_line_7F90F:
 
 	add_to_byte_clc ptr_0, data_3	; entrySize
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 	
 	INX
 	CPX	data_2	; lineSize

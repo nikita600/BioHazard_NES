@@ -22,13 +22,18 @@
 
 .endmacro
 
+.macro add_to_byte dst, src
+
+	LDA	dst
+	ADC	src
+	STA	dst
+
+.endmacro
+
 .macro add_to dst_lo, dst_hi, src_lo, src_hi
 
 	add_to_byte_clc	dst_lo, src_lo
-
-	LDA	dst_hi
-	ADC	src_hi
-	STA	dst_hi
+	add_to_byte dst_hi, src_hi
 
 .endmacro
 

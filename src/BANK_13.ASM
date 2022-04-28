@@ -1537,9 +1537,8 @@ load_spr_palette_13DF18:
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
-	LDA	ptr_1
-	ADC	data_2
-	STA	ptr_1
+	add_to_byte ptr_1, data_2
+
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	data_2
@@ -1556,9 +1555,8 @@ load_spr_palette_13DF18:
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 	LDY	#0
 
 loc_13DF5B:
@@ -1596,9 +1594,8 @@ loc_13DF76:
 
 	add_to_byte_clc ptr_0, #$10
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 
 	DEC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
@@ -1666,9 +1663,8 @@ load_boss_sprite_13DFDC:
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
-	LDA	ptr_1
-	ADC	data_2
-	STA	ptr_1
+	add_to_byte ptr_1, data_2
+
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	data_2
@@ -1715,9 +1711,8 @@ load_sprite_map_13E038:
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
-	LDA	ptr_1
-	ADC	data_2
-	STA	ptr_1
+	add_to_byte ptr_1, data_2
+
 	LDY	#0
 	LDA	(ptr_0),Y
 	STA	data_2
@@ -1732,9 +1727,8 @@ load_sprite_map_13E038:
 	CLC
 	ADC	data_2
 	STA	data_2
-	LDA	data_3
-	ADC	ptr_0
-	STA	data_3
+	add_to_byte data_3, ptr_0
+
 	LDY	#0
 	LDA	(data_2),Y
 	STA	ptr_0
@@ -1750,9 +1744,8 @@ load_sprite_map_13E038:
 
 	add_to_byte_clc ptr_0, #2
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 
 	LDA	#0
 	STA	data_2
@@ -1779,9 +1772,8 @@ loc_13E0AF:
 loc_13E0C4:
 	add_to_byte_clc data_2, tilemap_size_307
 
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_byte data_3, #0
+
 	LDA	#0
 	STA	inv_spr_dscr1_30C
 	STA	ppu_unk_byte_309
@@ -1869,9 +1861,8 @@ loc_13E13F:
 
 	add_to_byte_clc ptr_0, tilemapWidth_308
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
@@ -1912,15 +1903,13 @@ loc_13E195:
 	BCC	loc_13E195
 	add_to_byte_clc data_2, tilemapTypeUnk_30B
 
-	LDA	data_3
-	ADC	#0
-	STA	data_3
+	add_to_byte data_3, #0
+
 
 	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
 
-	LDA	ptr_1
-	ADC	#0
-	STA	ptr_1
+	add_to_byte ptr_1, #0
+
 	
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS

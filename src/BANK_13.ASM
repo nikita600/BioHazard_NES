@@ -12,17 +12,13 @@ bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
-	LDA	bank_command_346
-	CMP	#$88 
-	BEQ	loc_13809B
+	if_equal bank_command_346, #$88 , loc_13809B
 	LDA	bank_to_344
 
 loc_13803F:
 	STA	bank_prev_345
 	set bank_switch_flag_6C, #$88 
-	LDA	bank_command_346
-	CMP	#0
-	BEQ	loc_138066
+	if_equal bank_command_346, #0, loc_138066
 	CMP	#1
 	BEQ	loc_13806C
 	CMP	#2
@@ -1425,9 +1421,7 @@ loc_13DF76:
 
 
 	DEC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	CMP	#0
-	BEQ	locret_13DFA7
+	if_equal inv_spr_dscr1_30C, #0, locret_13DFA7
 	JMP	loc_13DF6A
 ; ---------------------------------------------------------------------------
 

@@ -13,9 +13,7 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	LDA	bank_command_346
-	CMP	#0
-	BEQ	loc_2805F
+	if_equal bank_command_346, #0, loc_2805F
 	CMP	#1
 	BEQ	loc_28065
 	CMP	#2
@@ -210,9 +208,7 @@ loc_2D251:
 	CMP	#$FF
 	BNE	loc_2D29C
 	INY
-	LDA	(ptr_0),Y
-	CMP	#$FF
-	BEQ	loc_2D260
+	if_equal {(ptr_0),Y}, #$FF, loc_2D260
 	DEY
 	JMP	loc_2D29C
 ; ---------------------------------------------------------------------------
@@ -271,9 +267,7 @@ loc_2D29C:
 	add_to_data $40
 
 	INC	tilemapWidth_308
-	LDA	tilemapWidth_308
-	CMP	byte_35E
-	BEQ	loc_2D2F6
+	if_equal tilemapWidth_308, byte_35E, loc_2D2F6
 	BCS	loc_2D2F6
 	JMP	loc_2D243
 ; ---------------------------------------------------------------------------
@@ -290,13 +284,9 @@ loc_2D2F6:
 
 loc_2D305:
 	LDY	#0
-	LDA	(ptr_0),Y
-	CMP	#0
-	BEQ	loc_2D342
+	if_equal {(ptr_0),Y}, #0, loc_2D342
 	INC	tilemapHeight_30A
-	LDA	tilemapHeight_30A
-	CMP	byte_35F
-	BEQ	loc_2D31B
+	if_equal tilemapHeight_30A, byte_35F, loc_2D31B
 	JMP	loc_2D23E
 ; ---------------------------------------------------------------------------
 
@@ -502,9 +492,7 @@ loc_2D4B1:
 loc_2D4C3:
 	JSR	sub_2E500
 	INC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	CMP	#2
-	BEQ	loc_2D4D3
+	if_equal inv_spr_dscr1_30C, #2, loc_2D4D3
 	JMP	loc_2D40B
 ; ---------------------------------------------------------------------------
 
@@ -551,9 +539,7 @@ sub_2D4FF:
 
 loc_2D506:
 	JSR	sub_2D514
-	LDA	input_pressed_34A
-	CMP	#0
-	BEQ	loc_2D506
+	if_equal input_pressed_34A, #0, loc_2D506
 	JSR	sub_2D542
 	RTS
 ; End of function sub_2D4FF
@@ -563,9 +549,7 @@ loc_2D506:
 
 
 sub_2D514:
-	LDA	sprite_type_306
-	CMP	#0
-	BEQ	loc_2D51C
+	if_equal sprite_type_306, #0, loc_2D51C
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -593,9 +577,7 @@ locret_2D541:
 
 
 sub_2D542:
-	LDA	sprite_type_306
-	CMP	#0
-	BEQ	loc_2D54A
+	if_equal sprite_type_306, #0, loc_2D54A
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -701,9 +683,7 @@ loc_2E2F9:
 	CMP	#2
 	BCC	loc_2E2BC
 	INC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	CMP	#4
-	BEQ	loc_2E312
+	if_equal inv_spr_dscr1_30C, #4, loc_2E312
 	JMP	loc_2E2A5
 ; ---------------------------------------------------------------------------
 
@@ -773,9 +753,7 @@ loc_2E381:
 	INC	ptr_0
 	JSR	sub_2E500
 	INC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	CMP	#2
-	BEQ	loc_2E3AF
+	if_equal inv_spr_dscr1_30C, #2, loc_2E3AF
 	JMP	loc_2E33E
 ; ---------------------------------------------------------------------------
 

@@ -90,9 +90,7 @@ wait_for_b_pressed_FCC5:
 
 
 wait_for_any_input_FCCD:	
-	LDA	input_pressed_34A
-	CMP	#0
-	BEQ	wait_for_any_input_FCCD
+	if_equal input_pressed_34A, #0, wait_for_any_input_FCCD
 	RTS
 ; End of function wait_for_any_input_FCCD
 
@@ -208,9 +206,7 @@ NMI_FD53:
 	PHA
 	TYA
 	PHA
-	LDA	bank_switch_flag_6C
-	CMP	#$88 
-	BEQ	loc_FD62
+	if_equal bank_switch_flag_6C, #$88 , loc_FD62
 	JMP	loc_FD93
 ; ---------------------------------------------------------------------------
 

@@ -14,9 +14,7 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	LDA	bank_command_346
-	CMP	#0
-	BEQ	loc_58047
+	if_equal bank_command_346, #0, loc_58047
 	RTS
 ; ---------------------------------------------------------------------------
 

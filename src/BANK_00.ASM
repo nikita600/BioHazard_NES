@@ -827,9 +827,7 @@ sub_87CE:
 	to_stack byte_367
 	LDA	tilemapWidth_308
 	LSR	A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	byte_36A
 	STA	byte_36A
@@ -837,9 +835,7 @@ sub_87CE:
 
 	LDA	tilemapHeight_30A
 	LSR	A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	byte_366
 	STA	byte_366
@@ -1197,8 +1193,7 @@ loc_8AE0:
 loc_8AF1:
 	to_stack objMapIdx_316
 	LDA	byte_313
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	CLC
 	ADC	objMapIdx_316
 	TAX
@@ -2568,8 +2563,7 @@ loc_94EC:
 	SBC	#1
 	STA	objMapIdx_316
 	LDA	byte_313
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	CLC
 	ADC	objMapIdx_316
 	TAX
@@ -3202,7 +3196,7 @@ sub_999A:
 
 loc_99EF:
 	LDA	inv_spr_dscr1_30C
-	ASL	A
+	mult_a_by_2
 	TAY
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
@@ -4501,7 +4495,7 @@ sub_CB58:
 	to_stack byte_4AD
 	to_stack byte_4AE
 	LDA	byte_372
-	ASL	A
+	mult_a_by_2
 	TAX
 	set_inx byte_4AD, {off_CBBE,X}
 	LDA	off_CBBE,X
@@ -4792,8 +4786,7 @@ loc_CD6C:
 
 loc_CD6E:
 	TYA
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAX
 	set byte_36A, {array_unk_446,X}
 	set byte_36B, {unk_447,X}
@@ -5166,8 +5159,7 @@ locret_D01E:
 sub_D01F:
 	to_stack tilemapTypeUnk_30B
 	TXA
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	STA	tilemapTypeUnk_30B
 	TXA
 	CLC
@@ -6292,9 +6284,7 @@ sub_D8D8:
 
 sub_D8FD:
 	LDA	tilemap_size_307
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	byte_36C
 	STA	byte_36C
@@ -6309,9 +6299,7 @@ sub_D8FD:
 
 sub_D913:
 	LDA	ppu_unk_byte_309
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	byte_368
 	STA	byte_368
@@ -6326,9 +6314,7 @@ sub_D913:
 
 sub_D929:
 	to_stack tilemapWidth_308
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	STA	tilemapWidth_308
 	LDA	byte_36C
 	SEC
@@ -6347,9 +6333,7 @@ sub_D929:
 
 sub_D94A:
 	to_stack tilemapHeight_30A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	STA	tilemapHeight_30A
 	LDA	byte_368
 	SEC
@@ -6480,9 +6464,7 @@ loc_DA40:
 	LDA	ppu_unk_byte_309
 	SEC
 	SBC	#2
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	byte_368
 	STA	byte_368
@@ -6697,8 +6679,7 @@ loc_DC07:
 ; ---------------------------------------------------------------------------
 
 loc_DC13:
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	STA	tilemapWidth_308
 	JSR	sub_BD29
 	RTS
@@ -6996,9 +6977,7 @@ loc_DE22:
 	BNE	loc_DE6A
 	add_to_byte_clc tilemapHeight_30A, #1
 	LDA	tilemapHeight_30A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	byte_366
 	STA	byte_366
@@ -7030,9 +7009,7 @@ loc_DE6A:
 	LDA	tilemapHeight_30A
 	SEC
 	SBC	#1
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	byte_366
 	STA	byte_366
@@ -7061,9 +7038,7 @@ loc_DEB4:
 	LDA	tilemapHeight_30A
 	SEC
 	SBC	#1
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	byte_366
 	STA	byte_366
@@ -7137,7 +7112,7 @@ load_from_BCB6_DF7F:
 	set_ptr unknown_data_BCB6
 
 	LDA	entry_idx_300
-	ASL	A
+	mult_a_by_2
 	TAY
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
@@ -7213,7 +7188,7 @@ loc_E03B:
 
 loc_E046:
 	LDA	inv_spr_dscr1_30C
-	ASL	A
+	mult_a_by_2
 	TAY
 	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
@@ -8133,7 +8108,7 @@ loc_E775:
 
 loc_E787:
 	LDA	inv_spr_dscr1_30C
-	ASL	A
+	mult_a_by_2
 	TAY
 	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
@@ -9566,9 +9541,7 @@ loc_EF94:
 	LDA	#8
 	SEC
 	SBC	ppu_unk_byte_309
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	tilemap_size_307
 	TAX
@@ -9625,9 +9598,7 @@ loc_F019:
 	LDA	#8
 	SEC
 	SBC	ppu_unk_byte_309
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	TAX
 	to_stack ppu_unk_byte_309
 	set ppu_unk_byte_309, #0
@@ -9731,9 +9702,7 @@ loc_F0E0:
 	LSR	A
 	LSR	A
 	STA	tilemapHeight_30A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
@@ -10176,7 +10145,7 @@ add_offset_F4C4:
 next_F4D0:
 	CLC
 	ADC	roomUnk1_4D
-	ASL	A
+	mult_a_by_2
 	TAY
 	INY
 	INY
@@ -10436,19 +10405,13 @@ loc_F653:
 sub_F65C:
 	JSR	sub_EE72
 	LDA	byte_357
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	STA	byte_366
 	LDA	byte_358
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	STA	byte_36A
 	LDA	byte_359
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	STA	tilemapWidth_308
 	LDA	byte_36A
 	CLC
@@ -10883,12 +10846,7 @@ sub_F9C2:
 	AND	#$3F 
 	STA	byte_4,Y
 	LDA	byte_35A
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_64
 	ORA	byte_4,Y
 	STA	byte_4,Y
 	JMP	loc_FA3B
@@ -10899,10 +10857,7 @@ loc_F9F5:
 	AND	#$CF 
 	STA	byte_4,Y
 	LDA	byte_35A
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_16
 	ORA	byte_4,Y
 	STA	byte_4,Y
 	JMP	loc_FA3B
@@ -10916,8 +10871,7 @@ loc_FA0D:
 	AND	#$F3 
 	STA	byte_4,Y
 	LDA	byte_35A
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	ORA	byte_4,Y
 	STA	byte_4,Y
 	JMP	loc_FA3B
@@ -10984,9 +10938,7 @@ loc_FA99:
 	LDA	ppu_unk_byte_309
 	LSR	A
 	LSR	A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	STA	tilemapTypeUnk_30B
 	LDA	tilemap_size_307
 	LSR	A

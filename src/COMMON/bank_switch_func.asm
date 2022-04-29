@@ -5,9 +5,9 @@ bank_switch:
 		LDA	bank_to_344
 		CMP	#$10
 		BCS	bank_idx_greater_10_8020
-		ASL	A
-		ASL	A
-		ASL	A
+		mult_a_by_2
+		mult_a_by_2
+		mult_a_by_2
 		TAY
 		LDA	mirroring_type_342
 		BNE	vertical_801A
@@ -25,9 +25,9 @@ vertical_801A:
 bank_idx_greater_10_8020:		
 		SEC
 		SBC	#$10
-		ASL	A
-		ASL	A
-		ASL	A
+		mult_a_by_2
+		mult_a_by_2
+		mult_a_by_2
 		TAY
 		LDA	mirroring_type_342
 		BNE	vertical_8032

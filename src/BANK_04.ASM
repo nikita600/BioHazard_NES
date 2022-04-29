@@ -88,7 +88,7 @@ load_palette_4F323:
 
 	set data_2, #0
 	LDA	inv_sprite_idx_31C
-	ASL	A
+	mult_a_by_2
 	ROL	data_2
 	CLC
 	ADC	ptr_0
@@ -102,8 +102,7 @@ load_palette_4F323:
 	set_ptr _PPU_PALETTE
 
 	LDA	sprPalIdx_319
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAX
 	CLC
 	ADC	ptr_0
@@ -175,10 +174,7 @@ loc_4F3B6:
 
 loc_4F3CD:
 	LDA	inv_spr_dscr1_30C
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_16
 	STA	tilemapTypeUnk_30B
 	set inv_spr_dscr1_30C, #0
 
@@ -201,7 +197,7 @@ get_inventory_sprite_ptr_4F3E7:
 get_offset_4F3EF:
 	set data_2, #0
 	LDA	inv_sprite_idx_31C
-	ASL	A
+	mult_a_by_2
 	ROL	data_2
 	CLC
 	ADC	ptr_0
@@ -249,7 +245,7 @@ load_inventory_sprite_tilemap_4F443:
 get_offset_4F44B:
 	set data_2, #0
 	LDA	inv_sprite_idx_31C
-	ASL	A
+	mult_a_by_2
 	ROL	data_2
 	CLC
 	ADC	ptr_0
@@ -265,7 +261,7 @@ get_ptr_4F460:
 get_tilemap_offset_4F46B:
 	set ptr_0, #0
 	LDA	inv_itemPrev_idx_31D
-	ASL	A
+	mult_a_by_2
 	ROL	ptr_0
 	CLC
 	ADC	data_2
@@ -290,8 +286,7 @@ get_tilemap_descr_4F48B:
 	set data_2, #0
 	set data_3, #$20 
 	LDA	byte_36E
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	CLC
 	ADC	data_3
 	STA	data_3

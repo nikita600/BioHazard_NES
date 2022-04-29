@@ -120,8 +120,7 @@ loc_13C032:
 	SBC	#$40 
 
 loc_13C040:
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAX
 	LDA	byte_13C081,Y
 	LDA	byte_13C0C9,Y
@@ -159,7 +158,7 @@ loc_13D429:
 	CPX	#$27 
 	BCC	loc_13D429
 	LDA	apu_unk_76C
-	ASL	A
+	mult_a_by_2
 	TAX
 	set apu_unk_76A, {apu_off_13DEB0,X}
 	set apu_unk_76B, {apu_off_13DEB0+1,X}
@@ -211,7 +210,7 @@ loc_13D493:
 	CPX	#$27 
 	BCC	loc_13D493
 	LDA	apu_unk_76C
-	ASL	A
+	mult_a_by_2
 	TAX
 	set apu_ptr_768, {apu_off_13DEB0,X}
 	set apu_ptr_769, {apu_off_13DEB0+1,X}
@@ -480,7 +479,7 @@ loc_13D67C:
 	set apu_unk_FE, apu_unk_76A
 	set apu_unk_FF, apu_unk_76B
 	LDA	apu_unk_760,X
-	ASL	A
+	mult_a_by_2
 	TAY
 	BCC	loc_13D68F
 	INC	apu_unk_FF
@@ -539,7 +538,7 @@ locret_13D6F0:
 loc_13D6F1:
 	set _APU_NOISE_ENV, {noise_env_13C231,Y}
 	TYA
-	ASL	A
+	mult_a_by_2
 	TAY
 	set _APU_NOISE_LOOP, {noise_loop_13C286,Y}
 	set _APU_NOISE_LEN, {noise_len_13C287,Y}
@@ -550,8 +549,7 @@ loc_13D707:
 	LDA	apu_unk_705
 	CMP	#$D
 	BCS	loc_13D729
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAY
 	set _APU_PULSE1_ENV, {pulse_env_13DDEC,Y}
 	set ptr_1, {pulse_sweep_13DDED,Y}
@@ -576,8 +574,7 @@ loc_13D747:
 	LDA	apu_unk_705
 	CMP	#$D
 	BCS	loc_13D76A
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAY
 	set _APU_PULSE2_ENV, {pulse2_env_13DE20,Y}
 	set _APU_PULSE2_SWEEP, {pulse2_sweep_13DE21,Y}
@@ -602,8 +599,7 @@ loc_13D788:
 	LDA	apu_unk_705
 	CMP	#$D
 	BCS	loc_13D7AB
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAY
 	set _APU_TRI_COUNT, {tri_count_13DE54,Y}
 	set _APU_TRI_UNUSED, {tri_unused_13DE55,Y}
@@ -824,7 +820,7 @@ loc_13D90B:
 	set apu_unk_FE, apu_ptr_768
 	set apu_unk_FF, apu_ptr_769
 	LDA	apu_unk_72F,X
-	ASL	A
+	mult_a_by_2
 	TAY
 	BCC	loc_13D91E
 	INC	apu_unk_FF
@@ -887,7 +883,7 @@ locret_13D987:
 apu_update_noise_13D988:
 	set _APU_NOISE_ENV, {noise_env_13C231,Y}
 	TYA
-	ASL	A
+	mult_a_by_2
 	TAY
 	set _APU_NOISE_LOOP, {noise_loop_13C286,Y}
 	set _APU_NOISE_LEN, {noise_len_13C287,Y}
@@ -898,8 +894,7 @@ apu_update_pulse1_13D99E:
 	LDA	apu_unk_705
 	CMP	#$D
 	BCS	apu_update_pulse1_13D9C1
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAY
 	set _APU_PULSE1_ENV, {pulse_env_13DDEC,Y}
 	set _APU_PULSE1_SWEEP, {pulse_sweep_13DDED,Y}
@@ -924,8 +919,7 @@ apu_update_pulse2_13D9DF:
 	LDA	apu_unk_705
 	CMP	#$D
 	BCS	apu_update_pulse2_13DA02
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAY
 	set _APU_PULSE2_ENV, {pulse2_env_13DE20,Y}
 	set _APU_PULSE2_SWEEP, {pulse2_sweep_13DE21,Y}
@@ -950,8 +944,7 @@ apu_update_triangle_13DA20:
 	LDA	apu_unk_705
 	CMP	#$D
 	BCS	loc_13DA43
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAY
 	set _APU_TRI_COUNT, {tri_count_13DE54,Y}
 	set _APU_TRI_UNUSED, {tri_unused_13DE55,Y}
@@ -1033,8 +1026,7 @@ loc_13DAB3:
 	AND	apu_unk_704
 	BNE	locret_13DADB
 	TXA
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAY
 	set {_APU_PULSE1_ENV,Y}, {apu_pulse1_env_744,X}
 
@@ -1108,8 +1100,7 @@ loc_13DB34:
 	AND	apu_unk_737
 	BNE	locret_13DB64
 	TXA
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAY
 	set {_APU_PULSE1_ENV,Y}, {pulse1_env_713,X}
 
@@ -1127,7 +1118,7 @@ music_func_13DB65:
 	LDA	apu_unk_752,X
 	CMP	#4
 	BCS	locret_13DB89
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	apu_unk_74A,Y
 	AND	#$F
@@ -1158,7 +1149,7 @@ music_func_13DB8A:
 	LDA	apu_unk_721,X
 	CMP	#4
 	BCS	locret_13DBAE
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	apu_unk_719,Y
 	AND	#$F
@@ -1190,8 +1181,7 @@ apu_func_13DBAF:
 loc_13DBB1:
 	LDA	apu_unk_700,X
 	BMI	loc_13DBFD
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAY
 	set {apu_unk_700,X}, #$FF
 	LDA	apu_dat_13D421,X
@@ -1202,12 +1192,12 @@ loc_13DBB1:
 	STA	apu_unk_704
 	TXA
 	PHA
-	ASL	A
+	mult_a_by_2
 	TAX
 	set apu_unk_FE, {apu_data_13DEBE,X}
 	set apu_unk_FF, {apu_data_13DEBE+1,X}
 	TXA
-	ASL	A
+	mult_a_by_2
 	TAX
 	set_iny {_APU_PULSE1_ENV,X}, {(apu_unk_FE),Y}
 	set_iny {_APU_PULSE1_SWEEP,X}, {(apu_unk_FE),Y}
@@ -1380,7 +1370,7 @@ load_spr_palette_13DF18:
 
 	set data_2, #0
 	LDA	inv_sprite_idx_31C
-	ASL	A
+	mult_a_by_2
 	ROL	data_2
 	CLC
 	ADC	ptr_0
@@ -1394,8 +1384,7 @@ load_spr_palette_13DF18:
 	set_ptr _PPU_PALETTE
 
 	LDA	sprPalIdx_319
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAX
 	CLC
 	ADC	ptr_0
@@ -1468,10 +1457,7 @@ loc_13DFAB:
 loc_13DFC2:
 	; load_sprite_func_13DFA8+Aj
 	LDA	inv_spr_dscr1_30C
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_16
 	STA	tilemapTypeUnk_30B
 	set inv_spr_dscr1_30C, #0
 
@@ -1493,7 +1479,7 @@ load_boss_sprite_13DFDC:
 
 	set data_2, #0
 	LDA	inv_sprite_idx_31C
-	ASL	A
+	mult_a_by_2
 	ROL	data_2
 	CLC
 	ADC	ptr_0
@@ -1534,7 +1520,7 @@ load_sprite_map_13E038:
 
 	set data_2, #0
 	LDA	inv_sprite_idx_31C
-	ASL	A
+	mult_a_by_2
 	ROL	data_2
 	CLC
 	ADC	ptr_0
@@ -1546,7 +1532,7 @@ load_sprite_map_13E038:
 	set data_3, {(ptr_0),Y}
 	set ptr_0, #0
 	LDA	inv_itemPrev_idx_31D
-	ASL	A
+	mult_a_by_2
 	ROL	ptr_0
 	CLC
 	ADC	data_2
@@ -1567,8 +1553,7 @@ load_sprite_map_13E038:
 	set data_2, #0
 	set data_3, #$20 
 	LDA	byte_36E
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	CLC
 	ADC	data_3
 	STA	data_3

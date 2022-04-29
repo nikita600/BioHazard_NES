@@ -1,4 +1,29 @@
 
+; ---------------------------------------------------------------------------
+
+.macro to_stack src
+
+	LDA src
+	PHA
+
+.endmacro
+
+.macro from_stack dst
+
+	PLA
+	STA dst
+
+.endmacro
+
+.macro from_stack_to_x
+	PLA
+	TAX
+.endmacro
+
+.macro from_stack_to_y
+	PLA
+	TAY
+.endmacro
 
 ; ---------------------------------------------------------------------------
 
@@ -57,30 +82,43 @@
 
 ; ---------------------------------------------------------------------------
 
-.macro to_stack src
-
-	LDA src
-	PHA
-
+.macro mult_a_by_2
+	ASL A
 .endmacro
 
-; ---------------------------------------------------------------------------
-
-.macro from_stack dst
-
-	PLA
-	STA dst
-
+.macro mult_a_by_4
+	ASL A
+	ASL A
 .endmacro
 
-.macro from_stack_to_x
-	PLA
-	TAX
+.macro mult_a_by_8
+	ASL A
+	ASL A
+	ASL A
 .endmacro
 
-.macro from_stack_to_y
-	PLA
-	TAY
+.macro mult_a_by_16
+	ASL A
+	ASL A
+	ASL A
+	ASL A
+.endmacro
+
+.macro mult_a_by_32
+	ASL A
+	ASL A
+	ASL A
+	ASL A
+	ASL A
+.endmacro
+
+.macro mult_a_by_64
+	ASL A
+	ASL A
+	ASL A
+	ASL A
+	ASL A
+	ASL A
 .endmacro
 
 ; ---------------------------------------------------------------------------

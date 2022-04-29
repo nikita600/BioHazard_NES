@@ -156,7 +156,7 @@ get_sprite_palette_ptr_1F2F3:
 
 get_offset_F2FB:
 	LDA	objectIdx_318
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
@@ -179,8 +179,7 @@ copy_sprite_palette_to_ram_1F316:
 
 	LDY	#0
 	LDA	sprPalIdx_319
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAX
 
 loc_1F31E:
@@ -240,7 +239,7 @@ load_sprite_to_vram_1F36D:
 
 get_offset_F376:; spriteIdx
 	LDA	objectIdx_318
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
@@ -292,7 +291,7 @@ load_sprite_tilemap_1F3B8:
 
 get_container_offset_F3C1:
 	LDA	objectIdx_318
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	data_2
 	STA	data_2
@@ -307,7 +306,7 @@ get_container_ptr_F3D0:
 
 get_tilemap_offset_F3DB:
 	LDA	objMapIdx_316
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	ptr_0
 	STA	ptr_0

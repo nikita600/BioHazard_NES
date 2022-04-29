@@ -73,12 +73,10 @@ sub_3F76B:
 
 loc_3F7CC:
 	LDA	byte_360
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	STA	tilemapTypeUnk_30B
 	LDA	byte_361
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	tilemapTypeUnk_30B
 	TAY
@@ -94,9 +92,7 @@ loc_3F7E3:
 	CMP	#0
 	BNE	loc_3F7FE
 	LDA	inv_spr_dscr1_30C
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	TAY
 	JSR	sub_3F8FA
 	JMP	loc_3F820
@@ -106,9 +102,7 @@ loc_3F7FE:
 	CMP	#1
 	BNE	loc_3F80F
 	LDA	inv_spr_dscr1_30C
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	TAY
 	JSR	sub_3F918
 	JMP	loc_3F820
@@ -149,8 +143,7 @@ loc_3F844:
 	CPY	#0
 	BEQ	loc_3F856
 	LDA	byte_35E
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
@@ -160,8 +153,7 @@ loc_3F844:
 
 loc_3F856:
 	LDA	tilemapWidth_308
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	CLC
 	ADC	ptr_0
 	STA	ptr_0

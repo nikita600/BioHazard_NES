@@ -198,7 +198,7 @@ loc_2D23E:
 
 loc_2D243:
 	LDA	tilemapWidth_308
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	(ptr_0),Y
 	CMP	#0
@@ -223,7 +223,7 @@ loc_2D260:
 
 
 	LDA	tilemapWidth_308
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
@@ -281,7 +281,7 @@ loc_2D29C:
 loc_2D2F6:
 			; sub_2D1CB+126j
 	LDA	tilemapWidth_308
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
@@ -424,7 +424,7 @@ loc_2D40B:
 	BEQ	loc_2D435
 	BCS	loc_2D435
 	LDA	byte_35E
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
@@ -439,7 +439,7 @@ loc_2D435:
 	to_stack data_2
 	to_stack data_3
 	LDA	byte_35E
-	ASL	A
+	mult_a_by_2
 	STA	tilemapTypeUnk_30B
 	JMP	loc_2D49D
 ; ---------------------------------------------------------------------------
@@ -479,7 +479,7 @@ loc_2D471:
 	AND	#$E0 
 	STA	data_2
 	LDA	byte_35E
-	ASL	A
+	mult_a_by_2
 	SEC
 	SBC	tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
@@ -646,12 +646,10 @@ sub_2E244:
 
 loc_2E2A5:
 	LDA	byte_360
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	STA	tilemapTypeUnk_30B
 	LDA	byte_361
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	tilemapTypeUnk_30B
 	TAY
@@ -667,9 +665,7 @@ loc_2E2BC:
 	CMP	#0
 	BNE	loc_2E2D7
 	LDA	inv_spr_dscr1_30C
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	TAY
 	JSR	sub_2E3D3
 	JMP	loc_2E2F9
@@ -679,9 +675,7 @@ loc_2E2D7:
 	CMP	#1
 	BNE	loc_2E2E8
 	LDA	inv_spr_dscr1_30C
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	TAY
 	JSR	sub_2E3F1
 	JMP	loc_2E2F9
@@ -722,8 +716,7 @@ loc_2E31D:
 	CPY	#0
 	BEQ	loc_2E32F
 	LDA	byte_35E
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
@@ -733,8 +726,7 @@ loc_2E31D:
 
 loc_2E32F:
 	LDA	tilemapWidth_308
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	CLC
 	ADC	ptr_0
 	STA	ptr_0

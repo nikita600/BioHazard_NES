@@ -17,7 +17,7 @@ switch_case_8035:
 	LDA	bank_command_346
 	CMP	#$FF
 	BEQ	locret_12805A
-	ASL	A
+	mult_a_by_2
 	TAX
 	set_inx ptr_0, {CommandPtrs_12805B,X}
 	set ptr_1, {CommandPtrs_12805B,X}
@@ -844,8 +844,7 @@ loc_12853B:
 	SBC	#$40 
 
 loc_128549:
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	TAX
 	LDA	byte_12858A,Y
 	LDA	byte_1285D2,Y
@@ -1111,7 +1110,7 @@ sub_128955:
 	LDA	inv_sprite_idx_31C
 	SEC
 	SBC	#$2A 
-	ASL	A
+	mult_a_by_2
 	TAX
 	set byte_475, {byte_129255,X}
 	set byte_43F, #0
@@ -1319,13 +1318,12 @@ loc_128B4B:
 	LDA	inv_sprite_idx_31C
 	SEC
 	SBC	#$2A 
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	byte_129006,Y
 	SEC
 	SBC	byte_43F
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	STA	tilemapTypeUnk_30B
 	LDA	#$80 
 	SEC
@@ -1347,13 +1345,12 @@ loc_128B4B:
 	LDA	inv_sprite_idx_31C
 	SEC
 	SBC	#$2A 
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	byte_129006,Y
 	SEC
 	SBC	byte_43F
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	STA	tilemapTypeUnk_30B
 	LDA	#$80 
 	CLC
@@ -1390,8 +1387,7 @@ loc_128BFB:
 	LDA	byte_43F
 	CLC
 	ADC	#1
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	STA	tilemapTypeUnk_30B
 	LDA	#$80 
 	SEC
@@ -1413,8 +1409,7 @@ loc_128BFB:
 	LDA	byte_43F
 	CLC
 	ADC	#1
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	STA	tilemapTypeUnk_30B
 	LDA	#$80 
 	CLC
@@ -1706,7 +1701,7 @@ sub_128FC1:
 	LDA	inv_sprite_idx_31C
 	SEC
 	SBC	#$2A 
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	byte_129006,Y
 	CMP	byte_43F
@@ -1768,8 +1763,7 @@ loc_129069:
 	LDA	byte_543
 	SEC
 	SBC	#1
-	ASL	A
-	ASL	A
+	mult_a_by_4
 
 loc_129071:
 	CLC
@@ -1948,7 +1942,7 @@ sub_129186:
 	LDA	inv_sprite_idx_31C
 	SEC
 	SBC	#$2A 
-	ASL	A
+	mult_a_by_2
 	TAX
 	INX
 
@@ -2139,7 +2133,7 @@ loc_12A69D:
 	to_stack data_2
 	to_stack data_3
 	LDA	inv_spr_dscr1_30C
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	data_2
 	STA	data_2
@@ -2371,7 +2365,7 @@ loc_12A8C1:
 
 loc_12A8D3:
 	LDA	inv_spr_dscr1_30C
-	ASL	A
+	mult_a_by_2
 	TAY
 	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
@@ -5940,10 +5934,7 @@ sub_12C1B8:
 	LDA	#3
 	SEC
 	SBC	byte_577
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_16
 	TAY
 ; End of function sub_12C1B8
 
@@ -7901,7 +7892,7 @@ sub_12D070:
 loc_12D084:
 	set objMapIdx_316, #$25 
 	LDA	byte_372
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	byte_12D11C,Y
 	CLC
@@ -7938,7 +7929,7 @@ sub_12D0C2:
 loc_12D0D6:
 	set objMapIdx_316, #$25 
 	LDA	byte_372
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	byte_12D114,Y
 	CLC
@@ -8201,7 +8192,7 @@ loc_12D2D6:
 	TAX
 	set inv_itemPrev_idx_31D, {byte_12E869,X}
 	LDA	byte_372
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	byte_12E851,Y
 	LSR	A
@@ -8246,7 +8237,7 @@ sub_12D319:
 sub_12D329:
 	
 	LDA	byte_42E
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	byte_42C
 	CMP	byte_532
@@ -8258,7 +8249,7 @@ sub_12D329:
 loc_12D33A:
 	STA	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
-	ASL	A
+	mult_a_by_2
 	TAX
 	set_inx tilemap_size_307, {byte_12E851,X}
 	LDA	byte_12E851,X
@@ -8647,11 +8638,7 @@ loc_12D699:
 	set byte_317, #0
 	set objMapIdx_316, #$30 
 	LDA	byte_372
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_32
 	CLC
 	ADC	#$84 
 	CLC
@@ -8962,7 +8949,7 @@ sub_12D8DD:
 	LDA	unk_502,X
 	PHA
 	LDA	byte_42E
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	byte_42C
 	CMP	byte_532
@@ -8983,7 +8970,7 @@ loc_12D910:
 	from_stack inv_spr_dscr1_30C
 	from_stack tilemapTypeUnk_30B
 	LDA	byte_42E
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	byte_42C
 	TAY
@@ -9075,7 +9062,7 @@ loc_12D9C9:
 
 loc_12D9DA:
 	TYA
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	byte_12E851,Y
 	LSR	A
@@ -9107,7 +9094,7 @@ sub_12D9F7:
 loc_12D9FB:
 	TXA
 	PHA
-	ASL	A
+	mult_a_by_2
 	TAX
 	LDA	byte_12E851,X
 	LSR	A
@@ -9174,7 +9161,7 @@ loc_12DA5E:
 	set inv_itemPrev_idx_31D, {byte_12E869,X}
 	from_stack_to_x
 	PHA
-	ASL	A
+	mult_a_by_2
 	TAX
 	LDA	byte_12E851,X
 	LSR	A
@@ -9315,7 +9302,7 @@ loc_12DB6C:
 
 loc_12DB75:
 	LDA	byte_42E
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	byte_42C
 	CMP	byte_532
@@ -9366,7 +9353,7 @@ loc_12DBCC:
 	BNE	loc_12DC0F
 	JSR	sub_12ED20
 	LDA	byte_42E
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	byte_42C
 	STA	byte_47B
@@ -9559,8 +9546,7 @@ sub_12DD0A:
 
 loc_12DD1E:
 	LDA	byte_42E
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	CLC
 	ADC	byte_42C
 	CLC
@@ -9800,7 +9786,7 @@ sub_12DFA5:
 ; FUNCTION CHUNK AT E166 SIZE 0000021E BYTES
 
 	LDA	byte_42E
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	byte_42C
 	TAY
@@ -10388,7 +10374,7 @@ loc_12E368:
 
 sub_12E384:
 	LDA	byte_42E
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	byte_42C
 	TAY
@@ -10402,7 +10388,7 @@ sub_12E384:
 	JSR	sub_12E3D4
 	JSR	sub_12ED29
 	LDA	byte_42E
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	byte_42C
 	TAY
@@ -10593,8 +10579,7 @@ sub_12E4CD:
 
 loc_12E4EE:
 	LDA	byte_42E
-	ASL	A
-	ASL	A
+	mult_a_by_4
 	CLC
 	ADC	byte_42C
 	CLC
@@ -10983,7 +10968,7 @@ byte_12E869:
 
 sub_12E8A5:
 	LDA	byte_42E
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	byte_42C
 	CMP	byte_532
@@ -12090,7 +12075,7 @@ sub_12F168:
 	
 	set objMapIdx_316, #$2A 
 	LDA	byte_372
-	ASL	A
+	mult_a_by_2
 	TAY
 	set_iny byte_36A, {byte_12F28B,Y}
 	set byte_366, {byte_12F28B,Y}
@@ -12103,7 +12088,7 @@ sub_12F168:
 	JSR	exec_b1_c1_128394
 	set objMapIdx_316, #$2B 
 	LDA	byte_372
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	byte_12F28B,Y
 	CLC
@@ -12137,7 +12122,7 @@ loc_12F1D0:
 	JSR	exec_b1_c1_128394
 	set objMapIdx_316, #$2C 
 	LDA	byte_372
-	ASL	A
+	mult_a_by_2
 	TAY
 	set_iny byte_36A, {byte_12F28B,Y}
 	LDA	byte_12F28B,Y
@@ -12153,7 +12138,7 @@ loc_12F1D0:
 	JSR	exec_b1_c1_128394
 	set objMapIdx_316, #$2D 
 	LDA	byte_372
-	ASL	A
+	mult_a_by_2
 	TAY
 	LDA	byte_12F28B,Y
 	CLC
@@ -12250,7 +12235,7 @@ loc_12F30E:
 	set_ptr off_12F53A
 
 	LDA	byte_420
-	ASL	A
+	mult_a_by_2
 	CLC
 	ADC	ptr_0
 	STA	ptr_0
@@ -12584,9 +12569,7 @@ sub_12F583:
 	
 	set objMapIdx_316, #$3C 
 	LDA	byte_421
-	ASL	A
-	ASL	A
-	ASL	A
+	mult_a_by_8
 	CLC
 	ADC	#$70 
 	STA	byte_36A

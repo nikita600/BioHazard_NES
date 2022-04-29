@@ -171,7 +171,6 @@ loc_2D1DF:
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	add_to_byte_clc data_2, text_idx_35C
-
 	add_to_byte data_3, #0
 
 	LDY	#0
@@ -220,7 +219,6 @@ loc_2D251:
 
 loc_2D260:
 	add_to_byte_clc ptr_0, #2
-
 	add_to_byte ptr_1, #0
 
 
@@ -358,7 +356,6 @@ loc_2D378:
 	from_stack char_type_id_35D
 	from_stack text_idx_35C
 	add_to_byte_clc text_idx_35C, #1
-
 	add_to_byte char_type_id_35D, #0
 
 	set byte_364, #0
@@ -628,7 +625,6 @@ sub_2E244:
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	add_to_byte_clc data_2, text_idx_35C
-
 	add_to_byte data_3, #0
 
 	LDY	#0
@@ -889,7 +885,6 @@ loc_2E44E:
 	CPY	#0
 	BEQ	loc_2E466
 	add_to_byte_clc ppu_unk_byte_309, byte_363
-
 	INC	ppu_unk_byte_309
 	INC	ppu_unk_byte_309
 	DEY
@@ -979,7 +974,6 @@ loc_2E4E0:
 
 loc_2E4F1:
 	add_to_byte_clc data_2, tilemap_size_307
-
 	add_to_byte data_3, #0
 
 	RTS
@@ -1134,7 +1128,6 @@ sub_2E781:
 	ROL	data_3
 
 	add_to_byte_clc ptr_0, data_2
-
 	add_to_byte ptr_1, data_3
 
 	

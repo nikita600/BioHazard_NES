@@ -13,7 +13,6 @@ getTilemapPtr:
 	ROL	data_3
 
 	add_to_byte_clc ptr_0, data_2
-
 	add_to_byte ptr_1, data_3
 
 
@@ -32,7 +31,6 @@ getOffset_F8CC: ; unk data
 	BEQ	size_20_7F8DF
 	
 	add_to_byte_clc ptr_0, #$C0 
-
 	add_to_byte ptr_1, #3
 
 
@@ -51,8 +49,6 @@ add_size_7F8E1:
 
 addOffset_7F8F6:
 	add_to_byte_clc ptr_0, mapLineSize_50
-
-
 	add_to_byte ptr_1, #0
 
 
@@ -67,7 +63,6 @@ write_tilemap_line_7F90F:
 	set {tilemapData_4C,X}, {(ptr_0),Y}
 
 	add_to_byte_clc ptr_0, data_3	; entrySize
-
 	add_to_byte ptr_1, #0
 
 	

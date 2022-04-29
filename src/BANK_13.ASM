@@ -1432,7 +1432,6 @@ loc_13DF76:
 	add_to_data $10
 
 	add_to_byte_clc ptr_0, #$10
-
 	add_to_byte ptr_1, #0
 
 
@@ -1562,7 +1561,6 @@ load_sprite_map_13E038:
 	set tilemapHeight_30A, {(ptr_0),Y}
 
 	add_to_byte_clc ptr_0, #2
-
 	add_to_byte ptr_1, #0
 
 
@@ -1588,7 +1586,6 @@ loc_13E0AF:
 
 loc_13E0C4:
 	add_to_byte_clc data_2, tilemap_size_307
-
 	add_to_byte data_3, #0
 
 	set inv_spr_dscr1_30C, #0
@@ -1666,7 +1663,6 @@ loc_13E13F:
 	add_to_data $20
 
 	add_to_byte_clc ptr_0, tilemapWidth_308
-
 	add_to_byte ptr_1, #0
 
 
@@ -1697,12 +1693,10 @@ loc_13E195:
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_13E195
 	add_to_byte_clc data_2, tilemapTypeUnk_30B
-
 	add_to_byte data_3, #0
 
 
 	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
-
 	add_to_byte ptr_1, #0
 
 	

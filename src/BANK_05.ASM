@@ -49,7 +49,6 @@ upload_gfx_to_ppu_5F093:
 	ROL	data_3
 
 	add_to_byte_clc ptr_0, data_2
-
 	add_to_byte ptr_1, data_3
 
 
@@ -86,7 +85,6 @@ loc_5F0EE:
 	BCC	loc_5F0EE
 	
 	add_to_byte_clc ptr_0, #$10
-
 	add_to_byte ptr_1, #0
 
 

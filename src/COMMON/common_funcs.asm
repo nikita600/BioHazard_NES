@@ -190,7 +190,6 @@ loc_FD31:
 
 loc_FD40:		
 	add_to_byte_clc byte_203, #8
-
 	add_to_byte_clc byte_207, #8
 
 
@@ -487,7 +486,6 @@ loc_FF0E:
 	AND	#$7F 
 	STA	scroll_offset_y_47A
 	add_to_byte_clc ppu_scroll_y_305, scroll_offset_y_47A
-
 
 loc_FF20:		
 	from_stack scroll_offset_y_47A

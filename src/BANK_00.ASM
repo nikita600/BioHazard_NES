@@ -904,7 +904,6 @@ loc_8880:
 	CMP	#1
 	BNE	loc_8898
 	add_to_byte_clc byte_366, #8
-
 	add_to_byte byte_367, #0
 
 	JMP	locret_88C1
@@ -925,7 +924,6 @@ loc_8898:
 
 loc_88B0:
 	add_to_byte_clc byte_36A, #8
-
 	add_to_byte byte_36B, #0
 
 
@@ -1269,7 +1267,6 @@ is_B_pressed_8B64:
 	set byte_42C, byte_36A
 	set byte_42D, byte_36B
 	add_to_byte_clc byte_366, #4
-
 	STA	byte_42E
 	add_to_byte byte_367, #0
 
@@ -2245,7 +2242,6 @@ locret_9260:
 sub_9261:
 	JSR	sub_C7C7
 	add_to_byte_clc byte_366, #4
-
 	add_to_byte byte_367, #0
 
 	set sprite_length_30F, #0
@@ -2282,7 +2278,6 @@ loc_92A3:
 
 loc_92B7:
 	add_to_byte_clc byte_42C, #2
-
 	add_to_byte byte_42D, #0
 
 	JMP	loc_92CB
@@ -2320,7 +2315,6 @@ loc_92F4:
 
 loc_9308:
 	add_to_byte_clc byte_42E, #2
-
 	add_to_byte byte_42F, #0
 
 	JMP	loc_931C
@@ -2401,7 +2395,6 @@ sub_939C:
 	LDA	sprite_length_30F
 	BNE	locret_93D4
 	add_to_byte_clc byte_42C, #2
-
 	add_to_byte byte_42D, #0
 
 	INC	byte_430
@@ -2440,7 +2433,6 @@ loc_93FC:
 	LDA	sprite_length_30F
 	BNE	locret_9422
 	add_to_byte_clc byte_42E, #2
-
 	add_to_byte byte_42F, #0
 
 	INC	byte_431
@@ -2952,11 +2944,9 @@ loc_97ED:
 sub_97F8:
 	JSR	sub_C7C7
 	add_to_byte_clc byte_366, #$10
-
 	add_to_byte byte_367, #0
 
 	add_to_byte_clc byte_36A, #8
-
 	add_to_byte byte_36B, #0
 
 	JSR	sub_9824
@@ -2986,7 +2976,6 @@ loc_983F:
 	CMP	#1
 	BNE	loc_9857
 	add_to_byte_clc byte_366, #$10
-
 	add_to_byte byte_367, #0
 
 	JMP	locret_9880
@@ -3007,7 +2996,6 @@ loc_9857:
 
 loc_986F:
 	add_to_byte_clc byte_36A, #$10
-
 	add_to_byte byte_36B, #0
 
 
@@ -3108,7 +3096,6 @@ loc_990D:
 	CMP	#1
 	BNE	loc_9925
 	add_to_byte_clc byte_366, #$10
-
 	add_to_byte byte_367, #0
 
 	JMP	locret_994E
@@ -3129,7 +3116,6 @@ loc_9925:
 
 loc_993D:
 	add_to_byte_clc byte_36A, #$10
-
 	add_to_byte byte_36B, #0
 
 
@@ -3196,7 +3182,6 @@ sub_999A:
 	JSR	sub_C7C7
 	
 	add_to_byte_clc byte_366, #8
-
 	add_to_byte byte_367, #0
 
 	JSR	sub_9824
@@ -3422,7 +3407,6 @@ sub_BD1F:
 
 sub_BD29:
 	add_to_byte_clc tilemapWidth_308, byte_31A
-
 	LDY	byte_31A
 
 loc_BD36:
@@ -4041,7 +4025,6 @@ sub_C7C7:
 	set byte_36A, ppu_scroll_x_304
 	set byte_36B, ppu_unk_byte_302
 	add_to_byte_clc byte_36A, byte_4AD
-
 	add_to_byte byte_36B, #0
 
 	set byte_368, ppu_scroll_y_305
@@ -4055,7 +4038,6 @@ loc_C7FB:
 	CPY	#0
 	BEQ	loc_C814
 	add_to_byte_clc byte_368, #$F0 
-
 	add_to_byte byte_369, #0
 
 	DEY
@@ -4237,7 +4219,6 @@ sub_C921:
 	ROL	data_3
 
 	add_to_byte_clc ptr_0, data_2
-
 	add_to_byte ptr_1, data_3
 
 
@@ -4342,7 +4323,6 @@ loc_C9E9:
 	BCC	loc_C9E9
 
 	add_to_byte_clc ptr_0, #$10
-
 	add_to_byte ptr_1, #0
 
 	
@@ -4707,7 +4687,6 @@ objects_func_CCA7:
 	
 	JSR	sub_C7C7
 	add_to_byte_clc byte_366, #8
-
 	add_to_byte byte_367, #0
 
 	LDX	#0
@@ -5027,7 +5006,6 @@ sub_CF13:
 	from_stack char_type_id_35D
 	from_stack text_idx_35C
 	add_to_byte_clc text_idx_35C, #1
-
 	add_to_byte char_type_id_35D, #0
 
 	DEX
@@ -5270,7 +5248,6 @@ sub_D0AD:
 	to_stack tilemapTypeUnk_30B
 	JSR	sub_C7C7
 	add_to_byte_clc byte_366, #8
-
 	add_to_byte byte_367, #0
 
 	from_stack_to_x
@@ -5509,7 +5486,6 @@ loc_D2C4:
 	JSR	sub_C7C7
 	from_stack_to_x
 	add_to_byte_clc byte_366, #8
-
 	add_to_byte byte_367, #0
 
 	LDA	array_unk_3C5,X
@@ -5686,7 +5662,6 @@ loc_D490:
 	CPY	#0
 	BEQ	loc_D4A2
 	add_to_byte_clc byte_31A, tilemapWidth_308
-
 	DEY
 	JMP	loc_D490
 ; ---------------------------------------------------------------------------
@@ -6457,7 +6432,6 @@ sub_D9E4:
 	CMP	#2
 	BNE	loc_DA0B
 	add_to_byte_clc byte_36A, #$10
-
 	add_to_byte byte_36B, #0
 
 
@@ -6472,7 +6446,6 @@ loc_DA0B:
 	CMP	#0
 	BNE	locret_DA32
 	add_to_byte_clc byte_366, #$10
-
 	add_to_byte byte_367, #0
 
 
@@ -6903,11 +6876,9 @@ loc_DD3B:
 
 sub_DD40:
 	add_to_byte_clc byte_366, #$C
-
 	add_to_byte byte_367, #0
 
 	add_to_byte_clc byte_36A, #8
-
 	add_to_byte byte_36B, #0
 
 	LDA	byte_36A
@@ -7010,7 +6981,6 @@ loc_DDFE:
 	LDA	sprite_length_30F
 	BNE	locret_DE21
 	add_to_byte_clc byte_36A, #8
-
 	add_to_byte byte_36B, #0
 
 	INY
@@ -7025,7 +6995,6 @@ loc_DE22:
 	CMP	#1
 	BNE	loc_DE6A
 	add_to_byte_clc tilemapHeight_30A, #1
-
 	LDA	tilemapHeight_30A
 	ASL	A
 	ASL	A
@@ -7045,7 +7014,6 @@ loc_DE46:
 	LDA	sprite_length_30F
 	BNE	locret_DE69
 	add_to_byte_clc byte_36A, #8
-
 	add_to_byte byte_36B, #0
 
 	INY
@@ -7081,7 +7049,6 @@ loc_DE6A:
 	LDA	sprite_length_30F
 	BNE	locret_DEB3
 	add_to_byte_clc byte_36A, #8
-
 	add_to_byte byte_36B, #0
 
 	JSR	map_update_DEFA
@@ -7103,14 +7070,12 @@ loc_DEB4:
 	add_to_byte byte_367, #0
 
 	add_to_byte_clc byte_36A, #$10
-
 	add_to_byte byte_36B, #0
 
 	JSR	map_update_DEFA
 	LDA	sprite_length_30F
 	BNE	locret_DEF9
 	add_to_byte_clc byte_36A, #8
-
 	add_to_byte byte_36B, #0
 
 	JSR	map_update_DEFA
@@ -7158,7 +7123,6 @@ load_from_C558_DF4B:
 	ROL	data_3
 
 	add_to_byte_clc ptr_0, data_2
-
 	add_to_byte ptr_1, data_3
 
 
@@ -7215,7 +7179,6 @@ get_offset_DFCE:
 	ROL	data_3
 
 	add_to_byte_clc ptr_0, data_2
-
 	add_to_byte ptr_1, data_3
 
 
@@ -7232,7 +7195,6 @@ read_entry_DFF3:
 
 	JSR	sub_C7C7
 	add_to_byte_clc byte_366, #8
-
 	add_to_byte byte_367, #0
 
 	JSR	sub_9824
@@ -8189,7 +8151,6 @@ loc_E797:
 
 loc_E7B1:
 	add_to_byte_clc byte_370, tilemapFrameCount_30D
-
 	add_to_byte byte_371, byte_30E
 
 	JSR	sub_E7F8
@@ -8230,7 +8191,6 @@ sub_E7F8:
 	set_ptr byte_598
 
 	add_to_byte_clc ptr_0, tilemapFrameCount_30D
-
 	add_to_byte ptr_1, byte_30E
 
 	LDY	#0
@@ -8254,7 +8214,6 @@ sub_E827:
 	set_ptr byte_598
 
 	add_to_byte_clc ptr_0, tilemapFrameCount_30D
-
 	add_to_byte ptr_1, byte_30E
 
 
@@ -9356,7 +9315,6 @@ loc_ED9F:
 
 sub_EDA2:
 	add_to_byte_clc data_2, tilemap_size_307
-
 	add_to_byte data_3, #0
 
 	RTS
@@ -9384,7 +9342,6 @@ loc_EDC9:
 	AND	#1
 	BEQ	locret_EDD5
 	add_to_byte_clc data_3, #4
-
 
 locret_EDD5:
 	RTS
@@ -9763,9 +9720,7 @@ loc_F0C9:
 	CMP	#1
 	BNE	loc_F0E0
 	add_to_byte_clc ptr_1, #4
-
 	add_to_byte_clc data_3, #4
-
 
 loc_F0E0:
 	LDA	ppu_scroll_y_305
@@ -9828,7 +9783,6 @@ loc_F152:
 	set_inx {ppu_data_70,X}, data_3
 	set_inx {ppu_data_70,X}, data_2
 	add_to_byte_clc tilemapHeight_30A, inv_spr_dscr1_30C
-
 
 loc_F17F:
 	set_inx {ppu_data_70,X}, {byte_4,Y}
@@ -10195,7 +10149,6 @@ get_tilemap_entry_offset_F48E:
 	ROL	data_3
 	
 	add_to_byte_clc ptr_0, data_2
-
 	add_to_byte ptr_1, data_3
 
 
@@ -10551,7 +10504,6 @@ loc_F6EC:
 	AND	#3
 	BEQ	loc_F700
 	add_to_byte_clc tilemap_size_307, inv_spr_dscr1_30C
-
 	JMP	loc_F70A
 ; ---------------------------------------------------------------------------
 
@@ -10627,7 +10579,6 @@ loc_F792:
 
 loc_F7A6:
 	add_to_byte_clc tilemap_size_307, inv_spr_dscr1_30C
-
 
 loc_F7B0:
 	LDX	#0

@@ -1456,7 +1456,6 @@ loc_128CD5:
 	set byte_36A, ppu_scroll_x_304
 	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$C0 
-
 	add_to_byte byte_36B, #0
 
 	set sprite_secondByte_31B, #0
@@ -1499,7 +1498,6 @@ loc_128D35:
 	set byte_36A, ppu_scroll_x_304
 	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$C8 
-
 	add_to_byte byte_36B, #0
 
 	set sprite_secondByte_31B, #0
@@ -1523,7 +1521,6 @@ loc_128D8F:
 	set byte_36A, ppu_scroll_x_304
 	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$C8 
-
 	add_to_byte byte_36B, #0
 
 	set sprite_secondByte_31B, #0
@@ -1541,7 +1538,6 @@ loc_128D8F:
 	set byte_36A, ppu_scroll_x_304
 	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$D0 
-
 	add_to_byte byte_36B, #0
 
 	set sprite_secondByte_31B, #0
@@ -1563,7 +1559,6 @@ sub_128E24:
 	set byte_36A, ppu_scroll_x_304
 	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$20 
-
 	add_to_byte byte_36B, #0
 
 	set sprite_secondByte_31B, #0
@@ -1580,14 +1575,12 @@ sub_128E24:
 
 loc_128E6C:
 	add_to_byte_clc objMapIdx_316, #7
-
 	set byte_54B, #1
 	JMP	loc_128E8B
 ; ---------------------------------------------------------------------------
 
 loc_128E7D:
 	add_to_byte_clc objMapIdx_316, #$E
-
 	set byte_54B, #2
 
 loc_128E8B:
@@ -1606,7 +1599,6 @@ loc_128EA3:
 
 loc_128EA6:
 	add_to_byte_clc objMapIdx_316, byte_54C
-
 	set objectIdx_318, #4
 	LDX	objMapIdx_316
 	set byte_317, {byte_128F59,X}
@@ -1624,7 +1616,6 @@ sub_128EC2:
 	set byte_36A, ppu_scroll_x_304
 	set byte_36B, #0
 	add_to_byte_clc byte_36A, #$20 
-
 	add_to_byte byte_36B, #0
 
 	set sprite_secondByte_31B, #0
@@ -1637,7 +1628,6 @@ sub_128EC2:
 	LDA	byte_54A
 	BEQ	loc_128F0E
 	add_to_byte_clc objMapIdx_316, #3
-
 
 loc_128F0E:
 	LDX	objMapIdx_316
@@ -2126,7 +2116,6 @@ loc_12A64A:
 	ROL	data_3
 
 	add_to_byte_clc ptr_0, data_2
-
 	add_to_byte ptr_1, data_3
 
 
@@ -2400,7 +2389,6 @@ loc_12A8E3:
 
 loc_12A8FD:
 	add_to_byte_clc byte_370, tilemapFrameCount_30D
-
 	add_to_byte byte_371, byte_30E
 
 	JSR	sub_12A944
@@ -2441,7 +2429,6 @@ sub_12A944:
 	set_ptr byte_598
 
 	add_to_byte_clc ptr_0, tilemapFrameCount_30D
-
 	add_to_byte ptr_1, byte_30E
 
 
@@ -7644,7 +7631,6 @@ loc_12CDA2:
 
 loc_12CDEA:
 	add_to_byte_clc ppu_unk_byte_309, #4
-
 	add_to_byte_clc sprite_secondByte_31B, #$18
 
 	INY
@@ -7866,7 +7852,6 @@ loc_12CFE6:
 	LDA	byte_372
 	BEQ	loc_12D003
 	add_to_byte_clc ppu_unk_byte_309, #4
-
 	add_to_byte_clc sprite_secondByte_31B, #$18
 
 	DEC	byte_372
@@ -8011,7 +7996,6 @@ sub_12D139:
 	set_ptr _SAVE_RAM
 
 	add_to_byte_clc ptr_0, #$14
-
 	add_to_byte ptr_1, #0
 
 
@@ -8022,7 +8006,6 @@ loc_12D151:
 	BEQ	locret_12D166
 
 	add_to_byte_clc ptr_0, #$58 
-
 	add_to_byte ptr_1, #2
 
 
@@ -8059,7 +8042,6 @@ loc_12D17B:
 	BCC	loc_12D17B
 
 	add_to_byte_clc ptr_0, #$14
-
 	add_to_byte ptr_1, #0
 
 
@@ -8078,13 +8060,11 @@ loc_12D1BC:
 	BNE	loc_12D1BC
 	add_to_byte_clc ptr_1, #4
 
-
 loc_12D1CD:
 	set_iny {(ptr_0),Y}, {byte_5A4,Y}
 	CPY	#0
 	BNE	loc_12D1CD
 	add_to_byte_clc ptr_1, #4
-
 
 loc_12D1DE:
 	set_iny {(ptr_0),Y}, {byte_6A4,Y}
@@ -8107,13 +8087,11 @@ loc_12D1EE:
 	BNE	loc_12D1EE
 	add_to_byte_clc ptr_1, #4
 
-
 loc_12D1FF:
 	set_iny {byte_5A4,Y}, {(ptr_0),Y}
 	CPY	#0
 	BNE	loc_12D1FF
 	add_to_byte_clc ptr_1, #4
-
 
 loc_12D210:
 	set_iny {byte_6A4,Y}, {(ptr_0),Y}
@@ -8176,7 +8154,6 @@ sub_12D261:
 sub_12D26B:
 	
 	add_to_byte_clc tilemapWidth_308, byte_31A
-
 	LDY	byte_31A
 
 loc_12D278:
@@ -8240,7 +8217,6 @@ loc_12D2D6:
 	JSR	sub_128358
 	JSR	sub_128326
 	add_to_byte_clc sprite_secondByte_31B, #$11
-
 	INC	byte_372
 	LDA	byte_372
 	CMP	byte_532
@@ -8370,7 +8346,6 @@ loc_12D3D7:
 	LDA	data_3
 	BEQ	loc_12D423
 	add_to_byte_clc tilemap_size_307, #4
-
 	LDA	data_3
 	CLC
 	ADC	#$32 
@@ -8399,7 +8374,6 @@ loc_12D423:
 	LDA	data_2
 	BEQ	loc_12D473
 	add_to_byte_clc tilemap_size_307, #8
-
 
 loc_12D434:
 	LDA	data_2
@@ -8430,7 +8404,6 @@ loc_12D473:
 	LDA	data_2
 	BNE	loc_12D484
 	add_to_byte_clc tilemap_size_307, #$C
-
 
 loc_12D484:
 	
@@ -9096,7 +9069,6 @@ loc_12D9C9:
 	CPX	#0
 	BEQ	loc_12D9DA
 	add_to_byte_clc sprite_secondByte_31B, #$11
-
 	DEX
 	JMP	loc_12D9C9
 ; ---------------------------------------------------------------------------
@@ -9189,7 +9161,6 @@ loc_12DA48:
 	CMP	#0
 	BEQ	loc_12DA5E
 	add_to_byte_clc sprite_secondByte_31B, #$11
-
 	DEC	tilemapTypeUnk_30B
 	JMP	loc_12DA48
 ; ---------------------------------------------------------------------------
@@ -9242,7 +9213,6 @@ loc_12DA5E:
 
 loc_12DABA:
 	add_to_byte_clc sprite_secondByte_31B, #$11
-
 	from_stack_to_x
 	INX
 	CPX	tilemapTypeUnk_30B
@@ -9605,7 +9575,6 @@ loc_12DD1E:
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	add_to_byte_clc ppu_unk_byte_309, byte_547
-
 	add_to_byte_clc tilemap_size_307, byte_547
 
 	JSR	sub_12E829
@@ -9628,7 +9597,6 @@ loc_12DD1E:
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
 	add_to_byte_clc byte_31A, #4
-
 	set objMapIdx_316, #$2C 
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
@@ -9639,7 +9607,6 @@ loc_12DD1E:
 	SBC	byte_547
 	STA	ppu_unk_byte_309
 	add_to_byte_clc tilemap_size_307, byte_547
-
 	LDA	byte_42E
 	CMP	#4
 	BCC	loc_12DDE9
@@ -9653,7 +9620,6 @@ loc_12DDE9:
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
 	add_to_byte_clc byte_31A, #4
-
 	set objMapIdx_316, #$2D 
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
@@ -9682,7 +9648,6 @@ loc_12DE34:
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
 	add_to_byte_clc byte_31A, #4
-
 	RTS
 ; End of function sub_12DD0A
 
@@ -9715,14 +9680,12 @@ loc_12DE64:
 
 loc_12DE7D:
 	add_to_byte_clc objMapIdx_316, #7
-
 	set byte_54B, #1
 	JMP	loc_12DE9C
 ; ---------------------------------------------------------------------------
 
 loc_12DE8E:
 	add_to_byte_clc objMapIdx_316, #$E
-
 	set byte_54B, #2
 
 loc_12DE9C:
@@ -9749,10 +9712,8 @@ sub_12DEB5:
 	BEQ	loc_12DEC9
 	add_to_byte_clc objMapIdx_316, #3
 
-
 loc_12DEC9:
 	add_to_byte_clc objMapIdx_316, #$15
-
 	set byte_31A, #$30 
 	set sprite_secondByte_31B, #0
 	STA	byte_317
@@ -10512,7 +10473,6 @@ loc_12E413:
 	CPY	#0
 	BEQ	loc_12E424
 	add_to_byte_clc sprite_secondByte_31B, #$11
-
 	DEY
 	JMP	loc_12E413
 ; ---------------------------------------------------------------------------
@@ -10649,7 +10609,6 @@ loc_12E4EE:
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	add_to_byte_clc tilemap_size_307, #$C
-
 	add_to_byte_clc ppu_unk_byte_309, byte_547
 
 	JSR	sub_12E829
@@ -10677,7 +10636,6 @@ loc_12E4EE:
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	add_to_byte_clc ppu_unk_byte_309, #$C
-
 	add_to_byte_clc tilemap_size_307, byte_547
 
 	JSR	sub_12E829
@@ -10695,7 +10653,6 @@ loc_12E4EE:
 	SBC	byte_547
 	STA	tilemap_size_307
 	add_to_byte_clc ppu_unk_byte_309, #$C
-
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
 	from_stack tilemap_size_307
@@ -12168,7 +12125,6 @@ loc_12F1C7:
 	
 	add_to_byte_clc byte_36A, #$10
 
-
 loc_12F1D0:
 	INY
 	set byte_366, {byte_12F28B,Y}
@@ -12218,7 +12174,6 @@ loc_12F1D0:
 loc_12F258:
 	
 	add_to_byte_clc byte_36A, #$10
-
 
 loc_12F261:
 	INY
@@ -12469,12 +12424,10 @@ loc_12F495:
 	CPY	tilemapTypeUnk_30B
 	BCC	loc_12F495
 	add_to_byte_clc data_2, tilemapTypeUnk_30B
-
 	add_to_byte data_3, #0
 
 	
 	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
-
 	add_to_byte ptr_1, #0
 
 
@@ -12531,7 +12484,6 @@ sub_12F4E4:
 	BCS	locret_12F513
 	BEQ	locret_12F513
 	add_to_byte_clc byte_372, #$B
-
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -12541,7 +12493,6 @@ loc_12F503:
 	BCS	locret_12F513
 	BEQ	locret_12F513
 	add_to_byte_clc byte_372, #$A
-
 	RTS
 ; ---------------------------------------------------------------------------
 

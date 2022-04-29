@@ -52,7 +52,6 @@ sub_3F76B:
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	add_to_byte_clc data_2, text_idx_35C
-
 	add_to_byte data_3, #0
 
 	LDY	#0
@@ -312,7 +311,6 @@ loc_3F975:
 	CPY	#0
 	BEQ	loc_3F98D
 	add_to_byte_clc ppu_unk_byte_309, byte_363
-
 	INC	ppu_unk_byte_309
 	INC	ppu_unk_byte_309
 	DEY
@@ -402,7 +400,6 @@ loc_3FA07:
 
 loc_3FA18:
 	add_to_byte_clc data_2, tilemap_size_307
-
 	add_to_byte data_3, #0
 
 	RTS

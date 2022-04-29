@@ -75,7 +75,7 @@ loc_13808A:
 ; ---------------------------------------------------------------------------
 
 loc_13808D:
-	; bank_switch_8000+6Fj ...
+
 	set bank_command_346, #$FF
 	set bank_to_344, bank_from_343
 	JMP	bank_switch_8000
@@ -274,7 +274,7 @@ apu_update_13D4F9:
 	DEC	apu_unk_75B
 
 locret_13D533:
-	; apu_update_13D4F9+1Cj
+
 	RTS
 ; End of function apu_update_13D4F9
 
@@ -303,7 +303,7 @@ apu_func_13D534:
 	JSR	apu_func_13D575
 
 locret_13D55B:
-	; apu_func_13D534+21j ...
+
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -331,7 +331,7 @@ loc_13D565:
 
 
 apu_func_13D575:
-	; music_func_13D484-Cp	...
+
 	LDA	apu_unk_758,X
 	BNE	locret_13D55B
 	LDA	apu_dat_13D421,X
@@ -349,7 +349,7 @@ loc_13D58D:
 	LDY	apu_unk_75C,X
 
 loc_13D59A:
-	; apu_func_13D575+B2j ...
+
 	LDA	(apu_unk_FE),Y
 	CMP	#$FC 
 	BCC	loc_13D5F5
@@ -372,7 +372,7 @@ loc_13D5AE:
 	set tri_count_746, {(apu_unk_FE),Y}
 
 loc_13D5BA:
-	; apu_func_13D575+7Dj
+
 	INY
 	TYA
 	STA	apu_unk_75C,X
@@ -435,7 +435,7 @@ loc_13D62A:
 	set apu_unk_747, {(apu_unk_FE),Y}
 
 loc_13D636:
-	; apu_func_13D575+E0j ...
+
 	INY
 	TYA
 	STA	apu_unk_75C,X
@@ -461,7 +461,7 @@ loc_13D657:
 ; ---------------------------------------------------------------------------
 
 loc_13D662:
-	; apu_func_13D575+96j
+
 	CPX	#2
 	BCS	loc_13D67C
 	LDA	apu_pulse1_env_744,X
@@ -475,7 +475,7 @@ loc_13D674:
 	JSR	music_func_13DB65
 
 loc_13D67C:
-	; apu_func_13D575+FDj
+
 	set apu_unk_FE, apu_unk_76A
 	set apu_unk_FF, apu_unk_76B
 	LDA	apu_unk_760,X
@@ -644,7 +644,7 @@ music_func_13D7C3:
 	JSR	music_func_13D804
 
 locret_13D7EA:
-	; music_func_13D7C3+21j ...
+
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -672,7 +672,7 @@ loc_13D7F4:
 
 
 music_func_13D804:
-	; music_func_13D484+69p ...
+
 	LDA	apu_unk_727,X
 	BNE	locret_13D7EA
 	LDA	apu_dat_13D421,X
@@ -690,7 +690,7 @@ loc_13D81C:
 	LDY	apu_unk_72B,X
 
 loc_13D829:
-	; music_func_13D804+B2j ...
+
 	LDA	(apu_unk_FE),Y
 	CMP	#$FC 
 	BCC	loc_13D884
@@ -713,7 +713,7 @@ loc_13D83D:
 	set apu_unk_715, {(apu_unk_FE),Y}
 
 loc_13D849:
-	; music_func_13D804+7Dj
+
 	INY
 	TYA
 	STA	apu_unk_72B,X
@@ -776,7 +776,7 @@ loc_13D8B9:
 	set apu_unk_716, {(apu_unk_FE),Y}
 
 loc_13D8C5:
-	; music_func_13D804+E0j ...
+
 	INY
 	TYA
 	STA	apu_unk_72B,X
@@ -802,7 +802,7 @@ loc_13D8E6:
 ; ---------------------------------------------------------------------------
 
 loc_13D8F1:
-	; music_func_13D804+96j
+
 	CPX	#2
 	BCS	loc_13D90B
 	LDA	pulse1_env_713,X
@@ -816,7 +816,7 @@ loc_13D903:
 	JSR	music_func_13DB8A
 
 loc_13D90B:
-	; music_func_13D804+FDj
+
 	set apu_unk_FE, apu_ptr_768
 	set apu_unk_FF, apu_ptr_769
 	LDA	apu_unk_72F,X
@@ -876,7 +876,7 @@ loc_13D975:
 	STA	_APU_STATUS
 
 locret_13D987:
-	; music_func_13D804+159j
+
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1013,7 +1013,7 @@ loc_13DA99:
 	set {apu_unk_756,X}, #1
 
 loc_13DAB3:
-	; apu_update_pulse1_13DA62+35j	...
+
 	LDA	apu_pulse1_env_744,X
 	AND	#$F0 
 	ORA	apu_unk_705
@@ -1031,7 +1031,7 @@ loc_13DAB3:
 	set {_APU_PULSE1_ENV,Y}, {apu_pulse1_env_744,X}
 
 locret_13DADB:
-	; apu_update_pulse1_13DA62+Bj ...
+
 	RTS
 ; End of function apu_update_pulse1_13DA62
 
@@ -1084,7 +1084,7 @@ loc_13DB1A:
 	set {apu_unk_725,X}, #1
 
 loc_13DB34:
-	; music_func_13DAE3+35j ...
+
 	LDA	pulse1_env_713,X
 	AND	#$F0 
 	ORA	apu_unk_705
@@ -1105,7 +1105,7 @@ loc_13DB34:
 	set {_APU_PULSE1_ENV,Y}, {pulse1_env_713,X}
 
 locret_13DB64:
-	; music_func_13DAE3+Bj	...
+
 	RTS
 ; End of function music_func_13DAE3
 
@@ -1114,7 +1114,7 @@ locret_13DB64:
 
 
 music_func_13DB65:
-	; apu_update_pulse1_13DA62+64p	...
+
 	LDA	apu_unk_752,X
 	CMP	#4
 	BCS	locret_13DB89
@@ -1145,7 +1145,7 @@ locret_13DB89:
 
 
 music_func_13DB8A:
-	; music_func_13DAE3+64p ...
+
 	LDA	apu_unk_721,X
 	CMP	#4
 	BCS	locret_13DBAE
@@ -1220,7 +1220,7 @@ loc_13DBFD:
 	STA	apu_unk_704
 
 loc_13DC18:
-	; apu_func_13DBAF+54j ...
+
 	INX
 	CPX	#4
 	BCC	loc_13DBB1
@@ -1256,14 +1256,14 @@ music_update_state_13DC1E:
 	DEC	apu_unk_72A
 
 locret_13DC5B:
-	; music_update_state_13DC1E+1Fj
+
 	RTS
 ; End of function music_update_state_13DC1E
 
 ; ---------------------------------------------------------------------------
 apu_dat_13DC5C:.BYTE $78,$78,$78,$78,$70,$71,$70,$71,$38,$38,$39,$38,$25,$26,$25,$26
 	
-	; apu_func_13D534+Fr ...
+
 	.BYTE $16,$17,$16,$17,$12,$13,$12,$13,$10,$10,$10,$10, $E, $E, $E, $E
 	.BYTE  $C, $D, $C, $D, $B, $B, $C, $B, $A, $A, $A, $B,	9,  9, $A,  9
 	.BYTE	8,  9,	8,  9,	8,  8,	8,  8,	7,  8,	7,  8,	7,  7,	7,  7
@@ -1281,57 +1281,57 @@ apu_dat_13DC5C:.BYTE $78,$78,$78,$78,$70,$71,$70,$71,$38,$38,$39,$38,$25,$26,$25
 	.BYTE	1,  1,	1,  2,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 pulse1_time_13DD5C:.BYTE $B0,$50,$F4,$A0,$50,  0,$B8,$78,$38,$F8,$C0,$88,$58,$28,$FA,$D0
 	
-	; apu_func_13D575+204r	...
+
 	.BYTE $A8,$80,$5C,$3C,$1C,$FC,$E0,$C4,$AC,$94,$7D,$68,$54,$40,$2E,$1E
 	.BYTE  $E,$FE,$F0,$E2,$D6,$CA,$BE,$B4,$AA,$A0,$97,$8F,$87,$7F,$78,$71
 	.BYTE $6B,$65,$5F,$5A,$55,$50,$4B,$47,$43,$3F,$3C,$38,$35,$32,$2F,$2D
 	.BYTE $2A,$28,$25,$23,$21,$1F,$1E,$1C
 pulse1_len_13DDA4:.BYTE	  6,  6,  5,  5,  5,  5,  4,  4,  4,  3,  3,  3,  3,  3,  2,  2
 	
-	; apu_func_13D575+20Ar	...
+
 	.BYTE	2,  2,	2,  2,	2,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 	.BYTE	1,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 	.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 	.BYTE	0,  0,	0,  0,	0,  0,	0,  0
 pulse_env_13DDEC:.BYTE	 0	
-	; music_func_13D804+1A4r
+
 pulse_sweep_13DDED:.BYTE   0	
-	; music_func_13D804+1AAr
+
 pulse_time_13DDEE:.BYTE	  0	
-	; music_func_13D804+1B0r
+
 pulse_len_13DDEF:.BYTE	 0,$8F,$85,$77,$43,$8F,$84,$17,$FB,$8F,$87,$2D,	 9,$8F,$8B,$20
 	
-	; music_func_13D804+1B6r
+
 	.BYTE $70,$8F,$84,$11,$48,$8F,$82,$11,$48,$8F,$82, $E,$48,$8F,$8A, $E
 	.BYTE $29,$8F,$8B,$89,$4D,$8F,$8B,$A7,$61,$8F,$8D,$6E,$A9,$8F,$8D,$6E
 	.BYTE $A9
 pulse2_env_13DE20:.BYTE	  0	
-	; music_func_13D804+1E5r
+
 pulse2_sweep_13DE21:.BYTE   0	
-	; music_func_13D804+1EBr
+
 pulse2_time_13DE22:.BYTE   0	
-	; music_func_13D804+1F1r
+
 pulse2_len_13DE23:.BYTE	  0,$8F,$87,$AD,$4C,$8F,$87,$61,$38,$8F,$8B,$31,$4A,$8F,$8B,$31
 	
-	; music_func_13D804+1F7r
+
 	.BYTE $48,$8F,$8B,$86,$70,$8F,$8A, $E,$2A,$8F,$82, $E,$48,$8F,$8B,$89
 	.BYTE $AD,$8F,$8C,$6E,$AE,$8F,$8C,$9A,$A9,$8F,$8E,$A9,$A8,$8F,$8E,$A9
 	.BYTE $A8
 tri_count_13DE54:.BYTE	 0	
-	; music_func_13D804+226r
+
 tri_unused_13DE55:.BYTE	  0	
-	; music_func_13D804+22Cr
+
 tri_time_13DE56:.BYTE	0	
-	; music_func_13D804+232r
+
 tri_len_13DE57:.BYTE	0,$42,	0,$41,$29,$7F,	0,$FB,$18,$7F,	0,$68,$28,$7F,	0,$7E
 	
-	; music_func_13D804+238r
+
 	.BYTE $48,$7F,	0,$FB,$48,$42,	0,$41,$48,$7F,	0,$12,$28,$7F,	0,$27
 	.BYTE $28,$42,	0,$41,$4A,$7F,	0, $A,$28,$7F,	0, $F,$28,$7F,	0,  7
 	.BYTE $28,$A9,	0,$8D,$6C,  7,$A9,  0,$8D,$6D,	7,$20,$84,$D4,$A9,  0
 	.BYTE $8D,$6C,	7,$A9,	1,$8D,$6D,  7,$20,$84,$D4
 apu_off_13DEA2:.WORD byte_13C548	
-	; music_func_13D484+28r ...
+
 	.WORD byte_13C7D9
 	.WORD byte_13CAC8
 	.WORD byte_13CCAB
@@ -1339,7 +1339,7 @@ apu_off_13DEA2:.WORD byte_13C548
 	.WORD byte_13D08E
 	.WORD byte_13D399
 apu_off_13DEB0:.WORD off_13C330	
-	; music_func_13D484+1Cr ...
+
 	.WORD off_13C599
 	.WORD off_13C848
 	.WORD off_13CB07
@@ -1347,7 +1347,7 @@ apu_off_13DEB0:.WORD off_13C330
 	.WORD off_13CE9D
 	.WORD off_13D0E6
 apu_data_13DEBE:.WORD byte_13DEC6	
-	; apu_func_13DBAF+2Ar
+
 	.WORD byte_13DF0A
 	.WORD byte_13DF0F
 	.WORD byte_13DF14
@@ -1455,7 +1455,7 @@ loc_13DFAB:
 ; ---------------------------------------------------------------------------
 
 loc_13DFC2:
-	; load_sprite_func_13DFA8+Aj
+
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_16
 	STA	tilemapTypeUnk_30B
@@ -1600,7 +1600,7 @@ loc_13E0EE:
 ; ---------------------------------------------------------------------------
 
 loc_13E100:
-	; load_sprite_map_13E038+D6j
+
 	LDA	ppu_unk_byte_309
 	BEQ	loc_13E110
 	JSR	sprites_func_13E11C
@@ -1623,7 +1623,7 @@ locret_13E11B:
 
 
 sprites_func_13E11C:
-	; load_sprite_map_13E038+E0p
+
 	set tilemapTypeUnk_30B, #0
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0

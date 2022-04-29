@@ -508,7 +508,7 @@ loc_1282E8:
 ; ---------------------------------------------------------------------------
 
 return_1282EE:
-	; command_0_1280FB+9j ...
+
 	from_stack bank_from_343
 	set bank_command_346, #$FF
 	set bank_to_344, bank_from_343
@@ -2162,7 +2162,7 @@ loc_12A69D:
 	set {array_unk_3CF,X}, byte_56A
 
 loc_12A70C:
-	; com_29_start_new_game_12A646+ACj
+
 	LDA	entry_idx_300
 	CMP	#$3C 
 	BNE	loc_12A732
@@ -2175,7 +2175,7 @@ loc_12A70C:
 	set {array_unk_3CF,X}, byte_56E
 
 loc_12A732:
-	; com_29_start_new_game_12A646+D2j
+
 	LDA	entry_idx_300
 	CMP	#$5C 
 	BNE	loc_12A758
@@ -2188,7 +2188,7 @@ loc_12A732:
 	set {array_unk_3CF,X}, byte_572
 
 loc_12A758:
-	; com_29_start_new_game_12A646+F8j
+
 	LDA	entry_idx_300
 	CMP	#$93 
 	BNE	loc_12A79E
@@ -2210,18 +2210,18 @@ loc_12A758:
 ; ---------------------------------------------------------------------------
 
 loc_12A781:
-	; com_29_start_new_game_12A646+132j ...
+
 	set byte_56F, #$40 
 
 loc_12A786:
-	; com_29_start_new_game_12A646+127j ...
+
 	set {array_unk_3C5,X}, byte_56F
 	set {array_unk_3BB,X}, byte_570
 	set {array_unk_3D9,X}, byte_571
 	set {array_unk_3CF,X}, byte_572
 
 loc_12A79E:
-	; com_29_start_new_game_12A646+11Ej
+
 	LDA	entry_idx_300
 	CMP	#$5D 
 	BNE	loc_12A7F7
@@ -2244,7 +2244,7 @@ loc_12A79E:
 ; ---------------------------------------------------------------------------
 
 loc_12A7CB:
-	; com_29_start_new_game_12A646+172j ...
+
 	set byte_573, #0
 	set byte_574, #1
 	set byte_575, #$60 
@@ -2257,7 +2257,7 @@ loc_12A7DF:
 	set {array_unk_3CF,X}, byte_576
 
 loc_12A7F7:
-	; com_29_start_new_game_12A646+164j
+
 	LDA	objIdxArray_375,X
 	CMP	#6
 	BNE	loc_12A809
@@ -2307,7 +2307,7 @@ loc_12A84D:
 	LDX	#0
 
 loc_12A85F:
-	; com_29_start_new_game_12A646+244j
+
 	LDA	objIdxArray_375,X
 	CMP	#3
 	BEQ	loc_12A86D
@@ -2515,7 +2515,7 @@ set_game_finished_12AA08:
 	set is_game_finished_561, #$FF
 
 locret_12AA0D:
-	; com_17_player_update_12A9C4+13j ...
+
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2546,7 +2546,7 @@ loc_12AA1B:
 ; ---------------------------------------------------------------------------
 
 loc_12AA3E:
-	; com_17_player_update_12A9C4+75j
+
 	set byte_56F, #$20 
 	set byte_570, #0
 	set byte_571, #$A0 
@@ -2563,7 +2563,7 @@ loc_12AA52:
 	STA	byte_628
 
 locret_12AA6C:
-	; com_17_player_update_12A9C4+63j ...
+
 	RTS
 ; End of function com_17_player_update_12A9C4
 
@@ -2740,7 +2740,7 @@ check_room_2F_12AB5D:
 ; ---------------------------------------------------------------------------
 
 check_room_1A_12AB71:
-	; entry_idx_handler_unk_12AA6D+FCj
+
 	LDA	entry_idx_300
 	CMP	#$1A
 	BNE	check_room_17_12AB85
@@ -2752,7 +2752,7 @@ check_room_1A_12AB71:
 ; ---------------------------------------------------------------------------
 
 check_room_17_12AB85:
-	; entry_idx_handler_unk_12AA6D+110j
+
 	LDA	entry_idx_300
 	CMP	#$17
 	BNE	check_room_4F_12AB99
@@ -2764,7 +2764,7 @@ check_room_17_12AB85:
 ; ---------------------------------------------------------------------------
 
 check_room_4F_12AB99:
-	; entry_idx_handler_unk_12AA6D+124j
+
 	LDA	entry_idx_300
 	CMP	#$4F 
 	BNE	check_room_50_12ABAD
@@ -2776,7 +2776,7 @@ check_room_4F_12AB99:
 ; ---------------------------------------------------------------------------
 
 check_room_50_12ABAD:
-	; entry_idx_handler_unk_12AA6D+138j
+
 	LDA	entry_idx_300
 	CMP	#$50 
 	BNE	check_room_8D_12ABC1
@@ -2788,7 +2788,7 @@ check_room_50_12ABAD:
 ; ---------------------------------------------------------------------------
 
 check_room_8D_12ABC1:
-	; entry_idx_handler_unk_12AA6D+14Cj
+
 	LDA	entry_idx_300
 	CMP	#$8D 
 	BNE	check_room_8E_12ABD5
@@ -2800,7 +2800,7 @@ check_room_8D_12ABC1:
 ; ---------------------------------------------------------------------------
 
 check_room_8E_12ABD5:
-	; entry_idx_handler_unk_12AA6D+160j
+
 	LDA	entry_idx_300
 	CMP	#$8E 
 	BNE	check_room_60_12ABE9
@@ -2812,7 +2812,7 @@ check_room_8E_12ABD5:
 ; ---------------------------------------------------------------------------
 
 check_room_60_12ABE9:
-	; entry_idx_handler_unk_12AA6D+174j
+
 	LDA	entry_idx_300
 	CMP	#$60 
 	BNE	check_room_6B_12ABFD
@@ -2824,7 +2824,7 @@ check_room_60_12ABE9:
 ; ---------------------------------------------------------------------------
 
 check_room_6B_12ABFD:
-	; entry_idx_handler_unk_12AA6D+188j
+
 	LDA	entry_idx_300
 	CMP	#$6B 
 	BNE	check_room_67_12AC11
@@ -2836,7 +2836,7 @@ check_room_6B_12ABFD:
 ; ---------------------------------------------------------------------------
 
 check_room_67_12AC11:
-	; entry_idx_handler_unk_12AA6D+19Cj
+
 	LDA	entry_idx_300
 	CMP	#$67 
 	BNE	check_room_69_12AC25
@@ -2848,7 +2848,7 @@ check_room_67_12AC11:
 ; ---------------------------------------------------------------------------
 
 check_room_69_12AC25:
-	; entry_idx_handler_unk_12AA6D+1B0j
+
 	LDA	entry_idx_300
 	CMP	#$69 
 	BNE	check_room_1C_12AC39
@@ -2860,7 +2860,7 @@ check_room_69_12AC25:
 ; ---------------------------------------------------------------------------
 
 check_room_1C_12AC39:
-	; entry_idx_handler_unk_12AA6D+1C4j
+
 	LDA	entry_idx_300
 	CMP	#$1C
 	BNE	check_room_57_12AC4D
@@ -2872,7 +2872,7 @@ check_room_1C_12AC39:
 ; ---------------------------------------------------------------------------
 
 check_room_57_12AC4D:
-	; entry_idx_handler_unk_12AA6D+1D8j
+
 	LDA	entry_idx_300
 	CMP	#$57 
 	BNE	check_room_91_12AC61
@@ -2884,7 +2884,7 @@ check_room_57_12AC4D:
 ; ---------------------------------------------------------------------------
 
 check_room_91_12AC61:
-	; entry_idx_handler_unk_12AA6D+1ECj
+
 	LDA	entry_idx_300
 	CMP	#$91 
 	BNE	check_room_5B_12AC75
@@ -2896,7 +2896,7 @@ check_room_91_12AC61:
 ; ---------------------------------------------------------------------------
 
 check_room_5B_12AC75:
-	; entry_idx_handler_unk_12AA6D+200j
+
 	LDA	entry_idx_300
 	CMP	#$5B 
 	BNE	check_room_5C_12AC89
@@ -2908,7 +2908,7 @@ check_room_5B_12AC75:
 ; ---------------------------------------------------------------------------
 
 check_room_5C_12AC89:
-	; entry_idx_handler_unk_12AA6D+214j
+
 	LDA	entry_idx_300
 	CMP	#$5C 
 	BNE	check_room_92_12AC9D
@@ -2920,7 +2920,7 @@ check_room_5C_12AC89:
 ; ---------------------------------------------------------------------------
 
 check_room_92_12AC9D:
-	; entry_idx_handler_unk_12AA6D+228j
+
 	LDA	entry_idx_300
 	CMP	#$92 
 	BNE	check_room_93_12ACB1
@@ -2932,7 +2932,7 @@ check_room_92_12AC9D:
 ; ---------------------------------------------------------------------------
 
 check_room_93_12ACB1:
-	; entry_idx_handler_unk_12AA6D+23Cj
+
 	LDA	entry_idx_300
 	CMP	#$93 
 	BNE	check_room_52_12ACC5
@@ -2944,7 +2944,7 @@ check_room_93_12ACB1:
 ; ---------------------------------------------------------------------------
 
 check_room_52_12ACC5:
-	; entry_idx_handler_unk_12AA6D+250j
+
 	LDA	entry_idx_300
 	CMP	#$52 
 	BNE	locret_12ACDA
@@ -2956,7 +2956,7 @@ check_room_52_12ACC5:
 ; ---------------------------------------------------------------------------
 
 locret_12ACDA:
-	; entry_idx_handler_unk_12AA6D+265j
+
 	RTS
 ; End of function entry_idx_handler_unk_12AA6D
 
@@ -7378,7 +7378,7 @@ show_intro_screen_12CB58:
 	STA	byte_42B
 
 loc_12CB96:
-	; show_intro_screen_12CB58:loc_12CBD6j	...
+
 	JSR	sub_12CC34
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
@@ -7412,7 +7412,7 @@ loc_12CBD6:
 ; ---------------------------------------------------------------------------
 
 loc_12CBD9:
-	; show_intro_screen_12CB58+61j
+
 	LDA	count_unk_469
 	CMP	#$A
 	BCC	loc_12CBF7
@@ -7508,7 +7508,7 @@ loc_12CC70:
 
 
 sub_12CCAB:
-	; show_intro_screen_12CB58+A8p
+
 	set byte_36A, #$70 
 	set byte_36B, #0
 	set byte_366, #$50 
@@ -7632,7 +7632,7 @@ loc_12CE00:
 	set byte_372, #0
 
 loc_12CE05:
-	; com_E_load_game_12CD30+10Bj ...
+
 	JSR	sub_12D0C2
 	JSR	wait_for_frame_rendered_FCA0
 	LDA	input_pressed_34A
@@ -7689,7 +7689,7 @@ loc_12CE62:
 ; ---------------------------------------------------------------------------
 
 loc_12CE69:
-	; com_E_load_game_12CD30+12Dj ...
+
 	JSR	sub_12ED29
 	LDA	jill_pos_y_47E
 	CMP	#$FF
@@ -11550,7 +11550,7 @@ loc_12ED17:
 
 
 sub_12ED20:
-	; com_E_load_game_12CD30+112p ...
+
 	to_stack tilemapTypeUnk_30B
 	LDA	#6
 	JMP	loc_12ED4D
@@ -11561,7 +11561,7 @@ sub_12ED20:
 
 
 sub_12ED29:
-	; com_E_load_game_12CD30:loc_12CE69p ...
+
 	to_stack tilemapTypeUnk_30B
 	LDA	#$B
 	JMP	loc_12ED4D
@@ -11572,7 +11572,7 @@ sub_12ED29:
 
 
 sub_12ED32:
-	; com_E_load_game_12CD30+108p ...
+
 	to_stack tilemapTypeUnk_30B
 	LDA	#$2B 
 	JMP	loc_12ED4D

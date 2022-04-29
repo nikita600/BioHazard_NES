@@ -219,7 +219,7 @@ clear_ram_818C:
 	BNE	clear_ram_818C
 	DEX
 	TXS
-	set loc_8082+1, #0	; reset	current	bank
+	set loc_8082+1, #0
 	LDY	#0
 	LDA	#$1D
 
@@ -1938,7 +1938,7 @@ loc_900B:
 ; ---------------------------------------------------------------------------
 
 loc_900F:
-	; a_button_pressed_8FDC+2Dj
+
 	set tilemapTypeUnk_30B, #$2D 
 	JSR	exec_b12_com48_ECA6
 	LDX	byte_434
@@ -1953,7 +1953,7 @@ loc_900F:
 ; ---------------------------------------------------------------------------
 
 loc_902F:
-	; a_button_pressed_8FDC+50j
+
 	LDA	tilemapTypeUnk_30B
 	CMP	#2
 	BNE	loc_9042
@@ -1963,7 +1963,7 @@ loc_902F:
 	set tilemapTypeUnk_30B, #$3B 
 
 loc_9042:
-	; a_button_pressed_8FDC+5Fj
+
 	LDA	tilemapTypeUnk_30B
 	CMP	#$1F
 	BNE	loc_9061
@@ -1978,7 +1978,7 @@ loc_9042:
 ; ---------------------------------------------------------------------------
 
 loc_9061:
-	; a_button_pressed_8FDC+82j
+
 	LDA	tilemapTypeUnk_30B
 	CMP	#$3C 
 	BCC	loc_90BB
@@ -2020,7 +2020,7 @@ locret_90BA:
 ; ---------------------------------------------------------------------------
 
 loc_90BB:
-	; a_button_pressed_8FDC+91j ...
+
 	LDA	tilemapTypeUnk_30B
 	CMP	#$47 
 	BCC	loc_911D
@@ -2070,7 +2070,7 @@ loc_911D:
 	BEQ	locret_9131
 
 loc_9125:
-	; a_button_pressed_8FDC+13Dj
+
 	JSR	exec_b12_cA_EABE
 	set cur_obj_idx_unk_43A, byte_434
 	JSR	sub_DBE2
@@ -2591,7 +2591,7 @@ byte_9523:.BYTE  $B, $B, $D, $D,	6,  6,	8,  8,	1,  1,	2,  2,	1,  1,	2,  2
 	
 	
 byte_9533:.BYTE  $A,  5,	0,  0	
-	; load_image_C6D2+9Fr
+
 byte_9537:.BYTE $11, $F,$10,$10	
 byte_953B:.BYTE	0,$20,$30,$3C,$50,$3C,$60 
 
@@ -3122,7 +3122,7 @@ locret_994E:
 
 
 sub_994F:
-	; a_button_pressed_8FDC+20p
+
 	set sprite_length_30F, #0
 	LDX	#0
 
@@ -4062,7 +4062,7 @@ loc_C814:
 
 
 load_tiles_to_ppu_C83A:
-	; load_image_C6D2:loc_C743p
+
 	set bank_command_346, #0
 	set bank_to_344, #sprites_1
 	set bank_from_343, #0
@@ -4190,7 +4190,7 @@ exec_b2_c3_C8FB:
 
 
 exec_b2_c4_C90E:
-	; show_hidden_copyright_9AD9+44p ...
+
 	set bank_command_346, #4
 	set bank_to_344, #text_2
 	set bank_from_343, #0
@@ -4423,7 +4423,7 @@ cache_prev_data_CA84:
 
 
 sub_CAA9:
-	; a_button_pressed_8FDC+C0p ...
+
 	set byte_357, #$18
 	set byte_358, #0
 	set byte_359, #$1C
@@ -4533,7 +4533,7 @@ off_CBBE:.WORD loc_D03C
 
 
 sub_CBC2:
-	; load_image_C6D2+96p
+
 	LDA	entry_idx_300
 	CMP	#$46 
 	BNE	locret_CBE1
@@ -4743,7 +4743,7 @@ loc_CD27:
 ; ---------------------------------------------------------------------------
 
 loc_CD2A:
-	; objects_func_CCA7+6Fj ...
+
 	TYA
 	PHA
 	LDY	obj_idx_unk_462
@@ -4764,7 +4764,7 @@ loc_CD2A:
 	INX
 
 inc_obj_idx_CD5F:
-	; objects_func_CCA7+56j ...
+
 	INY
 	CPY	objArraySize_373
 	BCC	next_object_CCEC
@@ -4989,7 +4989,7 @@ loc_CEDC:
 
 
 sub_CF13:
-	; a_button_pressed_8FDC+AEp ...
+
 	to_stack text_idx_35C
 	to_stack char_type_id_35D
 	TXA
@@ -5787,7 +5787,7 @@ loc_D57F:
 ; ---------------------------------------------------------------------------
 
 loc_D591:
-	; objects_func_D52A+5Ej ...
+
 	LDA	byte_366
 	SEC
 	SBC	#8
@@ -5841,7 +5841,7 @@ loc_D5D8:
 	DEX
 
 loc_D5F0:
-	; objects_func_D52A+D5j
+
 	CPX	#0
 	BEQ	loc_D602
 	LDA	objMapIdx_316
@@ -5859,7 +5859,7 @@ loc_D602:
 	STA	objMapIdx_316
 
 loc_D60C:
-	; objects_func_D52A+B7j ...
+
 	LDA	count_unk_464
 	CMP	#$F
 	BCC	loc_D629
@@ -5873,11 +5873,11 @@ loc_D60C:
 	set {unk_37F,Y}, #0
 
 loc_D629:
-	; objects_func_D52A+89j ...
+
 	JSR	loadt_obj_tilemaps_C84D
 
 loc_D62C:
-	; objects_func_D52A+7Dj
+
 	from_stack_to_y
 	INY
 	CPY	objArraySize_373
@@ -5886,7 +5886,7 @@ loc_D62C:
 ; ---------------------------------------------------------------------------
 
 loc_D637:
-	; objects_func_D52A+108j
+
 	LDA	count_unk_464
 	CMP	#$F
 	BCC	locret_D643
@@ -5945,7 +5945,7 @@ loc_D67F:
 	JSR	nullsub_1
 
 loc_D689:
-	; objects_func_D644+40j
+
 	LDA	count_unk_466
 	CMP	#$A
 	BCC	loc_D69F
@@ -5999,12 +5999,12 @@ loc_D6D9:
 	JSR	sub_DC88
 
 loc_D6EA:
-	; objects_func_D644+A1j
+
 	JMP	loc_D811
 ; ---------------------------------------------------------------------------
 
 loc_D6ED:
-	; objects_func_D644+55j ...
+
 	LDA	count_unk_463
 	CMP	#$64 
 	BCC	loc_D702
@@ -6038,7 +6038,7 @@ loc_D702:
 ; ---------------------------------------------------------------------------
 
 loc_D730:
-	; objects_func_D644+C7j ...
+
 	to_stack byte_313
 	TXA
 	PHA
@@ -6147,7 +6147,7 @@ loc_D800:
 	STA	array_unk_3CF,X
 
 loc_D811:
-	; objects_func_D644:loc_D6EAj ...
+
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	CMP	objArraySize_373
@@ -6156,7 +6156,7 @@ loc_D811:
 ; ---------------------------------------------------------------------------
 
 loc_D81F:
-	; objects_func_D644+1D6j
+
 	LDA	count_unk_463
 	CMP	#$64 
 	BCC	loc_D82B
@@ -6932,7 +6932,7 @@ sub_DDC9:
 
 
 sub_DDDA:
-	; objects_func_D644+F8p ...
+
 	LDA	byte_313
 	CMP	#0
 	BNE	loc_DE22
@@ -7126,7 +7126,7 @@ load_from_BCB6_DF7F:
 ; ---------------------------------------------------------------------------
 
 loc_DFA7:
-	; map_update_DEFA+A3j
+
 	set sprite_length_30F, #0
 
 loc_DFAC:
@@ -9116,7 +9116,7 @@ sub_EC7E:
 
 
 sub_EC86:
-	; a_button_pressed_8FDC+76p
+
 	set bank_command_346, #$44 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC86
@@ -9167,7 +9167,7 @@ exec_b12_c4A_ECB6:
 ; ---------------------------------------------------------------------------
 
 exec_b12_comm_ECBE:
-	; exec_b12_c1_EA76+5j ...
+
 	set bank_to_344, #banks_12
 	set bank_from_343, #0
 	JSR	bank_switch_8000
@@ -9179,7 +9179,7 @@ exec_b12_comm_ECBE:
 
 
 sub_ECCC:
-	; load_image_C6D2+52p
+
 	JSR	sub_ED7C
 	LDX	ppu_unk_byte_302
 	LDY	ppu_unk_byte_303
@@ -9405,7 +9405,7 @@ write_tilemap_to_ppu_EE4D:
 
 
 sub_EE72:
-	; load_image_C6D2+55p ...
+
 	JSR	sub_ED7C
 	LSR	ppu_unk_byte_309
 	LSR	ppu_unk_byte_309
@@ -10626,7 +10626,7 @@ loc_F85A:
 	LDY	#$10
 
 loc_F85C:
-	; text_unk_func_F80C+3Aj ...
+
 	LDA	tilemapHeight_30A
 	BEQ	loc_F865
 	INY

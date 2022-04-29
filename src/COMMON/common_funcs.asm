@@ -15,7 +15,7 @@ loc_FC90:
 
 
 wait_for_vblank_FC95:		
-			; wait_for_vblank_FC95+3j
+		
 	LDA	_PPU_STATUS
 	BMI	wait_for_vblank_FC95
 
@@ -30,7 +30,7 @@ loc_FC9A:
 
 
 wait_for_frame_rendered_FCA0:	
-			; gameplay_update_88C2-1F6p ...
+		
 	set frame_render_count_350, #1
 
 loop_FCA5:		
@@ -44,7 +44,7 @@ loop_FCA5:
 
 
 wait_any_input_65k_cycles_FCAB:	
-			; gameplay_update_88C2-32Ep ...
+		
 	LDY	#0
 
 loc_FCAD:		
@@ -101,7 +101,7 @@ wait_for_any_input_FCCD:
 
 
 wait_for_n_65k_cycles_FCD5:	
-			; gameplay_update_88C2+1EBp ...
+		
 	PHA
 	JSR	wait_65k_cycles_FCE0
 	PLA
@@ -320,7 +320,7 @@ loc_FE09:
 ; ---------------------------------------------------------------------------
 
 loc_FE1B:		
-			; ppu_upset_data_FDCB+4Aj
+		
 	set has_ppu_data_to_upload_6F, #0
 	RTS
 ; End of function ppu_upset_data_FDCB
@@ -495,7 +495,7 @@ loc_FF20:
 	STA	scroll_offset_y_47A
 
 locret_FF2D:		
-			; scroll_update_FED6+21j
+		
 	RTS
 ; End of function scroll_update_FED6
 

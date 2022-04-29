@@ -62,12 +62,12 @@ init_F903:
 write_tilemap_line_7F90F:	
 	set {tilemapData_4C,X}, {(ptr_0),Y}
 
-	add_to_byte_clc ptr_0, data_3	; entrySize
+	add_to_byte_clc ptr_0, data_3
 	add_to_byte ptr_1, #0
 
 	
 	INX
-	CPX	data_2	; lineSize
+	CPX	data_2
 	BCC	write_tilemap_line_7F90F
 	RTS
 ; End of function load_tilemap_chunk_in_ram_7F897

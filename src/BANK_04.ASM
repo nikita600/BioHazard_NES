@@ -333,7 +333,7 @@ loc_4F4F9:
 ; ---------------------------------------------------------------------------
 
 loc_4F50B:
-			; load_inventory_sprite_tilemap_4F443+D6j
+		
 	LDA	ppu_unk_byte_309
 	BEQ	loc_4F51B
 	JSR	sub_4F527
@@ -356,7 +356,7 @@ locret_4F526:
 
 
 sub_4F527:
-			; load_inventory_sprite_tilemap_4F443+E0p
+		
 	set tilemapTypeUnk_30B, #0
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0

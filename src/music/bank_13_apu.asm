@@ -78,7 +78,7 @@ pulse_entries_13C111:
 	.BYTE	$AB, $C5, $51, $D2
 
 stru_13C211:.BYTE	$88, $84, $5F, $30 
-	; music_func_13C028+46r ...
+
 	.BYTE	$88, $93, $2E, 0
 	.BYTE	$8F, $A1, 9, $F0
 	.BYTE	$B, $83, $E, $40
@@ -88,7 +88,7 @@ stru_13C211:.BYTE	$88, $84, $5F, $30
 	.BYTE	$4F, $C3, $2D, 8
 	
 noise_env_13C231:.BYTE	$1F, $1F,	$1F, $1F 
-	; music_func_13D804:apu_update_noise_13D988r
+
 	.BYTE	$1F, $1F, $1F, $1F
 	.BYTE	$1F, $1F, $1F, $1F
 	.BYTE	$1F, $1F, $1F, $1F
@@ -111,10 +111,10 @@ noise_env_13C231:.BYTE	$1F, $1F,	$1F, $1F
 	.BYTE	$1F, $1F, $1F, $1F
 	.BYTE $1F
 noise_loop_13C286:.BYTE	  0	
-	; music_func_13D804+18Dr
+
 noise_len_13C287:.BYTE	 0,$8E,	 0,$8E,$48,$8F,	 0,$8F,$48,$87,$18,$8A,$18,$8B,$38,$8C
 	
-	; music_func_13D804+193r
+
 	.BYTE $18,$8C,$28,  9,$18, $B,$28,$8D,	0,$8D,$38,$84,$38,$84,$58,$86
 	.BYTE $28,$85,$28,$85,$B8,$86,$E0,$88,	0,$88,$28,$88,$E0,$89,$E0,$89
 	.BYTE $48,$8A,$48, $C,	0,$8F,$D0,$8F,	0,  0,	0,  2,	0,  4,	0,$81

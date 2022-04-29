@@ -67,7 +67,7 @@ loc_28083:
 ; ---------------------------------------------------------------------------
 
 loc_28089:
-			; bank_switch_8000+68j ...
+		
 	set bank_command_346, #$FF
 	set bank_to_344, bank_from_343
 	JMP	bank_switch_8000
@@ -147,7 +147,7 @@ sub_2D196:
 
 
 sub_2D1CB:
-			; sub_2D131+37j ...
+		
 	to_stack text_idx_35C
 	to_stack char_type_id_35D
 	LDA	byte_364
@@ -249,7 +249,7 @@ loc_2D299:
 ; ---------------------------------------------------------------------------
 
 loc_2D29C:
-			; sub_2D1CB+92j
+		
 	set_iny char_type_id_35D, {(ptr_0),Y}
 	set_iny text_idx_35C, {(ptr_0),Y}
 	ASL	text_idx_35C
@@ -279,7 +279,7 @@ loc_2D29C:
 ; ---------------------------------------------------------------------------
 
 loc_2D2F6:
-			; sub_2D1CB+126j
+		
 	LDA	tilemapWidth_308
 	mult_a_by_2
 	CLC
@@ -323,7 +323,7 @@ loc_2D33C:
 ; ---------------------------------------------------------------------------
 
 loc_2D342:
-			; sub_2D1CB+140j
+		
 	LDA	byte_364
 	AND	#8
 	CMP	#0
@@ -345,7 +345,7 @@ loc_2D360:
 	JSR	sub_2D4FF
 
 loc_2D36C:
-			; sub_2D1CB+19Cj
+		
 	LDA	byte_364
 	AND	#4
 	CMP	#0
@@ -367,7 +367,7 @@ loc_2D378:
 
 
 sub_2D397:
-			; sub_2D1CB+11p ...
+		
 	to_stack tilemapWidth_308
 	to_stack ppu_unk_byte_309
 	to_stack tilemap_size_307
@@ -435,7 +435,7 @@ loc_2D40B:
 ; ---------------------------------------------------------------------------
 
 loc_2D435:
-			; sub_2D401+1Bj
+		
 	to_stack data_2
 	to_stack data_3
 	LDA	byte_35E
@@ -445,7 +445,7 @@ loc_2D435:
 ; ---------------------------------------------------------------------------
 
 loc_2D445:
-			; sub_2D401+31j
+		
 	LDY	tilemapTypeUnk_30B
 	LDA	ppu_scroll_x_304
 	LSR	A
@@ -545,7 +545,7 @@ loc_2D4FA:
 
 
 sub_2D4FF:
-			; sub_2D1CB+19Ep
+		
 	set count_unk_365, #0
 	LDY	#$FF
 
@@ -694,7 +694,7 @@ loc_2E2F2:
 	JSR	sub_2E42E
 
 loc_2E2F9:
-			; sub_2E244+A1j ...
+		
 	from_stack_to_y
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
@@ -870,7 +870,7 @@ loc_2E437:
 
 
 sub_2E44B:
-			; sub_2E244:loc_2E312p
+		
 	LDY	tilemapHeight_30A
 
 loc_2E44E:
@@ -976,7 +976,7 @@ loc_2E4F1:
 
 
 sub_2E500:
-			; sub_2E244+15Bp
+		
 	LDA	ppu_unk_byte_309
 	CMP	#$1D
 	BNE	loc_2E521

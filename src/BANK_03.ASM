@@ -121,7 +121,7 @@ loc_3F819:
 	JSR	sub_3F955
 
 loc_3F820:
-			; sub_3F76B+A1j ...
+		
 	from_stack_to_y
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B

@@ -13,7 +13,7 @@ bank_switch_8000:
 
 switch_case_8035:
 	LDA	bank_command_346
-	if_equal #$88 , loc_13809B
+	if_equal #$88, loc_13809B
 	LDA	bank_to_344
 
 loc_13803F:
@@ -96,7 +96,7 @@ BossImages_129826:
 
 music_func_13C028:
 	LDA	tilemapTypeUnk_30B
-	if_greater #$47 , loc_13C032
+	if_greater #$47, loc_13C032
 	BEQ	loc_13C032
 	RTS
 ; ---------------------------------------------------------------------------
@@ -106,7 +106,7 @@ loc_13C032:
 	STX	_APU_STATUS
 	PHA
 	TAY
-	if_greater #$40 , loc_13C040
+	if_greater #$40, loc_13C040
 	SEC
 	SBC	#$40 
 
@@ -117,7 +117,7 @@ loc_13C040:
 	LDA	byte_13C0C9,Y
 	TAY
 	PLA
-	if_lower #$40 , loc_13C068
+	if_lower #$40, loc_13C068
 	set {_APU_PULSE1_ENV,Y}, {pulse_entries_13C111,X}
 	set {_APU_PULSE1_SWEEP,Y}, {pulse_entries_13C111+1,X}
 	set {_APU_PULSE1_TIME,Y}, {pulse_entries_13C111+2,X}
@@ -338,9 +338,9 @@ loc_13D58D:
 loc_13D59A:
 
 	LDA	(apu_unk_FE),Y
-	if_greater #$FC , loc_13D5F5
+	if_greater #$FC, loc_13D5F5
 	BEQ	loc_13D60D
-	if_greater #$FE , loc_13D5AB
+	if_greater #$FE, loc_13D5AB
 	BNE	loc_13D5AE
 	JMP	loc_13D657
 ; ---------------------------------------------------------------------------
@@ -672,9 +672,9 @@ loc_13D81C:
 loc_13D829:
 
 	LDA	(apu_unk_FE),Y
-	if_greater #$FC , loc_13D884
+	if_greater #$FC, loc_13D884
 	BEQ	loc_13D89C
-	if_greater #$FE , loc_13D83A
+	if_greater #$FE, loc_13D83A
 	BNE	loc_13D83D
 	JMP	loc_13D8E6
 ; ---------------------------------------------------------------------------

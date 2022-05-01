@@ -401,14 +401,14 @@ loc_2D40B:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemapTypeUnk_30B
-	if_equal #$20 , loc_2D435
+	if_equal #$20, loc_2D435
 	BCS	loc_2D435
 	LDA	byte_35E
 	mult_a_by_2
 	CLC
 	ADC	tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
-	if_greater #$20 , loc_2D445
+	if_greater #$20, loc_2D445
 	set tilemapTypeUnk_30B, #$20 
 	JMP	loc_2D445
 ; ---------------------------------------------------------------------------
@@ -852,7 +852,7 @@ loc_2E466:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	if_greater #$20 , loc_2E482
+	if_greater #$20, loc_2E482
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -916,7 +916,7 @@ loc_2E4E0:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	if_greater #$20 , loc_2E4F1
+	if_greater #$20, loc_2E4F1
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -937,7 +937,7 @@ sub_2E500:
 	LDA	ppu_unk_byte_309
 	if_not_equal #$1D, loc_2E521
 	LDA	data_3
-	if_greater #$28 , loc_2E514
+	if_greater #$28, loc_2E514
 	set data_3, #$20 
 	JMP	loc_2E518
 ; ---------------------------------------------------------------------------

@@ -305,7 +305,7 @@ loc_3F98D:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	if_greater #$20 , loc_3F9A9
+	if_greater #$20, loc_3F9A9
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -369,7 +369,7 @@ loc_3FA07:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	if_greater #$20 , loc_3FA18
+	if_greater #$20, loc_3FA18
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -389,7 +389,7 @@ sub_3FA27:
 	LDA	ppu_unk_byte_309
 	if_not_equal #$1D, loc_3FA48
 	LDA	data_3
-	if_greater #$28 , loc_3FA3B
+	if_greater #$28, loc_3FA3B
 	set data_3, #$20 
 	JMP	loc_3FA3F
 ; ---------------------------------------------------------------------------

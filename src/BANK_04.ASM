@@ -29,7 +29,7 @@ loc_48053:
 
 loc_48059:
 	LDA	inv_sprite_idx_31C
-	if_greater #$2F , loc_4807D
+	if_greater #$2F, loc_4807D
 	to_stack bank_from_343
 
 exec_b13_c1_48064:

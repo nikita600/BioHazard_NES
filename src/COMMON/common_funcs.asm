@@ -178,7 +178,7 @@ loc_FD1C:
 
 loc_FD31:		
 	LDA	byte_203
-	if_not_equal #$F8 , loc_FD40
+	if_not_equal #$F8, loc_FD40
 	set byte_43E, #1
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
@@ -204,7 +204,7 @@ NMI_FD53:
 	TYA
 	PHA
 	LDA	bank_switch_flag_6C
-	if_equal #$88 , loc_FD62
+	if_equal #$88, loc_FD62
 	JMP	loc_FD93
 ; ---------------------------------------------------------------------------
 

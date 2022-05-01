@@ -137,4 +137,18 @@
 
 .endmacro
 
+.macro if_lower value, branch
+
+	CMP value
+	BNE branch
+
+.endmacro
+
+.macro if_greater value, branch
+
+	CMP value
+	BCC branch
+
+.endmacro
+
 ; ---------------------------------------------------------------------------

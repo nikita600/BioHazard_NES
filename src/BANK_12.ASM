@@ -825,8 +825,7 @@ exec_b0_cD_128516:
 sub_128531:
 	
 	LDA	tilemapTypeUnk_30B
-	CMP	#$47 
-	BCC	loc_12853B
+	if_greater #$47 , loc_12853B
 	BEQ	loc_12853B
 	RTS
 ; ---------------------------------------------------------------------------
@@ -837,8 +836,7 @@ loc_12853B:
 	STX	_APU_STATUS
 	PHA
 	TAY
-	CMP	#$40 
-	BCC	loc_128549
+	if_greater #$40 , loc_128549
 	SEC
 	SBC	#$40 
 
@@ -1525,10 +1523,8 @@ sub_128E24:
 	set byte_31A, #$88 
 	set objMapIdx_316, #0
 	LDA	byte_549
-	CMP	#$55 
-	BCC	loc_128E7D
-	CMP	#$AA 
-	BCC	loc_128E6C
+	if_greater #$55 , loc_128E7D
+	if_greater #$AA , loc_128E6C
 	set byte_54B, #0
 	JMP	loc_128E8B
 ; ---------------------------------------------------------------------------
@@ -1546,12 +1542,10 @@ loc_128E7D:
 loc_128E8B:
 	
 	LDA	count_unk_465
-	CMP	#$A
-	BCC	loc_128EA6
+	if_greater #$A, loc_128EA6
 	set count_unk_465, #0
 	LDA	byte_54C
-	CMP	#6
-	BCC	loc_128EA3
+	if_greater #6, loc_128EA3
 	set byte_54C, #$FF
 
 loc_128EA3:
@@ -1607,8 +1601,7 @@ sub_128F1B:
 
 loc_128F26:
 	LDA	tilemapTypeUnk_30B
-	CMP	#$64 
-	BCC	loc_128F3C
+	if_greater #$64 , loc_128F3C
 	LDA	tilemapTypeUnk_30B
 	SEC
 	SBC	#$64 
@@ -1620,8 +1613,7 @@ loc_128F26:
 loc_128F3C:
 	
 	LDA	tilemapTypeUnk_30B
-	CMP	#$A
-	BCC	loc_128F52
+	if_greater #$A, loc_128F52
 	LDA	tilemapTypeUnk_30B
 	SEC
 	SBC	#$A
@@ -1651,8 +1643,7 @@ byte_128F59:.BYTE	0,  0,	0,  0,	0,  0,	0,  1,	1,  1,	1,  1,	1,  1,	2,  2
 
 sub_128FC1:
 	LDA	count_unk_467
-	CMP	#$32 
-	BCC	locret_129004
+	if_greater #$32 , locret_129004
 	set count_unk_467, #0
 	LDA	#0
 	CLC
@@ -1741,13 +1732,11 @@ loc_129071:
 
 loc_12908C:
 	LDA	count_unk_466
-	CMP	#5
-	BCC	locret_1290A8
+	if_greater #5, locret_1290A8
 	set count_unk_466, #0
 	INC	byte_443
 	LDA	byte_443
-	CMP	byte_478
-	BCC	locret_1290A8
+	if_greater byte_478, locret_1290A8
 	set byte_440, #0
 
 locret_1290A8:
@@ -1817,8 +1806,7 @@ loc_1290EA:
 	STA	byte_441
 	set byte_476, #0
 	LDA	byte_441
-	CMP	byte_473
-	BCC	loc_129117
+	if_greater byte_473, loc_129117
 	if_equal byte_474, loc_129117
 	BCS	loc_129117
 	set byte_476, #$FF
@@ -1842,8 +1830,7 @@ loc_129120:
 loc_12912E:
 	JSR	sub_129196
 	LDA	byte_475
-	CMP	byte_477
-	BCC	loc_129143
+	if_greater byte_477, loc_129143
 	SEC
 	SBC	byte_477
 	STA	byte_475
@@ -1871,8 +1858,7 @@ sub_129155:
 	set is_game_finished_561, #0
 	JSR	sub_129186
 	LDA	byte_549
-	CMP	byte_477
-	BCC	loc_129174
+	if_greater byte_477, loc_129174
 	SEC
 	SBC	byte_477
 	STA	byte_549
@@ -2320,8 +2306,7 @@ loc_12A91F:
 	STA	byte_36F
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	tilemapTypeUnk_30B
-	BCC	loc_12A8D3
+	if_greater tilemapTypeUnk_30B, loc_12A8D3
 
 loc_12A933:
 	from_stack inv_spr_dscr1_30C
@@ -2425,8 +2410,7 @@ com_17_player_update_12A9C4:
 	STA	byte_54B
 	INC	byte_54B
 	LDA	byte_54B
-	CMP	#$F2 
-	BCC	locret_12AA0D
+	if_greater #$F2 , locret_12AA0D
 
 set_game_finished_12AA08:
 	set is_game_finished_561, #$FF
@@ -6814,8 +6798,7 @@ loc_12CBB2:
 	STA	objMapIdx_316
 	JSR	sub_12CCAB
 	LDA	count_unk_468
-	CMP	#$14
-	BCC	loc_12CBD6
+	if_greater #$14, loc_12CBD6
 	set count_unk_468, #0
 	INC	byte_434
 
@@ -6826,8 +6809,7 @@ loc_12CBD6:
 loc_12CBD9:
 
 	LDA	count_unk_469
-	CMP	#$A
-	BCC	loc_12CBF7
+	if_greater #$A, loc_12CBF7
 	set count_unk_469, #0
 	LDA	byte_434
 	EOR	#1
@@ -6866,8 +6848,7 @@ show_ending_screen_12CC06:
 
 sub_12CC34:
 	LDA	count_unk_465
-	CMP	#$A
-	BCC	loc_12CC48
+	if_greater #$A, loc_12CC48
 	set count_unk_465, #0
 	LDA	byte_430
 	EOR	#1
@@ -6875,8 +6856,7 @@ sub_12CC34:
 
 loc_12CC48:
 	LDA	count_unk_466
-	CMP	#$F
-	BCC	loc_12CC5C
+	if_greater #$F, loc_12CC5C
 	set count_unk_466, #0
 	LDA	byte_431
 	EOR	#1
@@ -6884,8 +6864,7 @@ loc_12CC48:
 
 loc_12CC5C:
 	LDA	count_unk_467
-	CMP	#$A
-	BCC	loc_12CC70
+	if_greater #$A, loc_12CC70
 	set count_unk_467, #0
 	LDA	byte_433
 	EOR	#1
@@ -6929,8 +6908,7 @@ sub_12CCAB:
 	set objectIdx_318, #$1A
 	set byte_317, #1
 	LDA	objMapIdx_316
-	CMP	#6
-	BCC	loc_12CCDF
+	if_greater #6, loc_12CCDF
 	set byte_317, #2
 
 loc_12CCDF:
@@ -7279,8 +7257,7 @@ loc_12D003:
 
 sub_12D070:
 	LDA	count_unk_466
-	CMP	#$A
-	BCC	loc_12D084
+	if_greater #$A, loc_12D084
 	set count_unk_466, #0
 	LDA	byte_547
 	EOR	#1
@@ -7316,8 +7293,7 @@ loc_12D084:
 
 sub_12D0C2:
 	LDA	count_unk_465
-	CMP	#$A
-	BCC	loc_12D0D6
+	if_greater #$A, loc_12D0D6
 	set count_unk_465, #0
 	LDA	byte_547
 	EOR	#1
@@ -7635,8 +7611,7 @@ sub_12D329:
 	mult_a_by_2
 	CLC
 	ADC	byte_42C
-	CMP	byte_532
-	BCC	loc_12D33A
+	if_greater byte_532, loc_12D33A
 	JSR	sub_12D49F
 	RTS
 ; ---------------------------------------------------------------------------
@@ -7695,8 +7670,7 @@ sub_12D3AB:
 
 loc_12D3B3:
 	LDA	ptr_0
-	CMP	#$64 
-	BCC	loc_12D3C5
+	if_greater #$64 , loc_12D3C5
 	LDA	ptr_0
 	SEC
 	SBC	#$64 
@@ -7708,8 +7682,7 @@ loc_12D3B3:
 loc_12D3C5:
 	
 	LDA	ptr_0
-	CMP	#$A
-	BCC	loc_12D3D7
+	if_greater #$A, loc_12D3D7
 	LDA	ptr_0
 	SEC
 	SBC	#$A
@@ -7949,8 +7922,7 @@ loc_12D5D2:
 	JSR	sub_12DAD0
 	from_stack tilemapTypeUnk_30B
 	LDA	byte_532
-	CMP	#8
-	BCC	loc_12D623
+	if_greater #8, loc_12D623
 	set text_idx_35C, #$7D 
 	set char_type_id_35D, #0
 	set byte_364, #7
@@ -8000,8 +7972,7 @@ sub_12D680:
 loc_12D685:
 	
 	LDA	byte_546
-	CMP	#$A
-	BCC	loc_12D699
+	if_greater #$A, loc_12D699
 	set byte_546, #0
 	LDA	byte_547
 	EOR	#1
@@ -8261,8 +8232,7 @@ loc_12D8AF:
 sub_12D8B3:
 	
 	LDA	tilemapTypeUnk_30B
-	CMP	byte_532
-	BCC	loc_12D8BC
+	if_greater byte_532, loc_12D8BC
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8299,8 +8269,7 @@ sub_12D8DD:
 	mult_a_by_2
 	CLC
 	ADC	byte_42C
-	CMP	byte_532
-	BCC	loc_12D900
+	if_greater byte_532, loc_12D900
 	LDX	byte_372
 	set {unk_4D2,X}, #$3A 
 	JMP	loc_12D910
@@ -8559,8 +8528,7 @@ loc_12DACB:
 sub_12DAD0:
 	
 	LDA	byte_546
-	CMP	#$A
-	BCC	loc_12DAE4
+	if_greater #$A, loc_12DAE4
 	set byte_546, #0
 	LDA	byte_547
 	EOR	#1
@@ -8641,8 +8609,7 @@ loc_12DB75:
 	mult_a_by_2
 	CLC
 	ADC	byte_42C
-	CMP	byte_532
-	BCC	loc_12DB83
+	if_greater byte_532, loc_12DB83
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -8858,8 +8825,7 @@ sub_12DCE9:
 sub_12DD0A:
 	
 	LDA	byte_546
-	CMP	#$A
-	BCC	loc_12DD1E
+	if_greater #$A, loc_12DD1E
 	set byte_546, #0
 	LDA	byte_547
 	EOR	#1
@@ -8915,8 +8881,7 @@ loc_12DD1E:
 	STA	ppu_unk_byte_309
 	add_to_byte_clc tilemap_size_307, byte_547
 	LDA	byte_42E
-	CMP	#4
-	BCC	loc_12DDE9
+	if_greater #4, loc_12DDE9
 	LDA	ppu_unk_byte_309
 	SEC
 	SBC	#$10
@@ -8943,8 +8908,7 @@ loc_12DDE9:
 	SBC	byte_547
 	STA	ppu_unk_byte_309
 	LDA	byte_42E
-	CMP	#4
-	BCC	loc_12DE34
+	if_greater #4, loc_12DE34
 	LDA	ppu_unk_byte_309
 	SEC
 	SBC	#$10
@@ -8965,22 +8929,18 @@ loc_12DE34:
 sub_12DE49:
 	
 	LDA	count_unk_465
-	CMP	#5
-	BCC	locret_12DEB4
+	if_greater #5, locret_12DEB4
 	set count_unk_465, #0
 	INC	byte_54D
 	LDA	byte_54D
-	CMP	#7
-	BCC	loc_12DE64
+	if_greater #7, loc_12DE64
 	set byte_54D, #0
 
 loc_12DE64:
 	set objMapIdx_316, byte_54D
 	LDA	byte_549
-	CMP	#$55 
-	BCC	loc_12DE8E
-	CMP	#$AA 
-	BCC	loc_12DE7D
+	if_greater #$55 , loc_12DE8E
+	if_greater #$AA , loc_12DE7D
 	set byte_54B, #0
 	JMP	loc_12DE9C
 ; ---------------------------------------------------------------------------
@@ -9111,12 +9071,9 @@ sub_12DFA5:
 	TAY
 	set tilemapTypeUnk_30B, {byte_533,Y}
 	LDA	tilemapTypeUnk_30B
-	CMP	#6
-	BCC	loc_12DFC6
-	CMP	#$A
-	BCC	loc_12E019
-	CMP	#$13
-	BCC	loc_12E035
+	if_greater #6, loc_12DFC6
+	if_greater #$A, loc_12E019
+	if_greater #$13, loc_12E035
 	JMP	loc_12E166
 ; ---------------------------------------------------------------------------
 
@@ -9184,8 +9141,7 @@ loc_12E035:
 	LDA	byte_54A
 	if_not_equal #0, loc_12E04D
 	LDA	byte_549
-	CMP	#$C8 
-	BCC	loc_12E04D
+	if_greater #$C8 , loc_12E04D
 	JMP	loc_12E05D
 ; ---------------------------------------------------------------------------
 
@@ -9215,8 +9171,7 @@ loc_12E076:
 	LDA	byte_54A
 	if_not_equal #0, loc_12E08E
 	LDA	byte_549
-	CMP	#$C8 
-	BCC	loc_12E08E
+	if_greater #$C8 , loc_12E08E
 	JMP	loc_12E09E
 ; ---------------------------------------------------------------------------
 
@@ -9236,8 +9191,7 @@ loc_12E09E:
 	LDA	byte_54A
 	if_not_equal #0, loc_12E0B6
 	LDA	byte_549
-	CMP	#$C8 
-	BCC	loc_12E0B6
+	if_greater #$C8 , loc_12E0B6
 	JMP	loc_12E0C6
 ; ---------------------------------------------------------------------------
 
@@ -9725,8 +9679,7 @@ loc_12E441:
 loc_12E450:
 	if_not_equal #4, loc_12E46F
 	LDA	byte_42E
-	CMP	#3
-	BCC	loc_12E460
+	if_greater #3, loc_12E460
 	set byte_42E, #$FF
 
 loc_12E460:
@@ -9792,8 +9745,7 @@ sub_12E4CD:
 	set tilemapWidth_308, #$C
 	JSR	sub_12D26B
 	LDA	byte_546
-	CMP	#$A
-	BCC	loc_12E4EE
+	if_greater #$A, loc_12E4EE
 	set byte_546, #0
 	LDA	byte_547
 	EOR	#1
@@ -10176,8 +10128,7 @@ sub_12E8A5:
 	mult_a_by_2
 	CLC
 	ADC	byte_42C
-	CMP	byte_532
-	BCC	loc_12E8B5
+	if_greater byte_532, loc_12E8B5
 	JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
@@ -10196,8 +10147,7 @@ loc_12E8C5:
 	LDA	unk_53B,X
 	CLC
 	ADC	unk_53B,Y
-	CMP	#$F
-	BCC	loc_12E8FB
+	if_greater #$F, loc_12E8FB
 	BEQ	loc_12E8FB
 	LDA	unk_53B,X
 	if_equal #$F, loc_12E923
@@ -10244,8 +10194,7 @@ loc_12E92A:
 	LDA	unk_53B,X
 	CLC
 	ADC	unk_53B,Y
-	CMP	#6
-	BCC	loc_12E960
+	if_greater #6, loc_12E960
 	BEQ	loc_12E960
 	LDA	unk_53B,X
 	if_equal #6, loc_12E988
@@ -10292,8 +10241,7 @@ loc_12E98F:
 	LDA	unk_53B,X
 	CLC
 	ADC	unk_53B,Y
-	CMP	#6
-	BCC	loc_12E9C5
+	if_greater #6, loc_12E9C5
 	BEQ	loc_12E9C5
 	LDA	unk_53B,X
 	if_equal #6, loc_12E9ED
@@ -10340,8 +10288,7 @@ loc_12E9F4:
 	LDA	unk_53B,X
 	CLC
 	ADC	unk_53B,Y
-	CMP	#6
-	BCC	loc_12EA2A
+	if_greater #6, loc_12EA2A
 	BEQ	loc_12EA2A
 	LDA	unk_53B,X
 	if_equal #6, loc_12EA52
@@ -10458,8 +10405,7 @@ loc_12EAFC:
 loc_12EB05:
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EB13
+	if_greater byte_47C, loc_12EB13
 	LDX	byte_47C
 
 loc_12EB13:
@@ -10469,8 +10415,7 @@ loc_12EB13:
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EB30
+	if_greater byte_47C, loc_12EB30
 	LDX	byte_47C
 
 loc_12EB30:
@@ -10514,8 +10459,7 @@ loc_12EB78:
 	
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EB86
+	if_greater byte_47C, loc_12EB86
 	LDX	byte_47C
 
 loc_12EB86:
@@ -10525,8 +10469,7 @@ loc_12EB86:
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EBA3
+	if_greater byte_47C, loc_12EBA3
 	LDX	byte_47C
 
 loc_12EBA3:
@@ -10550,8 +10493,7 @@ loc_12EBB6:
 	set {byte_533,X}, #$11
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EBD0
+	if_greater byte_47C, loc_12EBD0
 	LDX	byte_47C
 
 loc_12EBD0:
@@ -10561,8 +10503,7 @@ loc_12EBD0:
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EBED
+	if_greater byte_47C, loc_12EBED
 	LDX	byte_47C
 
 loc_12EBED:
@@ -10577,8 +10518,7 @@ loc_12EBF6:
 	set {byte_533,X}, #$E
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EC10
+	if_greater byte_47C, loc_12EC10
 	LDX	byte_47C
 
 loc_12EC10:
@@ -10588,8 +10528,7 @@ loc_12EC10:
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EC2D
+	if_greater byte_47C, loc_12EC2D
 	LDX	byte_47C
 
 loc_12EC2D:
@@ -10609,8 +10548,7 @@ loc_12EC39:
 	set {byte_533,X}, #$E
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EC57
+	if_greater byte_47C, loc_12EC57
 	LDX	byte_47C
 
 loc_12EC57:
@@ -10620,8 +10558,7 @@ loc_12EC57:
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EC74
+	if_greater byte_47C, loc_12EC74
 	LDX	byte_47C
 
 loc_12EC74:
@@ -10641,8 +10578,7 @@ loc_12EC80:
 	set {byte_533,X}, #$10
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12EC9E
+	if_greater byte_47C, loc_12EC9E
 	LDX	byte_47C
 
 loc_12EC9E:
@@ -10652,8 +10588,7 @@ loc_12EC9E:
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12ECBB
+	if_greater byte_47C, loc_12ECBB
 	LDX	byte_47C
 
 loc_12ECBB:
@@ -10673,8 +10608,7 @@ loc_12ECC7:
 	set {byte_533,X}, #$E
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12ECE5
+	if_greater byte_47C, loc_12ECE5
 	LDX	byte_47C
 
 loc_12ECE5:
@@ -10684,8 +10618,7 @@ loc_12ECE5:
 	JSR	sub_12D8B3
 	LDX	byte_47B
 	LDA	byte_47B
-	CMP	byte_47C
-	BCC	loc_12ED02
+	if_greater byte_47C, loc_12ED02
 	LDX	byte_47C
 
 loc_12ED02:
@@ -10882,8 +10815,7 @@ loc_12EE3F:
 loc_12EE47:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$30 
-	BCC	loc_12EE7A
+	if_greater #$30 , loc_12EE7A
 	LDA	palette_bg_321,Y 
 	AND	#$DF 
 	JMP	loc_12EE7D
@@ -10892,8 +10824,7 @@ loc_12EE47:
 loc_12EE58:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$20 
-	BCC	loc_12EE7A
+	if_greater #$20 , loc_12EE7A
 	LDA	palette_bg_321,Y 
 	AND	#$EF 
 	JMP	loc_12EE7D
@@ -10902,8 +10833,7 @@ loc_12EE58:
 loc_12EE69:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$10
-	BCC	loc_12EE7A
+	if_greater #$10, loc_12EE7A
 	LDA	palette_bg_321,Y 
 	AND	#$FF
 	JMP	loc_12EE7D
@@ -10982,8 +10912,7 @@ loc_12EEF2:
 loc_12EEFA:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$30 
-	BCC	loc_12EF32
+	if_greater #$30 , loc_12EF32
 	LDA	palette_bg_321,Y 
 	AND	#$EF 
 	JMP	loc_12EF35
@@ -10992,8 +10921,7 @@ loc_12EEFA:
 loc_12EF0B:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$20 
-	BCC	loc_12EF32
+	if_greater #$20 , loc_12EF32
 	LDA	palette_bg_321,Y 
 	AND	#$DF 
 	JMP	loc_12EF35
@@ -11002,8 +10930,7 @@ loc_12EF0B:
 loc_12EF1C:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$10
-	BCC	loc_12EF32
+	if_greater #$10, loc_12EF32
 	LDA	palette_bg_321,Y 
 	AND	#$CF 
 	JMP	loc_12EF35
@@ -11321,8 +11248,7 @@ byte_12F28B:.BYTE $28,$88,$38,$88,$48,$88,$58,$88,$68,$88,$78,$88,$88,$88,$98,$8
 
 sub_12F2C9:
 	LDA	byte_421
-	CMP	#$A
-	BCC	loc_12F2D8
+	if_greater #$A, loc_12F2D8
 	LDA	byte_372
 	if_equal #$A, loc_12F2D8
 	RTS
@@ -11541,11 +11467,9 @@ loc_12F495:
 
 sub_12F4C0:
 	LDA	byte_372
-	CMP	#$A
-	BCC	locret_12F4E3
+	if_greater #$A, locret_12F4E3
 	BEQ	locret_12F4E3
-	CMP	#$14
-	BCC	loc_12F4D9
+	if_greater #$14, loc_12F4D9
 	BEQ	loc_12F4D9
 	LDA	byte_372
 	SEC
@@ -11651,8 +11575,7 @@ byte_12F55F:.BYTE	4,$1B,	8,$13,	2
 
 sub_12F564:
 	LDA	count_unk_465
-	CMP	#$F
-	BCC	locret_12F5B8
+	if_greater #$F, locret_12F5B8
 	set count_unk_465, #0
 	LDA	byte_547
 	EOR	#1

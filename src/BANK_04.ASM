@@ -29,8 +29,7 @@ loc_48053:
 
 loc_48059:
 	LDA	inv_sprite_idx_31C
-	CMP	#$2F 
-	BCC	loc_4807D
+	if_greater #$2F , loc_4807D
 	to_stack bank_from_343
 
 exec_b13_c1_48064:
@@ -157,8 +156,7 @@ sub_4F3B3:
 
 loc_4F3B6:
 	LDA	inv_spr_dscr1_30C
-	CMP	#4
-	BCC	loc_4F3CD
+	if_greater #4, loc_4F3CD
 	BEQ	loc_4F3CD
 	SEC
 	SBC	#4
@@ -305,8 +303,7 @@ loc_4F4CF:
 	LDA	#$32 
 
 loc_4F4E7:
-	CMP	tilemapWidth_308
-	BCC	loc_4F4F6
+	if_greater tilemapWidth_308, loc_4F4F6
 	SEC
 	SBC	tilemapWidth_308
 	INC	inv_spr_dscr1_30C
@@ -317,8 +314,7 @@ loc_4F4F6:
 	LDA	tilemapHeight_30A
 
 loc_4F4F9:
-	CMP	inv_spr_dscr1_30C
-	BCC	loc_4F50B
+	if_greater inv_spr_dscr1_30C, loc_4F50B
 	SEC
 	SBC	inv_spr_dscr1_30C
 	STA	tilemapHeight_30A
@@ -380,8 +376,7 @@ loc_4F54A:
 
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
-	CMP	inv_spr_dscr1_30C
-	BCC	loc_4F538
+	if_greater inv_spr_dscr1_30C, loc_4F538
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_4F527

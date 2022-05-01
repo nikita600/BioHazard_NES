@@ -120,8 +120,7 @@ loc_3F820:
 	from_stack_to_y
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
-	CMP	#2
-	BCC	loc_3F7E3
+	if_greater #2, loc_3F7E3
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	if_equal #4, loc_3F839
@@ -220,8 +219,7 @@ loc_3F903:
 	INY
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	#8
-	BCC	loc_3F903
+	if_greater #8, loc_3F903
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F8FA
@@ -242,8 +240,7 @@ loc_3F921:
 	INY
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	#8
-	BCC	loc_3F921
+	if_greater #8, loc_3F921
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F918
@@ -260,8 +257,7 @@ loc_3F941:
 	set_inx {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	#8
-	BCC	loc_3F941
+	if_greater #8, loc_3F941
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F938
@@ -278,8 +274,7 @@ loc_3F95E:
 	set_inx {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	#8
-	BCC	loc_3F95E
+	if_greater #8, loc_3F95E
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F955
@@ -310,8 +305,7 @@ loc_3F98D:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	CMP	#$20 
-	BCC	loc_3F9A9
+	if_greater #$20 , loc_3F9A9
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -324,8 +318,7 @@ loc_3F9A9:
 	CLC
 	ADC	ppu_unk_byte_309
 	STA	ppu_unk_byte_309
-	CMP	#$1E
-	BCC	loc_3F9C2
+	if_greater #$1E, loc_3F9C2
 	SEC
 	SBC	#$1E
 	STA	ppu_unk_byte_309
@@ -376,8 +369,7 @@ loc_3FA07:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	CMP	#$20 
-	BCC	loc_3FA18
+	if_greater #$20 , loc_3FA18
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -397,8 +389,7 @@ sub_3FA27:
 	LDA	ppu_unk_byte_309
 	if_not_equal #$1D, loc_3FA48
 	LDA	data_3
-	CMP	#$28 
-	BCC	loc_3FA3B
+	if_greater #$28 , loc_3FA3B
 	set data_3, #$20 
 	JMP	loc_3FA3F
 ; ---------------------------------------------------------------------------

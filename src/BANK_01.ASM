@@ -385,8 +385,7 @@ loc_1F44D:
 	STA	byte_36B
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
-	CMP	tilemapWidth_308
-	BCC	loc_1F44D
+	if_greater tilemapWidth_308, loc_1F44D
 	from_stack byte_36B
 	from_stack byte_36A
 	LDA	data_2

@@ -951,12 +951,10 @@ gameplay_update_8930:
 	LDA	byte_54A
 	if_equal #0, loc_895B
 	LDA	count_unk_46C
-	CMP	#$A
-	BCC	loc_895B
+	if_greater #$A, loc_895B
 	set count_unk_46C, #0
 	LDA	byte_549
-	CMP	#1
-	BCC	set_game_finished_8956
+	if_greater #1, set_game_finished_8956
 	LDA	byte_549
 	SEC
 	SBC	#1
@@ -1137,8 +1135,7 @@ loc_8AC7:
 loc_8AE0:
 	
 	LDA	count_unk_46B
-	CMP	#$A
-	BCC	loc_8B59
+	if_greater #$A, loc_8B59
 	set count_unk_46B, #0
 	set objMapIdx_316, #0
 
@@ -1161,13 +1158,11 @@ loc_8B14:
 	from_stack objMapIdx_316
 	INC	objMapIdx_316
 	LDA	objMapIdx_316
-	CMP	#2
-	BCC	loc_8AF1
+	if_greater #2, loc_8AF1
 	LDA	byte_54A
 	if_equal #0, loc_8B4A
 	LDA	byte_549
-	CMP	#$A
-	BCC	set_game_finished_8B42
+	if_greater #$A, set_game_finished_8B42
 	LDA	byte_549
 	SEC
 	SBC	#$A
@@ -1183,8 +1178,7 @@ set_game_finished_8B42:
 loc_8B4A:
 	INC	byte_4B5
 	LDA	byte_4B5
-	CMP	#$A
-	BCC	loc_8B59
+	if_greater #$A, loc_8B59
 	set byte_54A, #1
 
 loc_8B59:
@@ -1339,8 +1333,7 @@ sub_8C5F:
 
 loc_8C79:
 	LDA	byte_4AE
-	CMP	#$20 
-	BCC	loc_8CC3
+	if_greater #$20 , loc_8CC3
 	BEQ	loc_8CC3
 
 loc_8C82:
@@ -1374,8 +1367,7 @@ loc_8CB1:
 	JSR	sub_94D3
 	JSR	sub_9542
 	LDA	byte_314
-	CMP	byte_315
-	BCC	loc_8C9E
+	if_greater byte_315, loc_8C9E
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1426,8 +1418,7 @@ loc_8D15:
 	JSR	sub_94D3
 	JSR	sub_9542
 	LDA	byte_314
-	CMP	byte_315
-	BCC	loc_8CDA
+	if_greater byte_315, loc_8CDA
 	RTS
 ; End of function sub_8C5F
 
@@ -1483,8 +1474,7 @@ loc_8D7A:
 	JSR	sub_94D3
 	JSR	sub_9542
 	LDA	byte_314
-	CMP	byte_315
-	BCC	loc_8D67
+	if_greater byte_315, loc_8D67
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1536,8 +1526,7 @@ loc_8DDE:
 	JSR	sub_94D3
 	JSR	sub_9542
 	LDA	byte_314
-	CMP	byte_315
-	BCC	loc_8DA3
+	if_greater byte_315, loc_8DA3
 	RTS
 ; End of function sub_8D27
 
@@ -1560,8 +1549,7 @@ sub_8DF0:
 
 loc_8E0A:
 	LDA	byte_4AD
-	CMP	#$20 
-	BCC	loc_8E4F
+	if_greater #$20 , loc_8E4F
 	BEQ	loc_8E4F
 
 loc_8E13:
@@ -1592,8 +1580,7 @@ loc_8E3D:
 	JSR	sub_94D3
 	JSR	sub_9542
 	LDA	byte_314
-	CMP	byte_315
-	BCC	loc_8E2A
+	if_greater byte_315, loc_8E2A
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1651,8 +1638,7 @@ loc_8EA7:
 	JSR	sub_94D3
 	JSR	sub_9542
 	LDA	byte_314
-	CMP	byte_315
-	BCC	loc_8E66
+	if_greater byte_315, loc_8E66
 	RTS
 ; End of function sub_8DF0
 
@@ -1708,8 +1694,7 @@ loc_8F0C:
 	JSR	sub_94D3
 	JSR	sub_9542
 	LDA	byte_314
-	CMP	byte_315
-	BCC	loc_8EF9
+	if_greater byte_315, loc_8EF9
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1767,8 +1752,7 @@ loc_8F76:
 	JSR	sub_94D3
 	JSR	sub_9542
 	LDA	byte_314
-	CMP	byte_315
-	BCC	loc_8F35
+	if_greater byte_315, loc_8F35
 	RTS
 ; End of function sub_8EB9
 
@@ -1874,8 +1858,7 @@ loc_9042:
 loc_9061:
 
 	LDA	tilemapTypeUnk_30B
-	CMP	#$3C 
-	BCC	loc_90BB
+	if_greater #$3C , loc_90BB
 	LDA	tilemapTypeUnk_30B
 	if_equal #$47 , loc_90BB
 	BCS	loc_90BB
@@ -1915,8 +1898,7 @@ locret_90BA:
 loc_90BB:
 
 	LDA	tilemapTypeUnk_30B
-	CMP	#$47 
-	BCC	loc_911D
+	if_greater #$47 , loc_911D
 	LDA	tilemapTypeUnk_30B
 	SEC
 	SBC	#$47 
@@ -2388,8 +2370,7 @@ loc_94B1:
 	LDA	tilemap_size_307
 	CLC
 	ADC	ppu_unk_byte_309
-	CMP	byte_42B
-	BCC	loc_94C5
+	if_greater byte_42B, loc_94C5
 	set sprite_length_30F, #$FF
 	JMP	loc_94CA
 ; ---------------------------------------------------------------------------
@@ -3247,8 +3228,7 @@ loc_BD8F:
 loc_BD97:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$30 
-	BCC	loc_BDCA
+	if_greater #$30 , loc_BDCA
 	LDA	palette_bg_321,Y 
 	AND	#$DF 
 	JMP	loc_BDCD
@@ -3257,8 +3237,7 @@ loc_BD97:
 loc_BDA8:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$20 
-	BCC	loc_BDCA
+	if_greater #$20 , loc_BDCA
 	LDA	palette_bg_321,Y 
 	AND	#$EF 
 	JMP	loc_BDCD
@@ -3267,8 +3246,7 @@ loc_BDA8:
 loc_BDB9:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$10
-	BCC	loc_BDCA
+	if_greater #$10, loc_BDCA
 	LDA	palette_bg_321,Y 
 	AND	#$FF
 	JMP	loc_BDCD
@@ -3344,8 +3322,7 @@ loc_BE42:
 loc_BE4A:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$30 
-	BCC	loc_BE82
+	if_greater #$30 , loc_BE82
 	LDA	palette_bg_321,Y 
 	AND	#$EF 
 	JMP	loc_BE85
@@ -3354,8 +3331,7 @@ loc_BE4A:
 loc_BE5B:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$20 
-	BCC	loc_BE82
+	if_greater #$20 , loc_BE82
 	LDA	palette_bg_321,Y 
 	AND	#$DF 
 	JMP	loc_BE85
@@ -3364,8 +3340,7 @@ loc_BE5B:
 loc_BE6C:
 	LDA	palette_bg_321,Y 
 	AND	#$30 
-	CMP	#$10
-	BCC	loc_BE82
+	if_greater #$10, loc_BE82
 	LDA	palette_bg_321,Y 
 	AND	#$CF 
 	JMP	loc_BE85
@@ -3432,8 +3407,7 @@ loc_BEBA:
 
 loc_BED9:
 	LDA	byte_351
-	CMP	byte_352
-	BCC	loc_BEEE
+	if_greater byte_352, loc_BEEE
 	LDA	byte_351
 	SEC
 	SBC	byte_352
@@ -4003,8 +3977,7 @@ sub_C921:
 
 loc_C962:
 	LDA	entry_idx_300
-	CMP	byte_BD1C,X
-	BCC	loc_C970
+	if_greater {byte_BD1C,X}, loc_C970
 	INX
 	CPX	tilemapTypeUnk_30B
 	BCC	loc_C962
@@ -4037,8 +4010,7 @@ sub_C98A:
 
 loc_C997:
 	LDA	entry_idx_300
-	CMP	byte_BD10,X
-	BCC	loc_C9A5
+	if_greater {byte_BD10,X}, loc_C9A5
 	INX
 	CPX	tilemapTypeUnk_30B
 	BCC	loc_C997
@@ -4130,8 +4102,7 @@ loc_CA18:
 
 loc_CA34:
 	LDA	byte_366
-	CMP	#$F0 
-	BCC	loc_CA45
+	if_greater #$F0 , loc_CA45
 	LDA	byte_366
 	SEC
 	SBC	#$F0 
@@ -4277,10 +4248,8 @@ sub_CB58:
 	STA	byte_4AE
 	INX
 	LDA	count_unk_465
-	CMP	#$A
-	BCC	loc_CBAF
-	CMP	#$14
-	BCC	loc_CBA7
+	if_greater #$A, loc_CBAF
+	if_greater #$14, loc_CBA7
 	set count_unk_465, #0
 	JMP	loc_CBAF
 ; ---------------------------------------------------------------------------
@@ -4401,8 +4370,7 @@ loc_CC51:
 ppu_upload_unk_data_CC5D:
 	
 	LDA	count_unk_465
-	CMP	#5
-	BCC	locret_CC99
+	if_greater #5, locret_CC99
 	set count_unk_465, #0
 	LDX	#0
 	set_inx {ppu_data_70,X}, #1
@@ -4415,8 +4383,7 @@ ppu_upload_unk_data_CC5D:
 	LDA	byte_421
 	CLC
 	ADC	#1
-	CMP	#6
-	BCC	loc_CC96
+	if_greater #6, loc_CC96
 	LDA	#0
 
 loc_CC96:
@@ -4598,8 +4565,7 @@ loc_CDDD:
 
 loc_CDF3:
 	LDA	ptr_0
-	CMP	#$10
-	BCC	loc_CDFE
+	if_greater #$10, loc_CDFE
 	BEQ	loc_CDFE
 	JMP	loc_CEC8
 ; ---------------------------------------------------------------------------
@@ -4668,8 +4634,7 @@ loc_CE70:
 
 loc_CE86:
 	LDA	ptr_0
-	CMP	#$10
-	BCC	loc_CE91
+	if_greater #$10, loc_CE91
 	BEQ	loc_CE91
 	JMP	loc_CEC8
 ; ---------------------------------------------------------------------------
@@ -5015,8 +4980,7 @@ loc_D0C7:
 	SBC	byte_36D
 	STA	ptr_1
 	LDA	ptr_0
-	CMP	#$10
-	BCC	loc_D15A
+	if_greater #$10, loc_D15A
 	BEQ	loc_D15A
 	LDY	#0
 
@@ -5044,8 +5008,7 @@ loc_D11E:
 	SBC	byte_36B
 	STA	ptr_1
 	LDA	ptr_0
-	CMP	#$10
-	BCC	loc_D15A
+	if_greater #$10, loc_D15A
 	BEQ	loc_D15A
 	LDY	#0
 
@@ -5081,8 +5044,7 @@ loc_D15A:
 	SBC	byte_369
 	STA	ptr_1
 	LDA	ptr_0
-	CMP	#$10
-	BCC	locret_D1ED
+	if_greater #$10, locret_D1ED
 	BEQ	locret_D1ED
 	LDY	#0
 
@@ -5110,8 +5072,7 @@ loc_D1B1:
 	SBC	byte_367
 	STA	ptr_1
 	LDA	ptr_0
-	CMP	#$10
-	BCC	locret_D1ED
+	if_greater #$10, locret_D1ED
 	BEQ	locret_D1ED
 	LDY	#0
 
@@ -5349,10 +5310,8 @@ loc_D40F:
 	LDA	byte_596
 	if_not_equal #$FF, loc_D43B
 	LDA	entry_idx_300
-	CMP	#$32 
-	BCC	loc_D427
-	CMP	#$35 
-	BCC	loc_D43B
+	if_greater #$32 , loc_D427
+	if_greater #$35 , loc_D43B
 	if_equal #$4E , loc_D43B
 	BCS	loc_D43B
 
@@ -5595,15 +5554,13 @@ loc_D602:
 loc_D60C:
 
 	LDA	count_unk_464
-	CMP	#$F
-	BCC	loc_D629
+	if_greater #$F, loc_D629
 	LDA	unk_37F,Y
 	CLC
 	ADC	#1
 	STA	unk_37F,Y
 	LDA	unk_37F,Y
-	CMP	unk_389,Y
-	BCC	loc_D629
+	if_greater {unk_389,Y}, loc_D629
 	set {unk_37F,Y}, #0
 
 loc_D629:
@@ -5622,8 +5579,7 @@ loc_D62C:
 loc_D637:
 
 	LDA	count_unk_464
-	CMP	#$F
-	BCC	locret_D643
+	if_greater #$F, locret_D643
 	set count_unk_464, #0
 
 locret_D643:
@@ -5653,8 +5609,7 @@ loc_D64F:
 
 loc_D65A:
 	LDA	count_unk_465
-	CMP	#$A
-	BCC	loc_D689
+	if_greater #$A, loc_D689
 	LDA	objIdxArray_375,X
 	if_not_equal #6, loc_D66B
 	JSR	sub_DC25
@@ -5677,8 +5632,7 @@ loc_D67F:
 loc_D689:
 
 	LDA	count_unk_466
-	CMP	#$A
-	BCC	loc_D69F
+	if_greater #$A, loc_D69F
 	LDA	objIdxArray_375,X
 	if_equal #2, loc_D6ED
 	if_equal #$10, loc_D6ED
@@ -5686,8 +5640,7 @@ loc_D689:
 
 loc_D69F:
 	LDA	count_unk_467
-	CMP	#5
-	BCC	loc_D6B9
+	if_greater #5, loc_D6B9
 	LDA	objIdxArray_375,X
 	if_equal #1, loc_D6ED
 	if_equal #$B, loc_D6ED
@@ -5696,23 +5649,20 @@ loc_D69F:
 
 loc_D6B9:
 	LDA	count_unk_468
-	CMP	#3
-	BCC	loc_D6CB
+	if_greater #3, loc_D6CB
 	LDA	objIdxArray_375,X
 	if_equal #$E, loc_D6ED
 	if_equal #$C, loc_D6ED
 
 loc_D6CB:
 	LDA	count_unk_469
-	CMP	#1
-	BCC	loc_D6D9
+	if_greater #1, loc_D6D9
 	LDA	objIdxArray_375,X
 	if_equal #$11, loc_D6ED
 
 loc_D6D9:
 	LDA	count_unk_46A
-	CMP	#1
-	BCC	loc_D6EA
+	if_greater #1, loc_D6EA
 	LDA	objIdxArray_375,X
 	if_not_equal #$13, loc_D6EA
 	JSR	sub_DC88
@@ -5725,8 +5675,7 @@ loc_D6EA:
 loc_D6ED:
 
 	LDA	count_unk_463
-	CMP	#$64 
-	BCC	loc_D702
+	if_greater #$64 , loc_D702
 	set byte_352, #4
 	JSR	sub_BEB6
 	set {array_unk_3A7,X}, byte_352
@@ -5859,44 +5808,37 @@ loc_D811:
 loc_D81F:
 
 	LDA	count_unk_463
-	CMP	#$64 
-	BCC	loc_D82B
+	if_greater #$64 , loc_D82B
 	set count_unk_463, #0
 
 loc_D82B:
 	LDA	count_unk_465
-	CMP	#$A
-	BCC	loc_D837
+	if_greater #$A, loc_D837
 	set count_unk_465, #0
 
 loc_D837:
 	LDA	count_unk_466
-	CMP	#$A
-	BCC	loc_D843
+	if_greater #$A, loc_D843
 	set count_unk_466, #0
 
 loc_D843:
 	LDA	count_unk_467
-	CMP	#5
-	BCC	loc_D84F
+	if_greater #5, loc_D84F
 	set count_unk_467, #0
 
 loc_D84F:
 	LDA	count_unk_468
-	CMP	#3
-	BCC	loc_D85B
+	if_greater #3, loc_D85B
 	set count_unk_468, #0
 
 loc_D85B:
 	LDA	count_unk_469
-	CMP	#1
-	BCC	loc_D867
+	if_greater #1, loc_D867
 	set count_unk_469, #0
 
 loc_D867:
 	LDA	count_unk_46A
-	CMP	#1
-	BCC	locret_D873
+	if_greater #1, locret_D873
 	set count_unk_46A, #0
 
 locret_D873:
@@ -6153,8 +6095,7 @@ loc_DA40:
 	LDA	objIdxArray_375,X
 	if_equal #$13, loc_DA73
 	LDA	ppu_unk_byte_309
-	CMP	#2
-	BCC	loc_DA73
+	if_greater #2, loc_DA73
 	LDA	ppu_unk_byte_309
 	SEC
 	SBC	#2
@@ -6394,15 +6335,13 @@ sub_DC1C:
 
 sub_DC25:
 	LDA	array_unk_39D,X
-	CMP	#5
-	BCC	loc_DC31
+	if_greater #5, loc_DC31
 	set {array_unk_39D,X}, #$FF
 
 loc_DC31:
 	INC	array_unk_39D,X
 	LDA	obj_array_unk_415,X
-	CMP	#$3C 
-	BCC	locret_DC40
+	if_greater #$3C , locret_DC40
 	set {array_unk_39D,X}, #6
 
 locret_DC40:
@@ -6415,8 +6354,7 @@ locret_DC40:
 
 sub_DC41:
 	LDA	array_unk_39D,X
-	CMP	#1
-	BCC	loc_DC4D
+	if_greater #1, loc_DC4D
 	set {array_unk_39D,X}, #$FF
 
 loc_DC4D:
@@ -6437,8 +6375,7 @@ locret_DC63:
 
 sub_DC64:
 	LDA	array_unk_39D,X
-	CMP	#1
-	BCC	loc_DC70
+	if_greater #1, loc_DC70
 	set {array_unk_39D,X}, #$FF
 
 loc_DC70:
@@ -6500,8 +6437,7 @@ loc_DCB5:
 	ADC	#1
 	STA	unk_37F,X
 	LDA	unk_37F,X
-	CMP	unk_389,X
-	BCC	loc_DCE6
+	if_greater {unk_389,X}, loc_DCE6
 	set {unk_37F,X}, #0
 
 loc_DCE6:
@@ -6801,8 +6737,7 @@ load_from_BCB6_DF7F:
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 	LDA	(data_2),Y
-	CMP	tilemapData_4C
-	BCC	loc_DFA7
+	if_greater tilemapData_4C, loc_DFA7
 	BEQ	loc_DFA7
 	set sprite_length_30F, #$FF
 	JMP	loc_DFAC
@@ -7713,8 +7648,7 @@ loc_E7D3:
 	STA	byte_36F
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	tilemapTypeUnk_30B
-	BCC	loc_E787
+	if_greater tilemapTypeUnk_30B, loc_E787
 
 loc_E7E7:
 	from_stack inv_spr_dscr1_30C
@@ -7814,8 +7748,7 @@ loc_E8A3:
 
 loc_E8C1:
 	LDA	byte_4AE
-	CMP	#$F0 
-	BCC	loc_E8D1
+	if_greater #$F0 , loc_E8D1
 	SEC
 	SBC	#$F0 
 	STA	byte_4AE
@@ -9965,16 +9898,14 @@ sub_F65C:
 loc_F68F:
 	LDA	byte_200,X
 	AND	#$F8 
-	CMP	byte_366
-	BCC	loc_F6C0
+	if_greater byte_366, loc_F6C0
 	LDA	byte_200,X
 	AND	#$F8 
 	if_equal byte_368, loc_F6C0
 	BCS	loc_F6C0
 	LDA	byte_203,X
 	AND	#$F8 
-	CMP	byte_36A
-	BCC	loc_F6C0
+	if_greater byte_36A, loc_F6C0
 	LDA	byte_203,X
 	AND	#$F8 
 	if_equal byte_36C, loc_F6C0
@@ -10040,8 +9971,7 @@ loc_F70A:
 	INC	inv_spr_dscr1_30C
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	tilemapWidth_308
-	BCC	loc_F6EC
+	if_greater tilemapWidth_308, loc_F6EC
 	RTS
 ; End of function sub_F65C
 
@@ -10187,8 +10117,7 @@ loc_F877:
 	INX
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
-	CMP	#2
-	BCC	loc_F877
+	if_greater #2, loc_F877
 	from_stack tilemapTypeUnk_30B
 	JSR	sub_F194
 	INC	tilemapTypeUnk_30B
@@ -10333,8 +10262,7 @@ sub_F98B:
 	CLC
 	ADC	ppu_unk_byte_309
 	STA	ppu_unk_byte_309
-	CMP	#$1E
-	BCC	loc_F9A9
+	if_greater #$1E, loc_F9A9
 	INY
 	SEC
 	SBC	#$1E
@@ -10348,8 +10276,7 @@ loc_F9A9:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	CMP	#$20 
-	BCC	locret_F9C1
+	if_greater #$20 , locret_F9C1
 	INX
 	SEC
 	SBC	#$20 
@@ -10440,8 +10367,7 @@ sub_FA61:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	CMP	#$20 
-	BCC	loc_FA78
+	if_greater #$20 , loc_FA78
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -10453,8 +10379,7 @@ loc_FA78:
 	LSR	A
 	CLC
 	ADC	ppu_unk_byte_309
-	CMP	#$1E
-	BCC	loc_FA8C
+	if_greater #$1E, loc_FA8C
 	INC	ppu_unk_byte_309
 	INC	ppu_unk_byte_309
 

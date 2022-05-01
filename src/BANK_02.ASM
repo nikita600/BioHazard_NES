@@ -408,8 +408,7 @@ loc_2D40B:
 	CLC
 	ADC	tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
-	CMP	#$20 
-	BCC	loc_2D445
+	if_greater #$20 , loc_2D445
 	set tilemapTypeUnk_30B, #$20 
 	JMP	loc_2D445
 ; ---------------------------------------------------------------------------
@@ -498,8 +497,7 @@ loc_2D4D3:
 sub_2D4D7:
 	LDA	char_type_id_35D
 	LSR	A
-	CMP	#8
-	BCC	loc_2D4E3
+	if_greater #8, loc_2D4E3
 	JSR	sub_2E244
 	RTS
 ; ---------------------------------------------------------------------------
@@ -547,8 +545,7 @@ sub_2D514:
 
 loc_2D51C:
 	LDA	count_unk_365
-	CMP	#$A
-	BCC	locret_2D541
+	if_greater #$A, locret_2D541
 	set count_unk_365, #0
 	TYA
 	EOR	#1
@@ -669,8 +666,7 @@ loc_2E2F9:
 	from_stack_to_y
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
-	CMP	#2
-	BCC	loc_2E2BC
+	if_greater #2, loc_2E2BC
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	if_equal #4, loc_2E312
@@ -769,8 +765,7 @@ loc_2E3DC:
 	INY
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	#8
-	BCC	loc_2E3DC
+	if_greater #8, loc_2E3DC
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E3D3
@@ -791,8 +786,7 @@ loc_2E3FA:
 	INY
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	#8
-	BCC	loc_2E3FA
+	if_greater #8, loc_2E3FA
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E3F1
@@ -809,8 +803,7 @@ loc_2E41A:
 	set_inx {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	#8
-	BCC	loc_2E41A
+	if_greater #8, loc_2E41A
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E411
@@ -827,8 +820,7 @@ loc_2E437:
 	set_inx {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	CMP	#8
-	BCC	loc_2E437
+	if_greater #8, loc_2E437
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E42E
@@ -860,8 +852,7 @@ loc_2E466:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	CMP	#$20 
-	BCC	loc_2E482
+	if_greater #$20 , loc_2E482
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -874,8 +865,7 @@ loc_2E482:
 	CLC
 	ADC	ppu_unk_byte_309
 	STA	ppu_unk_byte_309
-	CMP	#$1E
-	BCC	loc_2E49B
+	if_greater #$1E, loc_2E49B
 	SEC
 	SBC	#$1E
 	STA	ppu_unk_byte_309
@@ -926,8 +916,7 @@ loc_2E4E0:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	CMP	#$20 
-	BCC	loc_2E4F1
+	if_greater #$20 , loc_2E4F1
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -948,8 +937,7 @@ sub_2E500:
 	LDA	ppu_unk_byte_309
 	if_not_equal #$1D, loc_2E521
 	LDA	data_3
-	CMP	#$28 
-	BCC	loc_2E514
+	if_greater #$28 , loc_2E514
 	set data_3, #$20 
 	JMP	loc_2E518
 ; ---------------------------------------------------------------------------

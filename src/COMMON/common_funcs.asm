@@ -450,8 +450,7 @@ loc_FED2:
 scroll_update_FED6:		
 	INC	scroll_offset_x_479
 	LDA	scroll_offset_x_479
-	CMP	#$A
-	BCC	locret_FF2D
+	if_greater #$A, locret_FF2D
 	LDA	scroll_offset_y_47A
 	EOR	#$80 
 	STA	scroll_offset_y_47A

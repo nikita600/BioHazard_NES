@@ -96,8 +96,7 @@ BossImages_129826:
 
 music_func_13C028:
 	LDA	tilemapTypeUnk_30B
-	CMP	#$47 
-	BCC	loc_13C032
+	if_greater #$47 , loc_13C032
 	BEQ	loc_13C032
 	RTS
 ; ---------------------------------------------------------------------------
@@ -107,8 +106,7 @@ loc_13C032:
 	STX	_APU_STATUS
 	PHA
 	TAY
-	CMP	#$40 
-	BCC	loc_13C040
+	if_greater #$40 , loc_13C040
 	SEC
 	SBC	#$40 
 
@@ -254,8 +252,7 @@ apu_update_13D4F9:
 	TAX
 	INC	apu_unk_742
 	LDA	apu_unk_742
-	CMP	apu_dat_13DC5C,X
-	BCC	locret_13D533
+	if_greater {apu_dat_13DC5C,X}, locret_13D533
 	set apu_unk_742, #0
 	INC	apu_unk_741
 	LDA	apu_unk_741
@@ -284,8 +281,7 @@ apu_func_13D534:
 	ADC	apu_unk_741
 	TAY
 	LDA	apu_dat_13DC5C,Y
-	CMP	#2
-	BCC	loc_13D565
+	if_greater #2, loc_13D565
 	BEQ	loc_13D55C
 	if_not_equal #3, apu_func_13D575
 	JSR	apu_func_13D575
@@ -343,11 +339,9 @@ loc_13D58D:
 loc_13D59A:
 
 	LDA	(apu_unk_FE),Y
-	CMP	#$FC 
-	BCC	loc_13D5F5
+	if_greater #$FC , loc_13D5F5
 	BEQ	loc_13D60D
-	CMP	#$FE 
-	BCC	loc_13D5AB
+	if_greater #$FE , loc_13D5AB
 	BNE	loc_13D5AE
 	JMP	loc_13D657
 ; ---------------------------------------------------------------------------
@@ -624,8 +618,7 @@ music_func_13D7C3:
 	ADC	apu_unk_710
 	TAY
 	LDA	apu_dat_13DC5C,Y
-	CMP	#2
-	BCC	loc_13D7F4
+	if_greater #2, loc_13D7F4
 	BEQ	loc_13D7EB
 	if_not_equal #3, music_func_13D804
 	JSR	music_func_13D804
@@ -683,11 +676,9 @@ loc_13D81C:
 loc_13D829:
 
 	LDA	(apu_unk_FE),Y
-	CMP	#$FC 
-	BCC	loc_13D884
+	if_greater #$FC , loc_13D884
 	BEQ	loc_13D89C
-	CMP	#$FE 
-	BCC	loc_13D83A
+	if_greater #$FE , loc_13D83A
 	BNE	loc_13D83D
 	JMP	loc_13D8E6
 ; ---------------------------------------------------------------------------
@@ -998,8 +989,7 @@ loc_13DA99:
 	CLC
 	ADC	apu_unk_754,X
 	STA	apu_unk_705
-	CMP	#$F
-	BCC	loc_13DAB3
+	if_greater #$F, loc_13DAB3
 	set apu_unk_705, #$F
 	set {apu_unk_756,X}, #1
 
@@ -1069,8 +1059,7 @@ loc_13DB1A:
 	CLC
 	ADC	apu_unk_723,X
 	STA	apu_unk_705
-	CMP	#$F
-	BCC	loc_13DB34
+	if_greater #$F, loc_13DB34
 	set apu_unk_705, #$F
 	set {apu_unk_725,X}, #1
 
@@ -1234,8 +1223,7 @@ music_update_state_13DC1E:
 	TAX
 	INC	apu_unk_711
 	LDA	apu_unk_711
-	CMP	apu_dat_13DC5C,X
-	BCC	locret_13DC5B
+	if_greater {apu_dat_13DC5C,X}, locret_13DC5B
 	set apu_unk_711, #0
 	INC	apu_unk_710
 	LDA	apu_unk_710
@@ -1434,8 +1422,7 @@ load_sprite_func_13DFA8:
 
 loc_13DFAB:
 	LDA	inv_spr_dscr1_30C
-	CMP	#4
-	BCC	loc_13DFC2
+	if_greater #4, loc_13DFC2
 	BEQ	loc_13DFC2
 	SEC
 	SBC	#4
@@ -1567,8 +1554,7 @@ loc_13E0C4:
 	LDA	#$32 
 
 loc_13E0DC:
-	CMP	tilemapWidth_308
-	BCC	loc_13E0EB
+	if_greater tilemapWidth_308, loc_13E0EB
 	SEC
 	SBC	tilemapWidth_308
 	INC	inv_spr_dscr1_30C
@@ -1579,8 +1565,7 @@ loc_13E0EB:
 	LDA	tilemapHeight_30A
 
 loc_13E0EE:
-	CMP	inv_spr_dscr1_30C
-	BCC	loc_13E100
+	if_greater inv_spr_dscr1_30C, loc_13E100
 	SEC
 	SBC	inv_spr_dscr1_30C
 	STA	tilemapHeight_30A
@@ -1642,8 +1627,7 @@ loc_13E13F:
 
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
-	CMP	inv_spr_dscr1_30C
-	BCC	loc_13E12D
+	if_greater inv_spr_dscr1_30C, loc_13E12D
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sprites_func_13E11C

@@ -1271,8 +1271,7 @@ sub_128B0F:
 
 
 sub_128B43:
-	LDA	byte_472
-	BNE	loc_128B4B
+	if_not_equal byte_472, loc_128B4B
 	JMP	loc_128BFB
 ; ---------------------------------------------------------------------------
 
@@ -1678,8 +1677,7 @@ byte_129006:.BYTE	6,  1,	4,  1,	3,  1,	4,  1,	4,  1,	4,  1,	4,  1,	4,  2
 
 
 sub_129019:
-	LDA	byte_440
-	BNE	loc_12902C
+	if_not_equal byte_440, loc_12902C
 	set byte_31A, #$C8 
 	set tilemapWidth_308, #$38 
 	JSR	sub_12D26B
@@ -1774,8 +1772,7 @@ locret_1290A8:
 
 sub_1290C3:
 	set sprite_length_30F, #0
-	LDA	byte_472
-	BNE	loc_1290EA
+	if_not_equal byte_472, loc_1290EA
 	LDA	byte_543
 	if_equal_cmp #1, loc_1290EA
 	LDA	byte_543
@@ -1810,8 +1807,7 @@ loc_1290EA:
 
 loc_129117:
 	
-	LDA	byte_476
-	BNE	loc_129120
+	if_not_equal byte_476, loc_129120
 	JSR	sub_12ED29
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3326,8 +3322,7 @@ loc_12B1EB:
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	byte_55B
-	BNE	locret_12B224
+	if_not_equal byte_55B, locret_12B224
 	set text_idx_35C, #$B3 
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
@@ -3358,8 +3353,7 @@ loc_12B22D:
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	byte_55B
-	BNE	locret_12B266
+	if_not_equal byte_55B, locret_12B266
 	set text_idx_35C, #$B3 
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
@@ -3390,8 +3384,7 @@ loc_12B26F:
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	byte_55B
-	BNE	locret_12B2A8
+	if_not_equal byte_55B, locret_12B2A8
 	set text_idx_35C, #$B3 
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
@@ -3422,8 +3415,7 @@ loc_12B2B1:
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	byte_55B
-	BNE	locret_12B2EA
+	if_not_equal byte_55B, locret_12B2EA
 	set text_idx_35C, #$B3 
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
@@ -3454,8 +3446,7 @@ loc_12B2F3:
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	byte_55B
-	BNE	locret_12B32C
+	if_not_equal byte_55B, locret_12B32C
 	set text_idx_35C, #$B3 
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
@@ -3486,8 +3477,7 @@ loc_12B335:
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	byte_55B
-	BNE	locret_12B36E
+	if_not_equal byte_55B, locret_12B36E
 	set text_idx_35C, #$B3 
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
@@ -5152,10 +5142,8 @@ loc_12BF66:
 
 
 sub_12BF79:
-	LDA	byte_5BC
-	BNE	locret_12BF88
-	LDA	byte_5BD
-	BNE	locret_12BF88
+	if_not_equal byte_5BC, locret_12BF88
+	if_not_equal byte_5BD, locret_12BF88
 	set byte_46D, #$1C
 
 locret_12BF88:
@@ -5168,10 +5156,8 @@ locret_12BF88:
 
 
 sub_12BF89:
-	LDA	byte_5A8
-	BNE	locret_12BF98
-	LDA	byte_5A9
-	BNE	locret_12BF98
+	if_not_equal byte_5A8, locret_12BF98
+	if_not_equal byte_5A9, locret_12BF98
 	set byte_46D, #$1C
 
 locret_12BF98:
@@ -5252,8 +5238,7 @@ locret_12C021:
 sub_12C022:
 	LDA	byte_313
 	if_not_equal_cmp #2, locret_12C095
-	LDA	byte_563
-	BNE	locret_12C095
+	if_not_equal byte_563, locret_12C095
 	LDA	byte_5C4
 	if_equal_cmp #$FF, locret_12C095
 	set byte_563, #$FF
@@ -5291,8 +5276,7 @@ locret_12C095:
 
 
 sub_12C096:
-	LDA	byte_564
-	BNE	locret_12C0AD
+	if_not_equal byte_564, locret_12C0AD
 	set tilemapTypeUnk_30B, #$29 
 	JSR	sub_12D58C
 	if_equal sprite_length_30F, locret_12C0AD
@@ -5334,8 +5318,7 @@ sub_12C0CE:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	LDA	byte_372
-	BNE	locret_12C118
+	if_not_equal byte_372, locret_12C118
 	set byte_566, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -5359,8 +5342,7 @@ sub_12C119:
 
 loc_12C11B:
 	
-	LDA	objCreatedArray_393,X
-	BNE	locret_12C13B
+	if_not_equal {objCreatedArray_393,X}, locret_12C13B
 	LDA	objIdxArray_375,X
 	if_equal_cmp #3, loc_12C12E
 	INX
@@ -5494,8 +5476,7 @@ loc_12C1FA:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	LDA	byte_372
-	BNE	locret_12C220
+	if_not_equal byte_372, locret_12C220
 	set byte_585, #$FF
 
 locret_12C220:
@@ -5519,8 +5500,7 @@ loc_12C229:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	LDA	byte_372
-	BNE	locret_12C25D
+	if_not_equal byte_372, locret_12C25D
 	set text_idx_35C, #$E4 
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
@@ -5609,8 +5589,7 @@ sub_12C2D6:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	LDA	byte_372
-	BNE	locret_12C323
+	if_not_equal byte_372, locret_12C323
 	LDA	byte_589
 	EOR	#$FF
 	STA	byte_589
@@ -5639,8 +5618,7 @@ sub_12C324:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	LDA	byte_372
-	BNE	locret_12C371
+	if_not_equal byte_372, locret_12C371
 	LDA	byte_58B
 	EOR	#$FF
 	STA	byte_58B
@@ -6031,8 +6009,7 @@ sub_12C5F0:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	LDA	byte_372
-	BNE	locret_12C636
+	if_not_equal byte_372, locret_12C636
 	LDA	byte_593
 	EOR	#$FF
 	STA	byte_593
@@ -7014,8 +6991,7 @@ loc_12CE05:
 	JSR	wait_for_frame_rendered_FCA0
 	LDA	input_pressed_34A
 	if_not_equal_cmp #8, loc_12CE25
-	LDA	byte_372
-	BNE	loc_12CE1C
+	if_not_equal byte_372, loc_12CE1C
 	set byte_372, #4
 
 loc_12CE1C:
@@ -7042,15 +7018,13 @@ loc_12CE3E:
 	LDA	jill_pos_y_47E
 	if_not_equal_cmp #$FF, loc_12CE57
 	JSR	sub_12D120
-	LDA	sprite_length_30F
-	BNE	loc_12CE69
+	if_not_equal sprite_length_30F, loc_12CE69
 	JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
 loc_12CE57:
 	JSR	sub_12CEAC
-	LDA	sprite_length_30F
-	BNE	loc_12CE69
+	if_not_equal sprite_length_30F, loc_12CE69
 	JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
@@ -7159,8 +7133,7 @@ loc_12CF5A:
 loc_12CF61:
 	JSR	sub_12ED20
 	set byte_204, #$F0 
-	LDA	byte_372
-	BNE	loc_12CF76
+	if_not_equal byte_372, loc_12CF76
 	from_stack byte_372
 	JSR	sub_12CFBA
 	RTS
@@ -7705,8 +7678,7 @@ loc_12D3D7:
 	STA	tilemap_size_307
 
 loc_12D423:
-	LDA	data_3
-	BNE	loc_12D434
+	if_not_equal data_3, loc_12D434
 	if_equal data_2, loc_12D473
 	add_to_byte_clc tilemap_size_307, #8
 
@@ -7734,10 +7706,8 @@ loc_12D434:
 	STA	tilemap_size_307
 
 loc_12D473:
-	LDA	data_3
-	BNE	loc_12D484
-	LDA	data_2
-	BNE	loc_12D484
+	if_not_equal data_3, loc_12D484
+	if_not_equal data_2, loc_12D484
 	add_to_byte_clc tilemap_size_307, #$C
 
 loc_12D484:
@@ -7927,8 +7897,7 @@ loc_12D623:
 	JSR	sub_12D680
 	from_stack tilemapTypeUnk_30B
 	set sprite_length_30F, #0
-	LDA	byte_372
-	BNE	loc_12D652
+	if_not_equal byte_372, loc_12D652
 	JSR	sub_12D82B
 	set sprite_length_30F, #$FF
 
@@ -8199,8 +8168,7 @@ loc_12D897:
 	set {unk_53B,Y}, #3
 
 loc_12D8A0:
-	LDA	byte_4B4
-	BNE	loc_12D8AF
+	if_not_equal byte_4B4, loc_12D8AF
 	LDA	unk_53B,Y
 	CLC
 	ADC	unk_53B,Y
@@ -9825,8 +9793,7 @@ loc_12E616:
 	JSR	sub_12E798
 	JSR	sub_12E7D3
 	JSR	sub_12E7F0
-	LDA	byte_4C1
-	BNE	loc_12E62A
+	if_not_equal byte_4C1, loc_12E62A
 	JSR	wait_for_b_pressed_FCC5
 	JMP	loc_12E67A
 ; ---------------------------------------------------------------------------
@@ -9917,8 +9884,7 @@ loc_12E6E0:
 	JSR	sub_12E798
 	JSR	sub_12E7D3
 	JSR	sub_12E7F0
-	LDA	byte_4D0
-	BNE	loc_12E6F7
+	if_not_equal byte_4D0, loc_12E6F7
 	JSR	wait_for_b_pressed_FCC5
 	JSR	sub_12ED29
 	JMP	loc_12E776

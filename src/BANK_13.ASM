@@ -188,8 +188,7 @@ music_func_13D484:
 
 ; FUNCTION CHUNK AT D425 SIZE 0000005F BYTES
 
-	LDA	apu_unk_76D
-	BNE	loc_13D425
+	if_not_equal apu_unk_76D, loc_13D425
 	LDX	#0
 	set apu_unk_737, #0
 	STA	apu_unk_704
@@ -318,8 +317,7 @@ loc_13D565:
 
 apu_func_13D575:
 
-	LDA	apu_unk_758,X
-	BNE	locret_13D55B
+	if_not_equal {apu_unk_758,X}, locret_13D55B
 	LDA	apu_dat_13D421,X
 	AND	apu_unk_737
 	BEQ	locret_13D55B
@@ -484,8 +482,7 @@ loc_13D68F:
 	INY
 	TYA
 	STA	apu_unk_764,X
-	LDA	(apu_unk_FE),Y
-	BNE	loc_13D6C0
+	if_not_equal {(apu_unk_FE),Y}, loc_13D6C0
 	LDA	apu_dat_13D421,X
 	EOR	#$FF
 	AND	apu_unk_743
@@ -651,8 +648,7 @@ loc_13D7F4:
 
 music_func_13D804:
 
-	LDA	apu_unk_727,X
-	BNE	locret_13D7EA
+	if_not_equal {apu_unk_727,X}, locret_13D7EA
 	LDA	apu_dat_13D421,X
 	AND	apu_unk_706
 	BEQ	locret_13D7EA
@@ -817,8 +813,7 @@ loc_13D91E:
 	INY
 	TYA
 	STA	apu_unk_733,X
-	LDA	(apu_unk_FE),Y
-	BNE	loc_13D94F
+	if_not_equal {(apu_unk_FE),Y}, loc_13D94F
 	LDA	apu_dat_13D421,X
 	EOR	#$FF
 	AND	apu_unk_712
@@ -1559,8 +1554,7 @@ loc_13E100:
 	if_equal ppu_unk_byte_309, loc_13E110
 	JSR	sprites_func_13E11C
 	DEC	ppu_unk_byte_309
-	LDA	ppu_unk_byte_309
-	BNE	loc_13E100
+	if_not_equal ppu_unk_byte_309, loc_13E100
 
 loc_13E110:
 	if_equal tilemapHeight_30A, locret_13E11B

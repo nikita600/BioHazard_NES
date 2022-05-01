@@ -327,8 +327,7 @@ loc_4F50B:
 	if_equal ppu_unk_byte_309, loc_4F51B
 	JSR	sub_4F527
 	DEC	ppu_unk_byte_309
-	LDA	ppu_unk_byte_309
-	BNE	loc_4F50B
+	if_not_equal ppu_unk_byte_309, loc_4F50B
 
 loc_4F51B:
 	if_equal tilemapHeight_30A, locret_4F526

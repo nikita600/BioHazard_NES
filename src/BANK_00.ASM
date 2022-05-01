@@ -750,8 +750,7 @@ sub_8766:
 loc_876D:
 	CPX	tilemapTypeUnk_30B
 	BEQ	loc_87C4
-	LDA	objCreatedArray_393,X
-	BNE	loc_87C4
+	if_not_equal {objCreatedArray_393,X}, loc_87C4
 	JSR	sub_87CE
 	LDA	sprite_length_30F
 	if_equal_cmp #$FF, locret_87CD
@@ -1115,8 +1114,7 @@ objects_update_8AB3:
 	JSR	objects_func_D52A
 
 loc_8ABF:
-	LDA	byte_439
-	BNE	loc_8AC7
+	if_not_equal byte_439, loc_8AC7
 	JMP	update_player_input_8B5F
 ; ---------------------------------------------------------------------------
 
@@ -1317,10 +1315,8 @@ sub_8C5F:
 	
 	JSR	sub_91B6
 	set byte_432, #$96 
-	LDA	ppu_unk_byte_303
-	BNE	loc_8C79
-	LDA	ppu_scroll_y_305
-	BNE	loc_8C79
+	if_not_equal ppu_unk_byte_303, loc_8C79
+	if_not_equal ppu_scroll_y_305, loc_8C79
 	LDA	byte_4AE
 	if_not_equal_cmp #0, loc_8C82
 	RTS
@@ -1427,8 +1423,7 @@ sub_8D27:
 	CLC
 	ADC	#1
 	if_not_equal_cmp tilemaps_vert_count_312, loc_8D47
-	LDA	ppu_scroll_y_305
-	BNE	loc_8D47
+	if_not_equal ppu_scroll_y_305, loc_8D47
 	LDA	byte_4AE
 	if_not_equal_cmp #$E0, loc_8D50
 	RTS
@@ -1529,10 +1524,8 @@ sub_8DF0:
 	
 	JSR	sub_91B6
 	set byte_432, #$96 
-	LDA	ppu_unk_byte_302
-	BNE	loc_8E0A
-	LDA	ppu_scroll_x_304
-	BNE	loc_8E0A
+	if_not_equal ppu_unk_byte_302, loc_8E0A
+	if_not_equal ppu_scroll_x_304, loc_8E0A
 	LDA	byte_4AD
 	if_not_equal_cmp #0, loc_8E13
 	RTS
@@ -1610,8 +1603,7 @@ loc_8E89:
 	JSR	sub_F37E
 
 loc_8E8C:
-	LDA	ppu_scroll_x_304
-	BNE	loc_8E94
+	if_not_equal ppu_scroll_x_304, loc_8E94
 	DEC	ppu_unk_byte_302
 
 loc_8E94:
@@ -1643,8 +1635,7 @@ sub_8EB9:
 	CLC
 	ADC	#1
 	if_not_equal_cmp tilemaps_horiz_count_311, loc_8ED9
-	LDA	ppu_scroll_x_304
-	BNE	loc_8ED9
+	if_not_equal ppu_scroll_x_304, loc_8ED9
 	LDA	byte_4AD
 	if_not_equal_cmp #$F0, loc_8EE2
 	RTS
@@ -1730,8 +1721,7 @@ loc_8F5B:
 	INC	ppu_scroll_x_304
 
 loc_8F6E:
-	LDA	ppu_scroll_x_304
-	BNE	loc_8F76
+	if_not_equal ppu_scroll_x_304, loc_8F76
 	INC	ppu_unk_byte_302
 
 loc_8F76:
@@ -1867,8 +1857,7 @@ loc_9061:
 	JSR	sub_CF13
 	JSR	sub_CAA9
 	from_stack tilemapTypeUnk_30B
-	LDA	byte_372
-	BNE	locret_90BA
+	if_not_equal byte_372, locret_90BA
 	LDX	byte_4C1
 	LDA	tilemapTypeUnk_30B
 	SEC
@@ -1910,8 +1899,7 @@ loc_90E6:
 	JSR	sub_CF13
 	JSR	sub_CAA9
 	from_stack tilemapTypeUnk_30B
-	LDA	byte_372
-	BNE	locret_911C
+	if_not_equal byte_372, locret_911C
 	LDX	byte_4D0
 	LDA	tilemapTypeUnk_30B
 	SEC
@@ -2018,8 +2006,7 @@ sub_91D8:
 ; ---------------------------------------------------------------------------
 
 loc_91DE:
-	LDA	byte_42A
-	BNE	loc_91E4
+	if_not_equal byte_42A, loc_91E4
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2035,8 +2022,7 @@ objects_update_91F0:
 	set byte_36B, byte_42D
 	set byte_366, byte_42E
 	set byte_367, byte_42F
-	LDA	objCreatedArray_393,X
-	BNE	next_object_924D
+	if_not_equal {objCreatedArray_393,X}, next_object_924D
 	LDA	objIdxArray_375,X
 	if_equal_cmp #1, case0_923C
 	if_equal_cmp #2, case0_923C
@@ -2227,8 +2213,7 @@ sub_939C:
 	LDA	byte_203
 	if_equal_cmp #$F0, locret_93D4
 	JSR	sub_944A
-	LDA	sprite_length_30F
-	BNE	locret_93D4
+	if_not_equal sprite_length_30F, locret_93D4
 	add_to_byte_clc byte_42C, #2
 	add_to_byte byte_42D, #0
 
@@ -2243,8 +2228,7 @@ loc_93D5:
 	LDA	byte_200
 	if_equal_cmp #0, locret_93FB
 	JSR	sub_944A
-	LDA	sprite_length_30F
-	BNE	locret_93FB
+	if_not_equal sprite_length_30F, locret_93FB
 	LDA	byte_42E
 	SEC
 	SBC	#2
@@ -2263,8 +2247,7 @@ loc_93FC:
 	LDA	byte_200
 	if_equal_cmp #$E0, locret_9422
 	JSR	sub_944A
-	LDA	sprite_length_30F
-	BNE	locret_9422
+	if_not_equal sprite_length_30F, locret_9422
 	add_to_byte_clc byte_42E, #2
 	add_to_byte byte_42F, #0
 
@@ -2279,8 +2262,7 @@ loc_9423:
 	LDA	byte_203
 	if_equal_cmp #0, locret_9449
 	JSR	sub_944A
-	LDA	sprite_length_30F
-	BNE	locret_9449
+	if_not_equal sprite_length_30F, locret_9449
 	LDA	byte_42C
 	SEC
 	SBC	#2
@@ -3665,8 +3647,7 @@ load_image_C6D2:
 	set ppu_scroll_x_304, ppu_prev_scroll_x_unk_4A7
 	set ppu_scroll_y_305, ppu_prev_scroll_y_unk_4A8
 	set sprite_type_306, prev_sprite_type_4A9
-	LDA	sprite_type_306
-	BNE	loc_C71B
+	if_not_equal sprite_type_306, loc_C71B
 	set byte_301, entry_idx_300
 
 loc_C71B:
@@ -3675,11 +3656,9 @@ loc_C71B:
 	JSR	sub_C921
 	JSR	sub_ECCC
 	JSR	sub_EE72
-	LDA	sprite_type_306
-	BNE	loc_C743
+	if_not_equal sprite_type_306, loc_C743
 	JSR	upload_text_palette_to_ppu_FB85
-	LDA	map_show_43B
-	BNE	loc_C73D
+	if_not_equal map_show_43B, loc_C73D
 	JSR	sub_CBE2
 	JSR	sub_D409
 
@@ -4434,22 +4413,19 @@ obj_id7_handle_CCF6:
 loc_CD00:
 	LDA	obj_array_unk_415,Y
 	if_not_equal_cmp #0, loc_CD0F
-	LDA	byte_551
-	BNE	loc_CD2A
+	if_not_equal byte_551, loc_CD2A
 	JMP	inc_obj_idx_CD5F
 ; ---------------------------------------------------------------------------
 
 loc_CD0F:
 	if_not_equal_cmp #1, loc_CD1B
-	LDA	byte_553
-	BNE	loc_CD2A
+	if_not_equal byte_553, loc_CD2A
 	JMP	inc_obj_idx_CD5F
 ; ---------------------------------------------------------------------------
 
 loc_CD1B:
 	if_not_equal_cmp #2, loc_CD27
-	LDA	byte_552
-	BNE	loc_CD2A
+	if_not_equal byte_552, loc_CD2A
 	JMP	inc_obj_idx_CD5F
 ; ---------------------------------------------------------------------------
 
@@ -4491,8 +4467,7 @@ inc_obj_idx_CD5F:
 
 
 sub_CD66:
-	LDA	obj_idx_unk_462
-	BNE	loc_CD6C
+	if_not_equal obj_idx_unk_462, loc_CD6C
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4664,8 +4639,7 @@ locret_CED1:
 
 objects_func_CED2:
 	
-	LDA	obj_idx_unk_462
-	BNE	loc_CED8
+	if_not_equal obj_idx_unk_462, loc_CED8
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4735,8 +4709,7 @@ loc_CF46:
 	set tilemapTypeUnk_30B, {tilemapData_4C,X}
 	set inv_spr_dscr1_30C, {roomUnk1_4D,X}
 	set byte_313, {roomUnk2_4E,X}
-	LDA	inv_spr_dscr1_30C
-	BNE	loc_CF5D
+	if_not_equal inv_spr_dscr1_30C, loc_CF5D
 	JMP	loc_CFF2
 ; ---------------------------------------------------------------------------
 
@@ -5281,8 +5254,7 @@ sub_D359:
 
 
 sub_D409:
-	LDA	objArraySize_373
-	BNE	loc_D40F
+	if_not_equal objArraySize_373, loc_D40F
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -5430,8 +5402,7 @@ loc_D51A:
 
 objects_func_D52A:
 	
-	LDA	objArraySize_373
-	BNE	loc_D532
+	if_not_equal objArraySize_373, loc_D532
 	JMP	loc_D637
 ; ---------------------------------------------------------------------------
 
@@ -5516,8 +5487,7 @@ loc_D5F0:
 	CPX	#0
 	BEQ	loc_D602
 	LDA	objMapIdx_316
-	CLC
-	ADC	unk_389,Y
+	add_to_a {unk_389,Y}
 	STA	objMapIdx_316
 	DEX
 	JMP	loc_D5F0
@@ -5525,8 +5495,7 @@ loc_D5F0:
 
 loc_D602:
 	LDA	objMapIdx_316
-	CLC
-	ADC	unk_37F,Y
+	add_to_a {unk_37F,Y}
 	STA	objMapIdx_316
 
 loc_D60C:
@@ -5570,8 +5539,7 @@ locret_D643:
 
 objects_func_D644:
 	
-	LDA	objArraySize_373
-	BNE	loc_D64A
+	if_not_equal objArraySize_373, loc_D64A
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -5855,8 +5823,7 @@ locret_D893:
 sub_D894:
 	
 	set sprite_length_30F, #0
-	LDA	objCreatedArray_393,X
-	BNE	locret_D8D7
+	if_not_equal {objCreatedArray_393,X}, locret_D8D7
 	JSR	sub_D8D8
 	JSR	sub_D96B
 	LDA	sprite_length_30F
@@ -6056,8 +6023,7 @@ locret_DA32:
 
 
 sub_DA33:
-	LDA	objArraySize_373
-	BNE	loc_DA3E
+	if_not_equal objArraySize_373, loc_DA3E
 	set sprite_length_30F, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6066,8 +6032,7 @@ loc_DA3E:
 	LDX	#0
 
 loc_DA40:
-	LDA	objCreatedArray_393,X
-	BNE	loc_DABE
+	if_not_equal {objCreatedArray_393,X}, loc_DABE
 	JSR	sub_D8D8
 	LDA	objIdxArray_375,X
 	if_equal_cmp #$13, loc_DA73
@@ -6556,8 +6521,7 @@ loc_DDFE:
 	PHA
 	JSR	map_update_DEFA
 	from_stack_to_y
-	LDA	sprite_length_30F
-	BNE	locret_DE21
+	if_not_equal sprite_length_30F, locret_DE21
 	add_to_byte_clc byte_36A, #8
 	add_to_byte byte_36B, #0
 
@@ -6586,8 +6550,7 @@ loc_DE46:
 	PHA
 	JSR	map_update_DEFA
 	from_stack_to_y
-	LDA	sprite_length_30F
-	BNE	locret_DE69
+	if_not_equal sprite_length_30F, locret_DE69
 	add_to_byte_clc byte_36A, #8
 	add_to_byte byte_36B, #0
 
@@ -6618,8 +6581,7 @@ loc_DE6A:
 	SBC	#0
 	STA	byte_36B
 	JSR	map_update_DEFA
-	LDA	sprite_length_30F
-	BNE	locret_DEB3
+	if_not_equal sprite_length_30F, locret_DEB3
 	add_to_byte_clc byte_36A, #8
 	add_to_byte byte_36B, #0
 
@@ -6643,8 +6605,7 @@ loc_DEB4:
 	add_to_byte byte_36B, #0
 
 	JSR	map_update_DEFA
-	LDA	sprite_length_30F
-	BNE	locret_DEF9
+	if_not_equal sprite_length_30F, locret_DEF9
 	add_to_byte_clc byte_36A, #8
 	add_to_byte byte_36B, #0
 
@@ -7256,8 +7217,7 @@ loc_E499:
 	LDX	#1
 	JSR	sub_CF13
 	JSR	sub_CAA9
-	LDA	byte_372
-	BNE	loc_E4C4
+	if_not_equal byte_372, loc_E4C4
 	set byte_420, #1
 	JSR	exec_b12_c24_EB8E
 	LDA	byte_41F
@@ -7286,8 +7246,7 @@ loc_E4DF:
 	LDX	#1
 	JSR	sub_CF13
 	JSR	sub_CAA9
-	LDA	byte_372
-	BNE	loc_E50A
+	if_not_equal byte_372, loc_E50A
 	set byte_420, #0
 	JSR	exec_b12_c24_EB8E
 	LDA	byte_41F
@@ -7938,8 +7897,7 @@ loc_EA21:
 ; End of function sub_EA14
 
 ; ---------------------------------------------------------------------------
-	LDA	byte_5AB
-	BNE	locret_EA3B
+	if_not_equal byte_5AB, locret_EA3B
 
 locret_EA3B:
 	RTS
@@ -8851,8 +8809,7 @@ write_tilemap_to_ppu_EE4D:
 	INC	ppu_unk_byte_309
 	JSR	sub_F194
 	DEC	tilemapHeight_30A
-	LDA	tilemapHeight_30A
-	BNE	start_read_tilemap_EE1C
+	if_not_equal tilemapHeight_30A, start_read_tilemap_EE1C
 	from_stack tilemap_size_307
 	from_stack ppu_unk_byte_309
 	RTS
@@ -8907,11 +8864,9 @@ loc_EEC7:
 	TAX
 	INC	ppu_unk_byte_309
 	DEC	tilemapHeight_30A
-	LDA	tilemapHeight_30A
-	BNE	loc_EE9A
+	if_not_equal tilemapHeight_30A, loc_EE9A
 	from_stack ppu_unk_byte_309
-	LDA	ppu_scroll_x_304
-	BNE	loc_EEEF
+	if_not_equal ppu_scroll_x_304, loc_EEEF
 	JMP	loc_EF71
 ; ---------------------------------------------------------------------------
 
@@ -8973,8 +8928,7 @@ loc_EF5D:
 	TAX
 	INC	ppu_unk_byte_309
 	DEC	tilemapHeight_30A
-	LDA	tilemapHeight_30A
-	BNE	loc_EF04
+	if_not_equal tilemapHeight_30A, loc_EF04
 	from_stack ppu_unk_byte_309
 
 loc_EF71:
@@ -9035,11 +8989,9 @@ loc_EFDB:
 	TAX
 	INC	ppu_unk_byte_309
 	DEC	tilemapHeight_30A
-	LDA	tilemapHeight_30A
-	BNE	loc_EFAB
+	if_not_equal tilemapHeight_30A, loc_EFAB
 	from_stack ppu_unk_byte_309
-	LDA	ppu_scroll_x_304
-	BNE	loc_F003
+	if_not_equal ppu_scroll_x_304, loc_F003
 	JMP	locret_F09C
 ; ---------------------------------------------------------------------------
 
@@ -9112,8 +9064,7 @@ loc_F088:
 	TAX
 	INC	ppu_unk_byte_309
 	DEC	tilemapHeight_30A
-	LDA	tilemapHeight_30A
-	BNE	loc_F02C
+	if_not_equal tilemapHeight_30A, loc_F02C
 	from_stack ppu_unk_byte_309
 
 locret_F09C:
@@ -9215,8 +9166,7 @@ set_ppu_upload_flag_F18B:
 	set has_ppu_data_to_upload_6F, #1
 
 wait_for_ppu_finished_F18F:
-	LDA	has_ppu_data_to_upload_6F
-	BNE	wait_for_ppu_finished_F18F
+	if_not_equal has_ppu_data_to_upload_6F, wait_for_ppu_finished_F18F
 	RTS
 ; End of function ppu_unk_func_F09D
 
@@ -9498,8 +9448,7 @@ sub_F42F:
 	LDY	ppu_unk_byte_303
 	LDA	byte_313
 	if_not_equal_cmp #0, loc_F44D
-	LDA	ppu_unk_byte_309
-	BNE	loc_F447
+	if_not_equal ppu_unk_byte_309, loc_F447
 	DEY
 	set ppu_unk_byte_309, #$1E
 

@@ -5,8 +5,7 @@ wait_for_ppu_data_upload_FC8C:
 	set has_ppu_data_to_upload_6F, #1
 
 loc_FC90:		
-	LDA	has_ppu_data_to_upload_6F
-	BNE	loc_FC90
+	if_not_equal has_ppu_data_to_upload_6F, loc_FC90
 	RTS
 ; End of function wait_for_ppu_data_upload_FC8C
 
@@ -34,8 +33,7 @@ wait_for_frame_rendered_FCA0:
 	set frame_render_count_350, #1
 
 loop_FCA5:		
-	LDA	frame_render_count_350
-	BNE	loop_FCA5
+	if_not_equal frame_render_count_350, loop_FCA5
 	RTS
 ; End of function wait_for_frame_rendered_FCA0
 
@@ -157,8 +155,7 @@ nmi_sub_FCF5:
 
 sub_FD0A:		
 	if_equal byte_43E, loc_FD31
-	LDA	byte_203
-	BNE	loc_FD1C
+	if_not_equal byte_203, loc_FD1C
 	set byte_43E, #0
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
@@ -209,8 +206,7 @@ NMI_FD53:
 
 loc_FD62:		
 	set bank_switch_flag_6C, #$EE 
-	LDA	sprite_type_306
-	BNE	battle_screen_update_FD6E
+	if_not_equal sprite_type_306, battle_screen_update_FD6E
 	JSR	nmi_sub_FCF5
 
 battle_screen_update_FD6E:	
@@ -262,8 +258,7 @@ return_FDCA:
 
 
 ppu_upset_data_FDCB:		
-	LDA	has_ppu_data_to_upload_6F
-	BNE	loc_FDD0
+	if_not_equal has_ppu_data_to_upload_6F, loc_FDD0
 	RTS
 ; ---------------------------------------------------------------------------
 

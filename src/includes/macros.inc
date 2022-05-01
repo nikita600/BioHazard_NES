@@ -54,6 +54,13 @@
 
 ; ---------------------------------------------------------------------------
 
+.macro add_to_a value
+
+	CLC
+	ADC	value
+
+.endmacro
+
 .macro add_to_byte_clc dst, src
 	
 	LDA	dst
@@ -129,6 +136,29 @@
 	BEQ	branch
 
 .endmacro
+
+.macro if_not_equal value, branch
+
+	LDA	value
+	BNE	branch
+
+.endmacro
+
+.macro if_lower value, branch
+
+	LDA value
+	BCS branch
+
+.endmacro
+
+.macro if_greater value, branch
+
+	LDA value
+	BCC branch
+
+.endmacro
+
+; ---------------------------------------------------------------------------
 
 .macro if_equal_cmp value, branch
 

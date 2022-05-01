@@ -1953,12 +1953,8 @@ sub_1291F5:
 
 loc_129213:
 	if_not_equal_cmp #0, loc_12922B
-	LDA	array_unk_3D9,X
-	add_to_a #8
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	ADC	#0
-	STA	array_unk_3CF,X
+	add_to_byte_clc {array_unk_3D9,X}, #8
+	add_to_byte {array_unk_3CF,X}, #0
 	JMP	locret_129254
 ; ---------------------------------------------------------------------------
 
@@ -1975,12 +1971,8 @@ loc_12922B:
 ; ---------------------------------------------------------------------------
 
 loc_129243:
-	LDA	array_unk_3C5,X
-	add_to_a #8
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	ADC	#0
-	STA	array_unk_3BB,X
+	add_to_byte_clc {array_unk_3C5,X}, #8
+	add_to_byte {array_unk_3BB,X}, #0
 
 locret_129254:
 	
@@ -5418,12 +5410,8 @@ sub_12C1C3:
 	
 	DEY
 	DEY
-	LDA	array_unk_3D9,X
-	add_to_a #2
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	ADC	#0
-	STA	array_unk_3CF,X
+	add_to_byte_clc {array_unk_3D9,X}, #2
+	add_to_byte {array_unk_3CF,X}, #0
 	TYA
 	PHA
 	TXA
@@ -8130,9 +8118,7 @@ loc_12D897:
 
 loc_12D8A0:
 	if_not_equal byte_4B4, loc_12D8AF
-	LDA	unk_53B,Y
-	add_to_a {unk_53B,Y}
-	STA	unk_53B,Y
+	add_to_byte_clc {unk_53B,Y}, {unk_53B,Y}
 
 loc_12D8AF:
 	INC	byte_532
@@ -10036,9 +10022,7 @@ loc_12E8C5:
 
 loc_12E8FB:
 	
-	LDA	unk_53B,X
-	add_to_a {unk_53B,Y}
-	STA	unk_53B,X
+	add_to_byte_clc {unk_53B,X}, {unk_53B,Y}
 	LDX	byte_47C
 	LDY	byte_532
 	JSR	sub_12D9F7
@@ -10081,9 +10065,7 @@ loc_12E92A:
 
 loc_12E960:
 	
-	LDA	unk_53B,X
-	add_to_a {unk_53B,Y}
-	STA	unk_53B,X
+	add_to_byte_clc {unk_53B,X}, {unk_53B,Y}
 	LDX	byte_47C
 	LDY	byte_532
 	JSR	sub_12D9F7
@@ -10126,9 +10108,7 @@ loc_12E98F:
 
 loc_12E9C5:
 	
-	LDA	unk_53B,X
-	add_to_a {unk_53B,Y}
-	STA	unk_53B,X
+	add_to_byte_clc {unk_53B,X}, {unk_53B,Y}
 	LDX	byte_47C
 	LDY	byte_532
 	JSR	sub_12D9F7
@@ -10171,9 +10151,7 @@ loc_12E9F4:
 
 loc_12EA2A:
 	
-	LDA	unk_53B,X
-	add_to_a {unk_53B,Y}
-	STA	unk_53B,X
+	add_to_byte_clc {unk_53B,X}, {unk_53B,Y}
 	LDX	byte_47C
 	LDY	byte_532
 	JSR	sub_12D9F7

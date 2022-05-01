@@ -2781,12 +2781,8 @@ loc_98A4:
 ; ---------------------------------------------------------------------------
 
 loc_98B8:
-	LDA	array_unk_3C5,X
-	add_to_a #2
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	ADC	#0
-	STA	array_unk_3BB,X
+	add_to_byte_clc {array_unk_3C5,X}, #2
+	add_to_byte {array_unk_3BB,X}, #0
 	JMP	locret_98F1
 ; ---------------------------------------------------------------------------
 
@@ -2802,12 +2798,8 @@ loc_98CC:
 ; ---------------------------------------------------------------------------
 
 loc_98E0:
-	LDA	array_unk_3D9,X
-	add_to_a #2
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	ADC	#0
-	STA	array_unk_3CF,X
+	add_to_byte_clc {array_unk_3D9,X}, #2
+	add_to_byte {array_unk_3CF,X}, #0
 
 locret_98F1:
 	RTS
@@ -4524,12 +4516,8 @@ loc_CDFE:
 ; ---------------------------------------------------------------------------
 
 loc_CE1C:
-	LDA	unk_456,X
-	add_to_a #2
-	STA	unk_456,X
-	LDA	unk_457,X
-	ADC	#0
-	STA	unk_457,X
+	add_to_byte_clc {unk_456,X}, #2
+	add_to_byte {unk_457,X}, #0
 	set {unk_460,Y}, #3
 	JMP	loc_CEC8
 ; ---------------------------------------------------------------------------
@@ -4592,12 +4580,8 @@ loc_CE91:
 ; ---------------------------------------------------------------------------
 
 loc_CEAF:
-	LDA	unk_458,X
-	add_to_a #2
-	STA	unk_458,X
-	LDA	unk_459,X
-	ADC	#0
-	STA	unk_459,X
+	add_to_byte_clc {unk_458,X}, #2
+	add_to_byte {unk_459,X}, #0
 	set {unk_460,Y}, #1
 	JMP	loc_CEC8
 ; ---------------------------------------------------------------------------
@@ -4718,12 +4702,8 @@ loc_CF68:
 
 loc_CF89:
 	if_not_equal_cmp #1, loc_CFA1
-	LDA	array_unk_3D9,X
-	add_to_a #2
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	ADC	#0
-	STA	array_unk_3CF,X
+	add_to_byte_clc {array_unk_3D9,X}, #2
+	add_to_byte {array_unk_3CF,X}, #0
 	JMP	loc_CFCA
 ; ---------------------------------------------------------------------------
 
@@ -4740,12 +4720,8 @@ loc_CFA1:
 ; ---------------------------------------------------------------------------
 
 loc_CFB9:
-	LDA	array_unk_3C5,X
-	add_to_a #2
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	ADC	#0
-	STA	array_unk_3BB,X
+	add_to_byte_clc {array_unk_3C5,X}, #2
+	add_to_byte {array_unk_3BB,X}, #0
 
 loc_CFCA:
 	TXA
@@ -4914,12 +4890,8 @@ loc_D0C7:
 	LDY	#0
 
 loc_D0FD:
-	LDA	array_unk_3C5,X
-	add_to_a #2
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	ADC	#0
-	STA	array_unk_3BB,X
+	add_to_byte_clc {array_unk_3C5,X}, #2
+	add_to_byte {array_unk_3BB,X}, #0
 	set_iny {array_unk_3A7,X}, #3
 	JSR	sub_D1EE
 	CPY	#8
@@ -4977,12 +4949,8 @@ loc_D15A:
 	LDY	#0
 
 loc_D190:
-	LDA	array_unk_3D9,X
-	add_to_a #2
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	ADC	#0
-	STA	array_unk_3CF,X
+	add_to_byte_clc {array_unk_3D9,X}, #2
+	add_to_byte {array_unk_3CF,X}, #0
 	set_iny {array_unk_3A7,X}, #1
 	JSR	sub_D1EE
 	CPY	#8
@@ -5456,25 +5424,19 @@ loc_D5F0:
 
 	CPX	#0
 	BEQ	loc_D602
-	LDA	objMapIdx_316
-	add_to_a {unk_389,Y}
-	STA	objMapIdx_316
+	add_to_byte_clc objMapIdx_316, {unk_389,Y}
 	DEX
 	JMP	loc_D5F0
 ; ---------------------------------------------------------------------------
 
 loc_D602:
-	LDA	objMapIdx_316
-	add_to_a {unk_37F,Y}
-	STA	objMapIdx_316
+	add_to_byte_clc objMapIdx_316, {unk_37F,Y}
 
 loc_D60C:
 
 	LDA	count_unk_464
 	if_greater_cmp #$F, loc_D629
-	LDA	unk_37F,Y
-	add_to_a #1
-	STA	unk_37F,Y
+	add_to_byte_clc {unk_37F,Y}, #1
 	LDA	unk_37F,Y
 	if_greater_cmp {unk_389,Y}, loc_D629
 	set {unk_37F,Y}, #0
@@ -5681,12 +5643,8 @@ loc_D7C4:
 ; ---------------------------------------------------------------------------
 
 loc_D7D8:
-	LDA	array_unk_3C5,X
-	add_to_a #2
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	ADC	#0
-	STA	array_unk_3BB,X
+	add_to_byte_clc {array_unk_3C5,X}, #2
+	add_to_byte {array_unk_3BB,X}, #0
 	JMP	loc_D811
 ; ---------------------------------------------------------------------------
 
@@ -5702,12 +5660,8 @@ loc_D7EC:
 ; ---------------------------------------------------------------------------
 
 loc_D800:
-	LDA	array_unk_3D9,X
-	add_to_a #2
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	ADC	#0
-	STA	array_unk_3CF,X
+	add_to_byte_clc {array_unk_3D9,X}, #2
+	add_to_byte {array_unk_3CF,X}, #0
 
 loc_D811:
 
@@ -6328,15 +6282,9 @@ loc_DCB5:
 	JSR	sub_C7C7
 	from_stack_to_x
 	JSR	sub_DD40
-	LDA	array_unk_3C5,X
-	add_to_a #2
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	ADC	#0
-	STA	array_unk_3BB,X
-	LDA	unk_37F,X
-	add_to_a #1
-	STA	unk_37F,X
+	add_to_byte_clc {array_unk_3C5,X}, #2
+	add_to_byte {array_unk_3BB,X}, #0
+	add_to_byte_clc {unk_37F,X}, #1
 	LDA	unk_37F,X
 	if_greater_cmp {unk_389,X}, loc_DCE6
 	set {unk_37F,X}, #0

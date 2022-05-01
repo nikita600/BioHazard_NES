@@ -117,8 +117,7 @@ loc_13C040:
 	LDA	byte_13C0C9,Y
 	TAY
 	PLA
-	CMP	#$40 
-	BCS	loc_13C068
+	if_lower #$40 , loc_13C068
 	set {_APU_PULSE1_ENV,Y}, {pulse_entries_13C111,X}
 	set {_APU_PULSE1_SWEEP,Y}, {pulse_entries_13C111+1,X}
 	set {_APU_PULSE1_TIME,Y}, {pulse_entries_13C111+2,X}
@@ -533,8 +532,7 @@ loc_13D6F1:
 
 loc_13D707:
 	LDA	apu_unk_705
-	CMP	#$D
-	BCS	loc_13D729
+	if_lower #$D, loc_13D729
 	mult_a_by_4
 	TAY
 	set _APU_PULSE1_ENV, {pulse_env_13DDEC,Y}
@@ -558,8 +556,7 @@ loc_13D729:
 
 loc_13D747:
 	LDA	apu_unk_705
-	CMP	#$D
-	BCS	loc_13D76A
+	if_lower #$D, loc_13D76A
 	mult_a_by_4
 	TAY
 	set _APU_PULSE2_ENV, {pulse2_env_13DE20,Y}
@@ -583,8 +580,7 @@ loc_13D76A:
 
 loc_13D788:
 	LDA	apu_unk_705
-	CMP	#$D
-	BCS	loc_13D7AB
+	if_lower #$D, loc_13D7AB
 	mult_a_by_4
 	TAY
 	set _APU_TRI_COUNT, {tri_count_13DE54,Y}
@@ -874,8 +870,7 @@ apu_update_noise_13D988:
 
 apu_update_pulse1_13D99E:
 	LDA	apu_unk_705
-	CMP	#$D
-	BCS	apu_update_pulse1_13D9C1
+	if_lower #$D, apu_update_pulse1_13D9C1
 	mult_a_by_4
 	TAY
 	set _APU_PULSE1_ENV, {pulse_env_13DDEC,Y}
@@ -899,8 +894,7 @@ apu_update_pulse1_13D9C1:
 
 apu_update_pulse2_13D9DF:
 	LDA	apu_unk_705
-	CMP	#$D
-	BCS	apu_update_pulse2_13DA02
+	if_lower #$D, apu_update_pulse2_13DA02
 	mult_a_by_4
 	TAY
 	set _APU_PULSE2_ENV, {pulse2_env_13DE20,Y}
@@ -924,8 +918,7 @@ apu_update_pulse2_13DA02:
 
 apu_update_triangle_13DA20:
 	LDA	apu_unk_705
-	CMP	#$D
-	BCS	loc_13DA43
+	if_lower #$D, loc_13DA43
 	mult_a_by_4
 	TAY
 	set _APU_TRI_COUNT, {tri_count_13DE54,Y}
@@ -971,8 +964,7 @@ apu_update_pulse1_13DA62:
 	BNE	locret_13DADB
 	LDA	apu_unk_752,X
 	BEQ	loc_13DA99
-	CMP	#4
-	BCS	locret_13DADB
+	if_lower #4, locret_13DADB
 	LDA	apu_pulse1_env_744,X
 	AND	#$F
 	SEC
@@ -1041,8 +1033,7 @@ music_func_13DAE3:
 	BNE	locret_13DB64
 	LDA	apu_unk_721,X
 	BEQ	loc_13DB1A
-	CMP	#4
-	BCS	locret_13DB64
+	if_lower #4, locret_13DB64
 	LDA	pulse1_env_713,X
 	AND	#$F
 	SEC
@@ -1096,8 +1087,7 @@ locret_13DB64:
 music_func_13DB65:
 
 	LDA	apu_unk_752,X
-	CMP	#4
-	BCS	locret_13DB89
+	if_lower #4, locret_13DB89
 	mult_a_by_2
 	TAY
 	LDA	apu_unk_74A,Y
@@ -1127,8 +1117,7 @@ locret_13DB89:
 music_func_13DB8A:
 
 	LDA	apu_unk_721,X
-	CMP	#4
-	BCS	locret_13DBAE
+	if_lower #4, locret_13DBAE
 	mult_a_by_2
 	TAY
 	LDA	apu_unk_719,Y

@@ -847,8 +847,7 @@ loc_128549:
 	LDA	byte_1285D2,Y
 	TAY
 	PLA
-	CMP	#$40 
-	BCS	loc_128571
+	if_lower #$40 , loc_128571
 	set {_APU_PULSE1_ENV,Y}, {apu_pulse_timer1_12861A,X}
 	set {_APU_PULSE1_SWEEP,Y}, {apu_pulse_timer1_12861A+1,X}
 	set {_APU_PULSE1_TIME,Y}, {apu_pulse_timer1_12861A+2,X}
@@ -9209,8 +9208,7 @@ loc_12E0C6:
 	LDA	tilemapTypeUnk_30B
 	if_not_equal #$B, loc_12E0DC
 	LDA	byte_549
-	CMP	#$C8 
-	BCS	loc_12E0DC
+	if_lower #$C8 , loc_12E0DC
 	LDA	#$55 
 	JSR	sub_12E156
 	JMP	loc_12E13A
@@ -9221,8 +9219,7 @@ loc_12E0DC:
 	LDA	tilemapTypeUnk_30B
 	if_not_equal #$D, loc_12E0F2
 	LDA	byte_549
-	CMP	#$C8 
-	BCS	loc_12E0F2
+	if_lower #$C8 , loc_12E0F2
 	LDA	#$AA 
 	JSR	sub_12E156
 	JMP	loc_12E13A
@@ -9233,8 +9230,7 @@ loc_12E0F2:
 	LDA	tilemapTypeUnk_30B
 	if_not_equal #$F, loc_12E108
 	LDA	byte_549
-	CMP	#$C8 
-	BCS	loc_12E108
+	if_lower #$C8 , loc_12E108
 	LDA	#$AA 
 	JSR	sub_12E156
 	JMP	loc_12E13A
@@ -9245,8 +9241,7 @@ loc_12E108:
 	LDA	tilemapTypeUnk_30B
 	if_not_equal #$10, loc_12E11E
 	LDA	byte_549
-	CMP	#$C8 
-	BCS	loc_12E11E
+	if_lower #$C8 , loc_12E11E
 	LDA	#$FF
 	JSR	sub_12E156
 	JMP	loc_12E13A
@@ -11498,14 +11493,11 @@ locret_12F4E3:
 
 sub_12F4E4:
 	LDA	byte_372
-	CMP	#$15
-	BCS	locret_12F513
+	if_lower #$15, locret_12F513
 	BEQ	locret_12F513
-	CMP	#$B
-	BCS	loc_12F503
+	if_lower #$B, loc_12F503
 	BEQ	loc_12F503
-	CMP	#$A
-	BCS	locret_12F513
+	if_lower #$A, locret_12F513
 	BEQ	locret_12F513
 	add_to_byte_clc byte_372, #$B
 	RTS
@@ -11513,8 +11505,7 @@ sub_12F4E4:
 
 loc_12F503:
 	
-	CMP	#$12
-	BCS	locret_12F513
+	if_lower #$12, locret_12F513
 	BEQ	locret_12F513
 	add_to_byte_clc byte_372, #$A
 	RTS

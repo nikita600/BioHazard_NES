@@ -414,8 +414,7 @@ ppu_reset_ctrl_mask_FE93:
 sub_FE9C:		
 	INC	byte_353
 	LDA	byte_353
-	CMP	#$19
-	BCS	loc_FEA7
+	if_lower #$19, loc_FEA7
 	RTS
 ; ---------------------------------------------------------------------------
 

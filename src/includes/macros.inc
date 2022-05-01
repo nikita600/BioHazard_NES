@@ -140,7 +140,7 @@
 .macro if_lower value, branch
 
 	CMP value
-	BNE branch
+	BCS branch
 
 .endmacro
 

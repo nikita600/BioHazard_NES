@@ -15,13 +15,11 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_equal bank_command_346, #0, loc_18053
-	CMP	#1
-	BEQ	loc_18059
-	CMP	#2
-	BEQ	loc_1805F
-	CMP	#3
-	BEQ	loc_18068
+	LDA	bank_command_346
+	if_equal #0, loc_18053
+	if_equal #1, loc_18059
+	if_equal #2, loc_1805F
+	if_equal #3, loc_18068
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -84,7 +82,8 @@ load_obj_tilemap_1F264:
 
 
 load_palettes_to_ram_1F268:
-	if_equal sprite_type_306, #0, loc_1F2C3
+	LDA	sprite_type_306
+	if_equal #0, loc_1F2C3
 
 palette0_F26F:
 	set sprPalIdx_319, #0
@@ -191,7 +190,8 @@ loc_1F31E:
 
 
 upload_tiles_to_ppu_1F32A:
-	if_equal sprite_type_306, #0, loc_1F33D
+	LDA	sprite_type_306
+	if_equal #0, loc_1F33D
 	set sprite_secondByte_31B, #0
 	JSR	load_sprite_to_vram_1F36D
 	JSR	upload_to_ppu_1F6D1
@@ -597,7 +597,8 @@ sub_1F5FF:
 	LDA	byte_36C
 	CMP	byte_36A
 	BNE	loc_1F66B
-	if_equal byte_36D, byte_36B, loc_1F68D
+	LDA	byte_36D
+	if_equal byte_36B, loc_1F68D
 
 loc_1F66B:
 	LDA	byte_368
@@ -609,7 +610,8 @@ loc_1F66B:
 	LDA	byte_368
 	CMP	byte_366
 	BNE	loc_1F693
-	if_equal byte_369, byte_367, loc_1F68D
+	LDA	byte_369
+	if_equal byte_367, loc_1F68D
 	JMP	loc_1F693
 ; ---------------------------------------------------------------------------
 

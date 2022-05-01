@@ -14,13 +14,11 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_equal bank_command_346, #0, loc_48053
-	CMP	#1
-	BEQ	loc_48059
-	CMP	#2
-	BEQ	loc_48083
-	CMP	#3
-	BEQ	loc_48089
+	LDA	bank_command_346
+	if_equal #0, loc_48053
+	if_equal #1, loc_48059
+	if_equal #2, loc_48083
+	if_equal #3, loc_48089
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -141,7 +139,8 @@ loc_4F381:
 
 
 	DEC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, #0, locret_4F3B2
+	LDA	inv_spr_dscr1_30C
+	if_equal #0, locret_4F3B2
 	JMP	loc_4F375
 ; ---------------------------------------------------------------------------
 

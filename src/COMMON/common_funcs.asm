@@ -90,7 +90,8 @@ wait_for_b_pressed_FCC5:
 
 
 wait_for_any_input_FCCD:	
-	if_equal input_pressed_34A, #0, wait_for_any_input_FCCD
+	LDA	input_pressed_34A
+	if_equal #0, wait_for_any_input_FCCD
 	RTS
 ; End of function wait_for_any_input_FCCD
 
@@ -206,7 +207,8 @@ NMI_FD53:
 	PHA
 	TYA
 	PHA
-	if_equal bank_switch_flag_6C, #$88 , loc_FD62
+	LDA	bank_switch_flag_6C
+	if_equal #$88 , loc_FD62
 	JMP	loc_FD93
 ; ---------------------------------------------------------------------------
 
@@ -466,13 +468,11 @@ scroll_update_FED6:
 	STA	scroll_offset_y_47A
 	LDA	scroll_offset_y_47A
 	AND	#$7F 
-	CMP	#0
-	BEQ	locret_FF2D
+	if_equal #0, locret_FF2D
 	to_stack scroll_offset_y_47A
 	LDA	scroll_offset_y_47A
 	AND	#$80 
-	CMP	#0
-	BEQ	loc_FF0E
+	if_equal #0, loc_FF0E
 	set ppu_scroll_y_305, #0
 	JMP	loc_FF20
 ; ---------------------------------------------------------------------------

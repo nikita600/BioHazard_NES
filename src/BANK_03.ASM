@@ -14,7 +14,8 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_equal bank_command_346, #0, loc_38047
+	LDA	bank_command_346
+	if_equal #0, loc_38047
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -126,7 +127,8 @@ loc_3F820:
 	CMP	#2
 	BCC	loc_3F7E3
 	INC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, #4, loc_3F839
+	LDA	inv_spr_dscr1_30C
+	if_equal #4, loc_3F839
 	JMP	loc_3F7CC
 ; ---------------------------------------------------------------------------
 
@@ -196,7 +198,8 @@ loc_3F8A8:
 	INC	ptr_0
 	JSR	sub_3FA27
 	INC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, #2, loc_3F8D6
+	LDA	inv_spr_dscr1_30C
+	if_equal #2, loc_3F8D6
 	JMP	loc_3F865
 ; ---------------------------------------------------------------------------
 
@@ -206,8 +209,8 @@ loc_3F8D6:
 ; End of function sub_3F76B
 
 ; ---------------------------------------------------------------------------
-byte_3F8DA:.BYTE	2,  2,	0,  2,	2,  0,	0,  0,	1,  2,	3,  2,	1,  0,	3,  0
-			
+byte_3F8DA:
+	.BYTE	2,  2,	0,  2,	2,  0,	0,  0,	1,  2,	3,  2,	1,  0,	3,  0		
 	.BYTE	2,  1,	0,  1,	2,  3,	0,  3,	1,  1,	3,  1,	1,  3,	3,  3
 
 ; =============== S U B	R O U T	I N E =======================================

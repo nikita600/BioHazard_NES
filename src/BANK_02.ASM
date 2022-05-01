@@ -13,19 +13,14 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_equal bank_command_346, #0, loc_2805F
-	CMP	#1
-	BEQ	loc_28065
-	CMP	#2
-	BEQ	loc_2806B
-	CMP	#3
-	BEQ	loc_28071
-	CMP	#4
-	BEQ	loc_28077
-	CMP	#5
-	BEQ	loc_2807D
-	CMP	#6
-	BEQ	loc_28083
+	LDA	bank_command_346
+	if_equal #0, loc_2805F
+	if_equal #1, loc_28065
+	if_equal #2, loc_2806B
+	if_equal #3, loc_28071
+	if_equal #4, loc_28077
+	if_equal #5, loc_2807D
+	if_equal #6, loc_28083
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -150,8 +145,7 @@ sub_2D1CB:
 	to_stack char_type_id_35D
 	LDA	byte_364
 	AND	#1
-	CMP	#0
-	BEQ	loc_2D1DF
+	if_equal #0, loc_2D1DF
 	JSR	sub_2D397
 
 loc_2D1DF:
@@ -208,7 +202,8 @@ loc_2D251:
 	CMP	#$FF
 	BNE	loc_2D29C
 	INY
-	if_equal {(ptr_0),Y}, #$FF, loc_2D260
+	LDA	(ptr_0),Y
+	if_equal #$FF, loc_2D260
 	DEY
 	JMP	loc_2D29C
 ; ---------------------------------------------------------------------------
@@ -267,7 +262,8 @@ loc_2D29C:
 	add_to_data $40
 
 	INC	tilemapWidth_308
-	if_equal tilemapWidth_308, byte_35E, loc_2D2F6
+	LDA	tilemapWidth_308
+	if_equal byte_35E, loc_2D2F6
 	BCS	loc_2D2F6
 	JMP	loc_2D243
 ; ---------------------------------------------------------------------------
@@ -284,17 +280,18 @@ loc_2D2F6:
 
 loc_2D305:
 	LDY	#0
-	if_equal {(ptr_0),Y}, #0, loc_2D342
+	LDA	(ptr_0),Y
+	if_equal #0, loc_2D342
 	INC	tilemapHeight_30A
-	if_equal tilemapHeight_30A, byte_35F, loc_2D31B
+	LDA	tilemapHeight_30A
+	if_equal byte_35F, loc_2D31B
 	JMP	loc_2D23E
 ; ---------------------------------------------------------------------------
 
 loc_2D31B:
 	LDA	byte_364
 	AND	#8
-	CMP	#0
-	BEQ	loc_2D339
+	if_equal #0, loc_2D339
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
@@ -316,8 +313,7 @@ loc_2D342:
 		
 	LDA	byte_364
 	AND	#8
-	CMP	#0
-	BEQ	loc_2D360
+	if_equal #0, loc_2D360
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
@@ -410,8 +406,7 @@ loc_2D40B:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemapTypeUnk_30B
-	CMP	#$20 
-	BEQ	loc_2D435
+	if_equal #$20 , loc_2D435
 	BCS	loc_2D435
 	LDA	byte_35E
 	mult_a_by_2
@@ -461,8 +456,7 @@ loc_2D471:
 	BCC	loc_2D471
 	LDA	tilemapTypeUnk_30B
 	LSR	A
-	CMP	byte_35E
-	BEQ	loc_2D4C3
+	if_equal byte_35E, loc_2D4C3
 	to_stack data_2
 	to_stack data_3
 	LDA	data_2
@@ -492,7 +486,8 @@ loc_2D4B1:
 loc_2D4C3:
 	JSR	sub_2E500
 	INC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, #2, loc_2D4D3
+	LDA	inv_spr_dscr1_30C
+	if_equal #2, loc_2D4D3
 	JMP	loc_2D40B
 ; ---------------------------------------------------------------------------
 
@@ -539,7 +534,8 @@ sub_2D4FF:
 
 loc_2D506:
 	JSR	sub_2D514
-	if_equal input_pressed_34A, #0, loc_2D506
+	LDA	input_pressed_34A
+	if_equal #0, loc_2D506
 	JSR	sub_2D542
 	RTS
 ; End of function sub_2D4FF
@@ -549,7 +545,8 @@ loc_2D506:
 
 
 sub_2D514:
-	if_equal sprite_type_306, #0, loc_2D51C
+	LDA	sprite_type_306
+	if_equal #0, loc_2D51C
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -577,7 +574,8 @@ locret_2D541:
 
 
 sub_2D542:
-	if_equal sprite_type_306, #0, loc_2D54A
+	LDA	sprite_type_306
+	if_equal #0, loc_2D54A
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -683,7 +681,8 @@ loc_2E2F9:
 	CMP	#2
 	BCC	loc_2E2BC
 	INC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, #4, loc_2E312
+	LDA	inv_spr_dscr1_30C
+	if_equal #4, loc_2E312
 	JMP	loc_2E2A5
 ; ---------------------------------------------------------------------------
 
@@ -753,7 +752,8 @@ loc_2E381:
 	INC	ptr_0
 	JSR	sub_2E500
 	INC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, #2, loc_2E3AF
+	LDA	inv_spr_dscr1_30C
+	if_equal #2, loc_2E3AF
 	JMP	loc_2E33E
 ; ---------------------------------------------------------------------------
 

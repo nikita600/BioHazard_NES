@@ -123,11 +123,17 @@
 
 ; ---------------------------------------------------------------------------
 
-.macro if_equal addr, value, branch
+.macro if_equal value, branch
 
-	LDA	addr
 	CMP	value
 	BEQ	branch
+
+.endmacro
+
+.macro if_not_equal value, branch
+
+	CMP value
+	BNE branch
 
 .endmacro
 

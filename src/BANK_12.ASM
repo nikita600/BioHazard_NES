@@ -14,7 +14,8 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_equal bank_command_346, #$FF, locret_12805A
+	LDA	bank_command_346
+	if_equal #$FF, locret_12805A
 	mult_a_by_2
 	TAX
 	set_inx ptr_0, {CommandPtrs_12805B,X}
@@ -889,9 +890,9 @@ sub_12873A:
 
 loc_12875A:
 	
-	if_equal byte_46F, #$69 , loc_128768
-	CMP	#$98 
-	BEQ	loc_128768
+	LDA	byte_46F
+	if_equal #$69 , loc_128768
+	if_equal #$98 , loc_128768
 	JMP	loc_128777
 ; ---------------------------------------------------------------------------
 
@@ -978,12 +979,14 @@ loc_128814:
 ; ---------------------------------------------------------------------------
 
 loc_128817:
-	if_equal byte_46F, #$7C , loc_128821
+	LDA	byte_46F
+	if_equal #$7C , loc_128821
 	JMP	loc_1288EE
 ; ---------------------------------------------------------------------------
 
 loc_128821:
-	if_equal entry_idx_300, #$82 , loc_12882B
+	LDA	entry_idx_300
+	if_equal #$82 , loc_12882B
 	JMP	loc_1288EB
 ; ---------------------------------------------------------------------------
 
@@ -1054,7 +1057,8 @@ loc_1288EE:
 	LDA	entry_idx_300
 	CMP	#$79 
 	BNE	loc_128951
-	if_equal byte_6C6, #0, loc_128951
+	LDA	byte_6C6
+	if_equal #0, loc_128951
 	set tilemapTypeUnk_30B, #2
 	set byte_313, #1
 	JSR	exec_b0_cA_1284C5
@@ -1165,7 +1169,8 @@ sub_128A1A:
 loc_128A20:
 	
 	JSR	sub_128FC1
-	if_equal is_game_finished_561, #0, game_not_finished_128A43
+	LDA	is_game_finished_561
+	if_equal #0, game_not_finished_128A43
 	from_stack prev_sprite_type_4A9
 	from_stack ppu_prev_scroll_y_unk_4A8
 	from_stack ppu_prev_scroll_x_unk_4A7
@@ -1208,9 +1213,9 @@ loc_128A87:
 	CMP	#$80 
 	BNE	loc_128A9C
 	JSR	sub_1290C3
-	if_equal sprite_length_30F, #$FF, loc_128AA5
-	CMP	#$FE 
-	BEQ	loc_128A9F
+	LDA	sprite_length_30F
+	if_equal #$FF, loc_128AA5
+	if_equal #$FE , loc_128A9F
 	JMP	loc_128A20
 ; ---------------------------------------------------------------------------
 
@@ -1230,9 +1235,9 @@ loc_128AA5:
 	from_stack ppu_prev_unk_4A6
 	from_stack image_offset_4A5
 	from_stack image_id_4A4
-	if_equal image_id_4A4, #$17, loc_128B01
-	CMP	#$45 
-	BEQ	loc_128B01
+	LDA	image_id_4A4
+	if_equal #$17, loc_128B01
+	if_equal #$45 , loc_128B01
 	JSR	sub_12C7DE
 	JSR	exec_b0_c3_128418
 	LDA	image_id_4A4
@@ -1811,7 +1816,8 @@ sub_1290C3:
 	set sprite_length_30F, #0
 	LDA	byte_472
 	BNE	loc_1290EA
-	if_equal byte_543, #1, loc_1290EA
+	LDA	byte_543
+	if_equal #1, loc_1290EA
 	LDA	byte_543
 	CMP	#0
 	BNE	loc_1290DC
@@ -1841,8 +1847,7 @@ loc_1290EA:
 	LDA	byte_441
 	CMP	byte_473
 	BCC	loc_129117
-	CMP	byte_474
-	BEQ	loc_129117
+	if_equal byte_474, loc_129117
 	BCS	loc_129117
 	set byte_476, #$FF
 
@@ -1942,7 +1947,8 @@ sub_129196:
 	LDA	byte_476
 	CMP	#$FF
 	BNE	locret_1291F4
-	if_equal byte_441, #$80 , loc_1291C3
+	LDA	byte_441
+	if_equal #$80 , loc_1291C3
 	BCC	loc_1291B7
 	LDA	byte_441
 	SEC
@@ -2175,13 +2181,13 @@ loc_12A758:
 	LDA	objIdxArray_375,X
 	CMP	#3
 	BNE	loc_12A79E
-	if_equal byte_56F, #$40 , loc_12A786
+	LDA	byte_56F
+	if_equal #$40 , loc_12A786
 	BCS	loc_12A786
-	if_equal byte_571, #$50 , loc_12A781
-	CMP	#$60 
-	BEQ	loc_12A781
-	CMP	#$70 
-	BEQ	loc_12A781
+	LDA	byte_571
+	if_equal #$50 , loc_12A781
+	if_equal #$60 , loc_12A781
+	if_equal #$70 , loc_12A781
 	JMP	loc_12A786
 ; ---------------------------------------------------------------------------
 
@@ -2266,7 +2272,8 @@ loc_12A839:
 	from_stack data_3
 	from_stack data_2
 	INC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, objArraySize_373, loc_12A84D
+	LDA	inv_spr_dscr1_30C
+	if_equal objArraySize_373, loc_12A84D
 	JMP	loc_12A69D
 ; ---------------------------------------------------------------------------
 
@@ -2282,7 +2289,8 @@ loc_12A84D:
 
 loc_12A85F:
 
-	if_equal {objIdxArray_375,X}, #3, loc_12A86D
+	LDA	objIdxArray_375,X
+	if_equal #3, loc_12A86D
 	INX
 	CPX	objArraySize_373
 	BCC	loc_12A85F
@@ -2349,7 +2357,8 @@ loc_12A8E3:
 	LDA	tilemapFrameCount_30D
 	CMP	#$FF
 	BNE	loc_12A8FD
-	if_equal tilemapFrameCount_30D, #$FF, loc_12A91F
+	LDA	tilemapFrameCount_30D
+	if_equal #$FF, loc_12A91F
 
 loc_12A8FD:
 	add_to_byte_clc byte_370, tilemapFrameCount_30D
@@ -2498,10 +2507,11 @@ loc_12AA0E:
 ; ---------------------------------------------------------------------------
 
 loc_12AA1B:
-	if_equal entry_idx_300, #$2F , locret_12AA6C
-	if_equal entry_idx_300, #$5C , locret_12AA6C
-	CMP	#$93 
-	BEQ	locret_12AA6C
+	LDA	entry_idx_300
+	if_equal #$2F , locret_12AA6C
+	LDA	entry_idx_300
+	if_equal #$5C , locret_12AA6C
+	if_equal #$93 , locret_12AA6C
 	LDA	byte_56F
 	CMP	#$B0 
 	BNE	loc_12AA3E
@@ -2542,7 +2552,8 @@ entry_idx_handler_unk_12AA6D:
 	LDA	entry_idx_300
 	CMP	#$83 
 	BNE	check_room_7D_12AA81
-	if_equal byte_595, #0, locret_12AA80
+	LDA	byte_595
+	if_equal #0, locret_12AA80
 	set entry_idx_300, #$96 
 
 locret_12AA80:
@@ -2553,7 +2564,8 @@ check_room_7D_12AA81:
 	LDA	entry_idx_300
 	CMP	#$7D 
 	BNE	check_room_95_12AA95
-	if_equal byte_594, #0, locret_12AA94
+	LDA	byte_594
+	if_equal #0, locret_12AA94
 	set entry_idx_300, #$95 
 
 locret_12AA94:
@@ -2577,7 +2589,8 @@ check_room_76_12AAA9:
 	LDA	entry_idx_300
 	CMP	#$76 
 	BNE	check_room_94_12AABD
-	if_equal byte_593, #0, locret_12AABC
+	LDA	byte_593
+	if_equal #0, locret_12AABC
 	set entry_idx_300, #$94 
 
 locret_12AABC:
@@ -2614,7 +2627,8 @@ check_room_90_12AAE5:
 	LDA	entry_idx_300
 	CMP	#$90 
 	BNE	check_room_3D_12AAF9
-	if_equal byte_58C, #$FF, locret_12AAF8
+	LDA	byte_58C
+	if_equal #$FF, locret_12AAF8
 	set entry_idx_300, #$53 
 
 locret_12AAF8:
@@ -2638,7 +2652,8 @@ check_room_44_12AB0D:
 	LDA	entry_idx_300
 	CMP	#$44 
 	BNE	check_room_9C_12AB21
-	if_equal byte_58B, #0, locret_12AB20
+	LDA	byte_58B
+	if_equal #0, locret_12AB20
 	set entry_idx_300, #$9C 
 
 locret_12AB20:
@@ -2662,7 +2677,8 @@ check_room_38_12AB35:
 	LDA	entry_idx_300
 	CMP	#$38 
 	BNE	check_room_8A_12AB49
-	if_equal byte_589, #0, locret_12AB48
+	LDA	byte_589
+	if_equal #0, locret_12AB48
 	set entry_idx_300, #$8A 
 
 locret_12AB48:
@@ -2673,7 +2689,8 @@ check_room_8A_12AB49:
 	LDA	entry_idx_300
 	CMP	#$8A 
 	BNE	check_room_2F_12AB5D
-	if_equal byte_589, #$FF, locret_12AB5C
+	LDA	byte_589
+	if_equal #$FF, locret_12AB5C
 	set entry_idx_300, #$38 
 
 locret_12AB5C:
@@ -2684,7 +2701,8 @@ check_room_2F_12AB5D:
 	LDA	entry_idx_300
 	CMP	#$2F 
 	BNE	check_room_1A_12AB71
-	if_equal byte_55B, #0, check_room_1A_12AB71
+	LDA	byte_55B
+	if_equal #0, check_room_1A_12AB71
 	set entry_idx_300, #$89 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2694,7 +2712,8 @@ check_room_1A_12AB71:
 	LDA	entry_idx_300
 	CMP	#$1A
 	BNE	check_room_17_12AB85
-	if_equal byte_55F, #0, check_room_17_12AB85
+	LDA	byte_55F
+	if_equal #0, check_room_17_12AB85
 	set entry_idx_300, #$86 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2704,7 +2723,8 @@ check_room_17_12AB85:
 	LDA	entry_idx_300
 	CMP	#$17
 	BNE	check_room_4F_12AB99
-	if_equal byte_5A9, #0, check_room_4F_12AB99
+	LDA	byte_5A9
+	if_equal #0, check_room_4F_12AB99
 	set entry_idx_300, #$85 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2714,7 +2734,8 @@ check_room_4F_12AB99:
 	LDA	entry_idx_300
 	CMP	#$4F 
 	BNE	check_room_50_12ABAD
-	if_equal byte_565, #0, check_room_50_12ABAD
+	LDA	byte_565
+	if_equal #0, check_room_50_12ABAD
 	set entry_idx_300, #$8D 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2748,7 +2769,8 @@ check_room_8E_12ABD5:
 	LDA	entry_idx_300
 	CMP	#$8E 
 	BNE	check_room_60_12ABE9
-	if_equal byte_565, #0, check_room_60_12ABE9
+	LDA	byte_565
+	if_equal #0, check_room_60_12ABE9
 	set entry_idx_300, #$50 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2758,7 +2780,8 @@ check_room_60_12ABE9:
 	LDA	entry_idx_300
 	CMP	#$60 
 	BNE	check_room_6B_12ABFD
-	if_equal byte_566, #0, check_room_6B_12ABFD
+	LDA	byte_566
+	if_equal #0, check_room_6B_12ABFD
 	set entry_idx_300, #$97 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2768,7 +2791,8 @@ check_room_6B_12ABFD:
 	LDA	entry_idx_300
 	CMP	#$6B 
 	BNE	check_room_67_12AC11
-	if_equal byte_585, #0, check_room_67_12AC11
+	LDA	byte_585
+	if_equal #0, check_room_67_12AC11
 	set entry_idx_300, #$99 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2778,7 +2802,8 @@ check_room_67_12AC11:
 	LDA	entry_idx_300
 	CMP	#$67 
 	BNE	check_room_69_12AC25
-	if_equal byte_586, #0, check_room_69_12AC25
+	LDA	byte_586
+	if_equal #0, check_room_69_12AC25
 	set entry_idx_300, #$9B 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2788,7 +2813,8 @@ check_room_69_12AC25:
 	LDA	entry_idx_300
 	CMP	#$69 
 	BNE	check_room_1C_12AC39
-	if_equal byte_587, #0, check_room_1C_12AC39
+	LDA	byte_587
+	if_equal #0, check_room_1C_12AC39
 	set entry_idx_300, #$98 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2798,7 +2824,8 @@ check_room_1C_12AC39:
 	LDA	entry_idx_300
 	CMP	#$1C
 	BNE	check_room_57_12AC4D
-	if_equal byte_588, #0, check_room_57_12AC4D
+	LDA	byte_588
+	if_equal #0, check_room_57_12AC4D
 	set entry_idx_300, #$87 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2820,7 +2847,8 @@ check_room_91_12AC61:
 	LDA	entry_idx_300
 	CMP	#$91 
 	BNE	check_room_5B_12AC75
-	if_equal byte_646, #0, check_room_5B_12AC75
+	LDA	byte_646
+	if_equal #0, check_room_5B_12AC75
 	set entry_idx_300, #$57 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2830,7 +2858,8 @@ check_room_5B_12AC75:
 	LDA	entry_idx_300
 	CMP	#$5B 
 	BNE	check_room_5C_12AC89
-	if_equal byte_58F, #0, check_room_5C_12AC89
+	LDA	byte_58F
+	if_equal #0, check_room_5C_12AC89
 	set entry_idx_300, #$92 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2840,7 +2869,8 @@ check_room_5C_12AC89:
 	LDA	entry_idx_300
 	CMP	#$5C 
 	BNE	check_room_92_12AC9D
-	if_equal byte_590, #0, check_room_92_12AC9D
+	LDA	byte_590
+	if_equal #0, check_room_92_12AC9D
 	set entry_idx_300, #$93 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2965,8 +2995,7 @@ loc_12AD65:
 	set byte_591, #$FF
 	LDA	byte_591
 	AND	byte_592
-	CMP	#0
-	BEQ	locret_12AD9F
+	if_equal #0, locret_12AD9F
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -2986,8 +3015,7 @@ loc_12ADA0:
 	set byte_592, #$FF
 	LDA	byte_591
 	AND	byte_592
-	CMP	#0
-	BEQ	locret_12ADDA
+	if_equal #0, locret_12ADDA
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -3036,13 +3064,11 @@ loc_12AE0F:
 	LDA	byte_46E
 	CMP	#$2A 
 	BNE	loc_12AE6C
-	if_equal entry_idx_300, #$53 , loc_12AE3F
-	CMP	#$90 
-	BEQ	loc_12AE3F
-	CMP	#$5C 
-	BEQ	loc_12AE34
-	CMP	#$93 
-	BEQ	loc_12AE34
+	LDA	entry_idx_300
+	if_equal #$53 , loc_12AE3F
+	if_equal #$90 , loc_12AE3F
+	if_equal #$5C , loc_12AE34
+	if_equal #$93 , loc_12AE34
 	LDA	byte_58F
 	EOR	#$FF
 	STA	byte_58F
@@ -3076,12 +3102,14 @@ loc_12AE47:
 ; ---------------------------------------------------------------------------
 
 loc_12AE6C:
-	if_equal byte_46E, #$2E , loc_12AE76
+	LDA	byte_46E
+	if_equal #$2E , loc_12AE76
 	JMP	loc_12AF01
 ; ---------------------------------------------------------------------------
 
 loc_12AE76:
-	if_equal entry_idx_300, #$70 , loc_12AE86
+	LDA	entry_idx_300
+	if_equal #$70 , loc_12AE86
 	set byte_636, #$FF
 	STA	byte_633
 	RTS
@@ -3250,7 +3278,8 @@ loc_12AFF8:
 loc_12B03B:
 	CMP	#$1C
 	BNE	loc_12B074
-	if_equal entry_idx_300, #$1E, loc_12B054
+	LDA	entry_idx_300
+	if_equal #$1E, loc_12B054
 	set byte_5A8, #$FF
 	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
@@ -3271,10 +3300,12 @@ loc_12B054:
 loc_12B074:
 	CMP	#$1D
 	BNE	loc_12B0E2
-	if_equal entry_idx_300, #$1E, loc_12B0C2
+	LDA	entry_idx_300
+	if_equal #$1E, loc_12B0C2
 	set byte_5A9, #$FF
 	set cur_obj_idx_unk_43A, #2
-	if_equal entry_idx_300, #$17, loc_12B095
+	LDA	entry_idx_300
+	if_equal #$17, loc_12B095
 	set cur_obj_idx_unk_43A, #1
 
 loc_12B095:
@@ -3404,7 +3435,8 @@ locret_12B1AF:
 
 
 sub_12B1B0:
-	if_equal byte_471, #0, loc_12B1B8
+	LDA	byte_471
+	if_equal #0, loc_12B1B8
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3445,7 +3477,8 @@ byte_12B1DC:.BYTE	5,  1,	4,  2,	3,  6,	0
 
 
 sub_12B1E3:
-	if_equal byte_471, #0, loc_12B1EB
+	LDA	byte_471
+	if_equal #0, loc_12B1EB
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3461,7 +3494,8 @@ loc_12B1EB:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12B224
+	LDA	byte_372
+	if_equal #1, locret_12B224
 	JSR	sub_12B1CB
 	STY	byte_555
 
@@ -3475,7 +3509,8 @@ locret_12B224:
 
 
 sub_12B225:
-	if_equal byte_471, #0, loc_12B22D
+	LDA	byte_471
+	if_equal #0, loc_12B22D
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3491,7 +3526,8 @@ loc_12B22D:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12B266
+	LDA	byte_372
+	if_equal #1, locret_12B266
 	JSR	sub_12B1CB
 	STY	byte_556
 
@@ -3505,7 +3541,8 @@ locret_12B266:
 
 
 sub_12B267:
-	if_equal byte_471, #0, loc_12B26F
+	LDA	byte_471
+	if_equal #0, loc_12B26F
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3521,7 +3558,8 @@ loc_12B26F:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12B2A8
+	LDA	byte_372
+	if_equal #1, locret_12B2A8
 	JSR	sub_12B1CB
 	STY	byte_557
 
@@ -3535,7 +3573,8 @@ locret_12B2A8:
 
 
 sub_12B2A9:
-	if_equal byte_471, #0, loc_12B2B1
+	LDA	byte_471
+	if_equal #0, loc_12B2B1
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3551,7 +3590,8 @@ loc_12B2B1:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12B2EA
+	LDA	byte_372
+	if_equal #1, locret_12B2EA
 	JSR	sub_12B1CB
 	STY	byte_558
 
@@ -3565,7 +3605,8 @@ locret_12B2EA:
 
 
 sub_12B2EB:
-	if_equal byte_471, #0, loc_12B2F3
+	LDA	byte_471
+	if_equal #0, loc_12B2F3
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3581,7 +3622,8 @@ loc_12B2F3:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12B32C
+	LDA	byte_372
+	if_equal #1, locret_12B32C
 	JSR	sub_12B1CB
 	STY	byte_559
 
@@ -3595,7 +3637,8 @@ locret_12B32C:
 
 
 sub_12B32D:
-	if_equal byte_471, #0, loc_12B335
+	LDA	byte_471
+	if_equal #0, loc_12B335
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3611,7 +3654,8 @@ loc_12B335:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12B36E
+	LDA	byte_372
+	if_equal #1, locret_12B36E
 	JSR	sub_12B1CB
 	STY	byte_55A
 
@@ -3625,7 +3669,8 @@ locret_12B36E:
 
 
 sub_12B36F:
-	if_equal byte_471, #0, loc_12B377
+	LDA	byte_471
+	if_equal #0, loc_12B377
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -3645,7 +3690,8 @@ loc_12B37F:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12B403
+	LDA	byte_372
+	if_equal #1, locret_12B403
 	LDX	#0
 
 loc_12B3AF:
@@ -4921,9 +4967,9 @@ locret_12BBC5:
 ; ---------------------------------------------------------------------------
 
 loc_12BBC6:
-	if_equal entry_idx_300, #$52 , loc_12BBD4
-	CMP	#$8F 
-	BEQ	loc_12BBD4
+	LDA	entry_idx_300
+	if_equal #$52 , loc_12BBD4
+	if_equal #$8F , loc_12BBD4
 	JMP	loc_12BC09
 ; ---------------------------------------------------------------------------
 
@@ -5071,9 +5117,9 @@ locret_12BCAD:
 ; ---------------------------------------------------------------------------
 
 loc_12BCAE:
-	if_equal entry_idx_300, #$76 , loc_12BCBC
-	CMP	#$94 
-	BEQ	loc_12BCBC
+	LDA	entry_idx_300
+	if_equal #$76 , loc_12BCBC
+	if_equal #$94 , loc_12BCBC
 	JMP	loc_12BCDC
 ; ---------------------------------------------------------------------------
 
@@ -5194,7 +5240,8 @@ loc_12BD54:
 loc_12BD64:
 	CMP	#$1C
 	BNE	loc_12BD8D
-	if_equal entry_idx_300, #$1E, loc_12BD75
+	LDA	entry_idx_300
+	if_equal #$1E, loc_12BD75
 	set byte_5A8, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5261,7 +5308,8 @@ loc_12BDCE:
 loc_12BDD8:
 	CMP	#$1D
 	BNE	loc_12BE01
-	if_equal entry_idx_300, #$1E, loc_12BDE9
+	LDA	entry_idx_300
+	if_equal #$1E, loc_12BDE9
 	set byte_5A9, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5326,7 +5374,8 @@ loc_12BE5D:
 loc_12BE67:
 	CMP	#2
 	BNE	loc_12BE7E
-	if_equal byte_5F9, #$FF, loc_12BE78
+	LDA	byte_5F9
+	if_equal #$FF, loc_12BE78
 	set byte_5EF, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5379,7 +5428,8 @@ sub_12BEB5:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12BEF9
+	LDA	byte_372
+	if_equal #1, locret_12BEF9
 	LDX	#0
 
 loc_12BED8:
@@ -5423,8 +5473,10 @@ sub_12BEFA:
 ; ---------------------------------------------------------------------------
 
 loc_12BF14:
-	if_equal byte_55C, #0, loc_12BF23
-	if_equal byte_55D, #0, loc_12BF23
+	LDA	byte_55C
+	if_equal #0, loc_12BF23
+	LDA	byte_55D
+	if_equal #0, loc_12BF23
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -5470,8 +5522,10 @@ loc_12BF4C:
 
 
 sub_12BF52:
-	if_equal byte_471, #0, loc_12BF66
-	if_equal byte_55F, #$FF, locret_12BF65
+	LDA	byte_471
+	if_equal #0, loc_12BF66
+	LDA	byte_55F
+	if_equal #$FF, locret_12BF65
 	set byte_46D, #$2D 
 
 locret_12BF65:
@@ -5523,8 +5577,10 @@ locret_12BF98:
 
 
 sub_12BF99:
-	if_equal byte_5C1, #0, loc_12BFC1
-	if_equal byte_5C2, #0, loc_12BFC1
+	LDA	byte_5C1
+	if_equal #0, loc_12BFC1
+	LDA	byte_5C2
+	if_equal #0, loc_12BFC1
 	LDA	byte_59F
 	CMP	#0
 	BNE	locret_12BFC0
@@ -5556,7 +5612,8 @@ loc_12BFC1:
 
 
 sub_12BFDF:
-	if_equal byte_471, #0, loc_12BFEC
+	LDA	byte_471
+	if_equal #0, loc_12BFEC
 	set byte_46D, #$1B
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5595,7 +5652,8 @@ sub_12C022:
 	BNE	locret_12C095
 	LDA	byte_563
 	BNE	locret_12C095
-	if_equal byte_5C4, #$FF, locret_12C095
+	LDA	byte_5C4
+	if_equal #$FF, locret_12C095
 	set byte_563, #$FF
 	set text_idx_35C, #2
 	set char_type_id_35D, #2
@@ -5649,7 +5707,8 @@ locret_12C0AD:
 
 
 sub_12C0AE:
-	if_equal byte_471, #0, loc_12C0BB
+	LDA	byte_471
+	if_equal #0, loc_12C0BB
 	set byte_46D, #$29 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5702,7 +5761,8 @@ loc_12C11B:
 	
 	LDA	objCreatedArray_393,X
 	BNE	locret_12C13B
-	if_equal {objIdxArray_375,X}, #3, loc_12C12E
+	LDA	objIdxArray_375,X
+	if_equal #3, loc_12C12E
 	INX
 	CPX	objArraySize_373
 	BCC	loc_12C11B
@@ -5826,12 +5886,14 @@ sub_12C1C3:
 
 
 sub_12C1F2:
-	if_equal byte_471, #0, loc_12C1FA
+	LDA	byte_471
+	if_equal #0, loc_12C1FA
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C1FA:
-	if_equal byte_585, #$FF, locret_12C220
+	LDA	byte_585
+	if_equal #$FF, locret_12C220
 	set text_idx_35C, #$E2 
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
@@ -5851,7 +5913,8 @@ locret_12C220:
 
 
 sub_12C221:
-	if_equal byte_471, #0, loc_12C229
+	LDA	byte_471
+	if_equal #0, loc_12C229
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -5880,7 +5943,8 @@ locret_12C25D:
 
 
 sub_12C25E:
-	if_equal byte_471, #0, loc_12C26B
+	LDA	byte_471
+	if_equal #0, loc_12C26B
 	set byte_46D, #$24 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5898,14 +5962,16 @@ loc_12C26B:
 
 
 sub_12C27E:
-	if_equal byte_471, #0, loc_12C286
+	LDA	byte_471
+	if_equal #0, loc_12C286
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C286:
 	set inv_sprite_idx_31C, #$33 
 	JSR	sub_128955
-	if_equal is_game_finished_561, #$FF, return_12C2BE
+	LDA	is_game_finished_561
+	if_equal #$FF, return_12C2BE
 	set byte_587, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -5924,7 +5990,8 @@ return_12C2BE:
 
 
 sub_12C2BF:
-	if_equal byte_471, #0, locret_12C2D5
+	LDA	byte_471
+	if_equal #0, locret_12C2D5
 	LDA	byte_5EF
 	ORA	byte_5F9
 	CMP	#0
@@ -6011,7 +6078,8 @@ nullsub_3:
 
 
 sub_12C373:
-	if_equal byte_471, #0, loc_12C380
+	LDA	byte_471
+	if_equal #0, loc_12C380
 	set byte_46D, #$2A 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6145,7 +6213,8 @@ sub_12C438:
 
 
 sub_12C43F:
-	if_equal byte_471, #0, loc_12C44C
+	LDA	byte_471
+	if_equal #0, loc_12C44C
 	set byte_46D, #$2A 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6163,7 +6232,8 @@ loc_12C44C:
 
 
 sub_12C45F:
-	if_equal byte_651, #0, locret_12C46B
+	LDA	byte_651
+	if_equal #0, locret_12C46B
 	set byte_58D, #$FF
 
 locret_12C46B:
@@ -6250,8 +6320,10 @@ locret_12C4F2:
 
 
 sub_12C4F3:
-	if_equal byte_587, #$FF, locret_12C519
-	if_equal byte_471, #0, loc_12C507
+	LDA	byte_587
+	if_equal #$FF, locret_12C519
+	LDA	byte_471
+	if_equal #0, loc_12C507
 	set byte_46D, #$39 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6271,8 +6343,10 @@ locret_12C519:
 
 
 sub_12C51A:
-	if_equal byte_591, #$FF, locret_12C540
-	if_equal byte_471, #0, loc_12C52E
+	LDA	byte_591
+	if_equal #$FF, locret_12C540
+	LDA	byte_471
+	if_equal #0, loc_12C52E
 	set byte_46D, #$27 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6292,8 +6366,10 @@ locret_12C540:
 
 
 sub_12C541:
-	if_equal byte_592, #$FF, locret_12C567
-	if_equal byte_471, #0, loc_12C555
+	LDA	byte_592
+	if_equal #$FF, locret_12C567
+	LDA	byte_471
+	if_equal #0, loc_12C555
 	set byte_46D, #$28 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6313,7 +6389,8 @@ locret_12C567:
 
 
 sub_12C568:
-	if_equal byte_471, #0, loc_12C575
+	LDA	byte_471
+	if_equal #0, loc_12C575
 	set byte_46D, #$2E 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6340,7 +6417,8 @@ show_tree_screen_12C588:
 
 set_tree_screen_12C5A0:
 	set image_id_4A4, #$9D 
-	if_equal byte_593, #0, loc_12C5B1
+	LDA	byte_593
+	if_equal #0, loc_12C5B1
 	set image_id_4A4, #$9E 
 
 loc_12C5B1:
@@ -6398,22 +6476,26 @@ sub_12C637:
 	LDA	entry_idx_300
 	CMP	#$77 
 	BNE	loc_12C645
-	if_equal byte_68D, #$FF, loc_12C681
+	LDA	byte_68D
+	if_equal #$FF, loc_12C681
 
 loc_12C645:
 	LDA	entry_idx_300
 	CMP	#$7B 
 	BNE	loc_12C653
-	if_equal byte_68E, #$FF, loc_12C681
+	LDA	byte_68E
+	if_equal #$FF, loc_12C681
 
 loc_12C653:
 	LDA	entry_idx_300
 	CMP	#$80 
 	BNE	loc_12C661
-	if_equal byte_68F, #$FF, loc_12C681
+	LDA	byte_68F
+	if_equal #$FF, loc_12C681
 
 loc_12C661:
-	if_equal byte_471, #0, loc_12C66E
+	LDA	byte_471
+	if_equal #0, loc_12C66E
 	set byte_46D, #$30 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6445,7 +6527,8 @@ sub_12C694:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12C6B8
+	LDA	byte_372
+	if_equal #1, locret_12C6B8
 	set byte_420, #2
 	JSR	sub_12F07D
 
@@ -6484,7 +6567,8 @@ sub_12C6DE:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12C6FF
+	LDA	byte_372
+	if_equal #1, locret_12C6FF
 	set byte_67B, #$FF
 
 locret_12C6FF:
@@ -6496,13 +6580,15 @@ locret_12C6FF:
 
 
 sub_12C700:
-	if_equal byte_67A, #$FF, loc_12C72A
+	LDA	byte_67A
+	if_equal #$FF, loc_12C72A
 	set text_idx_35C, #$27 
 	set char_type_id_35D, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12C754
+	LDA	byte_372
+	if_equal #1, locret_12C754
 	LDA	byte_67B
 	CMP	#$FF
 	BNE	loc_12C742
@@ -6536,8 +6622,10 @@ sub_12C755:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_equal byte_372, #1, locret_12C791
-	if_equal byte_67A, #0, loc_12C77E
+	LDA	byte_372
+	if_equal #1, locret_12C791
+	LDA	byte_67A
+	if_equal #0, loc_12C77E
 	set byte_6A0, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6559,7 +6647,8 @@ locret_12C791:
 
 
 sub_12C792:
-	if_equal byte_595, #$FF, locret_12C7CA
+	LDA	byte_595
+	if_equal #$FF, locret_12C7CA
 	set byte_595, #$FF
 	STA	byte_6A1
 	set byte_6A3, #0
@@ -7178,13 +7267,15 @@ loc_12CB96:
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
-	if_equal byte_42E, #$26 , loc_12CBB2
+	LDA	byte_42E
+	if_equal #$26 , loc_12CBB2
 	DEC	byte_42E
 	JMP	loc_12CB96
 ; ---------------------------------------------------------------------------
 
 loc_12CBB2:
-	if_equal byte_434, #4, loc_12CBD9
+	LDA	byte_434
+	if_equal #4, loc_12CBD9
 	BCS	loc_12CBD9
 	LDA	#2
 	CLC
@@ -7210,7 +7301,8 @@ loc_12CBD9:
 	LDA	byte_434
 	EOR	#1
 	STA	byte_434
-	if_equal byte_42B, #$14, show_ending_screen_12CC06
+	LDA	byte_42B
+	if_equal #$14, show_ending_screen_12CC06
 	INC	byte_42B
 
 loc_12CBF7:
@@ -7320,7 +7412,8 @@ loc_12CCDF:
 
 
 comm_46_12CCE3:
-	if_equal byte_6C5, #0, return_12CD1C
+	LDA	byte_6C5
+	if_equal #0, return_12CD1C
 	set text_idx_35C, #$7B 
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #4
@@ -7385,7 +7478,8 @@ com_E_load_game_12CD30:
 loc_12CDA2:
 	CPY	#4
 	BEQ	loc_12CE00
-	if_equal {byte_4A0,Y}, #$FF, loc_12CDEA
+	LDA	byte_4A0,Y
+	if_equal #$FF, loc_12CDEA
 	CLC
 	ADC	#$7E 
 	STA	text_idx_35C
@@ -7467,15 +7561,15 @@ loc_12CE57:
 ; ---------------------------------------------------------------------------
 
 loc_12CE62:
-	CMP	#$40 
-	BEQ	loc_12CE69
+	if_equal #$40 , loc_12CE69
 	JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
 loc_12CE69:
 
 	JSR	sub_12ED29
-	if_equal jill_pos_y_47E, #$FF, loc_12CE99
+	LDA	jill_pos_y_47E
+	if_equal #$FF, loc_12CE99
 	from_stack prev_sprite_type_4A9
 	from_stack ppu_prev_scroll_y_unk_4A8
 	from_stack ppu_prev_scroll_x_unk_4A7
@@ -7568,8 +7662,7 @@ loc_12CF48:
 ; ---------------------------------------------------------------------------
 
 loc_12CF5A:
-	CMP	#$80 
-	BEQ	loc_12CF61
+	if_equal #$80 , loc_12CF61
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
@@ -7747,7 +7840,8 @@ byte_12D11C:.BYTE $9D,$DA
 
 sub_12D120:
 	LDY	byte_372
-	if_equal {byte_4A0,Y}, #$FF, loc_12D133
+	LDA	byte_4A0,Y
+	if_equal #$FF, loc_12D133
 	JSR	sub_12D1E9
 	set sprite_length_30F, #$FF
 	RTS
@@ -8037,25 +8131,17 @@ loc_12D33A:
 	ADC	#$10
 	STA	ppu_unk_byte_309
 	LDY	tilemapTypeUnk_30B
-	if_equal {byte_533,Y}, #1, loc_12D383
-	CMP	#2
-	BEQ	loc_12D383
-	CMP	#3
-	BEQ	loc_12D383
-	CMP	#4
-	BEQ	loc_12D383
-	CMP	#5
-	BEQ	loc_12D383
-	CMP	#6
-	BEQ	loc_12D383
-	CMP	#7
-	BEQ	loc_12D383
-	CMP	#8
-	BEQ	loc_12D383
-	CMP	#9
-	BEQ	loc_12D383
-	CMP	#$1A
-	BEQ	loc_12D383
+	LDA	byte_533,Y
+	if_equal #1, loc_12D383
+	if_equal #2, loc_12D383
+	if_equal #3, loc_12D383
+	if_equal #4, loc_12D383
+	if_equal #5, loc_12D383
+	if_equal #6, loc_12D383
+	if_equal #7, loc_12D383
+	if_equal #8, loc_12D383
+	if_equal #9, loc_12D383
+	if_equal #$1A, loc_12D383
 	JMP	loc_12D394
 ; ---------------------------------------------------------------------------
 
@@ -8290,13 +8376,13 @@ loc_12D558:
 	CMP	#$80 
 	BNE	loc_12D569
 	JSR	sub_12DB1E
-	if_equal sprite_length_30F, #$FF, loc_12D570
+	LDA	sprite_length_30F
+	if_equal #$FF, loc_12D570
 	JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
 loc_12D569:
-	CMP	#$10
-	BEQ	loc_12D570
+	if_equal #$10, loc_12D570
 	JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
@@ -8446,8 +8532,7 @@ loc_12D6E3:
 ; ---------------------------------------------------------------------------
 
 loc_12D6F5:
-	CMP	#$80 
-	BEQ	loc_12D6FC
+	if_equal #$80 , loc_12D6FC
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
@@ -8578,7 +8663,8 @@ loc_12D7D3:
 loc_12D7E4:
 	CMP	#$80 
 	BNE	loc_12D7FB
-	if_equal byte_42E, #5, loc_12D802
+	LDA	byte_42E
+	if_equal #5, loc_12D802
 	JSR	sub_12ED20
 	JSR	sub_12DC76
 	JSR	sub_12D319
@@ -8586,8 +8672,7 @@ loc_12D7E4:
 ; ---------------------------------------------------------------------------
 
 loc_12D7FB:
-	CMP	#$10
-	BEQ	loc_12D802
+	if_equal #$10, loc_12D802
 	JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
@@ -8765,7 +8850,8 @@ loc_12D931:
 ; ---------------------------------------------------------------------------
 
 loc_12D946:
-	if_equal {byte_533,Y}, #6, loc_12D966
+	LDA	byte_533,Y
+	if_equal #6, loc_12D966
 	BCS	loc_12D966
 	to_stack tilemapTypeUnk_30B
 	to_stack inv_spr_dscr1_30C
@@ -8916,7 +9002,8 @@ loc_12DA43:
 	set sprite_secondByte_31B, #$3C 
 
 loc_12DA48:
-	if_equal tilemapTypeUnk_30B, #0, loc_12DA5E
+	LDA	tilemapTypeUnk_30B
+	if_equal #0, loc_12DA5E
 	add_to_byte_clc sprite_secondByte_31B, #$11
 	DEC	tilemapTypeUnk_30B
 	JMP	loc_12DA48
@@ -9156,8 +9243,7 @@ loc_12DC0C:
 ; ---------------------------------------------------------------------------
 
 loc_12DC0F:
-	CMP	#$40 
-	BEQ	loc_12DC16
+	if_equal #$40 , loc_12DC16
 	JMP	loc_12DB8E
 ; ---------------------------------------------------------------------------
 
@@ -9167,7 +9253,8 @@ loc_12DC16:
 	set tilemapWidth_308, #$60 
 	set byte_31A, #$A0 
 	JSR	sub_12D26B
-	if_equal sprite_length_30F, #$FF, locret_12DC30
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_12DC30
 	JSR	sub_12D319
 
 locret_12DC30:
@@ -9235,7 +9322,8 @@ loc_12DC79:
 loc_12DC97:
 	CMP	#4
 	BNE	loc_12DCB1
-	if_equal byte_372, #$2F , loc_12DC79
+	LDA	byte_372
+	if_equal #$2F , loc_12DC79
 	INC	byte_372
 	JSR	sub_12ED32
 	JSR	sub_12DF2B
@@ -9253,8 +9341,7 @@ loc_12DCB1:
 ; ---------------------------------------------------------------------------
 
 loc_12DCC1:
-	CMP	#$40 
-	BEQ	loc_12DCC8
+	if_equal #$40 , loc_12DCC8
 	JMP	loc_12DC79
 ; ---------------------------------------------------------------------------
 
@@ -9593,8 +9680,7 @@ loc_12DFE8:
 	LDA	tilemapTypeUnk_30B
 	CLC
 	ADC	#1
-	CMP	byte_543
-	BEQ	sub_12DFFC
+	if_equal byte_543, sub_12DFFC
 	STA	byte_543
 	STY	byte_544
 	JMP	sub_12E3DF
@@ -9656,7 +9742,8 @@ loc_12E05D:
 	LDA	tilemapTypeUnk_30B
 	CMP	#$C
 	BNE	loc_12E076
-	if_equal byte_54A, #0, loc_12E076
+	LDA	byte_54A
+	if_equal #0, loc_12E076
 	set byte_54A, #0
 	STA	byte_4B5
 	JMP	loc_12E13A
@@ -9824,54 +9911,66 @@ loc_12E17A:
 	LDA	byte_46D
 	CMP	#$1E
 	BNE	loc_12E1A0
-	if_equal tilemapTypeUnk_30B, #$1E, loc_12E202
-	if_equal tilemapTypeUnk_30B, #$1F, loc_12E202
-	if_equal tilemapTypeUnk_30B, #$20 , loc_12E202
-	if_equal tilemapTypeUnk_30B, #$21 , loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$1E, loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$1F, loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$20 , loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$21 , loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1A0:
 	CMP	#$22 
 	BNE	loc_12E1B5
-	if_equal tilemapTypeUnk_30B, #$22 , loc_12E202
-	if_equal tilemapTypeUnk_30B, #$23 , loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$22 , loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$23 , loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1B5:
 	CMP	#$2D 
 	BNE	loc_12E1C3
-	if_equal tilemapTypeUnk_30B, #$2D , loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$2D , loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1C3:
 	CMP	#$1C
 	BNE	loc_12E1D8
-	if_equal tilemapTypeUnk_30B, #$1C, loc_12E202
-	if_equal tilemapTypeUnk_30B, #$1D, loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$1C, loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$1D, loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1D8:
 	CMP	#$1B
 	BNE	loc_12E1E6
-	if_equal tilemapTypeUnk_30B, #$1B, loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$1B, loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1E6:
 	CMP	#$29 
 	BNE	loc_12E1F4
-	if_equal tilemapTypeUnk_30B, #$29 , loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$29 , loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1F4:
 	CMP	#$13
 	BNE	loc_12E205
-	if_equal tilemapTypeUnk_30B, #$13, loc_12E202
+	LDA	tilemapTypeUnk_30B
+	if_equal #$13, loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
@@ -9883,64 +9982,74 @@ loc_12E202:
 loc_12E205:
 	CMP	#$18
 	BNE	loc_12E213
-	if_equal tilemapTypeUnk_30B, #$18, loc_12E28A
+	LDA	tilemapTypeUnk_30B
+	if_equal #$18, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E213:
 	CMP	#$17
 	BNE	loc_12E221
-	if_equal tilemapTypeUnk_30B, #$17, loc_12E28A
+	LDA	tilemapTypeUnk_30B
+	if_equal #$17, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E221:
 	CMP	#$16
 	BNE	loc_12E22F
-	if_equal tilemapTypeUnk_30B, #$16, loc_12E28A
+	LDA	tilemapTypeUnk_30B
+	if_equal #$16, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E22F:
 	CMP	#$24 
 	BNE	loc_12E23D
-	if_equal tilemapTypeUnk_30B, #$24 , loc_12E28A
+	LDA	tilemapTypeUnk_30B
+	if_equal #$24 , loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E23D:
 	CMP	#$2C 
 	BNE	loc_12E24B
-	if_equal tilemapTypeUnk_30B, #$2C , loc_12E28A
+	LDA	tilemapTypeUnk_30B
+	if_equal #$2C , loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E24B:
 	CMP	#2
 	BNE	loc_12E260
-	if_equal tilemapTypeUnk_30B, #2, loc_12E28A
-	if_equal tilemapTypeUnk_30B, #$3B , loc_12E28A
+	LDA	tilemapTypeUnk_30B
+	if_equal #2, loc_12E28A
+	LDA	tilemapTypeUnk_30B
+	if_equal #$3B , loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E260:
 	CMP	#$2E 
 	BNE	loc_12E26E
-	if_equal tilemapTypeUnk_30B, #$2E , loc_12E28A
+	LDA	tilemapTypeUnk_30B
+	if_equal #$2E , loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E26E:
 	CMP	#$2A 
 	BNE	loc_12E27C
-	if_equal tilemapTypeUnk_30B, #$2A , loc_12E28A
+	LDA	tilemapTypeUnk_30B
+	if_equal #$2A , loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E27C:
 	CMP	#0
 	BNE	loc_12E28D
-	if_equal tilemapTypeUnk_30B, #0, loc_12E28A
+	LDA	tilemapTypeUnk_30B
+	if_equal #0, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
@@ -9952,42 +10061,48 @@ loc_12E28A:
 loc_12E28D:
 	CMP	#$39 
 	BNE	loc_12E29B
-	if_equal tilemapTypeUnk_30B, #$39 , loc_12E315
+	LDA	tilemapTypeUnk_30B
+	if_equal #$39 , loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E29B:
 	CMP	#$27 
 	BNE	loc_12E2A9
-	if_equal tilemapTypeUnk_30B, #$27 , loc_12E315
+	LDA	tilemapTypeUnk_30B
+	if_equal #$27 , loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E2A9:
 	CMP	#$28 
 	BNE	loc_12E2B7
-	if_equal tilemapTypeUnk_30B, #$28 , loc_12E315
+	LDA	tilemapTypeUnk_30B
+	if_equal #$28 , loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E2B7:
 	CMP	#$30 
 	BNE	loc_12E2C5
-	if_equal tilemapTypeUnk_30B, #$30 , loc_12E315
+	LDA	tilemapTypeUnk_30B
+	if_equal #$30 , loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E2C5:
 	CMP	#$14
 	BNE	loc_12E2D3
-	if_equal tilemapTypeUnk_30B, #$14, loc_12E315
+	LDA	tilemapTypeUnk_30B
+	if_equal #$14, loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E2D3:
 	CMP	#$15
 	BNE	loc_12E2E1
-	if_equal tilemapTypeUnk_30B, #$15, loc_12E315
+	LDA	tilemapTypeUnk_30B
+	if_equal #$15, loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
@@ -10008,7 +10123,8 @@ loc_12E2E1:
 ; ---------------------------------------------------------------------------
 
 loc_12E308:
-	if_equal tilemapTypeUnk_30B, #$1A, loc_12E315
+	LDA	tilemapTypeUnk_30B
+	if_equal #$1A, loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
@@ -10019,28 +10135,17 @@ loc_12E312:
 loc_12E315:
 	
 	set byte_46E, tilemapTypeUnk_30B
-	CMP	#0
-	BEQ	loc_12E362
-	CMP	#$13
-	BEQ	loc_12E362
-	CMP	#$14
-	BEQ	loc_12E362
-	CMP	#$15
-	BEQ	loc_12E362
-	CMP	#$16
-	BEQ	loc_12E362
-	CMP	#$17
-	BEQ	loc_12E362
-	CMP	#$18
-	BEQ	loc_12E362
-	CMP	#$19
-	BEQ	loc_12E362
-	CMP	#$29 
-	BEQ	loc_12E362
-	CMP	#$2A 
-	BEQ	loc_12E362
-	CMP	#$2B 
-	BEQ	loc_12E362
+	if_equal #0, loc_12E362
+	if_equal #$13, loc_12E362
+	if_equal #$14, loc_12E362
+	if_equal #$15, loc_12E362
+	if_equal #$16, loc_12E362
+	if_equal #$17, loc_12E362
+	if_equal #$18, loc_12E362
+	if_equal #$19, loc_12E362
+	if_equal #$29 , loc_12E362
+	if_equal #$2A , loc_12E362
+	if_equal #$2B , loc_12E362
 	CMP	#$1A
 	BNE	loc_12E35C
 	LDA	unk_53B,Y
@@ -10140,7 +10245,8 @@ sub_12E3D4:
 
 sub_12E3DF:
 	
-	if_equal byte_543, #0, locret_12E427
+	LDA	byte_543
+	if_equal #0, locret_12E427
 	set tilemap_size_307, #$10
 	set ppu_unk_byte_309, #$14
 	LDA	byte_543
@@ -10242,13 +10348,13 @@ loc_12E49F:
 	CMP	#$80 
 	BNE	loc_12E4B0
 	JSR	sub_12E8A5
-	if_equal sprite_length_30F, #$FF, loc_12E4B7
+	LDA	sprite_length_30F
+	if_equal #$FF, loc_12E4B7
 	JMP	sub_12E428
 ; ---------------------------------------------------------------------------
 
 loc_12E4B0:
-	CMP	#$40 
-	BEQ	loc_12E4B7
+	if_equal #$40 , loc_12E4B7
 	JMP	sub_12E428
 ; ---------------------------------------------------------------------------
 
@@ -10390,8 +10496,7 @@ loc_12E62A:
 	LDA	byte_372
 	CLC
 	ADC	#1
-	CMP	byte_4C1
-	BEQ	loc_12E62A
+	if_equal byte_4C1, loc_12E62A
 	INC	byte_372
 	JSR	sub_12ED32
 	JMP	loc_12E603
@@ -10400,17 +10505,16 @@ loc_12E62A:
 loc_12E645:
 	CMP	#8
 	BNE	loc_12E659
-	if_equal byte_372, #0, loc_12E62A
+	LDA	byte_372
+	if_equal #0, loc_12E62A
 	DEC	byte_372
 	JSR	sub_12ED32
 	JMP	loc_12E603
 ; ---------------------------------------------------------------------------
 
 loc_12E659:
-	CMP	#$80 
-	BEQ	loc_12E664
-	CMP	#$40 
-	BEQ	loc_12E67A
+	if_equal #$80 , loc_12E664
+	if_equal #$40 , loc_12E67A
 	JMP	loc_12E62A
 ; ---------------------------------------------------------------------------
 
@@ -10489,8 +10593,7 @@ loc_12E6F7:
 	LDA	byte_372
 	CLC
 	ADC	#1
-	CMP	byte_4D0
-	BEQ	loc_12E6F7
+	if_equal byte_4D0, loc_12E6F7
 	INC	byte_372
 	JSR	sub_12ED32
 	JMP	loc_12E6BC
@@ -10499,17 +10602,16 @@ loc_12E6F7:
 loc_12E712:
 	CMP	#8
 	BNE	loc_12E726
-	if_equal byte_372, #0, loc_12E6F7
+	LDA	byte_372
+	if_equal #0, loc_12E6F7
 	DEC	byte_372
 	JSR	sub_12ED32
 	JMP	loc_12E6BC
 ; ---------------------------------------------------------------------------
 
 loc_12E726:
-	CMP	#$80 
-	BEQ	loc_12E731
-	CMP	#$40 
-	BEQ	loc_12E776
+	if_equal #$80 , loc_12E731
+	if_equal #$40 , loc_12E776
 	JMP	loc_12E6F7
 ; ---------------------------------------------------------------------------
 
@@ -10694,7 +10796,8 @@ loc_12E8C5:
 	CMP	#$F
 	BCC	loc_12E8FB
 	BEQ	loc_12E8FB
-	if_equal {unk_53B,X}, #$F, loc_12E923
+	LDA	unk_53B,X
+	if_equal #$F, loc_12E923
 	LDA	#$F
 	SEC
 	SBC	unk_53B,X
@@ -10743,7 +10846,8 @@ loc_12E92A:
 	CMP	#6
 	BCC	loc_12E960
 	BEQ	loc_12E960
-	if_equal {unk_53B,X}, #6, loc_12E988
+	LDA	unk_53B,X
+	if_equal #6, loc_12E988
 	LDA	#6
 	SEC
 	SBC	unk_53B,X
@@ -10792,7 +10896,8 @@ loc_12E98F:
 	CMP	#6
 	BCC	loc_12E9C5
 	BEQ	loc_12E9C5
-	if_equal {unk_53B,X}, #6, loc_12E9ED
+	LDA	unk_53B,X
+	if_equal #6, loc_12E9ED
 	LDA	#6
 	SEC
 	SBC	unk_53B,X
@@ -10841,7 +10946,8 @@ loc_12E9F4:
 	CMP	#6
 	BCC	loc_12EA2A
 	BEQ	loc_12EA2A
-	if_equal {unk_53B,X}, #6, loc_12EA52
+	LDA	unk_53B,X
+	if_equal #6, loc_12EA52
 	LDA	#6
 	SEC
 	SBC	unk_53B,X
@@ -11004,7 +11110,8 @@ loc_12EB3C:
 loc_12EB4F:
 	CMP	#$B
 	BNE	loc_12EB63
-	if_equal byte_47B, byte_47C, loc_12EB63
+	LDA	byte_47B
+	if_equal byte_47C, loc_12EB63
 	set {byte_533,X}, #$F
 	JMP	loc_12EB78
 ; ---------------------------------------------------------------------------
@@ -11052,8 +11159,7 @@ loc_12EBAC:
 ; ---------------------------------------------------------------------------
 
 loc_12EBAF:
-	CMP	#$C
-	BEQ	loc_12EBB6
+	if_equal #$C, loc_12EBB6
 	JMP	loc_12EC39
 ; ---------------------------------------------------------------------------
 
@@ -11323,7 +11429,8 @@ loc_12ED90:
 	LDA	input_pressed_34A
 	CMP	#8
 	BNE	loc_12EDC0
-	if_equal tilemapTypeUnk_30B, #0, loc_12ED90
+	LDA	tilemapTypeUnk_30B
+	if_equal #0, loc_12ED90
 	DEC	tilemapTypeUnk_30B
 	set tilemap_size_307, #$80 
 	STA	ppu_unk_byte_309
@@ -11338,7 +11445,8 @@ loc_12ED90:
 loc_12EDC0:
 	CMP	#4
 	BNE	loc_12EDE7
-	if_equal tilemapTypeUnk_30B, #$47 , loc_12ED90
+	LDA	tilemapTypeUnk_30B
+	if_equal #$47 , loc_12ED90
 	INC	tilemapTypeUnk_30B
 	set tilemap_size_307, #$80 
 	STA	ppu_unk_byte_309
@@ -11390,13 +11498,11 @@ loc_12EE2A:
 	LDY	#0
 
 loc_12EE2C:
-	if_equal inv_spr_dscr1_30C, #4, loc_12EE3F
-	CMP	#3
-	BEQ	loc_12EE47
-	CMP	#2
-	BEQ	loc_12EE58
-	CMP	#1
-	BEQ	loc_12EE69
+	LDA	inv_spr_dscr1_30C
+	if_equal #4, loc_12EE3F
+	if_equal #3, loc_12EE47
+	if_equal #2, loc_12EE58
+	if_equal #1, loc_12EE69
 
 loc_12EE3F:
 	LDA	palette_bg_321,Y 
@@ -11447,14 +11553,16 @@ loc_12EE7D:
 	BCC	loc_12EE2C
 	set has_ppu_data_to_upload_6F, #1
 	DEC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, #0, loc_12EE9C
+	LDA	inv_spr_dscr1_30C
+	if_equal #0, loc_12EE9C
 	LDA	byte_341
 	JSR	wait_for_frame_rendered_FCA0
 	JMP	loc_12EE04
 ; ---------------------------------------------------------------------------
 
 loc_12EE9C:
-	if_equal byte_341, #0, loc_12EEA7
+	LDA	byte_341
+	if_equal #0, loc_12EEA7
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -11490,15 +11598,12 @@ loc_12EED9:
 	LDY	#0
 
 loc_12EEDB:
-	if_equal inv_spr_dscr1_30C, #4, loc_12EEF2
-	CMP	#3
-	BEQ	loc_12EEFA
-	CMP	#2
-	BEQ	loc_12EF0B
-	CMP	#1
-	BEQ	loc_12EF1C
-	CMP	#0
-	BEQ	loc_12EF2D
+	LDA	inv_spr_dscr1_30C
+	if_equal #4, loc_12EEF2
+	if_equal #3, loc_12EEFA
+	if_equal #2, loc_12EF0B
+	if_equal #1, loc_12EF1C
+	if_equal #0, loc_12EF2D
 
 loc_12EEF2:
 	LDA	palette_bg_321,Y 
@@ -11554,14 +11659,16 @@ loc_12EF35:
 	BCC	loc_12EEDB
 	set has_ppu_data_to_upload_6F, #1
 	DEC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, #$FF, loc_12EF54
+	LDA	inv_spr_dscr1_30C
+	if_equal #$FF, loc_12EF54
 	LDA	byte_341
 	JSR	wait_for_frame_rendered_FCA0
 	JMP	write_ppu_entry_12EEB3
 ; ---------------------------------------------------------------------------
 
 loc_12EF54:
-	if_equal byte_341, #0, loc_12EF5F
+	LDA	byte_341
+	if_equal #0, loc_12EF5F
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -11712,13 +11819,13 @@ loc_12F121:
 	JSR	sub_12ED20
 	JSR	sub_12F2C9
 	JSR	sub_12F583
-	if_equal byte_41F, #$FF, loc_12F13F
+	LDA	byte_41F
+	if_equal #$FF, loc_12F13F
 	JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
 loc_12F138:
-	CMP	#$40 
-	BEQ	loc_12F13F
+	if_equal #$40 , loc_12F13F
 	JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
@@ -11764,13 +11871,11 @@ sub_12F168:
 	CLC
 	ADC	#8
 	STA	byte_36A
-	if_equal byte_372, #$14, loc_12F1C7
-	CMP	#$1C
-	BEQ	loc_12F1C7
-	CMP	#$1D
-	BEQ	loc_12F1C7
-	CMP	#$1E
-	BEQ	loc_12F1C7
+	LDA	byte_372
+	if_equal #$14, loc_12F1C7
+	if_equal #$1C, loc_12F1C7
+	if_equal #$1D, loc_12F1C7
+	if_equal #$1E, loc_12F1C7
 	JMP	loc_12F1D0
 ; ---------------------------------------------------------------------------
 
@@ -11812,13 +11917,11 @@ loc_12F1D0:
 	CLC
 	ADC	#8
 	STA	byte_36A
-	if_equal byte_372, #$14, loc_12F258
-	CMP	#$1C
-	BEQ	loc_12F258
-	CMP	#$1D
-	BEQ	loc_12F258
-	CMP	#$1E
-	BEQ	loc_12F258
+	LDA	byte_372
+	if_equal #$14, loc_12F258
+	if_equal #$1C, loc_12F258
+	if_equal #$1D, loc_12F258
+	if_equal #$1E, loc_12F258
 	JMP	loc_12F261
 ; ---------------------------------------------------------------------------
 
@@ -11857,7 +11960,8 @@ sub_12F2C9:
 	LDA	byte_421
 	CMP	#$A
 	BCC	loc_12F2D8
-	if_equal byte_372, #$A, loc_12F2D8
+	LDA	byte_372
+	if_equal #$A, loc_12F2D8
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -11866,7 +11970,8 @@ loc_12F2D8:
 	LDA	byte_372
 	CMP	#$A
 	BNE	loc_12F2ED
-	if_equal byte_421, #0, locret_12F2EC
+	LDA	byte_421
+	if_equal #0, locret_12F2EC
 	DEC	byte_421
 	JMP	loc_12F2ED
 ; ---------------------------------------------------------------------------
@@ -11886,7 +11991,8 @@ loc_12F2ED:
 	STA	data_3
 	LDX	byte_372
 	set tilemapTypeUnk_30B, {byte_12F45C,X}
-	if_equal tilemapTypeUnk_30B, #$FF, loc_12F30E
+	LDA	tilemapTypeUnk_30B
+	if_equal #$FF, loc_12F30E
 	JMP	loc_12F411
 ; ---------------------------------------------------------------------------
 
@@ -11906,8 +12012,7 @@ loc_12F30E:
 	set data_3, {(ptr_0),Y}
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
-	CMP	byte_421
-	BEQ	loc_12F33F
+	if_equal byte_421, loc_12F33F
 	JMP	locret_12F410
 ; ---------------------------------------------------------------------------
 
@@ -11916,7 +12021,8 @@ loc_12F33F:
 	LDX	#0
 
 loc_12F342:
-	if_equal {(data_2),Y}, {unk_422,X}, loc_12F34C
+	LDA	(data_2),Y
+	if_equal {unk_422,X}, loc_12F34C
 	JMP	locret_12F410
 ; ---------------------------------------------------------------------------
 
@@ -11955,7 +12061,8 @@ loc_12F38A:
 	LDA	input_pressed_34A
 	CMP	#8
 	BNE	loc_12F3A4
-	if_equal byte_372, #$1C, loc_12F38A
+	LDA	byte_372
+	if_equal #$1C, loc_12F38A
 	DEC	byte_372
 	JMP	loc_12F38A
 ; ---------------------------------------------------------------------------
@@ -11963,14 +12070,14 @@ loc_12F38A:
 loc_12F3A4:
 	CMP	#4
 	BNE	loc_12F3B5
-	if_equal byte_372, #$1E, loc_12F38A
+	LDA	byte_372
+	if_equal #$1E, loc_12F38A
 	INC	byte_372
 	JMP	loc_12F38A
 ; ---------------------------------------------------------------------------
 
 loc_12F3B5:
-	CMP	#$80 
-	BEQ	loc_12F3BC
+	if_equal #$80 , loc_12F3BC
 	JMP	loc_12F38A
 ; ---------------------------------------------------------------------------
 
@@ -11980,10 +12087,8 @@ loc_12F3BC:
 	to_stack tilemapTypeUnk_30B
 	JSR	sub_12F168
 	from_stack tilemapTypeUnk_30B
-	CMP	#$1E
-	BEQ	loc_12F3F4
-	CMP	#$1D
-	BEQ	loc_12F3E9
+	if_equal #$1E, loc_12F3F4
+	if_equal #$1D, loc_12F3E9
 	JSR	sub_12F6D8
 	set byte_420, #4
 	set byte_421, #0
@@ -12145,11 +12250,10 @@ locret_12F513:
 
 
 sub_12F514:
-	if_equal byte_372, #0, locret_12F526
-	CMP	#$B
-	BEQ	locret_12F526
-	CMP	#$15
-	BEQ	locret_12F526
+	LDA	byte_372
+	if_equal #0, locret_12F526
+	if_equal #$B, locret_12F526
+	if_equal #$15, locret_12F526
 	DEC	byte_372
 
 locret_12F526:
@@ -12162,11 +12266,10 @@ locret_12F526:
 
 
 sub_12F527:
-	if_equal byte_372, #$A, locret_12F539
-	CMP	#$14
-	BEQ	locret_12F539
-	CMP	#$1B
-	BEQ	locret_12F539
+	LDA	byte_372
+	if_equal #$A, locret_12F539
+	if_equal #$14, locret_12F539
+	if_equal #$1B, locret_12F539
 	INC	byte_372
 
 locret_12F539:

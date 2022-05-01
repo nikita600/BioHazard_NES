@@ -14,15 +14,12 @@ switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
 
-	if_equal bank_command_346, #0, case0_8096
-	CMP	#1
-	BEQ	case1_80A7
-	CMP	#2
-	BEQ	case2_80B5
-	CMP	#3
-	BEQ	case3_80C3
-	CMP	#4
-	BEQ	case4_80D1
+	LDA	bank_command_346
+	if_equal #0, case0_8096
+	if_equal #1, case1_80A7
+	if_equal #2, case2_80B5
+	if_equal #3, case3_80C3
+	if_equal #4, case4_80D1
 	CMP	#5
 	BNE	else_805D
 	JMP	case5_80DF
@@ -634,13 +631,13 @@ loc_8654:
 ; ---------------------------------------------------------------------------
 
 loc_8666:
-	CMP	#$80 
-	BEQ	loc_866D
+	if_equal #$80 , loc_866D
 	JMP	loc_8639
 ; ---------------------------------------------------------------------------
 
 loc_866D:
-	if_equal byte_372, #0, loc_86B7
+	LDA	byte_372
+	if_equal #0, loc_86B7
 
 	set_ptr _SAVE_RAM
 
@@ -714,8 +711,7 @@ loc_86F6:
 ; ---------------------------------------------------------------------------
 
 loc_86FD:
-	CMP	#$80 
-	BEQ	loc_8704
+	if_equal #$80 , loc_8704
 	JMP	loc_86C9
 ; ---------------------------------------------------------------------------
 
@@ -771,25 +767,30 @@ loc_876D:
 	LDA	objCreatedArray_393,X
 	BNE	loc_87C4
 	JSR	sub_87CE
-	if_equal sprite_length_30F, #$FF, locret_87CD
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_87CD
 	JMP	loc_87C4
 ; ---------------------------------------------------------------------------
 	JSR	sub_D8D8
 	JSR	sub_D96B
-	if_equal sprite_length_30F, #$FF, locret_87CD
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_87CD
 	JSR	sub_D8D8
 	JSR	sub_D8FD
 	JSR	sub_D96B
-	if_equal sprite_length_30F, #$FF, locret_87CD
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_87CD
 	JSR	sub_D8D8
 	JSR	sub_D913
 	JSR	sub_D96B
-	if_equal sprite_length_30F, #$FF, locret_87CD
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_87CD
 	JSR	sub_D8D8
 	JSR	sub_D8FD
 	JSR	sub_D913
 	JSR	sub_D96B
-	if_equal sprite_length_30F, #$FF, locret_87CD
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_87CD
 
 loc_87C4:
 	INX
@@ -924,7 +925,8 @@ gameplay_update_88C2:
 	LDA	input_pressed_34A
 	BEQ	gameplay_update_8930
 	LDY	jill_pos_x_47D
-	if_equal {copyright_cheat_sequence_9B29,Y}, input_pressed_34A, inc_cheat_idx_88DA
+	LDA	copyright_cheat_sequence_9B29,Y
+	if_equal input_pressed_34A, inc_cheat_idx_88DA
 
 reset_cheat_idx_88D2:
 	set jill_pos_x_47D, #0
@@ -964,7 +966,8 @@ show_copyright_screen_88E4:
 
 gameplay_update_8930:
 	
-	if_equal byte_54A, #0, loc_895B
+	LDA	byte_54A
+	if_equal #0, loc_895B
 	LDA	count_unk_46C
 	CMP	#$A
 	BCC	loc_895B
@@ -986,9 +989,9 @@ loc_895B:
 	
 	set byte_315, #8
 	set byte_314, #0
-	if_equal entry_idx_300, #$5C , loc_8973
-	CMP	#$93 
-	BEQ	loc_8973
+	LDA	entry_idx_300
+	if_equal #$5C , loc_8973
+	if_equal #$93 , loc_8973
 	JMP	loc_89D5
 ; ---------------------------------------------------------------------------
 
@@ -1009,7 +1012,8 @@ loc_8987:
 	LDX	#0
 
 next_object_8989:
-	if_equal {objIdxArray_375,X}, #3, obj_id3_handler_8999
+	LDA	objIdxArray_375,X
+	if_equal #3, obj_id3_handler_8999
 	INX
 	CPX	objArraySize_373
 	BCC	next_object_8989
@@ -1025,8 +1029,10 @@ obj_id3_handler_8999:
 	BNE	loc_89B8
 
 loc_89A7:
-	if_equal byte_654, #0, loc_89B8
-	if_equal byte_653, #0, loc_89C8
+	LDA	byte_654
+	if_equal #0, loc_89B8
+	LDA	byte_653
+	if_equal #0, loc_89C8
 	JMP	loc_89D5
 ; ---------------------------------------------------------------------------
 
@@ -1091,8 +1097,7 @@ check_ending_8A41:
 ; ---------------------------------------------------------------------------
 
 check_ending_type_8A4E:
-	CMP	#$FF
-	BEQ	ending_sequence_8A74
+	if_equal #$FF, ending_sequence_8A74
 	set apu_unk_76C, #1
 
 exec_b13_c5_8A57:
@@ -1145,9 +1150,9 @@ loc_8ABF:
 
 loc_8AC7:
 	LDX	cur_obj_idx_unk_43A
-	if_equal {objIdxArray_375,X}, #$C, loc_8AE0
-	CMP	#$F
-	BEQ	loc_8AE0
+	LDA	objIdxArray_375,X
+	if_equal #$C, loc_8AE0
+	if_equal #$F, loc_8AE0
 	TAX
 	set inv_sprite_idx_31C, {byte_CBFD,X}
 	JSR	sub_EC86
@@ -1184,7 +1189,8 @@ loc_8B14:
 	LDA	objMapIdx_316
 	CMP	#2
 	BCC	loc_8AF1
-	if_equal byte_54A, #0, loc_8B4A
+	LDA	byte_54A
+	if_equal #0, loc_8B4A
 	LDA	byte_549
 	CMP	#$A
 	BCC	set_game_finished_8B42
@@ -1222,7 +1228,8 @@ is_B_pressed_8B64:
 	CMP	#b_40
 	BNE	b_not_pressed_8BB1
 	set byte_433, #$FF
-	if_equal byte_42A, #$FF, loc_8BAC
+	LDA	byte_42A
+	if_equal #$FF, loc_8BAC
 	set byte_42A, #$FF
 	set byte_430, #0
 	STA	byte_431
@@ -1393,7 +1400,8 @@ loc_8C99:
 loc_8C9E:
 	DEC	byte_4AE
 	DEC	byte_4AE
-	if_equal byte_315, #8, loc_8CB1
+	LDA	byte_315
+	if_equal #8, loc_8CB1
 	DEC	byte_4AE
 	DEC	byte_4AE
 
@@ -1424,11 +1432,11 @@ loc_8CD1:
 ; ---------------------------------------------------------------------------
 
 loc_8CDA:
-	if_equal byte_314, #0, loc_8CED
+	LDA	byte_314
+	if_equal #0, loc_8CED
 	LDA	byte_315
 	LSR	A
-	CMP	byte_314
-	BEQ	loc_8CED
+	if_equal byte_314, loc_8CED
 	JMP	loc_8CF0
 ; ---------------------------------------------------------------------------
 
@@ -1446,7 +1454,8 @@ loc_8CF0:
 loc_8D02:
 	DEC	ppu_scroll_y_305
 	DEC	ppu_scroll_y_305
-	if_equal byte_315, #8, loc_8D15
+	LDA	byte_315
+	if_equal #8, loc_8D15
 	DEC	ppu_scroll_y_305
 	DEC	ppu_scroll_y_305
 
@@ -1482,7 +1491,8 @@ sub_8D27:
 ; ---------------------------------------------------------------------------
 
 loc_8D47:
-	if_equal byte_4AE, #$C0 , loc_8D8C
+	LDA	byte_4AE
+	if_equal #$C0 , loc_8D8C
 	BCS	loc_8D8C
 
 loc_8D50:
@@ -1504,7 +1514,8 @@ loc_8D5E:
 loc_8D67:
 	INC	byte_4AE
 	INC	byte_4AE
-	if_equal byte_315, #8, loc_8D7A
+	LDA	byte_315
+	if_equal #8, loc_8D7A
 	INC	byte_4AE
 	INC	byte_4AE
 
@@ -1536,11 +1547,11 @@ loc_8D9A:
 
 loc_8DA3:
 	
-	if_equal byte_314, #0, loc_8DB6
+	LDA	byte_314
+	if_equal #0, loc_8DB6
 	LDA	byte_315
 	LSR	A
-	CMP	byte_314
-	BEQ	loc_8DB6
+	if_equal byte_314, loc_8DB6
 	JMP	loc_8DB9
 ; ---------------------------------------------------------------------------
 
@@ -1550,7 +1561,8 @@ loc_8DB6:
 loc_8DB9:
 	INC	ppu_scroll_y_305
 	INC	ppu_scroll_y_305
-	if_equal byte_315, #8, loc_8DCC
+	LDA	byte_315
+	if_equal #8, loc_8DCC
 	INC	ppu_scroll_y_305
 	INC	ppu_scroll_y_305
 
@@ -1615,7 +1627,8 @@ loc_8E21:
 loc_8E2A:
 	DEC	byte_4AD
 	DEC	byte_4AD
-	if_equal byte_315, #8, loc_8E3D
+	LDA	byte_315
+	if_equal #8, loc_8E3D
 	DEC	byte_4AD
 	DEC	byte_4AD
 
@@ -1646,16 +1659,15 @@ loc_8E5D:
 ; ---------------------------------------------------------------------------
 
 loc_8E66:
-	if_equal byte_314, #0, loc_8E83
+	LDA	byte_314
+	if_equal #0, loc_8E83
 	LDA	byte_315
 	LSR	A
-	CMP	byte_314
-	BEQ	loc_8E83
+	if_equal byte_314, loc_8E83
 	LDA	byte_315
 	LSR	A
 	LSR	A
-	CMP	byte_314
-	BEQ	loc_8E89
+	if_equal byte_314, loc_8E89
 	JMP	loc_8E8C
 ; ---------------------------------------------------------------------------
 
@@ -1675,7 +1687,8 @@ loc_8E8C:
 loc_8E94:
 	DEC	ppu_scroll_x_304
 	DEC	ppu_scroll_x_304
-	if_equal byte_315, #8, loc_8EA7
+	LDA	byte_315
+	if_equal #8, loc_8EA7
 	DEC	ppu_scroll_x_304
 	DEC	ppu_scroll_x_304
 
@@ -1711,7 +1724,8 @@ sub_8EB9:
 ; ---------------------------------------------------------------------------
 
 loc_8ED9:
-	if_equal byte_4AD, #$D0 , loc_8F1E
+	LDA	byte_4AD
+	if_equal #$D0 , loc_8F1E
 	BCS	loc_8F1E
 
 loc_8EE2:
@@ -1733,7 +1747,8 @@ loc_8EF0:
 loc_8EF9:
 	INC	byte_4AD
 	INC	byte_4AD
-	if_equal byte_315, #8, loc_8F0C
+	LDA	byte_315
+	if_equal #8, loc_8F0C
 	INC	byte_4AD
 	INC	byte_4AD
 
@@ -1764,16 +1779,15 @@ loc_8F2C:
 ; ---------------------------------------------------------------------------
 
 loc_8F35:
-	if_equal byte_314, #0, loc_8F52
+	LDA	byte_314
+	if_equal #0, loc_8F52
 	LDA	byte_315
 	LSR	A
-	CMP	byte_314
-	BEQ	loc_8F52
+	if_equal byte_314, loc_8F52
 	LDA	byte_315
 	LSR	A
 	LSR	A
-	CMP	byte_314
-	BEQ	loc_8F58
+	if_equal byte_314, loc_8F58
 	JMP	loc_8F5B
 ; ---------------------------------------------------------------------------
 
@@ -1788,7 +1802,8 @@ loc_8F58:
 loc_8F5B:
 	INC	ppu_scroll_x_304
 	INC	ppu_scroll_x_304
-	if_equal byte_315, #8, loc_8F6E
+	LDA	byte_315
+	if_equal #8, loc_8F6E
 	INC	ppu_scroll_x_304
 	INC	ppu_scroll_x_304
 
@@ -1821,7 +1836,8 @@ loc_8F8D:
 	JSR	sub_DFC1
 	set byte_5AF, #0
 	JSR	exec_b12_cB_EAC6
-	if_equal byte_46E, #$1A, loc_8FBB
+	LDA	byte_46E
+	if_equal #$1A, loc_8FBB
 	set map_show_43B, #$FF
 	JSR	load_image_C6D2
 	set map_show_43B, #0
@@ -1837,7 +1853,8 @@ loc_8FBB:
 
 
 select_button_pressed_8FC4:
-	if_equal entry_idx_300, #$9A , locret_8FDB
+	LDA	entry_idx_300
+	if_equal #$9A , locret_8FDB
 	JSR	exec_b12_cC_EACE
 	set map_show_43B, #$FF
 	JSR	load_image_C6D2
@@ -1855,14 +1872,16 @@ a_button_pressed_8FDC:
 	set byte_629, #$FF
 	set byte_471, #0
 	JSR	sub_994F
-	if_equal sprite_length_30F, #$FF, loc_900F
+	LDA	sprite_length_30F
+	if_equal #$FF, loc_900F
 	LDA	byte_4AF
 	CMP	#0
 	BNE	loc_900B
 	set byte_445, #1
 	JSR	sub_994F
 	set byte_445, #0
-	if_equal sprite_length_30F, #$FF, loc_900F
+	LDA	sprite_length_30F
+	if_equal #$FF, loc_900F
 
 loc_900B:
 	JSR	sub_DFC1
@@ -1878,7 +1897,8 @@ loc_900F:
 	LDA	tilemapTypeUnk_30B
 	CMP	#$1D
 	BNE	loc_902F
-	if_equal entry_idx_300, #$1E, loc_902F
+	LDA	entry_idx_300
+	if_equal #$1E, loc_902F
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1887,7 +1907,8 @@ loc_902F:
 	LDA	tilemapTypeUnk_30B
 	CMP	#2
 	BNE	loc_9042
-	if_equal byte_5F9, #0, loc_9042
+	LDA	byte_5F9
+	if_equal #0, loc_9042
 	set tilemapTypeUnk_30B, #$3B 
 
 loc_9042:
@@ -1899,7 +1920,8 @@ loc_9042:
 	set inv_sprite_idx_31C, #$32 
 	JSR	sub_EC86
 	from_stack tilemapTypeUnk_30B
-	if_equal is_game_finished_561, #0, loc_9061
+	LDA	is_game_finished_561
+	if_equal #0, loc_9061
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1908,7 +1930,8 @@ loc_9061:
 	LDA	tilemapTypeUnk_30B
 	CMP	#$3C 
 	BCC	loc_90BB
-	if_equal tilemapTypeUnk_30B, #$47 , loc_90BB
+	LDA	tilemapTypeUnk_30B
+	if_equal #$47 , loc_90BB
 	BCS	loc_90BB
 	LDA	tilemapTypeUnk_30B
 	SEC
@@ -2105,23 +2128,16 @@ objects_update_91F0:
 	set byte_367, byte_42F
 	LDA	objCreatedArray_393,X
 	BNE	next_object_924D
-	if_equal {objIdxArray_375,X}, #1, case0_923C
-	CMP	#2
-	BEQ	case0_923C
-	CMP	#$B
-	BEQ	case0_923C
-	CMP	#$D
-	BEQ	case0_923C
-	CMP	#$E
-	BEQ	case0_923C
-	CMP	#$10
-	BEQ	case0_923C
-	CMP	#$11
-	BEQ	case0_923C
-	CMP	#$18
-	BEQ	case0_923C
-	CMP	#$19
-	BEQ	case0_923C
+	LDA	objIdxArray_375,X
+	if_equal #1, case0_923C
+	if_equal #2, case0_923C
+	if_equal #$B, case0_923C
+	if_equal #$D, case0_923C
+	if_equal #$E, case0_923C
+	if_equal #$10, case0_923C
+	if_equal #$11, case0_923C
+	if_equal #$18, case0_923C
+	if_equal #$19, case0_923C
 	JMP	next_object_924D
 ; ---------------------------------------------------------------------------
 
@@ -2131,7 +2147,8 @@ case0_923C:
 	JSR	sub_D894
 	from_stack_to_x
 	STX	cur_obj_idx_unk_43A
-	if_equal sprite_length_30F, #$FF, loc_9251
+	LDA	sprite_length_30F
+	if_equal #$FF, loc_9251
 
 next_object_924D:
 	INX
@@ -2139,7 +2156,8 @@ next_object_924D:
 ; ---------------------------------------------------------------------------
 
 loc_9251:
-	if_equal sprite_length_30F, #0, locret_9260
+	LDA	sprite_length_30F
+	if_equal #0, locret_9260
 	set byte_439, #$FF
 	JMP	loc_8ABF
 ; ---------------------------------------------------------------------------
@@ -2246,7 +2264,8 @@ loc_931C:
 	from_stack byte_36B
 	from_stack byte_36A
 	JSR	wait_for_frame_rendered_FCA0
-	if_equal sprite_length_30F, #$FF, loc_9354
+	LDA	sprite_length_30F
+	if_equal #$FF, loc_9354
 	JMP	loc_927A
 ; ---------------------------------------------------------------------------
 
@@ -2292,12 +2311,12 @@ sub_938D:
 sub_939C:
 	
 	JSR	sub_C7C7
-	if_equal byte_313, #0, loc_93D5
-	CMP	#1
-	BEQ	loc_93FC
-	CMP	#2
-	BEQ	loc_9423
-	if_equal byte_203, #$F0 , locret_93D4
+	LDA	byte_313
+	if_equal #0, loc_93D5
+	if_equal #1, loc_93FC
+	if_equal #2, loc_9423
+	LDA	byte_203
+	if_equal #$F0 , locret_93D4
 	JSR	sub_944A
 	LDA	sprite_length_30F
 	BNE	locret_93D4
@@ -2312,7 +2331,8 @@ locret_93D4:
 ; ---------------------------------------------------------------------------
 
 loc_93D5:
-	if_equal byte_200, #0, locret_93FB
+	LDA	byte_200
+	if_equal #0, locret_93FB
 	JSR	sub_944A
 	LDA	sprite_length_30F
 	BNE	locret_93FB
@@ -2331,7 +2351,8 @@ locret_93FB:
 ; ---------------------------------------------------------------------------
 
 loc_93FC:
-	if_equal byte_200, #$E0 , locret_9422
+	LDA	byte_200
+	if_equal #$E0 , locret_9422
 	JSR	sub_944A
 	LDA	sprite_length_30F
 	BNE	locret_9422
@@ -2346,7 +2367,8 @@ locret_9422:
 ; ---------------------------------------------------------------------------
 
 loc_9423:
-	if_equal byte_203, #0, locret_9449
+	LDA	byte_203
+	if_equal #0, locret_9449
 	JSR	sub_944A
 	LDA	sprite_length_30F
 	BNE	locret_9449
@@ -2372,11 +2394,10 @@ sub_944A:
 	set sprite_length_30F, #0
 	to_stack byte_430
 	to_stack byte_431
-	if_equal byte_313, #0, loc_9469
-	CMP	#1
-	BEQ	loc_9472
-	CMP	#2
-	BEQ	loc_947B
+	LDA	byte_313
+	if_equal #0, loc_9469
+	if_equal #1, loc_9472
+	if_equal #2, loc_947B
 	JMP	loc_9484
 ; ---------------------------------------------------------------------------
 
@@ -2444,7 +2465,8 @@ loc_94CA:
 
 
 sub_94D3:
-	if_equal byte_315, #4, loc_94E9
+	LDA	byte_315
+	if_equal #4, loc_94E9
 	LDA	byte_314
 	AND	#1
 	BEQ	loc_94E2
@@ -2478,7 +2500,8 @@ loc_94EC:
 
 loc_9511:
 	JSR	sub_C77D
-	if_equal byte_314, byte_315, locret_9522
+	LDA	byte_314
+	if_equal byte_315, locret_9522
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
 
@@ -2555,8 +2578,10 @@ loc_95CA:
 	LDX	#0
 
 loc_95D3:
-	if_equal {objIdxArray_375,X}, #3, loc_95EA
-	if_equal {array_unk_39D,X}, #1, loc_95EA
+	LDA	objIdxArray_375,X
+	if_equal #3, loc_95EA
+	LDA	array_unk_39D,X
+	if_equal #1, loc_95EA
 	INX
 	CPX	objArraySize_373
 	BCC	loc_95D3
@@ -2579,7 +2604,8 @@ loc_960B:
 	LDA	objIdxArray_375,X
 	CMP	#3
 	BNE	loc_9619
-	if_equal {array_unk_39D,X}, #1, loc_9622
+	LDA	array_unk_39D,X
+	if_equal #1, loc_9622
 
 loc_9619:
 	INX
@@ -2595,9 +2621,9 @@ loc_9622:
 	set byte_56E, {array_unk_3CF,X}
 
 loc_963A:
-	if_equal entry_idx_300, #$5C , loc_9648
-	CMP	#$93 
-	BEQ	loc_9648
+	LDA	entry_idx_300
+	if_equal #$5C , loc_9648
+	if_equal #$93 , loc_9648
 	JMP	loc_9679
 ; ---------------------------------------------------------------------------
 
@@ -2609,7 +2635,8 @@ loc_964A:
 	LDA	objIdxArray_375,X
 	CMP	#3
 	BNE	loc_9658
-	if_equal {array_unk_39D,X}, #2, loc_9661
+	LDA	array_unk_39D,X
+	if_equal #2, loc_9661
 
 loc_9658:
 	INX
@@ -2632,7 +2659,8 @@ loc_9679:
 	LDX	#0
 
 loc_9682:
-	if_equal {objIdxArray_375,X}, #3, loc_9692
+	LDA	objIdxArray_375,X
+	if_equal #3, loc_9692
 	INX
 	CPX	objArraySize_373
 	BCC	loc_9682
@@ -2716,7 +2744,8 @@ sub_9725:
 	STA	byte_437
 	STA	byte_438
 	JSR	sub_97F8
-	if_equal sprite_length_30F, #$FF, loc_9740
+	LDA	sprite_length_30F
+	if_equal #$FF, loc_9740
 	JMP	loc_97D2
 ; ---------------------------------------------------------------------------
 
@@ -2746,16 +2775,16 @@ loc_9740:
 
 loc_9773:
 	LDX	byte_434
-	if_equal {objIdxArray_375,X}, #6, loc_97E7
+	LDA	objIdxArray_375,X
+	if_equal #6, loc_97E7
 	LDX	byte_434
 	LDA	objIdxArray_375,X
 	CMP	#3
 	BNE	loc_97D2
-	if_equal {array_unk_39D,X}, #0, loc_9797
-	CMP	#1
-	BEQ	loc_9797
-	CMP	#2
-	BEQ	loc_9797
+	LDA	array_unk_39D,X
+	if_equal #0, loc_9797
+	if_equal #1, loc_9797
+	if_equal #2, loc_9797
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2789,9 +2818,9 @@ loc_97B9:
 
 loc_97D2:
 	LDX	byte_434
-	if_equal {objIdxArray_375,X}, #$F, loc_97E1
-	CMP	#$C
-	BEQ	loc_97E1
+	LDA	objIdxArray_375,X
+	if_equal #$F, loc_97E1
+	if_equal #$C, loc_97E1
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2882,19 +2911,18 @@ locret_9880:
 
 
 sub_9881:
-	if_equal byte_435, #$FF, loc_988B
+	LDA	byte_435
+	if_equal #$FF, loc_988B
 	JMP	locret_98F1
 ; ---------------------------------------------------------------------------
 
 loc_988B:
 	LDX	byte_434
-	if_equal byte_313, #0, loc_98CC
-	CMP	#1
-	BEQ	loc_98E0
-	CMP	#2
-	BEQ	loc_98A4
-	CMP	#3
-	BEQ	loc_98B8
+	LDA	byte_313
+	if_equal #0, loc_98CC
+	if_equal #1, loc_98E0
+	if_equal #2, loc_98A4
+	if_equal #3, loc_98B8
 	JMP	locret_98F1
 ; ---------------------------------------------------------------------------
 
@@ -3014,7 +3042,8 @@ loc_9956:
 	TXA
 	PHA
 	JSR	sub_C7C7
-	if_equal byte_445, #0, loc_9986
+	LDA	byte_445
+	if_equal #0, loc_9986
 	LDA	byte_366
 	SEC
 	SBC	#$16
@@ -3027,7 +3056,8 @@ loc_9986:
 	JSR	sub_D894
 	from_stack_to_x
 	STX	byte_434
-	if_equal sprite_length_30F, #$FF, locret_9999
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_9999
 
 loc_9995:
 	INX
@@ -3116,7 +3146,8 @@ loc_99EF:
 
 loc_9A7F:
 	INC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, tilemapTypeUnk_30B, loc_9A8D
+	LDA	inv_spr_dscr1_30C
+	if_equal tilemapTypeUnk_30B, loc_9A8D
 	JMP	loc_99EF
 ; ---------------------------------------------------------------------------
 
@@ -3310,13 +3341,11 @@ loc_BD7A:
 	LDY	#0
 
 loc_BD7C:
-	if_equal inv_spr_dscr1_30C, #4, loc_BD8F
-	CMP	#3
-	BEQ	loc_BD97
-	CMP	#2
-	BEQ	loc_BDA8
-	CMP	#1
-	BEQ	loc_BDB9
+	LDA	inv_spr_dscr1_30C
+	if_equal #4, loc_BD8F
+	if_equal #3, loc_BD97
+	if_equal #2, loc_BDA8
+	if_equal #1, loc_BDB9
 
 loc_BD8F:
 	LDA	palette_bg_321,Y 
@@ -3365,14 +3394,16 @@ loc_BDCD:
 	BCC	loc_BD7C
 	set has_ppu_data_to_upload_6F, #1
 	DEC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, #0, loc_BDEC
+	LDA	inv_spr_dscr1_30C
+	if_equal #0, loc_BDEC
 	LDA	byte_341
 	JSR	wait_for_frame_rendered_FCA0
 	JMP	loc_BD54
 ; ---------------------------------------------------------------------------
 
 loc_BDEC:
-	if_equal byte_341, #0, loc_BDF7
+	LDA	byte_341
+	if_equal #0, loc_BDF7
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3407,15 +3438,12 @@ loc_BE29:
 	LDY	#0
 
 loc_BE2B:
-	if_equal inv_spr_dscr1_30C, #4, loc_BE42
-	CMP	#3
-	BEQ	loc_BE4A
-	CMP	#2
-	BEQ	loc_BE5B
-	CMP	#1
-	BEQ	loc_BE6C
-	CMP	#0
-	BEQ	loc_BE7D
+	LDA	inv_spr_dscr1_30C
+	if_equal #4, loc_BE42
+	if_equal #3, loc_BE4A
+	if_equal #2, loc_BE5B
+	if_equal #1, loc_BE6C
+	if_equal #0, loc_BE7D
 
 loc_BE42:
 	LDA	palette_bg_321,Y 
@@ -3469,14 +3497,16 @@ loc_BE85:
 	BCC	loc_BE2B
 	set has_ppu_data_to_upload_6F, #1
 	DEC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, #$FF, loc_BEA4
+	LDA	inv_spr_dscr1_30C
+	if_equal #$FF, loc_BEA4
 	LDA	byte_341
 	JSR	wait_for_frame_rendered_FCA0
 	JMP	loc_BE03
 ; ---------------------------------------------------------------------------
 
 loc_BEA4:
-	if_equal byte_341, #0, loc_BEAF
+	LDA	byte_341
+	if_equal #0, loc_BEAF
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4196,7 +4226,8 @@ sub_CA14:
 	LDY	#0
 
 loc_CA18:
-	if_equal byte_367, #0, loc_CA34
+	LDA	byte_367
+	if_equal #0, loc_CA34
 	LDA	byte_366
 	SEC
 	SBC	#$F0 
@@ -4308,11 +4339,10 @@ sub_CAA9:
 loc_CB12:
 	JSR	sub_CB58
 	JSR	wait_for_frame_rendered_FCA0
-	if_equal input_pressed_34A, #left_2, left_right_pressed_CB2A
-	CMP	#right_1
-	BEQ	left_right_pressed_CB2A
-	CMP	#a_80
-	BEQ	a_pressed_CB3D
+	LDA	input_pressed_34A
+	if_equal #left_2, left_right_pressed_CB2A
+	if_equal #right_1, left_right_pressed_CB2A
+	if_equal #a_80, a_pressed_CB3D
 	JMP	loc_CB12
 ; ---------------------------------------------------------------------------
 
@@ -4391,7 +4421,8 @@ sub_CBC2:
 	LDA	entry_idx_300
 	CMP	#$46 
 	BNE	locret_CBE1
-	if_equal byte_560, #0, locret_CBE1
+	LDA	byte_560
+	if_equal #0, locret_CBE1
 	JSR	sub_EE72
 	LDX	#0
 
@@ -4552,12 +4583,14 @@ objects_func_CCA7:
 	LDY	#0
 
 next_object_CCEC:
-	if_equal {objIdxArray_375,Y}, #7, obj_id7_handle_CCF6
+	LDA	objIdxArray_375,Y
+	if_equal #7, obj_id7_handle_CCF6
 	JMP	inc_obj_idx_CD5F
 ; ---------------------------------------------------------------------------
 
 obj_id7_handle_CCF6:
-	if_equal {objCreatedArray_393,Y}, #0, loc_CD00
+	LDA	objCreatedArray_393,Y
+	if_equal #0, loc_CD00
 	JMP	inc_obj_idx_CD5F
 ; ---------------------------------------------------------------------------
 
@@ -5308,7 +5341,8 @@ sub_D2B2:
 	LDX	#0
 
 loc_D2B4:
-	if_equal {objIdxArray_375,X}, #7, loc_D2C4
+	LDA	objIdxArray_375,X
+	if_equal #7, loc_D2C4
 	INX
 	CPX	objArraySize_373
 	BCC	loc_D2B4
@@ -5447,8 +5481,7 @@ loc_D40F:
 	BCC	loc_D427
 	CMP	#$35 
 	BCC	loc_D43B
-	CMP	#$4E 
-	BEQ	loc_D43B
+	if_equal #$4E , loc_D43B
 	BCS	loc_D43B
 
 loc_D427:
@@ -5525,7 +5558,8 @@ loc_D4C4:
 	LDX	#0
 
 loc_D4C6:
-	if_equal {objIdxArray_375,Y}, {unk_56,X}, loc_D4E0
+	LDA	objIdxArray_375,Y
+	if_equal {unk_56,X}, loc_D4E0
 	INX
 	CPX	tilemapTypeUnk_30B
 	BCC	loc_D4C6
@@ -5543,7 +5577,8 @@ loc_D4E8:
 	LDX	#0
 
 loc_D4EA:
-	if_equal {unk_56,X}, {objIdxArray_375,Y}, loc_D4F7
+	LDA	unk_56,X
+	if_equal {objIdxArray_375,Y}, loc_D4F7
 	INX
 	CPX	tilemapTypeUnk_30B
 	BCC	loc_D4EA
@@ -5618,11 +5653,10 @@ loc_D53D:
 ; ---------------------------------------------------------------------------
 
 loc_D57F:
-	if_equal objectIdx_318, #7, loc_D591
-	CMP	#8
-	BEQ	loc_D591
-	CMP	#9
-	BEQ	loc_D591
+	LDA	objectIdx_318
+	if_equal #7, loc_D591
+	if_equal #8, loc_D591
+	if_equal #9, loc_D591
 	JMP	loc_D5A2
 ; ---------------------------------------------------------------------------
 
@@ -5643,13 +5677,11 @@ loc_D5A2:
 ; ---------------------------------------------------------------------------
 
 loc_D5AA:
-	if_equal {objIdxArray_375,Y}, #3, loc_D629
-	CMP	#6
-	BEQ	loc_D629
-	CMP	#$A
-	BEQ	loc_D629
-	CMP	#$19
-	BEQ	loc_D629
+	LDA	objIdxArray_375,Y
+	if_equal #3, loc_D629
+	if_equal #6, loc_D629
+	if_equal #$A, loc_D629
+	if_equal #$19, loc_D629
 	LDA	objIdxArray_375,Y
 	CMP	#$13
 	BNE	loc_D5C9
@@ -5665,11 +5697,10 @@ loc_D5C9:
 	STA	byte_317
 
 loc_D5D8:
-	if_equal objectIdx_318, #7, loc_D60C
-	CMP	#8
-	BEQ	loc_D60C
-	CMP	#9
-	BEQ	loc_D60C
+	LDA	objectIdx_318
+	if_equal #7, loc_D60C
+	if_equal #8, loc_D60C
+	if_equal #9, loc_D60C
 	LDA	array_unk_3A7,Y
 	TAX
 	CPX	#3
@@ -5785,37 +5816,35 @@ loc_D689:
 	LDA	count_unk_466
 	CMP	#$A
 	BCC	loc_D69F
-	if_equal {objIdxArray_375,X}, #2, loc_D6ED
-	CMP	#$10
-	BEQ	loc_D6ED
-	CMP	#$F
-	BEQ	loc_D6ED
+	LDA	objIdxArray_375,X
+	if_equal #2, loc_D6ED
+	if_equal #$10, loc_D6ED
+	if_equal #$F, loc_D6ED
 
 loc_D69F:
 	LDA	count_unk_467
 	CMP	#5
 	BCC	loc_D6B9
-	if_equal {objIdxArray_375,X}, #1, loc_D6ED
-	CMP	#$B
-	BEQ	loc_D6ED
-	CMP	#$D
-	BEQ	loc_D6ED
-	CMP	#$18
-	BEQ	loc_D6ED
+	LDA	objIdxArray_375,X
+	if_equal #1, loc_D6ED
+	if_equal #$B, loc_D6ED
+	if_equal #$D, loc_D6ED
+	if_equal #$18, loc_D6ED
 
 loc_D6B9:
 	LDA	count_unk_468
 	CMP	#3
 	BCC	loc_D6CB
-	if_equal {objIdxArray_375,X}, #$E, loc_D6ED
-	CMP	#$C
-	BEQ	loc_D6ED
+	LDA	objIdxArray_375,X
+	if_equal #$E, loc_D6ED
+	if_equal #$C, loc_D6ED
 
 loc_D6CB:
 	LDA	count_unk_469
 	CMP	#1
 	BCC	loc_D6D9
-	if_equal {objIdxArray_375,X}, #$11, loc_D6ED
+	LDA	objIdxArray_375,X
+	if_equal #$11, loc_D6ED
 
 loc_D6D9:
 	LDA	count_unk_46A
@@ -5841,25 +5870,17 @@ loc_D6ED:
 	set {array_unk_3A7,X}, byte_352
 
 loc_D702:
-	if_equal {objIdxArray_375,X}, #1, loc_D730
-	CMP	#2
-	BEQ	loc_D730
-	CMP	#$B
-	BEQ	loc_D730
-	CMP	#$C
-	BEQ	loc_D730
-	CMP	#$D
-	BEQ	loc_D730
-	CMP	#$E
-	BEQ	loc_D730
-	CMP	#$F
-	BEQ	loc_D730
-	CMP	#$10
-	BEQ	loc_D730
-	CMP	#$11
-	BEQ	loc_D730
-	CMP	#$18
-	BEQ	loc_D730
+	LDA	objIdxArray_375,X
+	if_equal #1, loc_D730
+	if_equal #2, loc_D730
+	if_equal #$B, loc_D730
+	if_equal #$C, loc_D730
+	if_equal #$D, loc_D730
+	if_equal #$E, loc_D730
+	if_equal #$F, loc_D730
+	if_equal #$10, loc_D730
+	if_equal #$11, loc_D730
+	if_equal #$18, loc_D730
 	JMP	loc_D811
 ; ---------------------------------------------------------------------------
 
@@ -5918,13 +5939,11 @@ loc_D78C:
 ; ---------------------------------------------------------------------------
 
 loc_D7AE:
-	if_equal {array_unk_3A7,X}, #0, loc_D7EC
-	CMP	#1
-	BEQ	loc_D800
-	CMP	#2
-	BEQ	loc_D7C4
-	CMP	#3
-	BEQ	loc_D7D8
+	LDA	array_unk_3A7,X
+	if_equal #0, loc_D7EC
+	if_equal #1, loc_D800
+	if_equal #2, loc_D7C4
+	if_equal #3, loc_D7D8
 	JMP	loc_D811
 ; ---------------------------------------------------------------------------
 
@@ -5973,7 +5992,8 @@ loc_D800:
 loc_D811:
 
 	INC	inv_spr_dscr1_30C
-	if_equal inv_spr_dscr1_30C, objArraySize_373, loc_D81F
+	LDA	inv_spr_dscr1_30C
+	if_equal objArraySize_373, loc_D81F
 	JMP	loc_D64F
 ; ---------------------------------------------------------------------------
 
@@ -6036,7 +6056,8 @@ loc_D87B:
 	CPX	tilemapTypeUnk_30B
 	BEQ	loc_D88A
 	JSR	sub_D894
-	if_equal sprite_length_30F, #$FF, locret_D893
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_D893
 
 loc_D88A:
 	INX
@@ -6060,15 +6081,18 @@ sub_D894:
 	BNE	locret_D8D7
 	JSR	sub_D8D8
 	JSR	sub_D96B
-	if_equal sprite_length_30F, #$FF, locret_D8D7
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_D8D7
 	JSR	sub_D8D8
 	JSR	sub_D8FD
 	JSR	sub_D96B
-	if_equal sprite_length_30F, #$FF, locret_D8D7
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_D8D7
 	JSR	sub_D8D8
 	JSR	sub_D913
 	JSR	sub_D96B
-	if_equal sprite_length_30F, #$FF, locret_D8D7
+	LDA	sprite_length_30F
+	if_equal #$FF, locret_D8D7
 	JSR	sub_D8D8
 	JSR	sub_D8FD
 	JSR	sub_D913
@@ -6269,7 +6293,8 @@ loc_DA40:
 	LDA	objCreatedArray_393,X
 	BNE	loc_DABE
 	JSR	sub_D8D8
-	if_equal {objIdxArray_375,X}, #$13, loc_DA73
+	LDA	objIdxArray_375,X
+	if_equal #$13, loc_DA73
 	LDA	ppu_unk_byte_309
 	CMP	#2
 	BCC	loc_DA73
@@ -6437,8 +6462,7 @@ loc_DB98:
 	LDA	sprite_length_30F
 	AND	#$F0 
 	STA	sprite_length_30F
-	CMP	#$30 
-	BEQ	loc_DBBB
+	if_equal #$30 , loc_DBBB
 	set {array_unk_3A7,X}, #0
 	JMP	loc_DBDC
 ; ---------------------------------------------------------------------------
@@ -6452,8 +6476,7 @@ loc_DBC3:
 	LDA	sprite_length_30F
 	AND	#$F
 	STA	sprite_length_30F
-	CMP	#3
-	BEQ	loc_DBD7
+	if_equal #3, loc_DBD7
 	set {array_unk_3A7,X}, #2
 	JMP	loc_DBDC
 ; ---------------------------------------------------------------------------
@@ -6748,7 +6771,8 @@ sub_DDDA:
 	LDA	byte_313
 	CMP	#0
 	BNE	loc_DE22
-	if_equal tilemapHeight_30A, #2, loc_DDEB
+	LDA	tilemapHeight_30A
+	if_equal #2, loc_DDEB
 	JMP	loc_DDFC
 ; ---------------------------------------------------------------------------
 
@@ -7062,7 +7086,8 @@ loc_E0E8:
 ; ---------------------------------------------------------------------------
 
 loc_E0EB:
-	if_equal byte_471, #0, loc_E0F5
+	LDA	byte_471
+	if_equal #0, loc_E0F5
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7118,7 +7143,8 @@ loc_E17D:
 	BNE	loc_E1B4
 	JMP	loc_E70C
 ; ---------------------------------------------------------------------------
-	if_equal byte_471, #0, loc_E198
+	LDA	byte_471
+	if_equal #0, loc_E198
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7145,7 +7171,8 @@ loc_E1B4:
 	LDA	byte_371
 	CMP	#1
 	BNE	loc_E1E8
-	if_equal byte_471, #0, loc_E1CC
+	LDA	byte_471
+	if_equal #0, loc_E1CC
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7172,7 +7199,8 @@ loc_E1E8:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E221
-	if_equal byte_471, #0, loc_E205
+	LDA	byte_471
+	if_equal #0, loc_E205
 	set byte_46D, #$2E 
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
@@ -7200,7 +7228,8 @@ loc_E221:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E25A
-	if_equal byte_471, #0, loc_E23E
+	LDA	byte_471
+	if_equal #0, loc_E23E
 	set byte_46D, #0
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
@@ -7236,7 +7265,8 @@ loc_E25A:
 
 loc_E272:
 	
-	if_equal byte_471, #0, loc_E28D
+	LDA	byte_471
+	if_equal #0, loc_E28D
 	LDA	byte_370
 	CMP	#$17
 	BNE	loc_E28A
@@ -7262,7 +7292,8 @@ loc_E290:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E2BA
-	if_equal byte_471, #0, loc_E2A8
+	LDA	byte_471
+	if_equal #0, loc_E2A8
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7282,7 +7313,8 @@ loc_E2BA:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E2E9
-	if_equal byte_471, #0, loc_E2D7
+	LDA	byte_471
+	if_equal #0, loc_E2D7
 	set byte_46D, #$13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
@@ -7303,7 +7335,8 @@ loc_E2E9:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E318
-	if_equal byte_471, #0, loc_E306
+	LDA	byte_471
+	if_equal #0, loc_E306
 	set byte_46D, #$14
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
@@ -7324,7 +7357,8 @@ loc_E318:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E347
-	if_equal byte_471, #0, loc_E335
+	LDA	byte_471
+	if_equal #0, loc_E335
 	set byte_46D, #$15
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
@@ -7345,7 +7379,8 @@ loc_E347:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E376
-	if_equal byte_471, #0, loc_E364
+	LDA	byte_471
+	if_equal #0, loc_E364
 	set byte_46D, #$16
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
@@ -7366,7 +7401,8 @@ loc_E376:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E3A5
-	if_equal byte_471, #0, loc_E393
+	LDA	byte_471
+	if_equal #0, loc_E393
 	set byte_46D, #$18
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
@@ -7387,7 +7423,8 @@ loc_E3A5:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E3D4
-	if_equal byte_471, #0, loc_E3C2
+	LDA	byte_471
+	if_equal #0, loc_E3C2
 	set byte_46D, #$19
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
@@ -7408,7 +7445,8 @@ loc_E3D4:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E403
-	if_equal byte_471, #0, loc_E3F1
+	LDA	byte_471
+	if_equal #0, loc_E3F1
 	set byte_46D, #$17
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
@@ -7429,7 +7467,8 @@ loc_E403:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E42D
-	if_equal byte_471, #0, loc_E41B
+	LDA	byte_471
+	if_equal #0, loc_E41B
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7449,7 +7488,8 @@ loc_E42D:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E457
-	if_equal byte_471, #0, loc_E445
+	LDA	byte_471
+	if_equal #0, loc_E445
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7469,7 +7509,8 @@ loc_E457:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E481
-	if_equal byte_471, #0, loc_E46F
+	LDA	byte_471
+	if_equal #0, loc_E46F
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7489,7 +7530,8 @@ loc_E481:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E4C7
-	if_equal byte_471, #0, loc_E499
+	LDA	byte_471
+	if_equal #0, loc_E499
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7503,7 +7545,8 @@ loc_E499:
 	BNE	loc_E4C4
 	set byte_420, #1
 	JSR	exec_b12_c24_EB8E
-	if_equal byte_41F, #0, loc_E4C4
+	LDA	byte_41F
+	if_equal #0, loc_E4C4
 	set byte_607, #$FF
 
 loc_E4C4:
@@ -7519,7 +7562,8 @@ loc_E4C7:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E50D
-	if_equal byte_471, #0, loc_E4DF
+	LDA	byte_471
+	if_equal #0, loc_E4DF
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7533,7 +7577,8 @@ loc_E4DF:
 	BNE	loc_E50A
 	set byte_420, #0
 	JSR	exec_b12_c24_EB8E
-	if_equal byte_41F, #0, loc_E4C4
+	LDA	byte_41F
+	if_equal #0, loc_E4C4
 	set byte_66A, #$FF
 
 loc_E50A:
@@ -7548,7 +7593,8 @@ loc_E50D:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E537
-	if_equal byte_471, #0, loc_E525
+	LDA	byte_471
+	if_equal #0, loc_E525
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7568,7 +7614,8 @@ loc_E537:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E561
-	if_equal byte_471, #0, loc_E54F
+	LDA	byte_471
+	if_equal #0, loc_E54F
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7588,7 +7635,8 @@ loc_E561:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E58B
-	if_equal byte_471, #0, loc_E579
+	LDA	byte_471
+	if_equal #0, loc_E579
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7608,7 +7656,8 @@ loc_E58B:
 	LDA	byte_371
 	CMP	#1
 	BNE	loc_E5B5
-	if_equal byte_471, #0, loc_E5A3
+	LDA	byte_471
+	if_equal #0, loc_E5A3
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7628,7 +7677,8 @@ loc_E5B5:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E5DF
-	if_equal byte_471, #0, loc_E5CD
+	LDA	byte_471
+	if_equal #0, loc_E5CD
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7648,7 +7698,8 @@ loc_E5DF:
 	LDA	byte_371
 	CMP	#1
 	BNE	loc_E609
-	if_equal byte_471, #0, loc_E5F7
+	LDA	byte_471
+	if_equal #0, loc_E5F7
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7668,7 +7719,8 @@ loc_E609:
 	LDA	byte_371
 	CMP	#0
 	BNE	loc_E633
-	if_equal byte_471, #0, loc_E621
+	LDA	byte_471
+	if_equal #0, loc_E621
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7688,7 +7740,8 @@ loc_E633:
 	LDA	byte_371
 	CMP	#1
 	BNE	loc_E65D
-	if_equal byte_471, #0, loc_E64B
+	LDA	byte_471
+	if_equal #0, loc_E64B
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7708,7 +7761,8 @@ loc_E65D:
 	LDA	byte_371
 	CMP	#1
 	BNE	loc_E687
-	if_equal byte_471, #0, loc_E675
+	LDA	byte_471
+	if_equal #0, loc_E675
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7728,7 +7782,8 @@ loc_E687:
 	LDA	byte_371
 	CMP	#1
 	BNE	loc_E6B1
-	if_equal byte_471, #0, loc_E69F
+	LDA	byte_471
+	if_equal #0, loc_E69F
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7748,7 +7803,8 @@ loc_E6B1:
 	LDA	byte_371
 	CMP	#1
 	BNE	loc_E6DB
-	if_equal byte_471, #0, loc_E6C9
+	LDA	byte_471
+	if_equal #0, loc_E6C9
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7768,7 +7824,8 @@ loc_E6DB:
 	LDA	byte_371
 	CMP	#1
 	BNE	loc_E705
-	if_equal byte_471, #0, loc_E6F3
+	LDA	byte_471
+	if_equal #0, loc_E6F3
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -7864,7 +7921,8 @@ loc_E797:
 	LDA	tilemapFrameCount_30D
 	CMP	#$FF
 	BNE	loc_E7B1
-	if_equal tilemapFrameCount_30D, #$FF, loc_E7D3
+	LDA	tilemapFrameCount_30D
+	if_equal #$FF, loc_E7D3
 
 loc_E7B1:
 	add_to_byte_clc byte_370, tilemapFrameCount_30D
@@ -7969,7 +8027,8 @@ loc_E867:
 	set ppu_unk_byte_303, #0
 
 loc_E8A3:
-	if_equal ppu_unk_byte_309, #0, loc_E8C1
+	LDA	ppu_unk_byte_309
+	if_equal #0, loc_E8C1
 	LDA	byte_4AE
 	SEC
 	SBC	#$F0 
@@ -8140,7 +8199,8 @@ locret_E9B9:
 
 
 sub_E9BA:
-	if_equal byte_471, #0, loc_E9C7
+	LDA	byte_471
+	if_equal #0, loc_E9C7
 	set sprite_length_30F, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
@@ -8174,7 +8234,8 @@ loc_E9EC:
 
 
 sub_E9F2:
-	if_equal byte_550, #$16, loc_E9FF
+	LDA	byte_550
+	if_equal #$16, loc_E9FF
 	set sprite_length_30F, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -8193,7 +8254,8 @@ loc_E9FF:
 
 
 sub_EA14:
-	if_equal byte_550, #$18, loc_EA21
+	LDA	byte_550
+	if_equal #$18, loc_EA21
 	set sprite_length_30F, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -9405,8 +9467,7 @@ locret_F09C:
 ppu_unk_func_F09D:
 	LDA	ppu_unk_byte_303
 	AND	#1
-	CMP	#1
-	BEQ	loc_F0B9
+	if_equal #1, loc_F0B9
 
 	set_ptr _PPU_ATTR_TBL_0
 	set_data _PPU_ATTR_TBL_1
@@ -9451,8 +9512,7 @@ loc_F0E0:
 	ASL	inv_spr_dscr1_30C
 	LDA	ppu_unk_byte_309
 	AND	#3
-	CMP	#0
-	BEQ	loc_F11A
+	if_equal #0, loc_F11A
 	INC	tilemapHeight_30A
 
 loc_F11A:
@@ -9460,7 +9520,8 @@ loc_F11A:
 	ASL	tilemapHeight_30A
 	ASL	tilemapHeight_30A
 	set tilemapTypeUnk_30B, #1
-	if_equal ppu_scroll_y_305, #0, loc_F134
+	LDA	ppu_scroll_y_305
+	if_equal #0, loc_F134
 	set tilemapTypeUnk_30B, #2
 
 loc_F134:
@@ -9477,7 +9538,8 @@ loc_F152:
 	INY
 	CPY	inv_spr_dscr1_30C
 	BCC	loc_F152
-	if_equal tilemapTypeUnk_30B, #1, set_ppu_upload_flag_F18B
+	LDA	tilemapTypeUnk_30B
+	if_equal #1, set_ppu_upload_flag_F18B
 	set_inx {ppu_data_70,X}, tilemapHeight_30A
 	set_inx {ppu_data_70,X}, data_3
 	set_inx {ppu_data_70,X}, data_2
@@ -10020,11 +10082,11 @@ sub_F5A2:
 
 
 sub_F5AF:
-	if_equal byte_313, #3, loc_F5C2
+	LDA	byte_313
+	if_equal #3, loc_F5C2
 	LDA	ppu_scroll_x_304
 	AND	#$10
-	CMP	#$10
-	BEQ	loc_F5CE
+	if_equal #$10, loc_F5CE
 	JMP	locret_F640
 ; ---------------------------------------------------------------------------
 
@@ -10047,7 +10109,8 @@ loc_F5D2:
 	BCC	loc_F5D2
 	from_stack_to_x
 	set tilemapData_4C, entry_idx_300
-	if_equal byte_313, #2, loc_F5ED
+	LDA	byte_313
+	if_equal #2, loc_F5ED
 	DEX
 	JMP	loc_F5EE
 ; ---------------------------------------------------------------------------
@@ -10064,7 +10127,8 @@ loc_F5EE:
 	set mapLineWidth_52, tilemapTypeUnk_30B
 	set mapLineHeight_53, #8
 	JSR	tilemap_read_next_chunk_F472
-	if_equal byte_313, #2, loc_F62B
+	LDA	byte_313
+	if_equal #2, loc_F62B
 	LDX	#0
 
 loc_F615:
@@ -10154,8 +10218,7 @@ loc_F68F:
 	BCC	loc_F6C0
 	LDA	byte_200,X
 	AND	#$F8 
-	CMP	byte_368
-	BEQ	loc_F6C0
+	if_equal byte_368, loc_F6C0
 	BCS	loc_F6C0
 	LDA	byte_203,X
 	AND	#$F8 
@@ -10163,8 +10226,7 @@ loc_F68F:
 	BCC	loc_F6C0
 	LDA	byte_203,X
 	AND	#$F8 
-	CMP	byte_36C
-	BEQ	loc_F6C0
+	if_equal byte_36C, loc_F6C0
 	BCS	loc_F6C0
 	set {byte_200,X}, #$F0 
 
@@ -10314,13 +10376,11 @@ loc_F811:
 	LDA	inv_spr_dscr1_30C
 	CLC
 	ADC	#2
-	CMP	tilemapWidth_308
-	BEQ	loc_F84E
+	if_equal tilemapWidth_308, loc_F84E
 	LDA	inv_spr_dscr1_30C
 	CLC
 	ADC	#4
-	CMP	tilemapWidth_308
-	BEQ	loc_F83D
+	if_equal tilemapWidth_308, loc_F83D
 	LDY	#8
 	JMP	loc_F85C
 ; ---------------------------------------------------------------------------
@@ -10359,7 +10419,8 @@ loc_F85C:
 	INY
 
 loc_F865:
-	if_equal tilemapTypeUnk_30B, #0, loc_F86E
+	LDA	tilemapTypeUnk_30B
+	if_equal #0, loc_F86E
 	INY
 	INY
 
@@ -10381,7 +10442,8 @@ loc_F877:
 	from_stack tilemapTypeUnk_30B
 	JSR	sub_F194
 	INC	tilemapTypeUnk_30B
-	if_equal tilemapTypeUnk_30B, #2, locret_F8A0
+	LDA	tilemapTypeUnk_30B
+	if_equal #2, locret_F8A0
 	JMP	loc_F811
 ; ---------------------------------------------------------------------------
 
@@ -10432,7 +10494,8 @@ loc_F8FA:
 	JSR	sub_F194
 	INC	ppu_unk_byte_309
 	INC	tilemapTypeUnk_30B
-	if_equal tilemapTypeUnk_30B, #2, loc_F918
+	LDA	tilemapTypeUnk_30B
+	if_equal #2, loc_F918
 	JMP	loc_F8AE
 ; ---------------------------------------------------------------------------
 

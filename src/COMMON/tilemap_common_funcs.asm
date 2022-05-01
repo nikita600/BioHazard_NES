@@ -26,7 +26,8 @@ getPtrToTilemap: ; getPtrToTilemap
 	set ptr_1, data_3
 
 getOffset_F8CC: ; unk data
-	if_equal tilemap_line_size_51, #$20 , size_20_7F8DF
+	LDA	tilemap_line_size_51
+	if_equal #$20, size_20_7F8DF
 	
 	add_to_byte_clc ptr_0, #$C0 
 	add_to_byte ptr_1, #3

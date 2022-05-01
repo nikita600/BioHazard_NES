@@ -88,8 +88,7 @@ loc_3F7E3:
 	ADC	tilemapTypeUnk_30B
 	TAY
 	LDA	byte_3F8DA,Y
-	CMP	#0
-	BNE	loc_3F7FE
+	if_not_equal #0, loc_3F7FE
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_8
 	TAY
@@ -98,8 +97,7 @@ loc_3F7E3:
 ; ---------------------------------------------------------------------------
 
 loc_3F7FE:
-	CMP	#1
-	BNE	loc_3F80F
+	if_not_equal #1, loc_3F80F
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_8
 	TAY
@@ -108,15 +106,13 @@ loc_3F7FE:
 ; ---------------------------------------------------------------------------
 
 loc_3F80F:
-	CMP	#2
-	BNE	loc_3F819
+	if_not_equal #2, loc_3F819
 	JSR	sub_3F938
 	JMP	loc_3F820
 ; ---------------------------------------------------------------------------
 
 loc_3F819:
-	CMP	#3
-	BNE	loc_3F820
+	if_not_equal #3, loc_3F820
 	JSR	sub_3F955
 
 loc_3F820:
@@ -170,8 +166,7 @@ loc_3F865:
 	INC	ptr_0
 	LDA	data_2
 	AND	#$1F
-	CMP	#$1F
-	BNE	loc_3F89B
+	if_not_equal #$1F, loc_3F89B
 	LDA	data_2
 	SEC
 	SBC	#$1F
@@ -400,8 +395,7 @@ loc_3FA18:
 
 sub_3FA27:
 	LDA	ppu_unk_byte_309
-	CMP	#$1D
-	BNE	loc_3FA48
+	if_not_equal #$1D, loc_3FA48
 	LDA	data_3
 	CMP	#$28 
 	BCC	loc_3FA3B

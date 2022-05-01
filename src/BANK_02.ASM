@@ -193,14 +193,12 @@ loc_2D243:
 	mult_a_by_2
 	TAY
 	LDA	(ptr_0),Y
-	CMP	#0
-	BNE	loc_2D251
+	if_not_equal #0, loc_2D251
 	JMP	loc_2D342
 ; ---------------------------------------------------------------------------
 
 loc_2D251:
-	CMP	#$FF
-	BNE	loc_2D29C
+	if_not_equal #$FF, loc_2D29C
 	INY
 	LDA	(ptr_0),Y
 	if_equal #$FF, loc_2D260
@@ -326,16 +324,14 @@ loc_2D342:
 loc_2D360:
 	LDA	byte_364
 	AND	#2
-	CMP	#0
-	BNE	loc_2D36C
+	if_not_equal #0, loc_2D36C
 	JSR	sub_2D4FF
 
 loc_2D36C:
 		
 	LDA	byte_364
 	AND	#4
-	CMP	#0
-	BNE	loc_2D378
+	if_not_equal #0, loc_2D378
 	JSR	sub_2D397
 
 loc_2D378:
@@ -376,8 +372,7 @@ loc_2D3BA:
 	from_stack tilemapTypeUnk_30B
 	INC	tilemapHeight_30A
 	LDA	tilemapHeight_30A
-	CMP	tilemapTypeUnk_30B
-	BNE	loc_2D3BA
+	if_not_equal tilemapTypeUnk_30B, loc_2D3BA
 	from_stack data_3
 	from_stack data_2
 	from_stack ptr_1
@@ -642,8 +637,7 @@ loc_2E2BC:
 	ADC	tilemapTypeUnk_30B
 	TAY
 	LDA	byte_2E3B3,Y
-	CMP	#0
-	BNE	loc_2E2D7
+	if_not_equal #0, loc_2E2D7
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_8
 	TAY
@@ -652,8 +646,7 @@ loc_2E2BC:
 ; ---------------------------------------------------------------------------
 
 loc_2E2D7:
-	CMP	#1
-	BNE	loc_2E2E8
+	if_not_equal #1, loc_2E2E8
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_8
 	TAY
@@ -662,15 +655,13 @@ loc_2E2D7:
 ; ---------------------------------------------------------------------------
 
 loc_2E2E8:
-	CMP	#2
-	BNE	loc_2E2F2
+	if_not_equal #2, loc_2E2F2
 	JSR	sub_2E411
 	JMP	loc_2E2F9
 ; ---------------------------------------------------------------------------
 
 loc_2E2F2:
-	CMP	#3
-	BNE	loc_2E2F9
+	if_not_equal #3, loc_2E2F9
 	JSR	sub_2E42E
 
 loc_2E2F9:
@@ -724,8 +715,7 @@ loc_2E33E:
 	INC	ptr_0
 	LDA	data_2
 	AND	#$1F
-	CMP	#$1F
-	BNE	loc_2E374
+	if_not_equal #$1F, loc_2E374
 	LDA	data_2
 	SEC
 	SBC	#$1F
@@ -956,8 +946,7 @@ loc_2E4F1:
 sub_2E500:
 		
 	LDA	ppu_unk_byte_309
-	CMP	#$1D
-	BNE	loc_2E521
+	if_not_equal #$1D, loc_2E521
 	LDA	data_3
 	CMP	#$28 
 	BCC	loc_2E514

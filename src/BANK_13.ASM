@@ -287,8 +287,7 @@ apu_func_13D534:
 	CMP	#2
 	BCC	loc_13D565
 	BEQ	loc_13D55C
-	CMP	#3
-	BNE	apu_func_13D575
+	if_not_equal #3, apu_func_13D575
 	JSR	apu_func_13D575
 	CPX	#2
 	BNE	locret_13D55B
@@ -628,8 +627,7 @@ music_func_13D7C3:
 	CMP	#2
 	BCC	loc_13D7F4
 	BEQ	loc_13D7EB
-	CMP	#3
-	BNE	music_func_13D804
+	if_not_equal #3, music_func_13D804
 	JSR	music_func_13D804
 	CPX	#2
 	BNE	locret_13D7EA
@@ -1456,8 +1454,7 @@ loc_13DFC2:
 loc_13DFD1:
 	JSR	sprites_func_13E178
 	LDA	inv_spr_dscr1_30C
-	CMP	#0
-	BNE	loc_13DFAB
+	if_not_equal #0, loc_13DFAB
 	RTS
 ; End of function load_sprite_func_13DFA8
 

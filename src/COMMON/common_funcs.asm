@@ -52,8 +52,7 @@ loc_FCAD:
 
 loc_FCAF:		
 	LDA	input_reg1_347
-	CMP	#0
-	BNE	exit_FCBC
+	if_not_equal #0, exit_FCBC
 	INX
 	BNE	loc_FCAF
 	INY
@@ -69,8 +68,7 @@ exit_FCBC:
 
 wait_for_a_pressed_FCBD:	
 	LDA	input_pressed_34A
-	CMP	#a_80
-	BNE	wait_for_a_pressed_FCBD
+	if_not_equal #a_80, wait_for_a_pressed_FCBD
 	RTS
 ; End of function wait_for_a_pressed_FCBD
 
@@ -80,8 +78,7 @@ wait_for_a_pressed_FCBD:
 
 wait_for_b_pressed_FCC5:	
 	LDA	input_pressed_34A
-	CMP	#b_40
-	BNE	wait_for_b_pressed_FCC5
+	if_not_equal #b_40, wait_for_b_pressed_FCC5
 	RTS
 ; End of function wait_for_b_pressed_FCC5
 
@@ -181,8 +178,7 @@ loc_FD1C:
 
 loc_FD31:		
 	LDA	byte_203
-	CMP	#$F8 
-	BNE	loc_FD40
+	if_not_equal #$F8 , loc_FD40
 	set byte_43E, #1
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
@@ -224,8 +220,7 @@ battle_screen_update_FD6E:
 	JSR	ppu_update_FE20
 	JSR	input_update_FE39
 	LDA	sprite_type_306
-	CMP	#1
-	BNE	music_update_FD89
+	if_not_equal #1, music_update_FD89
 	JSR	sub_FD0A
 	JSR	scroll_update_FED6
 
@@ -427,14 +422,11 @@ sub_FE9C:
 loc_FEA7:		
 	set byte_353, #0
 	LDA	byte_354
-	CMP	#0
-	BNE	loc_FED2
+	if_not_equal #0, loc_FED2
 	LDA	byte_355
-	CMP	#0
-	BNE	loc_FECA
+	if_not_equal #0, loc_FECA
 	LDA	byte_356
-	CMP	#0
-	BNE	loc_FEC2
+	if_not_equal #0, loc_FEC2
 	RTS
 ; ---------------------------------------------------------------------------
 

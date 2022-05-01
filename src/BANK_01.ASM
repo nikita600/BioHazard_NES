@@ -342,16 +342,14 @@ sub_1F416:
 	STA	ptr_1
 	LDA	byte_317
 	AND	#$40 
-	CMP	#$40 
-	BNE	loc_1F430
+	if_not_equal #$40 , loc_1F430
 	JMP	loc_1F4CA
 ; ---------------------------------------------------------------------------
 
 loc_1F430:
 	LDA	byte_317
 	AND	#$80 
-	CMP	#$80 
-	BNE	loc_1F43C
+	if_not_equal #$80 , loc_1F43C
 	JMP	loc_1F559
 ; ---------------------------------------------------------------------------
 
@@ -449,8 +447,7 @@ loc_1F4DC:
 	STA	byte_36B
 	DEC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
-	CMP	#0
-	BNE	loc_1F4DC
+	if_not_equal #0, loc_1F4DC
 	from_stack byte_36B
 	from_stack byte_36A
 	LDA	data_2
@@ -528,8 +525,7 @@ loc_1F583:
 	STA	byte_36B
 	DEC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
-	CMP	#0
-	BNE	loc_1F583
+	if_not_equal #0, loc_1F583
 	from_stack byte_36B
 	from_stack byte_36A
 	LDA	data_2
@@ -595,8 +591,7 @@ sub_1F5FF:
 	SBC	byte_36B
 	BCC	loc_1F68D
 	LDA	byte_36C
-	CMP	byte_36A
-	BNE	loc_1F66B
+	if_not_equal byte_36A, loc_1F66B
 	LDA	byte_36D
 	if_equal byte_36B, loc_1F68D
 
@@ -608,8 +603,7 @@ loc_1F66B:
 	SBC	byte_367
 	BCC	loc_1F68D
 	LDA	byte_368
-	CMP	byte_366
-	BNE	loc_1F693
+	if_not_equal byte_366, loc_1F693
 	LDA	byte_369
 	if_equal byte_367, loc_1F68D
 	JMP	loc_1F693

@@ -176,8 +176,7 @@ loc_4F3CD:
 loc_4F3DC:
 	JSR	sub_4F583
 	LDA	inv_spr_dscr1_30C
-	CMP	#0
-	BNE	loc_4F3B6
+	if_not_equal #0, loc_4F3B6
 	RTS
 ; End of function sub_4F3B3
 

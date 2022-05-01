@@ -52,7 +52,7 @@ loc_FCAD:
 
 loc_FCAF:		
 	LDA	input_reg1_347
-	if_not_equal #0, exit_FCBC
+	if_not_equal_cmp #0, exit_FCBC
 	INX
 	BNE	loc_FCAF
 	INY
@@ -68,7 +68,7 @@ exit_FCBC:
 
 wait_for_a_pressed_FCBD:	
 	LDA	input_pressed_34A
-	if_not_equal #a_80, wait_for_a_pressed_FCBD
+	if_not_equal_cmp #a_80, wait_for_a_pressed_FCBD
 	RTS
 ; End of function wait_for_a_pressed_FCBD
 
@@ -78,7 +78,7 @@ wait_for_a_pressed_FCBD:
 
 wait_for_b_pressed_FCC5:	
 	LDA	input_pressed_34A
-	if_not_equal #b_40, wait_for_b_pressed_FCC5
+	if_not_equal_cmp #b_40, wait_for_b_pressed_FCC5
 	RTS
 ; End of function wait_for_b_pressed_FCC5
 
@@ -88,7 +88,7 @@ wait_for_b_pressed_FCC5:
 
 wait_for_any_input_FCCD:	
 	LDA	input_pressed_34A
-	if_equal #0, wait_for_any_input_FCCD
+	if_equal_cmp #0, wait_for_any_input_FCCD
 	RTS
 ; End of function wait_for_any_input_FCCD
 
@@ -178,7 +178,7 @@ loc_FD1C:
 
 loc_FD31:		
 	LDA	byte_203
-	if_not_equal #$F8, loc_FD40
+	if_not_equal_cmp #$F8, loc_FD40
 	set byte_43E, #1
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
@@ -204,7 +204,7 @@ NMI_FD53:
 	TYA
 	PHA
 	LDA	bank_switch_flag_6C
-	if_equal #$88, loc_FD62
+	if_equal_cmp #$88, loc_FD62
 	JMP	loc_FD93
 ; ---------------------------------------------------------------------------
 
@@ -220,7 +220,7 @@ battle_screen_update_FD6E:
 	JSR	ppu_update_FE20
 	JSR	input_update_FE39
 	LDA	sprite_type_306
-	if_not_equal #1, music_update_FD89
+	if_not_equal_cmp #1, music_update_FD89
 	JSR	sub_FD0A
 	JSR	scroll_update_FED6
 
@@ -414,18 +414,18 @@ ppu_reset_ctrl_mask_FE93:
 sub_FE9C:		
 	INC	byte_353
 	LDA	byte_353
-	if_lower #$19, loc_FEA7
+	if_lower_cmp #$19, loc_FEA7
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_FEA7:		
 	set byte_353, #0
 	LDA	byte_354
-	if_not_equal #0, loc_FED2
+	if_not_equal_cmp #0, loc_FED2
 	LDA	byte_355
-	if_not_equal #0, loc_FECA
+	if_not_equal_cmp #0, loc_FECA
 	LDA	byte_356
-	if_not_equal #0, loc_FEC2
+	if_not_equal_cmp #0, loc_FEC2
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -449,7 +449,7 @@ loc_FED2:
 scroll_update_FED6:		
 	INC	scroll_offset_x_479
 	LDA	scroll_offset_x_479
-	if_greater #$A, locret_FF2D
+	if_greater_cmp #$A, locret_FF2D
 	LDA	scroll_offset_y_47A
 	EOR	#$80 
 	STA	scroll_offset_y_47A
@@ -458,11 +458,11 @@ scroll_update_FED6:
 	STA	scroll_offset_y_47A
 	LDA	scroll_offset_y_47A
 	AND	#$7F 
-	if_equal #0, locret_FF2D
+	if_equal_cmp #0, locret_FF2D
 	to_stack scroll_offset_y_47A
 	LDA	scroll_offset_y_47A
 	AND	#$80 
-	if_equal #0, loc_FF0E
+	if_equal_cmp #0, loc_FF0E
 	set ppu_scroll_y_305, #0
 	JMP	loc_FF20
 ; ---------------------------------------------------------------------------

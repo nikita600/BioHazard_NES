@@ -15,7 +15,7 @@ switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
 	LDA	bank_command_346
-	if_equal #0, loc_38047
+	if_equal_cmp #0, loc_38047
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -88,7 +88,7 @@ loc_3F7E3:
 	ADC	tilemapTypeUnk_30B
 	TAY
 	LDA	byte_3F8DA,Y
-	if_not_equal #0, loc_3F7FE
+	if_not_equal_cmp #0, loc_3F7FE
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_8
 	TAY
@@ -97,7 +97,7 @@ loc_3F7E3:
 ; ---------------------------------------------------------------------------
 
 loc_3F7FE:
-	if_not_equal #1, loc_3F80F
+	if_not_equal_cmp #1, loc_3F80F
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_8
 	TAY
@@ -106,13 +106,13 @@ loc_3F7FE:
 ; ---------------------------------------------------------------------------
 
 loc_3F80F:
-	if_not_equal #2, loc_3F819
+	if_not_equal_cmp #2, loc_3F819
 	JSR	sub_3F938
 	JMP	loc_3F820
 ; ---------------------------------------------------------------------------
 
 loc_3F819:
-	if_not_equal #3, loc_3F820
+	if_not_equal_cmp #3, loc_3F820
 	JSR	sub_3F955
 
 loc_3F820:
@@ -120,10 +120,10 @@ loc_3F820:
 	from_stack_to_y
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
-	if_greater #2, loc_3F7E3
+	if_greater_cmp #2, loc_3F7E3
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	if_equal #4, loc_3F839
+	if_equal_cmp #4, loc_3F839
 	JMP	loc_3F7CC
 ; ---------------------------------------------------------------------------
 
@@ -165,7 +165,7 @@ loc_3F865:
 	INC	ptr_0
 	LDA	data_2
 	AND	#$1F
-	if_not_equal #$1F, loc_3F89B
+	if_not_equal_cmp #$1F, loc_3F89B
 	LDA	data_2
 	SEC
 	SBC	#$1F
@@ -193,7 +193,7 @@ loc_3F8A8:
 	JSR	sub_3FA27
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	if_equal #2, loc_3F8D6
+	if_equal_cmp #2, loc_3F8D6
 	JMP	loc_3F865
 ; ---------------------------------------------------------------------------
 
@@ -219,7 +219,7 @@ loc_3F903:
 	INY
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	if_greater #8, loc_3F903
+	if_greater_cmp #8, loc_3F903
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F8FA
@@ -240,7 +240,7 @@ loc_3F921:
 	INY
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	if_greater #8, loc_3F921
+	if_greater_cmp #8, loc_3F921
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F918
@@ -257,7 +257,7 @@ loc_3F941:
 	set_inx {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	if_greater #8, loc_3F941
+	if_greater_cmp #8, loc_3F941
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F938
@@ -274,7 +274,7 @@ loc_3F95E:
 	set_inx {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
-	if_greater #8, loc_3F95E
+	if_greater_cmp #8, loc_3F95E
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F955
@@ -305,7 +305,7 @@ loc_3F98D:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	if_greater #$20, loc_3F9A9
+	if_greater_cmp #$20, loc_3F9A9
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -318,7 +318,7 @@ loc_3F9A9:
 	CLC
 	ADC	ppu_unk_byte_309
 	STA	ppu_unk_byte_309
-	if_greater #$1E, loc_3F9C2
+	if_greater_cmp #$1E, loc_3F9C2
 	SEC
 	SBC	#$1E
 	STA	ppu_unk_byte_309
@@ -369,7 +369,7 @@ loc_3FA07:
 	CLC
 	ADC	tilemap_size_307
 	STA	tilemap_size_307
-	if_greater #$20, loc_3FA18
+	if_greater_cmp #$20, loc_3FA18
 	SEC
 	SBC	#$20 
 	STA	tilemap_size_307
@@ -387,9 +387,9 @@ loc_3FA18:
 
 sub_3FA27:
 	LDA	ppu_unk_byte_309
-	if_not_equal #$1D, loc_3FA48
+	if_not_equal_cmp #$1D, loc_3FA48
 	LDA	data_3
-	if_greater #$28, loc_3FA3B
+	if_greater_cmp #$28, loc_3FA3B
 	set data_3, #$20 
 	JMP	loc_3FA3F
 ; ---------------------------------------------------------------------------

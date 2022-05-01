@@ -123,28 +123,28 @@
 
 ; ---------------------------------------------------------------------------
 
-.macro if_equal value, branch
+.macro if_equal_cmp value, branch
 
 	CMP	value
 	BEQ	branch
 
 .endmacro
 
-.macro if_not_equal value, branch
+.macro if_not_equal_cmp value, branch
 
 	CMP value
 	BNE branch
 
 .endmacro
 
-.macro if_lower value, branch
+.macro if_lower_cmp value, branch
 
 	CMP value
 	BCS branch
 
 .endmacro
 
-.macro if_greater value, branch
+.macro if_greater_cmp value, branch
 
 	CMP value
 	BCC branch

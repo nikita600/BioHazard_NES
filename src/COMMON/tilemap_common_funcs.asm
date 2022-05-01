@@ -27,7 +27,7 @@ getPtrToTilemap: ; getPtrToTilemap
 
 getOffset_F8CC: ; unk data
 	LDA	tilemap_line_size_51
-	if_equal #$20, size_20_7F8DF
+	if_equal_cmp #$20, size_20_7F8DF
 	
 	add_to_byte_clc ptr_0, #$C0 
 	add_to_byte ptr_1, #3

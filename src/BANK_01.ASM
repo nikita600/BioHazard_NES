@@ -473,13 +473,8 @@ loc_1F583:
 	if_not_equal_cmp #0, loc_1F583
 	from_stack byte_36B
 	from_stack byte_36A
-	LDA	data_2
-	SEC
-	SBC	tilemapWidth_308
-	STA	data_2
-	LDA	data_3
-	SBC	#0
-	STA	data_3
+	sub_from_sec data_2, tilemapWidth_308
+	sub_from_byte data_3, #0
 	add_to_byte_clc byte_366, #8
 	add_to_byte byte_367, #0
 	INX

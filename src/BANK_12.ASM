@@ -1591,10 +1591,7 @@ sub_128F1B:
 loc_128F26:
 	LDA	tilemapTypeUnk_30B
 	if_greater_cmp #$64, loc_128F3C
-	LDA	tilemapTypeUnk_30B
-	SEC
-	SBC	#$64 
-	STA	tilemapTypeUnk_30B
+	sub_from_sec tilemapTypeUnk_30B, #$64 
 	INC	byte_356
 	JMP	loc_128F26
 ; ---------------------------------------------------------------------------
@@ -1603,10 +1600,7 @@ loc_128F3C:
 	
 	LDA	tilemapTypeUnk_30B
 	if_greater_cmp #$A, loc_128F52
-	LDA	tilemapTypeUnk_30B
-	SEC
-	SBC	#$A
-	STA	tilemapTypeUnk_30B
+	sub_from_sec tilemapTypeUnk_30B, #$A
 	INC	byte_355
 	JMP	loc_128F3C
 ; ---------------------------------------------------------------------------
@@ -1941,13 +1935,8 @@ sub_1291F5:
 	LDX	cur_obj_idx_unk_43A
 	LDA	array_unk_3A7,X
 	if_not_equal_cmp #1, loc_129213
-	LDA	array_unk_3D9,X
-	SEC
-	SBC	#8
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	SBC	#0
-	STA	array_unk_3CF,X
+	sub_from_sec {array_unk_3D9,X}, #8
+	sub_from_byte {array_unk_3CF,X}, #0
 	JMP	locret_129254
 ; ---------------------------------------------------------------------------
 
@@ -1960,13 +1949,8 @@ loc_129213:
 
 loc_12922B:
 	if_not_equal_cmp #3, loc_129243
-	LDA	array_unk_3C5,X
-	SEC
-	SBC	#8
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	SBC	#0
-	STA	array_unk_3BB,X
+	sub_from_sec {array_unk_3C5,X}, #8
+	sub_from_byte {array_unk_3BB,X}, #0
 	JMP	locret_129254
 ; ---------------------------------------------------------------------------
 
@@ -7589,10 +7573,7 @@ sub_12D3AB:
 loc_12D3B3:
 	LDA	ptr_0
 	if_greater_cmp #$64, loc_12D3C5
-	LDA	ptr_0
-	SEC
-	SBC	#$64 
-	STA	ptr_0
+	sub_from_sec ptr_0, #$64 
 	INC	data_3
 	JMP	loc_12D3B3
 ; ---------------------------------------------------------------------------
@@ -7601,10 +7582,7 @@ loc_12D3C5:
 	
 	LDA	ptr_0
 	if_greater_cmp #$A, loc_12D3D7
-	LDA	ptr_0
-	SEC
-	SBC	#$A
-	STA	ptr_0
+	sub_from_sec ptr_0, #$A
 	INC	data_2
 	JMP	loc_12D3C5
 ; ---------------------------------------------------------------------------
@@ -8766,10 +8744,7 @@ loc_12DD1E:
 	add_to_byte_clc tilemap_size_307, byte_547
 	LDA	byte_42E
 	if_greater_cmp #4, loc_12DDE9
-	LDA	ppu_unk_byte_309
-	SEC
-	SBC	#$10
-	STA	ppu_unk_byte_309
+	sub_from_sec ppu_unk_byte_309, #$10
 
 loc_12DDE9:
 	JSR	sub_12E829
@@ -8791,10 +8766,7 @@ loc_12DDE9:
 	STA	ppu_unk_byte_309
 	LDA	byte_42E
 	if_greater_cmp #4, loc_12DE34
-	LDA	ppu_unk_byte_309
-	SEC
-	SBC	#$10
-	STA	ppu_unk_byte_309
+	sub_from_sec ppu_unk_byte_309, #$10
 
 loc_12DE34:
 	JSR	sub_12E829
@@ -9400,10 +9372,7 @@ loc_12E315:
 	if_equal_cmp #$2A, loc_12E362
 	if_equal_cmp #$2B, loc_12E362
 	if_not_equal_cmp #$1A, loc_12E35C
-	LDA	unk_53B,Y
-	SEC
-	SBC	#1
-	STA	unk_53B,Y
+	sub_from_sec {unk_53B,Y}, #1
 	if_equal {unk_53B,Y}, loc_12E35C
 	JMP	loc_12E362
 ; ---------------------------------------------------------------------------
@@ -10012,10 +9981,7 @@ loc_12E8C5:
 	SEC
 	SBC	unk_53B,X
 	STA	tilemapTypeUnk_30B
-	LDA	unk_53B,Y
-	SEC
-	SBC	tilemapTypeUnk_30B
-	STA	unk_53B,Y
+	sub_from_sec {unk_53B,Y}, tilemapTypeUnk_30B
 	set {unk_53B,X}, #$F
 	JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
@@ -10055,10 +10021,7 @@ loc_12E92A:
 	SEC
 	SBC	unk_53B,X
 	STA	tilemapTypeUnk_30B
-	LDA	unk_53B,Y
-	SEC
-	SBC	tilemapTypeUnk_30B
-	STA	unk_53B,Y
+	sub_from_sec {unk_53B,Y}, tilemapTypeUnk_30B
 	set {unk_53B,X}, #6
 	JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
@@ -10098,10 +10061,7 @@ loc_12E98F:
 	SEC
 	SBC	unk_53B,X
 	STA	tilemapTypeUnk_30B
-	LDA	unk_53B,Y
-	SEC
-	SBC	tilemapTypeUnk_30B
-	STA	unk_53B,Y
+	sub_from_sec {unk_53B,Y}, tilemapTypeUnk_30B
 	set {unk_53B,X}, #6
 	JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
@@ -10141,10 +10101,7 @@ loc_12E9F4:
 	SEC
 	SBC	unk_53B,X
 	STA	tilemapTypeUnk_30B
-	LDA	unk_53B,Y
-	SEC
-	SBC	tilemapTypeUnk_30B
-	STA	unk_53B,Y
+	sub_from_sec {unk_53B,Y}, tilemapTypeUnk_30B
 	set {unk_53B,X}, #6
 	JMP	loc_12ED17
 ; ---------------------------------------------------------------------------
@@ -11304,19 +11261,13 @@ sub_12F4C0:
 	BEQ	locret_12F4E3
 	if_greater_cmp #$14, loc_12F4D9
 	BEQ	loc_12F4D9
-	LDA	byte_372
-	SEC
-	SBC	#$A
-	STA	byte_372
+	sub_from_sec byte_372, #$A
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12F4D9:
 	
-	LDA	byte_372
-	SEC
-	SBC	#$B
-	STA	byte_372
+	sub_from_sec byte_372, #$B
 	RTS
 ; ---------------------------------------------------------------------------
 

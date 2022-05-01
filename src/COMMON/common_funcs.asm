@@ -161,14 +161,8 @@ sub_FD0A:
 ; ---------------------------------------------------------------------------
 
 loc_FD1C:		
-	LDA	byte_203
-	SEC
-	SBC	#8
-	STA	byte_203
-	LDA	byte_207
-	SEC
-	SBC	#8
-	STA	byte_207
+	sub_from_sec byte_203, #8
+	sub_from_sec byte_207, #8
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
 
@@ -466,10 +460,7 @@ loc_FF0E:
 
 loc_FF20:		
 	from_stack scroll_offset_y_47A
-	LDA	scroll_offset_y_47A
-	SEC
-	SBC	#2
-	STA	scroll_offset_y_47A
+	sub_from_sec scroll_offset_y_47A, #2
 
 locret_FF2D:		
 		

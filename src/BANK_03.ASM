@@ -161,13 +161,8 @@ loc_3F865:
 	LDA	data_2
 	AND	#$1F
 	if_not_equal_cmp #$1F, loc_3F89B
-	LDA	data_2
-	SEC
-	SBC	#$1F
-	STA	data_2
-	LDA	data_3
-	SBC	#0
-	STA	data_3
+	sub_from_sec data_2, #$1F
+	sub_from_byte data_3, #0
 	JMP	loc_3F8A8
 ; ---------------------------------------------------------------------------
 

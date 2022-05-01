@@ -855,13 +855,8 @@ loc_8854:
 sub_8865:
 	LDA	byte_313
 	if_not_equal_cmp #0, loc_8880
-	LDA	byte_366
-	SEC
-	SBC	#8
-	STA	byte_366
-	LDA	byte_367
-	SBC	#0
-	STA	byte_367
+	sub_from_sec byte_366, #8
+	sub_from_byte byte_367, #0
 	JMP	locret_88C1
 ; ---------------------------------------------------------------------------
 
@@ -875,13 +870,8 @@ loc_8880:
 
 loc_8898:
 	if_not_equal_cmp #2, loc_88B0
-	LDA	byte_36A
-	SEC
-	SBC	#8
-	STA	byte_36A
-	LDA	byte_36B
-	SBC	#0
-	STA	byte_36B
+	sub_from_sec byte_36A, #8
+	sub_from_byte byte_36B, #0
 	JMP	locret_88C1
 ; ---------------------------------------------------------------------------
 
@@ -951,10 +941,7 @@ gameplay_update_8930:
 	set count_unk_46C, #0
 	LDA	byte_549
 	if_greater_cmp #1, set_game_finished_8956
-	LDA	byte_549
-	SEC
-	SBC	#1
-	STA	byte_549
+	sub_from_sec byte_549, #1
 	JMP	loc_895B
 ; ---------------------------------------------------------------------------
 
@@ -1157,10 +1144,7 @@ loc_8B14:
 	if_equal_cmp #0, loc_8B4A
 	LDA	byte_549
 	if_greater_cmp #$A, set_game_finished_8B42
-	LDA	byte_549
-	SEC
-	SBC	#$A
-	STA	byte_549
+	sub_from_sec byte_549, #$A
 	JMP	loc_8B59
 ; ---------------------------------------------------------------------------
 
@@ -2084,13 +2068,8 @@ loc_927A:
 ; ---------------------------------------------------------------------------
 
 loc_92A3:
-	LDA	byte_42C
-	SEC
-	SBC	#2
-	STA	byte_42C
-	LDA	byte_42D
-	SBC	#0
-	STA	byte_42D
+	sub_from_sec byte_42C, #2
+	sub_from_byte byte_42D, #0
 	JMP	loc_92CB
 ; ---------------------------------------------------------------------------
 
@@ -2121,13 +2100,8 @@ loc_92CB:
 ; ---------------------------------------------------------------------------
 
 loc_92F4:
-	LDA	byte_42E
-	SEC
-	SBC	#2
-	STA	byte_42E
-	LDA	byte_42F
-	SBC	#0
-	STA	byte_42F
+	sub_from_sec byte_42E, #2
+	sub_from_byte byte_42F, #0
 	JMP	loc_931C
 ; ---------------------------------------------------------------------------
 
@@ -2221,13 +2195,8 @@ loc_93D5:
 	if_equal_cmp #0, locret_93FB
 	JSR	sub_944A
 	if_not_equal sprite_length_30F, locret_93FB
-	LDA	byte_42E
-	SEC
-	SBC	#2
-	STA	byte_42E
-	LDA	byte_42F
-	SBC	#0
-	STA	byte_42F
+	sub_from_sec byte_42E, #2
+	sub_from_byte byte_42F, #0
 	DEC	byte_431
 	DEC	byte_431
 
@@ -2255,13 +2224,8 @@ loc_9423:
 	if_equal_cmp #0, locret_9449
 	JSR	sub_944A
 	if_not_equal sprite_length_30F, locret_9449
-	LDA	byte_42C
-	SEC
-	SBC	#2
-	STA	byte_42C
-	LDA	byte_42D
-	SBC	#0
-	STA	byte_42D
+	sub_from_sec byte_42C, #2
+	sub_from_byte byte_42D, #0
 	DEC	byte_430
 	DEC	byte_430
 
@@ -2710,13 +2674,8 @@ sub_97F8:
 sub_9824:
 	LDA	byte_313
 	if_not_equal_cmp #0, loc_983F
-	LDA	byte_366
-	SEC
-	SBC	#$10
-	STA	byte_366
-	LDA	byte_367
-	SBC	#0
-	STA	byte_367
+	sub_from_sec byte_366, #$10
+	sub_from_byte byte_367, #0
 	JMP	locret_9880
 ; ---------------------------------------------------------------------------
 
@@ -2730,13 +2689,8 @@ loc_983F:
 
 loc_9857:
 	if_not_equal_cmp #2, loc_986F
-	LDA	byte_36A
-	SEC
-	SBC	#$10
-	STA	byte_36A
-	LDA	byte_36B
-	SBC	#0
-	STA	byte_36B
+	sub_from_sec byte_36A, #$10
+	sub_from_byte byte_36B, #0
 	JMP	locret_9880
 ; ---------------------------------------------------------------------------
 
@@ -2770,13 +2724,8 @@ loc_988B:
 ; ---------------------------------------------------------------------------
 
 loc_98A4:
-	LDA	array_unk_3C5,X
-	SEC
-	SBC	#2
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	SBC	#0
-	STA	array_unk_3BB,X
+	sub_from_sec {array_unk_3C5,X}, #2
+	sub_from_byte {array_unk_3BB,X}, #0
 	JMP	locret_98F1
 ; ---------------------------------------------------------------------------
 
@@ -2787,13 +2736,8 @@ loc_98B8:
 ; ---------------------------------------------------------------------------
 
 loc_98CC:
-	LDA	array_unk_3D9,X
-	SEC
-	SBC	#2
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	SBC	#0
-	STA	array_unk_3CF,X
+	sub_from_sec {array_unk_3D9,X}, #2
+	sub_from_byte {array_unk_3CF,X}, #0
 	JMP	locret_98F1
 ; ---------------------------------------------------------------------------
 
@@ -2812,13 +2756,8 @@ locret_98F1:
 sub_98F2:
 	LDA	byte_313
 	if_not_equal_cmp #0, loc_990D
-	LDA	byte_366
-	SEC
-	SBC	#$10
-	STA	byte_366
-	LDA	byte_367
-	SBC	#0
-	STA	byte_367
+	sub_from_sec byte_366, #$10
+	sub_from_byte byte_367, #0
 	JMP	locret_994E
 ; ---------------------------------------------------------------------------
 
@@ -2832,13 +2771,8 @@ loc_990D:
 
 loc_9925:
 	if_not_equal_cmp #2, loc_993D
-	LDA	byte_36A
-	SEC
-	SBC	#$10
-	STA	byte_36A
-	LDA	byte_36B
-	SBC	#0
-	STA	byte_36B
+	sub_from_sec byte_36A, #$10
+	sub_from_byte byte_36B, #0
 	JMP	locret_994E
 ; ---------------------------------------------------------------------------
 
@@ -2872,13 +2806,8 @@ loc_9956:
 	JSR	sub_C7C7
 	LDA	byte_445
 	if_equal_cmp #0, loc_9986
-	LDA	byte_366
-	SEC
-	SBC	#$16
-	STA	byte_366
-	LDA	byte_367
-	SBC	#0
-	STA	byte_367
+	sub_from_sec byte_366, #$16
+	sub_from_byte byte_367, #0
 
 loc_9986:
 	JSR	sub_D894
@@ -3352,10 +3281,7 @@ loc_BEBA:
 loc_BED9:
 	LDA	byte_351
 	if_greater_cmp byte_352, loc_BEEE
-	LDA	byte_351
-	SEC
-	SBC	byte_352
-	STA	byte_351
+	sub_from_sec byte_351, byte_352
 	JMP	loc_BED9
 ; ---------------------------------------------------------------------------
 
@@ -3737,13 +3663,8 @@ loc_C814:
 	LDA	byte_369
 	ADC	#0
 	STA	byte_367
-	LDA	byte_366
-	SEC
-	SBC	#8
-	STA	byte_366
-	LDA	byte_367
-	SBC	#0
-	STA	byte_367
+	sub_from_sec byte_366, #8
+	sub_from_byte byte_367, #0
 	RTS
 ; End of function sub_C7C7
 
@@ -4028,13 +3949,8 @@ sub_CA14:
 loc_CA18:
 	LDA	byte_367
 	if_equal_cmp #0, loc_CA34
-	LDA	byte_366
-	SEC
-	SBC	#$F0 
-	STA	byte_366
-	LDA	byte_367
-	SBC	#0
-	STA	byte_367
+	sub_from_sec byte_366, #$F0 
+	sub_from_byte byte_367, #0
 	INY
 	JMP	loc_CA18
 ; ---------------------------------------------------------------------------
@@ -4042,10 +3958,7 @@ loc_CA18:
 loc_CA34:
 	LDA	byte_366
 	if_greater_cmp #$F0, loc_CA45
-	LDA	byte_366
-	SEC
-	SBC	#$F0 
-	STA	byte_366
+	sub_from_sec byte_366, #$F0 
 	INY
 
 loc_CA45:
@@ -4504,13 +4417,8 @@ loc_CDF3:
 
 loc_CDFE:
 	if_equal sprite_length_30F, loc_CE1C
-	LDA	unk_456,X
-	SEC
-	SBC	#2
-	STA	unk_456,X
-	LDA	unk_457,X
-	SBC	#0
-	STA	unk_457,X
+	sub_from_sec {unk_456,X}, #2
+	sub_from_byte {unk_457,X}, #0
 	set {unk_460,Y}, #2
 	JMP	loc_CEC8
 ; ---------------------------------------------------------------------------
@@ -4568,13 +4476,8 @@ loc_CE86:
 loc_CE91:
 	
 	if_equal sprite_length_30F, loc_CEAF
-	LDA	unk_458,X
-	SEC
-	SBC	#2
-	STA	unk_458,X
-	LDA	unk_459,X
-	SBC	#0
-	STA	unk_459,X
+	sub_from_sec {unk_458,X}, #2
+	sub_from_byte {unk_459,X}, #0
 	set {unk_460,Y}, #0
 	JMP	loc_CEC8
 ; ---------------------------------------------------------------------------
@@ -4690,13 +4593,8 @@ loc_CF68:
 	set {array_unk_3A7,X}, byte_313
 	LDA	byte_313
 	if_not_equal_cmp #0, loc_CF89
-	LDA	array_unk_3D9,X
-	SEC
-	SBC	#2
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	SBC	#0
-	STA	array_unk_3CF,X
+	sub_from_sec {array_unk_3D9,X}, #2
+	sub_from_byte {array_unk_3CF,X}, #0
 	JMP	loc_CFCA
 ; ---------------------------------------------------------------------------
 
@@ -4709,13 +4607,8 @@ loc_CF89:
 
 loc_CFA1:
 	if_not_equal_cmp #2, loc_CFB9
-	LDA	array_unk_3C5,X
-	SEC
-	SBC	#2
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	SBC	#0
-	STA	array_unk_3BB,X
+	sub_from_sec {array_unk_3C5,X}, #2
+	sub_from_byte {array_unk_3BB,X}, #0
 	JMP	loc_CFCA
 ; ---------------------------------------------------------------------------
 
@@ -4913,13 +4806,8 @@ loc_D11E:
 	LDY	#0
 
 loc_D139:
-	LDA	array_unk_3C5,X
-	SEC
-	SBC	#2
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	SBC	#0
-	STA	array_unk_3BB,X
+	sub_from_sec {array_unk_3C5,X}, #2
+	sub_from_byte {array_unk_3BB,X}, #0
 	set_iny {array_unk_3A7,X}, #2
 	JSR	sub_D1EE
 	CPY	#8
@@ -4972,13 +4860,8 @@ loc_D1B1:
 	LDY	#0
 
 loc_D1CC:
-	LDA	array_unk_3D9,X
-	SEC
-	SBC	#2
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	SBC	#0
-	STA	array_unk_3CF,X
+	sub_from_sec {array_unk_3D9,X}, #2
+	sub_from_byte {array_unk_3CF,X}, #0
 	set_iny {array_unk_3A7,X}, #0
 	JSR	sub_D1EE
 	CPY	#8
@@ -5379,13 +5262,8 @@ loc_D57F:
 
 loc_D591:
 
-	LDA	byte_366
-	SEC
-	SBC	#8
-	STA	byte_366
-	LDA	byte_367
-	SBC	#0
-	STA	byte_367
+	sub_from_sec byte_366, #8
+	sub_from_byte byte_367, #0
 
 loc_D5A2:
 	if_equal {objCreatedArray_393,Y}, loc_D5AA
@@ -5632,13 +5510,8 @@ loc_D7AE:
 ; ---------------------------------------------------------------------------
 
 loc_D7C4:
-	LDA	array_unk_3C5,X
-	SEC
-	SBC	#2
-	STA	array_unk_3C5,X
-	LDA	array_unk_3BB,X
-	SBC	#0
-	STA	array_unk_3BB,X
+	sub_from_sec {array_unk_3C5,X}, #2
+	sub_from_byte {array_unk_3BB,X}, #0
 	JMP	loc_D811
 ; ---------------------------------------------------------------------------
 
@@ -5649,13 +5522,8 @@ loc_D7D8:
 ; ---------------------------------------------------------------------------
 
 loc_D7EC:
-	LDA	array_unk_3D9,X
-	SEC
-	SBC	#2
-	STA	array_unk_3D9,X
-	LDA	array_unk_3CF,X
-	SBC	#0
-	STA	array_unk_3CF,X
+	sub_from_sec {array_unk_3D9,X}, #2
+	sub_from_byte {array_unk_3CF,X}, #0
 	JMP	loc_D811
 ; ---------------------------------------------------------------------------
 
@@ -5818,13 +5686,8 @@ sub_D929:
 	to_stack tilemapWidth_308
 	mult_a_by_8
 	STA	tilemapWidth_308
-	LDA	byte_36C
-	SEC
-	SBC	tilemapWidth_308
-	STA	byte_36C
-	LDA	byte_36D
-	SBC	#0
-	STA	byte_36D
+	sub_from_sec byte_36C, tilemapWidth_308
+	sub_from_byte byte_36D, #0
 	from_stack tilemapWidth_308
 	RTS
 ; End of function sub_D929
@@ -5837,13 +5700,8 @@ sub_D94A:
 	to_stack tilemapHeight_30A
 	mult_a_by_8
 	STA	tilemapHeight_30A
-	LDA	byte_368
-	SEC
-	SBC	tilemapHeight_30A
-	STA	byte_368
-	LDA	byte_369
-	SBC	#0
-	STA	byte_369
+	sub_from_sec byte_368, tilemapHeight_30A
+	sub_from_byte byte_369, #0
 	from_stack tilemapHeight_30A
 	RTS
 ; End of function sub_D94A
@@ -6346,20 +6204,10 @@ sub_DD40:
 	LDA	byte_367
 	SBC	array_unk_3CF,X
 	BCC	locret_DDC5
-	LDA	byte_366
-	SEC
-	SBC	#$20 
-	STA	byte_366
-	LDA	byte_367
-	SBC	#0
-	STA	byte_367
-	LDA	byte_36A
-	SEC
-	SBC	#$20 
-	STA	byte_36A
-	LDA	byte_36B
-	SBC	#0
-	STA	byte_36B
+	sub_from_sec byte_366, #$20 
+	sub_from_byte byte_367, #0
+	sub_from_sec byte_36A, #$20 
+	sub_from_byte byte_36B, #0
 	LDA	array_unk_3C5,X
 	SEC
 	SBC	byte_36A
@@ -6413,13 +6261,8 @@ sub_DDDA:
 ; ---------------------------------------------------------------------------
 
 loc_DDEB:
-	LDA	byte_366
-	SEC
-	SBC	#$10
-	STA	byte_366
-	LDA	byte_367
-	SBC	#0
-	STA	byte_367
+	sub_from_sec byte_366, #$10
+	sub_from_byte byte_367, #0
 
 loc_DDFC:
 	LDY	#0
@@ -6479,13 +6322,8 @@ loc_DE6A:
 	STA	byte_366
 	add_to_byte byte_367, #0
 
-	LDA	byte_36A
-	SEC
-	SBC	#$10
-	STA	byte_36A
-	LDA	byte_36B
-	SBC	#0
-	STA	byte_36B
+	sub_from_sec byte_36A, #$10
+	sub_from_byte byte_36B, #0
 	JSR	map_update_DEFA
 	if_not_equal sprite_length_30F, locret_DEB3
 	add_to_byte_clc byte_36A, #8
@@ -7574,13 +7412,8 @@ loc_E867:
 loc_E8A3:
 	LDA	ppu_unk_byte_309
 	if_equal_cmp #0, loc_E8C1
-	LDA	byte_4AE
-	SEC
-	SBC	#$F0 
-	STA	byte_4AE
-	LDA	ppu_unk_byte_309
-	SBC	#0
-	STA	ppu_unk_byte_309
+	sub_from_sec byte_4AE, #$F0 
+	sub_from_byte ppu_unk_byte_309, #0
 	INC	ppu_unk_byte_303
 	JMP	loc_E8A3
 ; ---------------------------------------------------------------------------
@@ -9743,10 +9576,7 @@ loc_F6EC:
 ; ---------------------------------------------------------------------------
 
 loc_F700:
-	LDA	tilemap_size_307
-	SEC
-	SBC	inv_spr_dscr1_30C
-	STA	tilemap_size_307
+	sub_from_sec tilemap_size_307, inv_spr_dscr1_30C
 
 loc_F70A:
 	LDX	#0
@@ -9804,10 +9634,7 @@ loc_F792:
 	LDA	inv_spr_dscr1_30C
 	AND	#3
 	BEQ	loc_F7A6
-	LDA	tilemap_size_307
-	SEC
-	SBC	inv_spr_dscr1_30C
-	STA	tilemap_size_307
+	sub_from_sec tilemap_size_307, inv_spr_dscr1_30C
 	JMP	loc_F7B0
 ; ---------------------------------------------------------------------------
 

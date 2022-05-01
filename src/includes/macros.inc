@@ -54,6 +54,23 @@
 
 ; ---------------------------------------------------------------------------
 
+.macro sub_from_sec dst, src
+
+	LDA	dst
+	SEC
+	SBC	src
+	STA	dst
+
+.endmacro
+
+.macro sub_from_byte dst, src
+	LDA	dst
+	SBC	src
+	STA	dst
+.endmacro
+
+; ---------------------------------------------------------------------------
+
 .macro add_to_a value
 
 	CLC

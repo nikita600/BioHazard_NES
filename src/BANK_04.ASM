@@ -298,7 +298,7 @@ loc_4F4F9:
 ; ---------------------------------------------------------------------------
 
 loc_4F50B:
-		
+
 	if_equal ppu_unk_byte_309, loc_4F51B
 	JSR	sub_4F527
 	DEC	ppu_unk_byte_309
@@ -316,7 +316,7 @@ locret_4F526:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_4F527:
-		
+
 	set tilemapTypeUnk_30B, #0
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0

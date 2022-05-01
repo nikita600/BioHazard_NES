@@ -1,5 +1,5 @@
         .BYTE $A
-		
+
 		.WORD byte_9B47
 		.WORD byte_9B52
 		.WORD byte_9B5D

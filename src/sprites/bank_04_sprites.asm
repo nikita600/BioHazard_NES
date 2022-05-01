@@ -46,7 +46,7 @@
 		.WORD byte_4DCEF
 		.WORD byte_4E981
 MoonMedal_49875:.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FD,$F6,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	3, $F,$FF,$FF,$FD,$F7,$DF,$6F,$D0,$A0,	0,  0,	3, $F,$3F,$FF
 		.BYTE $FC,$F1,$FF,$FF,$9F,$C7,$F1,$FC,$3F, $F,	0,  0,$C0,$F0,$FC,$FF
 		.BYTE $3F,$5F,$FF,$FF,$FF,$FF,$FF,$7F,$1F,$C7,	0,  0,	0,  0,	0,  0
@@ -66,7 +66,7 @@ MoonMedal_49875:.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FD,$F6,	0,  0,	0,  0,	0, 
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Lighter_49997:	.BYTE  $E, $D,$FF,$FF,$FF,$FF,$FF,$FF,$E0,$C8,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0, $F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$3F,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$B0,$A8,$97,$AF,$DF,$AF,$DE,$AB,$31,$38,$3F,$7F,$7F,$7F
@@ -82,7 +82,7 @@ Lighter_49997:	.BYTE  $E, $D,$FF,$FF,$FF,$FF,$FF,$FF,$E0,$C8,	0,  0,	0,  0,	0,  
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 EagleMedal_49A79:.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FE,$FD,	 0,  0,	 0,  0,	 0,  0
-					
+			
 		.BYTE	1,  3,$FF,$FF,$FF,$F8,$E7,$9F,$78,$E0,	0,  0,	0,  7,$1F,$7F
 		.BYTE $FF,$FF,$FF,$FF,$FF,$1F,$E7,$F9,$1E,  7,	0,  0,	0,$E0,$F8,$FE
 		.BYTE $1F,$F7,$FF,$FF,$FF,$FF,$FF,$FF,$3F,$9F,	0,  0,	0,  0,	0,  0
@@ -102,7 +102,7 @@ EagleMedal_49A79:.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FE,$FD,	 0,  0,	 0,  0,	
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Key1_49B9B:	.BYTE  $A,  9,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FE,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF, $F,$F7,	0,  0,	0,  0,	0,  0
 		.BYTE $10,$F8,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FD,$FD,$FD,$FD,$FC,$FE,$FF,$FF,	1,  1,	1,  1,	0,  0
@@ -114,7 +114,7 @@ Key1_49B9B:	.BYTE  $A,  9,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FE,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Ammo_49C3D:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FE,$FC,$F8,	0,  0,	0,  0,	0,  0
 		.BYTE	1,  3,$FF,$E3,$C0,$80,	0,  0,	0,  0,	0,  0,$1C,$3F,$78,$F8
 		.BYTE $88,$8F,$FF,$FF,$FF,$3F, $F,  3,	0,  0,	0,  0,	0,  0,$C0,$F0
@@ -128,7 +128,7 @@ Ammo_49C3D:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Key2_49CFF:	.BYTE  $B, $A,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,$C7,  3,	0,  0,	0,  0,	0,  0
 		.BYTE	0,$38,$FE,$FC,$F8,$F0,$F0,$E0,$E0,$E0,	0,  1,	0,  4,	2,  7
 		.BYTE  $B,  7,	1,$20,$40,  0,	0,  0,	1,  3,$F8,$7C,$FA,$7C,$E8,$D4
@@ -141,7 +141,7 @@ Key2_49CFF:	.BYTE  $B, $A,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Paddle_49DB1:	.BYTE  $B, $A,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FC,$C0,$94,$80,$C0,$FC,$FF,$FF,	0,  1,$3F,$15,	0,  0
 		.BYTE	0,  0,$FF,  1,	0,  0,	0,$F8,$F8,$F8,	0,  0,$3E,$2B,	5,  3
 		.BYTE	1,  3,$FF,$FF,$FF,$7F,$7F,$7F,$7F,$7F,	0,  0,	0,  0,	0,  0
@@ -154,7 +154,7 @@ Paddle_49DB1:	.BYTE  $B, $A,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Key3_49E63:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FE,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,	3,$C4,	0,  0,	0,  0,	0,  0
 		.BYTE $10,$FC,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FD,$FB,$F9,$F9,$F9,$F8,$FC,$FC,	1,  3,	3,  3,	3,  1
@@ -168,7 +168,7 @@ Key3_49E63:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FE,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Shield_49F25:	.BYTE  $A,  9,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,$F0,$E5,	0,  0,	0,  0,	0,  0
 		.BYTE	0, $F,$FF,$FF,$FF,$FF,$FF,$FF, $F,  7,	0,  0,	0,  0,	0,  0
 		.BYTE	0,$80,$FF,$FF,$FF,$FF,$FC,$FE,$FF,$FF,	0,  0,	0,  1,	1,  0
@@ -180,7 +180,7 @@ Shield_49F25:	.BYTE  $A,  9,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 CatMedal_49FC7:	.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FE,$FD,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	1,  3,$FF,$FF,$FF,$F8,$E7,$9F,$78,$E0,	0,  0,	0,  7,$1F,$7F
 		.BYTE $FF,$FF,$FF,$FF,$FF,$1F,$E7,$F9,$1E,  7,	0,  0,	0,$E0,$F8,$FE
 		.BYTE $FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$3F,$9F,	0,  0,	0,  0,	0,  0
@@ -200,7 +200,7 @@ CatMedal_49FC7:	.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FE,$FD,	0,  0,	0,  0,	0, 
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 ExpAmmo_4A0E9:	.BYTE $11,$10,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$F0,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$F8,$F8,$F9,$F9,$F9,	0,  0,	0,  0,	3,  2
 		.BYTE	0,  0,$FF,$FF,$FF,  1,	1,$F9,$F9,$F9,	0,  0,	0,  0,$FC,  4
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
@@ -219,7 +219,7 @@ ExpAmmo_4A0E9:	.BYTE $11,$10,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$F0,	0,  0,	0,  0,	0,  
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 ShotgunAmmo_4A1FB:.BYTE	 $F, $E,$FF,$FF,$FF,$FF,$FF,$FF,$E0,$E0,  0,  0,  0,  0,  0,  0
-					
+			
 		.BYTE	0, $A,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,$AA,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,$A0,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
@@ -236,7 +236,7 @@ ShotgunAmmo_4A1FB:.BYTE	 $F, $E,$FF,$FF,$FF,$FF,$FF,$FF,$E0,$E0,  0,  0,  0,  0,
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Ammo_4A2ED:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FE,$FC,$F8,	0,  0,	0,  0,	0,  0
 		.BYTE	1,  3,$FF,$E3,$C0,$80,	0,  0,	2, $B,	0,  0,$1C,$3F,$71,$E0
 		.BYTE $C2,$8B,$FF,$FF,$FF,$3F, $F,  3,$80,  0,	0,  0,	0,  0,$C0,$70
@@ -250,7 +250,7 @@ Ammo_4A2ED:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Health_4A3AF:	.BYTE $10, $F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$80,$AB,$80,$C0,$EF,$EF,$8F,	0,  0,$3F,$3F,$10, $F
 		.BYTE  $F,$1F,$FF,  1,$F9,  1,	3,$87,$E7,$F1,	0,  0,$FC,$FC,	0,$F0
 		.BYTE $F0,$F8,$FE,$FC,$FC,$FC,$FD,$FD,$FD,$FD,	0,  1,	1,  0,	1,  1
@@ -268,7 +268,7 @@ Health_4A3AF:	.BYTE $10, $F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Ammo_4A4B1:	.BYTE $11,$10,$FF,$FF,$FF,$FF,$FF,$FF,$FC,$C1,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  3,$FF,$FF,$FF,$FF,$FC,$C1,$2B,$5F,	0,  0,	0,  0,	0,  3
 		.BYTE $3F,$FF,$FF,$FF,$FC,$C1,$2B,$5F,$F5,$A0,	0,  0,	0,  3,$3F,$FF
 		.BYTE $FF,$FF,$FF,$FF,$3F,$5F,$8F,$87,	3,  3,	0,  0,	0,$C0,$E0,$F0
@@ -287,7 +287,7 @@ Ammo_4A4B1:	.BYTE $11,$10,$FF,$FF,$FF,$FF,$FF,$FF,$FC,$C1,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Key_4A5C3:	.BYTE  $A,  9,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,$C7,  3,	0,  0,	0,  0,	0,  0
 		.BYTE	0,$10,$FE,$FC,$F8,$F0,$F0,$E0,$E0,$E0,	0,  0,	0,  4,	2,  5
 		.BYTE  $B,  5,	1,  0,	0,  0,	0,  0,	0,  3,$A8,$54,$3A,$54,$E8,$54
@@ -299,7 +299,7 @@ Key_4A5C3:	.BYTE  $A,  9,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Disk_4A665:	.BYTE $10, $F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FC,$F3,$CE,	0,  0,	0,  0,	0,  0
 		.BYTE	3, $F,$FF,$FF,$FF,$E0,$1F,$EF,$55,$AA,	0,  0,	0,  0,$1F,$FF
 		.BYTE $FF,$FF,$FF,$FF,$FF,$FF,$3F,$DF,$EF,$EF,	0,  0,	0,  0,	0,$C0
@@ -317,7 +317,7 @@ Disk_4A665:	.BYTE $10, $F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Bolt_4A767:	.BYTE  $D, $C,$FF,$FF,$FF,$FF,$FF,$FC,$FB,$F6,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	3,  7,$FF,$FF,$FF,$FF,$FF,$7F,$3F,$3F,	0,  0,	0,  0,	0,  0
 		.BYTE $80,$80,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$ED,$DA,$D0,$C0,$E5,$FA,$FD,$FE, $F,$1F,$1F,$1F,	7,  3
@@ -332,7 +332,7 @@ Bolt_4A767:	.BYTE  $D, $C,$FF,$FF,$FF,$FF,$FF,$FC,$FB,$F6,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 MissileLauncher_4A839:.BYTE $10, $F,$FF,$FF,$FF,$FF,$FF,$E0,$E1,$E4,  0,  0,  0,  0,  0,  0
-					
+			
 		.BYTE	7, $C,$FF,$FF,$FF,$FF,$FF,  0,$40,$80,	0,  0,	0,  0,	0,  0
 		.BYTE $50,$80,$FF,$FF,$FF,$FF,$FF,  0,	4,  4,	0,  0,	0,  0,	0,  6
 		.BYTE	4,  4,$FF,$FF,$FF,$FF,$FF,  7,	3,$3B,	0,  0,	0,  0,	0,  0
@@ -350,7 +350,7 @@ MissileLauncher_4A839:.BYTE $10, $F,$FF,$FF,$FF,$FF,$FF,$E0,$E1,$E4,  0,  0,  0,
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 InkRibbon_4A93B:.BYTE $10, $F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FE,$F9,$E7,$DC,	0,  0,	0,  0,	0,  1
 		.BYTE	7,$1C,$FF,$FF,$FF,$80,$7F,$C1,$3E,$FF,	0,  0,	0,  0,$7F,$C1
 		.BYTE $3E,$FF,$FF,$FF,$FF,$FF,$3F,$DF,$EF,$6F,	0,  0,	0,  0,	0,$C0
@@ -368,7 +368,7 @@ InkRibbon_4A93B:.BYTE $10, $F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0, 
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Accumulator_4AA3D:.BYTE	$11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FC,$C0,  0,  0,  0,  0,  0,  0
-					
+			
 		.BYTE	0,  3,$FF,$FF,$FF,$FF,$F8,$C0,	3,$CF,	0,  0,	0,  0,	7,$3E
 		.BYTE $3B,$FF,$FF,$FF,$FC,$C2,	2,$33,$F3,$F3,	0,  0,	0,$3E,$E7,$3F
 		.BYTE $F3,$F3,$FF,$FF,$FF,$7F,$3F,$1F,$CF,  7,	0,  0,	0,  0,	0,$80
@@ -388,7 +388,7 @@ Accumulator_4AA3D:.BYTE	$11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FC,$C0,  0,  0,  0,  0,
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Shotgun_4AB5F:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FC,$F1,$E8,$D8,$A0,	0,  0,	0,  2,	1, $F
 		.BYTE $1F,$3E,$FF,$F0,	2,$20,$83,  0,	0,  0,	0,  0,$CF,$3F,$FF,$E2
 		.BYTE $81,$35,$FF,$7F,$1F,$3F,$5F,$8F,$57,  3,	0,  0,$C0,$C0,$E0,$F0
@@ -402,7 +402,7 @@ Shotgun_4AB5F:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 KeyCard_4AC21:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FE,$FC,$F8,	0,  0,	0,  0,	0,  0
 		.BYTE	1,  3,$FF,$E3,$C0,$80, $C,$1F,$3F,$7B,	0,  0,$1C,$3F,$7F,$FF
 		.BYTE $FF,$FB,$FF,$FF,$FF,$3F, $F,  3,$C0,$F0,	0,  0,	0,  0,$C0,$F0
@@ -416,7 +416,7 @@ KeyCard_4AC21:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Key_4ACE3:	.BYTE  $B, $A,$FF,$FF,$FF,$FF,$FE,$FD,$FB,$FA,	0,  0,	0,  0,	1,  3
-					
+			
 		.BYTE	7,  7,$FF,$FF,$FF,$FF,$1F,$EF,$17,$EF,	0,  0,	0,  0,$C0,$E0
 		.BYTE $F0,$F8,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$F6,$F6,$F1,$FB,$FD,$FE,$FF,$FF,	7,  7,	7,  7,	1,  0
@@ -429,7 +429,7 @@ Key_4ACE3:	.BYTE  $B, $A,$FF,$FF,$FF,$FF,$FE,$FD,$FB,$FA,	0,  0,	0,  0,	1,  3
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Key_4AD95:	.BYTE  $A,  9,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FE,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF, $F,$F7,	0,  0,	0,  0,	0,  0
 		.BYTE $10,$F8,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FD,$FD,$FD,$FD,$FC,$FE,$FF,$FF,	1,  1,	1,  1,	0,  0
@@ -441,7 +441,7 @@ Key_4AD95:	.BYTE  $A,  9,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FE,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Pistol_4AE37:	.BYTE  $E, $D,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FD,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FC,$F0,$E1,$E0,	0,  0,	0,  0,	2,  1
 		.BYTE	3,  5,$FF,$FF,$FF,$E0,$81, $F,$3C,$F0,	0,  0,	0,$1E,$71,$8F
@@ -457,7 +457,7 @@ Pistol_4AE37:	.BYTE  $E, $D,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Herbs_4AF19:	.BYTE $10, $F,$FF,$FF,$FF,$FF,$F3,$E3,$C7,$87,	0,  0,	0,  0, $C,$18
-					
+			
 		.BYTE $34,$70,$FF,$FF,$FF,$FF,$FF,$FF,$EF,$E3,	0,  0,	0,  0,	0,  0
 		.BYTE $10,  8,$FF,$FF,$FD,$F8,$FC,$FC,$FE,$9C,	0,  0,	2,  3,	1,  1
 		.BYTE	0,$62,$FF,$FF,$DF,$C7,$EB,$75,$61,$C0,	0,  0,$20,$18, $C,$96
@@ -475,7 +475,7 @@ Herbs_4AF19:	.BYTE $10, $F,$FF,$FF,$FF,$FF,$F3,$E3,$C7,$87,	0,  0,	0,  0, $C,$18
 		.BYTE $80,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Note_4B01B:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE $40,$78,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  6,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  1
@@ -489,7 +489,7 @@ Note_4B01B:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE $80,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Medal_4B0DD:	.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FD,$F6,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	3, $F,$FF,$FF,$FD,$F7,$DF,$6F,$D0,$A0,	0,  0,	3, $F,$3F,$FF
 		.BYTE $FC,$F3,$FF,$FF,$9F,$C7,$F1,$FC,$3F, $F,	0,  0,$C0,$F0,$FC,$FF
 		.BYTE $3F,$FF,$FF,$FF,$FF,$FF,$FF,$7F,$1F,$C7,	0,  0,	0,  0,	0,  0
@@ -509,7 +509,7 @@ Medal_4B0DD:	.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FD,$F6,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Knife_4B1FF:	.BYTE  $C, $B,$FF,$FF,$EF,$F7,$EB,$E5,$F2,$F1,	0,  0,$10,$1C, $F,  7
-					
+			
 		.BYTE	7,  3,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$7F,	0,  0,	0,  0,	0,$80
 		.BYTE $C0,$E0,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$F8,$F8,$FC,$FE,$FF,$FF,$FF,$FF,	3,  1,	0,  0,	0,  0
@@ -523,7 +523,7 @@ Knife_4B1FF:	.BYTE  $C, $B,$FF,$FF,$EF,$F7,$EB,$E5,$F2,$F1,	0,  0,$10,$1C, $F,  
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 SMG_4B2C1:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FB,$FB,$FB,$FB,$C0,$80,$BF,	0,  4,	4,  4,	0,  0
 		.BYTE $3F,$3F,$FF,$FF,$FF,$FF,$FF,  0,$1F,$E0,	0,  0,	0,  0,	0,  0
 		.BYTE $FF,$FF,$FF,$FF,$FF,$FF,$FE,  0,$80,$3E,	0,  0,	0,  0,	1,  0
@@ -537,7 +537,7 @@ SMG_4B2C1:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Pistol_4B383:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$EF,$CF,$80,  0,$1F,  3,$80,$83,$10,$10,$10,$7F,$7F,$3F
 		.BYTE $7F,  3,$FF,$FF,	0, $E,$FF,  0,$28,$54,	0,  0,	0,$FF,$FF,$FC
 		.BYTE $7B,$FE,$FF,$FF,	0,$15,$EA,$75,	0,  0,	0,  0,	0,$F7,$FB,$7D
@@ -551,7 +551,7 @@ Pistol_4B383:	.BYTE  $C, $B,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Map_4B445:	.BYTE  $F, $E,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FE,$FE,$FD,$FD,	0,  0,	0,  0,	1,  1
 		.BYTE	3,  1,$FF,$FF,$FF,$FF, $F,$A0,$55,$EA,	0,  0,	0,  0,$F0,$FF
 		.BYTE $FF,$FF,$FF,$FF,$FF,$FF,$FF,$7F,	3,$AB,	0,  0,	0,  0,	0,$80
@@ -568,7 +568,7 @@ Map_4B445:	.BYTE  $F, $E,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Medal_4B537:	.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FD,$F6,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	3, $F,$FF,$FF,$FD,$F7,$DF,$6F,$D0,$A0,	0,  0,	3, $F,$3F,$FF
 		.BYTE $FC,$F3,$FF,$FF,$9F,$C7,$F1,$FC,$3F, $F,	0,  0,$C0,$F0,$FC,$FF
 		.BYTE $3F,$FF,$FF,$FF,$FF,$FF,$FF,$7F,$1F,$C7,	0,  0,	0,  0,	0,  0
@@ -588,7 +588,7 @@ Medal_4B537:	.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FD,$F6,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Medal_4B659:	.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FD,$F6,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	3, $F,$FF,$FF,$FD,$F7,$DF,$6F,$D0,$A0,	0,  0,	3, $F,$3F,$FF
 		.BYTE $FC,$F3,$FF,$FF,$9F,$C7,$F1,$FC,$3F, $F,	0,  0,$C0,$F0,$FC,$FF
 		.BYTE $3F,$FF,$FF,$FF,$FF,$FF,$FF,$7F,$1F,$C7,	0,  0,	0,  0,	0,  0
@@ -608,7 +608,7 @@ Medal_4B659:	.BYTE $11,$11,$FF,$FF,$FF,$FF,$FF,$FF,$FD,$F6,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Ammo_4B77B:	.BYTE  $D, $C,$FF,$FF,$FF,$FE,$FE,$FC,$F8,$F0,	0,  0,	0,  0,	1,  1
-					
+			
 		.BYTE	2,  0,$FF,$FF,$FF,$3F,$5F,$3F,$3F,  7,	0,  0,	0,$C0,$E0,$60
 		.BYTE $38,  6,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$F0,$F0,$F0,$F0,$F8,$FC,$FE,$FF,	0,  4,	2,  1,	0,  0
@@ -623,7 +623,7 @@ Ammo_4B77B:	.BYTE  $D, $C,$FF,$FF,$FF,$FE,$FE,$FC,$F8,$F0,	0,  0,	0,  0,	1,  1
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Revolver_4B84D:	.BYTE  $D, $C,$FF,$FF,$FF,$FF,$FF,$FF,$E0,$E0,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0, $D,$FF,$FF,$FF,$FF,$FF,$FF,$7F,$3F,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$CC,$CF,$C0,$DF,$C0,$D0,$C0,$FF, $C, $F,$1E,$1F,	4,$1F
@@ -638,7 +638,7 @@ Revolver_4B84D:	.BYTE  $D, $C,$FF,$FF,$FF,$FF,$FF,$FF,$E0,$E0,	0,  0,	0,  0,	0, 
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Disk_4B91F:	.BYTE $11,$11,$FF,$FF,$FF,$E0,$E8,$E9,$EA,$E9,	0,  0,	0,  0, $F, $F
-					
+			
 		.BYTE  $F, $F,$FF,$FF,$FF,  0, $F,$57,$A8,$47,	0,  0,	0,  0,$FF,$F7
 		.BYTE $A8,$47,$FF,$FF,$FF,  0,$F8,$E0,	0,$C0,	0,  0,	0,  0,$FB,$E0
 		.BYTE	0,$C1,$FF,$FF,$FF, $F, $F, $F, $F, $F,	0,  0,	0,  0,$E0,$20
@@ -658,7 +658,7 @@ Disk_4B91F:	.BYTE $11,$11,$FF,$FF,$FF,$E0,$E8,$E9,$EA,$E9,	0,  0,	0,  0, $F, $F
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Shield_4BA41:	.BYTE $10, $F,$FF,$FF,$FF,$FC,$FC,$FC,$FC,$FC,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,  0,	3,$26,$55,$AA,	0,  0,	0,  0, $F,$3F
 		.BYTE $7F,$BF,$FF,$FF,$FF,  0,$C0,$64,$AA,$55,	0,  0,	0,  0,$F0,$FC
 		.BYTE $FE,$FD,$FF,$FF,$FF,$3F,$3F,$3F,$3F,$3F,	0,  0,	0,  0,	0,  0
@@ -676,7 +676,7 @@ Shield_4BA41:	.BYTE $10, $F,$FF,$FF,$FF,$FC,$FC,$FC,$FC,$FC,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Key_4BB43:	.BYTE  $B, $A,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$FF,$FF,$FF,$FF,$FF,$C7,$13,	0,  0,	0,  0,	0,  0
 		.BYTE	0,$10,$FE,$FC,$F8,$F0,$F0,$E4,$E0,$E4,	0,  0,	0,  0,	0,  5
 		.BYTE	1,  5,$29,$14,$48,$64,	8,$40,$81,$43,$28,$14,$48,$64,	8,$E0
@@ -689,7 +689,7 @@ Key_4BB43:	.BYTE  $B, $A,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 Health_4BBF5:	.BYTE $10, $F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,$FF,$80,$AB,$80,$C0,$EF,$EF,$8F,	0,  0,$3F,$3F,$10, $F
 		.BYTE  $F,$1F,$FF,  1,$F9,  1,	3,$87,$E7,$F1,	0,  0,$FC,$FC,	0,$F0
 		.BYTE $F0,$F8,$FE,$FC,$FC,$FC,$FD,$FD,$FD,$FD,	0,  1,	1,  0,	1,  1
@@ -707,11 +707,11 @@ Health_4BBF5:	.BYTE $10, $F,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 byte_4BCF7:	.BYTE	2,  1,$FF,$FF,$FF,$FF,$FF,$FF,$FF,$FF,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 BattleZombie_4BD19:.BYTE $F3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
-					
+			
 		.BYTE	0,  0,	0,  0,	0,  1,$16,$3E,$10,$20,	0,  0,	0,  0,	0,  0
 		.BYTE $28,$13,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,$80
 		.BYTE $80,  0,	0,  0,	0,  0,	0,  0,	0,$1A,	0,  0,	0,  0,	0,  0
@@ -956,7 +956,7 @@ BattleZombie_4BD19:.BYTE $F3,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
 		.BYTE	0,  0,$80,  0,$81,  0,	0,  0,$80,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 BattleEnemy_4CC4B:.BYTE	$92,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
-					
+			
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	1,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  3
 		.BYTE	6, $C,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,$80,$80
@@ -1104,7 +1104,7 @@ BattleEnemy_4CC4B:.BYTE	$92,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 		.BYTE $7B,$7B,$87,$AF,$FF,$DF,$FE,$FE,$FC,$FF,$87,$8F,$DF,$9F,$FE,$FE
 		.BYTE $FC,$FF
 BattleDog_4D56D:.BYTE $78,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,	0,  0,	0,  0,	0,$80,$40,$80,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  2,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,$20,	0,  0,	0,  0,	0,  0
@@ -1226,7 +1226,7 @@ BattleDog_4D56D:.BYTE $78,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,$E0,  0,	0,  0,	0,  0,	0,  0,$10,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 byte_4DCEF:	.BYTE $C9,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  1,	7,  7,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,$E4,$E4,$F4,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,$80,$80,	0,  0,	0,  0,	0,  0
@@ -1429,7 +1429,7 @@ byte_4DCEF:	.BYTE $C9,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 		.BYTE $38,  0,$80,  0,$81,  0,	0,  0,$80,  0,	0,  0,	0,  0,	0,  0
 		.BYTE	0,  0
 byte_4E981:	.BYTE $9A,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
-					
+			
 		.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  5,$2A,$55
 		.BYTE	0,$15,	0,  0,	0,  0,	0,  0,	0,  0,	0,  4,$2A,$55,$AA,$41
 		.BYTE  $A,$11,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0, $A,$50,$AA,$55

@@ -244,8 +244,7 @@ apu_update_13D4F9:
 	JSR	apu_update_pulse1_13DA5B
 	JSR	apu_func_13D534
 	LDA	apu_unk_738
-	CLC
-	ADC	apu_unk_741
+	add_to_a apu_unk_741
 	TAX
 	INC	apu_unk_742
 	LDA	apu_unk_742
@@ -274,8 +273,7 @@ apu_func_13D534:
 	CPX	#4
 	BCS	locret_13D55B
 	LDA	apu_unk_738
-	CLC
-	ADC	apu_unk_741
+	add_to_a apu_unk_741
 	TAY
 	LDA	apu_dat_13DC5C,Y
 	if_greater_cmp #2, loc_13D565
@@ -605,8 +603,7 @@ music_func_13D7C3:
 	CPX	#4
 	BCS	locret_13D7EA
 	LDA	apu_unk_707
-	CLC
-	ADC	apu_unk_710
+	add_to_a apu_unk_710
 	TAY
 	LDA	apu_dat_13DC5C,Y
 	if_greater_cmp #2, loc_13D7F4
@@ -968,8 +965,7 @@ apu_update_pulse1_13DA62:
 loc_13DA99:
 	LDA	apu_pulse1_env_744,X
 	AND	#$F
-	CLC
-	ADC	apu_unk_754,X
+	add_to_a {apu_unk_754,X}
 	STA	apu_unk_705
 	if_greater_cmp #$F, loc_13DAB3
 	set apu_unk_705, #$F
@@ -1035,8 +1031,7 @@ music_func_13DAE3:
 loc_13DB1A:
 	LDA	pulse1_env_713,X
 	AND	#$F
-	CLC
-	ADC	apu_unk_723,X
+	add_to_a {apu_unk_723,X}
 	STA	apu_unk_705
 	if_greater_cmp #$F, loc_13DB34
 	set apu_unk_705, #$F
@@ -1194,8 +1189,7 @@ music_update_state_13DC1E:
 	JSR	music_func_13DADC
 	JSR	music_func_13D7C3
 	LDA	apu_unk_707
-	CLC
-	ADC	apu_unk_710
+	add_to_a apu_unk_710
 	TAX
 	INC	apu_unk_711
 	LDA	apu_unk_711
@@ -1327,8 +1321,7 @@ load_spr_palette_13DF18:
 	LDA	inv_sprite_idx_31C
 	mult_a_by_2
 	ROL	data_2
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, data_2
 
@@ -1341,8 +1334,7 @@ load_spr_palette_13DF18:
 	LDA	sprPalIdx_319
 	mult_a_by_4
 	TAX
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, #0
 
@@ -1433,8 +1425,7 @@ load_boss_sprite_13DFDC:
 	LDA	inv_sprite_idx_31C
 	mult_a_by_2
 	ROL	data_2
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, data_2
 
@@ -1474,8 +1465,7 @@ load_sprite_map_13E038:
 	LDA	inv_sprite_idx_31C
 	mult_a_by_2
 	ROL	data_2
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, data_2
 
@@ -1486,8 +1476,7 @@ load_sprite_map_13E038:
 	LDA	inv_itemPrev_idx_31D
 	mult_a_by_2
 	ROL	ptr_0
-	CLC
-	ADC	data_2
+	add_to_a data_2
 	STA	data_2
 	add_to_byte data_3, ptr_0
 
@@ -1506,8 +1495,7 @@ load_sprite_map_13E038:
 	set data_3, #$20 
 	LDA	byte_36E
 	mult_a_by_4
-	CLC
-	ADC	data_3
+	add_to_a data_3
 	STA	data_3
 	LDY	ppu_unk_byte_309
 
@@ -1584,8 +1572,7 @@ loc_13E12D:
 
 loc_13E13F:
 	LDA	(ptr_0),Y
-	CLC
-	ADC	byte_31E
+	add_to_a byte_31E
 	STA	ppu_data_70,X
 	INX
 	INY

@@ -152,8 +152,7 @@ get_sprite_palette_ptr_1F2F3:
 get_offset_F2FB:
 	LDA	objectIdx_318
 	mult_a_by_2
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	LDA	ptr_1
 	ADC	#0
@@ -234,8 +233,7 @@ load_sprite_to_vram_1F36D:
 get_offset_F376:; spriteIdx
 	LDA	objectIdx_318
 	mult_a_by_2
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	LDA	ptr_1
 	ADC	#0
@@ -286,8 +284,7 @@ load_sprite_tilemap_1F3B8:
 get_container_offset_F3C1:
 	LDA	objectIdx_318
 	mult_a_by_2
-	CLC
-	ADC	data_2
+	add_to_a data_2
 	STA	data_2
 	LDA	data_3
 	ADC	#0
@@ -301,8 +298,7 @@ get_container_ptr_F3D0:
 get_tilemap_offset_F3DB:
 	LDA	objMapIdx_316
 	mult_a_by_2
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	LDA	ptr_1
 	ADC	#0
@@ -334,8 +330,7 @@ add_offset_F408:
 
 sub_1F416:
 	LDA	#0
-	CLC
-	ADC	byte_31A
+	add_to_a byte_31A
 	STA	ptr_0
 	LDA	#2
 	ADC	#0
@@ -369,16 +364,14 @@ loc_1F44D:
 	PHA
 	LDY	tilemapTypeUnk_30B
 	LDA	(data_2),Y
-	CLC
-	ADC	sprite_secondByte_31B
+	add_to_a sprite_secondByte_31B
 	STA	inv_spr_dscr1_30C
 	from_stack_to_y
 	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
 	set_iny {(ptr_0),Y}, byte_317
 	set_iny {(ptr_0),Y}, tilemap_size_307
 	LDA	byte_36A
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	byte_36A
 	LDA	byte_36B
 	ADC	#0
@@ -389,15 +382,13 @@ loc_1F44D:
 	from_stack byte_36B
 	from_stack byte_36A
 	LDA	data_2
-	CLC
-	ADC	tilemapWidth_308
+	add_to_a tilemapWidth_308
 	STA	data_2
 	LDA	data_3
 	ADC	#0
 	STA	data_3
 	LDA	byte_366
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	byte_366
 	LDA	byte_367
 	ADC	#0
@@ -430,16 +421,14 @@ loc_1F4DC:
 	LDY	tilemapTypeUnk_30B
 	DEY
 	LDA	(data_2),Y
-	CLC
-	ADC	sprite_secondByte_31B
+	add_to_a sprite_secondByte_31B
 	STA	inv_spr_dscr1_30C
 	from_stack_to_y
 	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
 	set_iny {(ptr_0),Y}, byte_317
 	set_iny {(ptr_0),Y}, tilemap_size_307
 	LDA	byte_36A
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	byte_36A
 	LDA	byte_36B
 	ADC	#0
@@ -450,15 +439,13 @@ loc_1F4DC:
 	from_stack byte_36B
 	from_stack byte_36A
 	LDA	data_2
-	CLC
-	ADC	tilemapWidth_308
+	add_to_a tilemapWidth_308
 	STA	data_2
 	LDA	data_3
 	ADC	#0
 	STA	data_3
 	LDA	byte_366
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	byte_366
 	LDA	byte_367
 	ADC	#0
@@ -482,8 +469,7 @@ loc_1F55D:
 	CPY	#0
 	BEQ	loc_1F572
 	LDA	data_2
-	CLC
-	ADC	tilemapWidth_308
+	add_to_a tilemapWidth_308
 	STA	data_2
 	LDA	data_3
 	CLC
@@ -508,16 +494,14 @@ loc_1F583:
 	PHA
 	LDY	tilemapTypeUnk_30B
 	LDA	(data_2),Y
-	CLC
-	ADC	sprite_secondByte_31B
+	add_to_a sprite_secondByte_31B
 	STA	inv_spr_dscr1_30C
 	from_stack_to_y
 	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
 	set_iny {(ptr_0),Y}, byte_317
 	set_iny {(ptr_0),Y}, tilemap_size_307
 	LDA	byte_36A
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	byte_36A
 	LDA	byte_36B
 	ADC	#0
@@ -535,8 +519,7 @@ loc_1F583:
 	SBC	#0
 	STA	data_3
 	LDA	byte_366
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	byte_366
 	LDA	byte_367
 	ADC	#0
@@ -577,8 +560,7 @@ sub_1F5FF:
 	BCC	loc_1F68D
 	INC	byte_36D
 	LDA	byte_368
-	CLC
-	ADC	#$F0 
+	add_to_a #$F0 
 	STA	byte_368
 	LDA	byte_369
 	ADC	#0
@@ -643,8 +625,7 @@ loc_1F6B5:
 	CPY	#0
 	BEQ	loc_1F6CE
 	LDA	byte_368
-	CLC
-	ADC	#$F0 
+	add_to_a #$F0 
 	STA	byte_368
 	LDA	byte_369
 	ADC	#0
@@ -682,8 +663,7 @@ loc_1F6F3:
 	BCC	loc_1F6F3
 	
 	LDA	ptr_0
-	CLC
-	ADC	#$10
+	add_to_a #$10
 	STA	ptr_0
 	LDA	ptr_1
 	ADC	#0

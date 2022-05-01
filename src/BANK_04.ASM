@@ -85,8 +85,7 @@ load_palette_4F323:
 	LDA	inv_sprite_idx_31C
 	mult_a_by_2
 	ROL	data_2
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, data_2
 
@@ -99,8 +98,7 @@ load_palette_4F323:
 	LDA	sprPalIdx_319
 	mult_a_by_4
 	TAX
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, #0
 
@@ -191,8 +189,7 @@ get_offset_4F3EF:
 	LDA	inv_sprite_idx_31C
 	mult_a_by_2
 	ROL	data_2
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, data_2
 
@@ -239,8 +236,7 @@ get_offset_4F44B:
 	LDA	inv_sprite_idx_31C
 	mult_a_by_2
 	ROL	data_2
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, data_2
 
@@ -255,8 +251,7 @@ get_tilemap_offset_4F46B:
 	LDA	inv_itemPrev_idx_31D
 	mult_a_by_2
 	ROL	ptr_0
-	CLC
-	ADC	data_2
+	add_to_a data_2
 	STA	data_2
 	add_to_byte data_3, ptr_0
 
@@ -279,8 +274,7 @@ get_tilemap_descr_4F48B:
 	set data_3, #$20 
 	LDA	byte_36E
 	mult_a_by_4
-	CLC
-	ADC	data_3
+	add_to_a data_3
 	STA	data_3
 	LDY	ppu_unk_byte_309
 
@@ -357,8 +351,7 @@ loc_4F538:
 
 loc_4F54A:
 	LDA	(ptr_0),Y
-	CLC
-	ADC	byte_31E
+	add_to_a byte_31E
 	STA	ppu_data_70,X
 	INX
 	INY

@@ -800,16 +800,14 @@ sub_87CE:
 	LDA	tilemapWidth_308
 	LSR	A
 	mult_a_by_8
-	CLC
-	ADC	byte_36A
+	add_to_a byte_36A
 	STA	byte_36A
 	add_to_byte byte_36B, #0
 
 	LDA	tilemapHeight_30A
 	LSR	A
 	mult_a_by_8
-	CLC
-	ADC	byte_366
+	add_to_a byte_366
 	STA	byte_366
 	add_to_byte byte_367, #0
 
@@ -1140,8 +1138,7 @@ loc_8AF1:
 	to_stack objMapIdx_316
 	LDA	byte_313
 	mult_a_by_4
-	CLC
-	ADC	objMapIdx_316
+	add_to_a objMapIdx_316
 	TAX
 	set objMapIdx_316, {byte_9523,X}
 	STA	byte_4AA
@@ -1420,8 +1417,7 @@ sub_8D27:
 	JSR	sub_91B6
 	set byte_432, #$96 
 	LDA	ppu_unk_byte_303
-	CLC
-	ADC	#1
+	add_to_a #1
 	if_not_equal_cmp tilemaps_vert_count_312, loc_8D47
 	if_not_equal ppu_scroll_y_305, loc_8D47
 	LDA	byte_4AE
@@ -1632,8 +1628,7 @@ sub_8EB9:
 	JSR	sub_91B6
 	set byte_432, #$96 
 	LDA	ppu_unk_byte_302
-	CLC
-	ADC	#1
+	add_to_a #1
 	if_not_equal_cmp tilemaps_horiz_count_311, loc_8ED9
 	if_not_equal ppu_scroll_x_304, loc_8ED9
 	LDA	byte_4AD
@@ -1842,8 +1837,7 @@ loc_9061:
 	LDA	tilemapTypeUnk_30B
 	SEC
 	SBC	#$3C 
-	CLC
-	ADC	#$14
+	add_to_a #$14
 	STA	text_idx_35C
 	LDA	#0
 	ADC	#2
@@ -1878,8 +1872,7 @@ loc_90BB:
 	LDA	tilemapTypeUnk_30B
 	SEC
 	SBC	#$47 
-	CLC
-	ADC	#$99 
+	add_to_a #$99 
 	STA	text_idx_35C
 	LDA	#0
 	ADC	#0
@@ -1947,8 +1940,7 @@ sub_9132:
 	set byte_363, #0
 	set sprite_secondByte_31B, #$D0 
 	LDA	text_unk_35B
-	CLC
-	ADC	#5
+	add_to_a #5
 	STA	byte_310
 	JSR	exec_b2_c4_C90E
 	set byte_357, #$18
@@ -2334,8 +2326,7 @@ loc_94A2:
 
 loc_94B1:
 	LDA	tilemap_size_307
-	CLC
-	ADC	ppu_unk_byte_309
+	add_to_a ppu_unk_byte_309
 	if_greater_cmp byte_42B, loc_94C5
 	set sprite_length_30F, #$FF
 	JMP	loc_94CA
@@ -2378,8 +2369,7 @@ loc_94EC:
 	STA	objMapIdx_316
 	LDA	byte_313
 	mult_a_by_4
-	CLC
-	ADC	objMapIdx_316
+	add_to_a objMapIdx_316
 	TAX
 	set objMapIdx_316, {byte_9523,X}
 	STA	byte_4AA
@@ -2792,8 +2782,7 @@ loc_98A4:
 
 loc_98B8:
 	LDA	array_unk_3C5,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	array_unk_3C5,X
 	LDA	array_unk_3BB,X
 	ADC	#0
@@ -2814,8 +2803,7 @@ loc_98CC:
 
 loc_98E0:
 	LDA	array_unk_3D9,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	array_unk_3D9,X
 	LDA	array_unk_3CF,X
 	ADC	#0
@@ -3244,8 +3232,7 @@ loc_BDEC:
 ; ---------------------------------------------------------------------------
 
 loc_BDF7:
-	CLC
-	ADC	#1
+	add_to_a #1
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; End of function sub_BD45
@@ -3343,8 +3330,7 @@ loc_BEA4:
 ; ---------------------------------------------------------------------------
 
 loc_BEAF:
-	CLC
-	ADC	#1
+	add_to_a #1
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; End of function sub_BDFE
@@ -3754,8 +3740,7 @@ loc_C7FB:
 loc_C814:
 	from_stack_to_y
 	LDA	byte_368
-	CLC
-	ADC	byte_4AE
+	add_to_a byte_4AE
 	STA	byte_366
 	LDA	byte_369
 	ADC	#0
@@ -4150,8 +4135,7 @@ sub_CAA9:
 	set byte_363, #0
 	set sprite_secondByte_31B, #$D0 
 	LDA	text_unk_35B
-	CLC
-	ADC	#5
+	add_to_a #5
 	STA	byte_310
 	set byte_364, #7
 	JSR	exec_b2_c4_C90E
@@ -4205,8 +4189,7 @@ sub_CB58:
 	TAX
 	set_inx byte_4AD, {off_CBBE,X}
 	LDA	off_CBBE,X
-	CLC
-	ADC	#4
+	add_to_a #4
 	STA	byte_4AE
 	INX
 	LDA	count_unk_465
@@ -4343,8 +4326,7 @@ ppu_upload_unk_data_CC5D:
 	set {ppu_data_70,X}, {unk_CC9A,Y}
 	JSR	wait_for_ppu_data_upload_FC8C
 	LDA	byte_421
-	CLC
-	ADC	#1
+	add_to_a #1
 	if_greater_cmp #6, loc_CC96
 	LDA	#0
 
@@ -4543,8 +4525,7 @@ loc_CDFE:
 
 loc_CE1C:
 	LDA	unk_456,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	unk_456,X
 	LDA	unk_457,X
 	ADC	#0
@@ -4612,8 +4593,7 @@ loc_CE91:
 
 loc_CEAF:
 	LDA	unk_458,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	unk_458,X
 	LDA	unk_459,X
 	ADC	#0
@@ -4739,8 +4719,7 @@ loc_CF68:
 loc_CF89:
 	if_not_equal_cmp #1, loc_CFA1
 	LDA	array_unk_3D9,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	array_unk_3D9,X
 	LDA	array_unk_3CF,X
 	ADC	#0
@@ -4762,8 +4741,7 @@ loc_CFA1:
 
 loc_CFB9:
 	LDA	array_unk_3C5,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	array_unk_3C5,X
 	LDA	array_unk_3BB,X
 	ADC	#0
@@ -4838,13 +4816,11 @@ sub_D01F:
 	mult_a_by_4
 	STA	tilemapTypeUnk_30B
 	TXA
-	CLC
-	ADC	tilemapTypeUnk_30B
+	add_to_a tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 	TYA
 	LSR	A
-	CLC
-	ADC	tilemapTypeUnk_30B
+	add_to_a tilemapTypeUnk_30B
 	TAX
 	LDA	byte_D041,X
 	TAY
@@ -4939,8 +4915,7 @@ loc_D0C7:
 
 loc_D0FD:
 	LDA	array_unk_3C5,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	array_unk_3C5,X
 	LDA	array_unk_3BB,X
 	ADC	#0
@@ -5003,8 +4978,7 @@ loc_D15A:
 
 loc_D190:
 	LDA	array_unk_3D9,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	array_unk_3D9,X
 	LDA	array_unk_3CF,X
 	ADC	#0
@@ -5148,8 +5122,7 @@ loc_D2C4:
 	add_to_byte byte_367, #0
 
 	LDA	array_unk_3C5,X
-	CLC
-	ADC	#$10
+	add_to_a #$10
 	STA	byte_36C
 	LDA	array_unk_3BB,X
 	ADC	#0
@@ -5367,8 +5340,7 @@ loc_D4EA:
 
 loc_D4F7:
 	TXA
-	CLC
-	ADC	#1
+	add_to_a #1
 	STA	objPalIdxArray_3F7,Y
 	STX	inv_spr_dscr1_30C
 	set sprite_length_30F, #0
@@ -5378,8 +5350,7 @@ loc_D508:
 	CPX	inv_spr_dscr1_30C
 	BEQ	loc_D51A
 	LDA	tilemapData_4C,X
-	CLC
-	ADC	sprite_length_30F
+	add_to_a sprite_length_30F
 	STA	sprite_length_30F
 	INX
 	JMP	loc_D508
@@ -5387,8 +5358,7 @@ loc_D508:
 
 loc_D51A:
 	LDA	sprite_length_30F
-	CLC
-	ADC	#$6F 
+	add_to_a #$6F 
 	STA	unk_401,Y
 	INY
 	CPY	objArraySize_373
@@ -5503,8 +5473,7 @@ loc_D60C:
 	LDA	count_unk_464
 	if_greater_cmp #$F, loc_D629
 	LDA	unk_37F,Y
-	CLC
-	ADC	#1
+	add_to_a #1
 	STA	unk_37F,Y
 	LDA	unk_37F,Y
 	if_greater_cmp {unk_389,Y}, loc_D629
@@ -5713,8 +5682,7 @@ loc_D7C4:
 
 loc_D7D8:
 	LDA	array_unk_3C5,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	array_unk_3C5,X
 	LDA	array_unk_3BB,X
 	ADC	#0
@@ -5735,8 +5703,7 @@ loc_D7EC:
 
 loc_D800:
 	LDA	array_unk_3D9,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	array_unk_3D9,X
 	LDA	array_unk_3CF,X
 	ADC	#0
@@ -5868,8 +5835,7 @@ sub_D8D8:
 sub_D8FD:
 	LDA	tilemap_size_307
 	mult_a_by_8
-	CLC
-	ADC	byte_36C
+	add_to_a byte_36C
 	STA	byte_36C
 	add_to_byte byte_36D, #0
 
@@ -5883,8 +5849,7 @@ sub_D8FD:
 sub_D913:
 	LDA	ppu_unk_byte_309
 	mult_a_by_8
-	CLC
-	ADC	byte_368
+	add_to_a byte_368
 	STA	byte_368
 	add_to_byte byte_369, #0
 
@@ -6042,8 +6007,7 @@ loc_DA40:
 	SEC
 	SBC	#2
 	mult_a_by_8
-	CLC
-	ADC	byte_368
+	add_to_a byte_368
 	STA	byte_368
 	add_to_byte byte_369, #0
 
@@ -6176,8 +6140,7 @@ loc_DB57:
 
 loc_DB72:
 	LDA	byte_368
-	CLC
-	ADC	byte_36C
+	add_to_a byte_36C
 	STA	byte_36A
 	LDA	byte_369
 	ADC	byte_36D
@@ -6247,8 +6210,7 @@ sub_DBE2:
 loc_DC07:
 	CPX	#0
 	BEQ	loc_DC13
-	CLC
-	ADC	tilemapWidth_308
+	add_to_a tilemapWidth_308
 	DEX
 	JMP	loc_DC07
 ; ---------------------------------------------------------------------------
@@ -6367,15 +6329,13 @@ loc_DCB5:
 	from_stack_to_x
 	JSR	sub_DD40
 	LDA	array_unk_3C5,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	array_unk_3C5,X
 	LDA	array_unk_3BB,X
 	ADC	#0
 	STA	array_unk_3BB,X
 	LDA	unk_37F,X
-	CLC
-	ADC	#1
+	add_to_a #1
 	STA	unk_37F,X
 	LDA	unk_37F,X
 	if_greater_cmp {unk_389,X}, loc_DCE6
@@ -6538,8 +6498,7 @@ loc_DE22:
 	add_to_byte_clc tilemapHeight_30A, #1
 	LDA	tilemapHeight_30A
 	mult_a_by_8
-	CLC
-	ADC	byte_366
+	add_to_a byte_366
 	STA	byte_366
 	add_to_byte byte_367, #0
 
@@ -6568,8 +6527,7 @@ loc_DE6A:
 	SEC
 	SBC	#1
 	mult_a_by_8
-	CLC
-	ADC	byte_366
+	add_to_a byte_366
 	STA	byte_366
 	add_to_byte byte_367, #0
 
@@ -6596,8 +6554,7 @@ loc_DEB4:
 	SEC
 	SBC	#1
 	mult_a_by_8
-	CLC
-	ADC	byte_366
+	add_to_a byte_366
 	STA	byte_366
 	add_to_byte byte_367, #0
 
@@ -8859,8 +8816,7 @@ loc_EEC7:
 	CPY	tilemapWidth_308
 	BCC	loc_EEC7
 	PLA
-	CLC
-	ADC	#8
+	add_to_a #8
 	TAX
 	INC	ppu_unk_byte_309
 	DEC	tilemapHeight_30A
@@ -8886,16 +8842,14 @@ loc_EF04:
 start_read_tilemap_EF06:
 	set tilemapData_4C, entry_idx_300
 	LDA	ppu_unk_byte_302
-	CLC
-	ADC	#1
+	add_to_a #1
 	STA	roomUnk1_4D
 	set roomUnk2_4E, ppu_unk_byte_303
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, #0
 	set tilemap_line_size_51, #8
 	LDA	tilemapWidth_308
-	CLC
-	ADC	#1
+	add_to_a #1
 	STA	mapLineWidth_52
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
@@ -8923,8 +8877,7 @@ loc_EF45:
 
 loc_EF5D:
 	PLA
-	CLC
-	ADC	#8
+	add_to_a #8
 	TAX
 	INC	ppu_unk_byte_309
 	DEC	tilemapHeight_30A
@@ -8953,8 +8906,7 @@ loc_EF94:
 	SEC
 	SBC	ppu_unk_byte_309
 	mult_a_by_8
-	CLC
-	ADC	tilemap_size_307
+	add_to_a tilemap_size_307
 	TAX
 	to_stack ppu_unk_byte_309
 	set ppu_unk_byte_309, #0
@@ -8967,8 +8919,7 @@ start_read_tilemap_EFAD:
 	set tilemapData_4C, entry_idx_300
 	set roomUnk1_4D, ppu_unk_byte_302
 	LDA	ppu_unk_byte_303
-	CLC
-	ADC	#1
+	add_to_a #1
 	STA	roomUnk2_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
@@ -8984,8 +8935,7 @@ loc_EFDB:
 	CPY	tilemapWidth_308
 	BCC	loc_EFDB
 	PLA
-	CLC
-	ADC	#8
+	add_to_a #8
 	TAX
 	INC	ppu_unk_byte_309
 	DEC	tilemapHeight_30A
@@ -9019,19 +8969,16 @@ loc_F02C:
 start_read_tilemap_F02E:
 	set tilemapData_4C, entry_idx_300
 	LDA	ppu_unk_byte_302
-	CLC
-	ADC	#1
+	add_to_a #1
 	STA	roomUnk1_4D
 	LDA	ppu_unk_byte_303
-	CLC
-	ADC	#1
+	add_to_a #1
 	STA	roomUnk2_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, #0
 	set tilemap_line_size_51, #8
 	LDA	tilemapWidth_308
-	CLC
-	ADC	#1
+	add_to_a #1
 	STA	mapLineWidth_52
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
@@ -9059,8 +9006,7 @@ loc_F070:
 
 loc_F088:
 	PLA
-	CLC
-	ADC	#8
+	add_to_a #8
 	TAX
 	INC	ppu_unk_byte_309
 	DEC	tilemapHeight_30A
@@ -9109,8 +9055,7 @@ loc_F0E0:
 	LSR	A
 	STA	tilemapHeight_30A
 	mult_a_by_8
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, #0
 
@@ -9528,15 +9473,13 @@ read_tilemap_entry_data_F4B3:
 add_offset_F4C4:
 	CPY	#0
 	BEQ	next_F4D0
-	CLC
-	ADC	tilemaps_horiz_count_311
+	add_to_a tilemaps_horiz_count_311
 	DEY
 	JMP	add_offset_F4C4
 ; ---------------------------------------------------------------------------
 
 next_F4D0:
-	CLC
-	ADC	roomUnk1_4D
+	add_to_a roomUnk1_4D
 	mult_a_by_2
 	TAY
 	INY
@@ -9802,12 +9745,10 @@ sub_F65C:
 	mult_a_by_8
 	STA	tilemapWidth_308
 	LDA	byte_36A
-	CLC
-	ADC	tilemapWidth_308
+	add_to_a tilemapWidth_308
 	STA	byte_36C
 	LDA	byte_366
-	CLC
-	ADC	#$20 
+	add_to_a #$20 
 	STA	byte_368
 	LDX	#0
 
@@ -9841,8 +9782,7 @@ loc_F6C0:
 	LDA	tilemapWidth_308
 	LSR	A
 	AND	#$FE 
-	CLC
-	ADC	tilemap_size_307
+	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	set inv_spr_dscr1_30C, #0
 
@@ -9970,12 +9910,10 @@ loc_F811:
 	set_inx {ppu_data_70,X}, data_3
 	set_inx {ppu_data_70,X}, data_2
 	LDA	inv_spr_dscr1_30C
-	CLC
-	ADC	#2
+	add_to_a #2
 	if_equal_cmp tilemapWidth_308, loc_F84E
 	LDA	inv_spr_dscr1_30C
-	CLC
-	ADC	#4
+	add_to_a #4
 	if_equal_cmp tilemapWidth_308, loc_F83D
 	LDY	#8
 	JMP	loc_F85C
@@ -10025,8 +9963,7 @@ loc_F86E:
 
 loc_F877:
 	LDA	TextBg_FBD2,Y
-	CLC
-	ADC	text_unk_35B
+	add_to_a text_unk_35B
 	STA	ppu_data_70,X
 	INY
 	INX
@@ -10174,8 +10111,7 @@ sub_F98B:
 	LSR	A
 	LSR	A
 	LSR	A
-	CLC
-	ADC	ppu_unk_byte_309
+	add_to_a ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	if_greater_cmp #$1E, loc_F9A9
 	INY
@@ -10188,8 +10124,7 @@ loc_F9A9:
 	LSR	A
 	LSR	A
 	LSR	A
-	CLC
-	ADC	tilemap_size_307
+	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_greater_cmp #$20, locret_F9C1
 	INX
@@ -10279,8 +10214,7 @@ sub_FA61:
 	LSR	A
 	LSR	A
 	LSR	A
-	CLC
-	ADC	tilemap_size_307
+	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_greater_cmp #$20, loc_FA78
 	SEC
@@ -10292,8 +10226,7 @@ loc_FA78:
 	LSR	A
 	LSR	A
 	LSR	A
-	CLC
-	ADC	ppu_unk_byte_309
+	add_to_a ppu_unk_byte_309
 	if_greater_cmp #$1E, loc_FA8C
 	INC	ppu_unk_byte_309
 	INC	ppu_unk_byte_309
@@ -10314,8 +10247,7 @@ loc_FA99:
 	LDA	tilemap_size_307
 	LSR	A
 	LSR	A
-	CLC
-	ADC	tilemapTypeUnk_30B
+	add_to_a tilemapTypeUnk_30B
 	TAY
 	RTS
 ; End of function sub_FA61

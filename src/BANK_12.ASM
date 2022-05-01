@@ -1317,8 +1317,7 @@ loc_128B4B:
 	mult_a_by_4
 	STA	tilemapTypeUnk_30B
 	LDA	#$80 
-	CLC
-	ADC	tilemapTypeUnk_30B
+	add_to_a tilemapTypeUnk_30B
 	STA	byte_36A
 	STA	byte_474
 	LDA	#0
@@ -1349,8 +1348,7 @@ loc_128BFB:
 	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	LDA	byte_43F
-	CLC
-	ADC	#1
+	add_to_a #1
 	mult_a_by_4
 	STA	tilemapTypeUnk_30B
 	LDA	#$80 
@@ -1371,13 +1369,11 @@ loc_128BFB:
 	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	LDA	byte_43F
-	CLC
-	ADC	#1
+	add_to_a #1
 	mult_a_by_4
 	STA	tilemapTypeUnk_30B
 	LDA	#$80 
-	CLC
-	ADC	tilemapTypeUnk_30B
+	add_to_a tilemapTypeUnk_30B
 	STA	byte_36A
 	STA	byte_474
 	LDA	#0
@@ -1420,8 +1416,7 @@ loc_128CD5:
 	set byte_31A, #$38 
 	set objectIdx_318, #4
 	LDA	#$1A
-	CLC
-	ADC	byte_543
+	add_to_a byte_543
 	STA	objMapIdx_316
 	LDX	objMapIdx_316
 	set byte_317, {byte_128F59,X}
@@ -1469,8 +1464,7 @@ loc_128D8B:
 
 loc_128D8F:
 	LDA	byte_355
-	CLC
-	ADC	#$29 
+	add_to_a #$29 
 	STA	objMapIdx_316
 	set byte_366, #$C0 
 	set byte_367, #0
@@ -1486,8 +1480,7 @@ loc_128D8F:
 	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	LDA	byte_354
-	CLC
-	ADC	#$29 
+	add_to_a #$29 
 	STA	objMapIdx_316
 	set byte_366, #$C0 
 	set byte_367, #0
@@ -1574,8 +1567,7 @@ sub_128EC2:
 	set byte_31A, #$B8 
 	set objectIdx_318, #4
 	LDA	#$15
-	CLC
-	ADC	byte_54B
+	add_to_a byte_54B
 	STA	objMapIdx_316
 	if_equal byte_54A, loc_128F0E
 	add_to_byte_clc objMapIdx_316, #3
@@ -1643,8 +1635,7 @@ sub_128FC1:
 	if_greater_cmp #$32, locret_129004
 	set count_unk_467, #0
 	LDA	#0
-	CLC
-	ADC	byte_43F
+	add_to_a byte_43F
 	STA	inv_itemPrev_idx_31D
 	set tilemap_size_307, #$B
 	set ppu_unk_byte_309, #4
@@ -1715,10 +1706,8 @@ loc_129069:
 	mult_a_by_4
 
 loc_129071:
-	CLC
-	ADC	#$34 
-	CLC
-	ADC	byte_443
+	add_to_a #$34 
+	add_to_a byte_443
 	STA	objMapIdx_316
 	set byte_478, #4
 	LDX	objMapIdx_316
@@ -1795,8 +1784,7 @@ loc_1290EA:
 	set byte_443, #0
 	set byte_440, #$FF
 	LDA	ppu_scroll_x_304
-	CLC
-	ADC	byte_203
+	add_to_a byte_203
 	STA	byte_441
 	set byte_476, #0
 	LDA	byte_441
@@ -1933,8 +1921,7 @@ loc_1291DE:
 loc_1291E5:
 	CPY	#0
 	BEQ	loc_1291F1
-	CLC
-	ADC	byte_477
+	add_to_a byte_477
 	DEY
 	JMP	loc_1291E5
 ; ---------------------------------------------------------------------------
@@ -1967,8 +1954,7 @@ sub_1291F5:
 loc_129213:
 	if_not_equal_cmp #0, loc_12922B
 	LDA	array_unk_3D9,X
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	array_unk_3D9,X
 	LDA	array_unk_3CF,X
 	ADC	#0
@@ -1990,8 +1976,7 @@ loc_12922B:
 
 loc_129243:
 	LDA	array_unk_3C5,X
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	array_unk_3C5,X
 	LDA	array_unk_3BB,X
 	ADC	#0
@@ -2062,8 +2047,7 @@ loc_12A69D:
 	to_stack data_3
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_2
-	CLC
-	ADC	data_2
+	add_to_a data_2
 	STA	data_2
 	add_to_byte data_3, #0
 
@@ -2181,8 +2165,7 @@ loc_12A809:
 
 loc_12A81B:
 	TYA
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	data_2
 	LDA	ptr_1
 	ADC	#0
@@ -5436,8 +5419,7 @@ sub_12C1C3:
 	DEY
 	DEY
 	LDA	array_unk_3D9,X
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	array_unk_3D9,X
 	LDA	array_unk_3CF,X
 	ADC	#0
@@ -6760,8 +6742,7 @@ loc_12CBB2:
 	if_equal_cmp #4, loc_12CBD9
 	BCS	loc_12CBD9
 	LDA	#2
-	CLC
-	ADC	byte_434
+	add_to_a byte_434
 	STA	objMapIdx_316
 	JSR	sub_12CCAB
 	LDA	count_unk_468
@@ -6787,8 +6768,7 @@ loc_12CBD9:
 
 loc_12CBF7:
 	LDA	#2
-	CLC
-	ADC	byte_434
+	add_to_a byte_434
 	STA	objMapIdx_316
 	JSR	sub_12CCAB
 	JMP	loc_12CB96
@@ -6839,12 +6819,10 @@ loc_12CC5C:
 
 loc_12CC70:
 	LDA	byte_42C
-	CLC
-	ADC	byte_430
+	add_to_a byte_430
 	STA	byte_36A
 	LDA	byte_42E
-	CLC
-	ADC	byte_431
+	add_to_a byte_431
 	STA	byte_366
 	set byte_367, #0
 	STA	byte_36B
@@ -6852,8 +6830,7 @@ loc_12CC70:
 	STA	byte_31A
 	set objectIdx_318, #$1A
 	LDA	#0
-	CLC
-	ADC	byte_433
+	add_to_a byte_433
 	STA	objMapIdx_316
 	set byte_317, #0
 	JSR	exec_b1_c1_128394
@@ -6956,8 +6933,7 @@ loc_12CDA2:
 	BEQ	loc_12CE00
 	LDA	byte_4A0,Y
 	if_equal_cmp #$FF, loc_12CDEA
-	CLC
-	ADC	#$7E 
+	add_to_a #$7E 
 	STA	text_idx_35C
 	set char_type_id_35D, #0
 	set tilemap_size_307, #8
@@ -7170,8 +7146,7 @@ sub_12CFBA:
 	set ppu_unk_byte_309, #$B
 	set sprite_secondByte_31B, #$7A 
 	LDA	#$7E 
-	CLC
-	ADC	byte_47F
+	add_to_a byte_47F
 	STA	text_idx_35C
 	LDA	#0
 	ADC	#0
@@ -7231,13 +7206,11 @@ loc_12D084:
 	mult_a_by_2
 	TAY
 	LDA	byte_12D11C,Y
-	CLC
-	ADC	byte_547
+	add_to_a byte_547
 	STA	byte_36A
 	INY
 	LDA	byte_12D11C,Y
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	byte_366
 	set byte_36B, #0
 	STA	byte_367
@@ -7267,13 +7240,11 @@ loc_12D0D6:
 	mult_a_by_2
 	TAY
 	LDA	byte_12D114,Y
-	CLC
-	ADC	byte_547
+	add_to_a byte_547
 	STA	byte_36A
 	INY
 	LDA	byte_12D114,Y
-	CLC
-	ADC	#2
+	add_to_a #2
 	STA	byte_366
 	set byte_36B, #0
 	STA	byte_367
@@ -7570,8 +7541,7 @@ sub_12D329:
 	
 	LDA	byte_42E
 	mult_a_by_2
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
 	if_greater_cmp byte_532, loc_12D33A
 	JSR	sub_12D49F
 	RTS
@@ -7584,8 +7554,7 @@ loc_12D33A:
 	TAX
 	set_inx tilemap_size_307, {byte_12E851,X}
 	LDA	byte_12E851,X
-	CLC
-	ADC	#$10
+	add_to_a #$10
 	STA	ppu_unk_byte_309
 	LDY	tilemapTypeUnk_30B
 	LDA	byte_533,Y
@@ -7656,8 +7625,7 @@ loc_12D3D7:
 	if_equal data_3, loc_12D423
 	add_to_byte_clc tilemap_size_307, #4
 	LDA	data_3
-	CLC
-	ADC	#$32 
+	add_to_a #$32 
 	STA	objMapIdx_316
 	set byte_317, #0
 	set byte_31A, #$80 
@@ -7673,8 +7641,7 @@ loc_12D3D7:
 	from_stack data_2
 	from_stack ppu_unk_byte_309
 	PLA
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	tilemap_size_307
 
 loc_12D423:
@@ -7684,8 +7651,7 @@ loc_12D423:
 
 loc_12D434:
 	LDA	data_2
-	CLC
-	ADC	#$32 
+	add_to_a #$32 
 	STA	objMapIdx_316
 	set byte_317, #0
 	set byte_31A, #$84 
@@ -7701,8 +7667,7 @@ loc_12D434:
 	from_stack data_2
 	from_stack ppu_unk_byte_309
 	PLA
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	tilemap_size_307
 
 loc_12D473:
@@ -7713,8 +7678,7 @@ loc_12D473:
 loc_12D484:
 	
 	LDA	ptr_0
-	CLC
-	ADC	#$32 
+	add_to_a #$32 
 	STA	objMapIdx_316
 	set byte_317, #0
 	set byte_31A, #$88 
@@ -7940,12 +7904,9 @@ loc_12D699:
 	set objMapIdx_316, #$30 
 	LDA	byte_372
 	mult_a_by_32
-	CLC
-	ADC	#$84 
-	CLC
-	ADC	byte_547
-	CLC
-	ADC	byte_547
+	add_to_a #$84 
+	add_to_a byte_547
+	add_to_a byte_547
 	STA	tilemap_size_307
 	set ppu_unk_byte_309, #$DC 
 	JSR	sub_12E829
@@ -8170,8 +8131,7 @@ loc_12D897:
 loc_12D8A0:
 	if_not_equal byte_4B4, loc_12D8AF
 	LDA	unk_53B,Y
-	CLC
-	ADC	unk_53B,Y
+	add_to_a {unk_53B,Y}
 	STA	unk_53B,Y
 
 loc_12D8AF:
@@ -8221,8 +8181,7 @@ sub_12D8DD:
 	PHA
 	LDA	byte_42E
 	mult_a_by_2
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
 	if_greater_cmp byte_532, loc_12D900
 	LDX	byte_372
 	set {unk_4D2,X}, #$3A 
@@ -8241,8 +8200,7 @@ loc_12D910:
 	from_stack tilemapTypeUnk_30B
 	LDA	byte_42E
 	mult_a_by_2
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
 	TAY
 	CPY	byte_532
 	BCC	loc_12D946
@@ -8449,8 +8407,7 @@ loc_12DA5E:
 	TXA
 	PHA
 	LDA	byte_533,X
-	CLC
-	ADC	#1
+	add_to_a #1
 	if_not_equal_cmp byte_543, loc_12DABA
 	STX	byte_544
 	set tilemap_size_307, #$10
@@ -8495,10 +8452,8 @@ loc_12DAE4:
 	set objMapIdx_316, #$2F 
 	set tilemap_size_307, #$C4 
 	LDA	#$E0 
-	CLC
-	ADC	byte_547
-	CLC
-	ADC	byte_547
+	add_to_a byte_547
+	add_to_a byte_547
 	STA	ppu_unk_byte_309
 	JSR	sub_12E829
 	JSR	wait_for_vblank_FC95
@@ -8560,8 +8515,7 @@ loc_12DB6C:
 loc_12DB75:
 	LDA	byte_42E
 	mult_a_by_2
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
 	if_greater_cmp byte_532, loc_12DB83
 	RTS
 ; ---------------------------------------------------------------------------
@@ -8605,8 +8559,7 @@ loc_12DBCC:
 	JSR	sub_12ED20
 	LDA	byte_42E
 	mult_a_by_2
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
 	STA	byte_47B
 	LDA	byte_372
 	if_not_equal_cmp #0, loc_12DBEB
@@ -8659,8 +8612,7 @@ locret_12DC30:
 sub_12DC31:
 	
 	LDA	byte_372
-	CLC
-	ADC	#$20 
+	add_to_a #$20 
 	STA	objMapIdx_316
 	set tilemap_size_307, #$80 
 	set ppu_unk_byte_309, #$50 
@@ -8676,8 +8628,7 @@ sub_12DC31:
 
 sub_12DC52:
 	LDA	byte_545
-	CLC
-	ADC	#$1B
+	add_to_a #$1B
 	STA	objMapIdx_316
 	set byte_31A, #$40 
 	set sprite_secondByte_31B, #0
@@ -8761,8 +8712,7 @@ sub_12DCE9:
 	set objMapIdx_316, #$24 
 	set tilemap_size_307, #$90 
 	LDA	#$38 
-	CLC
-	ADC	byte_372
+	add_to_a byte_372
 	STA	ppu_unk_byte_309
 	set byte_31A, #$A0 
 	set sprite_secondByte_31B, #0
@@ -8786,10 +8736,8 @@ sub_12DD0A:
 loc_12DD1E:
 	LDA	byte_42E
 	mult_a_by_4
-	CLC
-	ADC	byte_42C
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
+	add_to_a byte_42C
 	TAY
 	set_iny tilemap_size_307, {byte_12E851,Y}
 	set ppu_unk_byte_309, {byte_12E851,Y}
@@ -8813,8 +8761,7 @@ loc_12DD1E:
 	add_to_byte_clc ppu_unk_byte_309, byte_547
 
 	LDA	tilemap_size_307
-	CLC
-	ADC	#$18
+	add_to_a #$18
 	SEC
 	SBC	byte_547
 	STA	tilemap_size_307
@@ -8826,8 +8773,7 @@ loc_12DD1E:
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	LDA	ppu_unk_byte_309
-	CLC
-	ADC	#$18
+	add_to_a #$18
 	SEC
 	SBC	byte_547
 	STA	ppu_unk_byte_309
@@ -8848,14 +8794,12 @@ loc_12DDE9:
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	LDA	tilemap_size_307
-	CLC
-	ADC	#$18
+	add_to_a #$18
 	SEC
 	SBC	byte_547
 	STA	tilemap_size_307
 	LDA	ppu_unk_byte_309
-	CLC
-	ADC	#$18
+	add_to_a #$18
 	SEC
 	SBC	byte_547
 	STA	ppu_unk_byte_309
@@ -9017,8 +8961,7 @@ sub_12DFA5:
 
 	LDA	byte_42E
 	mult_a_by_2
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
 	TAY
 	set tilemapTypeUnk_30B, {byte_533,Y}
 	LDA	tilemapTypeUnk_30B
@@ -9048,8 +8991,7 @@ loc_12DFD7:
 loc_12DFE8:
 	
 	LDA	tilemapTypeUnk_30B
-	CLC
-	ADC	#1
+	add_to_a #1
 	if_equal_cmp byte_543, sub_12DFFC
 	STA	byte_543
 	STY	byte_544
@@ -9229,8 +9171,7 @@ loc_12E13A:
 
 sub_12E156:
 	
-	CLC
-	ADC	byte_549
+	add_to_a byte_549
 	BCC	loc_12E162
 	set byte_549, #$FF
 	RTS
@@ -9510,12 +9451,10 @@ loc_12E368:
 sub_12E384:
 	LDA	byte_42E
 	mult_a_by_2
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
 	TAY
 	LDA	byte_533,Y
-	CLC
-	ADC	#$3A 
+	add_to_a #$3A 
 	STA	text_idx_35C
 	set char_type_id_35D, #0
 	set byte_364, #7
@@ -9524,8 +9463,7 @@ sub_12E384:
 	JSR	sub_12ED29
 	LDA	byte_42E
 	mult_a_by_2
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
 	TAY
 	LDA	byte_533,Y
 	if_not_equal_cmp #$25, loc_12E3C1
@@ -9700,10 +9638,8 @@ sub_12E4CD:
 loc_12E4EE:
 	LDA	byte_42E
 	mult_a_by_4
-	CLC
-	ADC	byte_42C
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
+	add_to_a byte_42C
 	TAY
 	set_iny tilemap_size_307, {byte_12E851,Y}
 	set ppu_unk_byte_309, {byte_12E851,Y}
@@ -9727,8 +9663,7 @@ loc_12E4EE:
 	add_to_byte_clc tilemap_size_307, #$C
 
 	LDA	ppu_unk_byte_309
-	CLC
-	ADC	#$18
+	add_to_a #$18
 	SEC
 	SBC	byte_547
 	STA	ppu_unk_byte_309
@@ -9752,8 +9687,7 @@ loc_12E4EE:
 	to_stack tilemap_size_307
 	to_stack ppu_unk_byte_309
 	LDA	tilemap_size_307
-	CLC
-	ADC	#$18
+	add_to_a #$18
 	SEC
 	SBC	byte_547
 	STA	tilemap_size_307
@@ -9782,8 +9716,7 @@ loc_12E603:
 	
 	LDX	byte_372
 	LDA	unk_4B6,X
-	CLC
-	ADC	#$14
+	add_to_a #$14
 	STA	text_idx_35C
 	LDA	#2
 	ADC	#0
@@ -9803,8 +9736,7 @@ loc_12E62A:
 	LDA	input_pressed_34A
 	if_not_equal_cmp #4, loc_12E645
 	LDA	byte_372
-	CLC
-	ADC	#1
+	add_to_a #1
 	if_equal_cmp byte_4C1, loc_12E62A
 	INC	byte_372
 	JSR	sub_12ED32
@@ -9868,8 +9800,7 @@ loc_12E6BC:
 	
 	LDX	byte_372
 	LDA	unk_4C2,X
-	CLC
-	ADC	#$99 
+	add_to_a #$99 
 	STA	text_idx_35C
 	LDA	#0
 	ADC	#0
@@ -9895,8 +9826,7 @@ loc_12E6F7:
 	LDA	input_pressed_34A
 	if_not_equal_cmp #4, loc_12E712
 	LDA	byte_372
-	CLC
-	ADC	#1
+	add_to_a #1
 	if_equal_cmp byte_4D0, loc_12E6F7
 	INC	byte_372
 	JSR	sub_12ED32
@@ -9923,8 +9853,7 @@ loc_12E731:
 	JSR	sub_12D21B
 	LDX	byte_372
 	LDA	unk_4C2,X
-	CLC
-	ADC	#$A7 
+	add_to_a #$A7 
 	STA	text_idx_35C
 	LDA	#0
 	ADC	#0
@@ -10070,8 +9999,7 @@ byte_12E869:
 sub_12E8A5:
 	LDA	byte_42E
 	mult_a_by_2
-	CLC
-	ADC	byte_42C
+	add_to_a byte_42C
 	if_greater_cmp byte_532, loc_12E8B5
 	JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
@@ -10089,8 +10017,7 @@ loc_12E8C5:
 	LDA	byte_533,Y
 	if_not_equal_cmp #6, loc_12E923
 	LDA	unk_53B,X
-	CLC
-	ADC	unk_53B,Y
+	add_to_a {unk_53B,Y}
 	if_greater_cmp #$F, loc_12E8FB
 	BEQ	loc_12E8FB
 	LDA	unk_53B,X
@@ -10110,8 +10037,7 @@ loc_12E8C5:
 loc_12E8FB:
 	
 	LDA	unk_53B,X
-	CLC
-	ADC	unk_53B,Y
+	add_to_a {unk_53B,Y}
 	STA	unk_53B,X
 	LDX	byte_47C
 	LDY	byte_532
@@ -10136,8 +10062,7 @@ loc_12E92A:
 	LDA	byte_533,Y
 	if_not_equal_cmp #7, loc_12E988
 	LDA	unk_53B,X
-	CLC
-	ADC	unk_53B,Y
+	add_to_a {unk_53B,Y}
 	if_greater_cmp #6, loc_12E960
 	BEQ	loc_12E960
 	LDA	unk_53B,X
@@ -10157,8 +10082,7 @@ loc_12E92A:
 loc_12E960:
 	
 	LDA	unk_53B,X
-	CLC
-	ADC	unk_53B,Y
+	add_to_a {unk_53B,Y}
 	STA	unk_53B,X
 	LDX	byte_47C
 	LDY	byte_532
@@ -10183,8 +10107,7 @@ loc_12E98F:
 	LDA	byte_533,Y
 	if_not_equal_cmp #8, loc_12E9ED
 	LDA	unk_53B,X
-	CLC
-	ADC	unk_53B,Y
+	add_to_a {unk_53B,Y}
 	if_greater_cmp #6, loc_12E9C5
 	BEQ	loc_12E9C5
 	LDA	unk_53B,X
@@ -10204,8 +10127,7 @@ loc_12E98F:
 loc_12E9C5:
 	
 	LDA	unk_53B,X
-	CLC
-	ADC	unk_53B,Y
+	add_to_a {unk_53B,Y}
 	STA	unk_53B,X
 	LDX	byte_47C
 	LDY	byte_532
@@ -10230,8 +10152,7 @@ loc_12E9F4:
 	LDA	byte_533,Y
 	if_not_equal_cmp #9, loc_12EA52
 	LDA	unk_53B,X
-	CLC
-	ADC	unk_53B,Y
+	add_to_a {unk_53B,Y}
 	if_greater_cmp #6, loc_12EA2A
 	BEQ	loc_12EA2A
 	LDA	unk_53B,X
@@ -10251,8 +10172,7 @@ loc_12E9F4:
 loc_12EA2A:
 	
 	LDA	unk_53B,X
-	CLC
-	ADC	unk_53B,Y
+	add_to_a {unk_53B,Y}
 	STA	unk_53B,X
 	LDX	byte_47C
 	LDY	byte_532
@@ -10811,8 +10731,7 @@ loc_12EE9C:
 ; ---------------------------------------------------------------------------
 
 loc_12EEA7:
-	CLC
-	ADC	#1
+	add_to_a #1
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; End of function sub_12EDF5
@@ -10913,8 +10832,7 @@ loc_12EF54:
 ; ---------------------------------------------------------------------------
 
 loc_12EF5F:
-	CLC
-	ADC	#1
+	add_to_a #1
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; End of function sub_12EEAE
@@ -11102,8 +11020,7 @@ sub_12F168:
 	mult_a_by_2
 	TAY
 	LDA	byte_12F28B,Y
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	byte_36A
 	LDA	byte_372
 	if_equal_cmp #$14, loc_12F1C7
@@ -11133,8 +11050,7 @@ loc_12F1D0:
 	TAY
 	set_iny byte_36A, {byte_12F28B,Y}
 	LDA	byte_12F28B,Y
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	byte_366
 	set byte_36B, #0
 	STA	byte_367
@@ -11148,8 +11064,7 @@ loc_12F1D0:
 	mult_a_by_2
 	TAY
 	LDA	byte_12F28B,Y
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	byte_36A
 	LDA	byte_372
 	if_equal_cmp #$14, loc_12F258
@@ -11166,8 +11081,7 @@ loc_12F258:
 loc_12F261:
 	INY
 	LDA	byte_12F28B,Y
-	CLC
-	ADC	#8
+	add_to_a #8
 	STA	byte_366
 	set byte_36B, #0
 	STA	byte_367
@@ -11215,8 +11129,7 @@ locret_12F2EC:
 loc_12F2ED:
 	
 	LDA	#$4E 
-	CLC
-	ADC	byte_421
+	add_to_a byte_421
 	STA	data_2
 	LDA	#$21 
 	ADC	#0
@@ -11234,8 +11147,7 @@ loc_12F30E:
 
 	LDA	byte_420
 	mult_a_by_2
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, #0
 
@@ -11349,8 +11261,7 @@ locret_12F410:
 
 loc_12F411:
 	LDA	#$3C 
-	CLC
-	ADC	tilemapTypeUnk_30B
+	add_to_a tilemapTypeUnk_30B
 	STA	ptr_0
 	LDA	#$F4 
 	ADC	#0
@@ -11541,8 +11452,7 @@ sub_12F583:
 	set objMapIdx_316, #$3C 
 	LDA	byte_421
 	mult_a_by_8
-	CLC
-	ADC	#$70 
+	add_to_a #$70 
 	STA	byte_36A
 	set byte_366, #$50 
 	set byte_36B, #0

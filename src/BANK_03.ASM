@@ -41,8 +41,7 @@ sub_3F76B:
 	to_stack data_2
 	to_stack data_3
 	LDA	#$5B 
-	CLC
-	ADC	char_type_id_35D
+	add_to_a char_type_id_35D
 	STA	ptr_0
 	LDA	#$80 
 	ADC	#0
@@ -76,16 +75,14 @@ loc_3F7CC:
 	STA	tilemapTypeUnk_30B
 	LDA	byte_361
 	mult_a_by_2
-	CLC
-	ADC	tilemapTypeUnk_30B
+	add_to_a tilemapTypeUnk_30B
 	TAY
 	set tilemapTypeUnk_30B, #0
 
 loc_3F7E3:
 	TYA
 	PHA
-	CLC
-	ADC	tilemapTypeUnk_30B
+	add_to_a tilemapTypeUnk_30B
 	TAY
 	LDA	byte_3F8DA,Y
 	if_not_equal_cmp #0, loc_3F7FE
@@ -137,8 +134,7 @@ loc_3F844:
 	BEQ	loc_3F856
 	LDA	byte_35E
 	mult_a_by_4
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	DEY
 	JMP	loc_3F844
@@ -147,8 +143,7 @@ loc_3F844:
 loc_3F856:
 	LDA	tilemapWidth_308
 	mult_a_by_4
-	CLC
-	ADC	ptr_0
+	add_to_a ptr_0
 	STA	ptr_0
 	set inv_spr_dscr1_30C, #0
 
@@ -302,8 +297,7 @@ loc_3F98D:
 	LSR	A
 	LSR	A
 	LSR	A
-	CLC
-	ADC	tilemap_size_307
+	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_greater_cmp #$20, loc_3F9A9
 	SEC
@@ -315,8 +309,7 @@ loc_3F9A9:
 	LSR	A
 	LSR	A
 	LSR	A
-	CLC
-	ADC	ppu_unk_byte_309
+	add_to_a ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	if_greater_cmp #$1E, loc_3F9C2
 	SEC
@@ -357,17 +350,14 @@ loc_3F9F3:
 loc_3F9F8:
 	CPY	#0
 	BEQ	loc_3FA07
-	CLC
-	ADC	#2
-	CLC
-	ADC	byte_362
+	add_to_a #2
+	add_to_a byte_362
 	DEY
 	JMP	loc_3F9F8
 ; ---------------------------------------------------------------------------
 
 loc_3FA07:
-	CLC
-	ADC	tilemap_size_307
+	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_greater_cmp #$20, loc_3FA18
 	SEC

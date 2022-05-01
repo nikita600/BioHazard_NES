@@ -249,7 +249,6 @@ Enemy2_19D2B:
 		.BYTE $3C,$1F,$F8,$F8,$FC,$BE,$FA,$FE, $E,  4,$E6,$36,$F2,$60,$44, $C
 		.BYTE $F4,$C0
 
-
 EnvObject_1A13D:
 		.BYTE $13,  6,$7F,$FF,$C0,$DF,$DF,$DF,$FF,$FF,$80,$7F,$7F,$7F,$7F,$7F			
 		.BYTE $60,$7F,$FE,$FF,	7,$FF,$FF,$FF,$FF,$FF,	1,$FE,$FE,$FA,$FA,$FA
@@ -271,7 +270,6 @@ EnvObject_1A13D:
 		.BYTE $FE,  0,$E0,$FF,$E0,$E0,$E0,$7F,$3A,$1F,$5F,$60,$7F,$3F,$5F,$20
 		.BYTE $1F,  0,	6,$FE,	6,  6,	6,$FE, $C,$F8,$F8,  0,$F8,$F8,$F8,  0
 		.BYTE $F0,  0
-
 
 BattleUI_1A26F:	
 				.BYTE $F5,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0			

@@ -1,6 +1,5 @@
 ; =============== S U B	R O U T	I N E =======================================
 
-
 wait_for_ppu_data_upload_FC8C:
 	set has_ppu_data_to_upload_6F, #1
 
@@ -9,9 +8,7 @@ loc_FC90:
 	RTS
 ; End of function wait_for_ppu_data_upload_FC8C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 wait_for_vblank_FC95:		
 		
@@ -24,9 +21,7 @@ loc_FC9A:
 	RTS
 ; End of function wait_for_vblank_FC95
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 wait_for_frame_rendered_FCA0:	
 		
@@ -37,9 +32,7 @@ loop_FCA5:
 	RTS
 ; End of function wait_for_frame_rendered_FCA0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 wait_any_input_65k_cycles_FCAB:	
 		
@@ -60,9 +53,7 @@ exit_FCBC:
 	RTS
 ; End of function wait_any_input_65k_cycles_FCAB
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 wait_for_a_pressed_FCBD:	
 	LDA	input_pressed_34A
@@ -70,9 +61,7 @@ wait_for_a_pressed_FCBD:
 	RTS
 ; End of function wait_for_a_pressed_FCBD
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 wait_for_b_pressed_FCC5:	
 	LDA	input_pressed_34A
@@ -80,9 +69,7 @@ wait_for_b_pressed_FCC5:
 	RTS
 ; End of function wait_for_b_pressed_FCC5
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 wait_for_any_input_FCCD:	
 	LDA	input_pressed_34A
@@ -90,9 +77,7 @@ wait_for_any_input_FCCD:
 	RTS
 ; End of function wait_for_any_input_FCCD
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 wait_for_n_65k_cycles_FCD5:	
 		
@@ -105,9 +90,7 @@ wait_for_n_65k_cycles_FCD5:
 	RTS
 ; End of function wait_for_n_65k_cycles_FCD5
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 wait_65k_cycles_FCE0:		
 	PHA
@@ -135,9 +118,7 @@ revert_stack_FCEF:
 	RTS
 ; End of function wait_65k_cycles_FCE0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 nmi_sub_FCF5:		
 	set byte_218, #$F0 
@@ -149,9 +130,7 @@ nmi_sub_FCF5:
 	RTS
 ; End of function nmi_sub_FCF5
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_FD0A:		
 	if_equal byte_43E, loc_FD31
@@ -177,14 +156,11 @@ loc_FD40:
 	add_to_byte_clc byte_203, #8
 	add_to_byte_clc byte_207, #8
 
-
 locret_FD52:		
 	RTS
 ; End of function sub_FD0A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 NMI_FD53:		
 	PHP
@@ -247,9 +223,7 @@ return_FDCA:
 	RTI
 ; End of function NMI_FD53
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 ppu_upset_data_FDCB:		
 	if_not_equal has_ppu_data_to_upload_6F, loc_FDD0
@@ -303,9 +277,7 @@ loc_FE1B:
 	RTS
 ; End of function ppu_upset_data_FDCB
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 ppu_update_FE20:		
 	set _PPU_CTRL, ppu_ctrl_31F
@@ -315,9 +287,7 @@ ppu_update_FE20:
 	RTS
 ; End of function ppu_update_FE20
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 input_update_FE39:		
 	TYA
@@ -334,9 +304,7 @@ input_update_FE39:
 	RTS
 ; End of function input_update_FE39
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 read_pad0_FE51:		
 	LDX	#1
@@ -358,9 +326,7 @@ loc_FE5E:
 	RTS
 ; End of function read_pad0_FE51
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 input_sub_FE71:		
 	LDX	#0
@@ -372,9 +338,7 @@ input_sub_FE71:
 	RTS
 ; End of function input_sub_FE71
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 ppu_update_ctrl_mask_FE86:	
 	set _PPU_CTRL, ppu_ctrl_31F
@@ -382,9 +346,7 @@ ppu_update_ctrl_mask_FE86:
 	RTS
 ; End of function ppu_update_ctrl_mask_FE86
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 ppu_reset_ctrl_mask_FE93:	
 	set _PPU_CTRL, #0
@@ -392,9 +354,7 @@ ppu_reset_ctrl_mask_FE93:
 	RTS
 ; End of function ppu_reset_ctrl_mask_FE93
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_FE9C:		
 	INC	byte_353
@@ -427,9 +387,7 @@ loc_FED2:
 	RTS
 ; End of function sub_FE9C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 scroll_update_FED6:		
 	INC	scroll_offset_x_479
@@ -467,9 +425,7 @@ locret_FF2D:
 	RTS
 ; End of function scroll_update_FED6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 apu_update_music_FF2E:		
 	to_stack bank_command_346

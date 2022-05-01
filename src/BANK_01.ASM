@@ -1,7 +1,6 @@
 ; Segment type:Pure code
 
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
 ; SPRITE_BANK
@@ -61,25 +60,20 @@ Sprites:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 load_tiles_state_1F25D:
 	JSR	load_palettes_to_ram_1F268
 	JSR	upload_tiles_to_ppu_1F32A
 	RTS
 ; End of function load_tiles_state_1F25D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 load_obj_tilemap_1F264:
 	JSR	sub_1F3B1
 	RTS
 ; End of function load_obj_tilemap_1F264
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 load_palettes_to_ram_1F268:
 	LDA	sprite_type_306
@@ -141,12 +135,9 @@ return_1F2F2:
 	RTS
 ; End of function load_palettes_to_ram_1F268
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 get_sprite_palette_ptr_1F2F3:
-
 	set_ptr SpritePalettes_18079
 
 get_offset_F2FB:
@@ -163,12 +154,9 @@ get_ptr_F30A:
 	RTS
 ; End of function get_sprite_palette_ptr_1F2F3
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 copy_sprite_palette_to_ram_1F316:
-
 	LDY	#0
 	LDA	sprPalIdx_319
 	mult_a_by_4
@@ -182,9 +170,7 @@ loc_1F31E:
 	RTS
 ; End of function copy_sprite_palette_to_ram_1F316
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 upload_tiles_to_ppu_1F32A:
 	LDA	sprite_type_306
@@ -220,12 +206,9 @@ locret_1F36C:
 	RTS
 ; End of function upload_tiles_to_ppu_1F32A
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 load_sprite_to_vram_1F36D:
-
 	set_ptr_iny Sprites
 
 get_offset_F376:; spriteIdx
@@ -258,9 +241,7 @@ get_sprite_descr2_F397:
 	RTS
 ; End of function load_sprite_to_vram_1F36D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_1F3B1:
 	JSR	load_sprite_tilemap_1F3B8
@@ -268,12 +249,9 @@ sub_1F3B1:
 	RTS
 ; End of function sub_1F3B1
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 load_sprite_tilemap_1F3B8:
-
 	set_iny data_2, #$5F 
 	set data_3, #$82 
 
@@ -316,9 +294,7 @@ add_offset_F408:
 	RTS
 ; End of function load_sprite_tilemap_1F3B8
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_1F416:
 	LDA	#0
@@ -488,12 +464,9 @@ loc_1F5F9:
 	RTS
 ; End of function sub_1F416
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_1F5FF:
-
 	set byte_36C, ppu_scroll_x_304
 	set byte_36D, ppu_unk_byte_302
 	set byte_368, ppu_scroll_y_305
@@ -540,13 +513,11 @@ loc_1F66B:
 ; ---------------------------------------------------------------------------
 
 loc_1F68D:
-
 	set ppu_unk_byte_309, #$F0 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_1F693:
-
 	LDA	byte_36A
 	SEC
 	SBC	byte_36C
@@ -560,9 +531,7 @@ loc_1F693:
 	RTS
 ; End of function sub_1F5FF
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_1F6AB:
 	TYA
@@ -584,12 +553,9 @@ loc_1F6CE:
 	RTS
 ; End of function sub_1F6AB
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 upload_to_ppu_1F6D1:
-
 	LDY	#0
 	set tilemapWidth_308, {(data_2),Y}
 

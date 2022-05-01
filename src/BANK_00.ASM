@@ -733,15 +733,12 @@ gameplay_loop_8759:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_8762:
 	JSR	sub_8766
 	RTS
 ; End of function sub_8762
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_8766:
 	set sprite_length_30F, #0
@@ -788,9 +785,7 @@ locret_87CD:
 	RTS
 ; End of function sub_8766
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_87CE:
 	to_stack byte_36A
@@ -848,9 +843,7 @@ loc_8854:
 	RTS
 ; End of function sub_87CE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_8865:
 	LDA	byte_313
@@ -879,17 +872,13 @@ loc_88B0:
 	add_to_byte_clc byte_36A, #8
 	add_to_byte byte_36B, #0
 
-
 locret_88C1:
 	RTS
 ; End of function sub_8865
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 gameplay_update_88C2:
-
 ; FUNCTION CHUNK AT 8177 SIZE 000005EB BYTES
 
 	if_equal input_pressed_34A, gameplay_update_8930
@@ -1288,9 +1277,7 @@ a_not_pressed_8C5E:
 	RTS
 ; End of function gameplay_update_88C2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_8C5F:
 	
@@ -1392,9 +1379,7 @@ loc_8D15:
 	RTS
 ; End of function sub_8C5F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_8D27:
 	
@@ -1496,9 +1481,7 @@ loc_8DDE:
 	RTS
 ; End of function sub_8D27
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_8DF0:
 	
@@ -1603,9 +1586,7 @@ loc_8EA7:
 	RTS
 ; End of function sub_8DF0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_8EB9:
 	
@@ -1712,9 +1693,7 @@ loc_8F76:
 	RTS
 ; End of function sub_8EB9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 start_button_pressed_8F88:
 	set byte_629, #$FF
@@ -1738,9 +1717,7 @@ loc_8FBB:
 	RTS
 ; End of function start_button_pressed_8F88
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 select_button_pressed_8FC4:
 	LDA	entry_idx_300
@@ -1754,9 +1731,7 @@ locret_8FDB:
 	RTS
 ; End of function select_button_pressed_8FC4
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 a_button_pressed_8FDC:
 	set byte_629, #$FF
@@ -1778,7 +1753,6 @@ loc_900B:
 ; ---------------------------------------------------------------------------
 
 loc_900F:
-
 	set tilemapTypeUnk_30B, #$2D 
 	JSR	exec_b12_com48_ECA6
 	LDX	byte_434
@@ -1791,7 +1765,6 @@ loc_900F:
 ; ---------------------------------------------------------------------------
 
 loc_902F:
-
 	LDA	tilemapTypeUnk_30B
 	if_not_equal_cmp #2, loc_9042
 	LDA	byte_5F9
@@ -1799,7 +1772,6 @@ loc_902F:
 	set tilemapTypeUnk_30B, #$3B 
 
 loc_9042:
-
 	LDA	tilemapTypeUnk_30B
 	if_not_equal_cmp #$1F, loc_9061
 	to_stack tilemapTypeUnk_30B
@@ -1812,7 +1784,6 @@ loc_9042:
 ; ---------------------------------------------------------------------------
 
 loc_9061:
-
 	LDA	tilemapTypeUnk_30B
 	if_greater_cmp #$3C, loc_90BB
 	LDA	tilemapTypeUnk_30B
@@ -1850,7 +1821,6 @@ locret_90BA:
 ; ---------------------------------------------------------------------------
 
 loc_90BB:
-
 	LDA	tilemapTypeUnk_30B
 	if_greater_cmp #$47, loc_911D
 	LDA	tilemapTypeUnk_30B
@@ -1895,7 +1865,6 @@ loc_911D:
 	if_equal sprite_length_30F, locret_9131
 
 loc_9125:
-
 	JSR	exec_b12_cA_EABE
 	set cur_obj_idx_unk_43A, byte_434
 	JSR	sub_DBE2
@@ -1904,9 +1873,7 @@ locret_9131:
 	RTS
 ; End of function a_button_pressed_8FDC
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_9132:
 	set byte_357, #$18
@@ -1934,9 +1901,7 @@ sub_9132:
 	RTS
 ; End of function sub_9132
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_9195:
 	if_equal byte_433, sub_91B6
@@ -1952,9 +1917,7 @@ loc_91AF:
 	RTS
 ; End of function sub_9195
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_91B6:
 	
@@ -1972,9 +1935,7 @@ loc_91D1:
 	RTS
 ; End of function sub_91B6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_91D8:
 	if_equal byte_433, loc_91DE
@@ -2037,9 +1998,7 @@ locret_9260:
 	RTS
 ; End of function sub_91D8
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_9261:
 	JSR	sub_C7C7
@@ -2135,9 +2094,7 @@ loc_9354:
 	RTS
 ; End of function sub_9261
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_935A:
 	set byte_31A, #0
@@ -2153,9 +2110,7 @@ sub_935A:
 	RTS
 ; End of function sub_935A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_938D:
 	set byte_200, #$F0 
@@ -2165,9 +2120,7 @@ sub_938D:
 	RTS
 ; End of function sub_938D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_939C:
 	
@@ -2233,9 +2186,7 @@ locret_9449:
 	RTS
 ; End of function sub_939C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_944A:
 	set sprite_length_30F, #0
@@ -2305,9 +2256,7 @@ loc_94CA:
 	RTS
 ; End of function sub_944A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_94D3:
 	LDA	byte_315
@@ -2362,7 +2311,6 @@ byte_9537:.BYTE $11, $F,$10,$10
 byte_953B:.BYTE	0,$20,$30,$3C,$50,$3C,$60 
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_9542:
 	JSR	sub_9881
@@ -2553,9 +2501,7 @@ loc_971B:
 	RTS
 ; End of function sub_9542
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_9725:
 	set byte_435, #0
@@ -2650,9 +2596,7 @@ loc_97ED:
 	RTS
 ; End of function sub_9725
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_97F8:
 	JSR	sub_C7C7
@@ -2667,9 +2611,7 @@ sub_97F8:
 	RTS
 ; End of function sub_97F8
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_9824:
 	LDA	byte_313
@@ -2698,14 +2640,11 @@ loc_986F:
 	add_to_byte_clc byte_36A, #$10
 	add_to_byte byte_36B, #0
 
-
 locret_9880:
 	RTS
 ; End of function sub_9824
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_9881:
 	LDA	byte_435
@@ -2749,9 +2688,7 @@ locret_98F1:
 	RTS
 ; End of function sub_9881
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_98F2:
 	LDA	byte_313
@@ -2780,17 +2717,13 @@ loc_993D:
 	add_to_byte_clc byte_36A, #$10
 	add_to_byte byte_36B, #0
 
-
 locret_994E:
 	RTS
 ; End of function sub_98F2
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_994F:
-
 	set sprite_length_30F, #0
 	LDX	#0
 
@@ -2825,9 +2758,7 @@ locret_9999:
 	RTS
 ; End of function sub_994F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_999A:
 	
@@ -2936,9 +2867,7 @@ locret_9AD8:
 	RTS
 ; End of function sub_999A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 show_hidden_copyright_9AD9:
 	set text_idx_35C, #$47 
@@ -3038,15 +2967,12 @@ byte_BD1C:.BYTE	2,$16,$21
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_BD1F:
 	set tilemapWidth_308, #0
 	set byte_31A, #0
 ; End of function sub_BD1F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_BD29:
 	add_to_byte_clc tilemapWidth_308, byte_31A
@@ -3062,9 +2988,7 @@ loc_BD36:
 	RTS
 ; End of function sub_BD29
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_BD45:
 	LDX	#0
@@ -3158,9 +3082,7 @@ loc_BDF7:
 	RTS
 ; End of function sub_BD45
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_BDFE:
 	set inv_spr_dscr1_30C, #4
@@ -3255,7 +3177,6 @@ loc_BEAF:
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; End of function sub_BDFE
-
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -3534,7 +3455,6 @@ byte_C6D1:.BYTE $20
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 load_image_C6D2:
 	
 	set byte_430, #0
@@ -3598,9 +3518,7 @@ loc_C762:
 	RTS
 ; End of function load_image_C6D2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_C77D:
 	
@@ -3627,9 +3545,7 @@ loc_C78E:
 	RTS
 ; End of function sub_C77D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_C7C7:
 	
@@ -3668,12 +3584,9 @@ loc_C814:
 	RTS
 ; End of function sub_C7C7
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 load_tiles_to_ppu_C83A:
-
 	set bank_command_346, #0
 	set bank_to_344, #sprites_1
 	set bank_from_343, #0
@@ -3681,9 +3594,7 @@ load_tiles_to_ppu_C83A:
 	RTS
 ; End of function load_tiles_to_ppu_C83A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 loadt_obj_tilemaps_C84D:
 	set bank_command_346, #1
@@ -3693,9 +3604,7 @@ loadt_obj_tilemaps_C84D:
 	RTS
 ; End of function loadt_obj_tilemaps_C84D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b1_c2_C860:
 	set bank_command_346, #2
@@ -3705,9 +3614,7 @@ exec_b1_c2_C860:
 	RTS
 ; End of function exec_b1_c2_C860
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_C873:
 	to_stack entry_idx_300
@@ -3747,9 +3654,7 @@ loc_C8BD:
 	RTS
 ; End of function sub_C873
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b2_c0_C8C2:
 	set bank_command_346, #0
@@ -3759,9 +3664,7 @@ exec_b2_c0_C8C2:
 	RTS
 ; End of function exec_b2_c0_C8C2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b2_c1_C8D5:
 	set bank_command_346, #1
@@ -3771,9 +3674,7 @@ exec_b2_c1_C8D5:
 	RTS
 ; End of function exec_b2_c1_C8D5
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b2_c2_text_cuts_C8E8:
 	
@@ -3784,9 +3685,7 @@ exec_b2_c2_text_cuts_C8E8:
 	RTS
 ; End of function exec_b2_c2_text_cuts_C8E8
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b2_c3_C8FB:
 	set bank_command_346, #3
@@ -3796,12 +3695,9 @@ exec_b2_c3_C8FB:
 	RTS
 ; End of function exec_b2_c3_C8FB
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 exec_b2_c4_C90E:
-
 	set bank_command_346, #4
 	set bank_to_344, #text_2
 	set bank_from_343, #0
@@ -3809,9 +3705,7 @@ exec_b2_c4_C90E:
 	RTS
 ; End of function exec_b2_c4_C90E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_C921:
 	to_stack entry_idx_300
@@ -3825,7 +3719,6 @@ sub_C921:
 
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
-
 
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
@@ -3859,9 +3752,7 @@ loc_C985:
 	RTS
 ; End of function sub_C921
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_C98A:
 	to_stack tilemapTypeUnk_30B
@@ -3892,19 +3783,14 @@ loc_C9B7:
 	RTS
 ; End of function sub_C98A
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 ppu_upset_data_1000_C9BF:
-
 	set_ptr _PPU_PAT_TBL_1
 
 ; End of function ppu_upset_data_1000_C9BF
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 ppu_upset_data_C9C7:
 	LDY	#0
@@ -3937,9 +3823,7 @@ loc_C9E9:
 	RTS
 ; End of function ppu_upset_data_C9C7
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_CA14:
 	TYA
@@ -3967,9 +3851,7 @@ loc_CA45:
 	RTS
 ; End of function sub_CA14
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b4_c0_CA4B:
 	set bank_command_346, #0
@@ -3979,9 +3861,7 @@ exec_b4_c0_CA4B:
 	RTS
 ; End of function exec_b4_c0_CA4B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b4_c1_CA5E:
 	set bank_command_346, #1
@@ -3991,9 +3871,7 @@ exec_b4_c1_CA5E:
 	RTS
 ; End of function exec_b4_c1_CA5E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b4_c2_CA71:
 	set bank_command_346, #2
@@ -4003,9 +3881,7 @@ exec_b4_c2_CA71:
 	RTS
 ; End of function exec_b4_c2_CA71
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 cache_prev_data_CA84:
 	set image_id_4A4, entry_idx_300
@@ -4017,12 +3893,9 @@ cache_prev_data_CA84:
 	RTS
 ; End of function cache_prev_data_CA84
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_CAA9:
-
 	set byte_357, #$18
 	set byte_358, #0
 	set byte_359, #$1C
@@ -4076,9 +3949,7 @@ a_pressed_CB3D:
 	RTS
 ; End of function sub_CAA9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_CB58:
 	set byte_31A, #0
@@ -4123,9 +3994,7 @@ off_CBBE:.WORD loc_D03C
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_CBC2:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$46, locret_CBE1
 	LDA	byte_560
@@ -4143,9 +4012,7 @@ locret_CBE1:
 	RTS
 ; End of function sub_CBC2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_CBE2:
 	to_stack bank_from_343
@@ -4167,7 +4034,6 @@ byte_CBFD:
 	.BYTE $32,$2D,$FF,$FF,$FF,$FF,$FF,$FF,$30,$33
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_CC17:
 	
@@ -4213,9 +4079,7 @@ loc_CC51:
 	RTS
 ; End of function sub_CC17
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 ppu_upload_unk_data_CC5D:
 	
@@ -4252,16 +4116,13 @@ unk_CC9A:.BYTE $30 ; 0
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_CCA0:
 	JSR	sub_CD66
 	JSR	objects_func_CED2
 	RTS
 ; End of function sub_CCA0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 objects_func_CCA7:
 	
@@ -4321,7 +4182,6 @@ loc_CD27:
 ; ---------------------------------------------------------------------------
 
 loc_CD2A:
-
 	TYA
 	PHA
 	LDY	obj_idx_unk_462
@@ -4342,16 +4202,13 @@ loc_CD2A:
 	INX
 
 inc_obj_idx_CD5F:
-
 	INY
 	CPY	objArraySize_373
 	BCC	next_object_CCEC
 	RTS
 ; End of function objects_func_CCA7
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_CD66:
 	if_not_equal obj_idx_unk_462, loc_CD6C
@@ -4500,9 +4357,7 @@ locret_CED1:
 	RTS
 ; End of function sub_CD66
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 objects_func_CED2:
 	
@@ -4532,12 +4387,9 @@ loc_CEDC:
 	RTS
 ; End of function objects_func_CED2
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_CF13:
-
 	to_stack text_idx_35C
 	to_stack char_type_id_35D
 	TXA
@@ -4555,17 +4407,13 @@ sub_CF13:
 	RTS
 ; End of function sub_CF13
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 nullsub_6:
 	RTS
 ; End of function nullsub_6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_CF42:
 	
@@ -4675,9 +4523,7 @@ locret_D01E:
 	RTS
 ; End of function sub_CF42
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D01F:
 	to_stack tilemapTypeUnk_30B
@@ -4705,7 +4551,6 @@ byte_D041:.BYTE  $B, $B, $D, $D, $A,  6,	6,  8,	8,  5,	1,  1,	2,  2,	0,  1
 	.BYTE	1,  2,	2,  0
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D055:
 	
@@ -4749,9 +4594,7 @@ loc_D097:
 	RTS
 ; End of function sub_D055
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D0AD:
 	to_stack tilemapTypeUnk_30B
@@ -4873,9 +4716,7 @@ locret_D1ED:
 	RTS
 ; End of function sub_D0AD
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D1EE:
 	TXA
@@ -4905,9 +4746,7 @@ sub_D1EE:
 	RTS
 ; End of function sub_D1EE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D22C:
 	set text_idx_35C, #$C2 
@@ -4945,9 +4784,7 @@ sub_D22C:
 	RTS
 ; End of function sub_D22C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D2B2:
 	LDX	#0
@@ -5022,9 +4859,7 @@ locret_D358:
 	RTS
 ; End of function sub_D2B2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D359:
 	set tilemapTypeUnk_30B, #5
@@ -5073,9 +4908,7 @@ sub_D359:
 	RTS
 ; End of function sub_D359
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D409:
 	if_not_equal objArraySize_373, loc_D40F
@@ -5217,9 +5050,7 @@ loc_D51A:
 	RTS
 ; End of function sub_D409
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 objects_func_D52A:
 	
@@ -5261,7 +5092,6 @@ loc_D57F:
 ; ---------------------------------------------------------------------------
 
 loc_D591:
-
 	sub_from_sec byte_366, #8
 	sub_from_byte byte_367, #0
 
@@ -5299,7 +5129,6 @@ loc_D5D8:
 	DEX
 
 loc_D5F0:
-
 	CPX	#0
 	BEQ	loc_D602
 	add_to_byte_clc objMapIdx_316, {unk_389,Y}
@@ -5311,7 +5140,6 @@ loc_D602:
 	add_to_byte_clc objMapIdx_316, {unk_37F,Y}
 
 loc_D60C:
-
 	LDA	count_unk_464
 	if_greater_cmp #$F, loc_D629
 	add_to_byte_clc {unk_37F,Y}, #1
@@ -5320,11 +5148,9 @@ loc_D60C:
 	set {unk_37F,Y}, #0
 
 loc_D629:
-
 	JSR	loadt_obj_tilemaps_C84D
 
 loc_D62C:
-
 	from_stack_to_y
 	INY
 	CPY	objArraySize_373
@@ -5333,7 +5159,6 @@ loc_D62C:
 ; ---------------------------------------------------------------------------
 
 loc_D637:
-
 	LDA	count_unk_464
 	if_greater_cmp #$F, locret_D643
 	set count_unk_464, #0
@@ -5342,9 +5167,7 @@ locret_D643:
 	RTS
 ; End of function objects_func_D52A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 objects_func_D644:
 	
@@ -5384,7 +5207,6 @@ loc_D67F:
 	JSR	nullsub_1
 
 loc_D689:
-
 	LDA	count_unk_466
 	if_greater_cmp #$A, loc_D69F
 	LDA	objIdxArray_375,X
@@ -5422,12 +5244,10 @@ loc_D6D9:
 	JSR	sub_DC88
 
 loc_D6EA:
-
 	JMP	loc_D811
 ; ---------------------------------------------------------------------------
 
 loc_D6ED:
-
 	LDA	count_unk_463
 	if_greater_cmp #$64, loc_D702
 	set byte_352, #4
@@ -5450,7 +5270,6 @@ loc_D702:
 ; ---------------------------------------------------------------------------
 
 loc_D730:
-
 	to_stack byte_313
 	TXA
 	PHA
@@ -5532,7 +5351,6 @@ loc_D800:
 	add_to_byte {array_unk_3CF,X}, #0
 
 loc_D811:
-
 	INC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	if_equal_cmp objArraySize_373, loc_D81F
@@ -5540,7 +5358,6 @@ loc_D811:
 ; ---------------------------------------------------------------------------
 
 loc_D81F:
-
 	LDA	count_unk_463
 	if_greater_cmp #$64, loc_D82B
 	set count_unk_463, #0
@@ -5579,9 +5396,7 @@ locret_D873:
 	RTS
 ; End of function objects_func_D644
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D874:
 	set sprite_length_30F, #0
@@ -5605,9 +5420,7 @@ locret_D893:
 	RTS
 ; End of function sub_D874
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D894:
 	
@@ -5636,9 +5449,7 @@ locret_D8D7:
 	RTS
 ; End of function sub_D894
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D8D8:
 	set byte_36C, {array_unk_3C5,X}
@@ -5650,9 +5461,7 @@ sub_D8D8:
 	RTS
 ; End of function sub_D8D8
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D8FD:
 	LDA	tilemap_size_307
@@ -5664,9 +5473,7 @@ sub_D8FD:
 	RTS
 ; End of function sub_D8FD
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D913:
 	LDA	ppu_unk_byte_309
@@ -5678,9 +5485,7 @@ sub_D913:
 	RTS
 ; End of function sub_D913
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D929:
 	to_stack tilemapWidth_308
@@ -5692,9 +5497,7 @@ sub_D929:
 	RTS
 ; End of function sub_D929
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D94A:
 	to_stack tilemapHeight_30A
@@ -5706,9 +5509,7 @@ sub_D94A:
 	RTS
 ; End of function sub_D94A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D96B:
 	LDA	byte_36C
@@ -5746,9 +5547,7 @@ loc_D9B3:
 	RTS
 ; End of function sub_D96B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D9B9:
 	set byte_313, {array_unk_3A7,X}
@@ -5761,9 +5560,7 @@ sub_D9B9:
 	RTS
 ; End of function sub_D9B9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_D9E4:
 	LDA	byte_36A
@@ -5777,7 +5574,6 @@ sub_D9E4:
 	add_to_byte_clc byte_36A, #$10
 	add_to_byte byte_36B, #0
 
-
 loc_DA0B:
 	LDA	byte_366
 	AND	#$F
@@ -5790,14 +5586,11 @@ loc_DA0B:
 	add_to_byte_clc byte_366, #$10
 	add_to_byte byte_367, #0
 
-
 locret_DA32:
 	RTS
 ; End of function sub_D9E4
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DA33:
 	if_not_equal objArraySize_373, loc_DA3E
@@ -5869,9 +5662,7 @@ loc_DAC7:
 	RTS
 ; End of function sub_DA33
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DACD:
 	JSR	sub_C7C7
@@ -5880,9 +5671,7 @@ sub_DACD:
 	RTS
 ; End of function sub_DACD
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DADA:
 	JSR	sub_C7C7
@@ -6004,9 +5793,7 @@ loc_DBDC:
 	RTS
 ; End of function sub_DADA
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DBE2:
 	
@@ -6034,9 +5821,7 @@ loc_DC13:
 	RTS
 ; End of function sub_DBE2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DC1C:
 	
@@ -6045,9 +5830,7 @@ sub_DC1C:
 	RTS
 ; End of function sub_DC1C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DC25:
 	LDA	array_unk_39D,X
@@ -6064,9 +5847,7 @@ locret_DC40:
 	RTS
 ; End of function sub_DC25
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DC41:
 	LDA	array_unk_39D,X
@@ -6085,9 +5866,7 @@ locret_DC63:
 	RTS
 ; End of function sub_DC41
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DC64:
 	LDA	array_unk_39D,X
@@ -6110,7 +5889,6 @@ nullsub_1:
 	RTS
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DC88:
 	to_stack inv_spr_dscr1_30C
@@ -6181,9 +5959,7 @@ loc_DD3B:
 	RTS
 ; End of function sub_DC88
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DD40:
 	add_to_byte_clc byte_366, #$C
@@ -6237,7 +6013,6 @@ locret_DDC5:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_DDC9:
 	
 	JSR	sub_C7C7
@@ -6247,12 +6022,9 @@ sub_DDC9:
 	RTS
 ; End of function sub_DDC9
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_DDDA:
-
 	LDA	byte_313
 	if_not_equal_cmp #0, loc_DE22
 	LDA	tilemapHeight_30A
@@ -6358,9 +6130,7 @@ locret_DEF9:
 	RTS
 ; End of function sub_DDDA
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 map_update_DEFA:
 	to_stack entry_idx_300
@@ -6388,7 +6158,6 @@ read_tilemap_DF23:
 	JSR	tilemap_read_next_chunk_F472
 
 load_from_C558_DF4B:
-
 	set_ptr unknown_entries_C558
 
 	set data_2, entry_idx_300
@@ -6399,7 +6168,6 @@ load_from_C558_DF4B:
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
 
-
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
@@ -6407,7 +6175,6 @@ load_from_C558_DF4B:
 	set entry_idx_300, {(data_2),Y}
 
 load_from_BCB6_DF7F:
-
 	set_ptr unknown_data_BCB6
 
 	LDA	entry_idx_300
@@ -6424,7 +6191,6 @@ load_from_BCB6_DF7F:
 ; ---------------------------------------------------------------------------
 
 loc_DFA7:
-
 	set sprite_length_30F, #0
 
 loc_DFAC:
@@ -6436,9 +6202,7 @@ loc_DFAC:
 	RTS
 ; End of function map_update_DEFA
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_DFC1:
 	set byte_36E, #$FF
@@ -6453,7 +6217,6 @@ get_offset_DFCE:
 
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
-
 
 get_ptr_DFE8:
 	LDY	#0
@@ -7267,9 +7030,7 @@ loc_E741:
 	RTS
 ; End of function sub_DFC1
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_E747:
 	set byte_36F, #0
@@ -7337,9 +7098,7 @@ loc_E7E7:
 	RTS
 ; End of function sub_E747
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_E7F8:
 	to_stack ptr_0
@@ -7360,9 +7119,7 @@ sub_E7F8:
 	RTS
 ; End of function sub_E7F8
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_E827:
 	to_stack ptr_0
@@ -7375,7 +7132,6 @@ sub_E827:
 	add_to_byte_clc ptr_0, tilemapFrameCount_30D
 	add_to_byte ptr_1, byte_30E
 
-
 	LDY	#0
 	set {(ptr_0),Y}, #$FF
 	from_stack_to_y
@@ -7384,9 +7140,7 @@ sub_E827:
 	RTS
 ; End of function sub_E827
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_E855:
 	set_iny data_2, {(ptr_0),Y}
@@ -7439,9 +7193,7 @@ loc_E8D1:
 	RTS
 ; End of function sub_E855
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_E8F8:
 	to_stack data_2
@@ -7471,24 +7223,19 @@ nullsub_2:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_E925:
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	JMP	(data_2)
 ; End of function sub_E925
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 nullsub_4:
 	RTS
 ; End of function nullsub_4
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_E932:
 	LDA	byte_471
@@ -7506,9 +7253,7 @@ loc_E949:
 	RTS
 ; End of function sub_E932
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_E954:
 	LDA	byte_471
@@ -7522,9 +7267,7 @@ loc_E968:
 	RTS
 ; End of function sub_E954
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_E96E:
 	LDA	byte_471
@@ -7561,9 +7304,7 @@ locret_E9B9:
 	RTS
 ; End of function sub_E96E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_E9BA:
 	LDA	byte_471
@@ -7594,9 +7335,7 @@ loc_E9EC:
 	RTS
 ; End of function sub_E9BA
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_E9F2:
 	LDA	byte_550
@@ -7614,9 +7353,7 @@ loc_E9FF:
 	RTS
 ; End of function sub_E9F2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EA14:
 	LDA	byte_550
@@ -7642,7 +7379,6 @@ locret_EA3B:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_EA3C:
 	set tilemapTypeUnk_30B, #1
 	JSR	sub_D0AD
@@ -7657,98 +7393,76 @@ sub_EA3C:
 	RTS
 ; End of function sub_EA3C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c0_EA6D:
 	set bank_command_346, #0
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c0_EA6D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 nullsub_5:
 	RTS
 ; End of function nullsub_5
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c1_EA76:
 	set bank_command_346, #1
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c1_EA76
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c2_EA7E:
 	set bank_command_346, #2
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c2_EA7E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c3_EA86:
 	set bank_command_346, #3
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c3_EA86
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c4_EA8E:
 	set bank_command_346, #4
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c4_EA8E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c5_EA96:
 	set bank_command_346, #5
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c5_EA96
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c6_EA9E:
 	set bank_command_346, #6
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c6_EA9E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c7_EAA6:
 	set bank_command_346, #7
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c7_EAA6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c8_EAAE:
 	set bank_command_346, #8
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c8_EAAE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c9_EAB6:
 	
@@ -7756,36 +7470,28 @@ exec_b12_c9_EAB6:
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c9_EAB6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_cA_EABE:
 	set bank_command_346, #$A
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_cA_EABE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_cB_EAC6:
 	set bank_command_346, #$B
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_cB_EAC6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_cC_EACE:
 	set bank_command_346, #$C
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_cC_EACE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_cD_EAD6:
 	
@@ -7793,207 +7499,161 @@ exec_b12_cD_EAD6:
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_cD_EAD6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_cE_EADE:
 	set bank_command_346, #$E
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_cE_EADE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_cF_EAE6:
 	set bank_command_346, #$F
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_cF_EAE6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EAEE:
 	set bank_command_346, #$10
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EAEE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c11_EAF6:
 	set bank_command_346, #$11
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c11_EAF6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EAFE:
 	set bank_command_346, #$12
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EAFE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB06:
 	set bank_command_346, #$13
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB06
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB0E:
 	set bank_command_346, #$14
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB0E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB16:
 	set bank_command_346, #$15
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB16
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB1E:
 	set bank_command_346, #$16
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB1E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c17_EB26:
 	set bank_command_346, #$17
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c17_EB26
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB2E:
 	set bank_command_346, #$18
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB2E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB36:
 	set bank_command_346, #$19
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB36
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB3E:
 	set bank_command_346, #$1A
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB3E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB46:
 	set bank_command_346, #$1B
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB46
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB4E:
 	set bank_command_346, #$1C
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB4E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB56:
 	set bank_command_346, #$1D
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB56
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB5E:
 	set bank_command_346, #$1E
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB5E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB66:
 	set bank_command_346, #$1F
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB66
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB6E:
 	set bank_command_346, #$20 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB6E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB76:
 	set bank_command_346, #$21 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB76
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB7E:
 	set bank_command_346, #$22 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB7E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB86:
 	set bank_command_346, #$23 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB86
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c24_EB8E:
 	
@@ -8001,316 +7661,245 @@ exec_b12_c24_EB8E:
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c24_EB8E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB96:
 	set bank_command_346, #$25 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB96
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EB9E:
 	set bank_command_346, #$26 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EB9E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBA6:
 	set bank_command_346, #$27 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBA6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBAE:
 	set bank_command_346, #$28 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBAE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBB6:
 	set bank_command_346, #$2A 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBB6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBBE:
 	set bank_command_346, #$2B 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBBE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBC6:
 	set bank_command_346, #$2C 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBC6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBCE:
 	set bank_command_346, #$2D 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBCE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBD6:
 	set bank_command_346, #$2E 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBD6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBDE:
 	set bank_command_346, #$2F 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBDE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBE6:
 	set bank_command_346, #$30 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBE6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBEE:
 	set bank_command_346, #$31 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBEE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBF6:
 	set bank_command_346, #$32 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBF6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EBFE:
 	set bank_command_346, #$33 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EBFE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC06:
 	set bank_command_346, #$34 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC06
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC0E:
 	set bank_command_346, #$35 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC0E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC16:
 	set bank_command_346, #$36 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC16
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC1E:
 	set bank_command_346, #$37 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC1E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC26:
 	set bank_command_346, #$38 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC26
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC2E:
 	set bank_command_346, #$39 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC2E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC36:
 	set bank_command_346, #$3A 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC36
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC3E:
 	set bank_command_346, #$3B 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC3E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC46:
 	set bank_command_346, #$3C 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC46
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC4E:
 	set bank_command_346, #$3D 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC4E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC56:
 	set bank_command_346, #$3E 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC56
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC5E:
 	set bank_command_346, #$3F 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC5E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC66:
 	set bank_command_346, #$40 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC66
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC6E:
 	set bank_command_346, #$41 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC6E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC76:
 	set bank_command_346, #$42 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC76
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC7E:
 	set bank_command_346, #$43 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC7E
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_EC86:
-
 	set bank_command_346, #$44 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC86
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_c45_EC8E:
 	set bank_command_346, #$45 
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c45_EC8E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC96:
 	set bank_command_346, #$46 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC96
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EC9E:
 	set bank_command_346, #$47 
 	JMP	exec_b12_comm_ECBE
 ; End of function sub_EC9E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b12_com48_ECA6:
 	
@@ -8327,19 +7916,15 @@ exec_b12_c4A_ECB6:
 ; ---------------------------------------------------------------------------
 
 exec_b12_comm_ECBE:
-
 	set bank_to_344, #banks_12
 	set bank_from_343, #0
 	JSR	bank_switch_8000
 	RTS
 ; End of function exec_b12_com48_ECA6
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_ECCC:
-
 	JSR	sub_ED7C
 	LDX	ppu_unk_byte_302
 	LDY	ppu_unk_byte_303
@@ -8404,9 +7989,7 @@ sub_ECCC:
 	RTS
 ; End of function sub_ECCC
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_ED7C:
 	LDA	ppu_scroll_y_305
@@ -8422,9 +8005,7 @@ sub_ED7C:
 	RTS
 ; End of function sub_ED7C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_ED8F:
 	TYA
@@ -8444,9 +8025,7 @@ loc_ED9F:
 	RTS
 ; End of function sub_ED8F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EDA2:
 	add_to_byte_clc data_2, tilemap_size_307
@@ -8455,9 +8034,7 @@ sub_EDA2:
 	RTS
 ; End of function sub_EDA2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EDB1:
 	TYA
@@ -8482,9 +8059,7 @@ locret_EDD5:
 	RTS
 ; End of function sub_EDB1
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_EDD6:
 	if_equal tilemapHeight_30A, exit_EDE3
@@ -8553,12 +8128,9 @@ write_tilemap_to_ppu_EE4D:
 	RTS
 ; End of function sub_EDD6
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_EE72:
-
 	JSR	sub_ED7C
 	LSR	ppu_unk_byte_309
 	LSR	ppu_unk_byte_309
@@ -8799,9 +8371,7 @@ locret_F09C:
 	RTS
 ; End of function sub_EE72
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 ppu_unk_func_F09D:
 	LDA	ppu_unk_byte_303
@@ -8815,7 +8385,6 @@ ppu_unk_func_F09D:
 ; ---------------------------------------------------------------------------
 
 loc_F0B9:
-
 	set_data _PPU_ATTR_TBL_0
 	set_ptr _PPU_ATTR_TBL_1
 
@@ -8896,9 +8465,7 @@ wait_for_ppu_finished_F18F:
 	RTS
 ; End of function ppu_unk_func_F09D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F194:
 	add_to_data $20
@@ -8906,9 +8473,7 @@ sub_F194:
 	RTS
 ; End of function sub_F194
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F1A2:
 	
@@ -9034,9 +8599,7 @@ loc_F2E0:
 	RTS
 ; End of function sub_F1A2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F2E4:
 	
@@ -9097,9 +8660,7 @@ loc_F37A:
 	RTS
 ; End of function sub_F2E4
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F37E:
 	
@@ -9165,9 +8726,7 @@ loc_F42B:
 	RTS
 ; End of function sub_F37E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F42F:
 	LDX	ppu_unk_byte_302
@@ -9209,9 +8768,7 @@ locret_F471:
 	RTS
 ; End of function sub_F42F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 tilemap_read_next_chunk_F472:
 	
@@ -9226,7 +8783,6 @@ tilemap_read_next_chunk_F472:
 	to_stack entry_idx_300
 
 get_tilemap_entries_ptr_F486:
-
 	set_ptr tilemap_entries_C000
 
 get_tilemap_entry_offset_F48E:
@@ -9237,7 +8793,6 @@ get_tilemap_entry_offset_F48E:
 	
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
-
 
 get_tilemap_entry_ptr_F4A8:
 	LDY	#0
@@ -9284,9 +8839,7 @@ exitFunc_F4EF:
 	RTS
 ; End of function tilemap_read_next_chunk_F472
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F504:
 	TYA
@@ -9305,9 +8858,7 @@ locret_F51C:
 	RTS
 ; End of function sub_F504
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F51D:
 	TYA
@@ -9330,9 +8881,7 @@ loc_F53B:
 	RTS
 ; End of function sub_F51D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F54A:
 	TYA
@@ -9356,9 +8905,7 @@ loc_F54E:
 	RTS
 ; End of function sub_F54A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F57B:
 	
@@ -9367,9 +8914,7 @@ sub_F57B:
 	RTS
 ; End of function sub_F57B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F589:
 	
@@ -9389,9 +8934,7 @@ locret_F5A1:
 	RTS
 ; End of function sub_F589
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F5A2:
 	LSR	ppu_unk_byte_309
@@ -9401,9 +8944,7 @@ sub_F5A2:
 	RTS
 ; End of function sub_F5A2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F5AF:
 	LDA	byte_313
@@ -9488,9 +9029,7 @@ locret_F640:
 	RTS
 ; End of function sub_F5AF
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F641:
 	LDA	ppu_unk_byte_303
@@ -9510,9 +9049,7 @@ loc_F653:
 	RTS
 ; End of function sub_F641
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F65C:
 	JSR	sub_EE72
@@ -9609,9 +9146,7 @@ loc_F70A:
 	RTS
 ; End of function sub_F65C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F767:
 	set ppu_unk_byte_309, byte_357
@@ -9672,9 +9207,7 @@ loc_F7B0:
 	RTS
 ; End of function sub_F767
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 text_unk_func_F80C:
 	set tilemapTypeUnk_30B, #0
@@ -9719,7 +9252,6 @@ loc_F85A:
 	LDY	#$10
 
 loc_F85C:
-
 	if_equal tilemapHeight_30A, loc_F865
 	INY
 	INY
@@ -9757,9 +9289,7 @@ locret_F8A0:
 	RTS
 ; End of function text_unk_func_F80C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F8A1:
 	to_stack ppu_unk_byte_309
@@ -9811,9 +9341,7 @@ loc_F918:
 	RTS
 ; End of function sub_F8A1
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F921:
 	TXA
@@ -9830,9 +9358,7 @@ sub_F921:
 	RTS
 ; End of function sub_F921
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F942:
 	TXA
@@ -9854,9 +9380,7 @@ sub_F942:
 	RTS
 ; End of function sub_F942
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F972:
 	LDY	ppu_unk_byte_309
@@ -9875,9 +9399,7 @@ locret_F98A:
 	RTS
 ; End of function sub_F972
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F98B:
 	LDX	ppu_unk_byte_302
@@ -9911,9 +9433,7 @@ locret_F9C1:
 	RTS
 ; End of function sub_F98B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_F9C2:
 	to_stack ppu_unk_byte_309
@@ -9980,9 +9500,7 @@ loc_FA3B:
 	RTS
 ; End of function sub_F9C2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_FA61:
 	LDA	ppu_scroll_x_304
@@ -10027,9 +9545,7 @@ loc_FA99:
 	RTS
 ; End of function sub_FA61
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_FAAF:
 	TXA
@@ -10119,9 +9635,7 @@ loc_FB63:
 	RTS
 ; End of function sub_FAAF
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 upload_text_palette_to_ppu_FB85:
 	set text_unk_35B, #$C0 
@@ -10152,7 +9666,6 @@ loc_FB8C:
 
 ; ---------------------------------------------------------------------------
 	.include "text/bank_00_textbox.asm"
-
 
 Common_Code_00:
 	.include "common/common_funcs.asm"

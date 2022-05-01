@@ -7,7 +7,6 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
@@ -35,7 +34,6 @@ off_3805B:
 	.include "text/bank_03_text.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_3F76B:
 	to_stack data_2
@@ -199,7 +197,6 @@ byte_3F8DA:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_3F8FA:
 	to_stack inv_spr_dscr1_30C
 	set inv_spr_dscr1_30C, #0
@@ -214,9 +211,7 @@ loc_3F903:
 	RTS
 ; End of function sub_3F8FA
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_3F918:
 	to_stack inv_spr_dscr1_30C
@@ -235,9 +230,7 @@ loc_3F921:
 	RTS
 ; End of function sub_3F918
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_3F938:
 	to_stack inv_spr_dscr1_30C
@@ -252,9 +245,7 @@ loc_3F941:
 	RTS
 ; End of function sub_3F938
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_3F955:
 	to_stack inv_spr_dscr1_30C
@@ -269,9 +260,7 @@ loc_3F95E:
 	RTS
 ; End of function sub_3F955
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_3F972:
 	LDY	tilemapHeight_30A
@@ -366,9 +355,7 @@ loc_3FA18:
 	RTS
 ; End of function sub_3F972
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_3FA27:
 	LDA	ppu_unk_byte_309
@@ -395,7 +382,6 @@ loc_3FA48:
 locret_3FA55:
 	RTS
 ; End of function sub_3FA27
-
 
 Common_Code_03:
 	.include "common/common_funcs.asm"

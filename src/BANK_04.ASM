@@ -7,7 +7,6 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
@@ -76,9 +75,7 @@ InvItemSprites_9817:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 load_palette_4F323:
-
 	set_ptr Palette_4809D
 
 	set data_2, #0
@@ -112,9 +109,7 @@ loc_4F366:
 	RTS
 ; End of function load_palette_4F323
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 load_inventory_sprite_4F372:
 	JSR	get_inventory_sprite_ptr_4F3E7
@@ -134,7 +129,6 @@ loc_4F381:
 	add_to_byte_clc ptr_0, #$10
 	add_to_byte ptr_1, #0
 
-
 	DEC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	if_equal_cmp #0, locret_4F3B2
@@ -145,9 +139,7 @@ locret_4F3B2:
 	RTS
 ; End of function load_inventory_sprite_4F372
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_4F3B3:
 	JSR	get_inventory_sprite_ptr_4F3E7
@@ -176,12 +168,9 @@ loc_4F3DC:
 	RTS
 ; End of function sub_4F3B3
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 get_inventory_sprite_ptr_4F3E7:
-
 	set_ptr InvItemSprites_9817
 
 get_offset_4F3EF:
@@ -193,7 +182,6 @@ get_offset_4F3EF:
 	STA	ptr_0
 	add_to_byte ptr_1, data_2
 
-
 get_sprite_ptr_4F404:
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
@@ -204,7 +192,6 @@ get_sprite_descr_4F40F:
 	set inv_spr_dscr1_30C, {(data_2),Y}
 
 skip_2_byte_4f416:
-
 	add_to_data $2
 
 	set ptr_0, byte_31E
@@ -223,12 +210,9 @@ skip_2_byte_4f416:
 	RTS
 ; End of function get_inventory_sprite_ptr_4F3E7
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 load_inventory_sprite_tilemap_4F443:
-
 	set_ptr TilemapsUnk_8445
 
 get_offset_4F44B:
@@ -239,7 +223,6 @@ get_offset_4F44B:
 	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, data_2
-
 
 get_ptr_4F460:
 	LDY	#0
@@ -255,7 +238,6 @@ get_tilemap_offset_4F46B:
 	STA	data_2
 	add_to_byte data_3, ptr_0
 
-
 get_tilemap_ptr_4F480:
 	LDY	#0
 	set_iny ptr_0, {(data_2),Y}
@@ -268,7 +250,6 @@ get_tilemap_descr_4F48B:
 
 	add_to_byte_clc ptr_0, #2
 	add_to_byte ptr_1, #0
-
 
 	set data_2, #0
 	set data_3, #$20 
@@ -332,9 +313,7 @@ locret_4F526:
 	RTS
 ; End of function load_inventory_sprite_tilemap_4F443
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_4F527:
 		
@@ -363,7 +342,6 @@ loc_4F54A:
 	add_to_byte_clc ptr_0, tilemapWidth_308
 	add_to_byte ptr_1, #0
 
-
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
 	if_greater_cmp inv_spr_dscr1_30C, loc_4F538
@@ -371,9 +349,7 @@ loc_4F54A:
 	RTS
 ; End of function sub_4F527
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_4F583:
 	set has_ppu_data_to_upload_6F, #0
@@ -392,7 +368,6 @@ loc_4F5A0:
 	add_to_byte_clc data_2, tilemapTypeUnk_30B
 	add_to_byte data_3, #0
 
-
 	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
 	add_to_byte ptr_1, #0
 
@@ -400,7 +375,6 @@ loc_4F5A0:
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_4F583
-
 
 
 Common_Code_04:

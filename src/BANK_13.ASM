@@ -7,7 +7,6 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
@@ -68,7 +67,6 @@ loc_13808A:
 ; ---------------------------------------------------------------------------
 
 loc_13808D:
-
 	set bank_command_346, #$FF
 	set bank_to_344, bank_from_343
 	JMP	bank_switch_8000
@@ -92,7 +90,6 @@ BossImages_129826:
 	.include "sprites/bank_13_sprites.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 music_func_13C028:
 	LDA	tilemapTypeUnk_30B
@@ -183,9 +180,7 @@ loc_13D46D:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 music_func_13D484:
-
 ; FUNCTION CHUNK AT D425 SIZE 0000005F BYTES
 
 	if_not_equal apu_unk_76D, loc_13D425
@@ -235,9 +230,7 @@ loc_13D4D4:
 	RTS
 ; End of function music_func_13D484
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 apu_update_13D4F9:
 	if_equal apu_unk_737, locret_13D533
@@ -260,13 +253,10 @@ apu_update_13D4F9:
 	DEC	apu_unk_75B
 
 locret_13D533:
-
 	RTS
 ; End of function apu_update_13D4F9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 apu_func_13D534:
 	LDX	apu_unk_742
@@ -286,7 +276,6 @@ apu_func_13D534:
 	JSR	apu_func_13D575
 
 locret_13D55B:
-
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -309,12 +298,9 @@ loc_13D565:
 	RTS
 ; End of function apu_func_13D534
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 apu_func_13D575:
-
 	if_not_equal {apu_unk_758,X}, locret_13D55B
 	LDA	apu_dat_13D421,X
 	AND	apu_unk_737
@@ -331,7 +317,6 @@ loc_13D58D:
 	LDY	apu_unk_75C,X
 
 loc_13D59A:
-
 	LDA	(apu_unk_FE),Y
 	if_greater_cmp #$FC, loc_13D5F5
 	BEQ	loc_13D60D
@@ -352,7 +337,6 @@ loc_13D5AE:
 	set tri_count_746, {(apu_unk_FE),Y}
 
 loc_13D5BA:
-
 	INY
 	TYA
 	STA	apu_unk_75C,X
@@ -414,7 +398,6 @@ loc_13D62A:
 	set apu_unk_747, {(apu_unk_FE),Y}
 
 loc_13D636:
-
 	INY
 	TYA
 	STA	apu_unk_75C,X
@@ -440,7 +423,6 @@ loc_13D657:
 ; ---------------------------------------------------------------------------
 
 loc_13D662:
-
 	CPX	#2
 	BCS	loc_13D67C
 	LDA	apu_pulse1_env_744,X
@@ -454,7 +436,6 @@ loc_13D674:
 	JSR	music_func_13DB65
 
 loc_13D67C:
-
 	set apu_unk_FE, apu_unk_76A
 	set apu_unk_FF, apu_unk_76B
 	LDA	apu_unk_760,X
@@ -594,9 +575,7 @@ loc_13D7AB:
 	RTS
 ; End of function apu_func_13D575
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 music_func_13D7C3:
 	LDX	apu_unk_711
@@ -616,7 +595,6 @@ music_func_13D7C3:
 	JSR	music_func_13D804
 
 locret_13D7EA:
-
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -639,12 +617,9 @@ loc_13D7F4:
 	RTS
 ; End of function music_func_13D7C3
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 music_func_13D804:
-
 	if_not_equal {apu_unk_727,X}, locret_13D7EA
 	LDA	apu_dat_13D421,X
 	AND	apu_unk_706
@@ -661,7 +636,6 @@ loc_13D81C:
 	LDY	apu_unk_72B,X
 
 loc_13D829:
-
 	LDA	(apu_unk_FE),Y
 	if_greater_cmp #$FC, loc_13D884
 	BEQ	loc_13D89C
@@ -682,7 +656,6 @@ loc_13D83D:
 	set apu_unk_715, {(apu_unk_FE),Y}
 
 loc_13D849:
-
 	INY
 	TYA
 	STA	apu_unk_72B,X
@@ -744,7 +717,6 @@ loc_13D8B9:
 	set apu_unk_716, {(apu_unk_FE),Y}
 
 loc_13D8C5:
-
 	INY
 	TYA
 	STA	apu_unk_72B,X
@@ -770,7 +742,6 @@ loc_13D8E6:
 ; ---------------------------------------------------------------------------
 
 loc_13D8F1:
-
 	CPX	#2
 	BCS	loc_13D90B
 	LDA	pulse1_env_713,X
@@ -784,7 +755,6 @@ loc_13D903:
 	JSR	music_func_13DB8A
 
 loc_13D90B:
-
 	set apu_unk_FE, apu_ptr_768
 	set apu_unk_FF, apu_ptr_769
 	LDA	apu_unk_72F,X
@@ -843,7 +813,6 @@ loc_13D975:
 	STA	_APU_STATUS
 
 locret_13D987:
-
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -928,9 +897,7 @@ loc_13DA43:
 	RTS
 ; End of function music_func_13D804
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 apu_update_pulse1_13DA5B:
 	LDX	#0
@@ -938,9 +905,7 @@ apu_update_pulse1_13DA5B:
 	LDX	#1
 ; End of function apu_update_pulse1_13DA5B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 apu_update_pulse1_13DA62:
 	LDA	apu_dat_13D421,X
@@ -972,7 +937,6 @@ loc_13DA99:
 	set {apu_unk_756,X}, #1
 
 loc_13DAB3:
-
 	LDA	apu_pulse1_env_744,X
 	AND	#$F0 
 	ORA	apu_unk_705
@@ -990,13 +954,10 @@ loc_13DAB3:
 	set {_APU_PULSE1_ENV,Y}, {apu_pulse1_env_744,X}
 
 locret_13DADB:
-
 	RTS
 ; End of function apu_update_pulse1_13DA62
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 music_func_13DADC:
 	LDX	#0
@@ -1004,9 +965,7 @@ music_func_13DADC:
 	LDX	#1
 ; End of function music_func_13DADC
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 music_func_13DAE3:
 	LDA	apu_dat_13D421,X
@@ -1038,7 +997,6 @@ loc_13DB1A:
 	set {apu_unk_725,X}, #1
 
 loc_13DB34:
-
 	LDA	pulse1_env_713,X
 	AND	#$F0 
 	ORA	apu_unk_705
@@ -1059,16 +1017,12 @@ loc_13DB34:
 	set {_APU_PULSE1_ENV,Y}, {pulse1_env_713,X}
 
 locret_13DB64:
-
 	RTS
 ; End of function music_func_13DAE3
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 music_func_13DB65:
-
 	LDA	apu_unk_752,X
 	if_lower_cmp #4, locret_13DB89
 	mult_a_by_2
@@ -1093,12 +1047,9 @@ locret_13DB89:
 	RTS
 ; End of function music_func_13DB65
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 music_func_13DB8A:
-
 	LDA	apu_unk_721,X
 	if_lower_cmp #4, locret_13DBAE
 	mult_a_by_2
@@ -1123,9 +1074,7 @@ locret_13DBAE:
 	RTS
 ; End of function music_func_13DB8A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 apu_func_13DBAF:
 	LDX	#0
@@ -1172,16 +1121,13 @@ loc_13DBFD:
 	STA	apu_unk_704
 
 loc_13DC18:
-
 	INX
 	CPX	#4
 	BCC	loc_13DBB1
 	RTS
 ; End of function apu_func_13DBAF
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 music_update_state_13DC1E:
 	JSR	apu_update_13D4F9
@@ -1205,7 +1151,6 @@ music_update_state_13DC1E:
 	DEC	apu_unk_72A
 
 locret_13DC5B:
-
 	RTS
 ; End of function music_update_state_13DC1E
 
@@ -1312,7 +1257,6 @@ byte_13DF14:.BYTE $4B,$8C,$CD,$30
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 load_spr_palette_13DF18:
 	
 	set_ptr Palette_1380AC
@@ -1348,9 +1292,7 @@ loc_13DF5B:
 	RTS
 ; End of function load_spr_palette_13DF18
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 copy_boss_spr_to_ppu_13DF67:
 	JSR	load_boss_sprite_13DFDC
@@ -1370,7 +1312,6 @@ loc_13DF76:
 	add_to_byte_clc ptr_0, #$10
 	add_to_byte ptr_1, #0
 
-
 	DEC	inv_spr_dscr1_30C
 	LDA	inv_spr_dscr1_30C
 	if_equal_cmp #0, locret_13DFA7
@@ -1381,9 +1322,7 @@ locret_13DFA7:
 	RTS
 ; End of function copy_boss_spr_to_ppu_13DF67
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 load_sprite_func_13DFA8:
 	JSR	load_boss_sprite_13DFDC
@@ -1400,7 +1339,6 @@ loc_13DFAB:
 ; ---------------------------------------------------------------------------
 
 loc_13DFC2:
-
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_16
 	STA	tilemapTypeUnk_30B
@@ -1413,9 +1351,7 @@ loc_13DFD1:
 	RTS
 ; End of function load_sprite_func_13DFA8
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 load_boss_sprite_13DFDC:
 	
@@ -1453,12 +1389,9 @@ load_boss_sprite_13DFDC:
 	RTS
 ; End of function load_boss_sprite_13DFDC
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 load_sprite_map_13E038:
-
 	set_ptr SpriteMaps_138454
 
 	set data_2, #0
@@ -1489,7 +1422,6 @@ load_sprite_map_13E038:
 
 	add_to_byte_clc ptr_0, #2
 	add_to_byte ptr_1, #0
-
 
 	set data_2, #0
 	set data_3, #$20 
@@ -1538,7 +1470,6 @@ loc_13E0EE:
 ; ---------------------------------------------------------------------------
 
 loc_13E100:
-
 	if_equal ppu_unk_byte_309, loc_13E110
 	JSR	sprites_func_13E11C
 	DEC	ppu_unk_byte_309
@@ -1553,12 +1484,9 @@ locret_13E11B:
 	RTS
 ; End of function load_sprite_map_13E038
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sprites_func_13E11C:
-
 	set tilemapTypeUnk_30B, #0
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
@@ -1584,7 +1512,6 @@ loc_13E13F:
 	add_to_byte_clc ptr_0, tilemapWidth_308
 	add_to_byte ptr_1, #0
 
-
 	INC	tilemapTypeUnk_30B
 	LDA	tilemapTypeUnk_30B
 	if_greater_cmp inv_spr_dscr1_30C, loc_13E12D
@@ -1592,9 +1519,7 @@ loc_13E13F:
 	RTS
 ; End of function sprites_func_13E11C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sprites_func_13E178:
 	set has_ppu_data_to_upload_6F, #0
@@ -1613,7 +1538,6 @@ loc_13E195:
 	add_to_byte_clc data_2, tilemapTypeUnk_30B
 	add_to_byte data_3, #0
 
-
 	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
 	add_to_byte ptr_1, #0
 
@@ -1621,7 +1545,6 @@ loc_13E195:
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sprites_func_13E178
-
 
 Common_Code_13:
 	.include "common/common_funcs.asm"

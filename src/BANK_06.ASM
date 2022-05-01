@@ -7,7 +7,6 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
@@ -36,7 +35,6 @@ GFX_6805B:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 upload_gfx_to_ppu_6F863:
 	
 	set_ptr GFX_6805B
@@ -49,7 +47,6 @@ upload_gfx_to_ppu_6F863:
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
 
-
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
@@ -60,9 +57,7 @@ upload_gfx_to_ppu_6F863:
 	RTS
 ; End of function upload_gfx_to_ppu_6F863
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 upload_gfx_to_ppu_6F89C:
 	LDY	#0
@@ -84,7 +79,6 @@ loc_6F8BE:
 	
 	add_to_byte_clc ptr_0, #$10
 	add_to_byte ptr_1, #0
-
 
 	add_to_data $10
 

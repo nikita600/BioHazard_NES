@@ -7,7 +7,6 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
@@ -112,7 +111,6 @@ CommandPtrs_12805B:
 	.WORD return_1282EE
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 command_0_1280FB:
 	JSR	sub_12B1B0
@@ -507,16 +505,13 @@ loc_1282E8:
 ; ---------------------------------------------------------------------------
 
 return_1282EE:
-
 	from_stack bank_from_343
 	set bank_command_346, #$FF
 	set bank_to_344, bank_from_343
 	JMP	bank_switch_8000
 ; End of function command_0_1280FB
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b2_c1_128300:
 	
@@ -527,9 +522,7 @@ exec_b2_c1_128300:
 	RTS
 ; End of function exec_b2_c1_128300
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b2_c3_128313:
 	
@@ -540,9 +533,7 @@ exec_b2_c3_128313:
 	RTS
 ; End of function exec_b2_c3_128313
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128326:
 	
@@ -560,9 +551,7 @@ sub_128326:
 	RTS
 ; End of function sub_128326
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128358:
 	
@@ -586,9 +575,7 @@ loc_128387:
 	RTS
 ; End of function sub_128358
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b1_c1_128394:
 	
@@ -599,9 +586,7 @@ exec_b1_c1_128394:
 	RTS
 ; End of function exec_b1_c1_128394
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b4_c2_1283A7:
 	
@@ -612,9 +597,7 @@ exec_b4_c2_1283A7:
 	RTS
 ; End of function exec_b4_c2_1283A7
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_1283BA:
 	set image_id_4A4, entry_idx_300
@@ -626,9 +609,7 @@ sub_1283BA:
 	RTS
 ; End of function sub_1283BA
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b2_c2_1283DF:
 	set bank_command_346, #2
@@ -638,9 +619,7 @@ exec_b2_c2_1283DF:
 	RTS
 ; End of function exec_b2_c2_1283DF
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b2_c4_1283F2:
 	
@@ -651,9 +630,7 @@ exec_b2_c4_1283F2:
 	RTS
 ; End of function exec_b2_c4_1283F2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b2_c5_128405:
 	set bank_command_346, #5
@@ -663,9 +640,7 @@ exec_b2_c5_128405:
 	RTS
 ; End of function exec_b2_c5_128405
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_c3_128418:
 	
@@ -676,9 +651,7 @@ exec_b0_c3_128418:
 	RTS
 ; End of function exec_b0_c3_128418
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_c4_12842B:
 	
@@ -689,9 +662,7 @@ exec_b0_c4_12842B:
 	RTS
 ; End of function exec_b0_c4_12842B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_c5_12843E:
 	to_stack bank_from_343
@@ -703,9 +674,7 @@ exec_b0_c5_12843E:
 	RTS
 ; End of function exec_b0_c5_12843E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_c6_128459:
 	to_stack bank_from_343
@@ -717,9 +686,7 @@ exec_b0_c6_128459:
 	RTS
 ; End of function exec_b0_c6_128459
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_c7_128474:
 	to_stack bank_from_343
@@ -731,9 +698,7 @@ exec_b0_c7_128474:
 	RTS
 ; End of function exec_b0_c7_128474
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_c8_12848F:
 	to_stack bank_from_343
@@ -745,9 +710,7 @@ exec_b0_c8_12848F:
 	RTS
 ; End of function exec_b0_c8_12848F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_c9_1284AA:
 	
@@ -760,9 +723,7 @@ exec_b0_c9_1284AA:
 	RTS
 ; End of function exec_b0_c9_1284AA
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_cA_1284C5:
 	
@@ -775,9 +736,7 @@ exec_b0_cA_1284C5:
 	RTS
 ; End of function exec_b0_cA_1284C5
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_cB_1284E0:
 	
@@ -790,9 +749,7 @@ exec_b0_cB_1284E0:
 	RTS
 ; End of function exec_b0_cB_1284E0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_cC_1284FB:
 	to_stack bank_from_343
@@ -804,9 +761,7 @@ exec_b0_cC_1284FB:
 	RTS
 ; End of function exec_b0_cC_1284FB
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_cD_128516:
 	to_stack bank_from_343
@@ -818,9 +773,7 @@ exec_b0_cD_128516:
 	RTS
 ; End of function exec_b0_cD_128516
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128531:
 	
@@ -868,7 +821,6 @@ loc_128571:
 	.include "music\\bank_12_apu.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12873A:
 	LDA	byte_46F
@@ -1069,9 +1021,7 @@ locret_128954:
 	RTS
 ; End of function sub_12873A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128955:
 	
@@ -1139,9 +1089,7 @@ ppu_clear_ram_1289A1:
 	set count_unk_465, #0
 ; End of function sub_128955
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128A1A:
 	STA	count_unk_466
@@ -1247,9 +1195,7 @@ loc_128B01:
 	RTS
 ; End of function sub_128A1A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128B0F:
 	set byte_366, #$80 
@@ -1266,9 +1212,7 @@ sub_128B0F:
 	RTS
 ; End of function sub_128B0F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128B43:
 	if_not_equal byte_472, loc_128B4B
@@ -1391,9 +1335,7 @@ loc_128BFB:
 	RTS
 ; End of function sub_128B43
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128CC0:
 	LDA	byte_543
@@ -1424,9 +1366,7 @@ loc_128CD5:
 	RTS
 ; End of function sub_128CC0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128D20:
 	LDA	byte_543
@@ -1498,9 +1438,7 @@ loc_128D8F:
 	RTS
 ; End of function sub_128D20
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128E24:
 	set byte_366, #$A0 
@@ -1551,9 +1489,7 @@ loc_128EA6:
 	RTS
 ; End of function sub_128E24
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128EC2:
 	set byte_366, #$B8 
@@ -1579,9 +1515,7 @@ loc_128F0E:
 	RTS
 ; End of function sub_128EC2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_128F1B:
 	set byte_354, #0
@@ -1623,7 +1557,6 @@ byte_128F59:.BYTE	0,  0,	0,  0,	0,  0,	0,  1,	1,  1,	1,  1,	1,  1,	2,  2
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_128FC1:
 	LDA	count_unk_467
 	if_greater_cmp #$32, locret_129004
@@ -1659,7 +1592,6 @@ byte_129006:.BYTE	6,  1,	4,  1,	3,  1,	4,  1,	4,  1,	4,  1,	4,  1,	4,  2
 	.BYTE	5,  1,	6
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_129019:
 	if_not_equal byte_440, loc_12902C
@@ -1752,7 +1684,6 @@ locret_1290A8:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_1290C3:
 	set sprite_length_30F, #0
 	if_not_equal byte_472, loc_1290EA
@@ -1823,9 +1754,7 @@ locret_129154:
 	RTS
 ; End of function sub_1290C3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_129155:
 	set scroll_offset_y_47A, #$10
@@ -1851,9 +1780,7 @@ locret_129185:
 	RTS
 ; End of function sub_129155
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_129186:
 	LDA	inv_sprite_idx_31C
@@ -1868,9 +1795,7 @@ loc_12918F:
 	RTS
 ; End of function sub_129186
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_129196:
 	set byte_477, #0
@@ -1927,9 +1852,7 @@ locret_1291F4:
 	RTS
 ; End of function sub_129196
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_1291F5:
 	LDX	cur_obj_idx_unk_43A
@@ -1981,7 +1904,6 @@ off_129269:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 com_29_start_new_game_12A646:
 	LDX	#0
 	LDA	#0
@@ -2002,7 +1924,6 @@ loc_12A64A:
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
 
-
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
@@ -2013,7 +1934,6 @@ loc_12A64A:
 ; ---------------------------------------------------------------------------
 
 loc_12A68B:
-
 	add_to_data $1
 
 	set inv_spr_dscr1_30C, #0
@@ -2048,7 +1968,6 @@ loc_12A69D:
 	set {array_unk_3CF,X}, byte_56A
 
 loc_12A70C:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$3C, loc_12A732
 	LDA	objIdxArray_375,X
@@ -2059,7 +1978,6 @@ loc_12A70C:
 	set {array_unk_3CF,X}, byte_56E
 
 loc_12A732:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$5C, loc_12A758
 	LDA	objIdxArray_375,X
@@ -2070,7 +1988,6 @@ loc_12A732:
 	set {array_unk_3CF,X}, byte_572
 
 loc_12A758:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$93, loc_12A79E
 	LDA	objIdxArray_375,X
@@ -2086,18 +2003,15 @@ loc_12A758:
 ; ---------------------------------------------------------------------------
 
 loc_12A781:
-
 	set byte_56F, #$40 
 
 loc_12A786:
-
 	set {array_unk_3C5,X}, byte_56F
 	set {array_unk_3BB,X}, byte_570
 	set {array_unk_3D9,X}, byte_571
 	set {array_unk_3CF,X}, byte_572
 
 loc_12A79E:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$5D, loc_12A7F7
 	LDA	objIdxArray_375,X
@@ -2114,7 +2028,6 @@ loc_12A79E:
 ; ---------------------------------------------------------------------------
 
 loc_12A7CB:
-
 	set byte_573, #0
 	set byte_574, #1
 	set byte_575, #$60 
@@ -2127,7 +2040,6 @@ loc_12A7DF:
 	set {array_unk_3CF,X}, byte_576
 
 loc_12A7F7:
-
 	LDA	objIdxArray_375,X
 	if_not_equal_cmp #6, loc_12A809
 	set {obj_array_unk_415,X}, {array_unk_39D,X}
@@ -2170,7 +2082,6 @@ loc_12A84D:
 	LDX	#0
 
 loc_12A85F:
-
 	LDA	objIdxArray_375,X
 	if_equal_cmp #3, loc_12A86D
 	INX
@@ -2197,9 +2108,7 @@ locret_12A892:
 	RTS
 ; End of function com_29_start_new_game_12A646
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12A893:
 	set byte_36F, #0
@@ -2219,7 +2128,6 @@ sub_12A893:
 ; ---------------------------------------------------------------------------
 
 loc_12A8C1:
-
 	add_to_data $1
 
 	set inv_spr_dscr1_30C, #0
@@ -2268,9 +2176,7 @@ loc_12A933:
 	RTS
 ; End of function sub_12A893
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12A944:
 	to_stack ptr_0
@@ -2283,7 +2189,6 @@ sub_12A944:
 	add_to_byte_clc ptr_0, tilemapFrameCount_30D
 	add_to_byte ptr_1, byte_30E
 
-
 	LDY	#0
 	set tilemapFrameCount_30D, {(ptr_0),Y}
 	from_stack_to_y
@@ -2292,9 +2197,7 @@ sub_12A944:
 	RTS
 ; End of function sub_12A944
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_c0_12A973:
 	
@@ -2307,9 +2210,7 @@ exec_b0_c0_12A973:
 	RTS
 ; End of function exec_b0_c0_12A973
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_c1_12A98E:
 	
@@ -2322,9 +2223,7 @@ exec_b0_c1_12A98E:
 	RTS
 ; End of function exec_b0_c1_12A98E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 exec_b0_c2_12A9A9:
 	
@@ -2337,9 +2236,7 @@ exec_b0_c2_12A9A9:
 	RTS
 ; End of function exec_b0_c2_12A9A9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 com_17_player_update_12A9C4:
 	LDA	entry_idx_300
@@ -2367,7 +2264,6 @@ set_game_finished_12AA08:
 	set is_game_finished_561, #$FF
 
 locret_12AA0D:
-
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2392,7 +2288,6 @@ loc_12AA1B:
 ; ---------------------------------------------------------------------------
 
 loc_12AA3E:
-
 	set byte_56F, #$20 
 	set byte_570, #0
 	set byte_571, #$A0 
@@ -2409,13 +2304,10 @@ loc_12AA52:
 	STA	byte_628
 
 locret_12AA6C:
-
 	RTS
 ; End of function com_17_player_update_12A9C4
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 entry_idx_handler_unk_12AA6D:
 	
@@ -2560,7 +2452,6 @@ check_room_2F_12AB5D:
 ; ---------------------------------------------------------------------------
 
 check_room_1A_12AB71:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$1A, check_room_17_12AB85
 	LDA	byte_55F
@@ -2570,7 +2461,6 @@ check_room_1A_12AB71:
 ; ---------------------------------------------------------------------------
 
 check_room_17_12AB85:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$17, check_room_4F_12AB99
 	LDA	byte_5A9
@@ -2580,7 +2470,6 @@ check_room_17_12AB85:
 ; ---------------------------------------------------------------------------
 
 check_room_4F_12AB99:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$4F, check_room_50_12ABAD
 	LDA	byte_565
@@ -2590,7 +2479,6 @@ check_room_4F_12AB99:
 ; ---------------------------------------------------------------------------
 
 check_room_50_12ABAD:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$50, check_room_8D_12ABC1
 	LDA	byte_565
@@ -2600,7 +2488,6 @@ check_room_50_12ABAD:
 ; ---------------------------------------------------------------------------
 
 check_room_8D_12ABC1:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$8D, check_room_8E_12ABD5
 	LDA	byte_565
@@ -2610,7 +2497,6 @@ check_room_8D_12ABC1:
 ; ---------------------------------------------------------------------------
 
 check_room_8E_12ABD5:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$8E, check_room_60_12ABE9
 	LDA	byte_565
@@ -2620,7 +2506,6 @@ check_room_8E_12ABD5:
 ; ---------------------------------------------------------------------------
 
 check_room_60_12ABE9:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$60, check_room_6B_12ABFD
 	LDA	byte_566
@@ -2630,7 +2515,6 @@ check_room_60_12ABE9:
 ; ---------------------------------------------------------------------------
 
 check_room_6B_12ABFD:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$6B, check_room_67_12AC11
 	LDA	byte_585
@@ -2640,7 +2524,6 @@ check_room_6B_12ABFD:
 ; ---------------------------------------------------------------------------
 
 check_room_67_12AC11:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$67, check_room_69_12AC25
 	LDA	byte_586
@@ -2650,7 +2533,6 @@ check_room_67_12AC11:
 ; ---------------------------------------------------------------------------
 
 check_room_69_12AC25:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$69, check_room_1C_12AC39
 	LDA	byte_587
@@ -2660,7 +2542,6 @@ check_room_69_12AC25:
 ; ---------------------------------------------------------------------------
 
 check_room_1C_12AC39:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$1C, check_room_57_12AC4D
 	LDA	byte_588
@@ -2670,7 +2551,6 @@ check_room_1C_12AC39:
 ; ---------------------------------------------------------------------------
 
 check_room_57_12AC4D:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$57, check_room_91_12AC61
 	LDA	byte_646
@@ -2680,7 +2560,6 @@ check_room_57_12AC4D:
 ; ---------------------------------------------------------------------------
 
 check_room_91_12AC61:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$91, check_room_5B_12AC75
 	LDA	byte_646
@@ -2690,7 +2569,6 @@ check_room_91_12AC61:
 ; ---------------------------------------------------------------------------
 
 check_room_5B_12AC75:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$5B, check_room_5C_12AC89
 	LDA	byte_58F
@@ -2700,7 +2578,6 @@ check_room_5B_12AC75:
 ; ---------------------------------------------------------------------------
 
 check_room_5C_12AC89:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$5C, check_room_92_12AC9D
 	LDA	byte_590
@@ -2710,7 +2587,6 @@ check_room_5C_12AC89:
 ; ---------------------------------------------------------------------------
 
 check_room_92_12AC9D:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$92, check_room_93_12ACB1
 	LDA	byte_58F
@@ -2720,7 +2596,6 @@ check_room_92_12AC9D:
 ; ---------------------------------------------------------------------------
 
 check_room_93_12ACB1:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$93, check_room_52_12ACC5
 	LDA	byte_590
@@ -2730,7 +2605,6 @@ check_room_93_12ACB1:
 ; ---------------------------------------------------------------------------
 
 check_room_52_12ACC5:
-
 	LDA	entry_idx_300
 	if_not_equal_cmp #$52, locret_12ACDA
 	LDA	byte_591
@@ -2741,13 +2615,10 @@ check_room_52_12ACC5:
 ; ---------------------------------------------------------------------------
 
 locret_12ACDA:
-
 	RTS
 ; End of function entry_idx_handler_unk_12AA6D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12ACDB:
 	LDA	byte_46E
@@ -3225,9 +3096,7 @@ locret_12B1AF:
 	RTS
 ; End of function sub_12ACDB
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B1B0:
 	LDA	byte_471
@@ -3243,9 +3112,7 @@ loc_12B1B8:
 	RTS
 ; End of function sub_12B1B0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B1CB:
 	
@@ -3268,7 +3135,6 @@ loc_12B1D5:
 byte_12B1DC:.BYTE	5,  1,	4,  2,	3,  6,	0 
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B1E3:
 	LDA	byte_471
@@ -3297,9 +3163,7 @@ locret_12B224:
 	RTS
 ; End of function sub_12B1E3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B225:
 	LDA	byte_471
@@ -3328,9 +3192,7 @@ locret_12B266:
 	RTS
 ; End of function sub_12B225
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B267:
 	LDA	byte_471
@@ -3359,9 +3221,7 @@ locret_12B2A8:
 	RTS
 ; End of function sub_12B267
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B2A9:
 	LDA	byte_471
@@ -3390,9 +3250,7 @@ locret_12B2EA:
 	RTS
 ; End of function sub_12B2A9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B2EB:
 	LDA	byte_471
@@ -3421,9 +3279,7 @@ locret_12B32C:
 	RTS
 ; End of function sub_12B2EB
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B32D:
 	LDA	byte_471
@@ -3452,9 +3308,7 @@ locret_12B36E:
 	RTS
 ; End of function sub_12B32D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B36F:
 	LDA	byte_471
@@ -3513,9 +3367,7 @@ locret_12B403:
 	RTS
 ; End of function sub_12B36F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B404:
 	LDA	byte_471
@@ -3545,9 +3397,7 @@ loc_12B43B:
 	RTS
 ; End of function sub_12B404
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12B441:
 	LDA	entry_idx_300
@@ -4976,9 +4826,7 @@ locret_12BEB4:
 	RTS
 ; End of function sub_12B441
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12BEB5:
 	if_equal byte_5B0, locret_12BEF9
@@ -5015,9 +4863,7 @@ locret_12BEF9:
 	RTS
 ; End of function sub_12BEB5
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12BEFA:
 	LDA	byte_471
@@ -5043,9 +4889,7 @@ loc_12BF23:
 	RTS
 ; End of function sub_12BEFA
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12BF29:
 	
@@ -5054,9 +4898,7 @@ sub_12BF29:
 	RTS
 ; End of function sub_12BF29
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12BF32:
 	LDA	byte_471
@@ -5073,9 +4915,7 @@ loc_12BF4C:
 	RTS
 ; End of function sub_12BF32
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12BF52:
 	LDA	byte_471
@@ -5096,9 +4936,7 @@ loc_12BF66:
 	RTS
 ; End of function sub_12BF52
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12BF79:
 	if_not_equal byte_5BC, locret_12BF88
@@ -5110,9 +4948,7 @@ locret_12BF88:
 	RTS
 ; End of function sub_12BF79
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12BF89:
 	if_not_equal byte_5A8, locret_12BF98
@@ -5124,9 +4960,7 @@ locret_12BF98:
 	RTS
 ; End of function sub_12BF89
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12BF99:
 	LDA	byte_5C1
@@ -5157,9 +4991,7 @@ loc_12BFC1:
 	RTS
 ; End of function sub_12BF99
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12BFDF:
 	LDA	byte_471
@@ -5190,9 +5022,7 @@ locret_12C021:
 	RTS
 ; End of function sub_12BFDF
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C022:
 	LDA	byte_313
@@ -5230,9 +5060,7 @@ locret_12C095:
 	RTS
 ; End of function sub_12C022
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C096:
 	if_not_equal byte_564, locret_12C0AD
@@ -5246,9 +5074,7 @@ locret_12C0AD:
 	RTS
 ; End of function sub_12C096
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C0AE:
 	LDA	byte_471
@@ -5265,9 +5091,7 @@ loc_12C0BB:
 	RTS
 ; End of function sub_12C0AE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C0CE:
 	LDA	byte_566
@@ -5292,9 +5116,7 @@ locret_12C118:
 	RTS
 ; End of function sub_12C0CE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C119:
 	LDX	#0
@@ -5323,9 +5145,7 @@ locret_12C13B:
 	RTS
 ; End of function sub_12C119
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C13C:
 	LDA	array_unk_3C5,X
@@ -5374,9 +5194,7 @@ locret_12C1B7:
 	RTS
 ; End of function sub_12C13C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C1B8:
 	LDA	#3
@@ -5386,9 +5204,7 @@ sub_12C1B8:
 	TAY
 ; End of function sub_12C1B8
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C1C3:
 	
@@ -5412,9 +5228,7 @@ sub_12C1C3:
 	RTS
 ; End of function sub_12C1C3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C1F2:
 	LDA	byte_471
@@ -5438,9 +5252,7 @@ locret_12C220:
 	RTS
 ; End of function sub_12C1F2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C221:
 	LDA	byte_471
@@ -5467,9 +5279,7 @@ locret_12C25D:
 	RTS
 ; End of function sub_12C221
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C25E:
 	LDA	byte_471
@@ -5486,9 +5296,7 @@ loc_12C26B:
 	RTS
 ; End of function sub_12C25E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C27E:
 	LDA	byte_471
@@ -5514,9 +5322,7 @@ return_12C2BE:
 	RTS
 ; End of function sub_12C27E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C2BF:
 	LDA	byte_471
@@ -5531,9 +5337,7 @@ locret_12C2D5:
 	RTS
 ; End of function sub_12C2BF
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C2D6:
 	LDA	byte_471
@@ -5560,9 +5364,7 @@ locret_12C323:
 	RTS
 ; End of function sub_12C2D6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C324:
 	LDA	byte_471
@@ -5589,17 +5391,13 @@ locret_12C371:
 	RTS
 ; End of function sub_12C324
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 nullsub_3:
 	RTS
 ; End of function nullsub_3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C373:
 	LDA	byte_471
@@ -5616,9 +5414,7 @@ loc_12C380:
 	RTS
 ; End of function sub_12C373
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C393:
 	LDA	byte_471
@@ -5636,18 +5432,14 @@ loc_12C3AD:
 	RTS
 ; End of function sub_12C393
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C3B8:
 	set byte_58D, #$FF
 	RTS
 ; End of function sub_12C3B8
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C3BE:
 	if_equal byte_58D, locret_12C3C8
@@ -5657,9 +5449,7 @@ locret_12C3C8:
 	RTS
 ; End of function sub_12C3BE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C3C9:
 	LDA	byte_471
@@ -5677,9 +5467,7 @@ loc_12C3E3:
 	RTS
 ; End of function sub_12C3C9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C3EE:
 	LDA	byte_471
@@ -5697,9 +5485,7 @@ loc_12C408:
 	RTS
 ; End of function sub_12C3EE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C413:
 	LDA	byte_471
@@ -5717,9 +5503,7 @@ loc_12C42D:
 	RTS
 ; End of function sub_12C413
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C438:
 	JSR	sub_12ED3B
@@ -5727,9 +5511,7 @@ sub_12C438:
 	RTS
 ; End of function sub_12C438
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C43F:
 	LDA	byte_471
@@ -5746,9 +5528,7 @@ loc_12C44C:
 	RTS
 ; End of function sub_12C43F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C45F:
 	LDA	byte_651
@@ -5759,9 +5539,7 @@ locret_12C46B:
 	RTS
 ; End of function sub_12C45F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C46C:
 	LDA	byte_313
@@ -5789,9 +5567,7 @@ locret_12C4AD:
 	RTS
 ; End of function sub_12C46C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C4AE:
 	LDA	byte_471
@@ -5809,9 +5585,7 @@ loc_12C4C8:
 	RTS
 ; End of function sub_12C4AE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C4D3:
 	LDA	byte_313
@@ -5827,9 +5601,7 @@ locret_12C4F2:
 	RTS
 ; End of function sub_12C4D3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C4F3:
 	LDA	byte_587
@@ -5850,9 +5622,7 @@ locret_12C519:
 	RTS
 ; End of function sub_12C4F3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C51A:
 	LDA	byte_591
@@ -5873,9 +5643,7 @@ locret_12C540:
 	RTS
 ; End of function sub_12C51A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C541:
 	LDA	byte_592
@@ -5896,9 +5664,7 @@ locret_12C567:
 	RTS
 ; End of function sub_12C541
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C568:
 	LDA	byte_471
@@ -5915,9 +5681,7 @@ loc_12C575:
 	RTS
 ; End of function sub_12C568
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 show_tree_screen_12C588:
 	to_stack entry_idx_300
@@ -5953,9 +5717,7 @@ loc_12C5B1:
 	RTS
 ; End of function show_tree_screen_12C588
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C5F0:
 	set text_idx_35C, #$E3 
@@ -5979,9 +5741,7 @@ locret_12C636:
 	RTS
 ; End of function sub_12C5F0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C637:
 	LDA	entry_idx_300
@@ -6025,9 +5785,7 @@ loc_12C681:
 	RTS
 ; End of function sub_12C637
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C694:
 	set text_idx_35C, #$24 
@@ -6044,9 +5802,7 @@ locret_12C6B8:
 	RTS
 ; End of function sub_12C694
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C6B9:
 	LDA	byte_471
@@ -6064,9 +5820,7 @@ loc_12C6D3:
 	RTS
 ; End of function sub_12C6B9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C6DE:
 	set text_idx_35C, #$2A 
@@ -6082,9 +5836,7 @@ locret_12C6FF:
 	RTS
 ; End of function sub_12C6DE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C700:
 	LDA	byte_67A
@@ -6118,9 +5870,7 @@ locret_12C754:
 	RTS
 ; End of function sub_12C700
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C755:
 	set text_idx_35C, #$26 
@@ -6148,9 +5898,7 @@ locret_12C791:
 	RTS
 ; End of function sub_12C755
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C792:
 	LDA	byte_595
@@ -6170,9 +5918,7 @@ locret_12C7CA:
 	RTS
 ; End of function sub_12C792
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C7CB:
 	set text_idx_35C, #$35 
@@ -6182,9 +5928,7 @@ sub_12C7CB:
 	RTS
 ; End of function sub_12C7CB
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12C7DE:
 	
@@ -6674,9 +6418,7 @@ locret_12CB57:
 	RTS
 ; End of function sub_12C7DE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 show_intro_screen_12CB58:
 	JSR	wait_any_input_65k_cycles_FCAB
@@ -6697,7 +6439,6 @@ show_intro_screen_12CB58:
 	STA	byte_42B
 
 loc_12CB96:
-
 	JSR	sub_12CC34
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
@@ -6727,7 +6468,6 @@ loc_12CBD6:
 ; ---------------------------------------------------------------------------
 
 loc_12CBD9:
-
 	LDA	count_unk_469
 	if_greater_cmp #$A, loc_12CBF7
 	set count_unk_469, #0
@@ -6761,9 +6501,7 @@ show_ending_screen_12CC06:
 	RTS
 ; End of function show_intro_screen_12CB58
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12CC34:
 	LDA	count_unk_465
@@ -6809,12 +6547,9 @@ loc_12CC70:
 	RTS
 ; End of function sub_12CC34
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12CCAB:
-
 	set byte_36A, #$70 
 	set byte_36B, #0
 	set byte_366, #$50 
@@ -6832,9 +6567,7 @@ loc_12CCDF:
 	RTS
 ; End of function sub_12CCAB
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 comm_46_12CCE3:
 	LDA	byte_6C5
@@ -6856,9 +6589,7 @@ return_12CD1C:
 	RTS
 ; End of function comm_46_12CCE3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 comm_48_take_item_12CD1D:
 	set text_idx_35C, #$45 
@@ -6868,9 +6599,7 @@ comm_48_take_item_12CD1D:
 	RTS
 ; End of function comm_48_take_item_12CD1D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 com_E_load_game_12CD30:
 	
@@ -6934,7 +6663,6 @@ loc_12CE00:
 	set byte_372, #0
 
 loc_12CE05:
-
 	JSR	sub_12D0C2
 	JSR	wait_for_frame_rendered_FCA0
 	LDA	input_pressed_34A
@@ -6982,7 +6710,6 @@ loc_12CE62:
 ; ---------------------------------------------------------------------------
 
 loc_12CE69:
-
 	JSR	sub_12ED29
 	LDA	jill_pos_y_47E
 	if_equal_cmp #$FF, loc_12CE99
@@ -7013,9 +6740,7 @@ loc_12CEA5:
 	RTS
 ; End of function com_E_load_game_12CD30
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12CEAC:
 	LDY	byte_372
@@ -7105,9 +6830,7 @@ loc_12CF76:
 	RTS
 ; End of function sub_12CEAC
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12CFBA:
 	
@@ -7160,9 +6883,7 @@ loc_12D003:
 	RTS
 ; End of function sub_12CFBA
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D070:
 	LDA	count_unk_466
@@ -7194,9 +6915,7 @@ loc_12D084:
 	RTS
 ; End of function sub_12D070
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D0C2:
 	LDA	count_unk_465
@@ -7240,7 +6959,6 @@ byte_12D11C:.BYTE $9D,$DA
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12D120:
 	LDY	byte_372
 	LDA	byte_4A0,Y
@@ -7255,9 +6973,7 @@ loc_12D133:
 	RTS
 ; End of function sub_12D120
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D139:
 	
@@ -7265,7 +6981,6 @@ sub_12D139:
 
 	add_to_byte_clc ptr_0, #$14
 	add_to_byte ptr_1, #0
-
 
 	LDY	byte_372
 
@@ -7276,7 +6991,6 @@ loc_12D151:
 	add_to_byte_clc ptr_0, #$58 
 	add_to_byte ptr_1, #2
 
-
 	DEY
 	JMP	loc_12D151
 ; ---------------------------------------------------------------------------
@@ -7285,12 +6999,9 @@ locret_12D166:
 	RTS
 ; End of function sub_12D139
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12D167:
-
 	set_ptr _SAVE_RAM
 
 	LDY	#0
@@ -7311,7 +7022,6 @@ loc_12D17B:
 
 	add_to_byte_clc ptr_0, #$14
 	add_to_byte ptr_1, #0
-
 
 	set image_id_4A4, byte_100
 	set image_offset_4A5, byte_101
@@ -7341,9 +7051,7 @@ loc_12D1DE:
 	RTS
 ; End of function sub_12D167
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D1E9:
 	JSR	sub_12D139
@@ -7368,9 +7076,7 @@ loc_12D210:
 	RTS
 ; End of function sub_12D1E9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D21B:
 	
@@ -7408,16 +7114,13 @@ byte_12D251:.BYTE $3E,  7,$37,$30
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12D261:
 	
 	set tilemapWidth_308, #0
 	set byte_31A, #0
 ; End of function sub_12D261
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D26B:
 	
@@ -7434,9 +7137,7 @@ loc_12D278:
 	RTS
 ; End of function sub_12D26B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D287:
 	
@@ -7493,9 +7194,7 @@ loc_12D315:
 	RTS
 ; End of function sub_12D287
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D319:
 	
@@ -7505,9 +7204,7 @@ sub_12D319:
 	JSR	sub_12D26B
 ; End of function sub_12D319
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D329:
 	
@@ -7560,9 +7257,7 @@ loc_12D394:
 	RTS
 ; End of function sub_12D329
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D3AB:
 	
@@ -7653,9 +7348,7 @@ loc_12D484:
 	RTS
 ; End of function sub_12D3AB
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D49F:
 	
@@ -7665,9 +7358,7 @@ sub_12D49F:
 	set tilemap_size_307, #4
 ; End of function sub_12D49F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D4B3:
 	
@@ -7678,9 +7369,7 @@ sub_12D4B3:
 	RTS
 ; End of function sub_12D4B3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D4C6:
 	
@@ -7771,9 +7460,7 @@ loc_12D570:
 	RTS
 ; End of function sub_12D4C6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D58C:
 	
@@ -7847,9 +7534,7 @@ loc_12D652:
 	RTS
 ; End of function sub_12D58C
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D680:
 	set byte_372, #0
@@ -7905,9 +7590,7 @@ loc_12D6FC:
 	RTS
 ; End of function sub_12D680
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D700:
 	JSR	sub_1283BA
@@ -8042,9 +7725,7 @@ loc_12D802:
 	RTS
 ; End of function sub_12D700
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D82B:
 	LDY	byte_532
@@ -8103,9 +7784,7 @@ loc_12D8AF:
 	RTS
 ; End of function sub_12D82B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D8B3:
 	
@@ -8133,9 +7812,7 @@ loc_12D8D9:
 	RTS
 ; End of function sub_12D8B3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D8DD:
 	LDX	byte_372
@@ -8269,9 +7946,7 @@ loc_12D9DA:
 	RTS
 ; End of function sub_12D8DD
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12D9F7:
 	
@@ -8312,9 +7987,7 @@ loc_12D9FB:
 	RTS
 ; End of function sub_12D9F7
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DA33:
 	
@@ -8396,9 +8069,7 @@ loc_12DACB:
 	RTS
 ; End of function sub_12DA33
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DAD0:
 	
@@ -8431,9 +8102,7 @@ loc_12DB1A:
 	RTS
 ; End of function sub_12DAD0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DB1E:
 	LDA	byte_42E
@@ -8569,9 +8238,7 @@ locret_12DC30:
 	RTS
 ; End of function sub_12DB1E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DC31:
 	
@@ -8586,9 +8253,7 @@ sub_12DC31:
 	RTS
 ; End of function sub_12DC31
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DC52:
 	LDA	byte_545
@@ -8603,9 +8268,7 @@ sub_12DC52:
 	RTS
 ; End of function sub_12DC52
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DC76:
 	JSR	sub_12DF6C
@@ -8653,9 +8316,7 @@ loc_12DCC8:
 	RTS
 ; End of function sub_12DC76
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DCCC:
 	set objMapIdx_316, #$23 
@@ -8667,9 +8328,7 @@ sub_12DCCC:
 	RTS
 ; End of function sub_12DCCC
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DCE9:
 	
@@ -8684,9 +8343,7 @@ sub_12DCE9:
 	RTS
 ; End of function sub_12DCE9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DD0A:
 	
@@ -8776,9 +8433,7 @@ loc_12DE34:
 	RTS
 ; End of function sub_12DD0A
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DE49:
 	
@@ -8822,9 +8477,7 @@ locret_12DEB4:
 	RTS
 ; End of function sub_12DE49
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DEB5:
 	
@@ -8852,7 +8505,6 @@ byte_12DEED:.BYTE	0,  0,	0,  0,	0,  0,	0,  1,	1,  1,	1,  1,	1,  1,	2,  2
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12DF2B:
 	
 	JSR	sub_12DF32
@@ -8860,9 +8512,7 @@ sub_12DF2B:
 	RTS
 ; End of function sub_12DF2B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DF32:
 	
@@ -8883,9 +8533,7 @@ sub_12DF32:
 	RTS
 ; End of function sub_12DF32
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DF6C:
 	LDX	byte_372
@@ -8908,12 +8556,9 @@ loc_12DF9C:
 	RTS
 ; End of function sub_12DF6C
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12DFA5:
-
 ; FUNCTION CHUNK AT E019 SIZE 0000013D BYTES
 ; FUNCTION CHUNK AT E166 SIZE 0000021E BYTES
 
@@ -8956,9 +8601,7 @@ loc_12DFE8:
 	JMP	sub_12E3DF
 ; End of function sub_12DFA5
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12DFFC:
 	
@@ -9125,7 +8768,6 @@ loc_12E13A:
 ; END OF FUNCTION CHUNK	FOR sub_12DFA5
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E156:
 	
@@ -9402,7 +9044,6 @@ loc_12E368:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12E384:
 	LDA	byte_42E
 	mult_a_by_2
@@ -9441,9 +9082,7 @@ locret_12E3D3:
 	RTS
 ; End of function sub_12E384
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E3D4:
 	
@@ -9453,9 +9092,7 @@ sub_12E3D4:
 	RTS
 ; End of function sub_12E3D4
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E3DF:
 	
@@ -9493,9 +9130,7 @@ locret_12E427:
 	RTS
 ; End of function sub_12E3DF
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E428:
 	
@@ -9574,9 +9209,7 @@ loc_12E4B7:
 	RTS
 ; End of function sub_12E428
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E4CD:
 	
@@ -9653,9 +9286,7 @@ loc_12E4EE:
 	RTS
 ; End of function sub_12E4CD
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E5E6:
 	to_stack byte_372
@@ -9737,9 +9368,7 @@ loc_12E67A:
 	RTS
 ; End of function sub_12E5E6
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E69F:
 	to_stack byte_372
@@ -9843,9 +9472,7 @@ loc_12E776:
 	RTS
 ; End of function sub_12E69F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E798:
 	
@@ -9864,9 +9491,7 @@ sub_12E798:
 	RTS
 ; End of function sub_12E798
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E7D3:
 	
@@ -9882,9 +9507,7 @@ loc_12E7DA:
 	RTS
 ; End of function sub_12E7D3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E7F0:
 	
@@ -9897,9 +9520,7 @@ sub_12E7F0:
 	RTS
 ; End of function sub_12E7F0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E80D:
 	
@@ -9909,9 +9530,7 @@ sub_12E80D:
 	RTS
 ; End of function sub_12E80D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E81B:
 	
@@ -9921,9 +9540,7 @@ sub_12E81B:
 	RTS
 ; End of function sub_12E81B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E829:
 	
@@ -9949,7 +9566,6 @@ byte_12E869:
 	.BYTE $25, $D,$28,$28,$28,$28,$28,$28,$28,$28,$29,$15
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12E8A5:
 	LDA	byte_42E
@@ -10444,42 +10060,31 @@ loc_12ED17:
 	RTS
 ; End of function sub_12E8A5
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12ED20:
-
 	to_stack tilemapTypeUnk_30B
 	LDA	#6
 	JMP	loc_12ED4D
 ; End of function sub_12ED20
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12ED29:
-
 	to_stack tilemapTypeUnk_30B
 	LDA	#$B
 	JMP	loc_12ED4D
 ; End of function sub_12ED29
 
-
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12ED32:
-
 	to_stack tilemapTypeUnk_30B
 	LDA	#$2B 
 	JMP	loc_12ED4D
 ; End of function sub_12ED32
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12ED3B:
 	
@@ -10488,9 +10093,7 @@ sub_12ED3B:
 	JMP	loc_12ED4D
 ; End of function sub_12ED3B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12ED44:
 	to_stack tilemapTypeUnk_30B
@@ -10506,9 +10109,7 @@ loc_12ED4D:
 	RTS
 ; End of function sub_12ED44
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12ED58:
 	set objectIdx_318, #5
@@ -10574,7 +10175,6 @@ loc_12EDF1:
 	RTS
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12EDF5:
 	
@@ -10671,9 +10271,7 @@ loc_12EEA7:
 	RTS
 ; End of function sub_12EDF5
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12EEAE:
 	
@@ -10772,9 +10370,7 @@ loc_12EF5F:
 	RTS
 ; End of function sub_12EEAE
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12EF66:
 	LDY	byte_301
@@ -10786,9 +10382,7 @@ sub_12EF66:
 	RTS
 ; End of function sub_12EF66
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12EF77:
 	
@@ -10837,7 +10431,6 @@ map_sequence_12F072:.BYTE   4,	6,  5,	7,  3,$14,$15, $C, $D, $E, $F
 	
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F07D:
 	
@@ -10931,9 +10524,7 @@ loc_12F13F:
 	RTS
 ; End of function sub_12F07D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F168:
 	
@@ -11037,7 +10628,6 @@ byte_12F28B:.BYTE $28,$88,$38,$88,$48,$88,$58,$88,$68,$88,$78,$88,$88,$88,$98,$8
 	.BYTE $58,$A8,$68,$A8,$78,$A8,$88,$A8,$70,$28,$70,$38,$70,$48
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F2C9:
 	LDA	byte_421
@@ -11224,7 +10814,6 @@ byte_12F45C:.BYTE $10,$16,	4,$11,$13,$18,$14,  8, $E, $F,$1B,  0,$12,  3,	5,  6
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12F478:
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
@@ -11246,14 +10835,11 @@ loc_12F495:
 	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
 	add_to_byte ptr_1, #0
 
-
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_12F478
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F4C0:
 	LDA	byte_372
@@ -11276,9 +10862,7 @@ locret_12F4E3:
 	RTS
 ; End of function sub_12F4C0
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F4E4:
 	LDA	byte_372
@@ -11305,9 +10889,7 @@ locret_12F513:
 	RTS
 ; End of function sub_12F4E4
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F514:
 	LDA	byte_372
@@ -11321,9 +10903,7 @@ locret_12F526:
 	RTS
 ; End of function sub_12F514
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F527:
 	LDA	byte_372
@@ -11352,7 +10932,6 @@ byte_12F55F:.BYTE	4,$1B,	8,$13,	2
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_12F564:
 	LDA	count_unk_465
 	if_greater_cmp #$F, locret_12F5B8
@@ -11363,18 +10942,14 @@ sub_12F564:
 	if_equal byte_547, sub_12F583
 ; End of function sub_12F564
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F57D:
 	set byte_280, #$F0 
 	RTS
 ; End of function sub_12F57D
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F583:
 	
@@ -11396,9 +10971,7 @@ locret_12F5B8:
 	RTS
 ; End of function sub_12F583
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F5B9:
 	
@@ -11409,9 +10982,7 @@ sub_12F5B9:
 	set sprite_secondByte_31B, #$AF 
 ; End of function sub_12F5B9
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F5D2:
 	
@@ -11419,9 +10990,7 @@ sub_12F5D2:
 	set byte_363, #0
 ; End of function sub_12F5D2
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F5DC:
 	
@@ -11435,9 +11004,7 @@ sub_12F5DC:
 	RTS
 ; End of function sub_12F5DC
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F5FC:
 	JSR	sub_12F57D
@@ -11476,9 +11043,7 @@ sub_12F5FC:
 	RTS
 ; End of function sub_12F5FC
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F698:
 	
@@ -11500,9 +11065,7 @@ sub_12F698:
 	RTS
 ; End of function sub_12F698
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F6D8:
 	JSR	sub_12F732
@@ -11527,9 +11090,7 @@ sub_12F6D8:
 	RTS
 ; End of function sub_12F6D8
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_12F732:
 	JSR	sub_12F57D
@@ -11543,7 +11104,6 @@ sub_12F732:
 	JSR	sub_12F5D2
 	RTS
 ; End of function sub_12F732
-
 
 Common_Code_12:
 	.include "common/common_funcs.asm"

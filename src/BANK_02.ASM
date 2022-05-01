@@ -72,7 +72,6 @@ off_28097:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_2D11F:
 	set sprite_secondByte_31B, #$CF 
 	set byte_35E, #$C
@@ -80,9 +79,7 @@ sub_2D11F:
 	JMP	loc_2D14F
 ; End of function sub_2D11F
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2D131:
 	set byte_310, #0
@@ -101,9 +98,7 @@ loc_2D14F:
 	JMP	sub_2D1CB
 ; End of function sub_2D131
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2D16B:
 	set byte_364, #8
@@ -117,9 +112,7 @@ sub_2D16B:
 	JMP	sub_2D1CB
 ; End of function sub_2D16B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2D196:
 	set ppu_unk_byte_309, #8
@@ -135,9 +128,7 @@ sub_2D196:
 	JMP	sub_2D1CB
 ; End of function sub_2D196
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2D1CB:
 		
@@ -209,7 +200,6 @@ loc_2D260:
 	add_to_byte_clc ptr_0, #2
 	add_to_byte ptr_1, #0
 
-
 	LDA	tilemapWidth_308
 	mult_a_by_2
 	add_to_a ptr_0
@@ -271,7 +261,6 @@ loc_2D2F6:
 	add_to_a ptr_0
 	STA	ptr_0
 	add_to_byte ptr_1, #0
-
 
 loc_2D305:
 	LDY	#0
@@ -341,9 +330,7 @@ loc_2D378:
 	RTS
 ; End of function sub_2D1CB
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2D397:
 		
@@ -380,9 +367,7 @@ loc_2D3BA:
 	RTS
 ; End of function sub_2D397
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2D401:
 	set inv_spr_dscr1_30C, #0
@@ -484,9 +469,7 @@ loc_2D4D3:
 	RTS
 ; End of function sub_2D401
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2D4D7:
 	LDA	char_type_id_35D
@@ -510,9 +493,7 @@ loc_2D4FA:
 	RTS
 ; End of function sub_2D4D7
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2D4FF:
 		
@@ -527,9 +508,7 @@ loc_2D506:
 	RTS
 ; End of function sub_2D4FF
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2D514:
 	LDA	sprite_type_306
@@ -554,9 +533,7 @@ locret_2D541:
 	RTS
 ; End of function sub_2D514
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2D542:
 	LDA	sprite_type_306
@@ -574,7 +551,6 @@ Fonts:
 	.include "text/bank_02_fonts.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2E244:
 	to_stack data_2
@@ -738,7 +714,6 @@ byte_2E3B3:.BYTE	2,  2,	0,  2,	2,  0,	0,  0,	1,  2,	3,  2,	1,  0,	3,  0
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_2E3D3:
 	to_stack inv_spr_dscr1_30C
 	set inv_spr_dscr1_30C, #0
@@ -753,9 +728,7 @@ loc_2E3DC:
 	RTS
 ; End of function sub_2E3D3
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2E3F1:
 	to_stack inv_spr_dscr1_30C
@@ -774,9 +747,7 @@ loc_2E3FA:
 	RTS
 ; End of function sub_2E3F1
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2E411:
 	to_stack inv_spr_dscr1_30C
@@ -791,9 +762,7 @@ loc_2E41A:
 	RTS
 ; End of function sub_2E411
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2E42E:
 	to_stack inv_spr_dscr1_30C
@@ -808,9 +777,7 @@ loc_2E437:
 	RTS
 ; End of function sub_2E42E
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2E44B:
 		
@@ -906,9 +873,7 @@ loc_2E4F1:
 	RTS
 ; End of function sub_2E44B
 
-
 ; =============== S U B	R O U T	I N E =======================================
-
 
 sub_2E500:
 		
@@ -1042,9 +1007,7 @@ byte_2E771:.BYTE $3E,  1,$16,$21,$3E,  0,$27,$30,	0,  0,	0,  0,	0,  0,	0,  0
 
 ; =============== S U B	R O U T	I N E =======================================
 
-
 sub_2E781:
-
 	set_ptr off_2E52F
 
 	set data_2, entry_idx_300
@@ -1067,7 +1030,6 @@ loc_2E7B0:
 	BCC	loc_2E7B0
 	RTS
 ; End of function sub_2E781
-
 
 
 Common_Code_02:

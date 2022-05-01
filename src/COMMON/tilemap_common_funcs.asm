@@ -1,11 +1,9 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 load_tilemap_chunk_in_ram_7F897:
-
 	set_ptr $805B
 
 getTilemapPtr:
-
 	set data_2, entry_idx_300
 	set data_3, #0
 
@@ -14,7 +12,6 @@ getTilemapPtr:
 
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
-
 
 getPtrToTilemap: ; getPtrToTilemap
 	LDY	#0
@@ -32,7 +29,6 @@ getOffset_F8CC: ; unk data
 	add_to_byte_clc ptr_0, #$C0 
 	add_to_byte ptr_1, #3
 
-
 size_20_7F8DF:
 	LDY	tilemap_line_idx_4F
 
@@ -49,7 +45,6 @@ add_size_7F8E1:
 addOffset_7F8F6:
 	add_to_byte_clc ptr_0, mapLineSize_50
 	add_to_byte ptr_1, #0
-
 
 init_F903:
 	set data_2, mapLineWidth_52

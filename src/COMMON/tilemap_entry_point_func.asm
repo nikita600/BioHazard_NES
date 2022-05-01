@@ -1,5 +1,4 @@
 tilemap_switch_case:
-
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88
 

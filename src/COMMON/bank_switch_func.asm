@@ -1,5 +1,4 @@
 bank_switch:
-
 		set bank_switch_flag_6C, #$EE 
 
 		LDA	bank_to_344

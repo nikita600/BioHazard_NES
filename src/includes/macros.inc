@@ -123,6 +123,13 @@
 
 ; ---------------------------------------------------------------------------
 
+.macro if_equal value, branch
+
+	LDA	value
+	BEQ	branch
+
+.endmacro
+
 .macro if_equal_cmp value, branch
 
 	CMP	value

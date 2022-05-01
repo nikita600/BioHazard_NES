@@ -156,8 +156,7 @@ nmi_sub_FCF5:
 
 
 sub_FD0A:		
-	LDA	byte_43E
-	BEQ	loc_FD31
+	if_equal byte_43E, loc_FD31
 	LDA	byte_203
 	BNE	loc_FD1C
 	set byte_43E, #0
@@ -230,8 +229,7 @@ music_update_FD89:
 	set bank_switch_flag_6C, #$88 
 
 loc_FD93:		
-	LDA	byte_432
-	BEQ	next_frame_FD9B
+	if_equal byte_432, next_frame_FD9B
 	DEC	byte_432
 
 next_frame_FD9B:		
@@ -246,8 +244,7 @@ next_frame_FD9B:
 	INC	count_unk_46B
 	INC	count_unk_365
 	INC	count_unk_46C
-	LDA	frame_render_count_350
-	BEQ	stack_reset_FDC4
+	if_equal frame_render_count_350, stack_reset_FDC4
 	DEC	frame_render_count_350
 
 stack_reset_FDC4:		
@@ -271,8 +268,7 @@ ppu_upset_data_FDCB:
 ; ---------------------------------------------------------------------------
 
 loc_FDD0:		
-	LDA	ppu_data_70
-	BEQ	loc_FE1B
+	if_equal ppu_data_70, loc_FE1B
 	STA	ppu_fld0_x_6D
 	LDX	#1
 
@@ -493,9 +489,11 @@ apu_update_music_FF2E:
 	to_stack bank_command_346
 	to_stack bank_to_344
 	to_stack bank_from_343
+	
 	set bank_to_344, #banks_13
 	set bank_command_346, #$88 
 	JSR	bank_switch_8000
+
 	from_stack bank_from_343
 	from_stack bank_to_344
 	from_stack bank_command_346

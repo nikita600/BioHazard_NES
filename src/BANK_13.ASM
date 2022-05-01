@@ -241,8 +241,7 @@ loc_13D4D4:
 
 
 apu_update_13D4F9:
-	LDA	apu_unk_737
-	BEQ	locret_13D533
+	if_equal apu_unk_737, locret_13D533
 	JSR	apu_update_pulse1_13DA5B
 	JSR	apu_func_13D534
 	LDA	apu_unk_738
@@ -396,8 +395,7 @@ loc_13D5F5:
 
 loc_13D60D:
 	INY
-	LDA	(apu_unk_FE),Y
-	BEQ	loc_13D621
+	if_equal {(apu_unk_FE),Y}, loc_13D621
 	LDA	apu_dat_13D421,X
 	EOR	#$FF
 	AND	apu_unk_737
@@ -730,8 +728,7 @@ loc_13D884:
 
 loc_13D89C:
 	INY
-	LDA	(apu_unk_FE),Y
-	BEQ	loc_13D8B0
+	if_equal {(apu_unk_FE),Y}, loc_13D8B0
 	LDA	apu_dat_13D421,X
 	EOR	#$FF
 	AND	apu_unk_706
@@ -957,13 +954,11 @@ apu_update_pulse1_13DA62:
 	LDA	apu_dat_13D421,X
 	AND	apu_unk_737
 	BEQ	locret_13DADB
-	LDA	apu_unk_758,X
-	BEQ	locret_13DADB
+	if_equal {apu_unk_758,X}, locret_13DADB
 	LDA	apu_pulse1_env_744,X
 	AND	#$10
 	BNE	locret_13DADB
-	LDA	apu_unk_752,X
-	BEQ	loc_13DA99
+	if_equal {apu_unk_752,X}, loc_13DA99
 	if_lower_cmp #4, locret_13DADB
 	LDA	apu_pulse1_env_744,X
 	AND	#$F
@@ -1026,13 +1021,11 @@ music_func_13DAE3:
 	LDA	apu_dat_13D421,X
 	AND	apu_unk_706
 	BEQ	locret_13DB64
-	LDA	apu_unk_727,X
-	BEQ	locret_13DB64
+	if_equal {apu_unk_727,X}, locret_13DB64
 	LDA	pulse1_env_713,X
 	AND	#$10
 	BNE	locret_13DB64
-	LDA	apu_unk_721,X
-	BEQ	loc_13DB1A
+	if_equal {apu_unk_721,X}, loc_13DB1A
 	if_lower_cmp #4, locret_13DB64
 	LDA	pulse1_env_713,X
 	AND	#$F
@@ -1202,8 +1195,7 @@ loc_13DC18:
 
 music_update_state_13DC1E:
 	JSR	apu_update_13D4F9
-	LDA	apu_unk_706
-	BEQ	locret_13DC5B
+	if_equal apu_unk_706, locret_13DC5B
 	JSR	music_func_13DADC
 	JSR	music_func_13D7C3
 	LDA	apu_unk_707
@@ -1564,16 +1556,14 @@ loc_13E0EE:
 
 loc_13E100:
 
-	LDA	ppu_unk_byte_309
-	BEQ	loc_13E110
+	if_equal ppu_unk_byte_309, loc_13E110
 	JSR	sprites_func_13E11C
 	DEC	ppu_unk_byte_309
 	LDA	ppu_unk_byte_309
 	BNE	loc_13E100
 
 loc_13E110:
-	LDA	tilemapHeight_30A
-	BEQ	locret_13E11B
+	if_equal tilemapHeight_30A, locret_13E11B
 	STA	inv_spr_dscr1_30C
 	JSR	sprites_func_13E11C
 

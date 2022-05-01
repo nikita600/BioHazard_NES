@@ -324,16 +324,14 @@ loc_4F4F9:
 
 loc_4F50B:
 		
-	LDA	ppu_unk_byte_309
-	BEQ	loc_4F51B
+	if_equal ppu_unk_byte_309, loc_4F51B
 	JSR	sub_4F527
 	DEC	ppu_unk_byte_309
 	LDA	ppu_unk_byte_309
 	BNE	loc_4F50B
 
 loc_4F51B:
-	LDA	tilemapHeight_30A
-	BEQ	locret_4F526
+	if_equal tilemapHeight_30A, locret_4F526
 	STA	inv_spr_dscr1_30C
 	JSR	sub_4F527
 

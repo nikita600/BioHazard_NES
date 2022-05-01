@@ -1578,8 +1578,7 @@ sub_128EC2:
 	CLC
 	ADC	byte_54B
 	STA	objMapIdx_316
-	LDA	byte_54A
-	BEQ	loc_128F0E
+	if_equal byte_54A, loc_128F0E
 	add_to_byte_clc objMapIdx_316, #3
 
 loc_128F0E:
@@ -1700,8 +1699,7 @@ loc_12902C:
 	set sprite_secondByte_31B, #0
 	set byte_31A, #$C8 
 	set objectIdx_318, #4
-	LDA	byte_472
-	BEQ	loc_12905F
+	if_equal byte_472, loc_12905F
 	LDA	#0
 	JMP	loc_129071
 ; ---------------------------------------------------------------------------
@@ -1820,8 +1818,7 @@ loc_129117:
 
 loc_129120:
 	JSR	sub_12ED20
-	LDA	byte_472
-	BEQ	loc_12912E
+	if_equal byte_472, loc_12912E
 	set sprite_length_30F, #$FE 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3301,8 +3298,7 @@ sub_12B1CB:
 	LDX	#0
 
 loc_12B1CF:
-	LDA	byte_555,X
-	BEQ	loc_12B1D5
+	if_equal {byte_555,X}, loc_12B1D5
 	INY
 
 loc_12B1D5:
@@ -3518,8 +3514,7 @@ sub_12B36F:
 ; ---------------------------------------------------------------------------
 
 loc_12B377:
-	LDA	byte_55B
-	BEQ	loc_12B37F
+	if_equal byte_55B, loc_12B37F
 	JMP	locret_12B403
 ; ---------------------------------------------------------------------------
 
@@ -5037,8 +5032,7 @@ locret_12BEB4:
 
 
 sub_12BEB5:
-	LDA	byte_5B0
-	BEQ	locret_12BEF9
+	if_equal byte_5B0, locret_12BEF9
 	set text_idx_35C, #0
 	set char_type_id_35D, #2
 	set tilemapTypeUnk_30B, #1
@@ -5198,8 +5192,7 @@ sub_12BF99:
 	if_not_equal_cmp #0, locret_12BFC0
 	set tilemapTypeUnk_30B, #$1E
 	JSR	sub_12D58C
-	LDA	sprite_length_30F
-	BEQ	locret_12BFC0
+	if_equal sprite_length_30F, locret_12BFC0
 	set byte_59F, #1
 
 locret_12BFC0:
@@ -5302,8 +5295,7 @@ sub_12C096:
 	BNE	locret_12C0AD
 	set tilemapTypeUnk_30B, #$29 
 	JSR	sub_12D58C
-	LDA	sprite_length_30F
-	BEQ	locret_12C0AD
+	if_equal sprite_length_30F, locret_12C0AD
 	set byte_564, #$FF
 
 locret_12C0AD:
@@ -5726,8 +5718,7 @@ sub_12C3B8:
 
 
 sub_12C3BE:
-	LDA	byte_58D
-	BEQ	locret_12C3C8
+	if_equal byte_58D, locret_12C3C8
 	set byte_58E, #$FF
 
 locret_12C3C8:
@@ -7214,8 +7205,7 @@ sub_12CFBA:
 	STA	char_type_id_35D
 
 loc_12CFE6:
-	LDA	byte_372
-	BEQ	loc_12D003
+	if_equal byte_372, loc_12D003
 	add_to_byte_clc ppu_unk_byte_309, #4
 	add_to_byte_clc sprite_secondByte_31B, #$18
 
@@ -7554,8 +7544,7 @@ set_inventory_screen_12D2A3:
 	JSR	sub_12DEB5
 	set byte_372, #0
 	set sprite_secondByte_31B, #$3C 
-	LDA	byte_532
-	BEQ	loc_12D315
+	if_equal byte_532, loc_12D315
 
 loc_12D2D6:
 	LDY	byte_372
@@ -7691,8 +7680,7 @@ loc_12D3C5:
 ; ---------------------------------------------------------------------------
 
 loc_12D3D7:
-	LDA	data_3
-	BEQ	loc_12D423
+	if_equal data_3, loc_12D423
 	add_to_byte_clc tilemap_size_307, #4
 	LDA	data_3
 	CLC
@@ -7719,8 +7707,7 @@ loc_12D3D7:
 loc_12D423:
 	LDA	data_3
 	BNE	loc_12D434
-	LDA	data_2
-	BEQ	loc_12D473
+	if_equal data_2, loc_12D473
 	add_to_byte_clc tilemap_size_307, #8
 
 loc_12D434:
@@ -8582,8 +8569,7 @@ loc_12DB3A:
 	if_not_equal_cmp #5, loc_12DB75
 	LDA	byte_42C
 	if_not_equal_cmp #0, loc_12DB6C
-	LDA	byte_545
-	BEQ	locret_12DB6B
+	if_equal byte_545, locret_12DB6B
 	JSR	sub_12ED20
 	set text_idx_35C, #$44 
 	set char_type_id_35D, #2
@@ -8746,8 +8732,7 @@ loc_12DC79:
 	JSR	wait_for_vblank_FC95
 	LDA	input_reg1_347
 	if_not_equal_cmp #8, loc_12DC97
-	LDA	byte_372
-	BEQ	loc_12DC79
+	if_equal byte_372, loc_12DC79
 	DEC	byte_372
 	JSR	sub_12ED32
 	JSR	sub_12DF2B
@@ -8974,8 +8959,7 @@ locret_12DEB4:
 sub_12DEB5:
 	
 	set objMapIdx_316, byte_54B
-	LDA	byte_54A
-	BEQ	loc_12DEC9
+	if_equal byte_54A, loc_12DEC9
 	add_to_byte_clc objMapIdx_316, #3
 
 loc_12DEC9:
@@ -9525,8 +9509,7 @@ loc_12E315:
 	SEC
 	SBC	#1
 	STA	unk_53B,Y
-	LDA	unk_53B,Y
-	BEQ	loc_12E35C
+	if_equal {unk_53B,Y}, loc_12E35C
 	JMP	loc_12E362
 ; ---------------------------------------------------------------------------
 
@@ -11571,8 +11554,7 @@ sub_12F564:
 	LDA	byte_547
 	EOR	#1
 	STA	byte_547
-	LDA	byte_547
-	BEQ	sub_12F583
+	if_equal byte_547, sub_12F583
 ; End of function sub_12F564
 
 

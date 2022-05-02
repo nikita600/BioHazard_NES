@@ -15,10 +15,8 @@ static main(void)
 			&& opValue >= 0 && opValue <= 0x8000)
 		{
 			OpOff(currentSeg, opIdx, 0);
-			
 			Message("Seg: %08x, OpVal: %04x, OpStr: %s, OpType: %04x\n", currentSeg, opValue, opStr, opType);
 		}
-		
 		currentSeg = FindCode(currentSeg, SEARCH_DOWN);
 	}
 }

@@ -513,7 +513,6 @@ return_1282EE:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c1_128300:
-	
 	set bank_command_346, #1
 	set bank_to_344, #text_2
 	set bank_from_343, #$12
@@ -524,7 +523,6 @@ exec_b2_c1_128300:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c3_128313:
-	
 	set bank_command_346, #3
 	set bank_to_344, #2
 	set bank_from_343, #$12
@@ -535,7 +533,6 @@ exec_b2_c3_128313:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128326:
-	
 	to_stack inv_itemPrev_idx_31D
 	to_stack ppu_unk_byte_309
 	to_stack tilemap_size_307
@@ -553,7 +550,6 @@ sub_128326:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128358:
-	
 	to_stack inv_itemPrev_idx_31D
 	to_stack ppu_unk_byte_309
 	to_stack tilemap_size_307
@@ -577,7 +573,6 @@ loc_128387:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b1_c1_128394:
-	
 	set bank_command_346, #1
 	set bank_to_344, #sprites_1
 	set bank_from_343, #$12
@@ -588,7 +583,6 @@ exec_b1_c1_128394:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b4_c2_1283A7:
-	
 	set bank_command_346, #2
 	set bank_to_344, #items_spr_4
 	set bank_from_343, #$12
@@ -621,7 +615,6 @@ exec_b2_c2_1283DF:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c4_1283F2:
-	
 	set bank_command_346, #4
 	set bank_to_344, #text_2
 	set bank_from_343, #$12
@@ -642,7 +635,6 @@ exec_b2_c5_128405:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c3_128418:
-	
 	set bank_command_346, #3
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
@@ -653,7 +645,6 @@ exec_b0_c3_128418:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c4_12842B:
-	
 	set bank_command_346, #4
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
@@ -712,7 +703,6 @@ exec_b0_c8_12848F:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c9_1284AA:
-	
 	to_stack bank_from_343
 	set bank_command_346, #9
 	set bank_to_344, #code_0
@@ -725,7 +715,6 @@ exec_b0_c9_1284AA:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_cA_1284C5:
-	
 	to_stack bank_from_343
 	set bank_command_346, #$A
 	set bank_to_344, #code_0
@@ -738,7 +727,6 @@ exec_b0_cA_1284C5:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_cB_1284E0:
-	
 	to_stack bank_from_343
 	set bank_command_346, #$B
 	set bank_to_344, #code_0
@@ -775,14 +763,12 @@ exec_b0_cD_128516:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128531:
-	
 	if_greater_cmp_addr tilemapTypeUnk_30B, #$47, loc_12853B
 	BEQ	loc_12853B
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12853B:
-	
 	LDX	#$F
 	STX	_APU_STATUS
 	PHA
@@ -830,14 +816,12 @@ sub_12873A:
 ; ---------------------------------------------------------------------------
 
 loc_12875A:
-	
 	if_equal_cmp_addr byte_46F, #$69, loc_128768
 	if_equal_cmp #$98, loc_128768
 	JMP	loc_128777
 ; ---------------------------------------------------------------------------
 
 loc_128768:
-	
 	if_not_equal_cmp_addr entry_idx_300, #$63, loc_128774
 	set byte_5D5, #$FF
 
@@ -894,7 +878,6 @@ loc_1287B9:
 	set byte_553, #$FF
 
 loc_128814:
-	
 	JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
@@ -962,7 +945,6 @@ set_tyrant_level_1288B6:
 	JSR	exec_b0_c0_12A973
 
 loc_1288EB:
-	
 	JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
@@ -990,19 +972,16 @@ loc_1288EE:
 	set byte_6C6, #0
 
 loc_128951:
-	
 	JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
 locret_128954:
-	
 	RTS
 ; End of function sub_12873A
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128955:
-	
 	JSR	sub_1283BA
 	to_stack image_id_4A4
 	to_stack image_offset_4A5
@@ -1070,7 +1049,6 @@ sub_128A1A:
 	STA	count_unk_466
 
 loc_128A20:
-	
 	JSR	sub_128FC1
 	if_equal_cmp_addr is_game_finished_561, #0, game_not_finished_128A43
 	from_stack prev_sprite_type_4A9
@@ -1154,7 +1132,6 @@ loc_128AE9:
 	from_stack image_id_4A4
 
 loc_128B01:
-	
 	set map_show_43B, #$FF
 	JSR	exec_b0_c2_12A9A9
 	set map_show_43B, #0
@@ -1417,7 +1394,6 @@ loc_128E7D:
 	set byte_54B, #2
 
 loc_128E8B:
-	
 	if_greater_cmp_addr count_unk_465, #$A, loc_128EA6
 	set count_unk_465, #0
 	if_greater_cmp_addr byte_54C, #6, loc_128EA3
@@ -1476,7 +1452,6 @@ loc_128F26:
 ; ---------------------------------------------------------------------------
 
 loc_128F3C:
-	
 	if_greater_cmp_addr tilemapTypeUnk_30B, #$A, loc_128F52
 	sub_byte_sec tilemapTypeUnk_30B, #$A
 	INC	byte_355
@@ -1520,7 +1495,6 @@ sub_128FC1:
 	JSR	sub_129155
 
 locret_129004:
-	
 	RTS
 ; End of function sub_128FC1
 
@@ -1582,7 +1556,6 @@ loc_12908C:
 	set byte_440, #0
 
 locret_1290A8:
-	
 	RTS
 ; End of function sub_129019
 
@@ -1634,7 +1607,6 @@ loc_1290E7:
 	DEC	unk_53B,X
 
 loc_1290EA:
-	
 	set byte_443, #0
 	set byte_440, #$FF
 	LDA	ppu_scroll_x_304
@@ -1647,7 +1619,6 @@ loc_1290EA:
 	set byte_476, #$FF
 
 loc_129117:
-	
 	if_not_equal byte_476, loc_129120
 	JSR	sub_12ED29
 	RTS
@@ -1739,7 +1710,6 @@ loc_1291C3:
 	set tilemapTypeUnk_30B, #0
 
 loc_1291C8:
-	
 	sub_a_sec #$14, tilemapTypeUnk_30B
 	STA	byte_477
 	if_not_equal_cmp_addr byte_301, #$9A, loc_1291DE
@@ -1794,7 +1764,6 @@ loc_129243:
 	add_to_byte {array_unk_3BB,X}, #0
 
 locret_129254:
-	
 	RTS
 ; End of function sub_1291F5
 
@@ -2083,7 +2052,6 @@ sub_12A944:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c0_12A973:
-	
 	to_stack bank_from_343
 	set bank_command_346, #0
 	set bank_to_344, #code_0
@@ -2096,7 +2064,6 @@ exec_b0_c0_12A973:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c1_12A98E:
-	
 	to_stack bank_from_343
 	set bank_command_346, #1
 	set bank_to_344, #code_0
@@ -2109,7 +2076,6 @@ exec_b0_c1_12A98E:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c2_12A9A9:
-	
 	to_stack bank_from_343
 	set bank_command_346, #2
 	set bank_to_344, #code_0
@@ -2181,7 +2147,6 @@ locret_12AA6C:
 ; =============== S U B	R O U T	I N E =======================================
 
 entry_idx_handler_unk_12AA6D:
-	
 	if_not_equal_cmp_addr entry_idx_300, #$83, check_room_7D_12AA81
 	if_equal_cmp_addr byte_595, #0, locret_12AA80
 	set entry_idx_300, #$96 
@@ -2476,7 +2441,6 @@ loc_12AD41:
 	INC	byte_4D0
 
 loc_12AD58:
-	
 	load_a_masked byte_68D, byte_68E
 	AND	byte_68F
 	STA	byte_6A4
@@ -2554,17 +2518,14 @@ loc_12AE0F:
 ; ---------------------------------------------------------------------------
 
 loc_12AE34:
-	
 	xor_byte byte_590, #$FF
 	JMP	loc_12AE47
 ; ---------------------------------------------------------------------------
 
 loc_12AE3F:
-	
 	xor_byte byte_58C, #$FF
 
 loc_12AE47:
-	
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -2847,7 +2808,6 @@ locret_12B189:
 ; ---------------------------------------------------------------------------
 
 loc_12B18A:
-	
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -2880,7 +2840,6 @@ loc_12B1B8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B1CB:
-	
 	LDY	#0
 	LDX	#0
 
@@ -2922,7 +2881,6 @@ loc_12B1EB:
 	STY	byte_555
 
 locret_12B224:
-	
 	RTS
 ; End of function sub_12B1E3
 
@@ -2949,7 +2907,6 @@ loc_12B22D:
 	STY	byte_556
 
 locret_12B266:
-	
 	RTS
 ; End of function sub_12B225
 
@@ -2976,7 +2933,6 @@ loc_12B26F:
 	STY	byte_557
 
 locret_12B2A8:
-	
 	RTS
 ; End of function sub_12B267
 
@@ -3003,7 +2959,6 @@ loc_12B2B1:
 	STY	byte_558
 
 locret_12B2EA:
-	
 	RTS
 ; End of function sub_12B2A9
 
@@ -3030,7 +2985,6 @@ loc_12B2F3:
 	STY	byte_559
 
 locret_12B32C:
-	
 	RTS
 ; End of function sub_12B2EB
 
@@ -3057,7 +3011,6 @@ loc_12B335:
 	STY	byte_55A
 
 locret_12B36E:
-	
 	RTS
 ; End of function sub_12B32D
 
@@ -3113,7 +3066,6 @@ loc_12B3E8:
 ; ---------------------------------------------------------------------------
 
 locret_12B403:
-	
 	RTS
 ; End of function sub_12B36F
 
@@ -3137,7 +3089,6 @@ loc_12B41E:
 ; ---------------------------------------------------------------------------
 
 loc_12B43B:
-	
 	set byte_46D, #$1E
 	RTS
 ; End of function sub_12B404
@@ -3277,7 +3228,6 @@ loc_12B52B:
 ; ---------------------------------------------------------------------------
 
 loc_12B545:
-	
 	if_not_equal_cmp_addr {obj_array_unk_415,X}, #7, loc_12B552
 	set byte_5D6, #0
 	RTS
@@ -3351,14 +3301,12 @@ loc_12B5F0:
 	set byte_5EA, #0
 
 loc_12B606:
-	
 	if_not_equal_cmp_addr entry_idx_300, #$26, loc_12B61C
 	LDX	byte_434
 	if_not_equal_cmp_addr {obj_array_unk_415,X}, #$B, loc_12B61C
 	set byte_5EB, #0
 
 loc_12B61C:
-	
 	if_not_equal_cmp_addr entry_idx_300, #$27, loc_12B636
 	if_not_equal_cmp_addr byte_434, #0, loc_12B630
 	set byte_5EC, #0
@@ -3377,21 +3325,18 @@ loc_12B636:
 	set byte_5EE, #0
 
 loc_12B64C:
-	
 	if_not_equal_cmp_addr entry_idx_300, #$2A, loc_12B662
 	LDX	byte_434
 	if_not_equal_cmp_addr {obj_array_unk_415,X}, #$14, loc_12B662
 	set byte_5EF, #0
 
 loc_12B662:
-	
 	if_not_equal_cmp_addr entry_idx_300, #$2C, loc_12B678
 	LDX	byte_434
 	if_not_equal_cmp_addr {obj_array_unk_415,X}, #$B, loc_12B678
 	set byte_5F3, #0
 
 loc_12B678:
-	
 	if_not_equal_cmp_addr entry_idx_300, #$2E, loc_12B69C
 	LDX	byte_434
 	if_not_equal_cmp_addr {obj_array_unk_415,X}, #8, loc_12B68F
@@ -3455,7 +3400,6 @@ loc_12B6E8:
 ; ---------------------------------------------------------------------------
 
 loc_12B6FF:
-	
 	if_not_equal_cmp_addr entry_idx_300, #$38, loc_12B72D
 	LDX	byte_434
 	if_not_equal_cmp_addr {obj_array_unk_415,X}, #7, loc_12B716
@@ -4063,7 +4007,6 @@ loc_12BBC6:
 ; ---------------------------------------------------------------------------
 
 loc_12BBD4:
-	
 	if_not_equal_cmp_addr byte_434, #0, loc_12BBE1
 	set byte_675, #0
 	RTS
@@ -4179,7 +4122,6 @@ loc_12BCAE:
 ; ---------------------------------------------------------------------------
 
 loc_12BCBC:
-	
 	if_not_equal_cmp_addr byte_434, #1, loc_12BCC9
 	set byte_685, #0
 	RTS
@@ -4261,7 +4203,6 @@ locret_12BD53:
 ; ---------------------------------------------------------------------------
 
 loc_12BD54:
-	
 	LDX	byte_434
 	if_not_equal_cmp_addr {obj_array_unk_415,X}, #$20, loc_12BD64
 	set byte_5AD, #0
@@ -4458,7 +4399,6 @@ loc_12BEE9:
 	set byte_5AA, #$FF
 
 locret_12BEF9:
-	
 	RTS
 ; End of function sub_12BEB5
 
@@ -4480,7 +4420,6 @@ loc_12BF14:
 ; ---------------------------------------------------------------------------
 
 loc_12BF23:
-	
 	set byte_46D, #$22 
 	RTS
 ; End of function sub_12BEFA
@@ -4488,7 +4427,6 @@ loc_12BF23:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12BF29:
-	
 	LDX	cur_obj_idx_unk_43A
 	set {objCreatedArray_393,X}, #0
 	RTS
@@ -4537,7 +4475,6 @@ sub_12BF79:
 	set byte_46D, #$1C
 
 locret_12BF88:
-	
 	RTS
 ; End of function sub_12BF79
 
@@ -4549,7 +4486,6 @@ sub_12BF89:
 	set byte_46D, #$1C
 
 locret_12BF98:
-	
 	RTS
 ; End of function sub_12BF89
 
@@ -4565,12 +4501,10 @@ sub_12BF99:
 	set byte_59F, #1
 
 locret_12BFC0:
-	
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BFC1:
-	
 	set byte_560, #$FF
 	JSR	exec_b0_c4_12842B
 	set text_idx_35C, #1
@@ -4642,7 +4576,6 @@ set_mansion_saveroom_12C05C:
 	JSR	exec_b0_c0_12A973
 
 locret_12C095:
-	
 	RTS
 ; End of function sub_12C022
 
@@ -4656,7 +4589,6 @@ sub_12C096:
 	set byte_564, #$FF
 
 locret_12C0AD:
-	
 	RTS
 ; End of function sub_12C096
 
@@ -4696,7 +4628,6 @@ sub_12C0CE:
 	JSR	exec_b0_c2_12A9A9
 
 locret_12C118:
-	
 	RTS
 ; End of function sub_12C0CE
 
@@ -4706,7 +4637,6 @@ sub_12C119:
 	LDX	#0
 
 loc_12C11B:
-	
 	if_not_equal {objCreatedArray_393,X}, locret_12C13B
 	if_equal_cmp_addr {objIdxArray_375,X}, #3, loc_12C12E
 	INX
@@ -4758,7 +4688,6 @@ sub_12C13C:
 	set byte_577, #$FF
 
 locret_12C1B7:
-	
 	RTS
 ; End of function sub_12C13C
 
@@ -4773,7 +4702,6 @@ sub_12C1B8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C1C3:
-	
 	DEY
 	DEY
 	add_to_byte_clc {array_unk_3D9,X}, #2
@@ -4812,7 +4740,6 @@ loc_12C1FA:
 	set byte_585, #$FF
 
 locret_12C220:
-	
 	RTS
 ; End of function sub_12C1F2
 
@@ -4890,7 +4817,6 @@ sub_12C2BF:
 	set byte_46D, #2
 
 locret_12C2D5:
-	
 	RTS
 ; End of function sub_12C2BF
 
@@ -4914,7 +4840,6 @@ sub_12C2D6:
 	JSR	exec_b0_c2_12A9A9
 
 locret_12C323:
-	
 	RTS
 ; End of function sub_12C2D6
 
@@ -4938,7 +4863,6 @@ sub_12C324:
 	JSR	exec_b0_c2_12A9A9
 
 locret_12C371:
-	
 	RTS
 ; End of function sub_12C324
 
@@ -5102,7 +5026,6 @@ sub_12C46C:
 	set byte_659, #0
 
 locret_12C4AD:
-	
 	RTS
 ; End of function sub_12C46C
 
@@ -5297,7 +5220,6 @@ loc_12C66E:
 ; ---------------------------------------------------------------------------
 
 loc_12C681:
-	
 	set text_idx_35C, #$21 
 	set char_type_id_35D, #2
 	set tilemapTypeUnk_30B, #1
@@ -5442,7 +5364,6 @@ sub_12C7CB:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C7DE:
-	
 	if_not_equal_cmp_addr image_id_4A4, #$18, loc_12C7EB
 	set byte_54E, #2
 	RTS
@@ -6032,7 +5953,6 @@ comm_48_take_item_12CD1D:
 ; =============== S U B	R O U T	I N E =======================================
 
 com_E_load_game_12CD30:
-	
 	set byte_100, image_id_4A4
 	set byte_101, image_offset_4A5
 	set byte_102, ppu_prev_unk_4A6
@@ -6200,7 +6120,6 @@ loc_12CEBA:
 	set byte_372, #1
 
 loc_12CF2D:
-	
 	JSR	sub_12D070
 	JSR	wait_for_vblank_FC95
 	if_not_equal_cmp_addr input_pressed_34A, #2, loc_12CF48
@@ -6251,7 +6170,6 @@ loc_12CF76:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12CFBA:
-	
 	set byte_204, #$F0 
 	LDY	byte_372
 	set {byte_4A0,Y}, byte_47F
@@ -6387,7 +6305,6 @@ loc_12D133:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D139:
-	
 	set_ptr _SAVE_RAM
 
 	add_to_byte_clc ptr_0, #$14
@@ -6490,7 +6407,6 @@ loc_12D210:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D21B:
-	
 	JSR	sub_12EEAE
 	JSR	ppu_reset_ctrl_mask_FE93
 	JSR	sub_12D261
@@ -6526,7 +6442,6 @@ byte_12D251:.BYTE $3E,  7,$37,$30
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D261:
-	
 	set tilemapWidth_308, #0
 	set byte_31A, #0
 ; End of function sub_12D261
@@ -6534,7 +6449,6 @@ sub_12D261:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D26B:
-	
 	add_to_byte_clc tilemapWidth_308, byte_31A
 	LDY	byte_31A
 
@@ -6551,7 +6465,6 @@ loc_12D278:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D287:
-	
 	set sprite_length_30F, #0
 	set byte_42C, #0
 	STA	byte_42E
@@ -6607,7 +6520,6 @@ loc_12D315:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D319:
-	
 	JSR	sub_12DD0A
 	set byte_31A, #$80 
 	set tilemapWidth_308, #$C
@@ -6617,7 +6529,6 @@ sub_12D319:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D329:
-	
 	LDA	byte_42E
 	mult_a_by_2
 	add_to_a byte_42C
@@ -6650,7 +6561,6 @@ loc_12D33A:
 ; ---------------------------------------------------------------------------
 
 loc_12D383:
-	
 	to_stack tilemapTypeUnk_30B
 	LDY	tilemapTypeUnk_30B
 	LDA	unk_53B,Y
@@ -6669,7 +6579,6 @@ loc_12D394:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D3AB:
-	
 	STA	ptr_0
 	set data_2, #0
 	STA	data_3
@@ -6682,7 +6591,6 @@ loc_12D3B3:
 ; ---------------------------------------------------------------------------
 
 loc_12D3C5:
-	
 	if_greater_cmp_addr ptr_0, #$A, loc_12D3D7
 	sub_byte_sec ptr_0, #$A
 	INC	data_2
@@ -6744,7 +6652,6 @@ loc_12D473:
 	add_to_byte_clc tilemap_size_307, #$C
 
 loc_12D484:
-	
 	LDA	ptr_0
 	add_to_a #$32 
 	STA	objMapIdx_316
@@ -6758,7 +6665,6 @@ loc_12D484:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D49F:
-	
 	set byte_310, #0
 	set byte_35E, #$A
 	set ppu_unk_byte_309, #$1B
@@ -6768,7 +6674,6 @@ sub_12D49F:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D4B3:
-	
 	set byte_35F, #1
 	set byte_362, #0
 	set byte_363, #0
@@ -6779,7 +6684,6 @@ sub_12D4B3:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D4C6:
-	
 	JSR	sub_1283BA
 	to_stack image_id_4A4
 	to_stack image_offset_4A5
@@ -6791,7 +6695,6 @@ sub_12D4C6:
 	JSR	sub_12D319
 
 loc_12D4E7:
-	
 	JSR	sub_12DE49
 	JSR	sub_12DEB5
 	JSR	sub_12DD0A
@@ -6848,7 +6751,6 @@ loc_12D569:
 ; ---------------------------------------------------------------------------
 
 loc_12D570:
-	
 	JSR	sub_12ED29
 	from_stack prev_sprite_type_4A9
 	from_stack ppu_prev_scroll_y_unk_4A8
@@ -6862,7 +6764,6 @@ loc_12D570:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D58C:
-	
 	JSR	sub_1283BA
 	to_stack image_id_4A4
 	to_stack image_offset_4A5
@@ -6916,7 +6817,6 @@ loc_12D623:
 	set sprite_length_30F, #$FF
 
 loc_12D652:
-	
 	from_stack prev_sprite_type_4A9
 	from_stack ppu_prev_scroll_y_unk_4A8
 	from_stack ppu_prev_scroll_x_unk_4A7
@@ -6937,7 +6837,6 @@ sub_12D680:
 	set byte_372, #0
 
 loc_12D685:
-	
 	if_greater_cmp_addr byte_546, #$A, loc_12D699
 	set byte_546, #0
 	xor_byte byte_547, #1
@@ -6997,7 +6896,6 @@ sub_12D700:
 	JSR	sub_12DCE9
 
 loc_12D72F:
-	
 	JSR	sub_12DD0A
 	JSR	wait_for_vblank_FC95
 	if_not_equal_cmp_addr input_pressed_34A, #8, loc_12D76F
@@ -7011,7 +6909,6 @@ loc_12D752:
 	set byte_42E, #4
 
 loc_12D757:
-	
 	if_not_equal_cmp_addr byte_42E, #5, loc_12D763
 	set byte_42E, #4
 
@@ -7034,7 +6931,6 @@ loc_12D789:
 	set byte_42E, #$FF
 
 loc_12D78E:
-	
 	if_not_equal_cmp_addr byte_42E, #5, loc_12D79A
 	set byte_42E, #$FF
 
@@ -7086,7 +6982,6 @@ loc_12D7FB:
 ; ---------------------------------------------------------------------------
 
 loc_12D802:
-	
 	JSR	sub_12ED29
 	from_stack prev_sprite_type_4A9
 	from_stack ppu_prev_scroll_y_unk_4A8
@@ -7156,7 +7051,6 @@ loc_12D8AF:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D8B3:
-	
 	if_greater_cmp_addr tilemapTypeUnk_30B, byte_532, loc_12D8BC
 	RTS
 ; ---------------------------------------------------------------------------
@@ -7238,7 +7132,6 @@ loc_12D946:
 	from_stack tilemapTypeUnk_30B
 
 loc_12D966:
-	
 	set {unk_53B,Y}, inv_spr_dscr1_30C
 	set {byte_533,Y}, tilemapTypeUnk_30B
 	if_not_equal_cmp #$3A, loc_12D9A3
@@ -7268,7 +7161,6 @@ loc_12D991:
 ; ---------------------------------------------------------------------------
 
 loc_12D9A3:
-	
 	to_stack tilemapTypeUnk_30B
 	TYA
 	PHA
@@ -7315,7 +7207,6 @@ loc_12D9DA:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D9F7:
-	
 	TXA
 	PHA
 	TYA
@@ -7356,7 +7247,6 @@ loc_12D9FB:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DA33:
-	
 	TXA
 	PHA
 	TYA
@@ -7378,7 +7268,6 @@ loc_12DA48:
 ; ---------------------------------------------------------------------------
 
 loc_12DA5E:
-	
 	TXA
 	PHA
 	LDA	byte_533,X
@@ -7437,7 +7326,6 @@ loc_12DACB:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DAD0:
-	
 	if_greater_cmp_addr byte_546, #$A, loc_12DAE4
 	set byte_546, #0
 	xor_byte byte_547, #1
@@ -7516,7 +7404,6 @@ loc_12DB83:
 	JSR	sub_12DC31
 
 loc_12DB8E:
-	
 	JSR	wait_for_vblank_FC95
 	if_not_equal_cmp_addr input_pressed_34A, #8, loc_12DBB0
 	if_not_equal_cmp_addr byte_372, #0, loc_12DBA4
@@ -7568,7 +7455,6 @@ loc_12DBF5:
 	from_stack byte_42C
 
 loc_12DC0C:
-	
 	JMP	loc_12DC16
 ; ---------------------------------------------------------------------------
 
@@ -7578,7 +7464,6 @@ loc_12DC0F:
 ; ---------------------------------------------------------------------------
 
 loc_12DC16:
-	
 	JSR	sub_12ED29
 	set tilemapWidth_308, #$60 
 	set byte_31A, #$A0 
@@ -7593,7 +7478,6 @@ locret_12DC30:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DC31:
-	
 	LDA	byte_372
 	add_to_a #$20 
 	STA	objMapIdx_316
@@ -7626,7 +7510,6 @@ sub_12DC76:
 	JSR	sub_12DF6C
 
 loc_12DC79:
-	
 	JSR	wait_for_vblank_FC95
 	if_not_equal_cmp_addr input_reg1_347, #8, loc_12DC97
 	if_equal byte_372, loc_12DC79
@@ -7660,7 +7543,6 @@ loc_12DCC1:
 ; ---------------------------------------------------------------------------
 
 loc_12DCC8:
-	
 	JSR	sub_12ED29
 	RTS
 ; End of function sub_12DC76
@@ -7680,7 +7562,6 @@ sub_12DCCC:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DCE9:
-	
 	set objMapIdx_316, #$24 
 	set tilemap_size_307, #$90 
 	LDA	#$38 
@@ -7695,7 +7576,6 @@ sub_12DCE9:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DD0A:
-	
 	if_greater_cmp_addr byte_546, #$A, loc_12DD1E
 	set byte_546, #0
 	xor_byte byte_547, #1
@@ -7780,7 +7660,6 @@ loc_12DE34:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DE49:
-	
 	if_greater_cmp_addr count_unk_465, #5, locret_12DEB4
 	set count_unk_465, #0
 	INC	byte_54D
@@ -7806,7 +7685,6 @@ loc_12DE8E:
 	set byte_54B, #2
 
 loc_12DE9C:
-	
 	set byte_31A, #0
 	STA	sprite_secondByte_31B
 	STA	byte_317
@@ -7821,7 +7699,6 @@ locret_12DEB4:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DEB5:
-	
 	set objMapIdx_316, byte_54B
 	if_equal byte_54A, loc_12DEC9
 	add_to_byte_clc objMapIdx_316, #3
@@ -7847,7 +7724,6 @@ byte_12DEED:.BYTE	0,  0,	0,  0,	0,  0,	0,  1,	1,  1,	1,  1,	1,  1,	2,  2
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DF2B:
-	
 	JSR	sub_12DF32
 	JSR	sub_12DF6C
 	RTS
@@ -7856,7 +7732,6 @@ sub_12DF2B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DF32:
-	
 	set tilemap_size_307, #$A
 	set ppu_unk_byte_309, #8
 	set inv_itemPrev_idx_31D, #$29 
@@ -7919,14 +7794,12 @@ loc_12DFC6:
 ; ---------------------------------------------------------------------------
 
 loc_12DFD7:
-	
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_12DFE8
 	if_not_equal_cmp_addr byte_46D, #0, loc_12DFE8
 	JMP	loc_12E166
 ; ---------------------------------------------------------------------------
 
 loc_12DFE8:
-	
 	LDA	tilemapTypeUnk_30B
 	add_to_a #1
 	if_equal_cmp byte_543, sub_12DFFC
@@ -7938,7 +7811,6 @@ loc_12DFE8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DFFC:
-	
 	set byte_543, #0
 	set tilemap_size_307, #$10
 	set ppu_unk_byte_309, #$14
@@ -7963,7 +7835,6 @@ loc_12E019:
 ; ---------------------------------------------------------------------------
 
 loc_12E035:
-	
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #$12, loc_12E05D
 	if_not_equal_cmp_addr byte_54A, #0, loc_12E04D
 	if_greater_cmp_addr byte_549, #$C8, loc_12E04D
@@ -7971,7 +7842,6 @@ loc_12E035:
 ; ---------------------------------------------------------------------------
 
 loc_12E04D:
-	
 	set byte_549, #$FF
 	set byte_54A, #0
 	STA	byte_4B5
@@ -7979,7 +7849,6 @@ loc_12E04D:
 ; ---------------------------------------------------------------------------
 
 loc_12E05D:
-	
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #$C, loc_12E076
 	if_equal_cmp_addr byte_54A, #0, loc_12E076
 	set byte_54A, #0
@@ -7988,7 +7857,6 @@ loc_12E05D:
 ; ---------------------------------------------------------------------------
 
 loc_12E076:
-	
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #$E, loc_12E09E
 	if_not_equal_cmp_addr byte_54A, #0, loc_12E08E
 	if_greater_cmp_addr byte_549, #$C8, loc_12E08E
@@ -7996,7 +7864,6 @@ loc_12E076:
 ; ---------------------------------------------------------------------------
 
 loc_12E08E:
-	
 	set byte_54A, #0
 	STA	byte_4B5
 	LDA	#$AA 
@@ -8005,7 +7872,6 @@ loc_12E08E:
 ; ---------------------------------------------------------------------------
 
 loc_12E09E:
-	
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #$11, loc_12E0C6
 	if_not_equal_cmp_addr byte_54A, #0, loc_12E0B6
 	if_greater_cmp_addr byte_549, #$C8, loc_12E0B6
@@ -8013,7 +7879,6 @@ loc_12E09E:
 ; ---------------------------------------------------------------------------
 
 loc_12E0B6:
-	
 	set byte_54A, #0
 	STA	byte_4B5
 	LDA	#$55 
@@ -8022,7 +7887,6 @@ loc_12E0B6:
 ; ---------------------------------------------------------------------------
 
 loc_12E0C6:
-	
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #$B, loc_12E0DC
 	if_lower_cmp_addr byte_549, #$C8, loc_12E0DC
 	LDA	#$55 
@@ -8031,7 +7895,6 @@ loc_12E0C6:
 ; ---------------------------------------------------------------------------
 
 loc_12E0DC:
-	
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #$D, loc_12E0F2
 	if_lower_cmp_addr byte_549, #$C8, loc_12E0F2
 	LDA	#$AA 
@@ -8040,7 +7903,6 @@ loc_12E0DC:
 ; ---------------------------------------------------------------------------
 
 loc_12E0F2:
-	
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #$F, loc_12E108
 	if_lower_cmp_addr byte_549, #$C8, loc_12E108
 	LDA	#$AA 
@@ -8049,7 +7911,6 @@ loc_12E0F2:
 ; ---------------------------------------------------------------------------
 
 loc_12E108:
-	
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #$10, loc_12E11E
 	if_lower_cmp_addr byte_549, #$C8, loc_12E11E
 	LDA	#$FF
@@ -8058,7 +7919,6 @@ loc_12E108:
 ; ---------------------------------------------------------------------------
 
 loc_12E11E:
-	
 	set text_idx_35C, #$78 
 	set char_type_id_35D, #0
 	set byte_364, #7
@@ -8070,7 +7930,6 @@ loc_12E11E:
 ; ---------------------------------------------------------------------------
 
 loc_12E13A:
-	
 	LDX	byte_47B
 	LDY	byte_532
 	JSR	sub_12D9F7
@@ -8085,7 +7944,6 @@ loc_12E13A:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E156:
-	
 	add_to_a byte_549
 	BCC	loc_12E162
 	set byte_549, #$FF
@@ -8101,7 +7959,6 @@ loc_12E162:
 ; START	OF FUNCTION CHUNK FOR sub_12DFA5
 
 loc_12E166:
-	
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #$2F, loc_12E170
 	JMP	loc_12E315
 ; ---------------------------------------------------------------------------
@@ -8159,7 +8016,6 @@ loc_12E1F4:
 ; ---------------------------------------------------------------------------
 
 loc_12E202:
-	
 	JMP	loc_12E315
 ; ---------------------------------------------------------------------------
 
@@ -8219,7 +8075,6 @@ loc_12E27C:
 ; ---------------------------------------------------------------------------
 
 loc_12E28A:
-	
 	JMP	loc_12E315
 ; ---------------------------------------------------------------------------
 
@@ -8282,7 +8137,6 @@ loc_12E312:
 ; ---------------------------------------------------------------------------
 
 loc_12E315:
-	
 	set byte_46E, tilemapTypeUnk_30B
 	if_equal_cmp #0, loc_12E362
 	if_equal_cmp #$13, loc_12E362
@@ -8302,18 +8156,15 @@ loc_12E315:
 ; ---------------------------------------------------------------------------
 
 loc_12E35C:
-	
 	STY	tilemapTypeUnk_30B
 	JSR	sub_12D8B3
 
 loc_12E362:
-	
 	set sprite_length_30F, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12E368:
-	
 	set text_idx_35C, #$76 
 	set char_type_id_35D, #0
 	set byte_364, #7
@@ -8366,7 +8217,6 @@ locret_12E3D3:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E3D4:
-	
 	JSR	wait_for_vblank_FC95
 	if_not_equal_cmp_addr input_pressed_34A, #$40, sub_12E3D4
 	RTS
@@ -8375,7 +8225,6 @@ sub_12E3D4:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E3DF:
-	
 	if_equal_cmp_addr byte_543, #0, locret_12E427
 	set tilemap_size_307, #$10
 	set ppu_unk_byte_309, #$14
@@ -8410,7 +8259,6 @@ locret_12E427:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E428:
-	
 	JSR	sub_12E4CD
 	JSR	wait_for_vblank_FC95
 	if_not_equal_cmp_addr input_pressed_34A, #8, loc_12E450
@@ -8469,7 +8317,6 @@ loc_12E4B0:
 ; ---------------------------------------------------------------------------
 
 loc_12E4B7:
-	
 	JSR	sub_12ED29
 	set tilemapWidth_308, #$10
 	set byte_31A, #$70 
@@ -8481,7 +8328,6 @@ loc_12E4B7:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E4CD:
-	
 	set byte_31A, #$80 
 	set tilemapWidth_308, #$C
 	JSR	sub_12D26B
@@ -8564,7 +8410,6 @@ sub_12E5E6:
 ; ---------------------------------------------------------------------------
 
 loc_12E603:
-	
 	LDX	byte_372
 	LDA	unk_4B6,X
 	add_to_a #$14
@@ -8583,7 +8428,6 @@ loc_12E616:
 ; ---------------------------------------------------------------------------
 
 loc_12E62A:
-	
 	if_not_equal_cmp_addr input_pressed_34A, #4, loc_12E645
 	LDA	byte_372
 	add_to_a #1
@@ -8618,7 +8462,6 @@ loc_12E664:
 	JSR	sub_12D319
 
 loc_12E67A:
-	
 	JSR	sub_12ED29
 	set byte_310, #$A
 	set byte_35E, #8
@@ -8643,7 +8486,6 @@ sub_12E69F:
 ; ---------------------------------------------------------------------------
 
 loc_12E6BC:
-	
 	LDX	byte_372
 	LDA	unk_4C2,X
 	add_to_a #$99 
@@ -8656,7 +8498,6 @@ loc_12E6BC:
 	set char_type_id_35D, #2
 
 loc_12E6E0:
-	
 	JSR	sub_12E798
 	JSR	sub_12E7D3
 	JSR	sub_12E7F0
@@ -8667,7 +8508,6 @@ loc_12E6E0:
 ; ---------------------------------------------------------------------------
 
 loc_12E6F7:
-	
 	if_not_equal_cmp_addr input_pressed_34A, #4, loc_12E712
 	LDA	byte_372
 	add_to_a #1
@@ -8717,7 +8557,6 @@ loc_12E763:
 	JSR	sub_12D319
 
 loc_12E776:
-	
 	set byte_310, #$A
 	set byte_35E, #8
 	set ppu_unk_byte_309, #9
@@ -8732,7 +8571,6 @@ loc_12E776:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E798:
-	
 	set tilemap_size_307, #4
 	set ppu_unk_byte_309, #9
 	set byte_35E, #8
@@ -8751,7 +8589,6 @@ sub_12E798:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E7D3:
-	
 	set objMapIdx_316, #$2E 
 	LDA	#$54 
 
@@ -8767,7 +8604,6 @@ loc_12E7DA:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E7F0:
-	
 	set objMapIdx_316, #$2F 
 	set tilemap_size_307, #$54 
 	set ppu_unk_byte_309, #$60 
@@ -8780,7 +8616,6 @@ sub_12E7F0:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E80D:
-	
 	set byte_31A, #$A0 
 	set tilemapWidth_308, #4
 	JSR	sub_12D26B
@@ -8790,7 +8625,6 @@ sub_12E80D:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E81B:
-	
 	set byte_31A, #$A4 
 	set tilemapWidth_308, #4
 	JSR	sub_12D26B
@@ -8800,7 +8634,6 @@ sub_12E81B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E829:
-	
 	set byte_36A, tilemap_size_307
 	set byte_36B, #0
 	set byte_366, ppu_unk_byte_309
@@ -8855,7 +8688,6 @@ loc_12E8C5:
 ; ---------------------------------------------------------------------------
 
 loc_12E8FB:
-	
 	add_to_byte_clc {unk_53B,X}, {unk_53B,Y}
 	LDX	byte_47C
 	LDY	byte_532
@@ -8869,7 +8701,6 @@ loc_12E8FB:
 ; ---------------------------------------------------------------------------
 
 loc_12E923:
-	
 	JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
@@ -8891,7 +8722,6 @@ loc_12E92A:
 ; ---------------------------------------------------------------------------
 
 loc_12E960:
-	
 	add_to_byte_clc {unk_53B,X}, {unk_53B,Y}
 	LDX	byte_47C
 	LDY	byte_532
@@ -8905,7 +8735,6 @@ loc_12E960:
 ; ---------------------------------------------------------------------------
 
 loc_12E988:
-	
 	JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
@@ -8927,7 +8756,6 @@ loc_12E98F:
 ; ---------------------------------------------------------------------------
 
 loc_12E9C5:
-	
 	add_to_byte_clc {unk_53B,X}, {unk_53B,Y}
 	LDX	byte_47C
 	LDY	byte_532
@@ -8941,7 +8769,6 @@ loc_12E9C5:
 ; ---------------------------------------------------------------------------
 
 loc_12E9ED:
-	
 	JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
@@ -8963,7 +8790,6 @@ loc_12E9F4:
 ; ---------------------------------------------------------------------------
 
 loc_12EA2A:
-	
 	add_to_byte_clc {unk_53B,X}, {unk_53B,Y}
 	LDX	byte_47C
 	LDY	byte_532
@@ -8977,7 +8803,6 @@ loc_12EA2A:
 ; ---------------------------------------------------------------------------
 
 loc_12EA52:
-	
 	JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
@@ -9091,7 +8916,6 @@ loc_12EB4F:
 ; ---------------------------------------------------------------------------
 
 loc_12EB63:
-	
 	if_not_equal_cmp #$C, loc_12EB6F
 	set {byte_533,X}, #$11
 	JMP	loc_12EB78
@@ -9102,7 +8926,6 @@ loc_12EB6F:
 	set {byte_533,X}, #$10
 
 loc_12EB78:
-	
 	LDX	byte_47B
 	if_greater_cmp_addr byte_47B, byte_47C, loc_12EB86
 	LDX	byte_47C
@@ -9261,14 +9084,12 @@ loc_12ED0B:
 ; ---------------------------------------------------------------------------
 
 loc_12ED0E:
-	
 	JSR	sub_12ED29
 	set sprite_length_30F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12ED17:
-	
 	JSR	sub_12ED20
 	set sprite_length_30F, #$FF
 	RTS
@@ -9301,7 +9122,6 @@ sub_12ED32:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12ED3B:
-	
 	to_stack tilemapTypeUnk_30B
 	LDA	#$2D 
 	JMP	loc_12ED4D
@@ -9316,7 +9136,6 @@ sub_12ED44:
 ; ---------------------------------------------------------------------------
 
 loc_12ED4D:
-	
 	STA	tilemapTypeUnk_30B
 	JSR	sub_128531
 	from_stack tilemapTypeUnk_30B
@@ -9344,7 +9163,6 @@ set_inventory_screen_12ED5D:
 	from_stack tilemapTypeUnk_30B
 
 loc_12ED90:
-	
 	JSR	wait_for_frame_rendered_FCA0
 	if_not_equal_cmp_addr input_pressed_34A, #8, loc_12EDC0
 	if_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_12ED90
@@ -9388,7 +9206,6 @@ loc_12EDF1:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12EDF5:
-	
 	LDX	#0
 	LDA	palette_bg_321,X 
 	LDX	#$10
@@ -9441,11 +9258,9 @@ loc_12EE69:
 ; ---------------------------------------------------------------------------
 
 loc_12EE7A:
-	
 	LDA	palette_bg_321,Y 
 
 loc_12EE7D:
-	
 	STA	ppu_data_70,X
 	INX
 	INY
@@ -9474,7 +9289,6 @@ loc_12EEA7:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12EEAE:
-	
 	set inv_spr_dscr1_30C, #4
 
 write_ppu_entry_12EEB3:
@@ -9529,11 +9343,9 @@ loc_12EF2D:
 ; ---------------------------------------------------------------------------
 
 loc_12EF32:
-	
 	LDA	palette_bg_321,Y 
 
 loc_12EF35:
-	
 	STA	ppu_data_70,X
 	INX
 	INY
@@ -9574,7 +9386,6 @@ sub_12EF66:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12EF77:
-	
 	TYA
 	PHA
 	JSR	sub_1283BA
@@ -9622,7 +9433,6 @@ map_sequence_12F072:.BYTE   4,	6,  5,	7,  3,$14,$15, $C, $D, $E, $F
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F07D:
-	
 	set byte_41F, #0
 	STA	byte_421
 	STA	byte_547
@@ -9651,7 +9461,6 @@ show_computer_12F0B2:
 	set byte_372, #0
 
 loc_12F0E1:
-	
 	JSR	sub_12F564
 	JSR	sub_12F168
 	JSR	wait_for_frame_rendered_FCA0
@@ -9697,7 +9506,6 @@ loc_12F138:
 ; ---------------------------------------------------------------------------
 
 loc_12F13F:
-	
 	JSR	sub_12ED29
 	from_stack prev_sprite_type_4A9
 	from_stack ppu_prev_scroll_y_unk_4A8
@@ -9714,7 +9522,6 @@ loc_12F13F:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F168:
-	
 	set objMapIdx_316, #$2A 
 	LDA	byte_372
 	mult_a_by_2
@@ -9743,7 +9550,6 @@ sub_12F168:
 ; ---------------------------------------------------------------------------
 
 loc_12F1C7:
-	
 	add_to_byte_clc byte_36A, #$10
 
 loc_12F1D0:
@@ -9786,7 +9592,6 @@ loc_12F1D0:
 ; ---------------------------------------------------------------------------
 
 loc_12F258:
-	
 	add_to_byte_clc byte_36A, #$10
 
 loc_12F261:
@@ -9821,7 +9626,6 @@ sub_12F2C9:
 ; ---------------------------------------------------------------------------
 
 loc_12F2D8:
-	
 	if_not_equal_cmp_addr byte_372, #$A, loc_12F2ED
 	if_equal_cmp_addr byte_421, #0, locret_12F2EC
 	DEC	byte_421
@@ -9833,7 +9637,6 @@ locret_12F2EC:
 ; ---------------------------------------------------------------------------
 
 loc_12F2ED:
-	
 	LDA	#$4E 
 	add_to_a byte_421
 	STA	data_2
@@ -9847,7 +9650,6 @@ loc_12F2ED:
 ; ---------------------------------------------------------------------------
 
 loc_12F30E:
-	
 	set_ptr off_12F53A
 
 	LDA	byte_420
@@ -9893,13 +9695,11 @@ loc_12F377:
 	if_not_equal_cmp_addr byte_420, #3, loc_12F3F4
 
 loc_12F37E:
-	
 	JSR	sub_12F5FC
 	to_stack byte_372
 	set byte_372, #$1C
 
 loc_12F38A:
-	
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	sub_12F168
 	if_not_equal_cmp_addr input_pressed_34A, #8, loc_12F3A4
@@ -9941,7 +9741,6 @@ loc_12F3E9:
 ; ---------------------------------------------------------------------------
 
 loc_12F3F4:
-	
 	if_not_equal_cmp_addr byte_420, #4, loc_12F40B
 	JSR	sub_12F698
 	set byte_69E, #$FF
@@ -9953,7 +9752,6 @@ loc_12F40B:
 	set byte_41F, #$FF
 
 locret_12F410:
-	
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -10023,13 +9821,11 @@ sub_12F4C0:
 ; ---------------------------------------------------------------------------
 
 loc_12F4D9:
-	
 	sub_byte_sec byte_372, #$B
 	RTS
 ; ---------------------------------------------------------------------------
 
 locret_12F4E3:
-	
 	RTS
 ; End of function sub_12F4C0
 
@@ -10047,7 +9843,6 @@ sub_12F4E4:
 ; ---------------------------------------------------------------------------
 
 loc_12F503:
-	
 	if_lower_cmp #$12, locret_12F513
 	BEQ	locret_12F513
 	add_to_byte_clc byte_372, #$A
@@ -10055,7 +9850,6 @@ loc_12F503:
 ; ---------------------------------------------------------------------------
 
 locret_12F513:
-	
 	RTS
 ; End of function sub_12F4E4
 
@@ -10068,7 +9862,6 @@ sub_12F514:
 	DEC	byte_372
 
 locret_12F526:
-	
 	RTS
 ; End of function sub_12F514
 
@@ -10081,7 +9874,6 @@ sub_12F527:
 	INC	byte_372
 
 locret_12F539:
-	
 	RTS
 ; End of function sub_12F527
 
@@ -10117,7 +9909,6 @@ sub_12F57D:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F583:
-	
 	set objMapIdx_316, #$3C 
 	LDA	byte_421
 	mult_a_by_8
@@ -10139,7 +9930,6 @@ locret_12F5B8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F5B9:
-	
 	set ppu_unk_byte_309, #9
 	set tilemap_size_307, #9
 	set byte_35E, #8
@@ -10150,7 +9940,6 @@ sub_12F5B9:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F5D2:
-	
 	set byte_362, #0
 	set byte_363, #0
 ; End of function sub_12F5D2
@@ -10158,7 +9947,6 @@ sub_12F5D2:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F5DC:
-	
 	set byte_364, #7
 	set byte_360, #1
 	set byte_361, #0
@@ -10211,7 +9999,6 @@ sub_12F5FC:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F698:
-	
 	JSR	sub_12F732
 	set text_idx_35C, #$32 
 	set char_type_id_35D, #2

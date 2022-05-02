@@ -1216,7 +1216,6 @@ byte_13DF14:
 ; =============== S U B	R O U T	I N E =======================================
 
 load_spr_palette_13DF18:
-	
 	set_ptr Palette_1380AC
 
 	set data_2, #0
@@ -1309,7 +1308,6 @@ loc_13DFD1:
 ; =============== S U B	R O U T	I N E =======================================
 
 load_boss_sprite_13DFDC:
-	
 	set_ptr BossImages_129826
 
 	set data_2, #0

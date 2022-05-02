@@ -23,7 +23,7 @@ loc_FC9A:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-wait_for_frame_rendered_FCA0:	
+wait_for_frame_rendered_FCA0:
 
 	set frame_render_count_350, #1
 
@@ -34,7 +34,7 @@ loop_FCA5:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-wait_any_input_65k_cycles_FCAB:	
+wait_any_input_65k_cycles_FCAB:
 
 	LDY	#0
 
@@ -54,28 +54,28 @@ exit_FCBC:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-wait_for_a_pressed_FCBD:	
+wait_for_a_pressed_FCBD:
 	if_not_equal_cmp_addr input_pressed_34A, #a_80, wait_for_a_pressed_FCBD
 	RTS
 ; End of function wait_for_a_pressed_FCBD
 
 ; =============== S U B	R O U T	I N E =======================================
 
-wait_for_b_pressed_FCC5:	
+wait_for_b_pressed_FCC5:
 	if_not_equal_cmp_addr input_pressed_34A, #b_40, wait_for_b_pressed_FCC5
 	RTS
 ; End of function wait_for_b_pressed_FCC5
 
 ; =============== S U B	R O U T	I N E =======================================
 
-wait_for_any_input_FCCD:	
+wait_for_any_input_FCCD:
 	if_equal_cmp_addr input_pressed_34A, #0, wait_for_any_input_FCCD
 	RTS
 ; End of function wait_for_any_input_FCCD
 
 ; =============== S U B	R O U T	I N E =======================================
 
-wait_for_n_65k_cycles_FCD5:	
+wait_for_n_65k_cycles_FCD5:
 
 	PHA
 	JSR	wait_65k_cycles_FCE0
@@ -173,7 +173,7 @@ loc_FD62:
 	if_not_equal sprite_type_306, battle_screen_update_FD6E
 	JSR	nmi_sub_FCF5
 
-battle_screen_update_FD6E:	
+battle_screen_update_FD6E:
 	set _PPU_OAM_DMA, #2
 	JSR	ppu_upset_data_FDCB
 	JSR	ppu_update_FE20
@@ -329,7 +329,7 @@ input_sub_FE71:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-ppu_update_ctrl_mask_FE86:	
+ppu_update_ctrl_mask_FE86:
 	set _PPU_CTRL, ppu_ctrl_31F
 	set _PPU_MASK, ppu_mask_320
 	RTS
@@ -337,7 +337,7 @@ ppu_update_ctrl_mask_FE86:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-ppu_reset_ctrl_mask_FE93:	
+ppu_reset_ctrl_mask_FE93:
 	set _PPU_CTRL, #0
 	STA	_PPU_MASK
 	RTS

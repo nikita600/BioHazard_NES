@@ -36,7 +36,6 @@ Sprites3_5805B:
 ; =============== S U B	R O U T	I N E =======================================
 
 upload_gfx_to_ppu_5F093:
-	
 	set_ptr Sprites3_5805B
 
 	set data_2, entry_idx_300

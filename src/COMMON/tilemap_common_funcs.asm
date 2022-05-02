@@ -51,7 +51,7 @@ init_F903:
 	LDY	#0
 	LDX	#0
 
-write_tilemap_line_7F90F:	
+write_tilemap_line_7F90F:
 	set {tilemapData_4C,X}, {(ptr_0),Y}
 
 	add_to_byte_clc ptr_0, data_3

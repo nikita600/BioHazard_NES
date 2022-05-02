@@ -2,7 +2,7 @@
 ;.segment BANK_00 (Code)
 ;* =  $8000
 
-    .include "includes/ram.inc"
+	.include "includes/ram.inc"
 	.include "includes/macros.inc"
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -591,14 +591,12 @@ show_cut03_8606:
 	JSR	exec_b2_c2_text_cuts_C8E8
 
 show_title_screen_8627:
-	
 	set image_id_4A4, #1
 	JSR	load_image_C6D2
 	set byte_372, #1
 	set byte_421, #0
 
 loc_8639:
-	
 	JSR	ppu_upload_unk_data_CC5D
 	JSR	wait_for_frame_rendered_FCA0
 	if_not_equal_cmp_addr input_pressed_34A, #up_8, loc_8654
@@ -662,7 +660,6 @@ loc_86B7:
 	set byte_421, #0
 
 loc_86C9:
-	
 	JSR	ppu_upload_unk_data_CC5D
 	JSR	wait_for_frame_rendered_FCA0
 	if_not_equal_cmp_addr input_pressed_34A, #up_8, loc_86E4
@@ -889,7 +886,6 @@ show_copyright_screen_88E4:
 ; ---------------------------------------------------------------------------
 
 gameplay_update_8930:
-	
 	if_equal_cmp_addr byte_54A, #0, loc_895B
 	if_greater_cmp_addr count_unk_46C, #$A, loc_895B
 	set count_unk_46C, #0
@@ -902,7 +898,6 @@ set_game_finished_8956:
 	set is_game_finished_561, #$FF
 
 loc_895B:
-	
 	set byte_315, #8
 	set byte_314, #0
 	if_equal_cmp_addr entry_idx_300, #$5C, loc_8973
@@ -911,7 +906,6 @@ loc_895B:
 ; ---------------------------------------------------------------------------
 
 loc_8973:
-	
 	JSR	sub_C7C7
 	if_not_equal_cmp_addr byte_36A, #$B0, loc_8987
 	if_not_equal_cmp_addr byte_366, #$68, loc_8987
@@ -919,7 +913,6 @@ loc_8973:
 ; ---------------------------------------------------------------------------
 
 loc_8987:
-	
 	LDX	#0
 
 next_object_8989:
@@ -941,7 +934,6 @@ loc_89A7:
 ; ---------------------------------------------------------------------------
 
 loc_89B8:
-	
 	set byte_653, #0
 	set cur_obj_idx_unk_43A, #0
 	JSR	sub_DBE2
@@ -954,7 +946,6 @@ loc_89C8:
 	JSR	sub_DC1C
 
 loc_89D5:
-	
 	if_not_equal_cmp_addr byte_584, #$FF, loc_8A05
 	set sprite_type_306, #$FF
 	JSR	loc_8DA3
@@ -1057,7 +1048,6 @@ loc_8AC7:
 ; ---------------------------------------------------------------------------
 
 loc_8AE0:
-	
 	if_greater_cmp_addr count_unk_46B, #$A, loc_8B59
 	set count_unk_46B, #0
 	set objMapIdx_316, #0
@@ -1096,7 +1086,6 @@ loc_8B4A:
 	set byte_54A, #1
 
 loc_8B59:
-	
 	set byte_439, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -1218,7 +1207,6 @@ a_not_pressed_8C5E:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_8C5F:
-	
 	JSR	sub_91B6
 	set byte_432, #$96 
 	if_not_equal ppu_unk_byte_303, loc_8C79
@@ -1310,7 +1298,6 @@ loc_8D15:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_8D27:
-	
 	JSR	sub_91B6
 	set byte_432, #$96 
 	LDA	ppu_unk_byte_303
@@ -1367,7 +1354,6 @@ loc_8D9A:
 ; ---------------------------------------------------------------------------
 
 loc_8DA3:
-	
 	if_equal_cmp_addr byte_314, #0, loc_8DB6
 	LDA	byte_315
 	LSR	A
@@ -1402,7 +1388,6 @@ loc_8DDE:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_8DF0:
-	
 	JSR	sub_91B6
 	set byte_432, #$96 
 	if_not_equal ppu_unk_byte_302, loc_8E0A
@@ -1498,7 +1483,6 @@ loc_8EA7:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_8EB9:
-	
 	JSR	sub_91B6
 	set byte_432, #$96 
 	LDA	ppu_unk_byte_302
@@ -1796,7 +1780,6 @@ loc_91AF:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_91B6:
-	
 	LDX	byte_313
 	STX	byte_4AF
 	set objMapIdx_316, {byte_9533,X}
@@ -1982,7 +1965,6 @@ sub_938D:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_939C:
-	
 	JSR	sub_C7C7
 	if_equal_cmp_addr byte_313, #0, loc_93D5
 	if_equal_cmp #1, loc_93FC
@@ -2238,7 +2220,6 @@ loc_963A:
 ; ---------------------------------------------------------------------------
 
 loc_9648:
-	
 	LDX	#0
 
 loc_964A:
@@ -2259,7 +2240,6 @@ loc_9661:
 	set byte_572, {array_unk_3CF,X}
 
 loc_9679:
-	
 	if_not_equal_cmp_addr entry_idx_300, #$5D, loc_96AA
 	LDX	#0
 
@@ -2278,7 +2258,6 @@ loc_9692:
 	set byte_576, {array_unk_3CF,X}
 
 loc_96AA:
-	
 	if_not_equal_cmp_addr entry_idx_300, #$7D, loc_971B
 	if_not_equal_cmp_addr array_unk_3C5, #$50, loc_96C2
 	if_not_equal_cmp_addr array_unk_3D9, #$60, loc_96C2
@@ -2286,7 +2265,6 @@ loc_96AA:
 ; ---------------------------------------------------------------------------
 
 loc_96C2:
-	
 	if_not_equal_cmp_addr array_unk_3C5, #$A0, loc_971B
 	if_not_equal_cmp_addr array_unk_3D9, #$60, loc_971B
 	JMP	loc_96E4
@@ -2313,7 +2291,6 @@ loc_96F2:
 	JSR	load_image_C6D2
 
 loc_971B:
-	
 	JSR	sub_CCA0
 	JSR	objects_func_D644
 	JSR	objects_func_D52A
@@ -2559,7 +2536,6 @@ locret_9999:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_999A:
-	
 	set byte_584, #0
 	JSR	sub_C7C7
 	
@@ -2634,7 +2610,6 @@ loc_9A8D:
 ; ---------------------------------------------------------------------------
 
 loc_9AC3:
-	
 	if_not_equal_cmp_addr tilemapHeight_30A, byte_57E, locret_9AD8
 	if_not_equal_cmp_addr ppu_unk_byte_309, byte_581, locret_9AD8
 	set byte_584, #$FE 
@@ -3209,7 +3184,6 @@ byte_C6D1:.BYTE $20
 ; =============== S U B	R O U T	I N E =======================================
 
 load_image_C6D2:
-	
 	set byte_430, #0
 	STA	byte_431
 	STA	byte_42C
@@ -3270,7 +3244,6 @@ loc_C762:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_C77D:
-	
 	set byte_317, #0
 	if_not_equal_cmp_addr byte_313, #2, loc_C78E
 	set byte_317, #$40 
@@ -3296,7 +3269,6 @@ loc_C78E:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_C7C7:
-	
 	set byte_36A, ppu_scroll_x_304
 	set byte_36B, ppu_unk_byte_302
 	add_to_byte_clc byte_36A, byte_4AD
@@ -3416,7 +3388,6 @@ exec_b2_c1_C8D5:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c2_text_cuts_C8E8:
-	
 	set bank_command_346, #2
 	set bank_to_344, #text_2
 	set bank_from_343, #0
@@ -3762,7 +3733,6 @@ byte_CBFD:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_CC17:
-	
 	if_not_equal_cmp_addr byte_372, #0, loc_CC39
 	LDY	#0
 	LDX	#$20 
@@ -3807,7 +3777,6 @@ loc_CC51:
 ; =============== S U B	R O U T	I N E =======================================
 
 ppu_upload_unk_data_CC5D:
-	
 	if_greater_cmp_addr count_unk_465, #5, locret_CC99
 	set count_unk_465, #0
 	LDX	#0
@@ -3851,7 +3820,6 @@ sub_CCA0:
 ; =============== S U B	R O U T	I N E =======================================
 
 objects_func_CCA7:
-	
 	JSR	sub_C7C7
 	add_to_byte_clc byte_366, #8
 	add_to_byte byte_367, #0
@@ -4030,7 +3998,6 @@ loc_CE86:
 ; ---------------------------------------------------------------------------
 
 loc_CE91:
-	
 	if_equal sprite_length_30F, loc_CEAF
 	sub_byte_sec {unk_458,X}, #2
 	sub_byte {unk_459,X}, #0
@@ -4059,7 +4026,6 @@ locret_CED1:
 ; =============== S U B	R O U T	I N E =======================================
 
 objects_func_CED2:
-	
 	if_not_equal obj_idx_unk_462, loc_CED8
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4115,7 +4081,6 @@ nullsub_6:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_CF42:
-	
 	LDY	#0
 	LDX	#1
 
@@ -4251,7 +4216,6 @@ byte_D041:.BYTE  $B, $B, $D, $D, $A,  6,	6,  8,	8,  5,	1,  1,	2,  2,	0,  1
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_D055:
-	
 	to_stack tilemapTypeUnk_30B
 	to_stack byte_313
 	set byte_315, #8
@@ -4266,7 +4230,6 @@ sub_D055:
 ; ---------------------------------------------------------------------------
 
 loc_D080:
-	
 	if_not_equal_cmp #1, loc_D08A
 	JSR	sub_8D27
 	JMP	loc_D097
@@ -4713,7 +4676,6 @@ loc_D51A:
 ; =============== S U B	R O U T	I N E =======================================
 
 objects_func_D52A:
-	
 	if_not_equal objArraySize_373, loc_D532
 	JMP	loc_D637
 ; ---------------------------------------------------------------------------
@@ -4820,7 +4782,6 @@ locret_D643:
 ; =============== S U B	R O U T	I N E =======================================
 
 objects_func_D644:
-	
 	if_not_equal objArraySize_373, loc_D64A
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5041,7 +5002,6 @@ locret_D893:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_D894:
-	
 	set sprite_length_30F, #0
 	if_not_equal {objCreatedArray_393,X}, locret_D8D7
 	JSR	sub_D8D8
@@ -5347,7 +5307,6 @@ loc_DBDC:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_DBE2:
-	
 	LDX	cur_obj_idx_unk_43A
 	set {objCreatedArray_393,X}, #1
 	set byte_439, #0
@@ -5375,7 +5334,6 @@ loc_DC13:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_DC1C:
-	
 	LDX	cur_obj_idx_unk_43A
 	set {objCreatedArray_393,X}, #0
 	RTS
@@ -5489,7 +5447,6 @@ loc_DD0C:
 	JSR	load_image_C6D2
 
 loc_DD3B:
-	
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_DC88
@@ -5537,7 +5494,6 @@ locret_DDC5:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_DDC9:
-	
 	JSR	sub_C7C7
 	set tilemapWidth_308, #2
 	set tilemapHeight_30A, #3
@@ -5804,7 +5760,6 @@ loc_E0CB:
 ; ---------------------------------------------------------------------------
 
 loc_E0E8:
-	
 	JMP	loc_E17D
 ; ---------------------------------------------------------------------------
 
@@ -5877,7 +5832,6 @@ loc_E1A2:
 ; ---------------------------------------------------------------------------
 
 loc_E1B4:
-	
 	if_not_equal_cmp_addr byte_370, #$30, loc_E1E8
 	if_not_equal_cmp_addr byte_371, #1, loc_E1E8
 	if_equal_cmp_addr byte_471, #0, loc_E1CC
@@ -5898,7 +5852,6 @@ loc_E1D6:
 ; ---------------------------------------------------------------------------
 
 loc_E1E8:
-	
 	if_not_equal_cmp_addr byte_370, #$9E, loc_E221
 	if_not_equal_cmp_addr byte_371, #0, loc_E221
 	if_equal_cmp_addr byte_471, #0, loc_E205
@@ -5920,7 +5873,6 @@ loc_E20F:
 ; ---------------------------------------------------------------------------
 
 loc_E221:
-	
 	if_not_equal_cmp_addr byte_370, #$B4, loc_E25A
 	if_not_equal_cmp_addr byte_371, #0, loc_E25A
 	if_equal_cmp_addr byte_471, #0, loc_E23E
@@ -5942,7 +5894,6 @@ loc_E248:
 ; ---------------------------------------------------------------------------
 
 loc_E25A:
-	
 	if_not_equal_cmp_addr byte_36F, #$FF, loc_E290
 	if_not_equal_cmp_addr byte_370, #$91, loc_E272
 	if_not_equal_cmp_addr byte_371, #0, loc_E272
@@ -5950,7 +5901,6 @@ loc_E25A:
 ; ---------------------------------------------------------------------------
 
 loc_E272:
-	
 	if_equal_cmp_addr byte_471, #0, loc_E28D
 	if_not_equal_cmp_addr byte_370, #$17, loc_E28A
 	if_not_equal_cmp_addr byte_371, #0, loc_E28A
@@ -5958,7 +5908,6 @@ loc_E272:
 ; ---------------------------------------------------------------------------
 
 loc_E28A:
-	
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5982,7 +5931,6 @@ loc_E2A8:
 ; ---------------------------------------------------------------------------
 
 loc_E2BA:
-	
 	if_not_equal_cmp_addr byte_370, #1, loc_E2E9
 	if_not_equal_cmp_addr byte_371, #0, loc_E2E9
 	if_equal_cmp_addr byte_471, #0, loc_E2D7
@@ -5999,7 +5947,6 @@ loc_E2D7:
 ; ---------------------------------------------------------------------------
 
 loc_E2E9:
-	
 	if_not_equal_cmp_addr byte_370, #2, loc_E318
 	if_not_equal_cmp_addr byte_371, #0, loc_E318
 	if_equal_cmp_addr byte_471, #0, loc_E306
@@ -6016,7 +5963,6 @@ loc_E306:
 ; ---------------------------------------------------------------------------
 
 loc_E318:
-	
 	if_not_equal_cmp_addr byte_370, #3, loc_E347
 	if_not_equal_cmp_addr byte_371, #0, loc_E347
 	if_equal_cmp_addr byte_471, #0, loc_E335
@@ -6033,7 +5979,6 @@ loc_E335:
 ; ---------------------------------------------------------------------------
 
 loc_E347:
-	
 	if_not_equal_cmp_addr byte_370, #4, loc_E376
 	if_not_equal_cmp_addr byte_371, #0, loc_E376
 	if_equal_cmp_addr byte_471, #0, loc_E364
@@ -6050,7 +5995,6 @@ loc_E364:
 ; ---------------------------------------------------------------------------
 
 loc_E376:
-	
 	if_not_equal_cmp_addr byte_370, #5, loc_E3A5
 	if_not_equal_cmp_addr byte_371, #0, loc_E3A5
 	if_equal_cmp_addr byte_471, #0, loc_E393
@@ -6067,7 +6011,6 @@ loc_E393:
 ; ---------------------------------------------------------------------------
 
 loc_E3A5:
-	
 	if_not_equal_cmp_addr byte_370, #6, loc_E3D4
 	if_not_equal_cmp_addr byte_371, #0, loc_E3D4
 	if_equal_cmp_addr byte_471, #0, loc_E3C2
@@ -6084,7 +6027,6 @@ loc_E3C2:
 ; ---------------------------------------------------------------------------
 
 loc_E3D4:
-	
 	if_not_equal_cmp_addr byte_370, #$33, loc_E403
 	if_not_equal_cmp_addr byte_371, #0, loc_E403
 	if_equal_cmp_addr byte_471, #0, loc_E3F1
@@ -6101,7 +6043,6 @@ loc_E3F1:
 ; ---------------------------------------------------------------------------
 
 loc_E403:
-	
 	if_not_equal_cmp_addr byte_370, #$3D, loc_E42D
 	if_not_equal_cmp_addr byte_371, #0, loc_E42D
 	if_equal_cmp_addr byte_471, #0, loc_E41B
@@ -6117,7 +6058,6 @@ loc_E41B:
 ; ---------------------------------------------------------------------------
 
 loc_E42D:
-	
 	if_not_equal_cmp_addr byte_370, #$3C, loc_E457
 	if_not_equal_cmp_addr byte_371, #0, loc_E457
 	if_equal_cmp_addr byte_471, #0, loc_E445
@@ -6133,7 +6073,6 @@ loc_E445:
 ; ---------------------------------------------------------------------------
 
 loc_E457:
-	
 	if_not_equal_cmp_addr byte_370, #$3B, loc_E481
 	if_not_equal_cmp_addr byte_371, #0, loc_E481
 	if_equal_cmp_addr byte_471, #0, loc_E46F
@@ -6149,7 +6088,6 @@ loc_E46F:
 ; ---------------------------------------------------------------------------
 
 loc_E481:
-	
 	if_not_equal_cmp_addr byte_370, #$6F, loc_E4C7
 	if_not_equal_cmp_addr byte_371, #0, loc_E4C7
 	if_equal_cmp_addr byte_471, #0, loc_E499
@@ -6169,12 +6107,10 @@ loc_E499:
 	set byte_607, #$FF
 
 loc_E4C4:
-	
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
 loc_E4C7:
-	
 	if_not_equal_cmp_addr byte_370, #$D2, loc_E50D
 	if_not_equal_cmp_addr byte_371, #0, loc_E50D
 	if_equal_cmp_addr byte_471, #0, loc_E4DF
@@ -6198,7 +6134,6 @@ loc_E50A:
 ; ---------------------------------------------------------------------------
 
 loc_E50D:
-	
 	if_not_equal_cmp_addr byte_370, #$3A, loc_E537
 	if_not_equal_cmp_addr byte_371, #0, loc_E537
 	if_equal_cmp_addr byte_471, #0, loc_E525
@@ -6214,7 +6149,6 @@ loc_E525:
 ; ---------------------------------------------------------------------------
 
 loc_E537:
-	
 	if_not_equal_cmp_addr byte_370, #$9B, loc_E561
 	if_not_equal_cmp_addr byte_371, #0, loc_E561
 	if_equal_cmp_addr byte_471, #0, loc_E54F
@@ -6230,7 +6164,6 @@ loc_E54F:
 ; ---------------------------------------------------------------------------
 
 loc_E561:
-	
 	if_not_equal_cmp_addr byte_370, #$E2, loc_E58B
 	if_not_equal_cmp_addr byte_371, #0, loc_E58B
 	if_equal_cmp_addr byte_471, #0, loc_E579
@@ -6246,7 +6179,6 @@ loc_E579:
 ; ---------------------------------------------------------------------------
 
 loc_E58B:
-	
 	if_not_equal_cmp_addr byte_370, #$32, loc_E5B5
 	if_not_equal_cmp_addr byte_371, #1, loc_E5B5
 	if_equal_cmp_addr byte_471, #0, loc_E5A3
@@ -6262,7 +6194,6 @@ loc_E5A3:
 ; ---------------------------------------------------------------------------
 
 loc_E5B5:
-	
 	if_not_equal_cmp_addr byte_370, #$EC, loc_E5DF
 	if_not_equal_cmp_addr byte_371, #0, loc_E5DF
 	if_equal_cmp_addr byte_471, #0, loc_E5CD
@@ -6278,7 +6209,6 @@ loc_E5CD:
 ; ---------------------------------------------------------------------------
 
 loc_E5DF:
-	
 	if_not_equal_cmp_addr byte_370, #8, loc_E609
 	if_not_equal_cmp_addr byte_371, #1, loc_E609
 	if_equal_cmp_addr byte_471, #0, loc_E5F7
@@ -6294,7 +6224,6 @@ loc_E5F7:
 ; ---------------------------------------------------------------------------
 
 loc_E609:
-	
 	if_not_equal_cmp_addr byte_370, #$F8, loc_E633
 	if_not_equal_cmp_addr byte_371, #0, loc_E633
 	if_equal_cmp_addr byte_471, #0, loc_E621
@@ -6310,7 +6239,6 @@ loc_E621:
 ; ---------------------------------------------------------------------------
 
 loc_E633:
-	
 	if_not_equal_cmp_addr byte_370, #6, loc_E65D
 	if_not_equal_cmp_addr byte_371, #1, loc_E65D
 	if_equal_cmp_addr byte_471, #0, loc_E64B
@@ -6326,7 +6254,6 @@ loc_E64B:
 ; ---------------------------------------------------------------------------
 
 loc_E65D:
-	
 	if_not_equal_cmp_addr byte_370, #$31, loc_E687
 	if_not_equal_cmp_addr byte_371, #1, loc_E687
 	if_equal_cmp_addr byte_471, #0, loc_E675
@@ -6342,7 +6269,6 @@ loc_E675:
 ; ---------------------------------------------------------------------------
 
 loc_E687:
-	
 	if_not_equal_cmp_addr byte_370, #$B, loc_E6B1
 	if_not_equal_cmp_addr byte_371, #1, loc_E6B1
 	if_equal_cmp_addr byte_471, #0, loc_E69F
@@ -6358,7 +6284,6 @@ loc_E69F:
 ; ---------------------------------------------------------------------------
 
 loc_E6B1:
-	
 	if_not_equal_cmp_addr byte_370, #$C, loc_E6DB
 	if_not_equal_cmp_addr byte_371, #1, loc_E6DB
 	if_equal_cmp_addr byte_471, #0, loc_E6C9
@@ -6374,7 +6299,6 @@ loc_E6C9:
 ; ---------------------------------------------------------------------------
 
 loc_E6DB:
-	
 	if_not_equal_cmp_addr byte_370, #$2F, loc_E705
 	if_not_equal_cmp_addr byte_371, #1, loc_E705
 	if_equal_cmp_addr byte_471, #0, loc_E6F3
@@ -6390,11 +6314,9 @@ loc_E6F3:
 ; ---------------------------------------------------------------------------
 
 loc_E705:
-	
 	if_not_equal_cmp_addr byte_36F, #$FF, loc_E741
 
 loc_E70C:
-	
 	INY
 	set_iny byte_36E, {(ptr_0),Y}
 	if_not_equal_cmp_addr byte_36E, #0, loc_E725
@@ -6416,12 +6338,10 @@ loc_E734:
 	set sprite_length_30F, #$FF
 
 locret_E740:
-	
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_E741:
-	
 	set sprite_length_30F, #0
 	RTS
 ; End of function sub_DFC1
@@ -6843,7 +6763,6 @@ exec_b12_c8_EAAE:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b12_c9_EAB6:
-	
 	set bank_command_346, #9
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c9_EAB6
@@ -6872,7 +6791,6 @@ exec_b12_cC_EACE:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b12_cD_EAD6:
-	
 	set bank_command_346, #$D
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_cD_EAD6
@@ -7034,7 +6952,6 @@ sub_EB86:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b12_c24_EB8E:
-	
 	set bank_command_346, #$24 
 	JMP	exec_b12_comm_ECBE
 ; End of function exec_b12_c24_EB8E
@@ -7280,7 +7197,6 @@ sub_EC9E:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b12_com48_ECA6:
-	
 	set bank_command_346, #$48 
 	JMP	exec_b12_comm_ECBE
 ; ---------------------------------------------------------------------------
@@ -7715,7 +7631,6 @@ loc_F088:
 	from_stack ppu_unk_byte_309
 
 locret_F09C:
-	
 	RTS
 ; End of function sub_EE72
 
@@ -7813,7 +7728,6 @@ sub_F194:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_F1A2:
-	
 	JSR	sub_ED7C
 	JSR	sub_F42F
 	sub_a_sec #$20 , tilemap_size_307
@@ -7923,7 +7837,6 @@ start_read_tilemap_F290:
 	STA	ppu_data_70,Y
 
 loc_F2E0:
-	
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_F1A2
@@ -7931,7 +7844,6 @@ loc_F2E0:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_F2E4:
-	
 	JSR	sub_ED7C
 	JSR	sub_F42F
 	sub_a_sec #$1E, ppu_unk_byte_309
@@ -7990,7 +7902,6 @@ loc_F37A:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_F37E:
-	
 	JSR	sub_ED7C
 	JSR	sub_F42F
 	JSR	sub_F5A2
@@ -8093,7 +8004,6 @@ locret_F471:
 ; =============== S U B	R O U T	I N E =======================================
 
 tilemap_read_next_chunk_F472:
-	
 	TXA
 	PHA
 	TYA
@@ -8227,7 +8137,6 @@ loc_F54E:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_F57B:
-	
 	add_to_data $3C0
 
 	RTS
@@ -8236,7 +8145,6 @@ sub_F57B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_F589:
-	
 	LDY	ppu_unk_byte_309
 
 loc_F58C:

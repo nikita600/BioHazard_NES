@@ -5,7 +5,7 @@
 
 ; SPRITE_BANK
 
-    .include "includes/ram.inc"
+	.include "includes/ram.inc"
 	.include "includes/macros.inc"
 
 bank_switch_8000:

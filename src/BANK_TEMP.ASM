@@ -4,15 +4,15 @@
 
 .org $1234
 data:
-    NOP
-    NOP
-    NOP
-    NOP
+	NOP
+	NOP
+	NOP
+	NOP
 
-    NOP
-    NOP
-    NOP
-    NOP
+	NOP
+	NOP
+	NOP
+	NOP
 
 start:
-    set_ptr data
+	set_ptr data

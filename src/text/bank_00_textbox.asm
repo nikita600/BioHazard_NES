@@ -1,7 +1,7 @@
 TextPalette_FBC2:
 		.BYTE	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,  0,	 0,$1D,$30,$27
 
-TextBg_FBD2:	
+TextBg_FBD2:
 		.BYTE	0,  1,	4,  5,	4,  5,	7,  8,	1,  1,	5,  5,	5,  5,	8,  8
 		.BYTE	1,  2,	5,  6,	5,  6,	8,  9, $A,  3,$FF,$FF,$80,$B3,$B7,$87
 		.BYTE $9F,$BF,	0,$3F,$7F,$6E,$7D,$7D,$7B,$67,$FF,$FF,	0,$FF,$FF,$FF

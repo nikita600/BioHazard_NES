@@ -35,7 +35,6 @@ GFX_6805B:
 ; =============== S U B	R O U T	I N E =======================================
 
 upload_gfx_to_ppu_6F863:
-	
 	set_ptr GFX_6805B
 
 	set data_2, entry_idx_300

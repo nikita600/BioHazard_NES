@@ -11,15 +11,13 @@ bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
-	LDA	bank_command_346
-	if_equal_cmp #$88, loc_13809B
+	if_equal_cmp_addr bank_command_346, #$88, loc_13809B
 	LDA	bank_to_344
 
 loc_13803F:
 	STA	bank_prev_345
 	set bank_switch_flag_6C, #$88 
-	LDA	bank_command_346
-	if_equal_cmp #0, loc_138066
+	if_equal_cmp_addr bank_command_346, #0, loc_138066
 	if_equal_cmp #1, loc_13806C
 	if_equal_cmp #2, loc_138072
 	if_equal_cmp #3, loc_138078
@@ -92,8 +90,7 @@ BossImages_129826:
 ; =============== S U B	R O U T	I N E =======================================
 
 music_func_13C028:
-	LDA	tilemapTypeUnk_30B
-	if_greater_cmp #$47, loc_13C032
+	if_greater_cmp_addr tilemapTypeUnk_30B, #$47, loc_13C032
 	BEQ	loc_13C032
 	RTS
 ; ---------------------------------------------------------------------------
@@ -240,8 +237,7 @@ apu_update_13D4F9:
 	add_to_a apu_unk_741
 	TAX
 	INC	apu_unk_742
-	LDA	apu_unk_742
-	if_greater_cmp {apu_dat_13DC5C,X}, locret_13D533
+	if_greater_cmp_addr apu_unk_742, {apu_dat_13DC5C,X}, locret_13D533
 	set apu_unk_742, #0
 	INC	apu_unk_741
 	LDA	apu_unk_741
@@ -265,8 +261,7 @@ apu_func_13D534:
 	LDA	apu_unk_738
 	add_to_a apu_unk_741
 	TAY
-	LDA	apu_dat_13DC5C,Y
-	if_greater_cmp #2, loc_13D565
+	if_greater_cmp_addr {apu_dat_13DC5C,Y}, #2, loc_13D565
 	BEQ	loc_13D55C
 	if_not_equal_cmp #3, apu_func_13D575
 	JSR	apu_func_13D575
@@ -317,8 +312,7 @@ loc_13D58D:
 	LDY	apu_unk_75C,X
 
 loc_13D59A:
-	LDA	(apu_unk_FE),Y
-	if_greater_cmp #$FC, loc_13D5F5
+	if_greater_cmp_addr {(apu_unk_FE),Y}, #$FC, loc_13D5F5
 	BEQ	loc_13D60D
 	if_greater_cmp #$FE, loc_13D5AB
 	BNE	loc_13D5AE
@@ -505,8 +499,7 @@ loc_13D6F1:
 ; ---------------------------------------------------------------------------
 
 loc_13D707:
-	LDA	apu_unk_705
-	if_lower_cmp #$D, loc_13D729
+	if_lower_cmp_addr apu_unk_705, #$D, loc_13D729
 	mult_a_by_4
 	TAY
 	set _APU_PULSE1_ENV, {pulse_env_13DDEC,Y}
@@ -529,8 +522,7 @@ loc_13D729:
 ; ---------------------------------------------------------------------------
 
 loc_13D747:
-	LDA	apu_unk_705
-	if_lower_cmp #$D, loc_13D76A
+	if_lower_cmp_addr apu_unk_705, #$D, loc_13D76A
 	mult_a_by_4
 	TAY
 	set _APU_PULSE2_ENV, {pulse2_env_13DE20,Y}
@@ -553,8 +545,7 @@ loc_13D76A:
 ; ---------------------------------------------------------------------------
 
 loc_13D788:
-	LDA	apu_unk_705
-	if_lower_cmp #$D, loc_13D7AB
+	if_lower_cmp_addr apu_unk_705, #$D, loc_13D7AB
 	mult_a_by_4
 	TAY
 	set _APU_TRI_COUNT, {tri_count_13DE54,Y}
@@ -584,8 +575,7 @@ music_func_13D7C3:
 	LDA	apu_unk_707
 	add_to_a apu_unk_710
 	TAY
-	LDA	apu_dat_13DC5C,Y
-	if_greater_cmp #2, loc_13D7F4
+	if_greater_cmp_addr {apu_dat_13DC5C,Y}, #2, loc_13D7F4
 	BEQ	loc_13D7EB
 	if_not_equal_cmp #3, music_func_13D804
 	JSR	music_func_13D804
@@ -636,8 +626,7 @@ loc_13D81C:
 	LDY	apu_unk_72B,X
 
 loc_13D829:
-	LDA	(apu_unk_FE),Y
-	if_greater_cmp #$FC, loc_13D884
+	if_greater_cmp_addr {(apu_unk_FE),Y}, #$FC, loc_13D884
 	BEQ	loc_13D89C
 	if_greater_cmp #$FE, loc_13D83A
 	BNE	loc_13D83D
@@ -827,8 +816,7 @@ apu_update_noise_13D988:
 ; ---------------------------------------------------------------------------
 
 apu_update_pulse1_13D99E:
-	LDA	apu_unk_705
-	if_lower_cmp #$D, apu_update_pulse1_13D9C1
+	if_lower_cmp_addr apu_unk_705, #$D, apu_update_pulse1_13D9C1
 	mult_a_by_4
 	TAY
 	set _APU_PULSE1_ENV, {pulse_env_13DDEC,Y}
@@ -851,8 +839,7 @@ apu_update_pulse1_13D9C1:
 ; ---------------------------------------------------------------------------
 
 apu_update_pulse2_13D9DF:
-	LDA	apu_unk_705
-	if_lower_cmp #$D, apu_update_pulse2_13DA02
+	if_lower_cmp_addr apu_unk_705, #$D, apu_update_pulse2_13DA02
 	mult_a_by_4
 	TAY
 	set _APU_PULSE2_ENV, {pulse2_env_13DE20,Y}
@@ -875,8 +862,7 @@ apu_update_pulse2_13DA02:
 ; ---------------------------------------------------------------------------
 
 apu_update_triangle_13DA20:
-	LDA	apu_unk_705
-	if_lower_cmp #$D, loc_13DA43
+	if_lower_cmp_addr apu_unk_705, #$D, loc_13DA43
 	mult_a_by_4
 	TAY
 	set _APU_TRI_COUNT, {tri_count_13DE54,Y}
@@ -1023,8 +1009,7 @@ locret_13DB64:
 ; =============== S U B	R O U T	I N E =======================================
 
 music_func_13DB65:
-	LDA	apu_unk_752,X
-	if_lower_cmp #4, locret_13DB89
+	if_lower_cmp_addr {apu_unk_752,X}, #4, locret_13DB89
 	mult_a_by_2
 	TAY
 	LDA	apu_unk_74A,Y
@@ -1050,8 +1035,7 @@ locret_13DB89:
 ; =============== S U B	R O U T	I N E =======================================
 
 music_func_13DB8A:
-	LDA	apu_unk_721,X
-	if_lower_cmp #4, locret_13DBAE
+	if_lower_cmp_addr {apu_unk_721,X}, #4, locret_13DBAE
 	mult_a_by_2
 	TAY
 	LDA	apu_unk_719,Y
@@ -1138,8 +1122,7 @@ music_update_state_13DC1E:
 	add_to_a apu_unk_710
 	TAX
 	INC	apu_unk_711
-	LDA	apu_unk_711
-	if_greater_cmp {apu_dat_13DC5C,X}, locret_13DC5B
+	if_greater_cmp_addr apu_unk_711, {apu_dat_13DC5C,X}, locret_13DC5B
 	set apu_unk_711, #0
 	INC	apu_unk_710
 	LDA	apu_unk_710
@@ -1155,9 +1138,9 @@ locret_13DC5B:
 ; End of function music_update_state_13DC1E
 
 ; ---------------------------------------------------------------------------
-apu_dat_13DC5C:.BYTE $78,$78,$78,$78,$70,$71,$70,$71,$38,$38,$39,$38,$25,$26,$25,$26
-	
 
+apu_dat_13DC5C:
+	.BYTE $78,$78,$78,$78,$70,$71,$70,$71,$38,$38,$39,$38,$25,$26,$25,$26
 	.BYTE $16,$17,$16,$17,$12,$13,$12,$13,$10,$10,$10,$10, $E, $E, $E, $E
 	.BYTE  $C, $D, $C, $D, $B, $B, $C, $B, $A, $A, $A, $B,	9,  9, $A,  9
 	.BYTE	8,  9,	8,  9,	8,  8,	8,  8,	7,  8,	7,  8,	7,  7,	7,  7
@@ -1173,87 +1156,104 @@ apu_dat_13DC5C:.BYTE $78,$78,$78,$78,$70,$71,$70,$71,$38,$38,$39,$38,$25,$26,$25
 	.BYTE	2,  2,	2,  1,	2,  2,	2,  1,	2,  1,	2,  1,	2,  1,	2,  1
 	.BYTE	2,  1,	2,  1,	2,  1,	2,  1,	1,  1,	1,  2,	1,  1,	1,  2
 	.BYTE	1,  1,	1,  2,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
-pulse1_time_13DD5C:.BYTE $B0,$50,$F4,$A0,$50,  0,$B8,$78,$38,$F8,$C0,$88,$58,$28,$FA,$D0
-	
 
+pulse1_time_13DD5C:
+	.BYTE $B0,$50,$F4,$A0,$50,  0,$B8,$78,$38,$F8,$C0,$88,$58,$28,$FA,$D0
 	.BYTE $A8,$80,$5C,$3C,$1C,$FC,$E0,$C4,$AC,$94,$7D,$68,$54,$40,$2E,$1E
 	.BYTE  $E,$FE,$F0,$E2,$D6,$CA,$BE,$B4,$AA,$A0,$97,$8F,$87,$7F,$78,$71
 	.BYTE $6B,$65,$5F,$5A,$55,$50,$4B,$47,$43,$3F,$3C,$38,$35,$32,$2F,$2D
 	.BYTE $2A,$28,$25,$23,$21,$1F,$1E,$1C
-pulse1_len_13DDA4:.BYTE	  6,  6,  5,  5,  5,  5,  4,  4,  4,  3,  3,  3,  3,  3,  2,  2
-	
 
+pulse1_len_13DDA4:
+	.BYTE	6,  6,  5,  5,  5,  5,  4,  4,  4,  3,  3,  3,  3,  3,  2,  2
 	.BYTE	2,  2,	2,  2,	2,  1,	1,  1,	1,  1,	1,  1,	1,  1,	1,  1
 	.BYTE	1,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 	.BYTE	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0,	0,  0
 	.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-pulse_env_13DDEC:.BYTE	 0	
 
-pulse_sweep_13DDED:.BYTE   0	
+pulse_env_13DDEC:
+	.BYTE	 0	
 
-pulse_time_13DDEE:.BYTE	  0	
+pulse_sweep_13DDED:
+	.BYTE   0	
 
-pulse_len_13DDEF:.BYTE	 0,$8F,$85,$77,$43,$8F,$84,$17,$FB,$8F,$87,$2D,	 9,$8F,$8B,$20
-	
+pulse_time_13DDEE:
+	.BYTE	  0	
 
+pulse_len_13DDEF:
+	.BYTE	 0,$8F,$85,$77,$43,$8F,$84,$17,$FB,$8F,$87,$2D,	 9,$8F,$8B,$20
 	.BYTE $70,$8F,$84,$11,$48,$8F,$82,$11,$48,$8F,$82, $E,$48,$8F,$8A, $E
 	.BYTE $29,$8F,$8B,$89,$4D,$8F,$8B,$A7,$61,$8F,$8D,$6E,$A9,$8F,$8D,$6E
 	.BYTE $A9
-pulse2_env_13DE20:.BYTE	  0	
 
-pulse2_sweep_13DE21:.BYTE   0	
+pulse2_env_13DE20:
+	.BYTE	  0	
 
-pulse2_time_13DE22:.BYTE   0	
+pulse2_sweep_13DE21:
+	.BYTE   0	
 
-pulse2_len_13DE23:.BYTE	  0,$8F,$87,$AD,$4C,$8F,$87,$61,$38,$8F,$8B,$31,$4A,$8F,$8B,$31
-	
+pulse2_time_13DE22:
+	.BYTE   0	
 
+pulse2_len_13DE23:
+	.BYTE	0,$8F,$87,$AD,$4C,$8F,$87,$61,$38,$8F,$8B,$31,$4A,$8F,$8B,$31
 	.BYTE $48,$8F,$8B,$86,$70,$8F,$8A, $E,$2A,$8F,$82, $E,$48,$8F,$8B,$89
 	.BYTE $AD,$8F,$8C,$6E,$AE,$8F,$8C,$9A,$A9,$8F,$8E,$A9,$A8,$8F,$8E,$A9
 	.BYTE $A8
-tri_count_13DE54:.BYTE	 0	
 
-tri_unused_13DE55:.BYTE	  0	
+tri_count_13DE54:
+	.BYTE	 0	
 
-tri_time_13DE56:.BYTE	0	
+tri_unused_13DE55:
+	.BYTE	  0	
 
-tri_len_13DE57:.BYTE	0,$42,	0,$41,$29,$7F,	0,$FB,$18,$7F,	0,$68,$28,$7F,	0,$7E
-	
+tri_time_13DE56:
+	.BYTE	0	
 
+tri_len_13DE57:
+	.BYTE	0,$42,	0,$41,$29,$7F,	0,$FB,$18,$7F,	0,$68,$28,$7F,	0,$7E
 	.BYTE $48,$7F,	0,$FB,$48,$42,	0,$41,$48,$7F,	0,$12,$28,$7F,	0,$27
 	.BYTE $28,$42,	0,$41,$4A,$7F,	0, $A,$28,$7F,	0, $F,$28,$7F,	0,  7
 	.BYTE $28,$A9,	0,$8D,$6C,  7,$A9,  0,$8D,$6D,	7,$20,$84,$D4,$A9,  0
 	.BYTE $8D,$6C,	7,$A9,	1,$8D,$6D,  7,$20,$84,$D4
-apu_off_13DEA2:.WORD byte_13C548	
 
+apu_off_13DEA2:
+	.WORD byte_13C548
 	.WORD byte_13C7D9
 	.WORD byte_13CAC8
 	.WORD byte_13CCAB
 	.WORD byte_13CE5D
 	.WORD byte_13D08E
 	.WORD byte_13D399
-apu_off_13DEB0:.WORD off_13C330	
 
+apu_off_13DEB0:
+	.WORD off_13C330
 	.WORD off_13C599
 	.WORD off_13C848
 	.WORD off_13CB07
 	.WORD byte_13CCED
 	.WORD off_13CE9D
 	.WORD off_13D0E6
-apu_data_13DEBE:.WORD byte_13DEC6	
 
+apu_data_13DEBE:
+	.WORD byte_13DEC6
 	.WORD byte_13DF0A
 	.WORD byte_13DF0F
 	.WORD byte_13DF14
-byte_13DEC6:.BYTE $1F,$89,$EF,  8,$1F,$81,$EF,  8,$1F,$96,$EF,  8,$1F,$89,$EF,  8
-	
+
+byte_13DEC6:
+	.BYTE $1F,$89,$EF,  8,$1F,$81,$EF,  8,$1F,$96,$EF,  8,$1F,$89,$EF,  8
 	.BYTE $1F,$8B,$EF,  8,$1F,$FA,$EF,  8,$FF,$FF,$FF,$FF,$AF,$C0,$EF,  8
 	.BYTE $2F,$BF,$EF,  8,$2F,$CF,$EF,  8,$2F,$DF,$EF,  8,$1F,$EF,$EF,  8
 	.BYTE $3F,$BF,$EF,  8,$AF,$F4,$EF,  8,$AF,$F5,$EF,  8,$AF,$F6,$EF,  8
 	.BYTE $AF,$F7,$EF,  8
-byte_13DF0A:.BYTE	0,$1F,$89,$EF,	8 
-byte_13DF0F:.BYTE	0,$1F,$89,$EF,	8 
-byte_13DF14:.BYTE $4B,$8C,$CD,$30	
+
+byte_13DF0A:
+	.BYTE	0,$1F,$89,$EF,	8 
+byte_13DF0F:
+	.BYTE	0,$1F,$89,$EF,	8 
+byte_13DF14:
+	.BYTE $4B,$8C,$CD,$30	
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -1313,8 +1313,7 @@ loc_13DF76:
 	add_to_byte ptr_1, #0
 
 	DEC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	if_equal_cmp #0, locret_13DFA7
+	if_equal_cmp_addr inv_spr_dscr1_30C, #0, locret_13DFA7
 	JMP	loc_13DF6A
 ; ---------------------------------------------------------------------------
 
@@ -1328,8 +1327,7 @@ load_sprite_func_13DFA8:
 	JSR	load_boss_sprite_13DFDC
 
 loc_13DFAB:
-	LDA	inv_spr_dscr1_30C
-	if_greater_cmp #4, loc_13DFC2
+	if_greater_cmp_addr inv_spr_dscr1_30C, #4, loc_13DFC2
 	BEQ	loc_13DFC2
 	SEC
 	SBC	#4
@@ -1346,8 +1344,7 @@ loc_13DFC2:
 
 loc_13DFD1:
 	JSR	sprites_func_13E178
-	LDA	inv_spr_dscr1_30C
-	if_not_equal_cmp #0, loc_13DFAB
+	if_not_equal_cmp_addr inv_spr_dscr1_30C, #0, loc_13DFAB
 	RTS
 ; End of function load_sprite_func_13DFA8
 
@@ -1513,8 +1510,7 @@ loc_13E13F:
 	add_to_byte ptr_1, #0
 
 	INC	tilemapTypeUnk_30B
-	LDA	tilemapTypeUnk_30B
-	if_greater_cmp inv_spr_dscr1_30C, loc_13E12D
+	if_greater_cmp_addr tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_13E12D
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sprites_func_13E11C

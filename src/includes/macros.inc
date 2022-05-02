@@ -1,4 +1,3 @@
-
 ; ---------------------------------------------------------------------------
 
 .macro to_stack src
@@ -177,10 +176,28 @@
 
 ; ---------------------------------------------------------------------------
 
+.macro if_equal_cmp_addr addr, value, branch
+
+	LDA addr
+	CMP	value
+	BEQ	branch
+
+.endmacro
+
 .macro if_equal_cmp value, branch
 
 	CMP	value
 	BEQ	branch
+
+.endmacro
+
+; ---------------------------------------------------------------------------
+
+.macro if_not_equal_cmp_addr addr, value, branch
+
+	LDA addr
+	CMP value
+	BNE branch
 
 .endmacro
 
@@ -191,12 +208,33 @@
 
 .endmacro
 
+; ---------------------------------------------------------------------------
+
+.macro if_lower_cmp_addr addr, value, branch
+
+	LDA addr
+	CMP value
+	BCS branch
+
+.endmacro
+
 .macro if_lower_cmp value, branch
 
 	CMP value
 	BCS branch
 
 .endmacro
+
+; ---------------------------------------------------------------------------
+
+.macro if_greater_cmp_addr addr, value, branch
+
+	LDA addr
+	CMP value
+	BCC branch
+
+.endmacro
+
 
 .macro if_greater_cmp value, branch
 

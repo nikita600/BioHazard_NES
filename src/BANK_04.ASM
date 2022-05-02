@@ -13,8 +13,7 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	LDA	bank_command_346
-	if_equal_cmp #0, loc_48053
+	if_equal_cmp_addr bank_command_346, #0, loc_48053
 	if_equal_cmp #1, loc_48059
 	if_equal_cmp #2, loc_48083
 	if_equal_cmp #3, loc_48089
@@ -27,8 +26,7 @@ loc_48053:
 ; ---------------------------------------------------------------------------
 
 loc_48059:
-	LDA	inv_sprite_idx_31C
-	if_greater_cmp #$2F, loc_4807D
+	if_greater_cmp_addr inv_sprite_idx_31C, #$2F, loc_4807D
 	to_stack bank_from_343
 
 exec_b13_c1_48064:
@@ -130,8 +128,7 @@ loc_4F381:
 	add_to_byte ptr_1, #0
 
 	DEC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	if_equal_cmp #0, locret_4F3B2
+	if_equal_cmp_addr inv_spr_dscr1_30C, #0, locret_4F3B2
 	JMP	loc_4F375
 ; ---------------------------------------------------------------------------
 
@@ -145,8 +142,7 @@ sub_4F3B3:
 	JSR	get_inventory_sprite_ptr_4F3E7
 
 loc_4F3B6:
-	LDA	inv_spr_dscr1_30C
-	if_greater_cmp #4, loc_4F3CD
+	if_greater_cmp_addr inv_spr_dscr1_30C, #4, loc_4F3CD
 	BEQ	loc_4F3CD
 	SEC
 	SBC	#4
@@ -163,8 +159,7 @@ loc_4F3CD:
 
 loc_4F3DC:
 	JSR	sub_4F583
-	LDA	inv_spr_dscr1_30C
-	if_not_equal_cmp #0, loc_4F3B6
+	if_not_equal_cmp_addr inv_spr_dscr1_30C, #0, loc_4F3B6
 	RTS
 ; End of function sub_4F3B3
 
@@ -343,8 +338,7 @@ loc_4F54A:
 	add_to_byte ptr_1, #0
 
 	INC	tilemapTypeUnk_30B
-	LDA	tilemapTypeUnk_30B
-	if_greater_cmp inv_spr_dscr1_30C, loc_4F538
+	if_greater_cmp_addr tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_4F538
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_4F527

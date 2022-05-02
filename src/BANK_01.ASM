@@ -14,8 +14,7 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	LDA	bank_command_346
-	if_equal_cmp #0, loc_18053
+	if_equal_cmp_addr bank_command_346, #0, loc_18053
 	if_equal_cmp #1, loc_18059
 	if_equal_cmp #2, loc_1805F
 	if_equal_cmp #3, loc_18068
@@ -76,8 +75,7 @@ load_obj_tilemap_1F264:
 ; =============== S U B	R O U T	I N E =======================================
 
 load_palettes_to_ram_1F268:
-	LDA	sprite_type_306
-	if_equal_cmp #0, loc_1F2C3
+	if_equal_cmp_addr sprite_type_306, #0, loc_1F2C3
 
 palette0_F26F:
 	set sprPalIdx_319, #0
@@ -173,8 +171,7 @@ loc_1F31E:
 ; =============== S U B	R O U T	I N E =======================================
 
 upload_tiles_to_ppu_1F32A:
-	LDA	sprite_type_306
-	if_equal_cmp #0, loc_1F33D
+	if_equal_cmp_addr sprite_type_306, #0, loc_1F33D
 	set sprite_secondByte_31B, #0
 	JSR	load_sprite_to_vram_1F36D
 	JSR	upload_to_ppu_1F6D1
@@ -341,8 +338,7 @@ loc_1F44D:
 	add_to_byte_clc byte_36A, #8
 	add_to_byte byte_36B, #0
 	INC	tilemapTypeUnk_30B
-	LDA	tilemapTypeUnk_30B
-	if_greater_cmp tilemapWidth_308, loc_1F44D
+	if_greater_cmp_addr tilemapTypeUnk_30B, tilemapWidth_308, loc_1F44D
 	from_stack byte_36B
 	from_stack byte_36A
 	add_to_byte_clc data_2, tilemapWidth_308
@@ -386,8 +382,7 @@ loc_1F4DC:
 	add_to_byte_clc byte_36A, #8
 	add_to_byte byte_36B, #0
 	DEC	tilemapTypeUnk_30B
-	LDA	tilemapTypeUnk_30B
-	if_not_equal_cmp #0, loc_1F4DC
+	if_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_1F4DC
 	from_stack byte_36B
 	from_stack byte_36A
 	add_to_byte_clc data_2, tilemapWidth_308
@@ -445,8 +440,7 @@ loc_1F583:
 	add_to_byte_clc byte_36A, #8
 	add_to_byte byte_36B, #0
 	DEC	tilemapTypeUnk_30B
-	LDA	tilemapTypeUnk_30B
-	if_not_equal_cmp #0, loc_1F583
+	if_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_1F583
 	from_stack byte_36B
 	from_stack byte_36A
 	sub_from_sec data_2, tilemapWidth_308
@@ -493,10 +487,8 @@ sub_1F5FF:
 	LDA	byte_36D
 	SBC	byte_36B
 	BCC	loc_1F68D
-	LDA	byte_36C
-	if_not_equal_cmp byte_36A, loc_1F66B
-	LDA	byte_36D
-	if_equal_cmp byte_36B, loc_1F68D
+	if_not_equal_cmp_addr byte_36C, byte_36A, loc_1F66B
+	if_equal_cmp_addr byte_36D, byte_36B, loc_1F68D
 
 loc_1F66B:
 	LDA	byte_368
@@ -505,10 +497,8 @@ loc_1F66B:
 	LDA	byte_369
 	SBC	byte_367
 	BCC	loc_1F68D
-	LDA	byte_368
-	if_not_equal_cmp byte_366, loc_1F693
-	LDA	byte_369
-	if_equal_cmp byte_367, loc_1F68D
+	if_not_equal_cmp_addr byte_368, byte_366, loc_1F693
+	if_equal_cmp_addr byte_369, byte_367, loc_1F68D
 	JMP	loc_1F693
 ; ---------------------------------------------------------------------------
 

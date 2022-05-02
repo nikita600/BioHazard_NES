@@ -42,8 +42,7 @@ loc_FCAD:
 	LDX	#0
 
 loc_FCAF:
-	LDA	input_reg1_347
-	if_not_equal_cmp #0, exit_FCBC
+	if_not_equal_cmp_addr input_reg1_347, #0, exit_FCBC
 	INX
 	BNE	loc_FCAF
 	INY
@@ -56,24 +55,21 @@ exit_FCBC:
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_a_pressed_FCBD:	
-	LDA	input_pressed_34A
-	if_not_equal_cmp #a_80, wait_for_a_pressed_FCBD
+	if_not_equal_cmp_addr input_pressed_34A, #a_80, wait_for_a_pressed_FCBD
 	RTS
 ; End of function wait_for_a_pressed_FCBD
 
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_b_pressed_FCC5:	
-	LDA	input_pressed_34A
-	if_not_equal_cmp #b_40, wait_for_b_pressed_FCC5
+	if_not_equal_cmp_addr input_pressed_34A, #b_40, wait_for_b_pressed_FCC5
 	RTS
 ; End of function wait_for_b_pressed_FCC5
 
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_any_input_FCCD:	
-	LDA	input_pressed_34A
-	if_equal_cmp #0, wait_for_any_input_FCCD
+	if_equal_cmp_addr input_pressed_34A, #0, wait_for_any_input_FCCD
 	RTS
 ; End of function wait_for_any_input_FCCD
 
@@ -146,8 +142,7 @@ loc_FD1C:
 ; ---------------------------------------------------------------------------
 
 loc_FD31:
-	LDA	byte_203
-	if_not_equal_cmp #$F8, loc_FD40
+	if_not_equal_cmp_addr byte_203, #$F8, loc_FD40
 	set byte_43E, #1
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
@@ -169,8 +164,7 @@ NMI_FD53:
 	PHA
 	TYA
 	PHA
-	LDA	bank_switch_flag_6C
-	if_equal_cmp #$88, loc_FD62
+	if_equal_cmp_addr bank_switch_flag_6C, #$88, loc_FD62
 	JMP	loc_FD93
 ; ---------------------------------------------------------------------------
 
@@ -184,8 +178,7 @@ battle_screen_update_FD6E:
 	JSR	ppu_upset_data_FDCB
 	JSR	ppu_update_FE20
 	JSR	input_update_FE39
-	LDA	sprite_type_306
-	if_not_equal_cmp #1, music_update_FD89
+	if_not_equal_cmp_addr sprite_type_306, #1, music_update_FD89
 	JSR	sub_FD0A
 	JSR	scroll_update_FED6
 
@@ -358,19 +351,15 @@ ppu_reset_ctrl_mask_FE93:
 
 sub_FE9C:
 	INC	byte_353
-	LDA	byte_353
-	if_lower_cmp #$19, loc_FEA7
+	if_lower_cmp_addr byte_353, #$19, loc_FEA7
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_FEA7:
 	set byte_353, #0
-	LDA	byte_354
-	if_not_equal_cmp #0, loc_FED2
-	LDA	byte_355
-	if_not_equal_cmp #0, loc_FECA
-	LDA	byte_356
-	if_not_equal_cmp #0, loc_FEC2
+	if_not_equal_cmp_addr byte_354, #0, loc_FED2
+	if_not_equal_cmp_addr byte_355, #0, loc_FECA
+	if_not_equal_cmp_addr byte_356, #0, loc_FEC2
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -391,8 +380,7 @@ loc_FED2:
 
 scroll_update_FED6:
 	INC	scroll_offset_x_479
-	LDA	scroll_offset_x_479
-	if_greater_cmp #$A, locret_FF2D
+	if_greater_cmp_addr scroll_offset_x_479, #$A, locret_FF2D
 	LDA	scroll_offset_y_47A
 	EOR	#$80 
 	STA	scroll_offset_y_47A

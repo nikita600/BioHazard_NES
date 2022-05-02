@@ -13,8 +13,7 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	LDA	bank_command_346
-	if_equal_cmp #0, loc_38047
+	if_equal_cmp_addr bank_command_346, #0, loc_38047
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -82,8 +81,7 @@ loc_3F7E3:
 	PHA
 	add_to_a tilemapTypeUnk_30B
 	TAY
-	LDA	byte_3F8DA,Y
-	if_not_equal_cmp #0, loc_3F7FE
+	if_not_equal_cmp_addr {byte_3F8DA,Y}, #0, loc_3F7FE
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_8
 	TAY
@@ -114,11 +112,9 @@ loc_3F820:
 
 	from_stack_to_y
 	INC	tilemapTypeUnk_30B
-	LDA	tilemapTypeUnk_30B
-	if_greater_cmp #2, loc_3F7E3
+	if_greater_cmp_addr tilemapTypeUnk_30B, #2, loc_3F7E3
 	INC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	if_equal_cmp #4, loc_3F839
+	if_equal_cmp_addr inv_spr_dscr1_30C, #4, loc_3F839
 	JMP	loc_3F7CC
 ; ---------------------------------------------------------------------------
 
@@ -180,8 +176,7 @@ loc_3F8A8:
 	INC	ptr_0
 	JSR	sub_3FA27
 	INC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	if_equal_cmp #2, loc_3F8D6
+	if_equal_cmp_addr inv_spr_dscr1_30C, #2, loc_3F8D6
 	JMP	loc_3F865
 ; ---------------------------------------------------------------------------
 
@@ -205,8 +200,7 @@ loc_3F903:
 	set_inx {ppu_data_70,X}, {(ptr_0),Y}
 	INY
 	INC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	if_greater_cmp #8, loc_3F903
+	if_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_3F903
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F8FA
@@ -224,8 +218,7 @@ loc_3F921:
 	INX
 	INY
 	INC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	if_greater_cmp #8, loc_3F921
+	if_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_3F921
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F918
@@ -239,8 +232,7 @@ sub_3F938:
 loc_3F941:
 	set_inx {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	if_greater_cmp #8, loc_3F941
+	if_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_3F941
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F938
@@ -254,8 +246,7 @@ sub_3F955:
 loc_3F95E:
 	set_inx {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
-	LDA	inv_spr_dscr1_30C
-	if_greater_cmp #8, loc_3F95E
+	if_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_3F95E
 	from_stack inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F955
@@ -358,10 +349,8 @@ loc_3FA18:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_3FA27:
-	LDA	ppu_unk_byte_309
-	if_not_equal_cmp #$1D, loc_3FA48
-	LDA	data_3
-	if_greater_cmp #$28, loc_3FA3B
+	if_not_equal_cmp_addr ppu_unk_byte_309, #$1D, loc_3FA48
+	if_greater_cmp_addr data_3, #$28, loc_3FA3B
 	set data_3, #$20 
 	JMP	loc_3FA3F
 ; ---------------------------------------------------------------------------

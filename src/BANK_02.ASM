@@ -140,7 +140,7 @@ sub_2D1CB:
 
 loc_2D1DF:
 	mult_word_by_2 text_idx_35C
-	ASL	char_type_id_35D
+	mult_byte_by_2 char_type_id_35D
 	LDA	#$97 
 	add_to_a char_type_id_35D
 	STA	ptr_0

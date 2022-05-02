@@ -92,6 +92,21 @@
 
 ; ---------------------------------------------------------------------------
 
+.macro mult_byte_by_2 addr
+	ASL addr
+.endmacro
+
+.macro mult_byte_by_4 addr
+	ASL addr
+	ASL addr
+.endmacro
+
+.macro mult_byte_by_8 addr
+	ASL addr
+	ASL addr
+	ASL addr
+.endmacro
+
 .macro mult_word_by_2 addr
 	ASL addr
 	ROL	addr+1

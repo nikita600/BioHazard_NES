@@ -4741,8 +4741,7 @@ loc_D454:
 	set {unk_401,X}, sprite_length_30F
 	set {unk_3E3,X}, tilemapWidth_308
 	set {unk_3ED,X}, tilemapHeight_30A
-	ASL	tilemapWidth_308
-	ASL	tilemapWidth_308
+	mult_byte_by_4 tilemapWidth_308
 	LDY	tilemapHeight_30A
 
 loc_D490:
@@ -8000,18 +7999,14 @@ loc_F0E0:
 	SEC
 	SBC	tilemapHeight_30A
 	STA	inv_spr_dscr1_30C
-	ASL	inv_spr_dscr1_30C
-	ASL	inv_spr_dscr1_30C
-	ASL	inv_spr_dscr1_30C
+	mult_byte_by_8 inv_spr_dscr1_30C
 	LDA	ppu_unk_byte_309
 	AND	#3
 	if_equal_cmp #0, loc_F11A
 	INC	tilemapHeight_30A
 
 loc_F11A:
-	ASL	tilemapHeight_30A
-	ASL	tilemapHeight_30A
-	ASL	tilemapHeight_30A
+	mult_byte_by_8 tilemapHeight_30A
 	set tilemapTypeUnk_30B, #1
 	if_equal_cmp_addr ppu_scroll_y_305, #0, loc_F134
 	set tilemapTypeUnk_30B, #2

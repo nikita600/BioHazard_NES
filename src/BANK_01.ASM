@@ -296,15 +296,13 @@ sub_1F416:
 	LDA	#2
 	ADC	#0
 	STA	ptr_1
-	LDA	byte_317
-	AND	#$40 
+	load_a_masked byte_317, #$40 
 	if_not_equal_cmp #$40, loc_1F430
 	JMP	loc_1F4CA
 ; ---------------------------------------------------------------------------
 
 loc_1F430:
-	LDA	byte_317
-	AND	#$80 
+	load_a_masked byte_317, #$80 
 	if_not_equal_cmp #$80, loc_1F43C
 	JMP	loc_1F559
 ; ---------------------------------------------------------------------------

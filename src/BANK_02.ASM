@@ -133,8 +133,7 @@ sub_2D1CB:
 
 	to_stack text_idx_35C
 	to_stack char_type_id_35D
-	LDA	byte_364
-	AND	#1
+	load_a_masked byte_364, #1
 	if_equal_cmp #0, loc_2D1DF
 	JSR	sub_2D397
 
@@ -261,8 +260,7 @@ loc_2D305:
 ; ---------------------------------------------------------------------------
 
 loc_2D31B:
-	LDA	byte_364
-	AND	#8
+	load_a_masked byte_364, #8
 	if_equal_cmp #0, loc_2D339
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
@@ -283,8 +281,7 @@ loc_2D33C:
 
 loc_2D342:
 
-	LDA	byte_364
-	AND	#8
+	load_a_masked byte_364, #8
 	if_equal_cmp #0, loc_2D360
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
@@ -296,15 +293,13 @@ loc_2D342:
 ; ---------------------------------------------------------------------------
 
 loc_2D360:
-	LDA	byte_364
-	AND	#2
+	load_a_masked byte_364, #2
 	if_not_equal_cmp #0, loc_2D36C
 	JSR	sub_2D4FF
 
 loc_2D36C:
 
-	LDA	byte_364
-	AND	#4
+	load_a_masked byte_364, #4
 	if_not_equal_cmp #0, loc_2D378
 	JSR	sub_2D397
 
@@ -650,8 +645,7 @@ loc_2E33E:
 	INX
 	set_inx {ppu_data_70,X}, ptr_0
 	INC	ptr_0
-	LDA	data_2
-	AND	#$1F
+	load_a_masked data_2, #$1F
 	if_not_equal_cmp #$1F, loc_2E374
 	sub_from_sec data_2, #$1F
 	sub_from_byte data_3, #0
@@ -792,8 +786,7 @@ loc_2E482:
 	INC	ptr_0
 
 loc_2E49B:
-	LDA	ptr_0
-	AND	#1
+	load_a_masked ptr_0, #1
 	BEQ	loc_2E4AC
 	set data_2, #0
 	set data_3, #$28 

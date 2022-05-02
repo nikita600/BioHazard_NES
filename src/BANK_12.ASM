@@ -2161,8 +2161,7 @@ com_17_player_update_12A9C4:
 	set byte_354, #$A
 	set byte_355, #0
 	STA	byte_356
-	LDA	byte_54B
-	AND	#$F
+	load_a_masked byte_54B, #$F
 	ORA	#$F0 
 	STA	byte_54B
 	INC	byte_54B
@@ -2449,8 +2448,7 @@ check_room_93_12ACB1:
 
 check_room_52_12ACC5:
 	if_not_equal_cmp_addr entry_idx_300, #$52, locret_12ACDA
-	LDA	byte_591
-	AND	byte_592
+	load_a_masked byte_591, byte_592
 	BEQ	locret_12ACDA
 	set entry_idx_300, #$8F 
 	RTS
@@ -2510,8 +2508,7 @@ loc_12AD41:
 
 loc_12AD58:
 	
-	LDA	byte_68D
-	AND	byte_68E
+	load_a_masked byte_68D, byte_68E
 	AND	byte_68F
 	STA	byte_6A4
 
@@ -2522,8 +2519,7 @@ locret_12AD64:
 loc_12AD65:
 	if_not_equal_cmp_addr byte_46E, #$27, loc_12ADA0
 	set byte_591, #$FF
-	LDA	byte_591
-	AND	byte_592
+	load_a_masked byte_591, byte_592
 	if_equal_cmp #0, locret_12AD9F
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -2540,8 +2536,7 @@ locret_12AD9F:
 loc_12ADA0:
 	if_not_equal_cmp_addr byte_46E, #$28, loc_12ADDB
 	set byte_592, #$FF
-	LDA	byte_591
-	AND	byte_592
+	load_a_masked byte_591, byte_592
 	if_equal_cmp #0, locret_12ADDA
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -2828,8 +2823,7 @@ loc_12B0E2:
 loc_12B106:
 	if_not_equal_cmp #$1E, loc_12B11F
 	set byte_59F, #$FF
-	LDA	byte_59F
-	AND	byte_5A0
+	load_a_masked byte_59F, byte_5A0
 	AND	byte_5A1
 	AND	byte_5A2
 	STA	byte_6C8
@@ -2839,8 +2833,7 @@ loc_12B106:
 loc_12B11F:
 	if_not_equal_cmp #$1F, loc_12B138
 	set byte_5A0, #$FF
-	LDA	byte_59F
-	AND	byte_5A0
+	load_a_masked byte_59F, byte_5A0
 	AND	byte_5A1
 	AND	byte_5A2
 	STA	byte_6C8
@@ -2850,8 +2843,7 @@ loc_12B11F:
 loc_12B138:
 	if_not_equal_cmp #$20, loc_12B151
 	set byte_5A1, #$FF
-	LDA	byte_59F
-	AND	byte_5A0
+	load_a_masked byte_59F, byte_5A0
 	AND	byte_5A1
 	AND	byte_5A2
 	STA	byte_6C8
@@ -2861,8 +2853,7 @@ loc_12B138:
 loc_12B151:
 	if_not_equal_cmp #$21, loc_12B16A
 	set byte_5A2, #$FF
-	LDA	byte_59F
-	AND	byte_5A0
+	load_a_masked byte_59F, byte_5A0
 	AND	byte_5A1
 	AND	byte_5A2
 	STA	byte_6C8
@@ -9479,35 +9470,28 @@ loc_12EE2C:
 	if_equal_cmp #1, loc_12EE69
 
 loc_12EE3F:
-	LDA	palette_bg_321,Y 
-	AND	#$CF 
+	load_a_masked {palette_bg_321,Y }, #$CF 
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
 loc_12EE47:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$30, loc_12EE7A
-	LDA	palette_bg_321,Y 
-	AND	#$DF 
+	load_a_masked {palette_bg_321,Y }, #$DF 
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
 loc_12EE58:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$20, loc_12EE7A
-	LDA	palette_bg_321,Y 
-	AND	#$EF 
+	load_a_masked {palette_bg_321,Y }, #$EF 
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
 loc_12EE69:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$10, loc_12EE7A
-	LDA	palette_bg_321,Y 
-	AND	#$FF
+	load_a_masked {palette_bg_321,Y }, #$FF
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
@@ -9569,35 +9553,28 @@ loc_12EEDB:
 	if_equal_cmp #0, loc_12EF2D
 
 loc_12EEF2:
-	LDA	palette_bg_321,Y 
-	AND	#$FF
+	load_a_masked {palette_bg_321,Y }, #$FF
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
 loc_12EEFA:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$30, loc_12EF32
-	LDA	palette_bg_321,Y 
-	AND	#$EF 
+	load_a_masked {palette_bg_321,Y }, #$EF 
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
 loc_12EF0B:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$20, loc_12EF32
-	LDA	palette_bg_321,Y 
-	AND	#$DF 
+	load_a_masked {palette_bg_321,Y }, #$DF 
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
 loc_12EF1C:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$10, loc_12EF32
-	LDA	palette_bg_321,Y 
-	AND	#$CF 
+	load_a_masked {palette_bg_321,Y }, #$CF 
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 

@@ -229,8 +229,7 @@ loc_FDD0:
 	LDX	#1
 
 loc_FDD8:
-	LDA	ppu_data_70,X
-	AND	#$80 
+	load_a_masked {ppu_data_70,X}, #$80 
 	BEQ	loc_FDEC
 	LDA	ppu_ctrl_31F
 	ORA	#4
@@ -244,8 +243,7 @@ loc_FDEC:
 	STA	_PPU_CTRL
 
 loc_FDF7:
-	LDA	ppu_data_70,X
-	AND	#$7F 
+	load_a_masked {ppu_data_70,X}, #$7F 
 	STA	ppu_fld1_y_6E
 	INX
 	set_inx _PPU_ADDR, {ppu_data_70,X}
@@ -381,12 +379,10 @@ scroll_update_FED6:
 	if_greater_cmp_addr scroll_offset_x_479, #$A, locret_FF2D
 	xor_byte scroll_offset_y_47A, #$80 
 	and_byte scroll_offset_y_47A, #$FE 
-	LDA	scroll_offset_y_47A
-	AND	#$7F 
+	load_a_masked scroll_offset_y_47A, #$7F 
 	if_equal_cmp #0, locret_FF2D
 	to_stack scroll_offset_y_47A
-	LDA	scroll_offset_y_47A
-	AND	#$80 
+	load_a_masked scroll_offset_y_47A, #$80 
 	if_equal_cmp #0, loc_FF0E
 	set ppu_scroll_y_305, #0
 	JMP	loc_FF20

@@ -152,8 +152,7 @@ loc_3F865:
 	INX
 	set_inx {ppu_data_70,X}, ptr_0
 	INC	ptr_0
-	LDA	data_2
-	AND	#$1F
+	load_a_masked data_2, #$1F
 	if_not_equal_cmp #$1F, loc_3F89B
 	sub_from_sec data_2, #$1F
 	sub_from_byte data_3, #0
@@ -293,8 +292,7 @@ loc_3F9A9:
 	INC	ptr_0
 
 loc_3F9C2:
-	LDA	ptr_0
-	AND	#1
+	load_a_masked ptr_0, #1
 	BEQ	loc_3F9D3
 	set data_2, #0
 	set data_3, #$28 

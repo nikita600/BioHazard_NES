@@ -30,6 +30,11 @@
 
 ; ---------------------------------------------------------------------------
 
+.macro load_a_masked addr, mask
+	LDA	addr
+	AND	mask
+.endmacro
+
 .macro and_byte addr, value
 	LDA	addr
 	AND	value

@@ -1117,8 +1117,7 @@ update_player_input_8B5F:
 	set byte_433, #0
 
 is_B_pressed_8B64:
-	LDA	input_reg1_347
-	AND	#$40 
+	load_a_masked input_reg1_347, #$40 
 	if_not_equal_cmp #b_40, b_not_pressed_8BB1
 	set byte_433, #$FF
 	if_equal_cmp_addr byte_42A, #$FF, loc_8BAC
@@ -1142,8 +1141,7 @@ b_not_pressed_8BB1:
 	JSR	sub_9195
 
 is_up_pressed_8BB7:
-	LDA	input_reg1_347
-	AND	#8
+	load_a_masked input_reg1_347, #8
 	if_not_equal_cmp #up_8, up_not_pressed_8BD7
 
 up_pressed_8BC0:
@@ -1160,8 +1158,7 @@ loc_8BD3:
 ; ---------------------------------------------------------------------------
 
 up_not_pressed_8BD7:
-	LDA	input_reg1_347
-	AND	#4
+	load_a_masked input_reg1_347, #4
 	if_not_equal_cmp #down_4, down_not_pressed_8BF7
 	set byte_437, #0
 	set byte_313, #1
@@ -1176,8 +1173,7 @@ loc_8BF3:
 ; ---------------------------------------------------------------------------
 
 down_not_pressed_8BF7:
-	LDA	input_reg1_347
-	AND	#2
+	load_a_masked input_reg1_347, #2
 	if_not_equal_cmp #left_2, left_not_pressed_8C17
 	set byte_437, #0
 	set byte_313, #2
@@ -1192,8 +1188,7 @@ loc_8C13:
 ; ---------------------------------------------------------------------------
 
 left_not_pressed_8C17:
-	LDA	input_reg1_347
-	AND	#1
+	load_a_masked input_reg1_347, #1
 	if_not_equal_cmp #right_1, right_not_pressed_8C37
 	set byte_437, #0
 	set byte_313, #3
@@ -1208,24 +1203,21 @@ loc_8C33:
 ; ---------------------------------------------------------------------------
 
 right_not_pressed_8C37:
-	LDA	input_reg1_347
-	AND	#$10
+	load_a_masked input_reg1_347, #$10
 	if_not_equal_cmp #start_10, start_not_pressed_8C44
 	JSR	start_button_pressed_8F88
 	RTS
 ; ---------------------------------------------------------------------------
 
 start_not_pressed_8C44:
-	LDA	input_reg1_347
-	AND	#$20 
+	load_a_masked input_reg1_347, #$20 
 	if_not_equal_cmp #select_20, select_not_pressed_8C51
 	JSR	select_button_pressed_8FC4
 	RTS
 ; ---------------------------------------------------------------------------
 
 select_not_pressed_8C51:
-	LDA	input_reg1_347
-	AND	#$80 
+	load_a_masked input_reg1_347, #$80 
 	if_not_equal_cmp #a_80, a_not_pressed_8C5E
 	JSR	a_button_pressed_8FDC
 	RTS
@@ -2153,8 +2145,7 @@ loc_94CA:
 
 sub_94D3:
 	if_equal_cmp_addr byte_315, #4, loc_94E9
-	LDA	byte_314
-	AND	#1
+	load_a_masked byte_314, #1
 	BEQ	loc_94E2
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2846,35 +2837,28 @@ loc_BD7C:
 	if_equal_cmp #1, loc_BDB9
 
 loc_BD8F:
-	LDA	palette_bg_321,Y 
-	AND	#$CF 
+	load_a_masked {palette_bg_321,Y }, #$CF 
 	JMP	loc_BDCD
 ; ---------------------------------------------------------------------------
 
 loc_BD97:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$30, loc_BDCA
-	LDA	palette_bg_321,Y 
-	AND	#$DF 
+	load_a_masked {palette_bg_321,Y }, #$DF 
 	JMP	loc_BDCD
 ; ---------------------------------------------------------------------------
 
 loc_BDA8:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$20, loc_BDCA
-	LDA	palette_bg_321,Y 
-	AND	#$EF 
+	load_a_masked {palette_bg_321,Y }, #$EF 
 	JMP	loc_BDCD
 ; ---------------------------------------------------------------------------
 
 loc_BDB9:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$10, loc_BDCA
-	LDA	palette_bg_321,Y 
-	AND	#$FF
+	load_a_masked {palette_bg_321,Y }, #$FF
 	JMP	loc_BDCD
 ; ---------------------------------------------------------------------------
 
@@ -2933,35 +2917,28 @@ loc_BE2B:
 	if_equal_cmp #0, loc_BE7D
 
 loc_BE42:
-	LDA	palette_bg_321,Y 
-	AND	#$FF
+	load_a_masked {palette_bg_321,Y }, #$FF
 	JMP	loc_BE85
 ; ---------------------------------------------------------------------------
 
 loc_BE4A:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$30, loc_BE82
-	LDA	palette_bg_321,Y 
-	AND	#$EF 
+	load_a_masked {palette_bg_321,Y }, #$EF 
 	JMP	loc_BE85
 ; ---------------------------------------------------------------------------
 
 loc_BE5B:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$20, loc_BE82
-	LDA	palette_bg_321,Y 
-	AND	#$DF 
+	load_a_masked {palette_bg_321,Y }, #$DF 
 	JMP	loc_BE85
 ; ---------------------------------------------------------------------------
 
 loc_BE6C:
-	LDA	palette_bg_321,Y 
-	AND	#$30 
+	load_a_masked {palette_bg_321,Y }, #$30 
 	if_greater_cmp #$10, loc_BE82
-	LDA	palette_bg_321,Y 
-	AND	#$CF 
+	load_a_masked {palette_bg_321,Y }, #$CF 
 	JMP	loc_BE85
 ; ---------------------------------------------------------------------------
 
@@ -3312,11 +3289,9 @@ loc_C73D:
 
 loc_C743:
 	JSR	load_tiles_to_ppu_C83A
-	LDA	ppu_unk_byte_303
-	AND	#1
+	load_a_masked ppu_unk_byte_303, #1
 	BEQ	loc_C75A
-	LDA	ppu_ctrl_31F
-	AND	#$FC 
+	load_a_masked ppu_ctrl_31F, #$FC 
 	ORA	#2
 	STA	ppu_ctrl_31F
 	JMP	loc_C762
@@ -5290,8 +5265,7 @@ sub_D9B9:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_D9E4:
-	LDA	byte_36A
-	AND	#$F
+	load_a_masked byte_36A, #$F
 	BEQ	loc_DA0B
 	and_byte byte_36A, #$F0 
 	if_not_equal_cmp_addr {array_unk_3A7,X}, #2, loc_DA0B
@@ -5299,8 +5273,7 @@ sub_D9E4:
 	add_to_byte byte_36B, #0
 
 loc_DA0B:
-	LDA	byte_366
-	AND	#$F
+	load_a_masked byte_366, #$F
 	BEQ	locret_DA32
 	and_byte byte_366, #$F0 
 	if_not_equal_cmp_addr {array_unk_3A7,X}, #0, locret_DA32
@@ -7792,14 +7765,11 @@ loc_EF36:
 ; ---------------------------------------------------------------------------
 
 loc_EF45:
-	LDA	ppu_scroll_x_304
-	AND	#$1F
+	load_a_masked ppu_scroll_x_304, #$1F
 	BEQ	loc_EF5D
-	LDA	tilemapData_4C,Y
-	AND	#$33 
+	load_a_masked {tilemapData_4C,Y}, #$33 
 	STA	tilemapTypeUnk_30B
-	LDA	byte_4,X
-	AND	#$CC 
+	load_a_masked {byte_4,X}, #$CC 
 	ORA	tilemapTypeUnk_30B
 	STA	byte_4,X
 
@@ -7823,8 +7793,7 @@ loc_EF7B:
 	SBC	tilemap_size_307
 	STA	tilemapWidth_308
 	set tilemapHeight_30A, ppu_unk_byte_309
-	LDA	ppu_scroll_y_305
-	AND	#$1F
+	load_a_masked ppu_scroll_y_305, #$1F
 	BEQ	loc_EF94
 	INC	tilemapHeight_30A
 
@@ -7875,8 +7844,7 @@ loc_EFDB:
 loc_F003:
 	set tilemapWidth_308, tilemap_size_307
 	set tilemapHeight_30A, ppu_unk_byte_309
-	LDA	ppu_scroll_y_305
-	AND	#$1F
+	load_a_masked ppu_scroll_y_305, #$1F
 	BEQ	loc_F019
 	INC	tilemapHeight_30A
 
@@ -7920,14 +7888,11 @@ loc_F061:
 ; ---------------------------------------------------------------------------
 
 loc_F070:
-	LDA	ppu_scroll_x_304
-	AND	#$1F
+	load_a_masked ppu_scroll_x_304, #$1F
 	BEQ	loc_F088
-	LDA	tilemapData_4C,Y
-	AND	#$33 
+	load_a_masked {tilemapData_4C,Y}, #$33 
 	STA	tilemapTypeUnk_30B
-	LDA	byte_4,X
-	AND	#$CC 
+	load_a_masked {byte_4,X}, #$CC 
 	ORA	tilemapTypeUnk_30B
 	STA	byte_4,X
 
@@ -7948,8 +7913,7 @@ locret_F09C:
 ; =============== S U B	R O U T	I N E =======================================
 
 ppu_unk_func_F09D:
-	LDA	ppu_unk_byte_303
-	AND	#1
+	load_a_masked ppu_unk_byte_303, #1
 	if_equal_cmp #1, loc_F0B9
 
 	set_ptr _PPU_ATTR_TBL_0
@@ -7963,8 +7927,7 @@ loc_F0B9:
 	set_ptr _PPU_ATTR_TBL_1
 
 loc_F0C9:
-	LDA	ppu_unk_byte_302
-	AND	#1
+	load_a_masked ppu_unk_byte_302, #1
 	if_not_equal_cmp #1, loc_F0E0
 	add_to_byte_clc ptr_1, #4
 	add_to_byte_clc data_3, #4
@@ -7988,8 +7951,7 @@ loc_F0E0:
 	SBC	tilemapHeight_30A
 	STA	inv_spr_dscr1_30C
 	mult_byte_by_8 inv_spr_dscr1_30C
-	LDA	ppu_unk_byte_309
-	AND	#3
+	load_a_masked ppu_unk_byte_309, #3
 	if_equal_cmp #0, loc_F11A
 	INC	tilemapHeight_30A
 
@@ -8124,8 +8086,7 @@ start_read_tilemap_F23C:
 	JSR	sub_F42F
 	JSR	sub_F5A2
 	set tilemapTypeUnk_30B, tilemap_size_307
-	LDA	ppu_scroll_x_304
-	AND	#$1F
+	load_a_masked ppu_scroll_x_304, #$1F
 	BEQ	start_read_tilemap_F290
 	INC	tilemapTypeUnk_30B
 
@@ -8144,20 +8105,17 @@ start_read_tilemap_F290:
 	JSR	sub_F589
 	from_stack_to_x
 	JSR	sub_F51D
-	LDA	ppu_scroll_x_304
-	AND	#$1F
+	load_a_masked ppu_scroll_x_304, #$1F
 	BEQ	loc_F2E0
 	DEX
-	LDA	ppu_data_70,X
-	AND	#$33 
+	load_a_masked {ppu_data_70,X}, #$33 
 	STA	tilemapTypeUnk_30B
 	TXA
 	TAY
 	SEC
 	SBC	#$B
 	TAX
-	LDA	ppu_data_70,X
-	AND	#$CC 
+	load_a_masked {ppu_data_70,X}, #$CC 
 	ORA	tilemapTypeUnk_30B
 	STA	ppu_data_70,Y
 
@@ -8266,8 +8224,7 @@ start_read_tilemap_F390:
 	JSR	sub_F42F
 	JSR	sub_F5A2
 	set tilemapTypeUnk_30B, ppu_unk_byte_309
-	LDA	ppu_scroll_y_305
-	AND	#$1F
+	load_a_masked ppu_scroll_y_305, #$1F
 	BEQ	start_read_tilemap_F3F2
 	INC	tilemapTypeUnk_30B
 
@@ -8511,15 +8468,13 @@ sub_F5A2:
 
 sub_F5AF:
 	if_equal_cmp_addr byte_313, #3, loc_F5C2
-	LDA	ppu_scroll_x_304
-	AND	#$10
+	load_a_masked ppu_scroll_x_304, #$10
 	if_equal_cmp #$10, loc_F5CE
 	JMP	locret_F640
 ; ---------------------------------------------------------------------------
 
 loc_F5C2:
-	LDA	ppu_scroll_x_304
-	AND	#$F8 
+	load_a_masked ppu_scroll_x_304, #$F8 
 	AND	#$1F
 	BEQ	loc_F5CE
 	JMP	locret_F640
@@ -8558,8 +8513,7 @@ loc_F5EE:
 
 loc_F615:
 	and_byte {tilemapData_4C,X}, #$CC 
-	LDA	unk_5C,X
-	AND	#$33 
+	load_a_masked {unk_5C,X}, #$33 
 	ORA	tilemapData_4C,X
 	STA	tilemapData_4C,X
 	INX
@@ -8573,8 +8527,7 @@ loc_F62B:
 
 loc_F62D:
 	and_byte {tilemapData_4C,X}, #$33 
-	LDA	unk_5C,X
-	AND	#$CC 
+	load_a_masked {unk_5C,X}, #$CC 
 	ORA	tilemapData_4C,X
 	STA	tilemapData_4C,X
 	INX
@@ -8588,11 +8541,9 @@ locret_F640:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_F641:
-	LDA	ppu_unk_byte_303
-	AND	#1
+	load_a_masked ppu_unk_byte_303, #1
 	BEQ	loc_F653
-	LDA	ppu_ctrl_31F
-	AND	#$FC 
+	load_a_masked ppu_ctrl_31F, #$FC 
 	ORA	#2
 	STA	ppu_ctrl_31F
 	RTS
@@ -8625,18 +8576,14 @@ sub_F65C:
 	LDX	#0
 
 loc_F68F:
-	LDA	byte_200,X
-	AND	#$F8 
+	load_a_masked {byte_200,X}, #$F8 
 	if_greater_cmp byte_366, loc_F6C0
-	LDA	byte_200,X
-	AND	#$F8 
+	load_a_masked {byte_200,X}, #$F8 
 	if_equal_cmp byte_368, loc_F6C0
 	BCS	loc_F6C0
-	LDA	byte_203,X
-	AND	#$F8 
+	load_a_masked {byte_203,X}, #$F8 
 	if_greater_cmp byte_36A, loc_F6C0
-	LDA	byte_203,X
-	AND	#$F8 
+	load_a_masked {byte_203,X}, #$F8 
 	if_equal_cmp byte_36C, loc_F6C0
 	BCS	loc_F6C0
 	set {byte_200,X}, #$F0 
@@ -8659,8 +8606,7 @@ loc_F6C0:
 	set inv_spr_dscr1_30C, #0
 
 loc_F6EC:
-	LDA	inv_spr_dscr1_30C
-	AND	#3
+	load_a_masked inv_spr_dscr1_30C, #3
 	BEQ	loc_F700
 	add_to_byte_clc tilemap_size_307, inv_spr_dscr1_30C
 	JMP	loc_F70A
@@ -8705,8 +8651,7 @@ sub_F767:
 	set ppu_unk_byte_309, byte_357
 	set tilemap_size_307, byte_358
 	set tilemapWidth_308, byte_359
-	LDA	tilemapWidth_308
-	AND	#3
+	load_a_masked tilemapWidth_308, #3
 	BEQ	loc_F78C
 	LDA	tilemapWidth_308
 	SEC
@@ -8719,8 +8664,7 @@ loc_F78C:
 	set inv_spr_dscr1_30C, tilemapWidth_308
 
 loc_F792:
-	LDA	inv_spr_dscr1_30C
-	AND	#3
+	load_a_masked inv_spr_dscr1_30C, #3
 	BEQ	loc_F7A6
 	sub_from_sec tilemap_size_307, inv_spr_dscr1_30C
 	JMP	loc_F7B0
@@ -8780,8 +8724,7 @@ loc_F811:
 ; ---------------------------------------------------------------------------
 
 loc_F83D:
-	LDA	tilemapWidth_308
-	AND	#2
+	load_a_masked tilemapWidth_308, #2
 	BEQ	loc_F849
 	LDY	#$10
 	JMP	loc_F85C
@@ -8793,8 +8736,7 @@ loc_F849:
 ; ---------------------------------------------------------------------------
 
 loc_F84E:
-	LDA	tilemapWidth_308
-	AND	#2
+	load_a_masked tilemapWidth_308, #2
 	BEQ	loc_F85A
 	LDY	#0
 	JMP	loc_F85C
@@ -8987,11 +8929,9 @@ sub_F9C2:
 	to_stack ppu_unk_byte_309
 	to_stack tilemap_size_307
 	JSR	sub_FA61
-	LDA	ppu_unk_byte_309
-	AND	#3
+	load_a_masked ppu_unk_byte_309, #3
 	BEQ	loc_FA0D
-	LDA	tilemap_size_307
-	AND	#3
+	load_a_masked tilemap_size_307, #3
 	BEQ	loc_F9F5
 	and_byte {byte_4,Y}, #$3F 
 	LDA	byte_35A
@@ -9011,8 +8951,7 @@ loc_F9F5:
 ; ---------------------------------------------------------------------------
 
 loc_FA0D:
-	LDA	tilemap_size_307
-	AND	#3
+	load_a_masked tilemap_size_307, #3
 	BEQ	loc_FA2A
 	and_byte {byte_4,Y}, #$F3 
 	LDA	byte_35A
@@ -9065,8 +9004,7 @@ loc_FA78:
 	INC	ppu_unk_byte_309
 
 loc_FA8C:
-	LDA	ppu_scroll_y_305
-	AND	#$1F
+	load_a_masked ppu_scroll_y_305, #$1F
 	BEQ	loc_FA99
 	INC	ppu_unk_byte_309
 	INC	ppu_unk_byte_309
@@ -9113,15 +9051,12 @@ start_read_tilemap_FAC8:
 	to_stack ppu_unk_byte_309
 	to_stack tilemap_size_307
 	JSR	sub_FA61
-	LDA	ppu_unk_byte_309
-	AND	#3
+	load_a_masked ppu_unk_byte_309, #3
 	BEQ	loc_FB35
-	LDA	tilemap_size_307
-	AND	#3
+	load_a_masked tilemap_size_307, #3
 	BEQ	loc_FB20
 	and_byte {byte_4,Y}, #$3F 
-	LDA	tilemapData_4C
-	AND	#$C0 
+	load_a_masked tilemapData_4C, #$C0 
 	ORA	byte_4,Y
 	STA	byte_4,Y
 	JMP	loc_FB63
@@ -9129,20 +9064,17 @@ start_read_tilemap_FAC8:
 
 loc_FB20:
 	and_byte {byte_4,Y}, #$CF 
-	LDA	tilemapData_4C
-	AND	#$30 
+	load_a_masked tilemapData_4C, #$30 
 	ORA	byte_4,Y
 	STA	byte_4,Y
 	JMP	loc_FB63
 ; ---------------------------------------------------------------------------
 
 loc_FB35:
-	LDA	tilemap_size_307
-	AND	#3
+	load_a_masked tilemap_size_307, #3
 	BEQ	loc_FB51
 	and_byte {byte_4,Y}, #$F3 
-	LDA	tilemapData_4C
-	AND	#$C
+	load_a_masked tilemapData_4C, #$C
 	ORA	byte_4,Y
 	STA	byte_4,Y
 	JMP	loc_FB63
@@ -9150,8 +9082,7 @@ loc_FB35:
 
 loc_FB51:
 	and_byte {byte_4,Y}, #$FC 
-	LDA	tilemapData_4C
-	AND	#3
+	load_a_masked tilemapData_4C, #3
 	ORA	byte_4,Y
 	STA	byte_4,Y
 

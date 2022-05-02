@@ -274,8 +274,7 @@ loc_3F98D:
 	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_greater_cmp #$20, loc_3F9A9
-	SEC
-	SBC	#$20 
+	sub_a_sec #$20 
 	STA	tilemap_size_307
 
 loc_3F9A9:
@@ -286,8 +285,7 @@ loc_3F9A9:
 	add_to_a ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	if_greater_cmp #$1E, loc_3F9C2
-	SEC
-	SBC	#$1E
+	sub_a_sec #$1E
 	STA	ppu_unk_byte_309
 	INC	ptr_0
 
@@ -333,8 +331,7 @@ loc_3FA07:
 	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_greater_cmp #$20, loc_3FA18
-	SEC
-	SBC	#$20 
+	sub_a_sec #$20 
 	STA	tilemap_size_307
 
 loc_3FA18:

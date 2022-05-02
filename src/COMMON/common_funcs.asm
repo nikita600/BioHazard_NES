@@ -80,8 +80,7 @@ wait_for_n_65k_cycles_FCD5:
 	PHA
 	JSR	wait_65k_cycles_FCE0
 	PLA
-	SEC
-	SBC	#1
+	sub_a_sec #1
 	BNE	wait_for_n_65k_cycles_FCD5
 	RTS
 ; End of function wait_for_n_65k_cycles_FCD5

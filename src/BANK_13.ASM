@@ -101,8 +101,7 @@ loc_13C032:
 	PHA
 	TAY
 	if_greater_cmp #$40, loc_13C040
-	SEC
-	SBC	#$40 
+	sub_a_sec #$40 
 
 loc_13C040:
 	mult_a_by_4
@@ -881,8 +880,7 @@ apu_update_pulse1_13DA62:
 	if_equal {apu_unk_752,X}, loc_13DA99
 	if_lower_cmp #4, locret_13DADB
 	load_a_masked {apu_pulse1_env_744,X}, #$F
-	SEC
-	SBC	apu_unk_754,X
+	sub_a_sec {apu_unk_754,X}
 	STA	apu_unk_705
 	BCS	loc_13DAB3
 	set apu_unk_705, #0
@@ -935,8 +933,7 @@ music_func_13DAE3:
 	if_equal {apu_unk_721,X}, loc_13DB1A
 	if_lower_cmp #4, locret_13DB64
 	load_a_masked {pulse1_env_713,X}, #$F
-	SEC
-	SBC	apu_unk_723,X
+	sub_a_sec {apu_unk_723,X}
 	STA	apu_unk_705
 	BCS	loc_13DB34
 	set apu_unk_705, #0
@@ -1286,8 +1283,7 @@ load_sprite_func_13DFA8:
 loc_13DFAB:
 	if_greater_cmp_addr inv_spr_dscr1_30C, #4, loc_13DFC2
 	BEQ	loc_13DFC2
-	SEC
-	SBC	#4
+	sub_a_sec #4
 	STA	inv_spr_dscr1_30C
 	set tilemapTypeUnk_30B, #$40 
 	JMP	loc_13DFD1
@@ -1400,8 +1396,7 @@ loc_13E0C4:
 
 loc_13E0DC:
 	if_greater_cmp tilemapWidth_308, loc_13E0EB
-	SEC
-	SBC	tilemapWidth_308
+	sub_a_sec tilemapWidth_308
 	INC	inv_spr_dscr1_30C
 	JMP	loc_13E0DC
 ; ---------------------------------------------------------------------------
@@ -1411,8 +1406,7 @@ loc_13E0EB:
 
 loc_13E0EE:
 	if_greater_cmp inv_spr_dscr1_30C, loc_13E100
-	SEC
-	SBC	inv_spr_dscr1_30C
+	sub_a_sec inv_spr_dscr1_30C
 	STA	tilemapHeight_30A
 	INC	ppu_unk_byte_309
 	JMP	loc_13E0EE

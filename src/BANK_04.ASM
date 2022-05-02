@@ -144,8 +144,7 @@ sub_4F3B3:
 loc_4F3B6:
 	if_greater_cmp_addr inv_spr_dscr1_30C, #4, loc_4F3CD
 	BEQ	loc_4F3CD
-	SEC
-	SBC	#4
+	sub_a_sec #4
 	STA	inv_spr_dscr1_30C
 	set tilemapTypeUnk_30B, #$40 
 	JMP	loc_4F3DC
@@ -270,8 +269,7 @@ loc_4F4CF:
 
 loc_4F4E7:
 	if_greater_cmp tilemapWidth_308, loc_4F4F6
-	SEC
-	SBC	tilemapWidth_308
+	sub_a_sec tilemapWidth_308
 	INC	inv_spr_dscr1_30C
 	JMP	loc_4F4E7
 ; ---------------------------------------------------------------------------
@@ -281,8 +279,7 @@ loc_4F4F6:
 
 loc_4F4F9:
 	if_greater_cmp inv_spr_dscr1_30C, loc_4F50B
-	SEC
-	SBC	inv_spr_dscr1_30C
+	sub_a_sec inv_spr_dscr1_30C
 	STA	tilemapHeight_30A
 	INC	ppu_unk_byte_309
 	JMP	loc_4F4F9

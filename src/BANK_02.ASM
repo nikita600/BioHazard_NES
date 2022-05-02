@@ -197,7 +197,7 @@ loc_2D260:
 	STA	ptr_0
 	add_to_byte ptr_1, #0
 
-	sub_a_sec byte_35E, tilemapWidth_308
+	sub_addr_sec byte_35E, tilemapWidth_308
 	TAY
 
 loc_2D284:
@@ -393,8 +393,7 @@ loc_2D445:
 	add_to_a tilemap_size_307
 	STA	tilemapTypeUnk_30B
 	TYA
-	SEC
-	SBC	tilemapTypeUnk_30B
+	sub_a_sec tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 	INC	ppu_data_70
 	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
@@ -415,8 +414,7 @@ loc_2D471:
 	and_byte data_2, #$E0 
 	LDA	byte_35E
 	mult_a_by_2
-	SEC
-	SBC	tilemapTypeUnk_30B
+	sub_a_sec tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 
 loc_2D49D:
@@ -766,8 +764,7 @@ loc_2E466:
 	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_greater_cmp #$20, loc_2E482
-	SEC
-	SBC	#$20 
+	sub_a_sec #$20 
 	STA	tilemap_size_307
 
 loc_2E482:
@@ -778,8 +775,7 @@ loc_2E482:
 	add_to_a ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	if_greater_cmp #$1E, loc_2E49B
-	SEC
-	SBC	#$1E
+	sub_a_sec #$1E
 	STA	ppu_unk_byte_309
 	INC	ptr_0
 
@@ -825,8 +821,7 @@ loc_2E4E0:
 	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_greater_cmp #$20, loc_2E4F1
-	SEC
-	SBC	#$20 
+	sub_a_sec #$20 
 	STA	tilemap_size_307
 
 loc_2E4F1:

@@ -774,8 +774,7 @@ loc_12853B:
 	PHA
 	TAY
 	if_greater_cmp #$40, loc_128549
-	SEC
-	SBC	#$40 
+	sub_a_sec #$40 
 
 loc_128549:
 	mult_a_by_4
@@ -989,7 +988,7 @@ sub_128955:
 	to_stack ppu_prev_scroll_x_unk_4A7
 	to_stack ppu_prev_scroll_y_unk_4A8
 	to_stack prev_sprite_type_4A9
-	sub_a_sec inv_sprite_idx_31C, #$2A 
+	sub_addr_sec inv_sprite_idx_31C, #$2A 
 	mult_a_by_2
 	TAX
 	set byte_475, {byte_129255,X}
@@ -1166,16 +1165,16 @@ loc_128B4B:
 	set byte_31A, #8
 	set tilemapWidth_308, #8
 	JSR	sub_12D26B
-	sub_a_sec inv_sprite_idx_31C, #$2A 
+	sub_addr_sec inv_sprite_idx_31C, #$2A 
 	mult_a_by_2
 	TAY
-	sub_a_sec {byte_129006,Y}, byte_43F
+	sub_addr_sec {byte_129006,Y}, byte_43F
 	mult_a_by_4
 	STA	tilemapTypeUnk_30B
-	sub_a_sec #$80 , tilemapTypeUnk_30B
+	sub_addr_sec #$80 , tilemapTypeUnk_30B
 	STA	byte_36A
 	STA	byte_473
-	sub_a #0, #0
+	sub_addr #0, #0
 	STA	byte_36B
 	set byte_366, #$80 
 	set byte_367, #0
@@ -1186,10 +1185,10 @@ loc_128B4B:
 	LDX	objMapIdx_316
 	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
-	sub_a_sec inv_sprite_idx_31C, #$2A 
+	sub_addr_sec inv_sprite_idx_31C, #$2A 
 	mult_a_by_2
 	TAY
-	sub_a_sec {byte_129006,Y}, byte_43F
+	sub_addr_sec {byte_129006,Y}, byte_43F
 	mult_a_by_4
 	STA	tilemapTypeUnk_30B
 	LDA	#$80 
@@ -1227,10 +1226,10 @@ loc_128BFB:
 	add_to_a #1
 	mult_a_by_4
 	STA	tilemapTypeUnk_30B
-	sub_a_sec #$80 , tilemapTypeUnk_30B
+	sub_addr_sec #$80 , tilemapTypeUnk_30B
 	STA	byte_36A
 	STA	byte_473
-	sub_a #0, #0
+	sub_addr #0, #0
 	STA	byte_36B
 	set byte_366, #$80 
 	set byte_367, #0
@@ -1487,7 +1486,7 @@ sub_128FC1:
 	set byte_36E, #0
 	JSR	exec_b4_c2_1283A7
 	INC	byte_43F
-	sub_a_sec inv_sprite_idx_31C, #$2A 
+	sub_addr_sec inv_sprite_idx_31C, #$2A 
 	mult_a_by_2
 	TAY
 	if_not_equal_cmp_addr {byte_129006,Y}, byte_43F, locret_129004
@@ -1518,9 +1517,9 @@ sub_129019:
 loc_12902C:
 	set byte_366, #$40 
 	set byte_367, #0
-	sub_a_sec byte_441, #4
+	sub_addr_sec byte_441, #4
 	STA	byte_36A
-	sub_a #0, #0
+	sub_addr #0, #0
 	STA	byte_36B
 	set sprite_secondByte_31B, #0
 	set byte_31A, #$C8 
@@ -1536,7 +1535,7 @@ loc_12905F:
 ; ---------------------------------------------------------------------------
 
 loc_129069:
-	sub_a_sec byte_543, #1
+	sub_addr_sec byte_543, #1
 	mult_a_by_4
 
 loc_129071:
@@ -1634,8 +1633,7 @@ loc_129120:
 loc_12912E:
 	JSR	sub_129196
 	if_greater_cmp_addr byte_475, byte_477, loc_129143
-	SEC
-	SBC	byte_477
+	sub_a_sec byte_477
 	STA	byte_475
 	JMP	loc_129148
 ; ---------------------------------------------------------------------------
@@ -1658,8 +1656,7 @@ sub_129155:
 	set is_game_finished_561, #0
 	JSR	sub_129186
 	if_greater_cmp_addr byte_549, byte_477, loc_129174
-	SEC
-	SBC	byte_477
+	sub_a_sec byte_477
 	STA	byte_549
 	JMP	loc_129179
 ; ---------------------------------------------------------------------------
@@ -1678,7 +1675,7 @@ locret_129185:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_129186:
-	sub_a_sec inv_sprite_idx_31C, #$2A 
+	sub_addr_sec inv_sprite_idx_31C, #$2A 
 	mult_a_by_2
 	TAX
 	INX
@@ -1695,13 +1692,13 @@ sub_129196:
 	if_not_equal_cmp_addr byte_476, #$FF, locret_1291F4
 	if_equal_cmp_addr byte_441, #$80, loc_1291C3
 	BCC	loc_1291B7
-	sub_a_sec byte_441, #$80 
+	sub_addr_sec byte_441, #$80 
 	STA	tilemapTypeUnk_30B
 	JMP	loc_1291C8
 ; ---------------------------------------------------------------------------
 
 loc_1291B7:
-	sub_a_sec #$80 , byte_441
+	sub_addr_sec #$80 , byte_441
 	STA	tilemapTypeUnk_30B
 	JMP	loc_1291C8
 ; ---------------------------------------------------------------------------
@@ -1710,7 +1707,7 @@ loc_1291C3:
 	set tilemapTypeUnk_30B, #0
 
 loc_1291C8:
-	sub_a_sec #$14, tilemapTypeUnk_30B
+	sub_addr_sec #$14, tilemapTypeUnk_30B
 	STA	byte_477
 	if_not_equal_cmp_addr byte_301, #$9A, loc_1291DE
 	set byte_477, byte_543
@@ -4661,17 +4658,17 @@ locret_12C13B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C13C:
-	sub_a_sec {array_unk_3C5,X}, #$B0 
-	sub_a {array_unk_3BB,X}, #1
+	sub_addr_sec {array_unk_3C5,X}, #$B0 
+	sub_addr {array_unk_3BB,X}, #1
 	BCC	locret_12C1B7
-	sub_a_sec {array_unk_3D9,X}, #0
-	sub_a {array_unk_3CF,X}, #1
+	sub_addr_sec {array_unk_3D9,X}, #0
+	sub_addr {array_unk_3CF,X}, #1
 	BCC	locret_12C1B7
-	sub_a_sec #$EF , {array_unk_3C5,X}
-	sub_a #1, {array_unk_3BB,X}
+	sub_addr_sec #$EF , {array_unk_3C5,X}
+	sub_addr #1, {array_unk_3BB,X}
 	BCC	locret_12C1B7
-	sub_a_sec #$F, {array_unk_3D9,X}
-	sub_a #1, {array_unk_3CF,X}
+	sub_addr_sec #$F, {array_unk_3D9,X}
+	sub_addr #1, {array_unk_3CF,X}
 	BCC	locret_12C1B7
 	JSR	sub_12C1B8
 	LDY	byte_577
@@ -4694,7 +4691,7 @@ locret_12C1B7:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C1B8:
-	sub_a_sec #3, byte_577
+	sub_addr_sec #3, byte_577
 	mult_a_by_16
 	TAY
 ; End of function sub_12C1B8
@@ -7609,8 +7606,7 @@ loc_12DD1E:
 
 	LDA	tilemap_size_307
 	add_to_a #$18
-	SEC
-	SBC	byte_547
+	sub_a_sec byte_547
 	STA	tilemap_size_307
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
@@ -7621,8 +7617,7 @@ loc_12DD1E:
 	to_stack ppu_unk_byte_309
 	LDA	ppu_unk_byte_309
 	add_to_a #$18
-	SEC
-	SBC	byte_547
+	sub_a_sec byte_547
 	STA	ppu_unk_byte_309
 	add_to_byte_clc tilemap_size_307, byte_547
 	if_greater_cmp_addr byte_42E, #4, loc_12DDE9
@@ -7638,13 +7633,11 @@ loc_12DDE9:
 	to_stack ppu_unk_byte_309
 	LDA	tilemap_size_307
 	add_to_a #$18
-	SEC
-	SBC	byte_547
+	sub_a_sec byte_547
 	STA	tilemap_size_307
 	LDA	ppu_unk_byte_309
 	add_to_a #$18
-	SEC
-	SBC	byte_547
+	sub_a_sec byte_547
 	STA	ppu_unk_byte_309
 	if_greater_cmp_addr byte_42E, #4, loc_12DE34
 	sub_byte_sec ppu_unk_byte_309, #$10
@@ -8228,7 +8221,7 @@ sub_12E3DF:
 	if_equal_cmp_addr byte_543, #0, locret_12E427
 	set tilemap_size_307, #$10
 	set ppu_unk_byte_309, #$14
-	sub_a_sec byte_543, #1
+	sub_addr_sec byte_543, #1
 	STA	tilemapTypeUnk_30B
 	LDY	tilemapTypeUnk_30B
 	set inv_itemPrev_idx_31D, {byte_12E869,Y}
@@ -8364,8 +8357,7 @@ loc_12E4EE:
 
 	LDA	ppu_unk_byte_309
 	add_to_a #$18
-	SEC
-	SBC	byte_547
+	sub_a_sec byte_547
 	STA	ppu_unk_byte_309
 	JSR	sub_12E829
 	from_stack ppu_unk_byte_309
@@ -8388,8 +8380,7 @@ loc_12E4EE:
 	to_stack ppu_unk_byte_309
 	LDA	tilemap_size_307
 	add_to_a #$18
-	SEC
-	SBC	byte_547
+	sub_a_sec byte_547
 	STA	tilemap_size_307
 	add_to_byte_clc ppu_unk_byte_309, #$C
 	JSR	sub_12E829
@@ -8680,7 +8671,7 @@ loc_12E8C5:
 	if_greater_cmp #$F, loc_12E8FB
 	BEQ	loc_12E8FB
 	if_equal_cmp_addr {unk_53B,X}, #$F, loc_12E923
-	sub_a_sec #$F, {unk_53B,X}
+	sub_addr_sec #$F, {unk_53B,X}
 	STA	tilemapTypeUnk_30B
 	sub_byte_sec {unk_53B,Y}, tilemapTypeUnk_30B
 	set {unk_53B,X}, #$F
@@ -8714,7 +8705,7 @@ loc_12E92A:
 	if_greater_cmp #6, loc_12E960
 	BEQ	loc_12E960
 	if_equal_cmp_addr {unk_53B,X}, #6, loc_12E988
-	sub_a_sec #6, {unk_53B,X}
+	sub_addr_sec #6, {unk_53B,X}
 	STA	tilemapTypeUnk_30B
 	sub_byte_sec {unk_53B,Y}, tilemapTypeUnk_30B
 	set {unk_53B,X}, #6
@@ -8748,7 +8739,7 @@ loc_12E98F:
 	if_greater_cmp #6, loc_12E9C5
 	BEQ	loc_12E9C5
 	if_equal_cmp_addr {unk_53B,X}, #6, loc_12E9ED
-	sub_a_sec #6, {unk_53B,X}
+	sub_addr_sec #6, {unk_53B,X}
 	STA	tilemapTypeUnk_30B
 	sub_byte_sec {unk_53B,Y}, tilemapTypeUnk_30B
 	set {unk_53B,X}, #6
@@ -8782,7 +8773,7 @@ loc_12E9F4:
 	if_greater_cmp #6, loc_12EA2A
 	BEQ	loc_12EA2A
 	if_equal_cmp_addr {unk_53B,X}, #6, loc_12EA52
-	sub_a_sec #6, {unk_53B,X}
+	sub_addr_sec #6, {unk_53B,X}
 	STA	tilemapTypeUnk_30B
 	sub_byte_sec {unk_53B,Y}, tilemapTypeUnk_30B
 	set {unk_53B,X}, #6

@@ -18,7 +18,7 @@ switch_case_8035:
 	TAX
 	set_inx ptr_0, {CommandPtrs_12805B,X}
 	set ptr_1, {CommandPtrs_12805B,X}
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	JMP	(ptr_0)
 ; ---------------------------------------------------------------------------
 
@@ -452,7 +452,7 @@ loc_12828D:
 ; ---------------------------------------------------------------------------
 
 loc_128293:
-	to_stack apu_unk_76C
+	a_to_stack apu_unk_76C
 	set apu_unk_76C, #5
 
 exec_b13_c5_12829C:
@@ -463,7 +463,7 @@ exec_b13_c5_12829C:
 
 loc_1282AE:
 	JSR	sub_128955
-	from_stack apu_unk_76C
+	from_stack_to_a apu_unk_76C
 
 exec_b13_c5_1282B5:
 	set bank_command_346, #5
@@ -504,7 +504,7 @@ loc_1282E8:
 ; ---------------------------------------------------------------------------
 
 return_1282EE:
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	set bank_command_346, #$FF
 	set bank_to_344, bank_from_343
 	JMP	bank_switch_8000
@@ -533,26 +533,26 @@ exec_b2_c3_128313:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128326:
-	to_stack inv_itemPrev_idx_31D
-	to_stack ppu_unk_byte_309
-	to_stack tilemap_size_307
+	a_to_stack inv_itemPrev_idx_31D
+	a_to_stack ppu_unk_byte_309
+	a_to_stack tilemap_size_307
 	set byte_36E, #0
 	set inv_sprite_idx_31C, inv_itemPrev_idx_31D
 	set inv_itemPrev_idx_31D, #0
 	set byte_31E, sprite_secondByte_31B
 	JSR	exec_b4_c2_1283A7
-	from_stack tilemap_size_307
-	from_stack ppu_unk_byte_309
-	from_stack inv_itemPrev_idx_31D
+	from_stack_to_a tilemap_size_307
+	from_stack_to_a ppu_unk_byte_309
+	from_stack_to_a inv_itemPrev_idx_31D
 	RTS
 ; End of function sub_128326
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128358:
-	to_stack inv_itemPrev_idx_31D
-	to_stack ppu_unk_byte_309
-	to_stack tilemap_size_307
+	a_to_stack inv_itemPrev_idx_31D
+	a_to_stack ppu_unk_byte_309
+	a_to_stack tilemap_size_307
 	set inv_sprite_idx_31C, inv_itemPrev_idx_31D
 	set inv_itemPrev_idx_31D, #0
 	set byte_31E, sprite_secondByte_31B
@@ -564,9 +564,9 @@ exec_b4_c3_128375:
 	JSR	bank_switch_8000
 
 loc_128387:
-	from_stack tilemap_size_307
-	from_stack ppu_unk_byte_309
-	from_stack inv_itemPrev_idx_31D
+	from_stack_to_a tilemap_size_307
+	from_stack_to_a ppu_unk_byte_309
+	from_stack_to_a inv_itemPrev_idx_31D
 	RTS
 ; End of function sub_128358
 
@@ -655,108 +655,108 @@ exec_b0_c4_12842B:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c5_12843E:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #5
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c5_12843E
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c6_128459:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #6
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c6_128459
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c7_128474:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #7
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c7_128474
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c8_12848F:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #8
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c8_12848F
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c9_1284AA:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #9
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c9_1284AA
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_cA_1284C5:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #$A
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cA_1284C5
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_cB_1284E0:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #$B
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cB_1284E0
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_cC_1284FB:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #$C
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cC_1284FB
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_cD_128516:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #$D
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cD_128516
 
@@ -982,12 +982,12 @@ locret_128954:
 
 sub_128955:
 	JSR	sub_1283BA
-	to_stack image_id_4A4
-	to_stack image_offset_4A5
-	to_stack ppu_prev_unk_4A6
-	to_stack ppu_prev_scroll_x_unk_4A7
-	to_stack ppu_prev_scroll_y_unk_4A8
-	to_stack prev_sprite_type_4A9
+	a_to_stack image_id_4A4
+	a_to_stack image_offset_4A5
+	a_to_stack ppu_prev_unk_4A6
+	a_to_stack ppu_prev_scroll_x_unk_4A7
+	a_to_stack ppu_prev_scroll_y_unk_4A8
+	a_to_stack prev_sprite_type_4A9
 	sub_addr_sec inv_sprite_idx_31C, #$2A 
 	mult_a_by_2
 	TAX
@@ -1049,12 +1049,12 @@ sub_128A1A:
 loc_128A20:
 	JSR	sub_128FC1
 	if_a_equal_cmp_addr is_game_finished_561, #0, game_not_finished_128A43
-	from_stack prev_sprite_type_4A9
-	from_stack ppu_prev_scroll_y_unk_4A8
-	from_stack ppu_prev_scroll_x_unk_4A7
-	from_stack ppu_prev_unk_4A6
-	from_stack image_offset_4A5
-	from_stack image_id_4A4
+	from_stack_to_a prev_sprite_type_4A9
+	from_stack_to_a ppu_prev_scroll_y_unk_4A8
+	from_stack_to_a ppu_prev_scroll_x_unk_4A7
+	from_stack_to_a ppu_prev_unk_4A6
+	from_stack_to_a image_offset_4A5
+	from_stack_to_a image_id_4A4
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1076,9 +1076,9 @@ game_not_finished_128A43:
 loc_128A72:
 	if_a_not_equal_cmp #$10, loc_128A87
 	JSR	sub_12ED44
-	to_stack inv_sprite_idx_31C
+	a_to_stack inv_sprite_idx_31C
 	JSR	sub_12D4C6
-	from_stack inv_sprite_idx_31C
+	from_stack_to_a inv_sprite_idx_31C
 	JMP	loc_128986
 ; ---------------------------------------------------------------------------
 
@@ -1100,12 +1100,12 @@ loc_128A9F:
 ; ---------------------------------------------------------------------------
 
 loc_128AA5:
-	from_stack prev_sprite_type_4A9
-	from_stack ppu_prev_scroll_y_unk_4A8
-	from_stack ppu_prev_scroll_x_unk_4A7
-	from_stack ppu_prev_unk_4A6
-	from_stack image_offset_4A5
-	from_stack image_id_4A4
+	from_stack_to_a prev_sprite_type_4A9
+	from_stack_to_a ppu_prev_scroll_y_unk_4A8
+	from_stack_to_a ppu_prev_scroll_x_unk_4A7
+	from_stack_to_a ppu_prev_unk_4A6
+	from_stack_to_a image_offset_4A5
+	from_stack_to_a image_id_4A4
 	if_a_equal_cmp_addr image_id_4A4, #$17, loc_128B01
 	if_a_equal_cmp #$45, loc_128B01
 	JSR	sub_12C7DE
@@ -1122,12 +1122,12 @@ loc_128AE6:
 ; ---------------------------------------------------------------------------
 
 loc_128AE9:
-	from_stack prev_sprite_type_4A9
-	from_stack ppu_prev_scroll_y_unk_4A8
-	from_stack ppu_prev_scroll_x_unk_4A7
-	from_stack ppu_prev_unk_4A6
-	from_stack image_offset_4A5
-	from_stack image_id_4A4
+	from_stack_to_a prev_sprite_type_4A9
+	from_stack_to_a ppu_prev_scroll_y_unk_4A8
+	from_stack_to_a ppu_prev_scroll_x_unk_4A7
+	from_stack_to_a ppu_prev_unk_4A6
+	from_stack_to_a image_offset_4A5
+	from_stack_to_a image_id_4A4
 
 loc_128B01:
 	set map_show_43B, #$FF
@@ -1804,8 +1804,8 @@ loc_12A68B:
 	set inv_spr_dscr1_30C, #0
 
 loc_12A69D:
-	to_stack data_2
-	to_stack data_3
+	a_to_stack data_2
+	a_to_stack data_3
 	LDA	inv_spr_dscr1_30C
 	mult_a_by_2
 	add_to_a data_2
@@ -1911,8 +1911,8 @@ loc_12A81B:
 	set {objCreatedArray_393,X}, #$FF
 
 loc_12A839:
-	from_stack data_3
-	from_stack data_2
+	from_stack_to_a data_3
+	from_stack_to_a data_2
 	INC	inv_spr_dscr1_30C
 	if_a_equal_cmp_addr inv_spr_dscr1_30C, objArraySize_373, loc_12A84D
 	JMP	loc_12A69D
@@ -1954,12 +1954,11 @@ sub_12A893:
 	set byte_36F, #0
 	STA	byte_370
 	STA	byte_371
-	TYA
-	PHA
-	to_stack ptr_0
-	to_stack ptr_1
-	to_stack tilemapTypeUnk_30B
-	to_stack inv_spr_dscr1_30C
+	y_to_stack
+	a_to_stack ptr_0
+	a_to_stack ptr_1
+	a_to_stack tilemapTypeUnk_30B
+	a_to_stack inv_spr_dscr1_30C
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
 	if_a_not_equal_cmp #0, loc_12A8C1
@@ -2000,10 +1999,10 @@ loc_12A91F:
 	if_a_greater_cmp_addr inv_spr_dscr1_30C, tilemapTypeUnk_30B, loc_12A8D3
 
 loc_12A933:
-	from_stack inv_spr_dscr1_30C
-	from_stack tilemapTypeUnk_30B
-	from_stack ptr_1
-	from_stack ptr_0
+	from_stack_to_a inv_spr_dscr1_30C
+	from_stack_to_a tilemapTypeUnk_30B
+	from_stack_to_a ptr_1
+	from_stack_to_a ptr_0
 	from_stack_to_y
 	RTS
 ; End of function sub_12A893
@@ -2011,10 +2010,9 @@ loc_12A933:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12A944:
-	to_stack ptr_0
-	to_stack ptr_1
-	TYA
-	PHA
+	a_to_stack ptr_0
+	a_to_stack ptr_1
+	y_to_stack
 
 	set_ptr byte_598
 
@@ -2023,44 +2021,44 @@ sub_12A944:
 	LDY	#0
 	set tilemapFrameCount_30D, {(ptr_0),Y}
 	from_stack_to_y
-	from_stack ptr_1
-	from_stack ptr_0
+	from_stack_to_a ptr_1
+	from_stack_to_a ptr_0
 	RTS
 ; End of function sub_12A944
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c0_12A973:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #0
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c0_12A973
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c1_12A98E:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #1
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c1_12A98E
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c2_12A9A9:
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 	set bank_command_346, #2
 	set bank_to_344, #code_0
 	set bank_from_343, #$12
 	JSR	bank_switch_8000
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c2_12A9A9
 
@@ -4621,8 +4619,7 @@ loc_12C11B:
 ; ---------------------------------------------------------------------------
 
 loc_12C12E:
-	TXA
-	PHA
+	x_to_stack
 	JSR	sub_12C13C
 	from_stack_to_x
 	INX
@@ -4679,10 +4676,8 @@ sub_12C1C3:
 	DEY
 	DEY
 	add_to {array_unk_3D9,X}, {array_unk_3CF,X}, #2, #0
-	TYA
-	PHA
-	TXA
-	PHA
+	y_to_stack
+	x_to_stack
 	JSR	exec_b0_c5_12843E
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
@@ -5109,12 +5104,12 @@ loc_12C575:
 ; =============== S U B	R O U T	I N E =======================================
 
 show_tree_screen_12C588:
-	to_stack entry_idx_300
-	to_stack ppu_unk_byte_302
-	to_stack ppu_unk_byte_303
-	to_stack ppu_scroll_x_304
-	to_stack ppu_scroll_y_305
-	to_stack sprite_type_306
+	a_to_stack entry_idx_300
+	a_to_stack ppu_unk_byte_302
+	a_to_stack ppu_unk_byte_303
+	a_to_stack ppu_scroll_x_304
+	a_to_stack ppu_scroll_y_305
+	a_to_stack sprite_type_306
 
 set_tree_screen_12C5A0:
 	set image_id_4A4, #$9D 
@@ -5129,12 +5124,12 @@ loc_12C5B1:
 	set prev_sprite_type_4A9, #$FF
 	JSR	exec_b0_c2_12A9A9
 	JSR	wait_for_b_pressed_FCC5
-	from_stack prev_sprite_type_4A9
-	from_stack ppu_prev_scroll_y_unk_4A8
-	from_stack ppu_prev_scroll_x_unk_4A7
-	from_stack ppu_prev_unk_4A6
-	from_stack image_offset_4A5
-	from_stack image_id_4A4
+	from_stack_to_a prev_sprite_type_4A9
+	from_stack_to_a ppu_prev_scroll_y_unk_4A8
+	from_stack_to_a ppu_prev_scroll_x_unk_4A7
+	from_stack_to_a ppu_prev_unk_4A6
+	from_stack_to_a image_offset_4A5
+	from_stack_to_a image_id_4A4
 	set map_show_43B, #$FF
 	JSR	exec_b0_c2_12A9A9
 	set map_show_43B, #0
@@ -5931,12 +5926,12 @@ com_E_load_game_12CD30:
 	set byte_103, ppu_prev_scroll_x_unk_4A7
 	set byte_104, ppu_prev_scroll_y_unk_4A8
 	set byte_105, prev_sprite_type_4A9
-	to_stack image_id_4A4
-	to_stack image_offset_4A5
-	to_stack ppu_prev_unk_4A6
-	to_stack ppu_prev_scroll_x_unk_4A7
-	to_stack ppu_prev_scroll_y_unk_4A8
-	to_stack prev_sprite_type_4A9
+	a_to_stack image_id_4A4
+	a_to_stack image_offset_4A5
+	a_to_stack ppu_prev_unk_4A6
+	a_to_stack ppu_prev_scroll_x_unk_4A7
+	a_to_stack ppu_prev_scroll_y_unk_4A8
+	a_to_stack prev_sprite_type_4A9
 	set objectIdx_318, #5
 	set byte_360, #0
 	set byte_361, #3
@@ -5964,11 +5959,10 @@ loc_12CDA2:
 	set byte_363, #0
 	set byte_364, #7
 	set byte_310, #0
-	TYA
-	PHA
-	to_stack ppu_unk_byte_309
+	y_to_stack
+	a_to_stack ppu_unk_byte_309
 	JSR	exec_b2_c4_1283F2
-	from_stack ppu_unk_byte_309
+	from_stack_to_a ppu_unk_byte_309
 	from_stack_to_y
 
 loc_12CDEA:
@@ -6029,12 +6023,12 @@ loc_12CE62:
 loc_12CE69:
 	JSR	sub_12ED29
 	if_a_equal_cmp_addr jill_pos_y_47E, #$FF, loc_12CE99
-	from_stack prev_sprite_type_4A9
-	from_stack ppu_prev_scroll_y_unk_4A8
-	from_stack ppu_prev_scroll_x_unk_4A7
-	from_stack ppu_prev_unk_4A6
-	from_stack image_offset_4A5
-	from_stack image_id_4A4
+	from_stack_to_a prev_sprite_type_4A9
+	from_stack_to_a ppu_prev_scroll_y_unk_4A8
+	from_stack_to_a ppu_prev_scroll_x_unk_4A7
+	from_stack_to_a ppu_prev_unk_4A6
+	from_stack_to_a image_offset_4A5
+	from_stack_to_a image_id_4A4
 	set map_show_43B, #$FF
 	JSR	exec_b0_c2_12A9A9
 	set map_show_43B, #0
@@ -6087,7 +6081,7 @@ loc_12CEBA:
 	set byte_364, #6
 	set byte_310, #0
 	JSR	exec_b2_c4_1283F2
-	to_stack byte_372
+	a_to_stack byte_372
 	set byte_372, #1
 
 loc_12CF2D:
@@ -6115,7 +6109,7 @@ loc_12CF61:
 	JSR	sub_12ED20
 	set byte_204, #$F0 
 	if_a_not_equal byte_372, loc_12CF76
-	from_stack byte_372
+	from_stack_to_a byte_372
 	JSR	sub_12CFBA
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6133,7 +6127,7 @@ loc_12CF76:
 	set byte_364, #7
 	set byte_310, #0
 	JSR	exec_b2_c4_1283F2
-	from_stack byte_372
+	from_stack_to_a byte_372
 	set sprite_length_30F, #0
 	RTS
 ; End of function sub_12CEAC
@@ -6144,7 +6138,7 @@ sub_12CFBA:
 	set byte_204, #$F0 
 	LDY	byte_372
 	set {byte_4A0,Y}, byte_47F
-	to_stack byte_372
+	a_to_stack byte_372
 	set ppu_unk_byte_309, #$B
 	set sprite_secondByte_31B, #$7A 
 	LDA	#$7E 
@@ -6184,7 +6178,7 @@ loc_12D003:
 	set byte_364, #7
 	set byte_310, #0
 	JSR	exec_b2_c4_1283F2
-	from_stack byte_372
+	from_stack_to_a byte_372
 	JSR	sub_12D167
 	set sprite_length_30F, #$FF
 	RTS
@@ -6513,11 +6507,11 @@ loc_12D33A:
 ; ---------------------------------------------------------------------------
 
 loc_12D383:
-	to_stack tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	LDY	tilemapTypeUnk_30B
 	LDA	unk_53B,Y
 	JSR	sub_12D3AB
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
 
 loc_12D394:
 	LDY	tilemapTypeUnk_30B
@@ -6558,16 +6552,16 @@ loc_12D3D7:
 	set byte_317, #0
 	set byte_31A, #$80 
 	set sprite_secondByte_31B, #0
-	to_stack tilemap_size_307
-	to_stack ppu_unk_byte_309
-	to_stack data_2
-	to_stack data_3
-	to_stack ptr_0
+	a_to_stack tilemap_size_307
+	a_to_stack ppu_unk_byte_309
+	a_to_stack data_2
+	a_to_stack data_3
+	a_to_stack ptr_0
 	JSR	sub_12E829
-	from_stack ptr_0
-	from_stack data_3
-	from_stack data_2
-	from_stack ppu_unk_byte_309
+	from_stack_to_a ptr_0
+	from_stack_to_a data_3
+	from_stack_to_a data_2
+	from_stack_to_a ppu_unk_byte_309
 	PLA
 	add_to_a #8
 	STA	tilemap_size_307
@@ -6584,16 +6578,16 @@ loc_12D434:
 	set byte_317, #0
 	set byte_31A, #$84 
 	set sprite_secondByte_31B, #0
-	to_stack tilemap_size_307
-	to_stack ppu_unk_byte_309
-	to_stack data_2
-	to_stack data_3
-	to_stack ptr_0
+	a_to_stack tilemap_size_307
+	a_to_stack ppu_unk_byte_309
+	a_to_stack data_2
+	a_to_stack data_3
+	a_to_stack ptr_0
 	JSR	sub_12E829
-	from_stack ptr_0
-	from_stack data_3
-	from_stack data_2
-	from_stack ppu_unk_byte_309
+	from_stack_to_a ptr_0
+	from_stack_to_a data_3
+	from_stack_to_a data_2
+	from_stack_to_a ppu_unk_byte_309
 	PLA
 	add_to_a #8
 	STA	tilemap_size_307
@@ -6637,12 +6631,12 @@ sub_12D4B3:
 
 sub_12D4C6:
 	JSR	sub_1283BA
-	to_stack image_id_4A4
-	to_stack image_offset_4A5
-	to_stack ppu_prev_unk_4A6
-	to_stack ppu_prev_scroll_x_unk_4A7
-	to_stack ppu_prev_scroll_y_unk_4A8
-	to_stack prev_sprite_type_4A9
+	a_to_stack image_id_4A4
+	a_to_stack image_offset_4A5
+	a_to_stack ppu_prev_unk_4A6
+	a_to_stack ppu_prev_scroll_x_unk_4A7
+	a_to_stack ppu_prev_scroll_y_unk_4A8
+	a_to_stack prev_sprite_type_4A9
 	JSR	sub_12D287
 	JSR	sub_12D319
 
@@ -6704,12 +6698,12 @@ loc_12D569:
 
 loc_12D570:
 	JSR	sub_12ED29
-	from_stack prev_sprite_type_4A9
-	from_stack ppu_prev_scroll_y_unk_4A8
-	from_stack ppu_prev_scroll_x_unk_4A7
-	from_stack ppu_prev_unk_4A6
-	from_stack image_offset_4A5
-	from_stack image_id_4A4
+	from_stack_to_a prev_sprite_type_4A9
+	from_stack_to_a ppu_prev_scroll_y_unk_4A8
+	from_stack_to_a ppu_prev_scroll_x_unk_4A7
+	from_stack_to_a ppu_prev_unk_4A6
+	from_stack_to_a image_offset_4A5
+	from_stack_to_a image_id_4A4
 	RTS
 ; End of function sub_12D4C6
 
@@ -6717,16 +6711,16 @@ loc_12D570:
 
 sub_12D58C:
 	JSR	sub_1283BA
-	to_stack image_id_4A4
-	to_stack image_offset_4A5
-	to_stack ppu_prev_unk_4A6
-	to_stack ppu_prev_scroll_x_unk_4A7
-	to_stack ppu_prev_scroll_y_unk_4A8
-	to_stack prev_sprite_type_4A9
-	to_stack tilemapTypeUnk_30B
+	a_to_stack image_id_4A4
+	a_to_stack image_offset_4A5
+	a_to_stack ppu_prev_unk_4A6
+	a_to_stack ppu_prev_scroll_x_unk_4A7
+	a_to_stack ppu_prev_scroll_y_unk_4A8
+	a_to_stack prev_sprite_type_4A9
+	a_to_stack tilemapTypeUnk_30B
 	JSR	sub_12D287
-	from_stack tilemapTypeUnk_30B
-	to_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	set text_idx_35C, tilemapTypeUnk_30B
 	set char_type_id_35D, #0
 	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$3B, loc_12D5D2
@@ -6744,7 +6738,7 @@ loc_12D5D2:
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12DAD0
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
 	if_a_greater_cmp_addr byte_532, #8, loc_12D623
 	set text_idx_35C, #$7D 
 	set char_type_id_35D, #0
@@ -6759,26 +6753,26 @@ loc_12D623:
 	set text_idx_35C, #$7A 
 	set char_type_id_35D, #0
 	set byte_364, #7
-	to_stack tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	JSR	exec_b2_c1_128300
 	JSR	sub_12D680
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
 	set sprite_length_30F, #0
 	if_a_not_equal byte_372, loc_12D652
 	JSR	sub_12D82B
 	set sprite_length_30F, #$FF
 
 loc_12D652:
-	from_stack prev_sprite_type_4A9
-	from_stack ppu_prev_scroll_y_unk_4A8
-	from_stack ppu_prev_scroll_x_unk_4A7
-	from_stack ppu_prev_unk_4A6
-	from_stack image_offset_4A5
-	from_stack image_id_4A4
+	from_stack_to_a prev_sprite_type_4A9
+	from_stack_to_a ppu_prev_scroll_y_unk_4A8
+	from_stack_to_a ppu_prev_scroll_x_unk_4A7
+	from_stack_to_a ppu_prev_unk_4A6
+	from_stack_to_a image_offset_4A5
+	from_stack_to_a image_id_4A4
 	set map_show_43B, #$FF
-	to_stack sprite_length_30F
+	a_to_stack sprite_length_30F
 	JSR	exec_b0_c2_12A9A9
-	from_stack sprite_length_30F
+	from_stack_to_a sprite_length_30F
 	set map_show_43B, #0
 	RTS
 ; End of function sub_12D58C
@@ -6834,12 +6828,12 @@ loc_12D6FC:
 
 sub_12D700:
 	JSR	sub_1283BA
-	to_stack image_id_4A4
-	to_stack image_offset_4A5
-	to_stack ppu_prev_unk_4A6
-	to_stack ppu_prev_scroll_x_unk_4A7
-	to_stack ppu_prev_scroll_y_unk_4A8
-	to_stack prev_sprite_type_4A9
+	a_to_stack image_id_4A4
+	a_to_stack image_offset_4A5
+	a_to_stack ppu_prev_unk_4A6
+	a_to_stack ppu_prev_scroll_x_unk_4A7
+	a_to_stack ppu_prev_scroll_y_unk_4A8
+	a_to_stack prev_sprite_type_4A9
 	JSR	sub_12D287
 	JSR	sub_12D319
 	set byte_372, #0
@@ -6935,12 +6929,12 @@ loc_12D7FB:
 
 loc_12D802:
 	JSR	sub_12ED29
-	from_stack prev_sprite_type_4A9
-	from_stack ppu_prev_scroll_y_unk_4A8
-	from_stack ppu_prev_scroll_x_unk_4A7
-	from_stack ppu_prev_unk_4A6
-	from_stack image_offset_4A5
-	from_stack image_id_4A4
+	from_stack_to_a prev_sprite_type_4A9
+	from_stack_to_a ppu_prev_scroll_y_unk_4A8
+	from_stack_to_a ppu_prev_scroll_x_unk_4A7
+	from_stack_to_a ppu_prev_unk_4A6
+	from_stack_to_a image_offset_4A5
+	from_stack_to_a image_id_4A4
 	set map_show_43B, #$FF
 	JSR	exec_b0_c2_12A9A9
 	set map_show_43B, #0
@@ -7050,8 +7044,8 @@ loc_12D900:
 
 loc_12D910:
 	JSR	sub_12DF2B
-	from_stack inv_spr_dscr1_30C
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a inv_spr_dscr1_30C
+	from_stack_to_a tilemapTypeUnk_30B
 	LDA	byte_42E
 	mult_a_by_2
 	add_to_a byte_42C
@@ -7072,21 +7066,19 @@ loc_12D931:
 loc_12D946:
 	if_a_equal_cmp_addr {byte_533,Y}, #6, loc_12D966
 	BCS	loc_12D966
-	to_stack tilemapTypeUnk_30B
-	to_stack inv_spr_dscr1_30C
-	TYA
-	PHA
+	a_to_stack tilemapTypeUnk_30B
+	a_to_stack inv_spr_dscr1_30C
+	y_to_stack
 	JSR	sub_12DFFC
 	from_stack_to_y
-	from_stack inv_spr_dscr1_30C
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a inv_spr_dscr1_30C
+	from_stack_to_a tilemapTypeUnk_30B
 
 loc_12D966:
 	set {unk_53B,Y}, inv_spr_dscr1_30C
 	set {byte_533,Y}, tilemapTypeUnk_30B
 	if_a_not_equal_cmp #$3A, loc_12D9A3
-	TYA
-	PHA
+	y_to_stack
 	TAX
 
 loc_12D979:
@@ -7110,15 +7102,14 @@ loc_12D991:
 ; ---------------------------------------------------------------------------
 
 loc_12D9A3:
-	to_stack tilemapTypeUnk_30B
-	TYA
-	PHA
+	a_to_stack tilemapTypeUnk_30B
+	y_to_stack
 	TAX
 	INY
 	set sprite_secondByte_31B, #$A
 	JSR	sub_12D9F7
 	from_stack_to_y
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
 	LDX	tilemapTypeUnk_30B
 	set inv_itemPrev_idx_31D, {byte_12E869,X}
 	TYA
@@ -7149,14 +7140,11 @@ loc_12D9DA:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D9F7:
-	TXA
-	PHA
-	TYA
-	PHA
+	x_to_stack
+	y_to_stack
 
 loc_12D9FB:
-	TXA
-	PHA
+	x_to_stack
 	mult_a_by_2
 	TAX
 	div_a_by_8_addr {byte_12E851,X}
@@ -7166,8 +7154,7 @@ loc_12D9FB:
 	STA	ppu_unk_byte_309
 	set inv_itemPrev_idx_31D, #$29 
 	set sprite_secondByte_31B, #$A
-	TYA
-	PHA
+	y_to_stack
 	JSR	sub_128326
 	from_stack_to_y
 	STY	tilemapTypeUnk_30B
@@ -7182,10 +7169,8 @@ loc_12D9FB:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DA33:
-	TXA
-	PHA
-	TYA
-	PHA
+	x_to_stack
+	y_to_stack
 	STX	tilemapTypeUnk_30B
 	TYA
 	if_a_not_equal_cmp tilemapTypeUnk_30B, loc_12DA43
@@ -7203,8 +7188,7 @@ loc_12DA48:
 ; ---------------------------------------------------------------------------
 
 loc_12DA5E:
-	TXA
-	PHA
+	x_to_stack
 	LDA	byte_533,X
 	TAX
 	set inv_itemPrev_idx_31D, {byte_12E869,X}
@@ -7217,27 +7201,24 @@ loc_12DA5E:
 	INX
 	div_a_by_8_addr {byte_12E851,X}
 	STA	ppu_unk_byte_309
-	TYA
-	PHA
+	y_to_stack
 	JSR	sub_128358
 	JSR	sub_128326
 	from_stack_to_y
 	STA	tilemapTypeUnk_30B
 	from_stack_to_x
-	TXA
-	PHA
+	x_to_stack
 	LDA	byte_533,X
 	add_to_a #1
 	if_a_not_equal_cmp byte_543, loc_12DABA
 	STX	byte_544
 	set tilemap_size_307, #$10
 	set ppu_unk_byte_309, #$14
-	to_stack tilemapTypeUnk_30B
-	TYA
-	PHA
+	a_to_stack tilemapTypeUnk_30B
+	y_to_stack
 	JSR	sub_128326
 	from_stack_to_y
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
 
 loc_12DABA:
 	add_byte_to_byte_clc sprite_secondByte_31B, #$11
@@ -7376,11 +7357,11 @@ loc_12DBEB:
 
 loc_12DBF5:
 	if_a_not_equal_cmp #2, loc_12DC0C
-	to_stack byte_42C
-	to_stack byte_42E
+	a_to_stack byte_42C
+	a_to_stack byte_42E
 	JSR	sub_12E428
-	from_stack byte_42E
-	from_stack byte_42C
+	from_stack_to_a byte_42E
+	from_stack_to_a byte_42C
 
 loc_12DC0C:
 	JMP	loc_12DC16
@@ -7520,19 +7501,19 @@ loc_12DD1E:
 	set sprite_secondByte_31B, #0
 	set byte_317, #0
 	set objMapIdx_316, #$2A 
-	to_stack tilemap_size_307
-	to_stack ppu_unk_byte_309
+	a_to_stack tilemap_size_307
+	a_to_stack ppu_unk_byte_309
 	add_byte_to_byte_clc ppu_unk_byte_309, byte_547
 	add_byte_to_byte_clc tilemap_size_307, byte_547
 
 	JSR	sub_12E829
-	from_stack ppu_unk_byte_309
-	from_stack tilemap_size_307
+	from_stack_to_a ppu_unk_byte_309
+	from_stack_to_a tilemap_size_307
 	add_byte_to_byte_clc byte_31A, #4
 
 	set objMapIdx_316, #$2B 
-	to_stack tilemap_size_307
-	to_stack ppu_unk_byte_309
+	a_to_stack tilemap_size_307
+	a_to_stack ppu_unk_byte_309
 	add_byte_to_byte_clc ppu_unk_byte_309, byte_547
 
 	LDA	tilemap_size_307
@@ -7540,12 +7521,12 @@ loc_12DD1E:
 	sub_a_sec byte_547
 	STA	tilemap_size_307
 	JSR	sub_12E829
-	from_stack ppu_unk_byte_309
-	from_stack tilemap_size_307
+	from_stack_to_a ppu_unk_byte_309
+	from_stack_to_a tilemap_size_307
 	add_byte_to_byte_clc byte_31A, #4
 	set objMapIdx_316, #$2C 
-	to_stack tilemap_size_307
-	to_stack ppu_unk_byte_309
+	a_to_stack tilemap_size_307
+	a_to_stack ppu_unk_byte_309
 	LDA	ppu_unk_byte_309
 	add_to_a #$18
 	sub_a_sec byte_547
@@ -7556,12 +7537,12 @@ loc_12DD1E:
 
 loc_12DDE9:
 	JSR	sub_12E829
-	from_stack ppu_unk_byte_309
-	from_stack tilemap_size_307
+	from_stack_to_a ppu_unk_byte_309
+	from_stack_to_a tilemap_size_307
 	add_byte_to_byte_clc byte_31A, #4
 	set objMapIdx_316, #$2D 
-	to_stack tilemap_size_307
-	to_stack ppu_unk_byte_309
+	a_to_stack tilemap_size_307
+	a_to_stack ppu_unk_byte_309
 	LDA	tilemap_size_307
 	add_to_a #$18
 	sub_a_sec byte_547
@@ -7575,8 +7556,8 @@ loc_12DDE9:
 
 loc_12DE34:
 	JSR	sub_12E829
-	from_stack ppu_unk_byte_309
-	from_stack tilemap_size_307
+	from_stack_to_a ppu_unk_byte_309
+	from_stack_to_a tilemap_size_307
 	add_byte_to_byte_clc byte_31A, #4
 	RTS
 ; End of function sub_12DD0A
@@ -8270,19 +8251,19 @@ loc_12E4EE:
 	set sprite_secondByte_31B, #0
 	set byte_317, #0
 	set objMapIdx_316, #$2F 
-	to_stack tilemap_size_307
-	to_stack ppu_unk_byte_309
+	a_to_stack tilemap_size_307
+	a_to_stack ppu_unk_byte_309
 	add_byte_to_byte_clc tilemap_size_307, #$C
 	add_byte_to_byte_clc ppu_unk_byte_309, byte_547
 
 	JSR	sub_12E829
-	from_stack ppu_unk_byte_309
-	from_stack tilemap_size_307
+	from_stack_to_a ppu_unk_byte_309
+	from_stack_to_a tilemap_size_307
 	add_byte_to_byte_clc byte_31A, #4
 
 	set objMapIdx_316, #$2E 
-	to_stack tilemap_size_307
-	to_stack ppu_unk_byte_309
+	a_to_stack tilemap_size_307
+	a_to_stack ppu_unk_byte_309
 	add_byte_to_byte_clc tilemap_size_307, #$C
 
 	LDA	ppu_unk_byte_309
@@ -8290,39 +8271,39 @@ loc_12E4EE:
 	sub_a_sec byte_547
 	STA	ppu_unk_byte_309
 	JSR	sub_12E829
-	from_stack ppu_unk_byte_309
-	from_stack tilemap_size_307
+	from_stack_to_a ppu_unk_byte_309
+	from_stack_to_a tilemap_size_307
 	add_byte_to_byte_clc byte_31A, #4
 
 	set objMapIdx_316, #$30 
-	to_stack tilemap_size_307
-	to_stack ppu_unk_byte_309
+	a_to_stack tilemap_size_307
+	a_to_stack ppu_unk_byte_309
 	add_byte_to_byte_clc ppu_unk_byte_309, #$C
 	add_byte_to_byte_clc tilemap_size_307, byte_547
 
 	JSR	sub_12E829
-	from_stack ppu_unk_byte_309
-	from_stack tilemap_size_307
+	from_stack_to_a ppu_unk_byte_309
+	from_stack_to_a tilemap_size_307
 	add_byte_to_byte_clc byte_31A, #4
 
 	set objMapIdx_316, #$31 
-	to_stack tilemap_size_307
-	to_stack ppu_unk_byte_309
+	a_to_stack tilemap_size_307
+	a_to_stack ppu_unk_byte_309
 	LDA	tilemap_size_307
 	add_to_a #$18
 	sub_a_sec byte_547
 	STA	tilemap_size_307
 	add_byte_to_byte_clc ppu_unk_byte_309, #$C
 	JSR	sub_12E829
-	from_stack ppu_unk_byte_309
-	from_stack tilemap_size_307
+	from_stack_to_a ppu_unk_byte_309
+	from_stack_to_a tilemap_size_307
 	RTS
 ; End of function sub_12E4CD
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E5E6:
-	to_stack byte_372
+	a_to_stack byte_372
 	set byte_372, #0
 	if_a_not_equal_cmp_addr byte_4C1, #0, loc_12E603
 	set text_idx_35C, #$75 
@@ -8391,14 +8372,14 @@ loc_12E67A:
 	JSR	sub_12D4B3
 	JSR	sub_12E80D
 	JSR	sub_12E81B
-	from_stack byte_372
+	from_stack_to_a byte_372
 	RTS
 ; End of function sub_12E5E6
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E69F:
-	to_stack byte_372
+	a_to_stack byte_372
 	set byte_372, #0
 	if_a_not_equal_cmp_addr byte_4D0, #0, loc_12E6BC
 	set text_idx_35C, #$75 
@@ -8485,7 +8466,7 @@ loc_12E776:
 	JSR	sub_12D4B3
 	JSR	sub_12E80D
 	JSR	sub_12E81B
-	from_stack byte_372
+	from_stack_to_a byte_372
 	RTS
 ; End of function sub_12E69F
 
@@ -8730,9 +8711,9 @@ loc_12EA52:
 loc_12EA55:
 	if_a_not_equal_cmp #6, loc_12EA7A
 	if_a_not_equal_cmp_addr {byte_533,Y}, #1, loc_12EA77
-	to_stack byte_47C
+	a_to_stack byte_47C
 	set byte_47C, byte_47B
-	from_stack byte_47B
+	from_stack_to_a byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
 	JMP	loc_12E8C5
@@ -8745,9 +8726,9 @@ loc_12EA77:
 loc_12EA7A:
 	if_a_not_equal_cmp #7, loc_12EA9F
 	if_a_not_equal_cmp_addr {byte_533,Y}, #2, loc_12EA9C
-	to_stack byte_47C
+	a_to_stack byte_47C
 	set byte_47C, byte_47B
-	from_stack byte_47B
+	from_stack_to_a byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
 	JMP	loc_12E92A
@@ -8760,9 +8741,9 @@ loc_12EA9C:
 loc_12EA9F:
 	if_a_not_equal_cmp #8, loc_12EAC4
 	if_a_not_equal_cmp_addr {byte_533,Y}, #3, loc_12EAC1
-	to_stack byte_47C
+	a_to_stack byte_47C
 	set byte_47C, byte_47B
-	from_stack byte_47B
+	from_stack_to_a byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
 	JMP	loc_12E98F
@@ -8775,9 +8756,9 @@ loc_12EAC1:
 loc_12EAC4:
 	if_a_not_equal_cmp #9, loc_12EAE9
 	if_a_not_equal_cmp_addr {byte_533,Y}, #4, loc_12EAE6
-	to_stack byte_47C
+	a_to_stack byte_47C
 	set byte_47C, byte_47B
-	from_stack byte_47B
+	from_stack_to_a byte_47B
 	LDX	byte_47B
 	LDY	byte_47C
 	JMP	loc_12E9F4
@@ -9019,7 +9000,7 @@ loc_12ED17:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12ED20:
-	to_stack tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	LDA	#6
 	JMP	loc_12ED4D
 ; End of function sub_12ED20
@@ -9027,7 +9008,7 @@ sub_12ED20:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12ED29:
-	to_stack tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	LDA	#$B
 	JMP	loc_12ED4D
 ; End of function sub_12ED29
@@ -9035,7 +9016,7 @@ sub_12ED29:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12ED32:
-	to_stack tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	LDA	#$2B 
 	JMP	loc_12ED4D
 ; End of function sub_12ED32
@@ -9043,7 +9024,7 @@ sub_12ED32:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12ED3B:
-	to_stack tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	LDA	#$2D 
 	JMP	loc_12ED4D
 ; End of function sub_12ED3B
@@ -9051,7 +9032,7 @@ sub_12ED3B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12ED44:
-	to_stack tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	LDA	#$18
 	JMP	loc_12ED4D
 ; ---------------------------------------------------------------------------
@@ -9059,7 +9040,7 @@ sub_12ED44:
 loc_12ED4D:
 	STA	tilemapTypeUnk_30B
 	JSR	sub_128531
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
 	RTS
 ; End of function sub_12ED44
 
@@ -9079,9 +9060,9 @@ set_inventory_screen_12ED5D:
 	set tilemapTypeUnk_30B, #0
 	set tilemap_size_307, #$80 
 	STA	ppu_unk_byte_309
-	to_stack tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
 
 loc_12ED90:
 	JSR	wait_for_frame_rendered_FCA0
@@ -9091,9 +9072,9 @@ loc_12ED90:
 	set tilemap_size_307, #$80 
 	STA	ppu_unk_byte_309
 	JSR	sub_12D261
-	to_stack tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
 	JSR	sub_128531
 	JMP	loc_12ED90
 ; ---------------------------------------------------------------------------
@@ -9104,9 +9085,9 @@ loc_12EDC0:
 	INC	tilemapTypeUnk_30B
 	set tilemap_size_307, #$80 
 	STA	ppu_unk_byte_309
-	to_stack tilemapTypeUnk_30B
+	a_to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
 	JSR	sub_128531
 	JMP	loc_12ED90
 ; ---------------------------------------------------------------------------
@@ -9304,16 +9285,15 @@ sub_12EF66:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12EF77:
-	TYA
-	PHA
+	y_to_stack
 	JSR	sub_1283BA
 	from_stack_to_y
-	to_stack image_id_4A4
-	to_stack image_offset_4A5
-	to_stack ppu_prev_unk_4A6
-	to_stack ppu_prev_scroll_x_unk_4A7
-	to_stack ppu_prev_scroll_y_unk_4A8
-	to_stack prev_sprite_type_4A9
+	a_to_stack image_id_4A4
+	a_to_stack image_offset_4A5
+	a_to_stack ppu_prev_unk_4A6
+	a_to_stack ppu_prev_scroll_x_unk_4A7
+	a_to_stack ppu_prev_scroll_y_unk_4A8
+	a_to_stack prev_sprite_type_4A9
 	set image_id_4A4, {map_sequence_12F072,Y}
 	set image_offset_4A5, #0
 	STA	ppu_prev_unk_4A6
@@ -9322,12 +9302,12 @@ sub_12EF77:
 	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
 	JSR	wait_for_any_input_FCCD
-	from_stack prev_sprite_type_4A9
-	from_stack ppu_prev_scroll_y_unk_4A8
-	from_stack ppu_prev_scroll_x_unk_4A7
-	from_stack ppu_prev_unk_4A6
-	from_stack image_offset_4A5
-	from_stack image_id_4A4
+	from_stack_to_a prev_sprite_type_4A9
+	from_stack_to_a ppu_prev_scroll_y_unk_4A8
+	from_stack_to_a ppu_prev_scroll_x_unk_4A7
+	from_stack_to_a ppu_prev_unk_4A6
+	from_stack_to_a image_offset_4A5
+	from_stack_to_a image_id_4A4
 	set sprite_length_30F, #0
 	RTS
 ; End of function sub_12EF77
@@ -9355,12 +9335,12 @@ sub_12F07D:
 	STA	byte_421
 	STA	byte_547
 	JSR	sub_1283BA
-	to_stack image_id_4A4
-	to_stack image_offset_4A5
-	to_stack ppu_prev_unk_4A6
-	to_stack ppu_prev_scroll_x_unk_4A7
-	to_stack ppu_prev_scroll_y_unk_4A8
-	to_stack prev_sprite_type_4A9
+	a_to_stack image_id_4A4
+	a_to_stack image_offset_4A5
+	a_to_stack ppu_prev_unk_4A6
+	a_to_stack ppu_prev_scroll_x_unk_4A7
+	a_to_stack ppu_prev_scroll_y_unk_4A8
+	a_to_stack prev_sprite_type_4A9
 	set objectIdx_318, #5
 	set byte_360, #0
 	set byte_361, #3
@@ -9425,12 +9405,12 @@ loc_12F138:
 
 loc_12F13F:
 	JSR	sub_12ED29
-	from_stack prev_sprite_type_4A9
-	from_stack ppu_prev_scroll_y_unk_4A8
-	from_stack ppu_prev_scroll_x_unk_4A7
-	from_stack ppu_prev_unk_4A6
-	from_stack image_offset_4A5
-	from_stack image_id_4A4
+	from_stack_to_a prev_sprite_type_4A9
+	from_stack_to_a ppu_prev_scroll_y_unk_4A8
+	from_stack_to_a ppu_prev_scroll_x_unk_4A7
+	from_stack_to_a ppu_prev_unk_4A6
+	from_stack_to_a image_offset_4A5
+	from_stack_to_a image_id_4A4
 	set map_show_43B, #$FF
 	JSR	exec_b0_c2_12A9A9
 	set map_show_43B, #0
@@ -9613,7 +9593,7 @@ loc_12F377:
 
 loc_12F37E:
 	JSR	sub_12F5FC
-	to_stack byte_372
+	a_to_stack byte_372
 	set byte_372, #$1C
 
 loc_12F38A:
@@ -9639,10 +9619,10 @@ loc_12F3B5:
 
 loc_12F3BC:
 	set tilemapTypeUnk_30B, byte_372
-	from_stack byte_372
-	to_stack tilemapTypeUnk_30B
+	from_stack_to_a byte_372
+	a_to_stack tilemapTypeUnk_30B
 	JSR	sub_12F168
-	from_stack tilemapTypeUnk_30B
+	from_stack_to_a tilemapTypeUnk_30B
 	if_a_equal_cmp #$1E, loc_12F3F4
 	if_a_equal_cmp #$1D, loc_12F3E9
 	JSR	sub_12F6D8
@@ -9864,10 +9844,10 @@ sub_12F5DC:
 	set byte_364, #7
 	set byte_360, #1
 	set byte_361, #0
-	to_stack byte_310
+	a_to_stack byte_310
 	set byte_310, #5
 	JSR	exec_b2_c4_1283F2
-	from_stack byte_310
+	from_stack_to_a byte_310
 	RTS
 ; End of function sub_12F5DC
 

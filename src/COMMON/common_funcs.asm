@@ -85,10 +85,8 @@ wait_for_n_65k_cycles_FCD5:
 
 wait_65k_cycles_FCE0:
 	PHA
-	TXA
-	PHA
-	TYA
-	PHA
+	x_to_stack
+	y_to_stack
 
 start_wait_FCE5:
 	LDX	#0
@@ -155,10 +153,8 @@ locret_FD52:
 NMI_FD53:
 	PHP
 	PHA
-	TXA
-	PHA
-	TYA
-	PHA
+	x_to_stack
+	y_to_stack
 	if_a_equal_cmp_addr bank_switch_flag_6C, #$88, loc_FD62
 	JMP	loc_FD93
 ; ---------------------------------------------------------------------------
@@ -271,10 +267,8 @@ ppu_update_FE20:
 ; =============== S U B	R O U T	I N E =======================================
 
 input_update_FE39:
-	TYA
-	PHA
-	TYA
-	PHA
+	y_to_stack
+	y_to_stack
 	JSR	read_pad0_FE51
 	JSR	input_sub_FE71
 	LDA	input_pressed_34A
@@ -373,7 +367,7 @@ scroll_update_FED6:
 	and_byte scroll_offset_y_47A, #$FE 
 	load_a_masked scroll_offset_y_47A, #$7F 
 	if_a_equal_cmp #0, locret_FF2D
-	to_stack scroll_offset_y_47A
+	a_to_stack scroll_offset_y_47A
 	load_a_masked scroll_offset_y_47A, #$80 
 	if_a_equal_cmp #0, loc_FF0E
 	set ppu_scroll_y_305, #0
@@ -385,7 +379,7 @@ loc_FF0E:
 	add_byte_to_byte_clc ppu_scroll_y_305, scroll_offset_y_47A
 
 loc_FF20:
-	from_stack scroll_offset_y_47A
+	from_stack_to_a scroll_offset_y_47A
 	sub_byte_sec scroll_offset_y_47A, #2
 
 locret_FF2D:
@@ -395,16 +389,16 @@ locret_FF2D:
 ; =============== S U B	R O U T	I N E =======================================
 
 apu_update_music_FF2E:
-	to_stack bank_command_346
-	to_stack bank_to_344
-	to_stack bank_from_343
+	a_to_stack bank_command_346
+	a_to_stack bank_to_344
+	a_to_stack bank_from_343
 	
 	set bank_to_344, #banks_13
 	set bank_command_346, #$88 
 	JSR	bank_switch_8000
 
-	from_stack bank_from_343
-	from_stack bank_to_344
-	from_stack bank_command_346
+	from_stack_to_a bank_from_343
+	from_stack_to_a bank_to_344
+	from_stack_to_a bank_command_346
 	RTS
 ; End of function apu_update_music_FF2E

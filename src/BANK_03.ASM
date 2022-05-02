@@ -35,8 +35,8 @@ off_3805B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_3F76B:
-	to_stack data_2
-	to_stack data_3
+	a_to_stack data_2
+	a_to_stack data_3
 	LDA	#$5B 
 	add_to_a char_type_id_35D
 	STA	ptr_0
@@ -51,8 +51,8 @@ sub_3F76B:
 	LDY	#0
 	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
-	from_stack data_3
-	from_stack data_2
+	from_stack_to_a data_3
+	from_stack_to_a data_2
 	LDY	#0
 	set has_ppu_data_to_upload_6F, #0
 	LDX	#0
@@ -76,8 +76,7 @@ loc_3F7CC:
 	set tilemapTypeUnk_30B, #0
 
 loc_3F7E3:
-	TYA
-	PHA
+	y_to_stack
 	add_to_a tilemapTypeUnk_30B
 	TAY
 	if_a_not_equal_cmp_addr {byte_3F8DA,Y}, #0, loc_3F7FE
@@ -140,8 +139,8 @@ loc_3F856:
 	set inv_spr_dscr1_30C, #0
 
 loc_3F865:
-	to_stack data_2
-	to_stack data_3
+	a_to_stack data_2
+	a_to_stack data_3
 	set_inx {ppu_data_70,X}, #1
 	INX
 	set {ppu_data_70,X}, data_2
@@ -168,8 +167,8 @@ loc_3F8A8:
 	set_inx {ppu_data_70,X}, data_3
 	INX
 	set_inx {ppu_data_70,X}, ptr_0
-	from_stack data_3
-	from_stack data_2
+	from_stack_to_a data_3
+	from_stack_to_a data_2
 	INC	ptr_0
 	JSR	sub_3FA27
 	INC	inv_spr_dscr1_30C
@@ -190,7 +189,7 @@ byte_3F8DA:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_3F8FA:
-	to_stack inv_spr_dscr1_30C
+	a_to_stack inv_spr_dscr1_30C
 	set inv_spr_dscr1_30C, #0
 
 loc_3F903:
@@ -198,14 +197,14 @@ loc_3F903:
 	INY
 	INC	inv_spr_dscr1_30C
 	if_a_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_3F903
-	from_stack inv_spr_dscr1_30C
+	from_stack_to_a inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F8FA
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_3F918:
-	to_stack inv_spr_dscr1_30C
+	a_to_stack inv_spr_dscr1_30C
 	set inv_spr_dscr1_30C, #0
 
 loc_3F921:
@@ -216,35 +215,35 @@ loc_3F921:
 	INY
 	INC	inv_spr_dscr1_30C
 	if_a_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_3F921
-	from_stack inv_spr_dscr1_30C
+	from_stack_to_a inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F918
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_3F938:
-	to_stack inv_spr_dscr1_30C
+	a_to_stack inv_spr_dscr1_30C
 	set inv_spr_dscr1_30C, #0
 
 loc_3F941:
 	set_inx {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
 	if_a_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_3F941
-	from_stack inv_spr_dscr1_30C
+	from_stack_to_a inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F938
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_3F955:
-	to_stack inv_spr_dscr1_30C
+	a_to_stack inv_spr_dscr1_30C
 	set inv_spr_dscr1_30C, #0
 
 loc_3F95E:
 	set_inx {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
 	if_a_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_3F95E
-	from_stack inv_spr_dscr1_30C
+	from_stack_to_a inv_spr_dscr1_30C
 	RTS
 ; End of function sub_3F955
 

@@ -27,7 +27,7 @@ loc_48053:
 
 loc_48059:
 	if_a_greater_cmp_addr inv_sprite_idx_31C, #$2F, loc_4807D
-	to_stack bank_from_343
+	a_to_stack bank_from_343
 
 exec_b13_c1_48064:
 	set bank_command_346, #1
@@ -36,7 +36,7 @@ exec_b13_c1_48064:
 	JSR	bank_switch_8000
 
 loc_48076:
-	from_stack bank_from_343
+	from_stack_to_a bank_from_343
 	JMP	loc_4808F
 ; ---------------------------------------------------------------------------
 

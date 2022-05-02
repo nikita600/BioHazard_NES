@@ -422,7 +422,7 @@ loc_13D68F:
 	PHA
 	INY
 	set apu_unk_FF, {(apu_unk_FE),Y}
-	from_stack apu_unk_FE
+	from_stack_to_a apu_unk_FE
 	LDY	apu_unk_764,X
 	LDA	(apu_unk_FE),Y
 	EOR	#$E
@@ -719,7 +719,7 @@ loc_13D91E:
 	PHA
 	INY
 	set apu_unk_FF, {(apu_unk_FE),Y}
-	from_stack apu_unk_FE
+	from_stack_to_a apu_unk_FE
 	LDY	apu_unk_733,X
 	LDA	(apu_unk_FE),Y
 	EOR	#$E
@@ -1006,8 +1006,7 @@ loc_13DBB1:
 	LDA	apu_dat_13D421,X
 	ORA	apu_unk_704
 	STA	apu_unk_704
-	TXA
-	PHA
+	x_to_stack
 	mult_a_by_2
 	TAX
 	set apu_unk_FE, {apu_data_13DEBE,X}

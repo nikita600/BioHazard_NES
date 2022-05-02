@@ -119,8 +119,7 @@ loop_1F2D3:
 	if_x_equal_cmp objArraySize_373, return_1F2F2
 	set objectIdx_318, {objIdxArray_375,X}
 	set sprPalIdx_319, {objPalIdxArray_3F7,X}
-	TXA
-	PHA
+	x_to_stack
 	JSR	get_sprite_palette_ptr_1F2F3
 	JSR	copy_sprite_palette_to_ram_1F316
 	from_stack_to_x
@@ -187,8 +186,7 @@ loc_1F34D:
 	if_x_equal_cmp objArraySize_373, locret_1F36C
 	set objectIdx_318, {objIdxArray_375,X}
 	set sprite_secondByte_31B, {unk_401,X}
-	TXA
-	PHA
+	x_to_stack
 	JSR	load_sprite_to_vram_1F36D
 	JSR	upload_to_ppu_1F6D1
 	from_stack_to_x
@@ -309,15 +307,14 @@ loc_1F43C:
 	LDY	#0
 
 loc_1F440:
-	to_stack byte_36A
-	to_stack byte_36B
+	a_to_stack byte_36A
+	a_to_stack byte_36B
 	set tilemapTypeUnk_30B, #0
 
 loc_1F44D:
 	JSR	sub_1F5FF
 	set_iny {(ptr_0),Y}, ppu_unk_byte_309
-	TYA
-	PHA
+	y_to_stack
 	LDY	tilemapTypeUnk_30B
 	LDA	(data_2),Y
 	add_to_a sprite_secondByte_31B
@@ -329,8 +326,8 @@ loc_1F44D:
 	add_byte_to_word byte_36A, #8
 	INC	tilemapTypeUnk_30B
 	if_a_greater_cmp_addr tilemapTypeUnk_30B, tilemapWidth_308, loc_1F44D
-	from_stack byte_36B
-	from_stack byte_36A
+	from_stack_to_a byte_36B
+	from_stack_to_a byte_36A
 	add_byte_to_word data_2, tilemapWidth_308
 	add_byte_to_word byte_366, #8
 	INX
@@ -348,15 +345,14 @@ loc_1F4CA:
 	LDY	#0
 
 loc_1F4CE:
-	to_stack byte_36A
-	to_stack byte_36B
+	a_to_stack byte_36A
+	a_to_stack byte_36B
 	set tilemapTypeUnk_30B, tilemapWidth_308
 
 loc_1F4DC:
 	JSR	sub_1F5FF
 	set_iny {(ptr_0),Y}, ppu_unk_byte_309
-	TYA
-	PHA
+	y_to_stack
 	LDY	tilemapTypeUnk_30B
 	DEY
 	LDA	(data_2),Y
@@ -369,8 +365,8 @@ loc_1F4DC:
 	add_byte_to_word byte_36A, #8
 	DEC	tilemapTypeUnk_30B
 	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_1F4DC
-	from_stack byte_36B
-	from_stack byte_36A
+	from_stack_to_a byte_36B
+	from_stack_to_a byte_36A
 	add_byte_to_word data_2, tilemapWidth_308
 	add_byte_to_word byte_366, #8
 	INX
@@ -402,15 +398,14 @@ loc_1F572:
 	LDY	#0
 
 loc_1F576:
-	to_stack byte_36A
-	to_stack byte_36B
+	a_to_stack byte_36A
+	a_to_stack byte_36B
 	set tilemapTypeUnk_30B, #0
 
 loc_1F583:
 	JSR	sub_1F5FF
 	set_iny {(ptr_0),Y}, ppu_unk_byte_309
-	TYA
-	PHA
+	y_to_stack
 	LDY	tilemapTypeUnk_30B
 	LDA	(data_2),Y
 	add_to_a sprite_secondByte_31B
@@ -422,8 +417,8 @@ loc_1F583:
 	add_byte_to_word byte_36A, #8
 	DEC	tilemapTypeUnk_30B
 	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_1F583
-	from_stack byte_36B
-	from_stack byte_36A
+	from_stack_to_a byte_36B
+	from_stack_to_a byte_36A
 	sub_byte_sec data_2, tilemapWidth_308
 	sub_byte data_3, #0
 	add_byte_to_word byte_366, #8
@@ -485,8 +480,7 @@ loc_1F693:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_1F6AB:
-	TYA
-	PHA
+	y_to_stack
 	LDY	byte_369
 	set byte_369, #0
 

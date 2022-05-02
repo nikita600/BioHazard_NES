@@ -17,11 +17,11 @@ switch_case_8035:
 loc_13803F:
 	STA	bank_prev_345
 	set bank_switch_flag_6C, #$88 
-	if_a_equal_cmp_addr bank_command_346, #0, loc_138066
-	if_a_equal_cmp #1, loc_13806C
-	if_a_equal_cmp #2, loc_138072
-	if_a_equal_cmp #3, loc_138078
-	if_a_equal_cmp #4, loc_13807E
+	if_a_equal_cmp_addr bank_command_346, #0, case0_138066
+	if_a_equal_cmp #1, case1_13806C
+	if_a_equal_cmp #2, case2_138072
+	if_a_equal_cmp #3, case3_138078
+	if_a_equal_cmp #4, case4_13807E
 	CMP	#5
 
 loc_13805F:
@@ -30,27 +30,27 @@ loc_13805F:
 	RTS
 ; ---------------------------------------------------------------------------
 
-loc_138066:
+case0_138066:
 	JSR	load_spr_palette_13DF18
 	JMP	loc_13808D
 ; ---------------------------------------------------------------------------
 
-loc_13806C:
+case1_13806C:
 	JSR	copy_boss_spr_to_ppu_13DF67
 	JMP	loc_13808D
 ; ---------------------------------------------------------------------------
 
-loc_138072:
+case2_138072:
 	JSR	load_sprite_map_13E038
 	JMP	loc_13808D
 ; ---------------------------------------------------------------------------
 
-loc_138078:
+case3_138078:
 	JSR	load_sprite_func_13DFA8
 	JMP	loc_13808D
 ; ---------------------------------------------------------------------------
 
-loc_13807E:
+case4_13807E:
 	JSR	music_func_13C028
 	JMP	loc_13808D
 ; ---------------------------------------------------------------------------
@@ -1193,7 +1193,7 @@ load_spr_palette_13DF18:
 
 copy_boss_spr_to_ppu_13DF67:
 	load_sprite	load_boss_sprite_13DFDC
-	
+
 ; End of function copy_boss_spr_to_ppu_13DF67
 
 ; =============== S U B	R O U T	I N E =======================================

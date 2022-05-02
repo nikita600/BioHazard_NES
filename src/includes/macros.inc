@@ -26,30 +26,17 @@
 
 ; ---------------------------------------------------------------------------
 
-.macro set dst, src
-
-	LDA	src
-	STA	dst
-
-.endmacro
-
-.macro set_inx dst, src
-
-	LDA	src
-	STA	dst
-	INX
-
-.endmacro
-
-.macro set_iny dst, src
-
-	LDA	src
-	STA	dst
-	INY
-
-.endmacro
-
 .include "includes/macros/set_macros.inc"
+
+; ---------------------------------------------------------------------------
+
+.macro xor_byte addr, value
+
+	LDA addr
+	EOR value
+	STA addr
+
+.endmacro
 
 ; ---------------------------------------------------------------------------
 

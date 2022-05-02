@@ -602,18 +602,14 @@ loc_8639:
 	JSR	ppu_upload_unk_data_CC5D
 	JSR	wait_for_frame_rendered_FCA0
 	if_not_equal_cmp_addr input_pressed_34A, #up_8, loc_8654
-	LDA	byte_372
-	EOR	#1
-	STA	byte_372
+	xor_byte byte_372, #1
 	JSR	sub_CC17
 	JMP	loc_8639
 ; ---------------------------------------------------------------------------
 
 loc_8654:
 	if_not_equal_cmp #4, loc_8666
-	LDA	byte_372
-	EOR	#1
-	STA	byte_372
+	xor_byte byte_372, #1
 	JSR	sub_CC17
 	JMP	loc_8639
 ; ---------------------------------------------------------------------------
@@ -670,18 +666,14 @@ loc_86C9:
 	JSR	ppu_upload_unk_data_CC5D
 	JSR	wait_for_frame_rendered_FCA0
 	if_not_equal_cmp_addr input_pressed_34A, #up_8, loc_86E4
-	LDA	byte_372
-	EOR	#1
-	STA	byte_372
+	xor_byte byte_372, #1
 	JSR	sub_CC17
 	JMP	loc_86C9
 ; ---------------------------------------------------------------------------
 
 loc_86E4:
 	if_not_equal_cmp #4, loc_86F6
-	LDA	byte_372
-	EOR	#1
-	STA	byte_372
+	xor_byte byte_372, #1
 	JSR	sub_CC17
 	JMP	loc_86C9
 ; ---------------------------------------------------------------------------
@@ -3448,19 +3440,11 @@ sub_C873:
 
 	set_ptr unknown_entries_C558
 
-	set_data2 entry_idx_300
-	set_data3 #0
+	set data_2, entry_idx_300
+	set data_3, #0
 
 	ASL	data_2
 	ROL	data_3
-
-	;LDA	ptr_0
-	;CLC
-	;ADC	data_2
-	;STA	ptr_0
-	;LDA	ptr_1
-	;ADC	data_3
-	;STA	ptr_1
 
 	add_to_ptr_addr data_2
 
@@ -3753,9 +3737,7 @@ loc_CB12:
 ; ---------------------------------------------------------------------------
 
 left_right_pressed_CB2A:
-	LDA	byte_372
-	EOR	#1
-	STA	byte_372
+	xor_byte byte_372, #1
 	set tilemapTypeUnk_30B, #$2B 
 	JSR	exec_b12_com48_ECA6
 	JMP	loc_CB12
@@ -3797,9 +3779,7 @@ sub_CB58:
 ; ---------------------------------------------------------------------------
 
 loc_CBA7:
-	LDA	byte_4AD
-	EOR	#1
-	STA	byte_4AD
+	xor_byte byte_4AD, #1
 
 loc_CBAF:
 	JSR	sub_C7C7
@@ -5068,9 +5048,7 @@ loc_D75D:
 	set byte_352, #4
 	JSR	sub_BEB6
 	LDA	byte_352
-	LDA	array_unk_3A7,X
-	EOR	#1
-	STA	array_unk_3A7,X
+	xor_byte {array_unk_3A7,X}, #1
 
 loc_D78C:
 	JSR	sub_DADA

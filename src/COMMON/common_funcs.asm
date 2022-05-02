@@ -381,9 +381,7 @@ loc_FED2:
 scroll_update_FED6:
 	INC	scroll_offset_x_479
 	if_greater_cmp_addr scroll_offset_x_479, #$A, locret_FF2D
-	LDA	scroll_offset_y_47A
-	EOR	#$80 
-	STA	scroll_offset_y_47A
+	xor_byte scroll_offset_y_47A, #$80 
 	LDA	scroll_offset_y_47A
 	AND	#$FE 
 	STA	scroll_offset_y_47A

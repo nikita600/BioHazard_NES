@@ -1096,9 +1096,7 @@ game_not_finished_128A43:
 	JSR	wait_for_frame_rendered_FCA0
 	if_not_equal_cmp_addr input_pressed_34A, #$20, loc_128A72
 	JSR	sub_12ED3B
-	LDA	byte_472
-	EOR	#1
-	STA	byte_472
+	xor_byte byte_472, #1
 	set byte_440, #0
 	JMP	loc_128A20
 ; ---------------------------------------------------------------------------
@@ -2592,25 +2590,19 @@ loc_12AE0F:
 	if_equal_cmp #$90, loc_12AE3F
 	if_equal_cmp #$5C, loc_12AE34
 	if_equal_cmp #$93, loc_12AE34
-	LDA	byte_58F
-	EOR	#$FF
-	STA	byte_58F
+	xor_byte byte_58F, #$FF
 	JMP	loc_12AE47
 ; ---------------------------------------------------------------------------
 
 loc_12AE34:
 	
-	LDA	byte_590
-	EOR	#$FF
-	STA	byte_590
+	xor_byte byte_590, #$FF
 	JMP	loc_12AE47
 ; ---------------------------------------------------------------------------
 
 loc_12AE3F:
 	
-	LDA	byte_58C
-	EOR	#$FF
-	STA	byte_58C
+	xor_byte byte_58C, #$FF
 
 loc_12AE47:
 	
@@ -4901,9 +4893,7 @@ loc_12C229:
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	LDA	byte_5CA
-	EOR	#$FF
-	STA	byte_5CA
+	xor_byte byte_5CA, #$FF
 
 locret_12C25D:
 	RTS
@@ -4973,9 +4963,7 @@ sub_12C2D6:
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	if_not_equal byte_372, locret_12C323
-	LDA	byte_589
-	EOR	#$FF
-	STA	byte_589
+	xor_byte byte_589, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -4999,9 +4987,7 @@ sub_12C324:
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	if_not_equal byte_372, locret_12C371
-	LDA	byte_58B
-	EOR	#$FF
-	STA	byte_58B
+	xor_byte byte_58B, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -5328,9 +5314,7 @@ sub_12C5F0:
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	if_not_equal byte_372, locret_12C636
-	LDA	byte_593
-	EOR	#$FF
-	STA	byte_593
+	xor_byte byte_593, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -5990,9 +5974,7 @@ loc_12CBD6:
 loc_12CBD9:
 	if_greater_cmp_addr count_unk_469, #$A, loc_12CBF7
 	set count_unk_469, #0
-	LDA	byte_434
-	EOR	#1
-	STA	byte_434
+	xor_byte byte_434, #1
 	if_equal_cmp_addr byte_42B, #$14, show_ending_screen_12CC06
 	INC	byte_42B
 
@@ -6024,23 +6006,17 @@ show_ending_screen_12CC06:
 sub_12CC34:
 	if_greater_cmp_addr count_unk_465, #$A, loc_12CC48
 	set count_unk_465, #0
-	LDA	byte_430
-	EOR	#1
-	STA	byte_430
+	xor_byte byte_430, #1
 
 loc_12CC48:
 	if_greater_cmp_addr count_unk_466, #$F, loc_12CC5C
 	set count_unk_466, #0
-	LDA	byte_431
-	EOR	#1
-	STA	byte_431
+	xor_byte byte_431, #1
 
 loc_12CC5C:
 	if_greater_cmp_addr count_unk_467, #$A, loc_12CC70
 	set count_unk_467, #0
-	LDA	byte_433
-	EOR	#1
-	STA	byte_433
+	xor_byte byte_433, #1
 
 loc_12CC70:
 	LDA	byte_42C
@@ -6287,18 +6263,14 @@ loc_12CF2D:
 	JSR	sub_12D070
 	JSR	wait_for_vblank_FC95
 	if_not_equal_cmp_addr input_pressed_34A, #2, loc_12CF48
-	LDA	byte_372
-	EOR	#1
-	STA	byte_372
+	xor_byte byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
 loc_12CF48:
 	if_not_equal_cmp #1, loc_12CF5A
-	LDA	byte_372
-	EOR	#1
-	STA	byte_372
+	xor_byte byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
@@ -6393,9 +6365,7 @@ loc_12D003:
 sub_12D070:
 	if_greater_cmp_addr count_unk_466, #$A, loc_12D084
 	set count_unk_466, #0
-	LDA	byte_547
-	EOR	#1
-	STA	byte_547
+	xor_byte byte_547, #1
 
 loc_12D084:
 	set objMapIdx_316, #$25 
@@ -6424,9 +6394,7 @@ loc_12D084:
 sub_12D0C2:
 	if_greater_cmp_addr count_unk_465, #$A, loc_12D0D6
 	set count_unk_465, #0
-	LDA	byte_547
-	EOR	#1
-	STA	byte_547
+	xor_byte byte_547, #1
 
 loc_12D0D6:
 	set objMapIdx_316, #$25 
@@ -6912,9 +6880,7 @@ loc_12D522:
 
 loc_12D52E:
 	if_not_equal_cmp #2, loc_12D543
-	LDA	byte_42C
-	EOR	#1
-	STA	byte_42C
+	xor_byte byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
 	JMP	loc_12D4E7
@@ -6922,9 +6888,7 @@ loc_12D52E:
 
 loc_12D543:
 	if_not_equal_cmp #1, loc_12D558
-	LDA	byte_42C
-	EOR	#1
-	STA	byte_42C
+	xor_byte byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
 	JMP	loc_12D4E7
@@ -7035,9 +6999,7 @@ loc_12D685:
 	
 	if_greater_cmp_addr byte_546, #$A, loc_12D699
 	set byte_546, #0
-	LDA	byte_547
-	EOR	#1
-	STA	byte_547
+	xor_byte byte_547, #1
 
 loc_12D699:
 	set byte_31A, #$70 
@@ -7054,18 +7016,14 @@ loc_12D699:
 	JSR	sub_12E829
 	JSR	wait_for_vblank_FC95
 	if_not_equal_cmp_addr input_pressed_34A, #2, loc_12D6E3
-	LDA	byte_372
-	EOR	#1
-	STA	byte_372
+	xor_byte byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
 loc_12D6E3:
 	if_not_equal_cmp #1, loc_12D6F5
-	LDA	byte_372
-	EOR	#1
-	STA	byte_372
+	xor_byte byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
@@ -7153,9 +7111,7 @@ loc_12D7A6:
 ; ---------------------------------------------------------------------------
 
 loc_12D7B4:
-	LDA	byte_42C
-	EOR	#1
-	STA	byte_42C
+	xor_byte byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
 	JMP	loc_12D72F
@@ -7168,9 +7124,7 @@ loc_12D7C5:
 ; ---------------------------------------------------------------------------
 
 loc_12D7D3:
-	LDA	byte_42C
-	EOR	#1
-	STA	byte_42C
+	xor_byte byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
 	JMP	loc_12D72F
@@ -7545,9 +7499,7 @@ sub_12DAD0:
 	
 	if_greater_cmp_addr byte_546, #$A, loc_12DAE4
 	set byte_546, #0
-	LDA	byte_547
-	EOR	#1
-	STA	byte_547
+	xor_byte byte_547, #1
 
 loc_12DAE4:
 	set byte_31A, #$70 
@@ -7805,9 +7757,7 @@ sub_12DD0A:
 	
 	if_greater_cmp_addr byte_546, #$A, loc_12DD1E
 	set byte_546, #0
-	LDA	byte_547
-	EOR	#1
-	STA	byte_547
+	xor_byte byte_547, #1
 
 loc_12DD1E:
 	LDA	byte_42E
@@ -8551,9 +8501,7 @@ loc_12E460:
 
 loc_12E46F:
 	if_not_equal_cmp #2, loc_12E487
-	LDA	byte_42C
-	EOR	#1
-	STA	byte_42C
+	xor_byte byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12E4CD
 	JSR	sub_12D329
@@ -8562,9 +8510,7 @@ loc_12E46F:
 
 loc_12E487:
 	if_not_equal_cmp #1, loc_12E49F
-	LDA	byte_42C
-	EOR	#1
-	STA	byte_42C
+	xor_byte byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12E4CD
 	JSR	sub_12D329
@@ -8602,9 +8548,7 @@ sub_12E4CD:
 	JSR	sub_12D26B
 	if_greater_cmp_addr byte_546, #$A, loc_12E4EE
 	set byte_546, #0
-	LDA	byte_547
-	EOR	#1
-	STA	byte_547
+	xor_byte byte_547, #1
 
 loc_12E4EE:
 	LDA	byte_42E
@@ -10242,9 +10186,7 @@ byte_12F55F:.BYTE	4,$1B,	8,$13,	2
 sub_12F564:
 	if_greater_cmp_addr count_unk_465, #$F, locret_12F5B8
 	set count_unk_465, #0
-	LDA	byte_547
-	EOR	#1
-	STA	byte_547
+	xor_byte byte_547, #1
 	if_equal byte_547, sub_12F583
 ; End of function sub_12F564
 

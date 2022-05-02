@@ -22,7 +22,56 @@
 
 ; ---------------------------------------------------------------------------
 
-.include "includes/macros/set_macros.inc"
+.macro set dst, src
+
+	LDA	src
+	STA	dst
+
+.endmacro
+
+.macro set_inx dst, src
+
+	LDA	src
+	STA	dst
+	INX
+
+.endmacro
+
+.macro set_iny dst, src
+
+	LDA	src
+	STA	dst
+	INY
+
+.endmacro
+
+; ---------------------------------------------------------------------------
+
+.macro set_ptr addr
+
+	set ptr_0, #.LOBYTE(addr)
+	set ptr_1, #.HIBYTE(addr)
+
+.endmacro
+
+; ---------------------------------------------------------------------------
+
+.macro set_ptr_iny addr
+
+	set ptr_0, #.LOBYTE(addr)
+	INY
+	set ptr_1, #.HIBYTE(addr)
+
+.endmacro
+
+; ---------------------------------------------------------------------------
+
+.macro set_data addr
+
+	set data_2, #.LOBYTE(addr)
+	set data_3, #.HIBYTE(addr) 
+
+.endmacro
 
 ; ---------------------------------------------------------------------------
 
@@ -87,25 +136,41 @@
 	ADC	value
 .endmacro
 
-.macro add_to_byte_clc dst, src
+.macro add_byte_to_word addr, value
+	add_to addr, addr+1, value, #0
+.endmacro
+
+.macro add_word_to_word addr, value
+	add_to addr, addr+1, value, value+1
+.endmacro
+
+.macro add_word_to_word_imm addr, value
+	add_to addr, addr+1, #.LOBYTE(value), #.HIBYTE(value)
+.endmacro
+
+.macro add_byte_to_byte_clc dst, src
 	LDA	dst
 	CLC
 	ADC	src
 	STA	dst
 .endmacro
 
-.macro add_to_byte dst, src
+.macro add_byte_to_byte dst, src
 	LDA	dst
 	ADC	src
 	STA	dst
 .endmacro
 
 .macro add_to dst_lo, dst_hi, src_lo, src_hi
-	add_to_byte_clc	dst_lo, src_lo
-	add_to_byte dst_hi, src_hi
-.endmacro
+	LDA	dst_lo
+	CLC
+	ADC	src_lo
+	STA	dst_lo
 
-.include "includes/macros/add_to_macros.inc"
+	LDA	dst_hi
+	ADC	src_hi
+	STA	dst_hi
+.endmacro
 
 ; ---------------------------------------------------------------------------
 
@@ -361,7 +426,7 @@
 	mult_a_by_2
 	add_to_a addr
 	STA	addr
-	add_to_byte addr+1, #0
+	add_byte_to_byte addr+1, #0
 .endmacro
 
 ; ---------------------------------------------------------------------------

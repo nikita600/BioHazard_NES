@@ -11,7 +11,6 @@ loc_FC90:
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_vblank_FC95:
-
 	LDA	_PPU_STATUS
 	BMI	wait_for_vblank_FC95
 
@@ -24,7 +23,6 @@ loc_FC9A:
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_frame_rendered_FCA0:
-
 	set frame_render_count_350, #1
 
 loop_FCA5:
@@ -35,7 +33,6 @@ loop_FCA5:
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_any_input_65k_cycles_FCAB:
-
 	LDY	#0
 
 loc_FCAD:
@@ -76,7 +73,6 @@ wait_for_any_input_FCCD:
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_n_65k_cycles_FCD5:
-
 	PHA
 	JSR	wait_65k_cycles_FCE0
 	PLA
@@ -147,8 +143,8 @@ loc_FD31:
 ; ---------------------------------------------------------------------------
 
 loc_FD40:
-	add_to_byte_clc byte_203, #8
-	add_to_byte_clc byte_207, #8
+	add_byte_to_byte_clc byte_203, #8
+	add_byte_to_byte_clc byte_207, #8
 
 locret_FD52:
 	RTS
@@ -258,7 +254,6 @@ loc_FE09:
 ; ---------------------------------------------------------------------------
 
 loc_FE1B:
-
 	set has_ppu_data_to_upload_6F, #0
 	RTS
 ; End of function ppu_upset_data_FDCB
@@ -387,14 +382,13 @@ scroll_update_FED6:
 
 loc_FF0E:
 	and_byte scroll_offset_y_47A, #$7F 
-	add_to_byte_clc ppu_scroll_y_305, scroll_offset_y_47A
+	add_byte_to_byte_clc ppu_scroll_y_305, scroll_offset_y_47A
 
 loc_FF20:
 	from_stack scroll_offset_y_47A
 	sub_byte_sec scroll_offset_y_47A, #2
 
 locret_FF2D:
-
 	RTS
 ; End of function scroll_update_FED6
 

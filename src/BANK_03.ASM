@@ -46,8 +46,7 @@ sub_3F76B:
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
-	add_to_byte_clc data_2, text_idx_35C
-	add_to_byte data_3, #0
+	add_byte_to_word data_2, text_idx_35C
 
 	LDY	#0
 	set_iny ptr_0, {(data_2),Y}
@@ -159,7 +158,7 @@ loc_3F865:
 ; ---------------------------------------------------------------------------
 
 loc_3F89B:
-	add_to_data $1
+	add_word_to_word_imm data_2, $1
 
 loc_3F8A8:
 	set_inx {ppu_data_70,X}, #1
@@ -256,7 +255,7 @@ sub_3F972:
 
 loc_3F975:
 	if_y_equal_cmp #0, loc_3F98D
-	add_to_byte_clc ppu_unk_byte_309, byte_363
+	add_byte_to_byte_clc ppu_unk_byte_309, byte_363
 	INC	ppu_unk_byte_309
 	INC	ppu_unk_byte_309
 	DEY
@@ -299,7 +298,7 @@ loc_3F9DB:
 loc_3F9DE:
 	if_y_equal_cmp #0, loc_3F9F3
 
-	add_to_data $20
+	add_word_to_word_imm data_2, $20
 
 	DEY
 	JMP	loc_3F9DE
@@ -325,8 +324,7 @@ loc_3FA07:
 	STA	tilemap_size_307
 
 loc_3FA18:
-	add_to_byte_clc data_2, tilemap_size_307
-	add_to_byte data_3, #0
+	add_byte_to_word data_2, tilemap_size_307
 
 	RTS
 ; End of function sub_3F972
@@ -349,7 +347,7 @@ loc_3FA3F:
 ; ---------------------------------------------------------------------------
 
 loc_3FA48:
-	add_to_data $20
+	add_word_to_word_imm data_2, $20
 
 locret_3FA55:
 	RTS

@@ -119,10 +119,10 @@ loc_13C040:
 ; ---------------------------------------------------------------------------
 
 loc_13C068:
-	set {_APU_PULSE1_ENV,Y}, {stru_13C211,X}
-	set {_APU_PULSE1_SWEEP,Y}, {stru_13C211+1,X}
-	set {_APU_PULSE1_TIME,Y}, {stru_13C211+2,X}
-	set {_APU_PULSE1_LEN,Y}, {stru_13C211+3,X}
+	set {_APU_PULSE1_ENV,Y}, {pulse_entries_13C211,X}
+	set {_APU_PULSE1_SWEEP,Y}, {pulse_entries_13C211+1,X}
+	set {_APU_PULSE1_TIME,Y}, {pulse_entries_13C211+2,X}
+	set {_APU_PULSE1_LEN,Y}, {pulse_entries_13C211+3,X}
 	RTS
 ; End of function music_func_13C028
 
@@ -1192,7 +1192,7 @@ load_spr_palette_13DF18:
 	ROL	data_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, data_2
+	add_byte_to_byte ptr_1, data_2
 
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
@@ -1205,7 +1205,7 @@ load_spr_palette_13DF18:
 	TAX
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, #0
+	add_byte_to_byte ptr_1, #0
 
 	LDY	#0
 
@@ -1230,10 +1230,9 @@ loc_13DF76:
 	set_iny _PPU_DATA, {(data_2),Y}
 	if_y_greater_cmp #$10, loc_13DF76
 
-	add_to_data $10
+	add_word_to_word_imm data_2, $10
 
-	add_to_byte_clc ptr_0, #$10
-	add_to_byte ptr_1, #0
+	add_byte_to_word ptr_0, #$10
 
 	DEC	inv_spr_dscr1_30C
 	if_a_equal_cmp_addr inv_spr_dscr1_30C, #0, locret_13DFA7
@@ -1281,7 +1280,7 @@ load_boss_sprite_13DFDC:
 	ROL	data_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, data_2
+	add_byte_to_byte ptr_1, data_2
 
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
@@ -1289,7 +1288,7 @@ load_boss_sprite_13DFDC:
 	LDY	#0
 	set inv_spr_dscr1_30C, {(data_2),Y}
 
-	add_to_data $2
+	add_word_to_word_imm data_2, $2
 
 	set ptr_0, byte_31E
 	set ptr_1, #0
@@ -1312,7 +1311,7 @@ load_sprite_map_13E038:
 	ROL	data_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, data_2
+	add_byte_to_byte ptr_1, data_2
 
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
@@ -1323,7 +1322,7 @@ load_sprite_map_13E038:
 	ROL	ptr_0
 	add_to_a data_2
 	STA	data_2
-	add_to_byte data_3, ptr_0
+	add_byte_to_byte data_3, ptr_0
 
 	LDY	#0
 	set_iny ptr_0, {(data_2),Y}
@@ -1332,8 +1331,7 @@ load_sprite_map_13E038:
 	set_iny tilemapWidth_308, {(ptr_0),Y}
 	set tilemapHeight_30A, {(ptr_0),Y}
 
-	add_to_byte_clc ptr_0, #2
-	add_to_byte ptr_1, #0
+	add_byte_to_word ptr_0, #2
 
 	set data_2, #0
 	set data_3, #$20 
@@ -1346,15 +1344,14 @@ load_sprite_map_13E038:
 loc_13E0AF:
 	if_y_equal_cmp #0, loc_13E0C4
 
-	add_to_data $20
+	add_word_to_word_imm data_2, $20
 
 	DEY
 	JMP	loc_13E0AF
 ; ---------------------------------------------------------------------------
 
 loc_13E0C4:
-	add_to_byte_clc data_2, tilemap_size_307
-	add_to_byte data_3, #0
+	add_byte_to_word data_2, tilemap_size_307
 
 	set inv_spr_dscr1_30C, #0
 	STA	ppu_unk_byte_309
@@ -1415,10 +1412,9 @@ loc_13E13F:
 	INY
 	if_y_greater_cmp tilemapWidth_308, loc_13E13F
 
-	add_to_data $20
+	add_word_to_word_imm data_2, $20
 
-	add_to_byte_clc ptr_0, tilemapWidth_308
-	add_to_byte ptr_1, #0
+	add_byte_to_word ptr_0, tilemapWidth_308
 
 	INC	tilemapTypeUnk_30B
 	if_a_greater_cmp_addr tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_13E12D
@@ -1441,11 +1437,9 @@ loc_13E195:
 	set_inx {ppu_data_70,X}, {(data_2),Y}
 	INY
 	if_y_greater_cmp tilemapTypeUnk_30B, loc_13E195
-	add_to_byte_clc data_2, tilemapTypeUnk_30B
-	add_to_byte data_3, #0
+	add_byte_to_word data_2, tilemapTypeUnk_30B
 
-	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
-	add_to_byte ptr_1, #0
+	add_byte_to_word ptr_0, tilemapTypeUnk_30B
 
 	
 	JSR	wait_for_ppu_data_upload_FC8C

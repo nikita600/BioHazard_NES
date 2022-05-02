@@ -149,8 +149,7 @@ loc_2D1DF:
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
-	add_to_byte_clc data_2, text_idx_35C
-	add_to_byte data_3, #0
+	add_byte_to_word data_2, text_idx_35C
 
 	LDY	#0
 	set_iny ptr_0, {(data_2),Y}
@@ -186,14 +185,13 @@ loc_2D251:
 ; ---------------------------------------------------------------------------
 
 loc_2D260:
-	add_to_byte_clc ptr_0, #2
-	add_to_byte ptr_1, #0
+	add_byte_to_word ptr_0, #2
 
 	LDA	tilemapWidth_308
 	mult_a_by_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, #0
+	add_byte_to_byte ptr_1, #0
 
 	sub_addr_sec byte_35E, tilemapWidth_308
 	TAY
@@ -201,7 +199,7 @@ loc_2D260:
 loc_2D284:
 	if_y_equal_cmp #0, loc_2D299
 
-	add_to_data $40
+	add_word_to_word_imm data_2, $40
 
 	DEY
 	JMP	loc_2D284
@@ -230,7 +228,7 @@ loc_2D29C:
 	from_stack ptr_1
 	from_stack ptr_0
 
-	add_to_data $40
+	add_word_to_word_imm data_2, $40
 
 	INC	tilemapWidth_308
 	if_a_equal_cmp_addr tilemapWidth_308, byte_35E, loc_2D2F6
@@ -244,7 +242,7 @@ loc_2D2F6:
 	mult_a_by_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, #0
+	add_byte_to_byte ptr_1, #0
 
 loc_2D305:
 	LDY	#0
@@ -301,8 +299,7 @@ loc_2D36C:
 loc_2D378:
 	from_stack char_type_id_35D
 	from_stack text_idx_35C
-	add_to_byte_clc text_idx_35C, #1
-	add_to_byte char_type_id_35D, #0
+	add_byte_to_word text_idx_35C, #1
 
 	set byte_364, #0
 	RTS
@@ -522,8 +519,7 @@ sub_2E244:
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
-	add_to_byte_clc data_2, text_idx_35C
-	add_to_byte data_3, #0
+	add_byte_to_word data_2, text_idx_35C
 
 	LDY	#0
 	set_iny ptr_0, {(data_2),Y}
@@ -635,7 +631,7 @@ loc_2E33E:
 ; ---------------------------------------------------------------------------
 
 loc_2E374:
-	add_to_data $1
+	add_word_to_word_imm data_2, $1
 
 loc_2E381:
 	set_inx {ppu_data_70,X}, #1
@@ -733,7 +729,7 @@ sub_2E44B:
 
 loc_2E44E:
 	if_y_equal_cmp #0, loc_2E466
-	add_to_byte_clc ppu_unk_byte_309, byte_363
+	add_byte_to_byte_clc ppu_unk_byte_309, byte_363
 	INC	ppu_unk_byte_309
 	INC	ppu_unk_byte_309
 	DEY
@@ -776,7 +772,7 @@ loc_2E4B4:
 loc_2E4B7:
 	if_y_equal_cmp #0, loc_2E4CC
 
-	add_to_data $20
+	add_word_to_word_imm data_2, $20
 	
 	DEY
 	JMP	loc_2E4B7
@@ -802,8 +798,7 @@ loc_2E4E0:
 	STA	tilemap_size_307
 
 loc_2E4F1:
-	add_to_byte_clc data_2, tilemap_size_307
-	add_to_byte data_3, #0
+	add_byte_to_word data_2, tilemap_size_307
 
 	RTS
 ; End of function sub_2E44B
@@ -827,7 +822,7 @@ loc_2E518:
 ; ---------------------------------------------------------------------------
 
 loc_2E521:
-	add_to_data $20
+	add_word_to_word_imm data_2, $20
 
 locret_2E52E:
 	RTS
@@ -945,8 +940,7 @@ sub_2E781:
 	set data_3, #0
 	mult_word_by_2 data_2
 
-	add_to_byte_clc ptr_0, data_2
-	add_to_byte ptr_1, data_3
+	add_word_to_word ptr_0, data_2
 
 	
 	LDY	#0

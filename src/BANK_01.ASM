@@ -86,7 +86,7 @@ palette1_F27A:
 	set sprPalIdx_319, #1
 	JSR	get_sprite_palette_ptr_1F2F3
 
-	add_to_data $4
+	add_word_to_word_imm data_2, $4
 
 	JSR	copy_sprite_palette_to_ram_1F316
 
@@ -94,7 +94,7 @@ palette2_F292:
 	set sprPalIdx_319, #2
 	JSR	get_sprite_palette_ptr_1F2F3
 
-	add_to_data $8
+	add_word_to_word_imm data_2, $8
 
 	JSR	copy_sprite_palette_to_ram_1F316
 
@@ -102,7 +102,7 @@ palette3_F2AA:
 	set sprPalIdx_319, #3
 	JSR	get_sprite_palette_ptr_1F2F3
 	
-	add_to_data $C
+	add_word_to_word_imm data_2, $C
 
 	JSR	copy_sprite_palette_to_ram_1F316
 	RTS
@@ -142,7 +142,7 @@ get_offset_F2FB:
 	mult_a_by_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, #0
+	add_byte_to_byte ptr_1, #0
 
 get_ptr_F30A:
 	LDY	#0
@@ -210,7 +210,7 @@ get_offset_F376:; spriteIdx
 	mult_a_by_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, #0
+	add_byte_to_byte ptr_1, #0
 
 get_ptr_F385:
 	LDY	#0
@@ -250,7 +250,7 @@ get_container_offset_F3C1:
 	mult_a_by_2
 	add_to_a data_2
 	STA	data_2
-	add_to_byte data_3, #0
+	add_byte_to_byte data_3, #0
 
 get_container_ptr_F3D0:
 	LDY	#0
@@ -262,7 +262,7 @@ get_tilemap_offset_F3DB:
 	mult_a_by_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, #0
+	add_byte_to_byte ptr_1, #0
 
 get_tilemap_ptr_F3EA:
 	LDY	#0
@@ -280,7 +280,7 @@ get_frame_count_F403:
 	set tilemapFrameCount_30D, {(data_2),Y}
 
 add_offset_F408:
-	add_to_data $3
+	add_word_to_word_imm data_2, $3
 	RTS
 ; End of function load_sprite_tilemap_1F3B8
 
@@ -326,16 +326,13 @@ loc_1F44D:
 	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
 	set_iny {(ptr_0),Y}, byte_317
 	set_iny {(ptr_0),Y}, tilemap_size_307
-	add_to_byte_clc byte_36A, #8
-	add_to_byte byte_36B, #0
+	add_byte_to_word byte_36A, #8
 	INC	tilemapTypeUnk_30B
 	if_a_greater_cmp_addr tilemapTypeUnk_30B, tilemapWidth_308, loc_1F44D
 	from_stack byte_36B
 	from_stack byte_36A
-	add_to_byte_clc data_2, tilemapWidth_308
-	add_to_byte data_3, #0
-	add_to_byte_clc byte_366, #8
-	add_to_byte byte_367, #0
+	add_byte_to_word data_2, tilemapWidth_308
+	add_byte_to_word byte_366, #8
 	INX
 	if_x_equal_cmp tilemapHeight_30A, loc_1F4C4
 	JMP	loc_1F440
@@ -369,16 +366,13 @@ loc_1F4DC:
 	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
 	set_iny {(ptr_0),Y}, byte_317
 	set_iny {(ptr_0),Y}, tilemap_size_307
-	add_to_byte_clc byte_36A, #8
-	add_to_byte byte_36B, #0
+	add_byte_to_word byte_36A, #8
 	DEC	tilemapTypeUnk_30B
 	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_1F4DC
 	from_stack byte_36B
 	from_stack byte_36A
-	add_to_byte_clc data_2, tilemapWidth_308
-	add_to_byte data_3, #0
-	add_to_byte_clc byte_366, #8
-	add_to_byte byte_367, #0
+	add_byte_to_word data_2, tilemapWidth_308
+	add_byte_to_word byte_366, #8
 	INX
 	if_x_equal_cmp tilemapHeight_30A, loc_1F553
 	JMP	loc_1F4CE
@@ -395,7 +389,7 @@ loc_1F559:
 
 loc_1F55D:
 	if_y_equal_cmp #0, loc_1F572
-	add_to_byte_clc data_2, tilemapWidth_308
+	add_byte_to_byte_clc data_2, tilemapWidth_308
 	LDA	data_3
 	CLC
 	STA	data_3
@@ -425,16 +419,14 @@ loc_1F583:
 	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
 	set_iny {(ptr_0),Y}, byte_317
 	set_iny {(ptr_0),Y}, tilemap_size_307
-	add_to_byte_clc byte_36A, #8
-	add_to_byte byte_36B, #0
+	add_byte_to_word byte_36A, #8
 	DEC	tilemapTypeUnk_30B
 	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_1F583
 	from_stack byte_36B
 	from_stack byte_36A
 	sub_byte_sec data_2, tilemapWidth_308
 	sub_byte data_3, #0
-	add_to_byte_clc byte_366, #8
-	add_to_byte byte_367, #0
+	add_byte_to_word byte_366, #8
 	INX
 	if_x_equal_cmp tilemapHeight_30A, loc_1F5F9
 	JMP	loc_1F576
@@ -460,8 +452,7 @@ sub_1F5FF:
 	sub_addr byte_367, byte_369
 	BCC	loc_1F68D
 	INC	byte_36D
-	add_to_byte_clc byte_368, #$F0 
-	add_to_byte byte_369, #0
+	add_byte_to_word byte_368, #$F0 
 	sub_addr_sec byte_36C, byte_36A
 	sub_addr byte_36D, byte_36B
 	BCC	loc_1F68D
@@ -501,8 +492,7 @@ sub_1F6AB:
 
 loc_1F6B5:
 	if_y_equal_cmp #0, loc_1F6CE
-	add_to_byte_clc byte_368, #$F0 
-	add_to_byte byte_369, #0
+	add_byte_to_word byte_368, #$F0 
 	DEY
 	JMP	loc_1F6B5
 ; ---------------------------------------------------------------------------
@@ -518,7 +508,7 @@ upload_to_ppu_1F6D1:
 	LDY	#0
 	set tilemapWidth_308, {(data_2),Y}
 
-	add_to_data $2
+	add_word_to_word_imm data_2, $2
 
 	LDX	#0
 
@@ -531,10 +521,9 @@ loc_1F6F3:
 	set_iny _PPU_DATA, {(data_2),Y}
 	if_y_greater_cmp #$10, loc_1F6F3
 	
-	add_to_byte_clc ptr_0, #$10
-	add_to_byte ptr_1, #0
+	add_byte_to_word ptr_0, #$10
 
-	add_to_data $10
+	add_word_to_word_imm data_2, $10
 
 	INX
 	if_x_greater_cmp tilemapWidth_308, loc_1F6E7

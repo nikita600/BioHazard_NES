@@ -82,7 +82,7 @@ load_palette_4F323:
 	ROL	data_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, data_2
+	add_byte_to_byte ptr_1, data_2
 
 	LDY	#0
 	set_iny data_2, {(ptr_0),Y}
@@ -95,7 +95,7 @@ load_palette_4F323:
 	TAX
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, #0
+	add_byte_to_byte ptr_1, #0
 
 	LDY	#0
 
@@ -120,10 +120,9 @@ loc_4F381:
 	set_iny _PPU_DATA, {(data_2),Y}
 	if_y_greater_cmp #$10, loc_4F381
 
-	add_to_data $10
+	add_word_to_word_imm data_2, $10
 
-	add_to_byte_clc ptr_0, #$10
-	add_to_byte ptr_1, #0
+	add_byte_to_word ptr_0, #$10
 
 	DEC	inv_spr_dscr1_30C
 	if_a_equal_cmp_addr inv_spr_dscr1_30C, #0, locret_4F3B2
@@ -172,7 +171,7 @@ get_offset_4F3EF:
 	ROL	data_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, data_2
+	add_byte_to_byte ptr_1, data_2
 
 get_sprite_ptr_4F404:
 	LDY	#0
@@ -184,7 +183,7 @@ get_sprite_descr_4F40F:
 	set inv_spr_dscr1_30C, {(data_2),Y}
 
 skip_2_byte_4f416:
-	add_to_data $2
+	add_word_to_word_imm data_2, $2
 
 	set ptr_0, byte_31E
 	set ptr_1, #0
@@ -208,7 +207,7 @@ get_offset_4F44B:
 	ROL	data_2
 	add_to_a ptr_0
 	STA	ptr_0
-	add_to_byte ptr_1, data_2
+	add_byte_to_byte ptr_1, data_2
 
 get_ptr_4F460:
 	LDY	#0
@@ -222,7 +221,7 @@ get_tilemap_offset_4F46B:
 	ROL	ptr_0
 	add_to_a data_2
 	STA	data_2
-	add_to_byte data_3, ptr_0
+	add_byte_to_byte data_3, ptr_0
 
 get_tilemap_ptr_4F480:
 	LDY	#0
@@ -234,8 +233,7 @@ get_tilemap_descr_4F48B:
 	set_iny tilemapWidth_308, {(ptr_0),Y}
 	set tilemapHeight_30A, {(ptr_0),Y}
 
-	add_to_byte_clc ptr_0, #2
-	add_to_byte ptr_1, #0
+	add_byte_to_word ptr_0, #2
 
 	set data_2, #0
 	set data_3, #$20 
@@ -248,15 +246,14 @@ get_tilemap_descr_4F48B:
 loc_4F4BA:
 	if_y_equal_cmp #0, loc_4F4CF
 
-	add_to_data $20
+	add_word_to_word_imm data_2, $20
 
 	DEY
 	JMP	loc_4F4BA
 ; ---------------------------------------------------------------------------
 
 loc_4F4CF:
-	add_to_byte_clc data_2, tilemap_size_307
-	add_to_byte data_3, #0
+	add_byte_to_word data_2, tilemap_size_307
 
 	set inv_spr_dscr1_30C, #0
 	STA	ppu_unk_byte_309
@@ -319,10 +316,9 @@ loc_4F54A:
 	INY
 	if_y_greater_cmp tilemapWidth_308, loc_4F54A
 
-	add_to_data $20
+	add_word_to_word_imm data_2, $20
 
-	add_to_byte_clc ptr_0, tilemapWidth_308
-	add_to_byte ptr_1, #0
+	add_byte_to_word ptr_0, tilemapWidth_308
 
 	INC	tilemapTypeUnk_30B
 	if_a_greater_cmp_addr tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_4F538
@@ -345,11 +341,9 @@ loc_4F5A0:
 	set_inx {ppu_data_70,X}, {(data_2),Y}
 	INY
 	if_y_greater_cmp tilemapTypeUnk_30B, loc_4F5A0
-	add_to_byte_clc data_2, tilemapTypeUnk_30B
-	add_to_byte data_3, #0
+	add_byte_to_word data_2, tilemapTypeUnk_30B
 
-	add_to_byte_clc ptr_0, tilemapTypeUnk_30B
-	add_to_byte ptr_1, #0
+	add_byte_to_word ptr_0, tilemapTypeUnk_30B
 
 	
 	JSR	wait_for_ppu_data_upload_FC8C

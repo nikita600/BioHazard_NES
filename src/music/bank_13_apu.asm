@@ -1,11 +1,12 @@
-byte_13C081:.BYTE	2,  2,	2,  8,	8,  2,	2,  8,	8,  8,	8,  2,	2,  2,	2,  2
-	
+byte_13C081:
+	.BYTE	2,  2,	2,  8,	8,  2,	2,  8,	8,  8,	8,  2,	2,  2,	2,  2
 	.BYTE	2,  2,	8,  8,	8,  8,	2,  2,	2,  2,	2,  2,	2,  2,	8,  2
 	.BYTE	8,  2,	2,  2,	2,  8,	2,  2,	2,  8,	8,  2,	2,  2,	8,  2
 	.BYTE	2,  2,	2,  2,	8,  2,	2,  2,	2,  2,	2,  2,	8,  2,	2,  2
 	.BYTE	2,  2,	8,  8,	2,  2,	1,  2
-byte_13C0C9:.BYTE	4,  4,	4, $C, $C,  4,	4, $C, $C, $C, $C,  4,	4,  4,	4,  4
-	
+
+byte_13C0C9:
+	.BYTE	4,  4,	4, $C, $C,  4,	4, $C, $C, $C, $C,  4,	4,  4,	4,  4
 	.BYTE	4,  4, $C, $C, $C, $C,	4,  4,	4,  4,	4,  4,	4,  4, $C,  4
 	.BYTE  $C,  4,	4,  4,	4, $C,	4,  4,	4, $C, $C,  4,	4,  4, $C,  4
 	.BYTE	4,  4,	4,  4, $C,  4,	4,  4,	4,  4,	4,  4, $C,  4,	4,  4
@@ -77,8 +78,8 @@ pulse_entries_13C111:
 	.BYTE	$8D, $CA, $EA, $D0
 	.BYTE	$AB, $C5, $51, $D2
 
-stru_13C211:.BYTE	$88, $84, $5F, $30 
-
+pulse_entries_13C211:
+	.BYTE	$88, $84, $5F, $30 
 	.BYTE	$88, $93, $2E, 0
 	.BYTE	$8F, $A1, 9, $F0
 	.BYTE	$B, $83, $E, $40
@@ -87,8 +88,8 @@ stru_13C211:.BYTE	$88, $84, $5F, $30
 	.BYTE	$8D, $AA, $A6, $F1
 	.BYTE	$4F, $C3, $2D, 8
 	
-noise_env_13C231:.BYTE	$1F, $1F,	$1F, $1F 
-
+noise_env_13C231:
+	.BYTE	$1F, $1F, $1F, $1F 
 	.BYTE	$1F, $1F, $1F, $1F
 	.BYTE	$1F, $1F, $1F, $1F
 	.BYTE	$1F, $1F, $1F, $1F
@@ -110,11 +111,12 @@ noise_env_13C231:.BYTE	$1F, $1F,	$1F, $1F
 	.BYTE	$1F, $1F, $1F, $1F
 	.BYTE	$1F, $1F, $1F, $1F
 	.BYTE $1F
-noise_loop_13C286:.BYTE	  0	
 
-noise_len_13C287:.BYTE	 0,$8E,	 0,$8E,$48,$8F,	 0,$8F,$48,$87,$18,$8A,$18,$8B,$38,$8C
-	
+noise_loop_13C286:
+	.BYTE	  0	
 
+noise_len_13C287:
+	.BYTE	 0,$8E,	 0,$8E,$48,$8F,	 0,$8F,$48,$87,$18,$8A,$18,$8B,$38,$8C
 	.BYTE $18,$8C,$28,  9,$18, $B,$28,$8D,	0,$8D,$38,$84,$38,$84,$58,$86
 	.BYTE $28,$85,$28,$85,$B8,$86,$E0,$88,	0,$88,$28,$88,$E0,$89,$E0,$89
 	.BYTE $48,$8A,$48, $C,	0,$8F,$D0,$8F,	0,  0,	0,  2,	0,  4,	0,$81
@@ -125,7 +127,9 @@ noise_len_13C287:.BYTE	 0,$8E,	 0,$8E,$48,$8F,	 0,$8F,$48,$87,$18,$8A,$18,$8B,$3
 	.BYTE $D0,$8F,	0,  0,	0,  2,	0,  4,	0,$81,$28,$82,$60,$83,$38,$80
 	.BYTE $58,$81,$58,$83,$48,$8E,	0,$8E,$48,$8F,	0,$8F,$48,$87,$18,$8A
 	.BYTE $18,$8B,$38,$8C,$18,$8C,$28,  9,$18
-off_13C330:.WORD byte_13C37A	
+
+off_13C330:
+	.WORD byte_13C37A	
 	.WORD byte_13C37F
 	.WORD byte_13C384
 	.WORD byte_13C389
@@ -162,85 +166,109 @@ off_13C330:.WORD byte_13C37A
 	.WORD byte_13C50C
 	.WORD byte_13C51D
 	.WORD byte_13C532
-byte_13C37A:.BYTE $1E,$B4,$1E,$8E,	0 
-byte_13C37F:.BYTE $1E,$80,$1E,$83,	0 
-byte_13C384:.BYTE $1E,$83,$1E,$82,	0 
-byte_13C389:.BYTE $1E,$8D,	6,$8C,	6,$8F,	0 
-byte_13C390:.BYTE $1E,$8E,$1E,$B4,	0 
-byte_13C395:.BYTE $2E,$B7,	0	
-byte_13C398:.BYTE $1E,$89,$1E,$83,	0 
-byte_13C39D:.BYTE $1E,$85,$1E,$84,	0 
-byte_13C3A2:.BYTE $1E,$84,$1E,$87,	0 
-byte_13C3A7:.BYTE $1E,$86,	6,$81,	6,$80,	0 
-byte_13C3AE:.BYTE $1E,$83,$1E,$89,	0 
-byte_13C3B3:.BYTE $2E,$88,	0	
-byte_13C3B6:.BYTE  $C,$96, $C,$97, $C,$96, $C,$97, $C,$96, $C,$97, $C,$96, $C,$97
-	
+byte_13C37A:
+	.BYTE $1E,$B4,$1E,$8E,	0 
+byte_13C37F:
+	.BYTE $1E,$80,$1E,$83,	0 
+byte_13C384:
+	.BYTE $1E,$83,$1E,$82,	0 
+byte_13C389:
+	.BYTE $1E,$8D,	6,$8C,	6,$8F,	0 
+byte_13C390:
+	.BYTE $1E,$8E,$1E,$B4,	0 
+byte_13C395:
+	.BYTE $2E,$B7,	0	
+byte_13C398:
+	.BYTE $1E,$89,$1E,$83,	0 
+byte_13C39D:
+	.BYTE $1E,$85,$1E,$84,	0 
+byte_13C3A2:
+	.BYTE $1E,$84,$1E,$87,	0 
+byte_13C3A7:
+	.BYTE $1E,$86,	6,$81,	6,$80,	0 
+byte_13C3AE:
+	.BYTE $1E,$83,$1E,$89,	0 
+byte_13C3B3:
+	.BYTE $2E,$88,	0	
+byte_13C3B6:
+	.BYTE  $C,$96, $C,$97, $C,$96, $C,$97, $C,$96, $C,$97, $C,$96, $C,$97
 	.BYTE  $C,$96, $C,$AA, $C,$96, $C,$AA, $C,$96, $C,$AA, $C,$96, $C,$AA
 	.BYTE	0
-byte_13C3D7:.BYTE $14,$93,	8,$AA,	0 
-byte_13C3DC:.BYTE  $C,$E8, $C,$EB, $C,$E8, $C,$EB, $C,$E8, $C,$EB, $C,$E8, $C,$EB
-	
+byte_13C3D7:
+	.BYTE $14,$93,	8,$AA,	0 
+byte_13C3DC:
+	.BYTE  $C,$E8, $C,$EB, $C,$E8, $C,$EB, $C,$E8, $C,$EB, $C,$E8, $C,$EB
 	.BYTE  $C,$E8, $C,$AA, $C,$E8, $C,$AA, $C,$E8, $C,$AA, $C,$E8, $C,$AA
 	.BYTE	0
-byte_13C3FD:.BYTE $14,$91,	8,$AA,	0 
-byte_13C402:.BYTE $1E,$EF,	6,$EE,	6,$E9,	0 
-byte_13C409:.BYTE $1E,$EB,$1E,$EA,	0 
-byte_13C40E:.BYTE  $C,$EC, $C,$ED, $C,$EC, $C,$ED, $C,$EC, $C,$ED, $C,$EC,	4,$ED
-	
+byte_13C3FD:
+	.BYTE $14,$91,	8,$AA,	0 
+byte_13C402:
+	.BYTE $1E,$EF,	6,$EE,	6,$E9,	0 
+byte_13C409:
+	.BYTE $1E,$EB,$1E,$EA,	0 
+byte_13C40E:
+	.BYTE  $C,$EC, $C,$ED, $C,$EC, $C,$ED, $C,$EC, $C,$ED, $C,$EC,	4,$ED
 	.BYTE	6,$AA,	0
-byte_13C421:.BYTE  $C,$EB, $C,$EA, $C,$EB, $C,$EA, $C,$EB, $C,$EA, $C,$EB, $C,$EA
-	
+byte_13C421:
+	.BYTE  $C,$EB, $C,$EA, $C,$EB, $C,$EA, $C,$EB, $C,$EA, $C,$EB, $C,$EA
 	.BYTE	0,$EB, $C,$AA,	0
-byte_13C436:.BYTE	6,$EB,	6,$E8,	6,$E9,	6,$E8,	0 
-byte_13C43F:.BYTE	6,$EB,	6,$E8,	6,$EB,	6,$EA,	0 
-byte_13C448:.BYTE	6,$94,$1E,$97,	6,$94,	0 
-byte_13C44F:.BYTE $1E,$91,$1E,$EB,	0 
-byte_13C454:.BYTE $2E,$EA,	0	
-byte_13C457:.BYTE  $C,$80,	8,$AA, $C,$80,	8,$AA, $C,$B7, $C,$AA, $C,$B7, $C,$AA
-	
+byte_13C436:
+	.BYTE	6,$EB,	6,$E8,	6,$E9,	6,$E8,	0 
+byte_13C43F:
+	.BYTE	6,$EB,	6,$E8,	6,$EB,	6,$EA,	0 
+byte_13C448:
+	.BYTE	6,$94,$1E,$97,	6,$94,	0 
+byte_13C44F:
+	.BYTE $1E,$91,$1E,$EB,	0 
+byte_13C454:
+	.BYTE $2E,$EA,	0	
+byte_13C457:
+	.BYTE  $C,$80,	8,$AA, $C,$80,	8,$AA, $C,$B7, $C,$AA, $C,$B7, $C,$AA
 	.BYTE  $C,$8A,	8,$AA,	0
-byte_13C46C:.BYTE  $C,$80,	8,$AA, $C,$B7,	8,$AA, $C,$8A, $C,$AA, $C,$80, $C,$AA
-	
+byte_13C46C:
+	.BYTE  $C,$80,	8,$AA, $C,$B7,	8,$AA, $C,$8A, $C,$AA, $C,$80, $C,$AA
 	.BYTE  $C,$84, $C,$AA, $C,$84, $C,$AA,	0
-byte_13C485:.BYTE  $C,$80,	8,$AA, $C,$84,	8,$AA, $C,$8A,	8,$AA, $C,$B7,	8,$AA
-	
+byte_13C485:
+	.BYTE  $C,$80,	8,$AA, $C,$84,	8,$AA, $C,$8A,	8,$AA, $C,$B7,	8,$AA
 	.BYTE	0
-byte_13C496:.BYTE  $C,$80,	8,$AA, $C,$B7,	8,$AA, $C,$8A, $C,$AA, $C,$84, $C,$AA
-	
+byte_13C496:
+	.BYTE  $C,$80,	8,$AA, $C,$B7,	8,$AA, $C,$8A, $C,$AA, $C,$84, $C,$AA
 	.BYTE  $C,$84,	8,$AA,	0
-byte_13C4AB:.BYTE  $C,$80,	8,$AA, $C,$84,	8,$AA, $C,$8A,	8,$AA, $C,$8A,	8,$AA
-	
+byte_13C4AB:
+	.BYTE  $C,$80,	8,$AA, $C,$84,	8,$AA, $C,$8A,	8,$AA, $C,$8A,	8,$AA
 	.BYTE	0
-byte_13C4BC:.BYTE  $C,$80,	8,$AA, $C,$84,	8,$AA, $C,$80,	8,$AA, $C,$84,	8,$AA
-	
+byte_13C4BC:
+	.BYTE  $C,$80,	8,$AA, $C,$84,	8,$AA, $C,$80,	8,$AA, $C,$84,	8,$AA
 	.BYTE	0
-byte_13C4CD:.BYTE  $C,$80,	8,$AA, $C,$B7,	8,$AA, $C,$80,	8,$AA, $C,$84,	8,$AA
-	
+byte_13C4CD:
+	.BYTE  $C,$80,	8,$AA, $C,$B7,	8,$AA, $C,$80,	8,$AA, $C,$84,	8,$AA
 	.BYTE	0
-byte_13C4DE:.BYTE  $C,$84, $C,$AA, $C,$80, $C,$AA, $C,$80, $C,$AA, $C,$80, $C,$AA
-	
+byte_13C4DE:
+	.BYTE  $C,$84, $C,$AA, $C,$80, $C,$AA, $C,$80, $C,$AA, $C,$80, $C,$AA
 	.BYTE  $C,$84, $C,$AA, $C,$80, $C,$AA, $C,$80,	8,$AA,	0
-byte_13C4FB:.BYTE  $C,$84,	8,$AA, $C,$80,	8,$AA, $C,$84,	8,$AA, $C,$80,	8,$AA
-	
+byte_13C4FB:
+	.BYTE  $C,$84,	8,$AA, $C,$80,	8,$AA, $C,$84,	8,$AA, $C,$80,	8,$AA
 	.BYTE	0
-byte_13C50C:.BYTE  $C,$84,	8,$AA, $C,$80,	8,$AA, $C,$8A,	8,$AA, $C,$80,	8,$AA
-	
+byte_13C50C:
+	.BYTE  $C,$84,	8,$AA, $C,$80,	8,$AA, $C,$8A,	8,$AA, $C,$80,	8,$AA
 	.BYTE	0
-byte_13C51D:.BYTE  $C,$84,	8,$AA, $C,$80,	8,$AA, $C,$8A, $C,$AA, $C,$8A, $C,$AA
-	
+byte_13C51D:
+	.BYTE  $C,$84,	8,$AA, $C,$80,	8,$AA, $C,$8A, $C,$AA, $C,$8A, $C,$AA
 	.BYTE  $C,$80,	8,$AA,	0
-byte_13C532:.BYTE  $C,$84,	8,$AA, $C,$80,	8,$AA, $C,$8A, $C,$AA, $C,$8A, $C,$AA
-	
+byte_13C532:
+	.BYTE  $C,$84,	8,$AA, $C,$80,	8,$AA, $C,$8A, $C,$AA, $C,$8A, $C,$AA
 	.BYTE  $C,$84,	8,$AA,	0,  0
-byte_13C548:.BYTE $B, $4F, $C5, $6A, $C5, $85, $C5,	$FD, $F, $FE, $78, $FF,	$B0, 0
+byte_13C548:
+	.BYTE $B, $4F, $C5, $6A, $C5, $85, $C5,	$FD, $F, $FE, $78, $FF,	$B0, 0
 	
 	.BYTE	0,  0,	0,  0,	0,  1,	0,  2,	3,  4,	5,  6,	7,  6,	8,  9
 	.BYTE  $A, $B,$FC,  0,$FD, $F,$FE,$78,$FF,$B0,	0,  0,	0,  0,	0, $C
 	.BYTE  $D, $E, $F,$10, $E,$11,$12,$13,$14,$15,$16,$17,$18,$FC,	0,$FD
 	.BYTE  $F,$FE,$78,$19,$1A,$1B,$1C,$1D,$1E,$1F,$20,$21,$22,$23,$24,$23
 	.BYTE $22,$FC,	0
-off_13C599:.WORD byte_13C5E3	
+
+off_13C599:
+	.WORD byte_13C5E3	
 	.WORD byte_13C5F4
 	.WORD byte_13C601
 	.WORD byte_13C612
@@ -277,93 +305,106 @@ off_13C599:.WORD byte_13C5E3
 	.WORD byte_13C7BD
 	.WORD byte_13C7CA
 	.WORD byte_13C7CF
-byte_13C5E3:.BYTE  $C,$83, $C,$80, $C,$86, $C,$84, $C,$86, $C,$AA, $C,$86, $C,$AA
-	
+byte_13C5E3:
+	.BYTE  $C,$83, $C,$80, $C,$86, $C,$84, $C,$86, $C,$AA, $C,$86, $C,$AA
 	.BYTE	0
-byte_13C5F4:.BYTE	8,$9B, $C,$AA, $C,$86, $C,$AA, $C,$86, $C,$AA,	0
-	
-byte_13C601:.BYTE  $C,$83, $C,$80, $C,$86, $C,$84, $C,$9A, $C,$9B, $C,$99, $C,$9F
-	
+byte_13C5F4:
+	.BYTE	8,$9B, $C,$AA, $C,$86, $C,$AA, $C,$86, $C,$AA,	0
+byte_13C601:
+	.BYTE  $C,$83, $C,$80, $C,$86, $C,$84, $C,$9A, $C,$9B, $C,$99, $C,$9F
 	.BYTE	0
-byte_13C612:.BYTE  $C,$99, $C,$9B, $C,$9A, $C,$84, $C,$86, $C,$80, $C,$83, $C,$8D
-	
+byte_13C612:
+	.BYTE  $C,$99, $C,$9B, $C,$9A, $C,$84, $C,$86, $C,$80, $C,$83, $C,$8D
 	.BYTE	0
-byte_13C623:.BYTE	8,$9F, $C,$AA, $C,$99, $C,$AA, $C,$99, $C,$AA,	0
-	
-byte_13C630:.BYTE  $C,$99, $C,$9B, $C,$9A, $C,$84, $C,$86, $C,$84, $C,$86, $C,$80
-	
+byte_13C623:
+	.BYTE	8,$9F, $C,$AA, $C,$99, $C,$AA, $C,$99, $C,$AA,	0
+byte_13C630:
+	.BYTE  $C,$99, $C,$9B, $C,$9A, $C,$84, $C,$86, $C,$84, $C,$86, $C,$80
 	.BYTE	0
-byte_13C641:.BYTE  $C,$83, $C,$80, $C,$86, $C,$84, $C,$86, $C,$80, $C,$83, $C,$8D
-	
+byte_13C641:
+	.BYTE  $C,$83, $C,$80, $C,$86, $C,$84, $C,$86, $C,$80, $C,$83, $C,$8D
 	.BYTE	0
-byte_13C652:.BYTE  $C,$8F, $C,$8D, $C,$83, $C,$8D,	8,$8F, $C,$AA,	0
-	
-byte_13C65F:.BYTE  $C,$8D, $C,$AA, $C,$83, $C,$AA, $C,$80, $C,$AA, $C,$80, $C,$AA
-	
+byte_13C652:
+	.BYTE  $C,$8F, $C,$8D, $C,$83, $C,$8D,	8,$8F, $C,$AA,	0
+byte_13C65F:
+	.BYTE  $C,$8D, $C,$AA, $C,$83, $C,$AA, $C,$80, $C,$AA, $C,$80, $C,$AA
 	.BYTE	0
-byte_13C670:.BYTE  $C,$80, $C,$86, $C,$80, $C,$83,	8,$8D, $C,$AA,	0
-	
-byte_13C67D:.BYTE  $C,$83, $C,$86, $C,$9B, $C,$AA, $C,$9B, $C,$AA, $C,$99, $C,$AA
-	
+byte_13C670:
+	.BYTE  $C,$80, $C,$86, $C,$80, $C,$83,	8,$8D, $C,$AA,	0
+byte_13C67D:
+	.BYTE  $C,$83, $C,$86, $C,$9B, $C,$AA, $C,$9B, $C,$AA, $C,$99, $C,$AA
 	.BYTE	0
-byte_13C68E:.BYTE  $C,$9B, $C,$AA, $C,$86, $C,$AA,	6,$83,	0 
-byte_13C699:.BYTE	8,$9B, $C,$AA, $C,$86, $C,$AA, $C,$80, $C,$AA,	0
-	
-byte_13C6A6:.BYTE	6,$9B, $C,$86, $C,$AA, $C,$86, $C,$AA,	0 
-byte_13C6B1:.BYTE  $C,$8F, $C,$8D, $C,$83, $C,$8D,	6,$8F,	0 
-byte_13C6BC:.BYTE	8,$8F, $C,$AA,	8,$8A, $C,$AA,	0 
-byte_13C6C5:.BYTE  $C,$B7, $C,$B4, $C,$8A, $C,$88, $C,$8A, $C,$AA, $C,$8A, $C,$AA
-	
+byte_13C68E:
+	.BYTE  $C,$9B, $C,$AA, $C,$86, $C,$AA,	6,$83,	0 
+byte_13C699:
+	.BYTE	8,$9B, $C,$AA, $C,$86, $C,$AA, $C,$80, $C,$AA,	0
+byte_13C6A6:
+	.BYTE	6,$9B, $C,$86, $C,$AA, $C,$86, $C,$AA,	0 
+byte_13C6B1:
+	.BYTE  $C,$8F, $C,$8D, $C,$83, $C,$8D,	6,$8F,	0 
+byte_13C6BC:
+	.BYTE	8,$8F, $C,$AA,	8,$8A, $C,$AA,	0 
+byte_13C6C5:
+	.BYTE  $C,$B7, $C,$B4, $C,$8A, $C,$88, $C,$8A, $C,$AA, $C,$8A, $C,$AA
 	.BYTE	0
-byte_13C6D6:.BYTE	8,$8F, $C,$AA, $C,$8A, $C,$AA, $C,$8A, $C,$AA,	0
-	
-byte_13C6E3:.BYTE  $C,$B7, $C,$B4, $C,$8A, $C,$88, $C,$8E, $C,$8F, $C,$8D, $C,$83
-	
+byte_13C6D6:
+	.BYTE	8,$8F, $C,$AA, $C,$8A, $C,$AA, $C,$8A, $C,$AA,	0
+byte_13C6E3:
+	.BYTE  $C,$B7, $C,$B4, $C,$8A, $C,$88, $C,$8E, $C,$8F, $C,$8D, $C,$83
 	.BYTE	0
-byte_13C6F4:.BYTE  $C,$8D, $C,$8F, $C,$8E, $C,$88, $C,$8A, $C,$B4, $C,$B7, $C,$B1
-	
+byte_13C6F4:
+	.BYTE  $C,$8D, $C,$8F, $C,$8E, $C,$88, $C,$8A, $C,$B4, $C,$B7, $C,$B1
 	.BYTE	0
-byte_13C705:.BYTE	8,$83, $C,$AA, $C,$8D, $C,$AA, $C,$8D, $C,$AA,	0
-	
-byte_13C712:.BYTE  $C,$8D, $C,$8F, $C,$8E, $C,$88, $C,$8A, $C,$88, $C,$8A, $C,$B4
-	
+byte_13C705:
+	.BYTE	8,$83, $C,$AA, $C,$8D, $C,$AA, $C,$8D, $C,$AA,	0
+byte_13C712:
+	.BYTE  $C,$8D, $C,$8F, $C,$8E, $C,$88, $C,$8A, $C,$88, $C,$8A, $C,$B4
 	.BYTE	0
-byte_13C723:.BYTE  $C,$B7, $C,$B4, $C,$8A, $C,$88, $C,$8A, $C,$B4, $C,$B7, $C,$B1
-	
+byte_13C723:
+	.BYTE  $C,$B7, $C,$B4, $C,$8A, $C,$88, $C,$8A, $C,$B4, $C,$B7, $C,$B1
 	.BYTE	0
-byte_13C734:.BYTE  $C,$B3, $C,$B1, $C,$B7, $C,$B1,	6,$B3,	0 
-byte_13C73F:.BYTE  $C,$B4, $C,$AA, $A,$B4, $A,$AA, $A,$B4,	0 
-byte_13C74A:.BYTE  $C,$B7, $C,$AA, $C,$B3, $C,$AA, $C,$B7, $C,$AA, $C,$B3, $C,$AA
-	
+byte_13C734:
+	.BYTE  $C,$B3, $C,$B1, $C,$B7, $C,$B1,	6,$B3,	0 
+byte_13C73F:
+	.BYTE  $C,$B4, $C,$AA, $A,$B4, $A,$AA, $A,$B4,	0 
+byte_13C74A:
+	.BYTE  $C,$B7, $C,$AA, $C,$B3, $C,$AA, $C,$B7, $C,$AA, $C,$B3, $C,$AA
 	.BYTE	0
-byte_13C75B:.BYTE  $C,$8A, $C,$AA, $C,$8A, $C,$AA,	8,$8A, $C,$AA,	0
-	
-byte_13C768:.BYTE  $C,$B1, $C,$AA, $C,$B1, $C,$AA, $C,$B1, $C,$AA, $C,$B1, $C,$AA
-	
+byte_13C75B:
+	.BYTE  $C,$8A, $C,$AA, $C,$8A, $C,$AA,	8,$8A, $C,$AA,	0
+byte_13C768:
+	.BYTE  $C,$B1, $C,$AA, $C,$B1, $C,$AA, $C,$B1, $C,$AA, $C,$B1, $C,$AA
 	.BYTE	0
-byte_13C779:.BYTE  $C,$B1, $C,$B7, $C,$B1, $C,$B3,	8,$B2, $C,$AA,	0
-	
-byte_13C786:.BYTE  $C,$B3, $C,$B7, $C,$8A, $C,$AA, $C,$8A, $C,$AA, $C,$8A, $C,$AA
-	
+byte_13C779:
+	.BYTE  $C,$B1, $C,$B7, $C,$B1, $C,$B3,	8,$B2, $C,$AA,	0
+byte_13C786:
+	.BYTE  $C,$B3, $C,$B7, $C,$8A, $C,$AA, $C,$8A, $C,$AA, $C,$8A, $C,$AA
 	.BYTE	0
-byte_13C797:.BYTE  $A,$8A, $A,$AA, $C,$B7, $C,$AA, $C,$B1, $C,$AA,	0
-	
-byte_13C7A4:.BYTE  $A,$B3, $A,$AA, $A,$B1, $A,$AA,	0 
-byte_13C7AD:.BYTE  $A,$B3, $A,$B1,	6,$B3,	0 
-byte_13C7B4:.BYTE  $C,$83,	8,$AA, $C,$8A,	8,$AA,	0 
-byte_13C7BD:.BYTE  $C,$83, $C,$AA, $C,$83, $C,$AA, $C,$8A,	8,$AA,	0
-	
-byte_13C7CA:.BYTE  $C,$B7,	0,$AA,	0 
-byte_13C7CF:.BYTE  $C,$86,	8,$AA, $C,$8A,	8,$AA,	0,  0 ;	DATA XREF: BANK_13:C5E1o
-byte_13C7D9:.BYTE  $B,$E0,$C7,  5,$C8,$2A,$C8,$FD, $F,$FE,$78,$FF,$B0,  0,	0,  0
-	
+byte_13C797:
+	.BYTE  $A,$8A, $A,$AA, $C,$B7, $C,$AA, $C,$B1, $C,$AA,	0
+byte_13C7A4:
+	.BYTE  $A,$B3, $A,$AA, $A,$B1, $A,$AA,	0 
+byte_13C7AD:
+	.BYTE  $A,$B3, $A,$B1,	6,$B3,	0 
+byte_13C7B4:
+	.BYTE  $C,$83,	8,$AA, $C,$8A,	8,$AA,	0 
+byte_13C7BD:
+	.BYTE  $C,$83, $C,$AA, $C,$83, $C,$AA, $C,$8A,	8,$AA,	0
+byte_13C7CA:
+	.BYTE  $C,$B7,	0,$AA,	0 
+byte_13C7CF:
+	.BYTE  $C,$86,	8,$AA, $C,$8A,	8,$AA,	0,  0 
+byte_13C7D9:
+	.BYTE  $B,$E0,$C7,  5,$C8,$2A,$C8,$FD, $F,$FE,$78,$FF,$B0,  0,	0,  0
 	.BYTE	0,  0,	0,  1,	2,  3,	0,  1,	4,  5,	0,  1,	6,  7,	8,  9
 	.BYTE  $A, $B,	8,  9, $A, $C,	0, $D,	6, $E,$FC,  0,$FD, $F,$FE,$78
 	.BYTE $FF,$B0,	0,  0,	0,  0,	0, $F,$10,$11,$12,$13,$10,$11,$14,$15
 	.BYTE $10,$11,$16,$17,$18,$19,$1A,$1B,$1C,$1D,$1E,$1F,$10,$11,$20,$FC
 	.BYTE	0,$FD, $F,$FE,$78,$21,$22,$21,$22,$21,$22,$21,$22,$21,$22,$21
 	.BYTE $21,$23,$23,$23,$23,$24,$24,$24,$24,$24,$24,$24,$24,$FC,	0
-off_13C848:.WORD byte_13C876	
+
+off_13C848:
+	.WORD byte_13C876	
 	.WORD byte_13C887
 	.WORD byte_13C898
 	.WORD byte_13C8AB
@@ -463,7 +504,9 @@ byte_13CAC8:.BYTE  $B,$CF,$CA,$E4,$CA,$F9,$CA,$FD, $F,$FE,$A0,$FF,$B0,  0,	0,  0
 	.BYTE	0,  0,	0,  0,	1,  2,	3,  4,	5,  6,$FC,  0,$FD, $F,$FE,$A0
 	.BYTE $FF,$B0,	0,  0,	0,  0,	0,  7,	8,  9, $A, $B, $C, $D, $E,$FC
 	.BYTE	0,$FD, $F,$FE,$A0, $F,$10,$11,$12,$13,$14,$15,$16,$FC,	0
-off_13CB07:.WORD byte_13CB2D	
+	
+off_13CB07:
+	.WORD byte_13CB2D	
 	.WORD byte_13CB3E
 	.WORD byte_13CB4F
 	.WORD byte_13CB56

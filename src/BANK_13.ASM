@@ -335,9 +335,7 @@ loc_13D5C2:
 	set {apu_pulse1_env_744,X}, {(apu_unk_FE),Y}
 	AND	#$10
 	BEQ	loc_13D5D4
-	LDA	apu_pulse1_env_744,X
-	ORA	#$F
-	STA	apu_pulse1_env_744,X
+	or_byte {apu_pulse1_env_744,X}, #$F
 
 loc_13D5D4:
 	INY
@@ -641,9 +639,7 @@ loc_13D851:
 	set {pulse1_env_713,X}, {(apu_unk_FE),Y}
 	AND	#$10
 	BEQ	loc_13D863
-	LDA	pulse1_env_713,X
-	ORA	#$F
-	STA	pulse1_env_713,X
+	or_byte {pulse1_env_713,X}, #$F
 
 loc_13D863:
 	INY
@@ -1328,9 +1324,7 @@ load_boss_sprite_13DFDC:
 	mult_word_by_2 ptr_0
 	mult_word_by_2 ptr_0
 	mult_word_by_2 ptr_0
-	LDA	ptr_1
-	ORA	#$10
-	STA	ptr_1
+	or_byte ptr_1, #$10
 	RTS
 ; End of function load_boss_sprite_13DFDC
 

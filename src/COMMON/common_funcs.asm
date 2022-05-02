@@ -230,9 +230,7 @@ loc_FDD0:
 loc_FDD8:
 	load_a_masked {ppu_data_70,X}, #$80 
 	BEQ	loc_FDEC
-	LDA	ppu_ctrl_31F
-	ORA	#4
-	STA	ppu_ctrl_31F
+	or_byte ppu_ctrl_31F, #4
 	STA	_PPU_CTRL
 	JMP	loc_FDF7
 ; ---------------------------------------------------------------------------

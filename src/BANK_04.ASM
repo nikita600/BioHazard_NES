@@ -194,9 +194,7 @@ skip_2_byte_4f416:
 	mult_word_by_2 ptr_0
 	mult_word_by_2 ptr_0
 	mult_word_by_2 ptr_0
-	LDA	ptr_1
-	ORA	#$10
-	STA	ptr_1
+	or_byte ptr_1, #$10
 	RTS
 ; End of function get_inventory_sprite_ptr_4F3E7
 

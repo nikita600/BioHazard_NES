@@ -37,6 +37,12 @@
 	STA	addr
 .endmacro
 
+.macro or_byte addr, value
+	LDA	addr
+	ORA	value
+	STA	addr
+.endmacro
+
 .macro xor_byte addr, value
 	LDA addr
 	EOR value
@@ -47,7 +53,7 @@
 
 .macro sub_a_sec value
 	SEC
-	SBC	src
+	SBC	value
 .endmacro
 
 .macro sub_addr_sec dst, value

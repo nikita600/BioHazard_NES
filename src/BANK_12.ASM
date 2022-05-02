@@ -2005,9 +2005,7 @@ loc_12A8FD:
 	add_to_byte byte_371, byte_30E
 
 	JSR	sub_12A944
-	LDA	byte_36F
-	ORA	tilemapFrameCount_30D
-	STA	byte_36F
+	or_byte byte_36F, tilemapFrameCount_30D
 	JMP	loc_12A8E3
 ; ---------------------------------------------------------------------------
 

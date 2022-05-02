@@ -164,9 +164,7 @@ loc_2D21A:
 	mult_word_by_2 data_2
 	mult_word_by_2 data_2
 	mult_word_by_2 data_2
-	LDA	data_3
-	ORA	#$10
-	STA	data_3
+	or_byte data_3, #$10
 
 loc_2D23E:
 	set tilemapWidth_308, #0

@@ -1869,9 +1869,7 @@ loc_927A:
 	sub_addr_sec byte_36A, byte_42C
 	sub_addr byte_36B, byte_42D
 	BCC	loc_92A3
-	LDA	sprite_length_30F
-	ORA	#$F
-	STA	sprite_length_30F
+	or_byte sprite_length_30F, #$F
 	JMP	loc_92CB
 ; ---------------------------------------------------------------------------
 
@@ -1895,9 +1893,7 @@ loc_92CB:
 	sub_addr_sec byte_366, byte_42E
 	sub_addr byte_367, byte_42F
 	BCC	loc_92F4
-	LDA	sprite_length_30F
-	ORA	#$F0 
-	STA	sprite_length_30F
+	or_byte sprite_length_30F, #$F0 
 	JMP	loc_931C
 ; ---------------------------------------------------------------------------
 
@@ -4728,9 +4724,7 @@ loc_D5AA:
 
 loc_D5C9:
 	if_not_equal_cmp_addr {array_unk_3A7,Y}, #2, loc_D5D8
-	LDA	byte_317
-	ORA	#$40 
-	STA	byte_317
+	or_byte byte_317, #$40 
 
 loc_D5D8:
 	if_equal_cmp_addr objectIdx_318, #7, loc_D60C
@@ -5221,9 +5215,7 @@ sub_DADA:
 	STA	byte_36C
 	sub_addr byte_36B, {array_unk_3BB,X}
 	STA	byte_36D
-	LDA	sprite_length_30F
-	ORA	#3
-	STA	sprite_length_30F
+	or_byte sprite_length_30F, #3
 	JMP	loc_DB2A
 ; ---------------------------------------------------------------------------
 
@@ -5232,9 +5224,7 @@ loc_DB0F:
 	STA	byte_36C
 	sub_addr {array_unk_3BB,X}, byte_36B
 	STA	byte_36D
-	LDA	sprite_length_30F
-	ORA	#$C
-	STA	sprite_length_30F
+	or_byte sprite_length_30F, #$C
 
 loc_DB2A:
 	sub_addr_sec byte_366, {array_unk_3D9,X}
@@ -5244,9 +5234,7 @@ loc_DB2A:
 	STA	byte_368
 	sub_addr byte_367, {array_unk_3CF,X}
 	STA	byte_369
-	LDA	sprite_length_30F
-	ORA	#$30 
-	STA	sprite_length_30F
+	or_byte sprite_length_30F, #$30 
 	JMP	loc_DB72
 ; ---------------------------------------------------------------------------
 
@@ -5255,9 +5243,7 @@ loc_DB57:
 	STA	byte_368
 	sub_addr {array_unk_3CF,X}, byte_367
 	STA	byte_369
-	LDA	sprite_length_30F
-	ORA	#$C0 
-	STA	sprite_length_30F
+	or_byte sprite_length_30F, #$C0 
 
 loc_DB72:
 	LDA	byte_368
@@ -6388,9 +6374,7 @@ loc_E7B1:
 	add_to_byte byte_371, byte_30E
 
 	JSR	sub_E7F8
-	LDA	byte_36F
-	ORA	tilemapFrameCount_30D
-	STA	byte_36F
+	or_byte byte_36F, tilemapFrameCount_30D
 	JMP	loc_E797
 ; ---------------------------------------------------------------------------
 
@@ -7861,9 +7845,7 @@ start_read_tilemap_F2F3:
 	JSR	sub_EDA2
 	LDX	#0
 	set_inx ppu_data_70, #0
-	LDA	tilemapTypeUnk_30B
-	ORA	#$80 
-	STA	tilemapTypeUnk_30B
+	or_byte tilemapTypeUnk_30B, #$80 
 	JSR	sub_F51D
 	if_equal ppu_scroll_y_305, loc_F37A
 	TXA
@@ -7886,9 +7868,7 @@ start_read_tilemap_F344:
 	JSR	sub_F504
 	JSR	sub_EDA2
 	from_stack_to_x
-	LDA	tilemapTypeUnk_30B
-	ORA	#$80 
-	STA	tilemapTypeUnk_30B
+	or_byte tilemapTypeUnk_30B, #$80 
 	JSR	sub_F51D
 
 loc_F37A:
@@ -8815,9 +8795,7 @@ loc_FB8C:
 	mult_word_by_2 ptr_0
 	mult_word_by_2 ptr_0
 	mult_word_by_2 ptr_0
-	LDA	ptr_1
-	ORA	#$10
-	STA	ptr_1
+	or_byte ptr_1, #$10
 	JSR	ppu_upset_data_C9C7
 	RTS
 ; End of function upload_text_palette_to_ppu_FB85

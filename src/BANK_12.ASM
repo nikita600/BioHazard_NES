@@ -1052,9 +1052,7 @@ ppu_clear_ram_1289A1:
 	JSR	exec_b0_c7_128474
 	set objectIdx_318, #4
 	JSR	exec_b0_c8_12848F
-	LDA	ppu_ctrl_31F
-	AND	#$FC 
-	STA	ppu_ctrl_31F
+	and_byte ppu_ctrl_31F, #$FC 
 	JSR	ppu_update_ctrl_mask_FE86
 	JSR	exec_b0_cD_128516
 	JSR	sub_12EDF5
@@ -2079,9 +2077,7 @@ loc_12A8FD:
 ; ---------------------------------------------------------------------------
 
 loc_12A91F:
-	LDA	byte_36F
-	AND	tilemapFrameCount_30D
-	STA	byte_36F
+	and_byte byte_36F, tilemapFrameCount_30D
 	INC	inv_spr_dscr1_30C
 	if_greater_cmp_addr inv_spr_dscr1_30C, tilemapTypeUnk_30B, loc_12A8D3
 

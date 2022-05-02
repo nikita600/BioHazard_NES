@@ -3323,9 +3323,7 @@ loc_C743:
 ; ---------------------------------------------------------------------------
 
 loc_C75A:
-	LDA	ppu_ctrl_31F
-	AND	#$FC 
-	STA	ppu_ctrl_31F
+	and_byte ppu_ctrl_31F, #$FC 
 
 loc_C762:
 	JSR	ppu_update_ctrl_mask_FE86
@@ -5295,9 +5293,7 @@ sub_D9E4:
 	LDA	byte_36A
 	AND	#$F
 	BEQ	loc_DA0B
-	LDA	byte_36A
-	AND	#$F0 
-	STA	byte_36A
+	and_byte byte_36A, #$F0 
 	if_not_equal_cmp_addr {array_unk_3A7,X}, #2, loc_DA0B
 	add_to_byte_clc byte_36A, #$10
 	add_to_byte byte_36B, #0
@@ -5306,9 +5302,7 @@ loc_DA0B:
 	LDA	byte_366
 	AND	#$F
 	BEQ	locret_DA32
-	LDA	byte_366
-	AND	#$F0 
-	STA	byte_366
+	and_byte byte_366, #$F0 
 	if_not_equal_cmp_addr {array_unk_3A7,X}, #0, locret_DA32
 	add_to_byte_clc byte_366, #$10
 	add_to_byte byte_367, #0
@@ -5488,9 +5482,7 @@ loc_DB98:
 	LDA	byte_369
 	SBC	byte_36D
 	BCC	loc_DBC3
-	LDA	sprite_length_30F
-	AND	#$F0 
-	STA	sprite_length_30F
+	and_byte sprite_length_30F, #$F0 
 	if_equal_cmp #$30, loc_DBBB
 	set {array_unk_3A7,X}, #0
 	JMP	loc_DBDC
@@ -5502,9 +5494,7 @@ loc_DBBB:
 ; ---------------------------------------------------------------------------
 
 loc_DBC3:
-	LDA	sprite_length_30F
-	AND	#$F
-	STA	sprite_length_30F
+	and_byte sprite_length_30F, #$F
 	if_equal_cmp #3, loc_DBD7
 	set {array_unk_3A7,X}, #2
 	JMP	loc_DBDC
@@ -6684,9 +6674,7 @@ loc_E7B1:
 ; ---------------------------------------------------------------------------
 
 loc_E7D3:
-	LDA	byte_36F
-	AND	tilemapFrameCount_30D
-	STA	byte_36F
+	and_byte byte_36F, tilemapFrameCount_30D
 	INC	inv_spr_dscr1_30C
 	if_greater_cmp_addr inv_spr_dscr1_30C, tilemapTypeUnk_30B, loc_E787
 
@@ -8444,9 +8432,7 @@ sub_F51D:
 	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
 	set_inx {ppu_data_70,X}, data_3
 	set_inx {ppu_data_70,X}, data_2
-	LDA	tilemapTypeUnk_30B
-	AND	#$7F 
-	STA	tilemapTypeUnk_30B
+	and_byte tilemapTypeUnk_30B, #$7F 
 	LDY	#0
 
 loc_F53B:
@@ -8571,9 +8557,7 @@ loc_F5EE:
 	LDX	#0
 
 loc_F615:
-	LDA	tilemapData_4C,X
-	AND	#$CC 
-	STA	tilemapData_4C,X
+	and_byte {tilemapData_4C,X}, #$CC 
 	LDA	unk_5C,X
 	AND	#$33 
 	ORA	tilemapData_4C,X
@@ -8588,9 +8572,7 @@ loc_F62B:
 	LDX	#0
 
 loc_F62D:
-	LDA	tilemapData_4C,X
-	AND	#$33 
-	STA	tilemapData_4C,X
+	and_byte {tilemapData_4C,X}, #$33 
 	LDA	unk_5C,X
 	AND	#$CC 
 	ORA	tilemapData_4C,X
@@ -8617,9 +8599,7 @@ sub_F641:
 ; ---------------------------------------------------------------------------
 
 loc_F653:
-	LDA	ppu_ctrl_31F
-	AND	#$FC 
-	STA	ppu_ctrl_31F
+	and_byte ppu_ctrl_31F, #$FC 
 	RTS
 ; End of function sub_F641
 
@@ -9013,9 +8993,7 @@ sub_F9C2:
 	LDA	tilemap_size_307
 	AND	#3
 	BEQ	loc_F9F5
-	LDA	byte_4,Y
-	AND	#$3F 
-	STA	byte_4,Y
+	and_byte {byte_4,Y}, #$3F 
 	LDA	byte_35A
 	mult_a_by_64
 	ORA	byte_4,Y
@@ -9024,9 +9002,7 @@ sub_F9C2:
 ; ---------------------------------------------------------------------------
 
 loc_F9F5:
-	LDA	byte_4,Y
-	AND	#$CF 
-	STA	byte_4,Y
+	and_byte {byte_4,Y}, #$CF 
 	LDA	byte_35A
 	mult_a_by_16
 	ORA	byte_4,Y
@@ -9038,9 +9014,7 @@ loc_FA0D:
 	LDA	tilemap_size_307
 	AND	#3
 	BEQ	loc_FA2A
-	LDA	byte_4,Y
-	AND	#$F3 
-	STA	byte_4,Y
+	and_byte {byte_4,Y}, #$F3 
 	LDA	byte_35A
 	mult_a_by_4
 	ORA	byte_4,Y
@@ -9049,9 +9023,7 @@ loc_FA0D:
 ; ---------------------------------------------------------------------------
 
 loc_FA2A:
-	LDA	byte_4,Y
-	AND	#$FC 
-	STA	byte_4,Y
+	and_byte {byte_4,Y}, #$FC 
 	LDA	byte_35A
 	ORA	byte_4,Y
 	STA	byte_4,Y
@@ -9147,9 +9119,7 @@ start_read_tilemap_FAC8:
 	LDA	tilemap_size_307
 	AND	#3
 	BEQ	loc_FB20
-	LDA	byte_4,Y
-	AND	#$3F 
-	STA	byte_4,Y
+	and_byte {byte_4,Y}, #$3F 
 	LDA	tilemapData_4C
 	AND	#$C0 
 	ORA	byte_4,Y
@@ -9158,9 +9128,7 @@ start_read_tilemap_FAC8:
 ; ---------------------------------------------------------------------------
 
 loc_FB20:
-	LDA	byte_4,Y
-	AND	#$CF 
-	STA	byte_4,Y
+	and_byte {byte_4,Y}, #$CF 
 	LDA	tilemapData_4C
 	AND	#$30 
 	ORA	byte_4,Y
@@ -9172,9 +9140,7 @@ loc_FB35:
 	LDA	tilemap_size_307
 	AND	#3
 	BEQ	loc_FB51
-	LDA	byte_4,Y
-	AND	#$F3 
-	STA	byte_4,Y
+	and_byte {byte_4,Y}, #$F3 
 	LDA	tilemapData_4C
 	AND	#$C
 	ORA	byte_4,Y
@@ -9183,9 +9149,7 @@ loc_FB35:
 ; ---------------------------------------------------------------------------
 
 loc_FB51:
-	LDA	byte_4,Y
-	AND	#$FC 
-	STA	byte_4,Y
+	and_byte {byte_4,Y}, #$FC 
 	LDA	tilemapData_4C
 	AND	#3
 	ORA	byte_4,Y

@@ -359,9 +359,7 @@ loc_3FA3B:
 	set data_3, #$28 
 
 loc_3FA3F:
-	LDA	data_2
-	AND	#$1F
-	STA	data_2
+	and_byte data_2, #$1F
 	JMP	locret_3FA55
 ; ---------------------------------------------------------------------------
 

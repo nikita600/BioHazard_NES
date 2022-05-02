@@ -240,9 +240,7 @@ apu_update_13D4F9:
 	if_greater_cmp_addr apu_unk_742, {apu_dat_13DC5C,X}, locret_13D533
 	set apu_unk_742, #0
 	INC	apu_unk_741
-	LDA	apu_unk_741
-	AND	#3
-	STA	apu_unk_741
+	and_byte apu_unk_741, #3
 	DEC	apu_unk_758
 	DEC	apu_unk_759
 	DEC	apu_unk_75A
@@ -480,9 +478,7 @@ loc_13D6DE:
 	LDY	apu_unk_705
 	BNE	loc_13D6F1
 	set _APU_NOISE_ENV, #$10
-	LDA	_APU_STATUS
-	AND	#$F7 
-	STA	_APU_STATUS
+	and_byte _APU_STATUS, #$F7 
 
 locret_13D6F0:
 	RTS
@@ -797,9 +793,7 @@ loc_13D975:
 	LDY	apu_unk_705
 	BNE	apu_update_noise_13D988
 	set _APU_NOISE_ENV, #$10
-	LDA	_APU_STATUS
-	AND	#$F7 
-	STA	_APU_STATUS
+	and_byte _APU_STATUS, #$F7 
 
 locret_13D987:
 	RTS
@@ -1125,9 +1119,7 @@ music_update_state_13DC1E:
 	if_greater_cmp_addr apu_unk_711, {apu_dat_13DC5C,X}, locret_13DC5B
 	set apu_unk_711, #0
 	INC	apu_unk_710
-	LDA	apu_unk_710
-	AND	#3
-	STA	apu_unk_710
+	and_byte apu_unk_710, #3
 	DEC	apu_unk_727
 	DEC	apu_unk_728
 	DEC	apu_unk_729

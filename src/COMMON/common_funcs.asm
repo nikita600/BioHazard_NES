@@ -240,9 +240,7 @@ loc_FDD8:
 ; ---------------------------------------------------------------------------
 
 loc_FDEC:
-	LDA	ppu_ctrl_31F
-	AND	#$FB 
-	STA	ppu_ctrl_31F
+	and_byte ppu_ctrl_31F, #$FB 
 	STA	_PPU_CTRL
 
 loc_FDF7:
@@ -382,9 +380,7 @@ scroll_update_FED6:
 	INC	scroll_offset_x_479
 	if_greater_cmp_addr scroll_offset_x_479, #$A, locret_FF2D
 	xor_byte scroll_offset_y_47A, #$80 
-	LDA	scroll_offset_y_47A
-	AND	#$FE 
-	STA	scroll_offset_y_47A
+	and_byte scroll_offset_y_47A, #$FE 
 	LDA	scroll_offset_y_47A
 	AND	#$7F 
 	if_equal_cmp #0, locret_FF2D
@@ -397,9 +393,7 @@ scroll_update_FED6:
 ; ---------------------------------------------------------------------------
 
 loc_FF0E:
-	LDA	scroll_offset_y_47A
-	AND	#$7F 
-	STA	scroll_offset_y_47A
+	and_byte scroll_offset_y_47A, #$7F 
 	add_to_byte_clc ppu_scroll_y_305, scroll_offset_y_47A
 
 loc_FF20:

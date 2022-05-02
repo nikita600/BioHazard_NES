@@ -419,9 +419,7 @@ loc_2D471:
 	if_equal_cmp byte_35E, loc_2D4C3
 	to_stack data_2
 	to_stack data_3
-	LDA	data_2
-	AND	#$E0 
-	STA	data_2
+	and_byte data_2, #$E0 
 	LDA	byte_35E
 	mult_a_by_2
 	SEC
@@ -861,9 +859,7 @@ loc_2E514:
 	set data_3, #$28 
 
 loc_2E518:
-	LDA	data_2
-	AND	#$1F
-	STA	data_2
+	and_byte data_2, #$1F
 	JMP	locret_2E52E
 ; ---------------------------------------------------------------------------
 

@@ -30,12 +30,16 @@
 
 ; ---------------------------------------------------------------------------
 
-.macro xor_byte addr, value
+.macro and_byte addr, value
+	LDA	addr
+	AND	value
+	STA	addr
+.endmacro
 
+.macro xor_byte addr, value
 	LDA addr
 	EOR value
 	STA addr
-
 .endmacro
 
 ; ---------------------------------------------------------------------------

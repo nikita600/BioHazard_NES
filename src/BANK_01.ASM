@@ -501,7 +501,6 @@ loc_1F6CE:
 upload_to_ppu_1F6D1:
 	LDY	#0
 	set tilemapWidth_308, {(data_2),Y}
-
 	add_word_to_word_imm data_2, $2
 
 	LDX	#0
@@ -511,14 +510,12 @@ loc_1F6E7:
 	set _PPU_ADDR, ptr_0
 	LDY	#0
 
-loc_1F6F3:
+copy_byte_to_ppu_1F6F3:
 	set_iny _PPU_DATA, {(data_2),Y}
-	if_y_greater_cmp #$10, loc_1F6F3
-	
+	if_y_greater_cmp #$10, copy_byte_to_ppu_1F6F3
+
 	add_byte_to_word ptr_0, #$10
-
 	add_word_to_word_imm data_2, $10
-
 	INX
 	if_x_greater_cmp tilemapWidth_308, loc_1F6E7
 	RTS

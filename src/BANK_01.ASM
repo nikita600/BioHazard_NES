@@ -437,8 +437,8 @@ loc_1F583:
 	if_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_1F583
 	from_stack byte_36B
 	from_stack byte_36A
-	sub_from_sec data_2, tilemapWidth_308
-	sub_from_byte data_3, #0
+	sub_byte_sec data_2, tilemapWidth_308
+	sub_byte data_3, #0
 	add_to_byte_clc byte_366, #8
 	add_to_byte byte_367, #0
 	INX
@@ -460,36 +460,24 @@ sub_1F5FF:
 	set byte_368, ppu_scroll_y_305
 	set byte_369, ppu_unk_byte_303
 	JSR	sub_1F6AB
-	LDA	byte_36A
-	SEC
-	SBC	byte_36C
-	LDA	byte_36B
-	SBC	byte_36D
+	sub_a_sec byte_36A, byte_36C
+	sub_a byte_36B, byte_36D
 	BCC	loc_1F68D
-	LDA	byte_366
-	SEC
-	SBC	byte_368
-	LDA	byte_367
-	SBC	byte_369
+	sub_a_sec byte_366, byte_368
+	sub_a byte_367, byte_369
 	BCC	loc_1F68D
 	INC	byte_36D
 	add_to_byte_clc byte_368, #$F0 
 	add_to_byte byte_369, #0
-	LDA	byte_36C
-	SEC
-	SBC	byte_36A
-	LDA	byte_36D
-	SBC	byte_36B
+	sub_a_sec byte_36C, byte_36A
+	sub_a byte_36D, byte_36B
 	BCC	loc_1F68D
 	if_not_equal_cmp_addr byte_36C, byte_36A, loc_1F66B
 	if_equal_cmp_addr byte_36D, byte_36B, loc_1F68D
 
 loc_1F66B:
-	LDA	byte_368
-	SEC
-	SBC	byte_366
-	LDA	byte_369
-	SBC	byte_367
+	sub_a_sec byte_368, byte_366
+	sub_a byte_369, byte_367
 	BCC	loc_1F68D
 	if_not_equal_cmp_addr byte_368, byte_366, loc_1F693
 	if_equal_cmp_addr byte_369, byte_367, loc_1F68D
@@ -502,13 +490,9 @@ loc_1F68D:
 ; ---------------------------------------------------------------------------
 
 loc_1F693:
-	LDA	byte_36A
-	SEC
-	SBC	byte_36C
+	sub_a_sec byte_36A, byte_36C
 	STA	tilemap_size_307
-	LDA	byte_366
-	SEC
-	SBC	byte_368
+	sub_a_sec byte_366, byte_368
 	SEC
 	SBC	#$10
 	STA	ppu_unk_byte_309

@@ -49,18 +49,31 @@
 
 ; ---------------------------------------------------------------------------
 
-.macro sub_from_sec dst, src
+.macro sub_a_sec dst, src
+	LDA	dst
+	SEC
+	SBC	src
+.endmacro
+
+.macro sub_a dst, src
+	LDA	dst
+	SBC	src
+.endmacro
+
+.macro sub_byte_sec dst, src
 
 	LDA	dst
 	SEC
 	SBC	src
+
 	STA	dst
 
 .endmacro
 
-.macro sub_from_byte dst, src
+.macro sub_byte dst, src
 	LDA	dst
 	SBC	src
+
 	STA	dst
 .endmacro
 

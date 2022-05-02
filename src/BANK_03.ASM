@@ -154,8 +154,8 @@ loc_3F865:
 	INC	ptr_0
 	load_a_masked data_2, #$1F
 	if_not_equal_cmp #$1F, loc_3F89B
-	sub_from_sec data_2, #$1F
-	sub_from_byte data_3, #0
+	sub_byte_sec data_2, #$1F
+	sub_byte data_3, #0
 	JMP	loc_3F8A8
 ; ---------------------------------------------------------------------------
 

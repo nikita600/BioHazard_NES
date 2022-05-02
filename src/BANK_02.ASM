@@ -197,9 +197,7 @@ loc_2D260:
 	STA	ptr_0
 	add_to_byte ptr_1, #0
 
-	LDA	byte_35E
-	SEC
-	SBC	tilemapWidth_308
+	sub_a_sec byte_35E, tilemapWidth_308
 	TAY
 
 loc_2D284:
@@ -647,8 +645,8 @@ loc_2E33E:
 	INC	ptr_0
 	load_a_masked data_2, #$1F
 	if_not_equal_cmp #$1F, loc_2E374
-	sub_from_sec data_2, #$1F
-	sub_from_byte data_3, #0
+	sub_byte_sec data_2, #$1F
+	sub_byte data_3, #0
 	JMP	loc_2E381
 ; ---------------------------------------------------------------------------
 

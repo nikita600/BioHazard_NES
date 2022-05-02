@@ -13,10 +13,10 @@ bank_switch_8000:
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_equal_cmp_addr bank_command_346, #0, loc_48053
-	if_equal_cmp #1, loc_48059
-	if_equal_cmp #2, loc_48083
-	if_equal_cmp #3, loc_48089
+	if_a_equal_cmp_addr bank_command_346, #0, loc_48053
+	if_a_equal_cmp #1, loc_48059
+	if_a_equal_cmp #2, loc_48083
+	if_a_equal_cmp #3, loc_48089
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ loc_48053:
 ; ---------------------------------------------------------------------------
 
 loc_48059:
-	if_greater_cmp_addr inv_sprite_idx_31C, #$2F, loc_4807D
+	if_a_greater_cmp_addr inv_sprite_idx_31C, #$2F, loc_4807D
 	to_stack bank_from_343
 
 exec_b13_c1_48064:
@@ -102,8 +102,7 @@ load_palette_4F323:
 loc_4F366:
 	set_inx {palette_bg_321,X}, {(data_2),Y}
 	INY
-	CPY	#4
-	BCC	loc_4F366
+	if_y_greater_cmp #4, loc_4F366
 	RTS
 ; End of function load_palette_4F323
 
@@ -119,8 +118,7 @@ loc_4F375:
 
 loc_4F381:
 	set_iny _PPU_DATA, {(data_2),Y}
-	CPY	#$10
-	BCC	loc_4F381
+	if_y_greater_cmp #$10, loc_4F381
 
 	add_to_data $10
 
@@ -128,7 +126,7 @@ loc_4F381:
 	add_to_byte ptr_1, #0
 
 	DEC	inv_spr_dscr1_30C
-	if_equal_cmp_addr inv_spr_dscr1_30C, #0, locret_4F3B2
+	if_a_equal_cmp_addr inv_spr_dscr1_30C, #0, locret_4F3B2
 	JMP	loc_4F375
 ; ---------------------------------------------------------------------------
 
@@ -142,7 +140,7 @@ sub_4F3B3:
 	JSR	get_inventory_sprite_ptr_4F3E7
 
 loc_4F3B6:
-	if_greater_cmp_addr inv_spr_dscr1_30C, #4, loc_4F3CD
+	if_a_greater_cmp_addr inv_spr_dscr1_30C, #4, loc_4F3CD
 	BEQ	loc_4F3CD
 	sub_a_sec #4
 	STA	inv_spr_dscr1_30C
@@ -158,7 +156,7 @@ loc_4F3CD:
 
 loc_4F3DC:
 	JSR	sub_4F583
-	if_not_equal_cmp_addr inv_spr_dscr1_30C, #0, loc_4F3B6
+	if_a_not_equal_cmp_addr inv_spr_dscr1_30C, #0, loc_4F3B6
 	RTS
 ; End of function sub_4F3B3
 
@@ -248,8 +246,7 @@ get_tilemap_descr_4F48B:
 	LDY	ppu_unk_byte_309
 
 loc_4F4BA:
-	CPY	#0
-	BEQ	loc_4F4CF
+	if_y_equal_cmp #0, loc_4F4CF
 
 	add_to_data $20
 
@@ -266,7 +263,7 @@ loc_4F4CF:
 	LDA	#$32 
 
 loc_4F4E7:
-	if_greater_cmp tilemapWidth_308, loc_4F4F6
+	if_a_greater_cmp tilemapWidth_308, loc_4F4F6
 	sub_a_sec tilemapWidth_308
 	INC	inv_spr_dscr1_30C
 	JMP	loc_4F4E7
@@ -276,7 +273,7 @@ loc_4F4F6:
 	LDA	tilemapHeight_30A
 
 loc_4F4F9:
-	if_greater_cmp inv_spr_dscr1_30C, loc_4F50B
+	if_a_greater_cmp inv_spr_dscr1_30C, loc_4F50B
 	sub_a_sec inv_spr_dscr1_30C
 	STA	tilemapHeight_30A
 	INC	ppu_unk_byte_309
@@ -285,13 +282,13 @@ loc_4F4F9:
 
 loc_4F50B:
 
-	if_equal ppu_unk_byte_309, loc_4F51B
+	if_a_equal ppu_unk_byte_309, loc_4F51B
 	JSR	sub_4F527
 	DEC	ppu_unk_byte_309
-	if_not_equal ppu_unk_byte_309, loc_4F50B
+	if_a_not_equal ppu_unk_byte_309, loc_4F50B
 
 loc_4F51B:
-	if_equal tilemapHeight_30A, locret_4F526
+	if_a_equal tilemapHeight_30A, locret_4F526
 	STA	inv_spr_dscr1_30C
 	JSR	sub_4F527
 
@@ -320,8 +317,7 @@ loc_4F54A:
 	STA	ppu_data_70,X
 	INX
 	INY
-	CPY	tilemapWidth_308
-	BCC	loc_4F54A
+	if_y_greater_cmp tilemapWidth_308, loc_4F54A
 
 	add_to_data $20
 
@@ -329,7 +325,7 @@ loc_4F54A:
 	add_to_byte ptr_1, #0
 
 	INC	tilemapTypeUnk_30B
-	if_greater_cmp_addr tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_4F538
+	if_a_greater_cmp_addr tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_4F538
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sub_4F527
@@ -348,8 +344,7 @@ sub_4F583:
 loc_4F5A0:
 	set_inx {ppu_data_70,X}, {(data_2),Y}
 	INY
-	CPY	tilemapTypeUnk_30B
-	BCC	loc_4F5A0
+	if_y_greater_cmp tilemapTypeUnk_30B, loc_4F5A0
 	add_to_byte_clc data_2, tilemapTypeUnk_30B
 	add_to_byte data_3, #0
 

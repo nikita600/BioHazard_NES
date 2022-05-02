@@ -2,7 +2,7 @@ tilemap_switch_case:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88
 
-	if_equal_cmp_addr bank_command_346, #0, case0_78047
+	if_a_equal_cmp_addr bank_command_346, #0, case0_78047
 	RTS
 ; ---------------------------------------------------------------------------
 

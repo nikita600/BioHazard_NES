@@ -11,22 +11,22 @@ bank_switch_8000:
 	.include "common/bank_switch_func.asm"
 
 switch_case_8035:
-	if_equal_cmp_addr bank_command_346, #$88, loc_13809B
+	if_a_equal_cmp_addr bank_command_346, #$88, loc_13809B
 	LDA	bank_to_344
 
 loc_13803F:
 	STA	bank_prev_345
 	set bank_switch_flag_6C, #$88 
-	if_equal_cmp_addr bank_command_346, #0, loc_138066
-	if_equal_cmp #1, loc_13806C
-	if_equal_cmp #2, loc_138072
-	if_equal_cmp #3, loc_138078
-	if_equal_cmp #4, loc_13807E
+	if_a_equal_cmp_addr bank_command_346, #0, loc_138066
+	if_a_equal_cmp #1, loc_13806C
+	if_a_equal_cmp #2, loc_138072
+	if_a_equal_cmp #3, loc_138078
+	if_a_equal_cmp #4, loc_13807E
 	CMP	#5
 
 loc_13805F:
 	BEQ	loc_138084
-	if_equal_cmp #6, loc_13808A
+	if_a_equal_cmp #6, loc_13808A
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ BossImages_129826:
 ; =============== S U B	R O U T	I N E =======================================
 
 music_func_13C028:
-	if_greater_cmp_addr tilemapTypeUnk_30B, #$47, loc_13C032
+	if_a_greater_cmp_addr tilemapTypeUnk_30B, #$47, loc_13C032
 	BEQ	loc_13C032
 	RTS
 ; ---------------------------------------------------------------------------
@@ -100,7 +100,7 @@ loc_13C032:
 	STX	_APU_STATUS
 	PHA
 	TAY
-	if_greater_cmp #$40, loc_13C040
+	if_a_greater_cmp #$40, loc_13C040
 	sub_a_sec #$40 
 
 loc_13C040:
@@ -110,7 +110,7 @@ loc_13C040:
 	LDA	byte_13C0C9,Y
 	TAY
 	PLA
-	if_lower_cmp #$40, loc_13C068
+	if_a_lower_cmp #$40, loc_13C068
 	set {_APU_PULSE1_ENV,Y}, {pulse_entries_13C111,X}
 	set {_APU_PULSE1_SWEEP,Y}, {pulse_entries_13C111+1,X}
 	set {_APU_PULSE1_TIME,Y}, {pulse_entries_13C111+2,X}
@@ -138,8 +138,7 @@ loc_13D425:
 loc_13D429:
 	STA	apu_unk_741,X
 	INX
-	CPX	#$27 
-	BCC	loc_13D429
+	if_x_greater_cmp #$27 , loc_13D429
 	LDA	apu_unk_76C
 	mult_a_by_2
 	TAX
@@ -160,8 +159,7 @@ loc_13D459:
 
 loc_13D46D:
 	INX
-	CPX	#4
-	BCC	loc_13D459
+	if_x_greater_cmp #4, loc_13D459
 	LDX	#0
 	JSR	apu_func_13D575
 	INX
@@ -178,7 +176,7 @@ loc_13D46D:
 music_func_13D484:
 ; FUNCTION CHUNK AT D425 SIZE 0000005F BYTES
 
-	if_not_equal apu_unk_76D, loc_13D425
+	if_a_not_equal apu_unk_76D, loc_13D425
 	LDX	#0
 	set apu_unk_737, #0
 	STA	apu_unk_704
@@ -186,8 +184,7 @@ music_func_13D484:
 loc_13D493:
 	STA	apu_unk_710,X
 	INX
-	CPX	#$27 
-	BCC	loc_13D493
+	if_x_greater_cmp #$27 , loc_13D493
 	LDA	apu_unk_76C
 	mult_a_by_2
 	TAX
@@ -207,8 +204,7 @@ loc_13D4C0:
 
 loc_13D4D4:
 	INX
-	CPX	#4
-	BCC	loc_13D4C0
+	if_x_greater_cmp #4, loc_13D4C0
 	set apu_unk_700, #$FF
 	STA	apu_unk_701
 	STA	apu_unk_702
@@ -227,14 +223,14 @@ loc_13D4D4:
 ; =============== S U B	R O U T	I N E =======================================
 
 apu_update_13D4F9:
-	if_equal apu_unk_737, locret_13D533
+	if_a_equal apu_unk_737, locret_13D533
 	JSR	apu_update_pulse1_13DA5B
 	JSR	apu_func_13D534
 	LDA	apu_unk_738
 	add_to_a apu_unk_741
 	TAX
 	INC	apu_unk_742
-	if_greater_cmp_addr apu_unk_742, {apu_dat_13DC5C,X}, locret_13D533
+	if_a_greater_cmp_addr apu_unk_742, {apu_dat_13DC5C,X}, locret_13D533
 	set apu_unk_742, #0
 	INC	apu_unk_741
 	and_byte apu_unk_741, #3
@@ -251,17 +247,15 @@ locret_13D533:
 
 apu_func_13D534:
 	LDX	apu_unk_742
-	CPX	#4
-	BCS	locret_13D55B
+	if_x_lower_cmp #4, locret_13D55B
 	LDA	apu_unk_738
 	add_to_a apu_unk_741
 	TAY
-	if_greater_cmp_addr {apu_dat_13DC5C,Y}, #2, loc_13D565
+	if_a_greater_cmp_addr {apu_dat_13DC5C,Y}, #2, loc_13D565
 	BEQ	loc_13D55C
-	if_not_equal_cmp #3, apu_func_13D575
+	if_a_not_equal_cmp #3, apu_func_13D575
 	JSR	apu_func_13D575
-	CPX	#2
-	BNE	locret_13D55B
+	if_x_not_equal_cmp #2, locret_13D55B
 	INX
 	JSR	apu_func_13D575
 
@@ -291,7 +285,7 @@ loc_13D565:
 ; =============== S U B	R O U T	I N E =======================================
 
 apu_func_13D575:
-	if_not_equal {apu_unk_758,X}, locret_13D55B
+	if_a_not_equal {apu_unk_758,X}, locret_13D55B
 	load_a_masked {apu_dat_13D421,X}, apu_unk_737
 	BEQ	locret_13D55B
 	load_a_masked {apu_dat_13D421,X}, apu_unk_743
@@ -305,9 +299,9 @@ loc_13D58D:
 	LDY	apu_unk_75C,X
 
 loc_13D59A:
-	if_greater_cmp_addr {(apu_unk_FE),Y}, #$FC, loc_13D5F5
+	if_a_greater_cmp_addr {(apu_unk_FE),Y}, #$FC, loc_13D5F5
 	BEQ	loc_13D60D
-	if_greater_cmp #$FE, loc_13D5AB
+	if_a_greater_cmp #$FE, loc_13D5AB
 	BNE	loc_13D5AE
 	JMP	loc_13D657
 ; ---------------------------------------------------------------------------
@@ -317,8 +311,7 @@ loc_13D5AB:
 ; ---------------------------------------------------------------------------
 
 loc_13D5AE:
-	CPX	#2
-	BCC	loc_13D5C2
+	if_x_greater_cmp #2, loc_13D5C2
 	BNE	loc_13D5BA
 	INY
 	set tri_count_746, {(apu_unk_FE),Y}
@@ -360,7 +353,7 @@ loc_13D5F5:
 
 loc_13D60D:
 	INY
-	if_equal {(apu_unk_FE),Y}, loc_13D621
+	if_a_equal {(apu_unk_FE),Y}, loc_13D621
 	LDA	apu_dat_13D421,X
 	EOR	#$FF
 	AND	apu_unk_737
@@ -377,8 +370,7 @@ loc_13D621:
 
 loc_13D62A:
 	INY
-	CPX	#2
-	BCC	loc_13D63E
+	if_x_greater_cmp #2, loc_13D63E
 	BEQ	loc_13D636
 	set apu_unk_747, {(apu_unk_FE),Y}
 
@@ -406,8 +398,7 @@ loc_13D657:
 ; ---------------------------------------------------------------------------
 
 loc_13D662:
-	CPX	#2
-	BCS	loc_13D67C
+	if_x_lower_cmp #2, loc_13D67C
 	load_a_masked {apu_pulse1_env_744,X}, #$10
 	BEQ	loc_13D674
 	set {apu_unk_752,X}, #4
@@ -443,7 +434,7 @@ loc_13D68F:
 	INY
 	TYA
 	STA	apu_unk_764,X
-	if_not_equal {(apu_unk_FE),Y}, loc_13D6C0
+	if_a_not_equal {(apu_unk_FE),Y}, loc_13D6C0
 	LDA	apu_dat_13D421,X
 	EOR	#$FF
 	AND	apu_unk_743
@@ -455,11 +446,9 @@ loc_13D6C0:
 	LDA	apu_dat_13D421,X
 	ORA	_APU_STATUS
 	STA	_APU_STATUS
-	CPX	#1
-	BCC	loc_13D707
+	if_x_greater_cmp #1, loc_13D707
 	BEQ	loc_13D747
-	CPX	#3
-	BCS	loc_13D6DE
+	if_x_lower_cmp #3, loc_13D6DE
 	JMP	loc_13D788
 ; ---------------------------------------------------------------------------
 
@@ -484,7 +473,7 @@ loc_13D6F1:
 ; ---------------------------------------------------------------------------
 
 loc_13D707:
-	if_lower_cmp_addr apu_unk_705, #$D, loc_13D729
+	if_a_lower_cmp_addr apu_unk_705, #$D, loc_13D729
 	mult_a_by_4
 	TAY
 	set _APU_PULSE1_ENV, {pulse_env_13DDEC,Y}
@@ -507,7 +496,7 @@ loc_13D729:
 ; ---------------------------------------------------------------------------
 
 loc_13D747:
-	if_lower_cmp_addr apu_unk_705, #$D, loc_13D76A
+	if_a_lower_cmp_addr apu_unk_705, #$D, loc_13D76A
 	mult_a_by_4
 	TAY
 	set _APU_PULSE2_ENV, {pulse2_env_13DE20,Y}
@@ -530,7 +519,7 @@ loc_13D76A:
 ; ---------------------------------------------------------------------------
 
 loc_13D788:
-	if_lower_cmp_addr apu_unk_705, #$D, loc_13D7AB
+	if_a_lower_cmp_addr apu_unk_705, #$D, loc_13D7AB
 	mult_a_by_4
 	TAY
 	set _APU_TRI_COUNT, {tri_count_13DE54,Y}
@@ -555,17 +544,15 @@ loc_13D7AB:
 
 music_func_13D7C3:
 	LDX	apu_unk_711
-	CPX	#4
-	BCS	locret_13D7EA
+	if_x_lower_cmp #4, locret_13D7EA
 	LDA	apu_unk_707
 	add_to_a apu_unk_710
 	TAY
-	if_greater_cmp_addr {apu_dat_13DC5C,Y}, #2, loc_13D7F4
+	if_a_greater_cmp_addr {apu_dat_13DC5C,Y}, #2, loc_13D7F4
 	BEQ	loc_13D7EB
-	if_not_equal_cmp #3, music_func_13D804
+	if_a_not_equal_cmp #3, music_func_13D804
 	JSR	music_func_13D804
-	CPX	#2
-	BNE	locret_13D7EA
+	if_x_not_equal_cmp #2, locret_13D7EA
 	INX
 	JSR	music_func_13D804
 
@@ -595,7 +582,7 @@ loc_13D7F4:
 ; =============== S U B	R O U T	I N E =======================================
 
 music_func_13D804:
-	if_not_equal {apu_unk_727,X}, locret_13D7EA
+	if_a_not_equal {apu_unk_727,X}, locret_13D7EA
 	load_a_masked {apu_dat_13D421,X}, apu_unk_706
 	BEQ	locret_13D7EA
 	load_a_masked {apu_dat_13D421,X}, apu_unk_712
@@ -609,9 +596,9 @@ loc_13D81C:
 	LDY	apu_unk_72B,X
 
 loc_13D829:
-	if_greater_cmp_addr {(apu_unk_FE),Y}, #$FC, loc_13D884
+	if_a_greater_cmp_addr {(apu_unk_FE),Y}, #$FC, loc_13D884
 	BEQ	loc_13D89C
-	if_greater_cmp #$FE, loc_13D83A
+	if_a_greater_cmp #$FE, loc_13D83A
 	BNE	loc_13D83D
 	JMP	loc_13D8E6
 ; ---------------------------------------------------------------------------
@@ -621,8 +608,7 @@ loc_13D83A:
 ; ---------------------------------------------------------------------------
 
 loc_13D83D:
-	CPX	#2
-	BCC	loc_13D851
+	if_x_greater_cmp #2, loc_13D851
 	BNE	loc_13D849
 	INY
 	set apu_unk_715, {(apu_unk_FE),Y}
@@ -664,7 +650,7 @@ loc_13D884:
 
 loc_13D89C:
 	INY
-	if_equal {(apu_unk_FE),Y}, loc_13D8B0
+	if_a_equal {(apu_unk_FE),Y}, loc_13D8B0
 	LDA	apu_dat_13D421,X
 	EOR	#$FF
 	AND	apu_unk_706
@@ -681,8 +667,7 @@ loc_13D8B0:
 
 loc_13D8B9:
 	INY
-	CPX	#2
-	BCC	loc_13D8CD
+	if_x_greater_cmp #2, loc_13D8CD
 	BEQ	loc_13D8C5
 	set apu_unk_716, {(apu_unk_FE),Y}
 
@@ -710,8 +695,7 @@ loc_13D8E6:
 ; ---------------------------------------------------------------------------
 
 loc_13D8F1:
-	CPX	#2
-	BCS	loc_13D90B
+	if_x_lower_cmp #2, loc_13D90B
 	load_a_masked {pulse1_env_713,X}, #$10
 	BEQ	loc_13D903
 	set {apu_unk_721,X}, #4
@@ -747,7 +731,7 @@ loc_13D91E:
 	INY
 	TYA
 	STA	apu_unk_733,X
-	if_not_equal {(apu_unk_FE),Y}, loc_13D94F
+	if_a_not_equal {(apu_unk_FE),Y}, loc_13D94F
 	LDA	apu_dat_13D421,X
 	EOR	#$FF
 	AND	apu_unk_712
@@ -761,11 +745,9 @@ loc_13D94F:
 	LDA	apu_dat_13D421,X
 	ORA	_APU_STATUS
 	STA	_APU_STATUS
-	CPX	#1
-	BCC	apu_update_pulse1_13D99E
+	if_x_greater_cmp #1, apu_update_pulse1_13D99E
 	BEQ	apu_update_pulse2_13D9DF
-	CPX	#3
-	BCS	loc_13D975
+	if_x_lower_cmp #3, loc_13D975
 	JMP	apu_update_triangle_13DA20
 ; ---------------------------------------------------------------------------
 
@@ -790,7 +772,7 @@ apu_update_noise_13D988:
 ; ---------------------------------------------------------------------------
 
 apu_update_pulse1_13D99E:
-	if_lower_cmp_addr apu_unk_705, #$D, apu_update_pulse1_13D9C1
+	if_a_lower_cmp_addr apu_unk_705, #$D, apu_update_pulse1_13D9C1
 	mult_a_by_4
 	TAY
 	set _APU_PULSE1_ENV, {pulse_env_13DDEC,Y}
@@ -813,7 +795,7 @@ apu_update_pulse1_13D9C1:
 ; ---------------------------------------------------------------------------
 
 apu_update_pulse2_13D9DF:
-	if_lower_cmp_addr apu_unk_705, #$D, apu_update_pulse2_13DA02
+	if_a_lower_cmp_addr apu_unk_705, #$D, apu_update_pulse2_13DA02
 	mult_a_by_4
 	TAY
 	set _APU_PULSE2_ENV, {pulse2_env_13DE20,Y}
@@ -836,7 +818,7 @@ apu_update_pulse2_13DA02:
 ; ---------------------------------------------------------------------------
 
 apu_update_triangle_13DA20:
-	if_lower_cmp_addr apu_unk_705, #$D, loc_13DA43
+	if_a_lower_cmp_addr apu_unk_705, #$D, loc_13DA43
 	mult_a_by_4
 	TAY
 	set _APU_TRI_COUNT, {tri_count_13DE54,Y}
@@ -870,11 +852,11 @@ apu_update_pulse1_13DA5B:
 apu_update_pulse1_13DA62:
 	load_a_masked {apu_dat_13D421,X}, apu_unk_737
 	BEQ	locret_13DADB
-	if_equal {apu_unk_758,X}, locret_13DADB
+	if_a_equal {apu_unk_758,X}, locret_13DADB
 	load_a_masked {apu_pulse1_env_744,X}, #$10
 	BNE	locret_13DADB
-	if_equal {apu_unk_752,X}, loc_13DA99
-	if_lower_cmp #4, locret_13DADB
+	if_a_equal {apu_unk_752,X}, loc_13DA99
+	if_a_lower_cmp #4, locret_13DADB
 	load_a_masked {apu_pulse1_env_744,X}, #$F
 	sub_a_sec {apu_unk_754,X}
 	STA	apu_unk_705
@@ -887,7 +869,7 @@ loc_13DA99:
 	load_a_masked {apu_pulse1_env_744,X}, #$F
 	add_to_a {apu_unk_754,X}
 	STA	apu_unk_705
-	if_greater_cmp #$F, loc_13DAB3
+	if_a_greater_cmp #$F, loc_13DAB3
 	set apu_unk_705, #$F
 	set {apu_unk_756,X}, #1
 
@@ -923,11 +905,11 @@ music_func_13DADC:
 music_func_13DAE3:
 	load_a_masked {apu_dat_13D421,X}, apu_unk_706
 	BEQ	locret_13DB64
-	if_equal {apu_unk_727,X}, locret_13DB64
+	if_a_equal {apu_unk_727,X}, locret_13DB64
 	load_a_masked {pulse1_env_713,X}, #$10
 	BNE	locret_13DB64
-	if_equal {apu_unk_721,X}, loc_13DB1A
-	if_lower_cmp #4, locret_13DB64
+	if_a_equal {apu_unk_721,X}, loc_13DB1A
+	if_a_lower_cmp #4, locret_13DB64
 	load_a_masked {pulse1_env_713,X}, #$F
 	sub_a_sec {apu_unk_723,X}
 	STA	apu_unk_705
@@ -940,7 +922,7 @@ loc_13DB1A:
 	load_a_masked {pulse1_env_713,X}, #$F
 	add_to_a {apu_unk_723,X}
 	STA	apu_unk_705
-	if_greater_cmp #$F, loc_13DB34
+	if_a_greater_cmp #$F, loc_13DB34
 	set apu_unk_705, #$F
 	set {apu_unk_725,X}, #1
 
@@ -968,7 +950,7 @@ locret_13DB64:
 ; =============== S U B	R O U T	I N E =======================================
 
 music_func_13DB65:
-	if_lower_cmp_addr {apu_unk_752,X}, #4, locret_13DB89
+	if_a_lower_cmp_addr {apu_unk_752,X}, #4, locret_13DB89
 	mult_a_by_2
 	TAY
 	load_a_masked {apu_unk_74A,Y}, #$F
@@ -992,7 +974,7 @@ locret_13DB89:
 ; =============== S U B	R O U T	I N E =======================================
 
 music_func_13DB8A:
-	if_lower_cmp_addr {apu_unk_721,X}, #4, locret_13DBAE
+	if_a_lower_cmp_addr {apu_unk_721,X}, #4, locret_13DBAE
 	mult_a_by_2
 	TAY
 	load_a_masked {apu_unk_719,Y}, #$F
@@ -1059,8 +1041,7 @@ loc_13DBFD:
 
 loc_13DC18:
 	INX
-	CPX	#4
-	BCC	loc_13DBB1
+	if_x_greater_cmp #4, loc_13DBB1
 	RTS
 ; End of function apu_func_13DBAF
 
@@ -1068,14 +1049,14 @@ loc_13DC18:
 
 music_update_state_13DC1E:
 	JSR	apu_update_13D4F9
-	if_equal apu_unk_706, locret_13DC5B
+	if_a_equal apu_unk_706, locret_13DC5B
 	JSR	music_func_13DADC
 	JSR	music_func_13D7C3
 	LDA	apu_unk_707
 	add_to_a apu_unk_710
 	TAX
 	INC	apu_unk_711
-	if_greater_cmp_addr apu_unk_711, {apu_dat_13DC5C,X}, locret_13DC5B
+	if_a_greater_cmp_addr apu_unk_711, {apu_dat_13DC5C,X}, locret_13DC5B
 	set apu_unk_711, #0
 	INC	apu_unk_710
 	and_byte apu_unk_710, #3
@@ -1237,8 +1218,7 @@ load_spr_palette_13DF18:
 loc_13DF5B:
 	set_inx {palette_bg_321,X}, {(data_2),Y}
 	INY
-	CPY	#4
-	BCC	loc_13DF5B
+	if_y_greater_cmp #4, loc_13DF5B
 	RTS
 ; End of function load_spr_palette_13DF18
 
@@ -1254,8 +1234,7 @@ loc_13DF6A:
 
 loc_13DF76:
 	set_iny _PPU_DATA, {(data_2),Y}
-	CPY	#$10
-	BCC	loc_13DF76
+	if_y_greater_cmp #$10, loc_13DF76
 
 	add_to_data $10
 
@@ -1263,7 +1242,7 @@ loc_13DF76:
 	add_to_byte ptr_1, #0
 
 	DEC	inv_spr_dscr1_30C
-	if_equal_cmp_addr inv_spr_dscr1_30C, #0, locret_13DFA7
+	if_a_equal_cmp_addr inv_spr_dscr1_30C, #0, locret_13DFA7
 	JMP	loc_13DF6A
 ; ---------------------------------------------------------------------------
 
@@ -1277,7 +1256,7 @@ load_sprite_func_13DFA8:
 	JSR	load_boss_sprite_13DFDC
 
 loc_13DFAB:
-	if_greater_cmp_addr inv_spr_dscr1_30C, #4, loc_13DFC2
+	if_a_greater_cmp_addr inv_spr_dscr1_30C, #4, loc_13DFC2
 	BEQ	loc_13DFC2
 	sub_a_sec #4
 	STA	inv_spr_dscr1_30C
@@ -1293,7 +1272,7 @@ loc_13DFC2:
 
 loc_13DFD1:
 	JSR	sprites_func_13E178
-	if_not_equal_cmp_addr inv_spr_dscr1_30C, #0, loc_13DFAB
+	if_a_not_equal_cmp_addr inv_spr_dscr1_30C, #0, loc_13DFAB
 	RTS
 ; End of function load_sprite_func_13DFA8
 
@@ -1371,8 +1350,7 @@ load_sprite_map_13E038:
 	LDY	ppu_unk_byte_309
 
 loc_13E0AF:
-	CPY	#0
-	BEQ	loc_13E0C4
+	if_y_equal_cmp #0, loc_13E0C4
 
 	add_to_data $20
 
@@ -1389,7 +1367,7 @@ loc_13E0C4:
 	LDA	#$32 
 
 loc_13E0DC:
-	if_greater_cmp tilemapWidth_308, loc_13E0EB
+	if_a_greater_cmp tilemapWidth_308, loc_13E0EB
 	sub_a_sec tilemapWidth_308
 	INC	inv_spr_dscr1_30C
 	JMP	loc_13E0DC
@@ -1399,7 +1377,7 @@ loc_13E0EB:
 	LDA	tilemapHeight_30A
 
 loc_13E0EE:
-	if_greater_cmp inv_spr_dscr1_30C, loc_13E100
+	if_a_greater_cmp inv_spr_dscr1_30C, loc_13E100
 	sub_a_sec inv_spr_dscr1_30C
 	STA	tilemapHeight_30A
 	INC	ppu_unk_byte_309
@@ -1407,13 +1385,13 @@ loc_13E0EE:
 ; ---------------------------------------------------------------------------
 
 loc_13E100:
-	if_equal ppu_unk_byte_309, loc_13E110
+	if_a_equal ppu_unk_byte_309, loc_13E110
 	JSR	sprites_func_13E11C
 	DEC	ppu_unk_byte_309
-	if_not_equal ppu_unk_byte_309, loc_13E100
+	if_a_not_equal ppu_unk_byte_309, loc_13E100
 
 loc_13E110:
-	if_equal tilemapHeight_30A, locret_13E11B
+	if_a_equal tilemapHeight_30A, locret_13E11B
 	STA	inv_spr_dscr1_30C
 	JSR	sprites_func_13E11C
 
@@ -1441,8 +1419,7 @@ loc_13E13F:
 	STA	ppu_data_70,X
 	INX
 	INY
-	CPY	tilemapWidth_308
-	BCC	loc_13E13F
+	if_y_greater_cmp tilemapWidth_308, loc_13E13F
 
 	add_to_data $20
 
@@ -1450,7 +1427,7 @@ loc_13E13F:
 	add_to_byte ptr_1, #0
 
 	INC	tilemapTypeUnk_30B
-	if_greater_cmp_addr tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_13E12D
+	if_a_greater_cmp_addr tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_13E12D
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 ; End of function sprites_func_13E11C
@@ -1469,8 +1446,7 @@ sprites_func_13E178:
 loc_13E195:
 	set_inx {ppu_data_70,X}, {(data_2),Y}
 	INY
-	CPY	tilemapTypeUnk_30B
-	BCC	loc_13E195
+	if_y_greater_cmp tilemapTypeUnk_30B, loc_13E195
 	add_to_byte_clc data_2, tilemapTypeUnk_30B
 	add_to_byte data_3, #0
 

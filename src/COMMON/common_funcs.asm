@@ -4,7 +4,7 @@ wait_for_ppu_data_upload_FC8C:
 	set has_ppu_data_to_upload_6F, #1
 
 loc_FC90:
-	if_not_equal has_ppu_data_to_upload_6F, loc_FC90
+	if_a_not_equal has_ppu_data_to_upload_6F, loc_FC90
 	RTS
 ; End of function wait_for_ppu_data_upload_FC8C
 
@@ -28,7 +28,7 @@ wait_for_frame_rendered_FCA0:
 	set frame_render_count_350, #1
 
 loop_FCA5:
-	if_not_equal frame_render_count_350, loop_FCA5
+	if_a_not_equal frame_render_count_350, loop_FCA5
 	RTS
 ; End of function wait_for_frame_rendered_FCA0
 
@@ -42,7 +42,7 @@ loc_FCAD:
 	LDX	#0
 
 loc_FCAF:
-	if_not_equal_cmp_addr input_reg1_347, #0, exit_FCBC
+	if_a_not_equal_cmp_addr input_reg1_347, #0, exit_FCBC
 	INX
 	BNE	loc_FCAF
 	INY
@@ -55,21 +55,21 @@ exit_FCBC:
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_a_pressed_FCBD:
-	if_not_equal_cmp_addr input_pressed_34A, #a_80, wait_for_a_pressed_FCBD
+	if_a_not_equal_cmp_addr input_pressed_34A, #a_80, wait_for_a_pressed_FCBD
 	RTS
 ; End of function wait_for_a_pressed_FCBD
 
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_b_pressed_FCC5:
-	if_not_equal_cmp_addr input_pressed_34A, #b_40, wait_for_b_pressed_FCC5
+	if_a_not_equal_cmp_addr input_pressed_34A, #b_40, wait_for_b_pressed_FCC5
 	RTS
 ; End of function wait_for_b_pressed_FCC5
 
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_any_input_FCCD:
-	if_equal_cmp_addr input_pressed_34A, #0, wait_for_any_input_FCCD
+	if_a_equal_cmp_addr input_pressed_34A, #0, wait_for_any_input_FCCD
 	RTS
 ; End of function wait_for_any_input_FCCD
 
@@ -128,8 +128,8 @@ nmi_sub_FCF5:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_FD0A:
-	if_equal byte_43E, loc_FD31
-	if_not_equal byte_203, loc_FD1C
+	if_a_equal byte_43E, loc_FD31
+	if_a_not_equal byte_203, loc_FD1C
 	set byte_43E, #0
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
@@ -141,7 +141,7 @@ loc_FD1C:
 ; ---------------------------------------------------------------------------
 
 loc_FD31:
-	if_not_equal_cmp_addr byte_203, #$F8, loc_FD40
+	if_a_not_equal_cmp_addr byte_203, #$F8, loc_FD40
 	set byte_43E, #1
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
@@ -163,13 +163,13 @@ NMI_FD53:
 	PHA
 	TYA
 	PHA
-	if_equal_cmp_addr bank_switch_flag_6C, #$88, loc_FD62
+	if_a_equal_cmp_addr bank_switch_flag_6C, #$88, loc_FD62
 	JMP	loc_FD93
 ; ---------------------------------------------------------------------------
 
 loc_FD62:
 	set bank_switch_flag_6C, #$EE 
-	if_not_equal sprite_type_306, battle_screen_update_FD6E
+	if_a_not_equal sprite_type_306, battle_screen_update_FD6E
 	JSR	nmi_sub_FCF5
 
 battle_screen_update_FD6E:
@@ -177,7 +177,7 @@ battle_screen_update_FD6E:
 	JSR	ppu_upset_data_FDCB
 	JSR	ppu_update_FE20
 	JSR	input_update_FE39
-	if_not_equal_cmp_addr sprite_type_306, #1, music_update_FD89
+	if_a_not_equal_cmp_addr sprite_type_306, #1, music_update_FD89
 	JSR	sub_FD0A
 	JSR	scroll_update_FED6
 
@@ -187,7 +187,7 @@ music_update_FD89:
 	set bank_switch_flag_6C, #$88 
 
 loc_FD93:
-	if_equal byte_432, next_frame_FD9B
+	if_a_equal byte_432, next_frame_FD9B
 	DEC	byte_432
 
 next_frame_FD9B:
@@ -202,7 +202,7 @@ next_frame_FD9B:
 	INC	count_unk_46B
 	INC	count_unk_365
 	INC	count_unk_46C
-	if_equal frame_render_count_350, stack_reset_FDC4
+	if_a_equal frame_render_count_350, stack_reset_FDC4
 	DEC	frame_render_count_350
 
 stack_reset_FDC4:
@@ -218,12 +218,12 @@ return_FDCA:
 ; =============== S U B	R O U T	I N E =======================================
 
 ppu_upset_data_FDCB:
-	if_not_equal has_ppu_data_to_upload_6F, loc_FDD0
+	if_a_not_equal has_ppu_data_to_upload_6F, loc_FDD0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_FDD0:
-	if_equal ppu_data_70, loc_FE1B
+	if_a_equal ppu_data_70, loc_FE1B
 	STA	ppu_fld0_x_6D
 	LDX	#1
 
@@ -344,15 +344,15 @@ ppu_reset_ctrl_mask_FE93:
 
 sub_FE9C:
 	INC	byte_353
-	if_lower_cmp_addr byte_353, #$19, loc_FEA7
+	if_a_lower_cmp_addr byte_353, #$19, loc_FEA7
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_FEA7:
 	set byte_353, #0
-	if_not_equal_cmp_addr byte_354, #0, loc_FED2
-	if_not_equal_cmp_addr byte_355, #0, loc_FECA
-	if_not_equal_cmp_addr byte_356, #0, loc_FEC2
+	if_a_not_equal_cmp_addr byte_354, #0, loc_FED2
+	if_a_not_equal_cmp_addr byte_355, #0, loc_FECA
+	if_a_not_equal_cmp_addr byte_356, #0, loc_FEC2
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -373,14 +373,14 @@ loc_FED2:
 
 scroll_update_FED6:
 	INC	scroll_offset_x_479
-	if_greater_cmp_addr scroll_offset_x_479, #$A, locret_FF2D
+	if_a_greater_cmp_addr scroll_offset_x_479, #$A, locret_FF2D
 	xor_byte scroll_offset_y_47A, #$80 
 	and_byte scroll_offset_y_47A, #$FE 
 	load_a_masked scroll_offset_y_47A, #$7F 
-	if_equal_cmp #0, locret_FF2D
+	if_a_equal_cmp #0, locret_FF2D
 	to_stack scroll_offset_y_47A
 	load_a_masked scroll_offset_y_47A, #$80 
-	if_equal_cmp #0, loc_FF0E
+	if_a_equal_cmp #0, loc_FF0E
 	set ppu_scroll_y_305, #0
 	JMP	loc_FF20
 ; ---------------------------------------------------------------------------

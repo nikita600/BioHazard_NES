@@ -22,7 +22,7 @@ getPtrToTilemap: ; getPtrToTilemap
 	set ptr_1, data_3
 
 getOffset_F8CC: ; unk data
-	if_equal_cmp_addr tilemap_line_size_51, #$20, size_20_7F8DF
+	if_a_equal_cmp_addr tilemap_line_size_51, #$20, size_20_7F8DF
 	
 	add_to_byte_clc ptr_0, #$C0 
 	add_to_byte ptr_1, #3
@@ -31,8 +31,7 @@ size_20_7F8DF:
 	LDY	tilemap_line_idx_4F
 
 add_size_7F8E1:
-	CPY	#0
-	BEQ	addOffset_7F8F6
+	if_y_equal_cmp #0, addOffset_7F8F6
 	
 	add_to_ptr_byte tilemap_line_size_51
 
@@ -59,8 +58,7 @@ write_tilemap_line_7F90F:
 
 	
 	INX
-	CPX	data_2
-	BCC	write_tilemap_line_7F90F
+	if_x_greater_cmp data_2, write_tilemap_line_7F90F
 	RTS
 ; End of function load_tilemap_chunk_in_ram_7F897
 

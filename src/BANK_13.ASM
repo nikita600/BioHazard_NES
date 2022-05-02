@@ -1182,267 +1182,53 @@ byte_13DF14:
 
 ; =============== S U B	R O U T	I N E =======================================
 
+	.include "includes/sprites.inc"
+
 load_spr_palette_13DF18:
-	set_ptr Palette_1380AC
+	load_sprite_palette_func Palette_1380AC
 
-	set data_2, #0
-	LDA	inv_sprite_idx_31C
-	mult_a_by_2
-	ROL	data_2
-	add_to_a ptr_0
-	STA	ptr_0
-	add_byte_to_byte ptr_1, data_2
-
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
-
-	set_ptr _PPU_PALETTE
-
-	LDA	sprPalIdx_319
-	mult_a_by_4
-	TAX
-	add_to_a ptr_0
-	STA	ptr_0
-	add_byte_to_byte ptr_1, #0
-
-	LDY	#0
-
-loc_13DF5B:
-	set_inx {palette_bg_321,X}, {(data_2),Y}
-	INY
-	if_y_greater_cmp #4, loc_13DF5B
-	RTS
 ; End of function load_spr_palette_13DF18
 
 ; =============== S U B	R O U T	I N E =======================================
 
 copy_boss_spr_to_ppu_13DF67:
-	JSR	load_boss_sprite_13DFDC
-
-loc_13DF6A:
-	set _PPU_ADDR, ptr_1
-	set _PPU_ADDR, ptr_0
-	LDY	#0
-
-loc_13DF76:
-	set_iny _PPU_DATA, {(data_2),Y}
-	if_y_greater_cmp #$10, loc_13DF76
-
-	add_word_to_word_imm data_2, $10
-
-	add_byte_to_word ptr_0, #$10
-
-	DEC	inv_spr_dscr1_30C
-	if_a_equal_cmp_addr inv_spr_dscr1_30C, #0, locret_13DFA7
-	JMP	loc_13DF6A
-; ---------------------------------------------------------------------------
-
-locret_13DFA7:
-	RTS
+	load_sprite	load_boss_sprite_13DFDC
+	
 ; End of function copy_boss_spr_to_ppu_13DF67
 
 ; =============== S U B	R O U T	I N E =======================================
 
 load_sprite_func_13DFA8:
-	JSR	load_boss_sprite_13DFDC
+	upload_sprite_chunks_to_ppu	load_boss_sprite_13DFDC, sprites_func_13E178
 
-loc_13DFAB:
-	if_a_greater_cmp_addr inv_spr_dscr1_30C, #4, loc_13DFC2
-	BEQ	loc_13DFC2
-	sub_a_sec #4
-	STA	inv_spr_dscr1_30C
-	set tilemapTypeUnk_30B, #$40 
-	JMP	loc_13DFD1
-; ---------------------------------------------------------------------------
-
-loc_13DFC2:
-	LDA	inv_spr_dscr1_30C
-	mult_a_by_16
-	STA	tilemapTypeUnk_30B
-	set inv_spr_dscr1_30C, #0
-
-loc_13DFD1:
-	JSR	sprites_func_13E178
-	if_a_not_equal_cmp_addr inv_spr_dscr1_30C, #0, loc_13DFAB
-	RTS
 ; End of function load_sprite_func_13DFA8
 
 ; =============== S U B	R O U T	I N E =======================================
 
 load_boss_sprite_13DFDC:
-	set_ptr BossImages_129826
+	get_sprite_offset_func BossImages_129826
 
-	set data_2, #0
-	LDA	inv_sprite_idx_31C
-	mult_a_by_2
-	ROL	data_2
-	add_to_a ptr_0
-	STA	ptr_0
-	add_byte_to_byte ptr_1, data_2
-
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
-	LDY	#0
-	set inv_spr_dscr1_30C, {(data_2),Y}
-
-	add_word_to_word_imm data_2, $2
-
-	set ptr_0, byte_31E
-	set ptr_1, #0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
-	or_byte ptr_1, #$10
-	RTS
 ; End of function load_boss_sprite_13DFDC
 
 ; =============== S U B	R O U T	I N E =======================================
 
 load_sprite_map_13E038:
-	set_ptr SpriteMaps_138454
+	load_sprite_tilemap_func SpriteMaps_138454, sprites_func_13E11C
 
-	set data_2, #0
-	LDA	inv_sprite_idx_31C
-	mult_a_by_2
-	ROL	data_2
-	add_to_a ptr_0
-	STA	ptr_0
-	add_byte_to_byte ptr_1, data_2
-
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
-	set ptr_0, #0
-	LDA	inv_itemPrev_idx_31D
-	mult_a_by_2
-	ROL	ptr_0
-	add_to_a data_2
-	STA	data_2
-	add_byte_to_byte data_3, ptr_0
-
-	LDY	#0
-	set_iny ptr_0, {(data_2),Y}
-	set ptr_1, {(data_2),Y}
-	LDY	#0
-	set_iny tilemapWidth_308, {(ptr_0),Y}
-	set tilemapHeight_30A, {(ptr_0),Y}
-
-	add_byte_to_word ptr_0, #2
-
-	set data_2, #0
-	set data_3, #$20 
-	LDA	byte_36E
-	mult_a_by_4
-	add_to_a data_3
-	STA	data_3
-	LDY	ppu_unk_byte_309
-
-loc_13E0AF:
-	if_y_equal_cmp #0, loc_13E0C4
-
-	add_word_to_word_imm data_2, $20
-
-	DEY
-	JMP	loc_13E0AF
-; ---------------------------------------------------------------------------
-
-loc_13E0C4:
-	add_byte_to_word data_2, tilemap_size_307
-
-	set inv_spr_dscr1_30C, #0
-	STA	ppu_unk_byte_309
-	LDA	#$32 
-
-loc_13E0DC:
-	if_a_greater_cmp tilemapWidth_308, loc_13E0EB
-	sub_a_sec tilemapWidth_308
-	INC	inv_spr_dscr1_30C
-	JMP	loc_13E0DC
-; ---------------------------------------------------------------------------
-
-loc_13E0EB:
-	LDA	tilemapHeight_30A
-
-loc_13E0EE:
-	if_a_greater_cmp inv_spr_dscr1_30C, loc_13E100
-	sub_a_sec inv_spr_dscr1_30C
-	STA	tilemapHeight_30A
-	INC	ppu_unk_byte_309
-	JMP	loc_13E0EE
-; ---------------------------------------------------------------------------
-
-loc_13E100:
-	if_a_equal ppu_unk_byte_309, loc_13E110
-	JSR	sprites_func_13E11C
-	DEC	ppu_unk_byte_309
-	if_a_not_equal ppu_unk_byte_309, loc_13E100
-
-loc_13E110:
-	if_a_equal tilemapHeight_30A, locret_13E11B
-	STA	inv_spr_dscr1_30C
-	JSR	sprites_func_13E11C
-
-locret_13E11B:
-	RTS
 ; End of function load_sprite_map_13E038
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sprites_func_13E11C:
-	set tilemapTypeUnk_30B, #0
-	set has_ppu_data_to_upload_6F, #0
-	LDX	#0
-	set_inx {ppu_data_70,X}, inv_spr_dscr1_30C
+	upload_sprite_to_ppu
 
-loc_13E12D:
-	set_inx {ppu_data_70,X}, tilemapWidth_308
-	set_inx {ppu_data_70,X}, data_3
-	set_inx {ppu_data_70,X}, data_2
-	LDY	#0
-
-loc_13E13F:
-	LDA	(ptr_0),Y
-	add_to_a byte_31E
-	STA	ppu_data_70,X
-	INX
-	INY
-	if_y_greater_cmp tilemapWidth_308, loc_13E13F
-
-	add_word_to_word_imm data_2, $20
-
-	add_byte_to_word ptr_0, tilemapWidth_308
-
-	INC	tilemapTypeUnk_30B
-	if_a_greater_cmp_addr tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_13E12D
-	JSR	wait_for_ppu_data_upload_FC8C
-	RTS
 ; End of function sprites_func_13E11C
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sprites_func_13E178:
-	set has_ppu_data_to_upload_6F, #0
-	LDX	#0
-	set_inx {ppu_data_70,X}, #1
-	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
-	set_inx {ppu_data_70,X}, ptr_1
-	set_inx {ppu_data_70,X}, ptr_0
-	LDY	#0
+	upload_sprite_chunk_to_ppu
 
-loc_13E195:
-	set_inx {ppu_data_70,X}, {(data_2),Y}
-	INY
-	if_y_greater_cmp tilemapTypeUnk_30B, loc_13E195
-	add_byte_to_word data_2, tilemapTypeUnk_30B
-
-	add_byte_to_word ptr_0, tilemapTypeUnk_30B
-
-	
-	JSR	wait_for_ppu_data_upload_FC8C
-	RTS
 ; End of function sprites_func_13E178
 
 Common_Code_13:

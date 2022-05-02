@@ -265,10 +265,7 @@ loc_3F975:
 
 loc_3F98D:
 	set ptr_0, ppu_unk_byte_303
-	LDA	ppu_scroll_x_304
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_x_304
 	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_a_greater_cmp #$20, loc_3F9A9
@@ -276,10 +273,7 @@ loc_3F98D:
 	STA	tilemap_size_307
 
 loc_3F9A9:
-	LDA	ppu_scroll_y_305
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_y_305
 	add_to_a ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	if_a_greater_cmp #$1E, loc_3F9C2

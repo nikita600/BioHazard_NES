@@ -764,15 +764,13 @@ sub_87CE:
 	to_stack byte_36B
 	to_stack byte_366
 	to_stack byte_367
-	LDA	tilemapWidth_308
-	LSR	A
+	div_a_by_2_addr tilemapWidth_308
 	mult_a_by_8
 	add_to_a byte_36A
 	STA	byte_36A
 	add_to_byte byte_36B, #0
 
-	LDA	tilemapHeight_30A
-	LSR	A
+	div_a_by_2_addr tilemapHeight_30A
 	mult_a_by_8
 	add_to_a byte_366
 	STA	byte_366
@@ -1257,8 +1255,7 @@ loc_8CD1:
 
 loc_8CDA:
 	if_a_equal_cmp_addr byte_314, #0, loc_8CED
-	LDA	byte_315
-	LSR	A
+	div_a_by_2_addr byte_315
 	if_a_equal_cmp byte_314, loc_8CED
 	JMP	loc_8CF0
 ; ---------------------------------------------------------------------------
@@ -1347,8 +1344,7 @@ loc_8D9A:
 
 loc_8DA3:
 	if_a_equal_cmp_addr byte_314, #0, loc_8DB6
-	LDA	byte_315
-	LSR	A
+	div_a_by_2_addr byte_315
 	if_a_equal_cmp byte_314, loc_8DB6
 	JMP	loc_8DB9
 ; ---------------------------------------------------------------------------
@@ -1435,12 +1431,9 @@ loc_8E5D:
 
 loc_8E66:
 	if_a_equal_cmp_addr byte_314, #0, loc_8E83
-	LDA	byte_315
-	LSR	A
+	div_a_by_2_addr byte_315
 	if_a_equal_cmp byte_314, loc_8E83
-	LDA	byte_315
-	LSR	A
-	LSR	A
+	div_a_by_4_addr byte_315
 	if_a_equal_cmp byte_314, loc_8E89
 	JMP	loc_8E8C
 ; ---------------------------------------------------------------------------
@@ -1532,12 +1525,9 @@ loc_8F2C:
 
 loc_8F35:
 	if_a_equal_cmp_addr byte_314, #0, loc_8F52
-	LDA	byte_315
-	LSR	A
+	div_a_by_2_addr byte_315
 	if_a_equal_cmp byte_314, loc_8F52
-	LDA	byte_315
-	LSR	A
-	LSR	A
+	div_a_by_4_addr byte_315
 	if_a_equal_cmp byte_314, loc_8F58
 	JMP	loc_8F5B
 ; ---------------------------------------------------------------------------
@@ -2088,8 +2078,7 @@ sub_94D3:
 ; ---------------------------------------------------------------------------
 
 loc_94E2:
-	LDA	byte_314
-	LSR	A
+	div_a_by_2_addr byte_314
 	JMP	loc_94EC
 ; ---------------------------------------------------------------------------
 
@@ -4157,7 +4146,7 @@ sub_D01F:
 	add_to_a tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 	TYA
-	LSR	A
+	div_a_by_2
 	add_to_a tilemapTypeUnk_30B
 	TAX
 	LDA	byte_D041,X
@@ -4412,10 +4401,7 @@ loc_D2C4:
 	sub_addr byte_367, byte_369
 	BCC	loc_D32B
 	sub_addr_sec byte_366, byte_368
-	LSR	A
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_16
 	STA	tilemapTypeUnk_30B
 	set byte_313, #0
 	JMP	loc_D33E
@@ -4423,10 +4409,7 @@ loc_D2C4:
 
 loc_D32B:
 	sub_addr_sec byte_368, byte_366
-	LSR	A
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_16
 	STA	tilemapTypeUnk_30B
 	set byte_313, #1
 
@@ -5539,12 +5522,8 @@ map_update_DEFA:
 	to_stack byte_366
 	to_stack byte_367
 	JSR	sub_CA14
-	LSR	byte_36A
-	LSR	byte_36A
-	LSR	byte_36A
-	LSR	byte_366
-	LSR	byte_366
-	LSR	byte_366
+	div_byte_by_8 byte_36A
+	div_byte_by_8 byte_366
 
 read_tilemap_DF23:
 	set tilemapData_4C, entry_idx_300
@@ -7202,15 +7181,9 @@ sub_ECCC:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_ED7C:
-	LDA	ppu_scroll_y_305
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_y_305
 	STA	ppu_unk_byte_309
-	LDA	ppu_scroll_x_304
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_x_304
 	STA	tilemap_size_307
 	RTS
 ; End of function sub_ED7C
@@ -7339,10 +7312,8 @@ write_tilemap_to_ppu_EE4D:
 
 sub_EE72:
 	JSR	sub_ED7C
-	LSR	ppu_unk_byte_309
-	LSR	ppu_unk_byte_309
-	LSR	tilemap_size_307
-	LSR	tilemap_size_307
+	div_byte_by_4 ppu_unk_byte_309
+	div_byte_by_4 tilemap_size_307
 	sub_addr_sec #8, tilemap_size_307
 	STA	tilemapWidth_308
 	sub_addr_sec #8, ppu_unk_byte_309
@@ -7575,13 +7546,9 @@ loc_F0C9:
 	add_to_byte_clc data_3, #4
 
 loc_F0E0:
-	LDA	ppu_scroll_y_305
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_y_305
 	STA	ppu_unk_byte_309
-	LSR	A
-	LSR	A
+	div_a_by_4
 	STA	tilemapHeight_30A
 	mult_a_by_8
 	add_to_a ptr_0
@@ -8071,10 +8038,8 @@ locret_F5A1:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_F5A2:
-	LSR	ppu_unk_byte_309
-	LSR	ppu_unk_byte_309
-	LSR	tilemap_size_307
-	LSR	tilemap_size_307
+	div_byte_by_4 ppu_unk_byte_309
+	div_byte_by_4 tilemap_size_307
 	RTS
 ; End of function sub_F5A2
 
@@ -8208,8 +8173,7 @@ loc_F6C0:
 	set ppu_unk_byte_309, byte_357
 	set tilemap_size_307, byte_358
 	set tilemapWidth_308, byte_359
-	LDA	tilemapWidth_308
-	LSR	A
+	div_a_by_2_addr tilemapWidth_308
 	AND	#$FE 
 	add_to_a tilemap_size_307
 	STA	tilemap_size_307
@@ -8463,10 +8427,8 @@ sub_F942:
 	to_stack ppu_unk_byte_309
 	to_stack tilemap_size_307
 	JSR	sub_F98B
-	LSR	ppu_unk_byte_309
-	LSR	ppu_unk_byte_309
-	LSR	tilemap_size_307
-	LSR	tilemap_size_307
+	div_byte_by_4 ppu_unk_byte_309
+	div_byte_by_4 tilemap_size_307
 	JSR	sub_F504
 	JSR	sub_F57B
 	JSR	sub_F972
@@ -8500,10 +8462,7 @@ locret_F98A:
 sub_F98B:
 	LDX	ppu_unk_byte_302
 	LDY	ppu_unk_byte_303
-	LDA	ppu_scroll_y_305
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_y_305
 	add_to_a ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	if_a_greater_cmp #$1E, loc_F9A9
@@ -8512,10 +8471,7 @@ sub_F98B:
 	STA	ppu_unk_byte_309
 
 loc_F9A9:
-	LDA	ppu_scroll_x_304
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_x_304
 	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_a_greater_cmp #$20, locret_F9C1
@@ -8586,10 +8542,7 @@ loc_FA3B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_FA61:
-	LDA	ppu_scroll_x_304
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_x_304
 	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_a_greater_cmp #$20, loc_FA78
@@ -8597,10 +8550,7 @@ sub_FA61:
 	STA	tilemap_size_307
 
 loc_FA78:
-	LDA	ppu_scroll_y_305
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_y_305
 	add_to_a ppu_unk_byte_309
 	if_a_greater_cmp #$1E, loc_FA8C
 	INC	ppu_unk_byte_309
@@ -8613,14 +8563,10 @@ loc_FA8C:
 	INC	ppu_unk_byte_309
 
 loc_FA99:
-	LDA	ppu_unk_byte_309
-	LSR	A
-	LSR	A
+	div_a_by_4_addr ppu_unk_byte_309
 	mult_a_by_8
 	STA	tilemapTypeUnk_30B
-	LDA	tilemap_size_307
-	LSR	A
-	LSR	A
+	div_a_by_4_addr tilemap_size_307
 	add_to_a tilemapTypeUnk_30B
 	TAY
 	RTS
@@ -8634,10 +8580,8 @@ sub_FAAF:
 	to_stack ppu_unk_byte_309
 	to_stack tilemap_size_307
 	JSR	sub_F98B
-	LSR	ppu_unk_byte_309
-	LSR	ppu_unk_byte_309
-	LSR	tilemap_size_307
-	LSR	tilemap_size_307
+	div_byte_by_4 ppu_unk_byte_309
+	div_byte_by_4 tilemap_size_307
 
 start_read_tilemap_FAC8:
 	set tilemapData_4C, entry_idx_300

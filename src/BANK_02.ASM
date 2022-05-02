@@ -353,10 +353,7 @@ sub_2D401:
 	INX
 
 loc_2D40B:
-	LDA	ppu_scroll_x_304
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_x_304
 	add_to_a tilemap_size_307
 	STA	tilemapTypeUnk_30B
 	if_a_equal_cmp #$20, loc_2D435
@@ -383,10 +380,7 @@ loc_2D435:
 loc_2D445:
 
 	LDY	tilemapTypeUnk_30B
-	LDA	ppu_scroll_x_304
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_x_304
 	add_to_a tilemap_size_307
 	STA	tilemapTypeUnk_30B
 	TYA
@@ -402,8 +396,7 @@ loc_2D471:
 	set_inx {ppu_data_70,X}, byte_310
 	INY
 	if_y_greater_cmp tilemapTypeUnk_30B, loc_2D471
-	LDA	tilemapTypeUnk_30B
-	LSR	A
+	div_a_by_2_addr tilemapTypeUnk_30B
 	if_a_equal_cmp byte_35E, loc_2D4C3
 	to_stack data_2
 	to_stack data_3
@@ -442,8 +435,7 @@ loc_2D4D3:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2D4D7:
-	LDA	char_type_id_35D
-	LSR	A
+	div_a_by_2_addr char_type_id_35D
 	if_a_greater_cmp #8, loc_2D4E3
 	JSR	sub_2E244
 	RTS
@@ -750,10 +742,7 @@ loc_2E44E:
 
 loc_2E466:
 	set ptr_0, ppu_unk_byte_303
-	LDA	ppu_scroll_x_304
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_x_304
 	add_to_a tilemap_size_307
 	STA	tilemap_size_307
 	if_a_greater_cmp #$20, loc_2E482
@@ -761,10 +750,7 @@ loc_2E466:
 	STA	tilemap_size_307
 
 loc_2E482:
-	LDA	ppu_scroll_y_305
-	LSR	A
-	LSR	A
-	LSR	A
+	div_a_by_8_addr ppu_scroll_y_305
 	add_to_a ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	if_a_greater_cmp #$1E, loc_2E49B

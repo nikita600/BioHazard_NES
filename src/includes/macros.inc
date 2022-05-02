@@ -172,6 +172,75 @@
 
 ; ---------------------------------------------------------------------------
 
+.macro div_byte_by_2 addr
+	LSR addr
+.endmacro
+
+.macro div_byte_by_4 addr
+	LSR addr
+	LSR addr
+.endmacro
+
+.macro div_byte_by_8 addr
+	LSR addr
+	LSR addr
+	LSR addr
+.endmacro
+
+; ---------------------------------------------------------------------------
+
+.macro div_a_by_2_addr addr
+	LDA addr
+	LSR A
+.endmacro
+
+.macro div_a_by_4_addr addr
+	LDA addr
+	LSR A
+	LSR A
+.endmacro
+
+.macro div_a_by_8_addr addr
+	LDA addr
+	LSR A
+	LSR A
+	LSR A
+.endmacro
+
+.macro div_a_by_16_addr addr
+	LDA addr
+	LSR A
+	LSR A
+	LSR A
+	LSR A
+.endmacro
+
+; ---------------------------------------------------------------------------
+
+.macro div_a_by_2
+	LSR A
+.endmacro
+
+.macro div_a_by_4
+	LSR A
+	LSR A
+.endmacro
+
+.macro div_a_by_8
+	LSR A
+	LSR A
+	LSR A
+.endmacro
+
+.macro div_a_by_16
+	LSR A
+	LSR A
+	LSR A
+	LSR A
+.endmacro
+
+; ---------------------------------------------------------------------------
+
 .macro if_a_equal value, branch
 	LDA	value
 	BEQ	branch
@@ -283,6 +352,16 @@
 .macro if_y_greater_cmp value, branch
 	CPY value
 	BCC branch
+.endmacro
+
+; ---------------------------------------------------------------------------
+
+.macro get_word_offset addr, idx
+	LDA	idx
+	mult_a_by_2
+	add_to_a addr
+	STA	addr
+	add_to_byte addr+1, #0
 .endmacro
 
 ; ---------------------------------------------------------------------------

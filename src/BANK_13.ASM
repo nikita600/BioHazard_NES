@@ -1372,14 +1372,10 @@ load_boss_sprite_13DFDC:
 
 	set ptr_0, byte_31E
 	set ptr_1, #0
-	ASL	ptr_0
-	ROL	ptr_1
-	ASL	ptr_0
-	ROL	ptr_1
-	ASL	ptr_0
-	ROL	ptr_1
-	ASL	ptr_0
-	ROL	ptr_1
+	mult_word_by_2 ptr_0
+	mult_word_by_2 ptr_0
+	mult_word_by_2 ptr_0
+	mult_word_by_2 ptr_0
 	LDA	ptr_1
 	ORA	#$10
 	STA	ptr_1

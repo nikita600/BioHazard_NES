@@ -41,8 +41,7 @@ upload_gfx_to_ppu_5F093:
 
 	set data_2, entry_idx_300
 	set data_3, #0
-	ASL	data_2
-	ROL	data_3
+	mult_word_by_2 data_2
 
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3

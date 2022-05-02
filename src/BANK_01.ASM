@@ -227,14 +227,10 @@ get_sprite_length_F390:
 get_sprite_descr2_F397:
 	set ptr_0, sprite_secondByte_31B
 	set ptr_1, #0
-	ASL	ptr_0
-	ROL	ptr_1
-	ASL	ptr_0
-	ROL	ptr_1
-	ASL	ptr_0
-	ROL	ptr_1
-	ASL	ptr_0
-	ROL	ptr_1
+	mult_word_by_2 ptr_0
+	mult_word_by_2 ptr_0
+	mult_word_by_2 ptr_0
+	mult_word_by_2 ptr_0
 	RTS
 ; End of function load_sprite_to_vram_1F36D
 

@@ -3443,8 +3443,7 @@ sub_C873:
 	set data_2, entry_idx_300
 	set data_3, #0
 
-	ASL	data_2
-	ROL	data_3
+	mult_word_by_2 data_2
 
 	add_to_ptr_addr data_2
 
@@ -3525,8 +3524,7 @@ sub_C921:
 
 	set data_2, entry_idx_300
 	set data_3, #0
-	ASL	data_2
-	ROL	data_3
+	mult_word_by_2 data_2
 
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
@@ -5878,8 +5876,7 @@ load_from_C558_DF4B:
 
 	set data_2, entry_idx_300
 	set data_3, #0
-	ASL	data_2
-	ROL	data_3
+	mult_word_by_2 data_2
 
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
@@ -5927,8 +5924,7 @@ sub_DFC1:
 get_offset_DFCE:
 	set data_2, entry_idx_300
 	set data_3, #0
-	ASL	data_2
-	ROL	data_3
+	mult_word_by_2 data_2
 
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
@@ -8375,8 +8371,7 @@ get_tilemap_entries_ptr_F486:
 get_tilemap_entry_offset_F48E:
 	set data_2, entry_idx_300
 	set data_3, #0
-	ASL	data_2
-	ROL	data_3
+	mult_word_by_2 data_2
 	
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3
@@ -9227,14 +9222,10 @@ loc_FB8C:
 	set data_3, #$FB 
 	set ptr_0, text_unk_35B
 	set ptr_1, #0
-	ASL	ptr_0
-	ROL	ptr_1
-	ASL	ptr_0
-	ROL	ptr_1
-	ASL	ptr_0
-	ROL	ptr_1
-	ASL	ptr_0
-	ROL	ptr_1
+	mult_word_by_2 ptr_0
+	mult_word_by_2 ptr_0
+	mult_word_by_2 ptr_0
+	mult_word_by_2 ptr_0
 	LDA	ptr_1
 	ORA	#$10
 	STA	ptr_1

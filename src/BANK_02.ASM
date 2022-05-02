@@ -139,8 +139,7 @@ sub_2D1CB:
 	JSR	sub_2D397
 
 loc_2D1DF:
-	ASL	text_idx_35C
-	ROL	char_type_id_35D
+	mult_word_by_2 text_idx_35C
 	ASL	char_type_id_35D
 	LDA	#$97 
 	add_to_a char_type_id_35D
@@ -162,14 +161,10 @@ loc_2D21A:
 	set tilemapHeight_30A, #0
 	set data_2, sprite_secondByte_31B
 	set data_3, #0
-	ASL	data_2
-	ROL	data_3
-	ASL	data_2
-	ROL	data_3
-	ASL	data_2
-	ROL	data_3
-	ASL	data_2
-	ROL	data_3
+	mult_word_by_2 data_2
+	mult_word_by_2 data_2
+	mult_word_by_2 data_2
+	mult_word_by_2 data_2
 	LDA	data_3
 	ORA	#$10
 	STA	data_3
@@ -226,8 +221,7 @@ loc_2D29C:
 
 	set_iny char_type_id_35D, {(ptr_0),Y}
 	set_iny text_idx_35C, {(ptr_0),Y}
-	ASL	text_idx_35C
-	ROL	char_type_id_35D
+	mult_word_by_2 text_idx_35C
 	to_stack ptr_0
 	to_stack ptr_1
 	to_stack data_2
@@ -990,8 +984,7 @@ sub_2E781:
 
 	set data_2, entry_idx_300
 	set data_3, #0
-	ASL	data_2
-	ROL	data_3
+	mult_word_by_2 data_2
 
 	add_to_byte_clc ptr_0, data_2
 	add_to_byte ptr_1, data_3

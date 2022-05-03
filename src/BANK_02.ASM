@@ -624,8 +624,7 @@ loc_2E33E:
 	INC	ptr_0
 	load_a_masked data_2, #$1F
 	if_a_not_equal_cmp #$1F, loc_2E374
-	sub_byte_sec data_2, #$1F
-	sub_byte data_3, #0
+	sub_byte_from_word data_2, #$1F
 	JMP	loc_2E381
 ; ---------------------------------------------------------------------------
 

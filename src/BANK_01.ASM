@@ -419,8 +419,7 @@ loc_1F583:
 	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_1F583
 	from_stack_to_a byte_36B
 	from_stack_to_a byte_36A
-	sub_byte_sec data_2, tilemapWidth_308
-	sub_byte data_3, #0
+	sub_byte_from_word data_2, tilemapWidth_308
 	add_byte_to_word byte_366, #8
 	INX
 	if_x_equal_cmp tilemapHeight_30A, loc_1F5F9
@@ -440,23 +439,19 @@ sub_1F5FF:
 	set byte_368, ppu_scroll_y_305
 	set byte_369, ppu_unk_byte_303
 	JSR	sub_1F6AB
-	sub_addr_sec byte_36A, byte_36C
-	sub_addr byte_36B, byte_36D
+	sub_word_from_word byte_36A, byte_36C
 	BCC	loc_1F68D
-	sub_addr_sec byte_366, byte_368
-	sub_addr byte_367, byte_369
+	sub_word_from_word byte_366, byte_368
 	BCC	loc_1F68D
 	INC	byte_36D
 	add_byte_to_word byte_368, #$F0 
-	sub_addr_sec byte_36C, byte_36A
-	sub_addr byte_36D, byte_36B
+	sub_word_from_word byte_36C, byte_36A
 	BCC	loc_1F68D
 	if_a_not_equal_cmp_addr byte_36C, byte_36A, loc_1F66B
 	if_a_equal_cmp_addr byte_36D, byte_36B, loc_1F68D
 
 loc_1F66B:
-	sub_addr_sec byte_368, byte_366
-	sub_addr byte_369, byte_367
+	sub_word_from_word byte_368, byte_366
 	BCC	loc_1F68D
 	if_a_not_equal_cmp_addr byte_368, byte_366, loc_1F693
 	if_a_equal_cmp_addr byte_369, byte_367, loc_1F68D

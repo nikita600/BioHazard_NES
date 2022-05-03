@@ -779,19 +779,15 @@ sub_87CE:
 	add_byte_to_byte byte_367, #0
 
 	JSR	sub_D8D8
-	sub_addr_sec byte_36A, byte_36C
-	sub_addr byte_36B, byte_36D
+	sub_word_from_word byte_36A, byte_36C
 	BCC	loc_8854
-	sub_addr_sec byte_366, byte_368
-	sub_addr byte_367, byte_369
+	sub_word_from_word byte_366, byte_368
 	BCC	loc_8854
 	JSR	sub_D8FD
 	JSR	sub_D913
-	sub_addr_sec byte_36C, byte_36A
-	sub_addr byte_36D, byte_36B
+	sub_word_from_word byte_36C, byte_36A
 	BCC	loc_8854
-	sub_addr_sec byte_368, byte_366
-	sub_addr byte_369, byte_367
+	sub_word_from_word byte_368, byte_366
 	BCC	loc_8854
 	set sprite_length_30F, #$FF
 
@@ -807,8 +803,7 @@ loc_8854:
 
 sub_8865:
 	if_a_not_equal_cmp_addr byte_313, #0, loc_8880
-	sub_byte_sec byte_366, #8
-	sub_byte byte_367, #0
+	sub_byte_from_word byte_366, #8
 	JMP	locret_88C1
 ; ---------------------------------------------------------------------------
 
@@ -821,8 +816,7 @@ loc_8880:
 
 loc_8898:
 	if_a_not_equal_cmp #2, loc_88B0
-	sub_byte_sec byte_36A, #8
-	sub_byte byte_36B, #0
+	sub_byte_from_word byte_36A, #8
 	JMP	locret_88C1
 ; ---------------------------------------------------------------------------
 
@@ -1840,19 +1834,16 @@ sub_9261:
 	set sprite_length_30F, #0
 
 loc_927A:
-	sub_addr_sec byte_42C, byte_36A
-	sub_addr byte_42D, byte_36B
+	sub_word_from_word byte_42C, byte_36A
 	BCC	loc_92B7
-	sub_addr_sec byte_36A, byte_42C
-	sub_addr byte_36B, byte_42D
+	sub_word_from_word byte_36A, byte_42C
 	BCC	loc_92A3
 	or_byte sprite_length_30F, #$F
 	JMP	loc_92CB
 ; ---------------------------------------------------------------------------
 
 loc_92A3:
-	sub_byte_sec byte_42C, #2
-	sub_byte byte_42D, #0
+	sub_byte_from_word byte_42C, #2
 	JMP	loc_92CB
 ; ---------------------------------------------------------------------------
 
@@ -1863,19 +1854,16 @@ loc_92B7:
 ; ---------------------------------------------------------------------------
 
 loc_92CB:
-	sub_addr_sec byte_42E, byte_366
-	sub_addr byte_42F, byte_367
+	sub_word_from_word byte_42E, byte_366
 	BCC	loc_9308
-	sub_addr_sec byte_366, byte_42E
-	sub_addr byte_367, byte_42F
+	sub_word_from_word byte_366, byte_42E
 	BCC	loc_92F4
 	or_byte sprite_length_30F, #$F0 
 	JMP	loc_931C
 ; ---------------------------------------------------------------------------
 
 loc_92F4:
-	sub_byte_sec byte_42E, #2
-	sub_byte byte_42F, #0
+	sub_byte_from_word byte_42E, #2
 	JMP	loc_931C
 ; ---------------------------------------------------------------------------
 
@@ -1956,8 +1944,7 @@ loc_93D5:
 	if_a_equal_cmp_addr byte_200, #0, locret_93FB
 	JSR	sub_944A
 	if_a_not_equal sprite_length_30F, locret_93FB
-	sub_byte_sec byte_42E, #2
-	sub_byte byte_42F, #0
+	sub_byte_from_word byte_42E, #2
 	DEC	byte_431
 	DEC	byte_431
 
@@ -1982,8 +1969,7 @@ loc_9423:
 	if_a_equal_cmp_addr byte_203, #0, locret_9449
 	JSR	sub_944A
 	if_a_not_equal sprite_length_30F, locret_9449
-	sub_byte_sec byte_42C, #2
-	sub_byte byte_42D, #0
+	sub_byte_from_word byte_42C, #2
 	DEC	byte_430
 	DEC	byte_430
 
@@ -2357,8 +2343,7 @@ sub_97F8:
 
 sub_9824:
 	if_a_not_equal_cmp_addr byte_313, #0, loc_983F
-	sub_byte_sec byte_366, #$10
-	sub_byte byte_367, #0
+	sub_byte_from_word byte_366, #$10
 	JMP	locret_9880
 ; ---------------------------------------------------------------------------
 
@@ -2371,8 +2356,7 @@ loc_983F:
 
 loc_9857:
 	if_a_not_equal_cmp #2, loc_986F
-	sub_byte_sec byte_36A, #$10
-	sub_byte byte_36B, #0
+	sub_byte_from_word byte_36A, #$10
 	JMP	locret_9880
 ; ---------------------------------------------------------------------------
 
@@ -2427,8 +2411,7 @@ locret_98F1:
 
 sub_98F2:
 	if_a_not_equal_cmp_addr byte_313, #0, loc_990D
-	sub_byte_sec byte_366, #$10
-	sub_byte byte_367, #0
+	sub_byte_from_word byte_366, #$10
 	JMP	locret_994E
 ; ---------------------------------------------------------------------------
 
@@ -2441,8 +2424,7 @@ loc_990D:
 
 loc_9925:
 	if_a_not_equal_cmp #2, loc_993D
-	sub_byte_sec byte_36A, #$10
-	sub_byte byte_36B, #0
+	sub_byte_from_word byte_36A, #$10
 	JMP	locret_994E
 ; ---------------------------------------------------------------------------
 
@@ -2466,8 +2448,7 @@ loc_9956:
 	x_to_stack
 	JSR	sub_C7C7
 	if_a_equal_cmp_addr byte_445, #0, loc_9986
-	sub_byte_sec byte_366, #$16
-	sub_byte byte_367, #0
+	sub_byte_from_word byte_366, #$16
 
 loc_9986:
 	JSR	sub_D894
@@ -3240,8 +3221,7 @@ loc_C814:
 	LDA	byte_369
 	ADC	#0
 	STA	byte_367
-	sub_byte_sec byte_366, #8
-	sub_byte byte_367, #0
+	sub_byte_from_word byte_366, #8
 	RTS
 ; End of function sub_C7C7
 
@@ -3473,8 +3453,7 @@ sub_CA14:
 
 loc_CA18:
 	if_a_equal_cmp_addr byte_367, #0, loc_CA34
-	sub_byte_sec byte_366, #$F0 
-	sub_byte byte_367, #0
+	sub_byte_from_word byte_366, #$F0 
 	INY
 	JMP	loc_CA18
 ; ---------------------------------------------------------------------------
@@ -3847,8 +3826,7 @@ loc_CD6E:
 	set byte_36D, {unk_457,X}
 	set byte_368, {unk_458,X}
 	set byte_369, {unk_459,X}
-	sub_addr_sec byte_36A, byte_36C
-	sub_addr byte_36B, byte_36D
+	sub_word_from_word byte_36A, byte_36C
 	BCC	loc_CDDD
 	if_a_not_equal_cmp_addr byte_36A, byte_36C, loc_CDC4
 	if_a_not_equal_cmp_addr byte_36B, byte_36D, loc_CDC4
@@ -3892,8 +3870,7 @@ loc_CE1C:
 ; ---------------------------------------------------------------------------
 
 loc_CE35:
-	sub_addr_sec byte_366, byte_368
-	sub_addr byte_367, byte_369
+	sub_word_from_word byte_366, byte_368
 	BCC	loc_CE70
 	if_a_not_equal_cmp_addr byte_366, byte_368, loc_CE57
 	if_a_not_equal_cmp_addr byte_367, byte_369, loc_CE57
@@ -4173,8 +4150,7 @@ sub_D0AD:
 loc_D0C7:
 	set byte_36C, {array_unk_3C5,X}
 	set byte_36D, {array_unk_3BB,X}
-	sub_addr_sec byte_36A, byte_36C
-	sub_addr byte_36B, byte_36D
+	sub_word_from_word byte_36A, byte_36C
 	BCC	loc_D11E
 	sub_addr_sec byte_36A, byte_36C
 	STA	ptr_0
@@ -4213,8 +4189,7 @@ loc_D139:
 loc_D15A:
 	set byte_368, {array_unk_3D9,X}
 	set byte_369, {array_unk_3CF,X}
-	sub_addr_sec byte_366, byte_368
-	sub_addr byte_367, byte_369
+	sub_word_from_word byte_366, byte_368
 	BCC	loc_D1B1
 	sub_addr_sec byte_366, byte_368
 	STA	ptr_0
@@ -4348,8 +4323,7 @@ loc_D2C4:
 	STA	byte_36D
 	set byte_368, {array_unk_3D9,X}
 	set byte_369, {array_unk_3CF,X}
-	sub_addr_sec byte_366, byte_368
-	sub_addr byte_367, byte_369
+	sub_word_from_word byte_366, byte_368
 	BCC	loc_D32B
 	sub_addr_sec byte_366, byte_368
 	div_a_by_16
@@ -4588,8 +4562,7 @@ loc_D57F:
 ; ---------------------------------------------------------------------------
 
 loc_D591:
-	sub_byte_sec byte_366, #8
-	sub_byte byte_367, #0
+	sub_byte_from_word byte_366, #8
 
 loc_D5A2:
 	if_a_equal {objCreatedArray_393,Y}, loc_D5AA
@@ -4931,8 +4904,7 @@ sub_D929:
 	a_to_stack tilemapWidth_308
 	mult_a_by_8
 	STA	tilemapWidth_308
-	sub_byte_sec byte_36C, tilemapWidth_308
-	sub_byte byte_36D, #0
+	sub_byte_from_word byte_36C, tilemapWidth_308
 	from_stack_to_a tilemapWidth_308
 	RTS
 ; End of function sub_D929
@@ -4943,8 +4915,7 @@ sub_D94A:
 	a_to_stack tilemapHeight_30A
 	mult_a_by_8
 	STA	tilemapHeight_30A
-	sub_byte_sec byte_368, tilemapHeight_30A
-	sub_byte byte_369, #0
+	sub_byte_from_word byte_368, tilemapHeight_30A
 	from_stack_to_a tilemapHeight_30A
 	RTS
 ; End of function sub_D94A
@@ -4952,19 +4923,15 @@ sub_D94A:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_D96B:
-	sub_addr_sec byte_36C, byte_36A
-	sub_addr byte_36D, byte_36B
+	sub_word_from_word byte_36C, byte_36A
 	BCC	loc_D9B3
-	sub_addr_sec byte_368, byte_366
-	sub_addr byte_369, byte_367
+	sub_word_from_word byte_368, byte_366
 	BCC	loc_D9B3
 	JSR	sub_D929
 	JSR	sub_D94A
-	sub_addr_sec byte_36A, byte_36C
-	sub_addr byte_36B, byte_36D
+	sub_word_from_word byte_36A, byte_36C
 	BCC	loc_D9B3
-	sub_addr_sec byte_366, byte_368
-	sub_addr byte_367, byte_369
+	sub_word_from_word byte_366, byte_368
 	BCC	loc_D9B3
 	set sprite_length_30F, #$FF
 	RTS
@@ -5033,19 +5000,15 @@ loc_DA40:
 	set ppu_unk_byte_309, #2
 
 loc_DA73:
-	sub_addr_sec byte_36A, byte_36C
-	sub_addr byte_36B, byte_36D
+	sub_word_from_word byte_36A, byte_36C
 	BCC	loc_DABE
-	sub_addr_sec byte_366, byte_368
-	sub_addr byte_367, byte_369
+	sub_word_from_word byte_366, byte_368
 	BCC	loc_DABE
 	JSR	sub_D8FD
 	JSR	sub_D913
-	sub_addr_sec byte_36C, byte_36A
-	sub_addr byte_36D, byte_36B
+	sub_word_from_word byte_36C, byte_36A
 	BCC	loc_DABE
-	sub_addr_sec byte_368, byte_366
-	sub_addr byte_369, byte_367
+	sub_word_from_word byte_368, byte_366
 	BCC	loc_DABE
 	STX	byte_434
 	set sprite_length_30F, #$FF
@@ -5129,8 +5092,7 @@ loc_DB72:
 ; ---------------------------------------------------------------------------
 
 loc_DB98:
-	sub_addr_sec byte_368, byte_36C
-	sub_addr byte_369, byte_36D
+	sub_word_from_word byte_368, byte_36C
 	BCC	loc_DBC3
 	and_byte sprite_length_30F, #$F0 
 	if_a_equal_cmp #$30, loc_DBBB
@@ -5315,10 +5277,8 @@ sub_DD40:
 	sub_addr_sec byte_366, {array_unk_3D9,X}
 	sub_addr byte_367, {array_unk_3CF,X}
 	BCC	locret_DDC5
-	sub_byte_sec byte_366, #$20 
-	sub_byte byte_367, #0
-	sub_byte_sec byte_36A, #$20 
-	sub_byte byte_36B, #0
+	sub_byte_from_word byte_366, #$20 
+	sub_byte_from_word byte_36A, #$20 
 	sub_addr_sec {array_unk_3C5,X}, byte_36A
 	sub_addr {array_unk_3BB,X}, byte_36B
 	BCC	locret_DDC5
@@ -5359,8 +5319,7 @@ sub_DDDA:
 ; ---------------------------------------------------------------------------
 
 loc_DDEB:
-	sub_byte_sec byte_366, #$10
-	sub_byte byte_367, #0
+	sub_byte_from_word byte_366, #$10
 
 loc_DDFC:
 	LDY	#0
@@ -5412,8 +5371,7 @@ loc_DE6A:
 	STA	byte_366
 	add_byte_to_byte byte_367, #0
 
-	sub_byte_sec byte_36A, #$10
-	sub_byte byte_36B, #0
+	sub_byte_from_word byte_36A, #$10
 	JSR	map_update_DEFA
 	if_a_not_equal sprite_length_30F, locret_DEB3
 	add_byte_to_word byte_36A, #8

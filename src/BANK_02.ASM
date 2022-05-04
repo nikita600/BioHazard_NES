@@ -146,14 +146,10 @@ loc_2D1DF:
 	LDA	#$80 
 	ADC	#0
 	STA	ptr_1
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 	add_byte_to_word data_2, text_idx_35C
 
-	LDY	#0
-	set_iny ptr_0, {(data_2),Y}
-	set ptr_1, {(data_2),Y}
+	read_word  ptr_0, {(data_2),Y}
 
 loc_2D21A:
 	set tilemapHeight_30A, #0
@@ -516,14 +512,10 @@ sub_2E244:
 	LDA	#$D5 
 	ADC	#0
 	STA	ptr_1
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 	add_byte_to_word data_2, text_idx_35C
 
-	LDY	#0
-	set_iny ptr_0, {(data_2),Y}
-	set ptr_1, {(data_2),Y}
+	read_word  ptr_0, {(data_2),Y}
 	from_stack_to_a data_3
 	from_stack_to_a data_2
 	LDY	#0
@@ -941,9 +933,7 @@ sub_2E781:
 	add_word_to_word ptr_0, data_2
 
 	
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 
 loc_2E7B0:

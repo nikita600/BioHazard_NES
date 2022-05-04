@@ -3269,9 +3269,7 @@ sub_C873:
 
 	add_word_to_word ptr_0, data_2
 
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
 
@@ -3349,9 +3347,7 @@ sub_C921:
 
 	add_word_to_word ptr_0, data_2
 
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
 	LDX	#0
@@ -5433,9 +5429,7 @@ load_from_C558_DF4B:
 
 	add_word_to_word ptr_0, data_2
 
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
 
@@ -5481,9 +5475,7 @@ get_offset_DFCE:
 	add_word_to_word ptr_0, data_2
 
 get_ptr_DFE8:
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 
 read_entry_DFF3:
 	LDY	#0
@@ -7768,14 +7760,10 @@ get_tilemap_entry_offset_F48E:
 	add_word_to_word ptr_0, data_2
 
 get_tilemap_entry_ptr_F4A8:
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 
 read_tilemap_entry_data_F4B3:
-	LDY	#0
-	set_iny tilemaps_horiz_count_311, {(data_2),Y}
-	set tilemaps_vert_count_312, {(data_2),Y}
+	read_word  tilemaps_horiz_count_311, {(data_2),Y}
 	LDA	#0
 	LDY	roomUnk2_4E
 

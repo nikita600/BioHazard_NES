@@ -11,9 +11,7 @@
 	STA	ptr_0
 	add_byte_to_byte ptr_1, data_2
 
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 
 	set_ptr _PPU_PALETTE
 
@@ -102,9 +100,7 @@ get_offset_4F3EF:
 	add_byte_to_byte ptr_1, data_2
 
 get_sprite_ptr_4F404:
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 
 get_sprite_descr_4F40F:
 	LDY	#0
@@ -139,9 +135,7 @@ get_offset_4F44B:
 	add_byte_to_byte ptr_1, data_2
 
 get_ptr_4F460:
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 
 get_tilemap_offset_4F46B:
 	set ptr_0, #0
@@ -153,9 +147,7 @@ get_tilemap_offset_4F46B:
 	add_byte_to_byte data_3, ptr_0
 
 get_tilemap_ptr_4F480:
-	LDY	#0
-	set_iny ptr_0, {(data_2),Y}
-	set ptr_1, {(data_2),Y}
+	read_word  ptr_0, {(data_2),Y}
 
 get_tilemap_descr_4F48B:
 	LDY	#0

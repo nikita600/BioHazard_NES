@@ -43,9 +43,7 @@ upload_gfx_to_ppu_6F863:
 
 	add_word_to_word ptr_0, data_2
 
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 	
 	set_ptr _PPU_PAT_TBL_1
 

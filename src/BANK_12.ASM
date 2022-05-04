@@ -1789,9 +1789,7 @@ loc_12A64A:
 
 	add_word_to_word ptr_0, data_2
 
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 	set objArraySize_373, {(data_2),Y}
 	if_a_not_equal_cmp #0, loc_12A68B
@@ -1812,9 +1810,7 @@ loc_12A69D:
 	STA	data_2
 	add_byte_to_byte data_3, #0
 
-	LDY	#0
-	set_iny ptr_0, {(data_2),Y}
-	set ptr_1, {(data_2),Y}
+	read_word  ptr_0, {(data_2),Y}
 	LDX	inv_spr_dscr1_30C
 	LDY	#0
 	set_iny {array_unk_3C5,X}, {(ptr_0),Y}
@@ -9556,9 +9552,7 @@ loc_12F30E:
 	STA	ptr_0
 	add_byte_to_byte ptr_1, #0
 
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
 	if_a_equal_cmp byte_421, loc_12F33F

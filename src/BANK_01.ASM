@@ -144,9 +144,7 @@ get_offset_F2FB:
 	add_byte_to_byte ptr_1, #0
 
 get_ptr_F30A:
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 	RTS
 ; End of function get_sprite_palette_ptr_1F2F3
 
@@ -211,9 +209,7 @@ get_offset_F376:; spriteIdx
 	add_byte_to_byte ptr_1, #0
 
 get_ptr_F385:
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 
 get_sprite_length_F390:
 	LDY	#0
@@ -251,9 +247,7 @@ get_container_offset_F3C1:
 	add_byte_to_byte data_3, #0
 
 get_container_ptr_F3D0:
-	LDY	#0
-	set_iny ptr_0, {(data_2),Y}
-	set ptr_1, {(data_2),Y}
+	read_word  ptr_0, {(data_2),Y}
 
 get_tilemap_offset_F3DB:
 	LDA	objMapIdx_316
@@ -263,9 +257,7 @@ get_tilemap_offset_F3DB:
 	add_byte_to_byte ptr_1, #0
 
 get_tilemap_ptr_F3EA:
-	LDY	#0
-	set_iny data_2, {(ptr_0),Y}
-	set data_3, {(ptr_0),Y}
+	read_word  data_2, {(ptr_0),Y}
 
 get_width_F3F5:
 	LDY	#0

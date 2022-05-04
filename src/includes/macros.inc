@@ -10,6 +10,16 @@
 
 ; ---------------------------------------------------------------------------
 
+.macro read_word dst, src
+	LDY	#0
+	LDA	src
+	STA	dst
+	
+	INY
+	LDA	src
+	STA	dst+1
+.endmacro
+
 .macro get_word_offset addr, idx
 	LDA	idx
 	mult_a_by_2

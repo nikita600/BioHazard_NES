@@ -30,3 +30,23 @@
 	set data_2, #.LOBYTE(addr)
 	set data_3, #.HIBYTE(addr) 
 .endmacro
+
+.macro set_byte_to_word addr, value
+	set addr, value
+	set addr+1, #0
+.endmacro
+
+.macro set_byte_to_word_const addr, value
+	set addr, #.LOBYTE(value)
+	set addr+1, #0
+.endmacro
+
+.macro set_word_to_word addr, value
+	set addr, value
+	set addr+1, value+1
+.endmacro
+
+.macro set_word_to_word_const addr, value
+	set addr, #.LOBYTE(value)
+	set addr+1, #.HIBYTE(value)
+.endmacro

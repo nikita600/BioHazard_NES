@@ -1,7 +1,32 @@
+.macro tilemap_entry_point_func
+
+tilemap_switch_case:
+	set bank_prev_345, bank_to_344
+	set bank_switch_flag_6C, #$88
+
+	if_a_equal_cmp_addr bank_command_346, #0, case0_78047
+	RTS
+; ---------------------------------------------------------------------------
+
+case0_78047:
+	JSR	load_tilemap_chunk_in_ram_7F897
+	JMP	return_7804D
+; ---------------------------------------------------------------------------
+
+return_7804D:
+	set bank_command_346, #$FF
+	set bank_to_344, bank_from_343
+
+	JMP	bank_switch
+
+.endmacro
+
+.macro load_tilemap_chunk_in_ram_func tilemaps_ptr
+
 ; =============== S U B	R O U T	I N E =======================================
 
 load_tilemap_chunk_in_ram_7F897:
-	set_word_to_word_const ptr_0, $805B
+	set_word_to_word_const ptr_0, tilemaps_ptr
 
 getTilemapPtr: ; ptr + idx * 2
 	set_byte_to_word data_2, entry_idx_300
@@ -45,9 +70,4 @@ write_tilemap_line_7F90F:
 	RTS
 ; End of function load_tilemap_chunk_in_ram_7F897
 
-; ---------------------------------------------------------------------------
-
-Common_Code_Tilemap:
-	.include "common/common_funcs.asm"
-
-; ---------------------------------------------------------------------------
+.endmacro

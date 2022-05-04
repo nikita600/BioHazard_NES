@@ -1,0 +1,111 @@
+unk_400 = $0400  
+unk_401 = $0401  
+unk_402 = $0402 
+unk_403 = $0403 
+unk_404 = $0404 
+unk_408 = $0408 
+unk_409 = $0409 
+unk_40B = $040B  
+unk_40E = $040E 
+obj_array_unk_415 = $0415
+byte_41F = $041F 
+
+byte_420 = $0420 
+byte_421 = $0421 
+unk_422 = $0422
+byte_42A = $042A 
+byte_42B = $042B 
+byte_42C = $042C 
+byte_42D = $042D 
+byte_42E = $042E 
+byte_42F = $042F 
+
+byte_430 = $0430 
+byte_431 = $0431 
+byte_432 = $0432 
+byte_433 = $0433 
+byte_434 = $0434 
+byte_435 = $0435 
+byte_436 = $0436 
+byte_437 = $0437 
+byte_438 = $0438 
+byte_439 = $0439 
+cur_obj_idx_unk_43A = $043A 
+map_show_43B = $043B 
+byte_43E = $043E 
+byte_43F = $043F 
+
+byte_440 = $0440 
+byte_441 = $0441 
+byte_443 = $0443 
+byte_445 = $0445 
+array_unk_446 = $0446
+unk_447 = $0447
+unk_448 = $0448
+unk_449 = $0449
+
+array_unk_452 = $0452
+unk_456 = $0456
+unk_457 = $0457
+unk_458 = $0458
+unk_459 = $0459
+obj_array_unk_45E = $045E
+
+unk_460 = $0460
+obj_idx_unk_462 = $0462 
+count_unk_463 = $0463 
+count_unk_464 = $0464 
+count_unk_465 = $0465 
+count_unk_466 = $0466 
+count_unk_467 = $0467 
+count_unk_468 = $0468 
+count_unk_469 = $0469 
+count_unk_46A = $046A 
+count_unk_46B = $046B 
+count_unk_46C = $046C 
+byte_46D = $046D 
+byte_46E = $046E 
+byte_46F = $046F
+
+byte_470 = $0470 
+byte_471 = $0471 
+byte_472 = $0472 
+byte_473 = $0473 
+byte_474 = $0474 
+byte_475 = $0475 
+byte_476 = $0476 
+byte_477 = $0477 
+byte_478 = $0478 
+scroll_offset_x_479 = $0479
+scroll_offset_y_47A = $047A
+byte_47B = $047B 
+byte_47C = $047C 
+jill_pos_x_47D = $047D 
+jill_pos_y_47E = $047E 
+byte_47F = $047F
+
+unk_48E = $048E
+
+byte_4A0 = $04A0 
+byte_4A1 = $04A1 
+byte_4A2 = $04A2 
+byte_4A3 = $04A3 
+image_id_4A4 = $04A4 
+image_offset_4A5 = $04A5 
+ppu_prev_unk_4A6 = $04A6 
+ppu_prev_scroll_x_unk_4A7 = $04A7
+ppu_prev_scroll_y_unk_4A8 = $04A8 
+prev_sprite_type_4A9 = $04A9 
+byte_4AA = $04AA 
+byte_4AD = $04AD 
+byte_4AE = $04AE 
+byte_4AF = $04AF 
+
+byte_4B4 = $04B4 
+byte_4B5 = $04B5 
+unk_4B6 = $04B6
+
+byte_4C1 = $04C1 
+unk_4C2 = $04C2 
+byte_4D0 = $04D0 
+unk_4D2 = $04D2 

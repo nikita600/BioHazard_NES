@@ -4466,7 +4466,7 @@ loc_D4AD:
 	LDY	#0
 	LDX	#0
 	set tilemapTypeUnk_30B, #0
-	set {unk_56,X}, {objIdxArray_375,Y}
+	set {byte_56,X}, {objIdxArray_375,Y}
 	set {tilemapData_4C,X}, {unk_401,Y}
 	INC	tilemapTypeUnk_30B
 	INY
@@ -4475,10 +4475,10 @@ loc_D4C4:
 	LDX	#0
 
 loc_D4C6:
-	if_a_equal_cmp_addr {objIdxArray_375,Y}, {unk_56,X}, loc_D4E0
+	if_a_equal_cmp_addr {objIdxArray_375,Y}, {byte_56,X}, loc_D4E0
 	INX
 	if_x_greater_cmp tilemapTypeUnk_30B, loc_D4C6
-	set {unk_56,X}, {objIdxArray_375,Y}
+	set {byte_56,X}, {objIdxArray_375,Y}
 	set {tilemapData_4C,X}, {unk_401,Y}
 	INC	tilemapTypeUnk_30B
 
@@ -4491,7 +4491,7 @@ loc_D4E8:
 	LDX	#0
 
 loc_D4EA:
-	if_a_equal_cmp_addr {unk_56,X}, {objIdxArray_375,Y}, loc_D4F7
+	if_a_equal_cmp_addr {byte_56,X}, {objIdxArray_375,Y}, loc_D4F7
 	INX
 	if_x_greater_cmp tilemapTypeUnk_30B, loc_D4EA
 
@@ -7914,7 +7914,7 @@ loc_F5CE:
 	LDX	#0
 
 loc_F5D2:
-	set_inx {unk_5C,X}, {tilemapData_4C,X}
+	set_inx {byte_5C,X}, {tilemapData_4C,X}
 	if_x_greater_cmp #8, loc_F5D2
 	from_stack_to_x
 	set tilemapData_4C, entry_idx_300
@@ -7940,7 +7940,7 @@ loc_F5EE:
 
 loc_F615:
 	and_byte {tilemapData_4C,X}, #$CC 
-	load_a_masked {unk_5C,X}, #$33 
+	load_a_masked {byte_5C,X}, #$33 
 	ORA	tilemapData_4C,X
 	STA	tilemapData_4C,X
 	INX
@@ -7953,7 +7953,7 @@ loc_F62B:
 
 loc_F62D:
 	and_byte {tilemapData_4C,X}, #$33 
-	load_a_masked {unk_5C,X}, #$CC 
+	load_a_masked {byte_5C,X}, #$CC 
 	ORA	tilemapData_4C,X
 	STA	tilemapData_4C,X
 	INX

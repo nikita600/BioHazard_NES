@@ -476,10 +476,10 @@ loc_2D51C:
 	EOR	#1
 	TAY
 	add_to_a #$D4 
-	STA	byte_200
-	set byte_201, #$5A 
-	set byte_202, #0
-	set byte_203, #$E2 
+	STA	spr_y_pos_200
+	set spr_idx_201, #$5A 
+	set spr_pal_idx_202, #0
+	set spr_x_pos_203, #$E2 
 
 locret_2D541:
 	RTS
@@ -493,7 +493,7 @@ sub_2D542:
 ; ---------------------------------------------------------------------------
 
 loc_2D54A:
-	set byte_200, #$F0 
+	set spr_y_pos_200, #$F0 
 	RTS
 ; End of function sub_2D542
 

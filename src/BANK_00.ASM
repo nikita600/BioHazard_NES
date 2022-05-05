@@ -195,7 +195,7 @@ RESET_8177:
 
 clear_ram_818C:
 	set {ptr_0,X}, #0
-	STA	byte_200,X
+	STA	spr_y_pos_200,X
 	STA	entry_idx_300,X
 	STA	unk_400,X
 	STA	unk_500,X
@@ -1763,7 +1763,7 @@ sub_91B6:
 
 loc_91D1:
 	JSR	sub_C77D
-	JSR	sub_938D
+	JSR	hide_sprites_938D
 	RTS
 ; End of function sub_91B6
 
@@ -1913,13 +1913,13 @@ sub_935A:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-sub_938D:
-	set byte_200, #$F0 
-	STA	byte_204
-	STA	byte_208
-	STA	byte_20C
+hide_sprites_938D:
+	set spr_y_pos_200, #$F0 
+	STA	spr_y_pos_204
+	STA	spr_y_pos_208
+	STA	spr_y_pos_20C
 	RTS
-; End of function sub_938D
+; End of function hide_sprites_938D
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -1928,7 +1928,7 @@ sub_939C:
 	if_a_equal_cmp_addr byte_313, #0, loc_93D5
 	if_a_equal_cmp #1, loc_93FC
 	if_a_equal_cmp #2, loc_9423
-	if_a_equal_cmp_addr byte_203, #$F0, locret_93D4
+	if_a_equal_cmp_addr spr_x_pos_203, #$F0, locret_93D4
 	JSR	sub_944A
 	if_a_not_equal sprite_length_30F, locret_93D4
 	add_byte_to_word byte_42C, #2
@@ -1941,7 +1941,7 @@ locret_93D4:
 ; ---------------------------------------------------------------------------
 
 loc_93D5:
-	if_a_equal_cmp_addr byte_200, #0, locret_93FB
+	if_a_equal_cmp_addr spr_y_pos_200, #0, locret_93FB
 	JSR	sub_944A
 	if_a_not_equal sprite_length_30F, locret_93FB
 	sub_byte_from_word byte_42E, #2
@@ -1953,7 +1953,7 @@ locret_93FB:
 ; ---------------------------------------------------------------------------
 
 loc_93FC:
-	if_a_equal_cmp_addr byte_200, #$E0, locret_9422
+	if_a_equal_cmp_addr spr_y_pos_200, #$E0, locret_9422
 	JSR	sub_944A
 	if_a_not_equal sprite_length_30F, locret_9422
 	add_byte_to_word byte_42E, #2
@@ -1966,7 +1966,7 @@ locret_9422:
 ; ---------------------------------------------------------------------------
 
 loc_9423:
-	if_a_equal_cmp_addr byte_203, #0, locret_9449
+	if_a_equal_cmp_addr spr_x_pos_203, #0, locret_9449
 	JSR	sub_944A
 	if_a_not_equal sprite_length_30F, locret_9449
 	sub_byte_from_word byte_42C, #2
@@ -2660,12 +2660,12 @@ sub_BD29:
 	add_byte_to_byte_clc tilemapWidth_308, byte_31A
 	LDY	byte_31A
 
-loc_BD36:
-	set_iny {byte_200,Y}, #$F0 
+hide_all_sprites_BD36:
+	set_iny {spr_y_pos_200,Y}, #$F0 
 	INY
 	INY
 	INY
-	if_y_not_equal_cmp tilemapWidth_308, loc_BD36
+	if_y_not_equal_cmp tilemapWidth_308, hide_all_sprites_BD36
 	RTS
 ; End of function sub_BD29
 
@@ -2844,7 +2844,7 @@ sub_BEB6:
 loc_BEBA:
 	ADC	ptr_0,X
 	ADC	byte_100,X
-	ADC	byte_200,X
+	ADC	spr_y_pos_200,X
 	ADC	entry_idx_300,X
 	ADC	unk_400,X
 	ADC	unk_500,X
@@ -8001,17 +8001,17 @@ sub_F65C:
 	LDX	#0
 
 loc_F68F:
-	load_a_masked {byte_200,X}, #$F8 
+	load_a_masked {spr_y_pos_200,X}, #$F8 
 	if_a_greater_cmp byte_366, loc_F6C0
-	load_a_masked {byte_200,X}, #$F8 
+	load_a_masked {spr_y_pos_200,X}, #$F8 
 	if_a_equal_cmp byte_368, loc_F6C0
 	BCS	loc_F6C0
-	load_a_masked {byte_203,X}, #$F8 
+	load_a_masked {spr_x_pos_203,X}, #$F8 
 	if_a_greater_cmp byte_36A, loc_F6C0
-	load_a_masked {byte_203,X}, #$F8 
+	load_a_masked {spr_x_pos_203,X}, #$F8 
 	if_a_equal_cmp byte_36C, loc_F6C0
 	BCS	loc_F6C0
-	set {byte_200,X}, #$F0 
+	set {spr_y_pos_200,X}, #$F0 
 
 loc_F6C0:
 	INX

@@ -1602,7 +1602,7 @@ loc_1290EA:
 	set byte_443, #0
 	set byte_440, #$FF
 	LDA	ppu_scroll_x_304
-	add_to_a byte_203
+	add_to_a spr_x_pos_203
 	STA	byte_441
 	set byte_476, #0
 	if_a_greater_cmp_addr byte_441, byte_473, loc_129117
@@ -6103,7 +6103,7 @@ loc_12CF5A:
 
 loc_12CF61:
 	JSR	sub_12ED20
-	set byte_204, #$F0 
+	set spr_y_pos_204, #$F0 
 	if_a_not_equal byte_372, loc_12CF76
 	from_stack_to_a byte_372
 	JSR	sub_12CFBA
@@ -6131,7 +6131,7 @@ loc_12CF76:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12CFBA:
-	set byte_204, #$F0 
+	set spr_y_pos_204, #$F0 
 	LDY	byte_372
 	set {byte_4A0,Y}, byte_47F
 	a_to_stack byte_372
@@ -6402,7 +6402,7 @@ sub_12D26B:
 	LDY	byte_31A
 
 loc_12D278:
-	set_iny {byte_200,Y}, #$F0 
+	set_iny {spr_y_pos_200,Y}, #$F0 
 	INY
 	INY
 	INY
@@ -9790,7 +9790,7 @@ sub_12F564:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F57D:
-	set byte_280, #$F0 
+	set spr_y_pos_280, #$F0 
 	RTS
 ; End of function sub_12F57D
 

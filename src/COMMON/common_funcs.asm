@@ -109,40 +109,40 @@ revert_stack_FCEF:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-nmi_sub_FCF5:
-	set byte_218, #$F0 
-	STA	byte_21C
-	STA	byte_220
-	STA	byte_224
-	STA	byte_2E8
-	STA	byte_2EC
+hide_sprites_FCF5:
+	set spr_y_pos_218, #$F0 
+	STA	spr_y_pos_21C
+	STA	spr_y_pos_220
+	STA	spr_y_pos_224
+	STA	spr_y_pos_2E8
+	STA	spr_y_pos_2EC
 	RTS
-; End of function nmi_sub_FCF5
+; End of function hide_sprites_FCF5
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_FD0A:
 	if_a_equal byte_43E, loc_FD31
-	if_a_not_equal byte_203, loc_FD1C
+	if_a_not_equal spr_x_pos_203, loc_FD1C
 	set byte_43E, #0
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
 
 loc_FD1C:
-	sub_byte_sec byte_203, #8
-	sub_byte_sec byte_207, #8
+	sub_byte_sec spr_x_pos_203, #8
+	sub_byte_sec spr_x_pos_207, #8
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
 
 loc_FD31:
-	if_a_not_equal_cmp_addr byte_203, #$F8, loc_FD40
+	if_a_not_equal_cmp_addr spr_x_pos_203, #$F8, loc_FD40
 	set byte_43E, #1
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
 
 loc_FD40:
-	add_byte_to_byte_clc byte_203, #8
-	add_byte_to_byte_clc byte_207, #8
+	add_byte_to_byte_clc spr_x_pos_203, #8
+	add_byte_to_byte_clc spr_x_pos_207, #8
 
 locret_FD52:
 	RTS
@@ -162,7 +162,7 @@ NMI_FD53:
 loc_FD62:
 	set bank_switch_flag_6C, #$EE 
 	if_a_not_equal sprite_type_306, battle_screen_update_FD6E
-	JSR	nmi_sub_FCF5
+	JSR	hide_sprites_FCF5
 
 battle_screen_update_FD6E:
 	set _PPU_OAM_DMA, #2

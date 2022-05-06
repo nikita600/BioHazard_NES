@@ -1,3 +1,8 @@
+.macro add_2_to dst
+	INC dst
+	INC dst
+.endmacro
+
 .macro add_to_a value
 	CLC
 	ADC	value

@@ -1,3 +1,8 @@
+.macro sub_2_from dst
+	DEC dst
+	DEC dst
+.endmacro
+
 .macro sub_a_sec value
 	SEC
 	SBC	value

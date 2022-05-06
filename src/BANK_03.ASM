@@ -250,8 +250,7 @@ sub_3F972:
 loc_3F975:
 	if_y_equal_cmp #0, loc_3F98D
 	add_byte_to_byte_clc ppu_unk_byte_309, byte_363
-	INC	ppu_unk_byte_309
-	INC	ppu_unk_byte_309
+	add_2_to ppu_unk_byte_309
 	DEY
 	JMP	loc_3F975
 ; ---------------------------------------------------------------------------

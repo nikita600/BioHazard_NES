@@ -9789,10 +9789,10 @@ sub_12F564:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-sub_12F57D:
+hide_sprite_12F57D:
 	set spr_y_pos_280, #$F0 
 	RTS
-; End of function sub_12F57D
+; End of function hide_sprite_12F57D
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -9848,7 +9848,7 @@ sub_12F5DC:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F5FC:
-	JSR	sub_12F57D
+	JSR	hide_sprite_12F57D
 	set text_idx_35C, #$2D 
 	set char_type_id_35D, #2
 	set ppu_unk_byte_309, #3
@@ -9933,7 +9933,7 @@ sub_12F6D8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F732:
-	JSR	sub_12F57D
+	JSR	hide_sprite_12F57D
 	set text_idx_35C, #$74 
 	set char_type_id_35D, #0
 	set ppu_unk_byte_309, #3

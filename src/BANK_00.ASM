@@ -1218,11 +1218,9 @@ loc_8C99:
 	set byte_314, #0
 
 loc_8C9E:
-	DEC	byte_4AE
-	DEC	byte_4AE
+	sub_2_from byte_4AE
 	if_a_equal_cmp_addr byte_315, #8, loc_8CB1
-	DEC	byte_4AE
-	DEC	byte_4AE
+	sub_2_from byte_4AE
 
 loc_8CB1:
 	INC	byte_314
@@ -1262,11 +1260,9 @@ loc_8CF0:
 	JSR	sub_F641
 
 loc_8D02:
-	DEC	ppu_scroll_y_305
-	DEC	ppu_scroll_y_305
+	sub_2_from ppu_scroll_y_305
 	if_a_equal_cmp_addr byte_315, #8, loc_8D15
-	DEC	ppu_scroll_y_305
-	DEC	ppu_scroll_y_305
+	sub_2_from ppu_scroll_y_305
 
 loc_8D15:
 	INC	byte_314
@@ -1307,11 +1303,9 @@ loc_8D5E:
 ; ---------------------------------------------------------------------------
 
 loc_8D67:
-	INC	byte_4AE
-	INC	byte_4AE
+	add_2_to byte_4AE
 	if_a_equal_cmp_addr byte_315, #8, loc_8D7A
-	INC	byte_4AE
-	INC	byte_4AE
+	add_2_to byte_4AE
 
 loc_8D7A:
 	INC	byte_314
@@ -1345,11 +1339,9 @@ loc_8DB6:
 	JSR	sub_F1A2
 
 loc_8DB9:
-	INC	ppu_scroll_y_305
-	INC	ppu_scroll_y_305
+	add_2_to ppu_scroll_y_305
 	if_a_equal_cmp_addr byte_315, #8, loc_8DCC
-	INC	ppu_scroll_y_305
-	INC	ppu_scroll_y_305
+	add_2_to ppu_scroll_y_305
 
 loc_8DCC:
 	if_a_not_equal_cmp_addr ppu_scroll_y_305, #$F0, loc_8DDE
@@ -1394,11 +1386,9 @@ loc_8E21:
 ; ---------------------------------------------------------------------------
 
 loc_8E2A:
-	DEC	byte_4AD
-	DEC	byte_4AD
+	sub_2_from byte_4AD
 	if_a_equal_cmp_addr byte_315, #8, loc_8E3D
-	DEC	byte_4AD
-	DEC	byte_4AD
+	sub_2_from byte_4AD
 
 loc_8E3D:
 	INC	byte_314
@@ -1443,11 +1433,9 @@ loc_8E8C:
 	DEC	ppu_unk_byte_302
 
 loc_8E94:
-	DEC	ppu_scroll_x_304
-	DEC	ppu_scroll_x_304
+	sub_2_from ppu_scroll_x_304
 	if_a_equal_cmp_addr byte_315, #8, loc_8EA7
-	DEC	ppu_scroll_x_304
-	DEC	ppu_scroll_x_304
+	sub_2_from ppu_scroll_x_304
 
 loc_8EA7:
 	INC	byte_314
@@ -1488,11 +1476,9 @@ loc_8EF0:
 ; ---------------------------------------------------------------------------
 
 loc_8EF9:
-	INC	byte_4AD
-	INC	byte_4AD
+	add_2_to byte_4AD
 	if_a_equal_cmp_addr byte_315, #8, loc_8F0C
-	INC	byte_4AD
-	INC	byte_4AD
+	add_2_to byte_4AD
 
 loc_8F0C:
 	INC	byte_314
@@ -1533,11 +1519,9 @@ loc_8F58:
 	JSR	sub_F37E
 
 loc_8F5B:
-	INC	ppu_scroll_x_304
-	INC	ppu_scroll_x_304
+	add_2_to ppu_scroll_x_304
 	if_a_equal_cmp_addr byte_315, #8, loc_8F6E
-	INC	ppu_scroll_x_304
-	INC	ppu_scroll_x_304
+	add_2_to ppu_scroll_x_304
 
 loc_8F6E:
 	if_a_not_equal ppu_scroll_x_304, loc_8F76
@@ -1933,8 +1917,7 @@ sub_939C:
 	if_a_not_equal sprite_length_30F, locret_93D4
 	add_byte_to_word byte_42C, #2
 
-	INC	byte_430
-	INC	byte_430
+	add_2_to byte_430
 
 locret_93D4:
 	RTS
@@ -1945,8 +1928,7 @@ loc_93D5:
 	JSR	sub_944A
 	if_a_not_equal sprite_length_30F, locret_93FB
 	sub_byte_from_word byte_42E, #2
-	DEC	byte_431
-	DEC	byte_431
+	sub_2_from byte_431
 
 locret_93FB:
 	RTS
@@ -1958,8 +1940,7 @@ loc_93FC:
 	if_a_not_equal sprite_length_30F, locret_9422
 	add_byte_to_word byte_42E, #2
 
-	INC	byte_431
-	INC	byte_431
+	add_2_to byte_431
 
 locret_9422:
 	RTS
@@ -1970,8 +1951,7 @@ loc_9423:
 	JSR	sub_944A
 	if_a_not_equal sprite_length_30F, locret_9449
 	sub_byte_from_word byte_42C, #2
-	DEC	byte_430
-	DEC	byte_430
+	sub_2_from byte_430
 
 locret_9449:
 	RTS
@@ -1990,26 +1970,22 @@ sub_944A:
 ; ---------------------------------------------------------------------------
 
 loc_9469:
-	DEC	byte_431
-	DEC	byte_431
+	sub_2_from byte_431
 	JMP	loc_948A
 ; ---------------------------------------------------------------------------
 
 loc_9472:
-	INC	byte_431
-	INC	byte_431
+	add_2_to byte_431
 	JMP	loc_948A
 ; ---------------------------------------------------------------------------
 
 loc_947B:
-	DEC	byte_430
-	DEC	byte_430
+	sub_2_from byte_430
 	JMP	loc_948A
 ; ---------------------------------------------------------------------------
 
 loc_9484:
-	INC	byte_430
-	INC	byte_430
+	add_2_to byte_430
 
 loc_948A:
 	LDX	byte_543
@@ -8045,25 +8021,20 @@ loc_F70A:
 	JSR	sub_F921
 	JSR	text_unk_func_F80C
 	set tilemapHeight_30A, #1
-	INC	ppu_unk_byte_309
-	INC	ppu_unk_byte_309
+	add_2_to ppu_unk_byte_309
 	JSR	sub_F921
 	JSR	text_unk_func_F80C
-	DEC	ppu_unk_byte_309
-	DEC	ppu_unk_byte_309
+	sub_2_from ppu_unk_byte_309
 	set tilemapHeight_30A, #0
 	JSR	sub_F942
 	JSR	sub_F9C2
 	set tilemapHeight_30A, #1
-	INC	ppu_unk_byte_309
-	INC	ppu_unk_byte_309
+	add_2_to ppu_unk_byte_309
 	JSR	sub_F942
 	JSR	sub_F9C2
-	DEC	ppu_unk_byte_309
-	DEC	ppu_unk_byte_309
+	sub_2_from ppu_unk_byte_309
 	JSR	wait_for_ppu_data_upload_FC8C
-	INC	inv_spr_dscr1_30C
-	INC	inv_spr_dscr1_30C
+	add_2_to inv_spr_dscr1_30C
 	if_a_greater_cmp_addr inv_spr_dscr1_30C, tilemapWidth_308, loc_F6EC
 	RTS
 ; End of function sub_F65C
@@ -8101,25 +8072,20 @@ loc_F7B0:
 	JSR	sub_F921
 	JSR	sub_F8A1
 	set tilemapHeight_30A, #1
-	INC	ppu_unk_byte_309
-	INC	ppu_unk_byte_309
+	add_2_to ppu_unk_byte_309
 	JSR	sub_F921
 	JSR	sub_F8A1
-	DEC	ppu_unk_byte_309
-	DEC	ppu_unk_byte_309
+	sub_2_from ppu_unk_byte_309
 	set tilemapHeight_30A, #0
 	JSR	sub_F942
 	JSR	sub_FAAF
 	set tilemapHeight_30A, #1
-	INC	ppu_unk_byte_309
-	INC	ppu_unk_byte_309
+	add_2_to ppu_unk_byte_309
 	JSR	sub_F942
 	JSR	sub_FAAF
-	DEC	ppu_unk_byte_309
-	DEC	ppu_unk_byte_309
+	sub_2_from ppu_unk_byte_309
 	JSR	wait_for_ppu_data_upload_FC8C
-	DEC	inv_spr_dscr1_30C
-	DEC	inv_spr_dscr1_30C
+	sub_2_from inv_spr_dscr1_30C
 	if_a_not_equal_cmp_addr inv_spr_dscr1_30C, #0, loc_F792
 	RTS
 ; End of function sub_F767
@@ -8399,14 +8365,12 @@ loc_FA78:
 	div_a_by_8_addr ppu_scroll_y_305
 	add_to_a ppu_unk_byte_309
 	if_a_greater_cmp #$1E, loc_FA8C
-	INC	ppu_unk_byte_309
-	INC	ppu_unk_byte_309
+	add_2_to ppu_unk_byte_309
 
 loc_FA8C:
 	load_a_masked ppu_scroll_y_305, #$1F
 	BEQ	loc_FA99
-	INC	ppu_unk_byte_309
-	INC	ppu_unk_byte_309
+	add_2_to ppu_unk_byte_309
 
 loc_FA99:
 	div_a_by_4_addr ppu_unk_byte_309

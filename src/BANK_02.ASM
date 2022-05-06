@@ -720,8 +720,7 @@ sub_2E44B:
 loc_2E44E:
 	if_y_equal_cmp #0, loc_2E466
 	add_byte_to_byte_clc ppu_unk_byte_309, byte_363
-	INC	ppu_unk_byte_309
-	INC	ppu_unk_byte_309
+	add_2_to ppu_unk_byte_309
 	DEY
 	JMP	loc_2E44E
 ; ---------------------------------------------------------------------------

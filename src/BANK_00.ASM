@@ -7,8 +7,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-bank_switch_8000:
-	.include "common/bank_switch_func.asm"
+	bank_switch_func switch_case_8035
 
 switch_case_8035:
 	set bank_prev_345, bank_to_344
@@ -7979,13 +7978,18 @@ sub_F65C:
 loc_F68F:
 	load_a_masked {spr_y_pos_200,X}, #$F8 
 	if_a_greater_cmp byte_366, loc_F6C0
+
 	load_a_masked {spr_y_pos_200,X}, #$F8 
 	if_a_equal_cmp byte_368, loc_F6C0
+
 	BCS	loc_F6C0
+
 	load_a_masked {spr_x_pos_203,X}, #$F8 
 	if_a_greater_cmp byte_36A, loc_F6C0
+
 	load_a_masked {spr_x_pos_203,X}, #$F8 
 	if_a_equal_cmp byte_36C, loc_F6C0
+	
 	BCS	loc_F6C0
 	set {spr_y_pos_200,X}, #$F0 
 

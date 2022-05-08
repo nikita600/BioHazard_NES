@@ -8,8 +8,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-bank_switch_8000:
-	.include "common/bank_switch_func.asm"
+	bank_switch_func switch_case_8035
 	
 switch_case_8035:
 	tilemap_entry_point_func

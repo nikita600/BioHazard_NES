@@ -7,8 +7,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-bank_switch_8000:
-	.include "common/bank_switch_func.asm"
+	bank_switch_func switch_case_8035
 
 switch_case_8035:
 	if_a_equal_cmp_addr bank_command_346, #$88, loc_13809B

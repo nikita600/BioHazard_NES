@@ -18,6 +18,17 @@
 	ROL	addr+1
 .endmacro
 
+.macro mult_word_by_16 addr
+	ASL addr
+	ROL	addr+1
+	ASL addr
+	ROL	addr+1
+	ASL addr
+	ROL	addr+1
+	ASL addr
+	ROL	addr+1
+.endmacro
+
 .macro mult_a_by_2
 	ASL A
 .endmacro

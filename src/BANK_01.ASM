@@ -133,7 +133,7 @@ return_1F2F2:
 ; =============== S U B	R O U T	I N E =======================================
 
 get_sprite_palette_ptr_1F2F3:
-	set_ptr SpritePalettes_18079
+	set_word_to_word_const ptr_0, SpritePalettes_18079
 
 get_offset_F2FB:
 	LDA	objectIdx_318
@@ -215,12 +215,9 @@ get_sprite_length_F390:
 	set sprite_length_30F, {(data_2),Y}
 
 get_sprite_descr2_F397:
-	set ptr_0, sprite_secondByte_31B
-	set ptr_1, #0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
+	set_byte_to_word ptr_0, sprite_secondByte_31B
+	mult_word_by_16 ptr_0
+
 	RTS
 ; End of function load_sprite_to_vram_1F36D
 

@@ -34,17 +34,16 @@ GFX_6805B:
 ; =============== S U B	R O U T	I N E =======================================
 
 upload_gfx_to_ppu_6F863:
-	set_ptr GFX_6805B
+	set_word_to_word_const ptr_0, GFX_6805B
 
-	set data_2, entry_idx_300
-	set data_3, #0
+	set_byte_to_word data_2, entry_idx_300
 	mult_word_by_2 data_2
 
 	add_word_to_word ptr_0, data_2
 
 	read_word  data_2, {(ptr_0),Y}
 	
-	set_ptr _PPU_PAT_TBL_1
+	set_word_to_word_const ptr_0, _PPU_PAT_TBL_1
 
 	JSR	upload_gfx_to_ppu_6F89C
 	RTS

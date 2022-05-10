@@ -152,12 +152,9 @@ loc_2D1DF:
 
 loc_2D21A:
 	set tilemapHeight_30A, #0
-	set data_2, sprite_secondByte_31B
-	set data_3, #0
-	mult_word_by_2 data_2
-	mult_word_by_2 data_2
-	mult_word_by_2 data_2
-	mult_word_by_2 data_2
+
+	set_byte_to_word data_2, sprite_secondByte_31B
+	mult_word_by_16 data_2
 	or_byte data_3, #$10
 
 loc_2D23E:
@@ -922,10 +919,9 @@ byte_2E771:.BYTE $3E,  1,$16,$21,$3E,  0,$27,$30,	0,  0,	0,  0,	0,  0,	0,  0
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2E781:
-	set_ptr off_2E52F
+	set_word_to_word_const ptr_0, off_2E52F
 
-	set data_2, entry_idx_300
-	set data_3, #0
+	set_byte_to_word data_2, entry_idx_300
 	mult_word_by_2 data_2
 
 	add_word_to_word ptr_0, data_2

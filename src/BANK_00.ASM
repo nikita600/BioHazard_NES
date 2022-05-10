@@ -619,7 +619,7 @@ loc_8666:
 loc_866D:
 	if_a_equal_cmp_addr byte_372, #0, loc_86B7
 
-	set_ptr _SAVE_RAM
+	set_word_to_word_const ptr_0, _SAVE_RAM
 
 	LDY	#0
 
@@ -2455,7 +2455,7 @@ sub_999A:
 	set tilemapHeight_30A, byte_366
 	set ppu_unk_byte_309, byte_367
 
-	set_ptr off_9B32
+	set_word_to_word_const ptr_0, off_9B32
 
 	LDY	#0
 	set tilemapTypeUnk_30B, {(ptr_0),Y}
@@ -3235,11 +3235,9 @@ exec_b1_c2_C860:
 sub_C873:
 	a_to_stack entry_idx_300
 
-	set_ptr unknown_entries_C558
+	set_word_to_word_const ptr_0, unknown_entries_C558
 
-	set data_2, entry_idx_300
-	set data_3, #0
-
+	set_byte_to_word data_2, entry_idx_300
 	mult_word_by_2 data_2
 
 	add_word_to_word ptr_0, data_2
@@ -3314,17 +3312,17 @@ exec_b2_c4_C90E:
 sub_C921:
 	a_to_stack entry_idx_300
 
-	set_ptr unknown_entries_C558
+	set_word_to_word_const ptr_0, unknown_entries_C558
 
-	set data_2, entry_idx_300
-	set data_3, #0
+	set_byte_to_word data_2, entry_idx_300
 	mult_word_by_2 data_2
-
+	
 	add_word_to_word ptr_0, data_2
 
 	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
+
 	LDX	#0
 	set_inx tilemapTypeUnk_30B, {byte_BD1C,X}
 
@@ -3382,7 +3380,7 @@ loc_C9B7:
 ; =============== S U B	R O U T	I N E =======================================
 
 ppu_upset_data_1000_C9BF:
-	set_ptr _PPU_PAT_TBL_1
+	set_word_to_word_const ptr_0, _PPU_PAT_TBL_1
 
 ; End of function ppu_upset_data_1000_C9BF
 
@@ -5396,10 +5394,9 @@ read_tilemap_DF23:
 	JSR	tilemap_read_next_chunk_F472
 
 load_from_C558_DF4B:
-	set_ptr unknown_entries_C558
+	set_word_to_word_const ptr_0, unknown_entries_C558
 
-	set data_2, entry_idx_300
-	set data_3, #0
+	set_byte_to_word data_2, entry_idx_300
 	mult_word_by_2 data_2
 
 	add_word_to_word ptr_0, data_2
@@ -5409,7 +5406,7 @@ load_from_C558_DF4B:
 	set entry_idx_300, {(data_2),Y}
 
 load_from_BCB6_DF7F:
-	set_ptr unknown_data_BCB6
+	set_word_to_word_const ptr_0, unknown_data_BCB6
 
 	LDA	entry_idx_300
 	mult_a_by_2
@@ -5440,19 +5437,15 @@ loc_DFAC:
 sub_DFC1:
 	set byte_36E, #$FF
 
-	set_ptr off_9BB5
+	set_word_to_word_const ptr_0, off_9BB5
 
 get_offset_DFCE:
-	set data_2, entry_idx_300
-	set data_3, #0
+	set_byte_to_word data_2, entry_idx_300
 	mult_word_by_2 data_2
 
 	add_word_to_word ptr_0, data_2
 
-get_ptr_DFE8:
 	read_word  data_2, {(ptr_0),Y}
-
-read_entry_DFF3:
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
 
@@ -6170,7 +6163,7 @@ sub_E7F8:
 	a_to_stack ptr_1
 	y_to_stack
 
-	set_ptr byte_598
+	set_word_to_word_const ptr_0, byte_598
 
 	add_word_to_word ptr_0, tilemapFrameCount_30D
 
@@ -6189,7 +6182,7 @@ sub_E827:
 	a_to_stack ptr_1
 	y_to_stack
 
-	set_ptr byte_598
+	set_word_to_word_const ptr_0, byte_598
 
 	add_word_to_word ptr_0, tilemapFrameCount_30D
 
@@ -7368,7 +7361,7 @@ ppu_unk_func_F09D:
 	load_a_masked ppu_unk_byte_303, #1
 	if_a_equal_cmp #1, loc_F0B9
 
-	set_ptr _PPU_ATTR_TBL_0
+	set_word_to_word_const ptr_0, _PPU_ATTR_TBL_0
 	set_data _PPU_ATTR_TBL_1
 
 	JMP	loc_F0C9
@@ -7376,7 +7369,7 @@ ppu_unk_func_F09D:
 
 loc_F0B9:
 	set_data _PPU_ATTR_TBL_0
-	set_ptr _PPU_ATTR_TBL_1
+	set_word_to_word_const ptr_0, _PPU_ATTR_TBL_1
 
 loc_F0C9:
 	load_a_masked ppu_unk_byte_302, #1
@@ -7725,11 +7718,10 @@ tilemap_read_next_chunk_F472:
 	a_to_stack entry_idx_300
 
 get_tilemap_entries_ptr_F486:
-	set_ptr tilemap_entries_C000
+	set_word_to_word_const ptr_0, tilemap_entries_C000
 
 get_tilemap_entry_offset_F48E:
-	set data_2, entry_idx_300
-	set data_3, #0
+	set_byte_to_word data_2, entry_idx_300
 	mult_word_by_2 data_2
 	
 	add_word_to_word ptr_0, data_2
@@ -8469,13 +8461,11 @@ loc_FB8C:
 	if_y_greater_cmp #$10, loc_FB8C
 	set data_2, #$EA 
 	set data_3, #$FB 
-	set ptr_0, text_unk_35B
-	set ptr_1, #0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
+
+	set_byte_to_word ptr_0, text_unk_35B
+	mult_word_by_16 ptr_0
 	or_byte ptr_1, #$10
+
 	JSR	ppu_upset_data_C9C7
 	RTS
 ; End of function upload_text_palette_to_ppu_FB85

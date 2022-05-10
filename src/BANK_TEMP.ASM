@@ -15,4 +15,4 @@ data:
 	NOP
 
 start:
-	set_ptr data
+	set_word_to_word_const ptr_0, data

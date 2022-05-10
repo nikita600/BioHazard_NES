@@ -1779,10 +1779,9 @@ loc_12A64A:
 	INX
 	if_x_not_equal_cmp #$AC , loc_12A64A
 
-	set_ptr off_129269
+	set_word_to_word_const ptr_0, off_129269
 
-	set data_2, entry_idx_300
-	set data_3, #0
+	set_byte_to_word data_2, entry_idx_300
 	mult_word_by_2 data_2
 
 	add_word_to_word ptr_0, data_2
@@ -2008,7 +2007,7 @@ sub_12A944:
 	a_to_stack ptr_1
 	y_to_stack
 
-	set_ptr byte_598
+	set_word_to_word_const ptr_0, byte_598
 
 	add_word_to_word ptr_0, tilemapFrameCount_30D
 
@@ -6265,7 +6264,7 @@ loc_12D133:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D139:
-	set_ptr _SAVE_RAM
+	set_word_to_word_const ptr_0, _SAVE_RAM
 
 	add_byte_to_word ptr_0, #$14
 
@@ -6288,7 +6287,7 @@ locret_12D166:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D167:
-	set_ptr _SAVE_RAM
+	set_word_to_word_const ptr_0, _SAVE_RAM
 
 	LDY	#0
 
@@ -9543,7 +9542,7 @@ loc_12F2ED:
 ; ---------------------------------------------------------------------------
 
 loc_12F30E:
-	set_ptr off_12F53A
+	set_word_to_word_const ptr_0, off_12F53A
 
 	LDA	byte_420
 	mult_a_by_2

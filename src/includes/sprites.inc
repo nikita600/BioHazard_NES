@@ -1,7 +1,7 @@
 ; ---------------------------------------------------------------------------
 
 .macro load_sprite_palette_func palette_addr
-	set_ptr palette_addr
+	set_word_to_word_const ptr_0, palette_addr
 
 	set data_2, #0
 	LDA	inv_sprite_idx_31C
@@ -13,7 +13,7 @@
 
 	read_word  data_2, {(ptr_0),Y}
 
-	set_ptr _PPU_PALETTE
+	set_word_to_word_const ptr_0, _PPU_PALETTE
 
 	LDA	sprPalIdx_319
 	mult_a_by_4
@@ -109,13 +109,10 @@ get_sprite_descr_4F40F:
 skip_2_byte_4f416:
 	add_word_to_word_imm data_2, $2
 
-	set ptr_0, byte_31E
-	set ptr_1, #0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
-	mult_word_by_2 ptr_0
+	set_byte_to_word ptr_0, byte_31E
+	mult_word_by_16 ptr_0
 	or_byte ptr_1, #$10
+
 	RTS
 
 .endmacro

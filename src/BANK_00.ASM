@@ -3235,12 +3235,7 @@ exec_b1_c2_C860:
 sub_C873:
 	a_to_stack entry_idx_300
 
-	set_word_to_word_const ptr_0, unknown_entries_C558
-
-	set_byte_to_word data_2, entry_idx_300
-	mult_word_by_2 data_2
-
-	add_word_to_word ptr_0, data_2
+	get_ptr_from_tbl unknown_entries_C558, entry_idx_300
 
 	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
@@ -3312,12 +3307,7 @@ exec_b2_c4_C90E:
 sub_C921:
 	a_to_stack entry_idx_300
 
-	set_word_to_word_const ptr_0, unknown_entries_C558
-
-	set_byte_to_word data_2, entry_idx_300
-	mult_word_by_2 data_2
-	
-	add_word_to_word ptr_0, data_2
+	get_ptr_from_tbl unknown_entries_C558, entry_idx_300
 
 	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
@@ -5394,12 +5384,8 @@ read_tilemap_DF23:
 	JSR	tilemap_read_next_chunk_F472
 
 load_from_C558_DF4B:
-	set_word_to_word_const ptr_0, unknown_entries_C558
 
-	set_byte_to_word data_2, entry_idx_300
-	mult_word_by_2 data_2
-
-	add_word_to_word ptr_0, data_2
+	get_ptr_from_tbl unknown_entries_C558, entry_idx_300
 
 	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
@@ -5437,13 +5423,7 @@ loc_DFAC:
 sub_DFC1:
 	set byte_36E, #$FF
 
-	set_word_to_word_const ptr_0, off_9BB5
-
-get_offset_DFCE:
-	set_byte_to_word data_2, entry_idx_300
-	mult_word_by_2 data_2
-
-	add_word_to_word ptr_0, data_2
+	get_ptr_from_tbl off_9BB5, entry_idx_300
 
 	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
@@ -7717,14 +7697,7 @@ tilemap_read_next_chunk_F472:
 	a_to_stack data_3
 	a_to_stack entry_idx_300
 
-get_tilemap_entries_ptr_F486:
-	set_word_to_word_const ptr_0, tilemap_entries_C000
-
-get_tilemap_entry_offset_F48E:
-	set_byte_to_word data_2, entry_idx_300
-	mult_word_by_2 data_2
-	
-	add_word_to_word ptr_0, data_2
+	get_ptr_from_tbl tilemap_entries_C000, entry_idx_300
 
 get_tilemap_entry_ptr_F4A8:
 	read_word  data_2, {(ptr_0),Y}

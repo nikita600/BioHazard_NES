@@ -1779,12 +1779,7 @@ loc_12A64A:
 	INX
 	if_x_not_equal_cmp #$AC , loc_12A64A
 
-	set_word_to_word_const ptr_0, off_129269
-
-	set_byte_to_word data_2, entry_idx_300
-	mult_word_by_2 data_2
-
-	add_word_to_word ptr_0, data_2
+	get_ptr_from_tbl off_129269, entry_idx_300
 
 	read_word  data_2, {(ptr_0),Y}
 	LDY	#0

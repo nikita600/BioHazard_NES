@@ -26,13 +26,8 @@ return_7804D:
 ; =============== S U B	R O U T	I N E =======================================
 
 load_tilemap_chunk_in_ram_7F897:
-	set_word_to_word_const ptr_0, tilemaps_ptr
 
-getTilemapPtr: ; ptr + idx * 2
-	set_byte_to_word data_2, entry_idx_300
-	mult_word_by_2 data_2
-
-	add_word_to_word ptr_0, data_2
+	get_ptr_from_tbl tilemaps_ptr, entry_idx_300
 
 getPtrToTilemap:
 	read_word data_2, {(ptr_0),Y}

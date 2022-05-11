@@ -34,12 +34,8 @@ GFX_6805B:
 ; =============== S U B	R O U T	I N E =======================================
 
 upload_gfx_to_ppu_6F863:
-	set_word_to_word_const ptr_0, GFX_6805B
 
-	set_byte_to_word data_2, entry_idx_300
-	mult_word_by_2 data_2
-
-	add_word_to_word ptr_0, data_2
+	get_ptr_from_tbl GFX_6805B, entry_idx_300
 
 	read_word  data_2, {(ptr_0),Y}
 	

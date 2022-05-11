@@ -206,6 +206,7 @@ loc_2D29C:
 	set_iny char_type_id_35D, {(ptr_0),Y}
 	set_iny text_idx_35C, {(ptr_0),Y}
 	mult_word_by_2 text_idx_35C
+	
 	a_to_stack ptr_0
 	a_to_stack ptr_1
 	a_to_stack data_2
@@ -919,13 +920,8 @@ byte_2E771:.BYTE $3E,  1,$16,$21,$3E,  0,$27,$30,	0,  0,	0,  0,	0,  0,	0,  0
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2E781:
-	set_word_to_word_const ptr_0, off_2E52F
 
-	set_byte_to_word data_2, entry_idx_300
-	mult_word_by_2 data_2
-
-	add_word_to_word ptr_0, data_2
-
+	get_ptr_from_tbl off_2E52F, entry_idx_300
 	
 	read_word  data_2, {(ptr_0),Y}
 	LDY	#0

@@ -77,4 +77,13 @@ vertical_8032:
 
 .endmacro
 
+.macro execute_bank_command command, to, from
+
+	set bank_command_346, command
+	set bank_to_344, to
+	set bank_from_343, from
+	JSR	bank_switch_8000
+
+.endmacro
+
 ; ---------------------------------------------------------------------------

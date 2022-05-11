@@ -29,10 +29,7 @@ case1_48059:
 	a_to_stack bank_from_343
 
 exec_b13_c1_48064:
-	set bank_command_346, #1
-	set bank_to_344, #banks_13
-	set bank_from_343, #4
-	JSR	bank_switch_8000
+	execute_bank_command #1, #banks_13, #4
 
 loc_48076:
 	from_stack_to_a bank_from_343

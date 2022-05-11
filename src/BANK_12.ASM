@@ -455,20 +455,14 @@ loc_128293:
 	set apu_unk_76C, #5
 
 exec_b13_c5_12829C:
-	set bank_command_346, #5
-	set bank_to_344, #banks_13
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #5, #banks_13, #$12
 
 loc_1282AE:
 	JSR	sub_128955
 	from_stack_to_a apu_unk_76C
 
 exec_b13_c5_1282B5:
-	set bank_command_346, #5
-	set bank_to_344, #banks_13
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #5, #banks_13, #$12
 	JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
@@ -512,20 +506,14 @@ return_1282EE:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c1_128300:
-	set bank_command_346, #1
-	set bank_to_344, #text_2
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #1, #text_2, #$12
 	RTS
 ; End of function exec_b2_c1_128300
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c3_128313:
-	set bank_command_346, #3
-	set bank_to_344, #2
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #3, #2, #$12
 	RTS
 ; End of function exec_b2_c3_128313
 
@@ -557,10 +545,7 @@ sub_128358:
 	set byte_31E, sprite_secondByte_31B
 
 exec_b4_c3_128375:
-	set bank_command_346, #3
-	set bank_to_344, #items_spr_4
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #3, #items_spr_4, #$12
 
 loc_128387:
 	from_stack_to_a tilemap_size_307
@@ -572,20 +557,14 @@ loc_128387:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b1_c1_128394:
-	set bank_command_346, #1
-	set bank_to_344, #sprites_1
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #1, #sprites_1, #$12
 	RTS
 ; End of function exec_b1_c1_128394
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b4_c2_1283A7:
-	set bank_command_346, #2
-	set bank_to_344, #items_spr_4
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #2, #items_spr_4, #$12
 	RTS
 ; End of function exec_b4_c2_1283A7
 
@@ -604,50 +583,35 @@ sub_1283BA:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c2_1283DF:
-	set bank_command_346, #2
-	set bank_to_344, #text_2
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #2, #text_2, #$12
 	RTS
 ; End of function exec_b2_c2_1283DF
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c4_1283F2:
-	set bank_command_346, #4
-	set bank_to_344, #text_2
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #4, #text_2, #$12
 	RTS
 ; End of function exec_b2_c4_1283F2
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c5_128405:
-	set bank_command_346, #5
-	set bank_to_344, #text_2
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #5, #text_2, #$12
 	RTS
 ; End of function exec_b2_c5_128405
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c3_128418:
-	set bank_command_346, #3
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #3, #code_0, #$12
 	RTS
 ; End of function exec_b0_c3_128418
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c4_12842B:
-	set bank_command_346, #4
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #4, #code_0, #$12
 	RTS
 ; End of function exec_b0_c4_12842B
 
@@ -655,10 +619,7 @@ exec_b0_c4_12842B:
 
 exec_b0_c5_12843E:
 	a_to_stack bank_from_343
-	set bank_command_346, #5
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #5, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c5_12843E
@@ -667,10 +628,7 @@ exec_b0_c5_12843E:
 
 exec_b0_c6_128459:
 	a_to_stack bank_from_343
-	set bank_command_346, #6
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #6, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c6_128459
@@ -679,10 +637,7 @@ exec_b0_c6_128459:
 
 exec_b0_c7_128474:
 	a_to_stack bank_from_343
-	set bank_command_346, #7
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #7, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c7_128474
@@ -691,10 +646,7 @@ exec_b0_c7_128474:
 
 exec_b0_c8_12848F:
 	a_to_stack bank_from_343
-	set bank_command_346, #8
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #8, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c8_12848F
@@ -703,10 +655,7 @@ exec_b0_c8_12848F:
 
 exec_b0_c9_1284AA:
 	a_to_stack bank_from_343
-	set bank_command_346, #9
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #9, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c9_1284AA
@@ -715,10 +664,7 @@ exec_b0_c9_1284AA:
 
 exec_b0_cA_1284C5:
 	a_to_stack bank_from_343
-	set bank_command_346, #$A
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #$A, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cA_1284C5
@@ -727,10 +673,7 @@ exec_b0_cA_1284C5:
 
 exec_b0_cB_1284E0:
 	a_to_stack bank_from_343
-	set bank_command_346, #$B
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #$B, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cB_1284E0
@@ -739,10 +682,7 @@ exec_b0_cB_1284E0:
 
 exec_b0_cC_1284FB:
 	a_to_stack bank_from_343
-	set bank_command_346, #$C
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #$C, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cC_1284FB
@@ -751,10 +691,7 @@ exec_b0_cC_1284FB:
 
 exec_b0_cD_128516:
 	a_to_stack bank_from_343
-	set bank_command_346, #$D
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #$D, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cD_128516
@@ -2018,10 +1955,7 @@ sub_12A944:
 
 exec_b0_c0_12A973:
 	a_to_stack bank_from_343
-	set bank_command_346, #0
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #0, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c0_12A973
@@ -2030,10 +1964,7 @@ exec_b0_c0_12A973:
 
 exec_b0_c1_12A98E:
 	a_to_stack bank_from_343
-	set bank_command_346, #1
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #1, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c1_12A98E
@@ -2042,10 +1973,7 @@ exec_b0_c1_12A98E:
 
 exec_b0_c2_12A9A9:
 	a_to_stack bank_from_343
-	set bank_command_346, #2
-	set bank_to_344, #code_0
-	set bank_from_343, #$12
-	JSR	bank_switch_8000
+	execute_bank_command #2, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c2_12A9A9

@@ -540,7 +540,7 @@ start_game_loop_8571:
 show_cut01_85AC:
 	set image_id_4A4, #$10
 	JSR	load_image_C6D2
-	set_text_args #$88 , #0
+	set_text_args #$88, #0
 	JSR	exec_b2_c2_text_cuts_C8E8
 	JSR	exec_b2_c2_text_cuts_C8E8
 	JSR	exec_b2_c2_text_cuts_C8E8
@@ -550,7 +550,7 @@ show_cut01_85AC:
 show_cut01_85CD:
 	set image_id_4A4, #$11
 	JSR	load_image_C6D2
-	set_text_args #$8D , #0
+	set_text_args #$8D, #0
 	JSR	exec_b2_c2_text_cuts_C8E8
 	JSR	exec_b2_c2_text_cuts_C8E8
 	JSR	exec_b2_c2_text_cuts_C8E8
@@ -558,7 +558,7 @@ show_cut01_85CD:
 show_cut02_85E8:
 	set image_id_4A4, #$12
 	JSR	load_image_C6D2
-	set_text_args #$90 , #0
+	set_text_args #$90, #0
 	JSR	exec_b2_c2_text_cuts_C8E8
 	JSR	exec_b2_c2_text_cuts_C8E8
 	JSR	exec_b2_c2_text_cuts_C8E8
@@ -567,7 +567,7 @@ show_cut02_85E8:
 show_cut03_8606:
 	set image_id_4A4, #$13
 	JSR	load_image_C6D2
-	set_text_args #$94 , #0
+	set_text_args #$94, #0
 	JSR	exec_b2_c2_text_cuts_C8E8
 	JSR	exec_b2_c2_text_cuts_C8E8
 	JSR	exec_b2_c2_text_cuts_C8E8
@@ -1622,7 +1622,7 @@ loc_90BB:
 	ADC	#0
 	STA	char_type_id_35D
 	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$55, loc_90E6
-	set_text_args #$3A , #2
+	set_text_args #$3A, #2
 
 loc_90E6:
 	a_to_stack tilemapTypeUnk_30B
@@ -2483,7 +2483,7 @@ locret_9AD8:
 ; =============== S U B	R O U T	I N E =======================================
 
 show_hidden_copyright_9AD9:
-	set_text_args #$47 , #2
+	set_text_args #$47, #2
 	set byte_364, #4
 	set ppu_unk_byte_309, #$D
 	set tilemap_size_307, #4
@@ -3396,7 +3396,7 @@ sub_CAA9:
 	set byte_361, #0
 	set text_unk_35B, #$C0 
 	JSR	sub_F65C
-	set_text_args #$BB , #0
+	set_text_args #$BB, #0
 	set ppu_unk_byte_309, #$19
 	set tilemap_size_307, #4
 	set byte_35E, #$C
@@ -4122,7 +4122,7 @@ sub_D1EE:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_D22C:
-	set_text_args #$C2 , #0
+	set_text_args #$C2, #0
 	LDX	#$B
 	JSR	sub_CF13
 	set tilemapData_4C, #1
@@ -4204,7 +4204,7 @@ loc_D33E:
 	JSR	sub_D055
 	set byte_313, #2
 	JSR	sub_91B6
-	set_text_args #$D0 , #0
+	set_text_args #$D0, #0
 	LDX	#5
 	JSR	sub_CF13
 
@@ -4224,7 +4224,7 @@ sub_D359:
 	set tilemapTypeUnk_30B, #8
 	set byte_313, #3
 	JSR	sub_D055
-	set_text_args #$DB , #0
+	set_text_args #$DB, #0
 	LDX	#4
 	JSR	sub_CF13
 	set byte_551, #0
@@ -4233,7 +4233,7 @@ sub_D359:
 	JSR	sub_D055
 	set byte_313, #1
 	JSR	sub_91B6
-	set_text_args #$DB , #0
+	set_text_args #$DB, #0
 	LDX	#8
 	JSR	sub_CF13
 	set tilemapData_4C, #1
@@ -5414,7 +5414,7 @@ loc_E0FF:
 	LDX	byte_4D0
 	set {unk_4C2,X}, #$D
 	INC	byte_4D0
-	set_text_args #$3C , #2
+	set_text_args #$3C, #2
 	LDX	#3
 	JSR	sub_CF13
 	set tilemapData_4C, #1
@@ -5448,7 +5448,7 @@ loc_E198:
 ; ---------------------------------------------------------------------------
 
 loc_E1A2:
-	set_text_args #$43 , #2
+	set_text_args #$43, #2
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5487,7 +5487,7 @@ loc_E205:
 ; ---------------------------------------------------------------------------
 
 loc_E20F:
-	set_text_args #$D4 , #1
+	set_text_args #$D4, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5543,7 +5543,7 @@ loc_E290:
 ; ---------------------------------------------------------------------------
 
 loc_E2A8:
-	set_text_args #$B9 , #0
+	set_text_args #$B9, #0
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5558,7 +5558,7 @@ loc_E2BA:
 ; ---------------------------------------------------------------------------
 
 loc_E2D7:
-	set_text_args #$8E , #1
+	set_text_args #$8E, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5573,7 +5573,7 @@ loc_E2E9:
 ; ---------------------------------------------------------------------------
 
 loc_E306:
-	set_text_args #$8D , #1
+	set_text_args #$8D, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5588,7 +5588,7 @@ loc_E318:
 ; ---------------------------------------------------------------------------
 
 loc_E335:
-	set_text_args #$8C , #1
+	set_text_args #$8C, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5603,7 +5603,7 @@ loc_E347:
 ; ---------------------------------------------------------------------------
 
 loc_E364:
-	set_text_args #$8F , #1
+	set_text_args #$8F, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5633,7 +5633,7 @@ loc_E3A5:
 ; ---------------------------------------------------------------------------
 
 loc_E3C2:
-	set_text_args #$22 , #2
+	set_text_args #$22, #2
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5648,7 +5648,7 @@ loc_E3D4:
 ; ---------------------------------------------------------------------------
 
 loc_E3F1:
-	set_text_args #$90 , #1
+	set_text_args #$90, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5662,7 +5662,7 @@ loc_E403:
 ; ---------------------------------------------------------------------------
 
 loc_E41B:
-	set_text_args #$DB , #1
+	set_text_args #$DB, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5676,7 +5676,7 @@ loc_E42D:
 ; ---------------------------------------------------------------------------
 
 loc_E445:
-	set_text_args #$DB , #1
+	set_text_args #$DB, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5690,7 +5690,7 @@ loc_E457:
 ; ---------------------------------------------------------------------------
 
 loc_E46F:
-	set_text_args #$DB , #1
+	set_text_args #$DB, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5704,7 +5704,7 @@ loc_E481:
 ; ---------------------------------------------------------------------------
 
 loc_E499:
-	set_text_args #$E8 , #1
+	set_text_args #$E8, #1
 	LDX	#1
 	JSR	sub_CF13
 	JSR	sub_CAA9
@@ -5726,7 +5726,7 @@ loc_E4C7:
 ; ---------------------------------------------------------------------------
 
 loc_E4DF:
-	set_text_args #$E8 , #1
+	set_text_args #$E8, #1
 	LDX	#1
 	JSR	sub_CF13
 	JSR	sub_CAA9
@@ -5748,7 +5748,7 @@ loc_E50D:
 ; ---------------------------------------------------------------------------
 
 loc_E525:
-	set_text_args #$F4 , #1
+	set_text_args #$F4, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5818,7 +5818,7 @@ loc_E5DF:
 ; ---------------------------------------------------------------------------
 
 loc_E5F7:
-	set_text_args #$33 , #2
+	set_text_args #$33, #2
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5832,7 +5832,7 @@ loc_E609:
 ; ---------------------------------------------------------------------------
 
 loc_E621:
-	set_text_args #$DB , #1
+	set_text_args #$DB, #1
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5860,7 +5860,7 @@ loc_E65D:
 ; ---------------------------------------------------------------------------
 
 loc_E675:
-	set_text_args #$34 , #2
+	set_text_args #$34, #2
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5874,7 +5874,7 @@ loc_E687:
 ; ---------------------------------------------------------------------------
 
 loc_E69F:
-	set_text_args #$35 , #2
+	set_text_args #$35, #2
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5888,7 +5888,7 @@ loc_E6B1:
 ; ---------------------------------------------------------------------------
 
 loc_E6C9:
-	set_text_args #$36 , #2
+	set_text_args #$36, #2
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -5902,7 +5902,7 @@ loc_E6DB:
 ; ---------------------------------------------------------------------------
 
 loc_E6F3:
-	set_text_args #$41 , #2
+	set_text_args #$41, #2
 	LDX	#1
 	JSR	sub_CF13
 	JMP	loc_E741
@@ -6128,7 +6128,7 @@ nullsub_4:
 
 sub_E932:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_E949
-	set_text_args #$BA , #0
+	set_text_args #$BA, #0
 	LDX	#1
 	JSR	sub_CF13
 	RTS
@@ -6144,7 +6144,7 @@ loc_E949:
 
 sub_E954:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_E968
-	set_text_args #$B8 , #0
+	set_text_args #$B8, #0
 	JSR	sub_9132
 
 loc_E968:
@@ -6157,7 +6157,7 @@ loc_E968:
 sub_E96E:
 	if_a_not_equal_cmp_addr byte_471, #0, locret_E9B9
 	if_a_not_equal_cmp_addr byte_554, #0, loc_E98F
-	set_text_args #$BC , #0
+	set_text_args #$BC, #0
 	LDX	#1
 	JSR	sub_CF13
 	INC	byte_554
@@ -6223,7 +6223,7 @@ sub_E9F2:
 ; ---------------------------------------------------------------------------
 
 loc_E9FF:
-	set_text_args #$B5 , #0
+	set_text_args #$B5, #0
 	LDX	#1
 	JSR	sub_CF13
 	set sprite_length_30F, #$FF
@@ -6239,7 +6239,7 @@ sub_EA14:
 ; ---------------------------------------------------------------------------
 
 loc_EA21:
-	set_text_args #$B6 , #0
+	set_text_args #$B6, #0
 	LDX	#1
 	JSR	sub_CF13
 	set sprite_length_30F, #$FF

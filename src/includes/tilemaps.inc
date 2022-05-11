@@ -25,9 +25,7 @@ return_7804D:
 load_tilemap_chunk_in_ram_7F897:
 
 	get_ptr_from_tbl tilemaps_ptr, entry_idx_300
-
-getPtrToTilemap:
-	read_word data_2, {(ptr_0),Y}
+	
 	set_word_to_word ptr_0, data_2
 
 getOffset_F8CC:

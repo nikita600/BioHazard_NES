@@ -36,8 +36,6 @@ upload_gfx_to_ppu_5F093:
 
 	get_ptr_from_tbl Sprites3_5805B, entry_idx_300
 
-	read_word  data_2, {(ptr_0),Y}
-
 	set_word_to_word_const ptr_0, _PPU_PAT_TBL_1
 
 	JSR	upload_gfx_5F0CC

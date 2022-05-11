@@ -34,8 +34,6 @@ GFX_6805B:
 upload_gfx_to_ppu_6F863:
 
 	get_ptr_from_tbl GFX_6805B, entry_idx_300
-
-	read_word  data_2, {(ptr_0),Y}
 	
 	set_word_to_word_const ptr_0, _PPU_PAT_TBL_1
 

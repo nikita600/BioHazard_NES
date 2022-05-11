@@ -31,9 +31,12 @@
 .macro get_ptr_from_tbl ptr_addr, ptr_idx
 
 	set_word_to_word_const ptr_0, ptr_addr
+
 	set_byte_to_word data_2, ptr_idx
 	mult_word_by_2 data_2
 	add_word_to_word ptr_0, data_2
+
+	read_word data_2, {(ptr_0),Y}
 
 .endmacro
 

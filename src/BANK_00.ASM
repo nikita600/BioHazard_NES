@@ -3213,7 +3213,6 @@ sub_C873:
 
 	get_ptr_from_tbl unknown_entries_C558, entry_idx_300
 
-	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
 
@@ -3267,7 +3266,6 @@ sub_C921:
 
 	get_ptr_from_tbl unknown_entries_C558, entry_idx_300
 
-	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
 
@@ -5333,7 +5331,6 @@ load_from_C558_DF4B:
 
 	get_ptr_from_tbl unknown_entries_C558, entry_idx_300
 
-	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
 
@@ -5371,7 +5368,6 @@ sub_DFC1:
 
 	get_ptr_from_tbl off_9BB5, entry_idx_300
 
-	read_word  data_2, {(ptr_0),Y}
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
 
@@ -7644,9 +7640,6 @@ tilemap_read_next_chunk_F472:
 	a_to_stack entry_idx_300
 
 	get_ptr_from_tbl tilemap_entries_C000, entry_idx_300
-
-get_tilemap_entry_ptr_F4A8:
-	read_word  data_2, {(ptr_0),Y}
 
 read_tilemap_entry_data_F4B3:
 	read_word  tilemaps_horiz_count_311, {(data_2),Y}

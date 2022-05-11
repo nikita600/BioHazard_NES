@@ -1715,8 +1715,7 @@ loc_12A64A:
 	if_x_not_equal_cmp #$AC , loc_12A64A
 
 	get_ptr_from_tbl off_129269, entry_idx_300
-
-	read_word  data_2, {(ptr_0),Y}
+	
 	LDY	#0
 	set objArraySize_373, {(data_2),Y}
 	if_a_not_equal_cmp #0, loc_12A68B

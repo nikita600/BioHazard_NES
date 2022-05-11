@@ -919,10 +919,8 @@ byte_2E771:.BYTE $3E,  1,$16,$21,$3E,  0,$27,$30,	0,  0,	0,  0,	0,  0,	0,  0
 sub_2E781:
 
 	get_ptr_from_tbl off_2E52F, entry_idx_300
-	
-	read_word  data_2, {(ptr_0),Y}
-	LDY	#0
 
+	LDY	#0
 loc_2E7B0:
 	set_iny {palette_bg_321,Y}, {(data_2),Y}
 	if_y_greater_cmp #$10, loc_2E7B0

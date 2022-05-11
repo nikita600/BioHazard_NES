@@ -173,8 +173,7 @@ loc_4F4BA:
 loc_4F4CF:
 	add_byte_to_word data_2, tilemap_size_307
 
-	set inv_spr_dscr1_30C, #0
-	STA	ppu_unk_byte_309
+	set2 inv_spr_dscr1_30C, ppu_unk_byte_309, #0
 	LDA	#$32 
 
 loc_4F4E7:

@@ -859,16 +859,11 @@ loc_128835:
 	set tilemapTypeUnk_30B, #5
 	set byte_313, #1
 	JSR	exec_b0_cA_1284C5
-	set byte_6C3, #0
-	STA	byte_6C4
+	set2 byte_6C3, byte_6C4, #0
 
 set_tyrant_level_1288B6:
 	set image_id_4A4, #$83 
-	set image_offset_4A5, #0
-	STA	ppu_prev_unk_4A6
-	STA	ppu_prev_scroll_x_unk_4A7
-	STA	ppu_prev_scroll_y_unk_4A8
-	STA	prev_sprite_type_4A9
+	set5 image_offset_4A5, ppu_prev_unk_4A6, ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, prev_sprite_type_4A9, #0
 	set byte_4AD, #$40 
 	set byte_4AE, #$50 
 	JSR	exec_b0_c2_12A9A9
@@ -900,8 +895,7 @@ loc_1288EE:
 	set char_type_id_35D, #1
 	set tilemapTypeUnk_30B, #3
 	JSR	exec_b0_c0_12A973
-	set byte_552, #$FF
-	STA	byte_6C5
+	set2 byte_552, byte_6C5, #$FF
 	set byte_6C6, #0
 
 loc_128951:
@@ -926,8 +920,7 @@ sub_128955:
 	mult_a_by_2
 	TAX
 	set byte_475, {byte_129255,X}
-	set byte_43F, #0
-	STA	byte_472
+	set2 byte_43F, byte_472, #0
 
 loc_128986:
 	set byte_43E, #0
@@ -1077,8 +1070,7 @@ sub_128B0F:
 	set byte_367, #0
 	set byte_36A, ppu_scroll_x_304
 	set byte_36B, #0
-	set sprite_secondByte_31B, #0
-	STA	byte_31A
+	set2 sprite_secondByte_31B, byte_31A, #0
 	set objectIdx_318, #4
 	set objMapIdx_316, #$21 
 	LDX	objMapIdx_316
@@ -1366,9 +1358,7 @@ loc_128F0E:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128F1B:
-	set byte_354, #0
-	STA	byte_355
-	STA	byte_356
+	set3 byte_354, byte_355, byte_356, #0
 
 loc_128F26:
 	if_a_greater_cmp_addr tilemapTypeUnk_30B, #$64, loc_128F3C
@@ -1873,9 +1863,7 @@ locret_12A892:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12A893:
-	set byte_36F, #0
-	STA	byte_370
-	STA	byte_371
+	set3 byte_36F, byte_370, byte_371, #0
 	y_to_stack
 	a_to_stack ptr_0
 	a_to_stack ptr_1
@@ -1984,8 +1972,7 @@ com_17_player_update_12A9C4:
 	if_a_not_equal_cmp_addr byte_354, #0, locret_12AA0D
 	if_a_not_equal_cmp_addr byte_356, #0, locret_12AA0D
 	set byte_354, #$A
-	set byte_355, #0
-	STA	byte_356
+	set2 byte_355, byte_356, #0
 	load_a_masked byte_54B, #$F
 	ORA	#$F0 
 	STA	byte_54B
@@ -2021,7 +2008,8 @@ loc_12AA3E:
 	set byte_572, #0
 
 loc_12AA52:
-	set byte_555, #0
+	LDA	#0
+	STA	byte_555
 	STA	byte_556
 	STA	byte_557
 	STA	byte_558
@@ -2295,8 +2283,7 @@ is_save_game_12ACDE:
 
 loc_12ACE6:
 	if_a_not_equal_cmp_addr byte_46E, #$2F, loc_12AD06
-	set byte_6A6, #$FF
-	STA	byte_6A7
+	set2 byte_6A6, byte_6A7, #$FF
 	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
 	set cur_obj_idx_unk_43A, #2
@@ -2433,8 +2420,7 @@ loc_12AE6C:
 
 loc_12AE76:
 	if_a_equal_cmp_addr entry_idx_300, #$70, loc_12AE86
-	set byte_636, #$FF
-	STA	byte_633
+	set2 byte_636, byte_633, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2463,11 +2449,7 @@ loc_12AE86:
 
 set_helipad_level_12AEDD:
 	set image_id_4A4, #$9A 
-	set image_offset_4A5, #0
-	STA	ppu_prev_unk_4A6
-	STA	ppu_prev_scroll_x_unk_4A7
-	STA	ppu_prev_scroll_y_unk_4A8
-	STA	prev_sprite_type_4A9
+	set5 image_offset_4A5, ppu_prev_unk_4A6, ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, prev_sprite_type_4A9, #0
 	set byte_4AD, #$40 
 	set byte_4AE, #$50 
 	JSR	exec_b0_c2_12A9A9
@@ -2635,8 +2617,7 @@ loc_12B0E2:
 	set tilemapTypeUnk_30B, #4
 	JSR	exec_b0_c0_12A973
 	set byte_545, #1
-	set byte_562, #$FF
-	STA	byte_6C7
+	set2 byte_562, byte_6C7, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2945,8 +2926,7 @@ loc_12B3AF:
 ; ---------------------------------------------------------------------------
 
 loc_12B3E8:
-	set byte_627, #$FF
-	STA	byte_628
+	set2 byte_627, byte_628, #$FF
 	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
 	set cur_obj_idx_unk_43A, #1
@@ -3125,8 +3105,7 @@ loc_12B545:
 loc_12B552:
 	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$47, locret_12B58A
 	set byte_6A8, #0
-	set byte_588, #$FF
-	STA	byte_5D8
+	set2 byte_588, byte_5D8, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -4188,7 +4167,9 @@ loc_12BE0B:
 loc_12BE15:
 	if_a_not_equal_cmp #$15, loc_12BE5D
 	set byte_5D1, #0
-	set byte_596, #$FF
+	
+	LDA	#$FF
+	STA	byte_596
 	STA	byte_5DA
 	STA	byte_5DB
 	STA	byte_5E0
@@ -4238,8 +4219,7 @@ loc_12BE7E:
 loc_12BE88:
 	if_a_not_equal_cmp #4, loc_12BEAA
 	set byte_616, #0
-	set byte_617, #$FF
-	STA	byte_618
+	set2 byte_617, byte_618, #$FF
 	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
 	set cur_obj_idx_unk_43A, #2
@@ -4452,9 +4432,7 @@ set_mansion_saveroom_12C05C:
 	set image_id_4A4, #$21 
 	set image_offset_4A5, #0
 	set ppu_prev_unk_4A6, #0
-	set ppu_prev_scroll_x_unk_4A7, #0
-	STA	ppu_prev_scroll_y_unk_4A8
-	STA	prev_sprite_type_4A9
+	set3 ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, prev_sprite_type_4A9, #0
 	set byte_4AD, #$60 
 	set byte_4AE, #$70 
 	JSR	exec_b0_c2_12A9A9
@@ -5031,10 +5009,7 @@ set_tree_screen_12C5A0:
 	set image_id_4A4, #$9E 
 
 loc_12C5B1:
-	set image_offset_4A5, #0
-	STA	ppu_prev_unk_4A6
-	STA	ppu_prev_scroll_x_unk_4A7
-	STA	ppu_prev_scroll_y_unk_4A8
+	set4 image_offset_4A5, ppu_prev_unk_4A6, ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, #0
 	set prev_sprite_type_4A9, #$FF
 	JSR	exec_b0_c2_12A9A9
 	JSR	wait_for_b_pressed_FCC5
@@ -5217,8 +5192,7 @@ locret_12C791:
 
 sub_12C792:
 	if_a_equal_cmp_addr byte_595, #$FF, locret_12C7CA
-	set byte_595, #$FF
-	STA	byte_6A1
+	set2 byte_595, byte_6A1, #$FF
 	set byte_6A3, #0
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -5673,20 +5647,13 @@ locret_12CB57:
 show_intro_screen_12CB58:
 	JSR	wait_any_input_65k_cycles_FCAB
 	set image_id_4A4, #$10
-	set image_offset_4A5, #0
-	STA	ppu_prev_unk_4A6
-	STA	ppu_prev_scroll_x_unk_4A7
-	STA	ppu_prev_scroll_y_unk_4A8
+	set4 image_offset_4A5, ppu_prev_unk_4A6, ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, #0
 	set prev_sprite_type_4A9, #2
 	set objectIdx_318, #$1A
 	JSR	exec_b0_c2_12A9A9
 	set byte_42C, #$88 
 	set byte_42E, #$26 
-	set byte_430, #0
-	STA	byte_431
-	STA	byte_433
-	STA	byte_434
-	STA	byte_42B
+	set5 byte_430, byte_431, byte_433, byte_434, byte_42B, #0
 
 loc_12CB96:
 	JSR	sub_12CC34
@@ -5731,10 +5698,7 @@ loc_12CBF7:
 
 show_ending_screen_12CC06:
 	set image_id_4A4, #$A0 
-	set image_offset_4A5, #0
-	STA	ppu_prev_unk_4A6
-	STA	ppu_prev_scroll_x_unk_4A7
-	STA	ppu_prev_scroll_y_unk_4A8
+	set4 image_offset_4A5, ppu_prev_unk_4A6, ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, #0
 	set prev_sprite_type_4A9, #2
 	set objectIdx_318, #$1A
 	JSR	exec_b0_c2_12A9A9
@@ -5768,10 +5732,8 @@ loc_12CC70:
 	LDA	byte_42E
 	add_to_a byte_431
 	STA	byte_366
-	set byte_367, #0
-	STA	byte_36B
-	set sprite_secondByte_31B, #0
-	STA	byte_31A
+	set2 byte_367, byte_36B, #0
+	set2 sprite_secondByte_31B, byte_31A, #0
 	set objectIdx_318, #$1A
 	LDA	#0
 	add_to_a byte_433
@@ -5850,10 +5812,7 @@ com_E_load_game_12CD30:
 	set byte_360, #0
 	set byte_361, #3
 	set image_id_4A4, #$B
-	set image_offset_4A5, #0
-	STA	ppu_prev_unk_4A6
-	STA	ppu_prev_scroll_x_unk_4A7
-	STA	ppu_prev_scroll_y_unk_4A8
+	set4 image_offset_4A5, ppu_prev_unk_4A6, ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, #0
 	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
 	LDY	#0
@@ -6117,8 +6076,7 @@ loc_12D084:
 	LDA	byte_12D11C,Y
 	add_to_a #2
 	STA	byte_366
-	set byte_36B, #0
-	STA	byte_367
+	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #4
 	set sprite_secondByte_31B, #0
@@ -6146,8 +6104,7 @@ loc_12D0D6:
 	LDA	byte_12D114,Y
 	add_to_a #2
 	STA	byte_366
-	set byte_36B, #0
-	STA	byte_367
+	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #0
 	set sprite_secondByte_31B, #0
@@ -6332,18 +6289,14 @@ loc_12D278:
 
 sub_12D287:
 	set sprite_length_30F, #0
-	set byte_42C, #0
-	STA	byte_42E
+	set2 byte_42C, byte_42E, #0
 	set objectIdx_318, #5
 	set byte_360, #0
 	set byte_361, #1
 
 set_inventory_screen_12D2A3:
 	set image_id_4A4, #8
-	set image_offset_4A5, #0
-	STA	ppu_prev_unk_4A6
-	STA	ppu_prev_scroll_x_unk_4A7
-	STA	ppu_prev_scroll_y_unk_4A8
+	set4 image_offset_4A5, ppu_prev_unk_4A6, ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, #0
 	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
 	JSR	sub_12DC52
@@ -6440,8 +6393,7 @@ loc_12D394:
 
 sub_12D3AB:
 	STA	ptr_0
-	set data_2, #0
-	STA	data_3
+	set2 data_2, data_3, #0
 
 loc_12D3B3:
 	if_a_greater_cmp_addr ptr_0, #$64, loc_12D3C5
@@ -7319,8 +7271,7 @@ sub_12DC52:
 	add_to_a #$1B
 	STA	objMapIdx_316
 	set byte_31A, #$40 
-	set sprite_secondByte_31B, #0
-	STA	byte_317
+	set2 sprite_secondByte_31B, byte_317, #0
 	set tilemap_size_307, #$B0 
 	set ppu_unk_byte_309, #$1F
 	JSR	sub_12E829
@@ -7504,9 +7455,7 @@ loc_12DE8E:
 	set byte_54B, #2
 
 loc_12DE9C:
-	set byte_31A, #0
-	STA	sprite_secondByte_31B
-	STA	byte_317
+	set3 byte_31A, sprite_secondByte_31B, byte_317, #0
 	set tilemap_size_307, #$40 
 	set ppu_unk_byte_309, #$A0 
 	JSR	sub_12E829
@@ -7525,8 +7474,7 @@ sub_12DEB5:
 loc_12DEC9:
 	add_byte_to_byte_clc objMapIdx_316, #$15
 	set byte_31A, #$30 
-	set sprite_secondByte_31B, #0
-	STA	byte_317
+	set2 sprite_secondByte_31B, byte_317, #0
 	set tilemap_size_307, #$40 
 	set ppu_unk_byte_309, #$B8 
 	JSR	sub_12E829
@@ -7662,16 +7610,14 @@ loc_12E035:
 
 loc_12E04D:
 	set byte_549, #$FF
-	set byte_54A, #0
-	STA	byte_4B5
+	set2 byte_54A, byte_4B5, #0
 	JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
 loc_12E05D:
 	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$C, loc_12E076
 	if_a_equal_cmp_addr byte_54A, #0, loc_12E076
-	set byte_54A, #0
-	STA	byte_4B5
+	set2 byte_54A, byte_4B5, #0
 	JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
@@ -7683,8 +7629,7 @@ loc_12E076:
 ; ---------------------------------------------------------------------------
 
 loc_12E08E:
-	set byte_54A, #0
-	STA	byte_4B5
+	set2 byte_54A, byte_4B5, #0
 	LDA	#$AA 
 	JSR	sub_12E156
 	JMP	loc_12E13A
@@ -7698,8 +7643,7 @@ loc_12E09E:
 ; ---------------------------------------------------------------------------
 
 loc_12E0B6:
-	set byte_54A, #0
-	STA	byte_4B5
+	set2 byte_54A, byte_4B5, #0
 	LDA	#$55 
 	JSR	sub_12E156
 	JMP	loc_12E13A
@@ -8965,15 +8909,11 @@ sub_12ED58:
 
 set_inventory_screen_12ED5D:
 	set image_id_4A4, #8
-	set image_offset_4A5, #0
-	STA	ppu_prev_unk_4A6
-	STA	ppu_prev_scroll_x_unk_4A7
-	STA	ppu_prev_scroll_y_unk_4A8
+	set4 image_offset_4A5, ppu_prev_unk_4A6, ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, #0
 	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
 	set tilemapTypeUnk_30B, #0
-	set tilemap_size_307, #$80 
-	STA	ppu_unk_byte_309
+	set2 tilemap_size_307, ppu_unk_byte_309, #$80 
 	a_to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
 	from_stack_to_a tilemapTypeUnk_30B
@@ -8983,8 +8923,7 @@ loc_12ED90:
 	if_a_not_equal_cmp_addr input_pressed_34A, #8, loc_12EDC0
 	if_a_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_12ED90
 	DEC	tilemapTypeUnk_30B
-	set tilemap_size_307, #$80 
-	STA	ppu_unk_byte_309
+	set2 tilemap_size_307, ppu_unk_byte_309, #$80 
 	JSR	sub_12D261
 	a_to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
@@ -8997,8 +8936,7 @@ loc_12EDC0:
 	if_a_not_equal_cmp #4, loc_12EDE7
 	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$47, loc_12ED90
 	INC	tilemapTypeUnk_30B
-	set tilemap_size_307, #$80 
-	STA	ppu_unk_byte_309
+	set2 tilemap_size_307, ppu_unk_byte_309, #$80 
 	a_to_stack tilemapTypeUnk_30B
 	JSR	sub_12D3AB
 	from_stack_to_a tilemapTypeUnk_30B
@@ -9209,10 +9147,7 @@ sub_12EF77:
 	a_to_stack ppu_prev_scroll_y_unk_4A8
 	a_to_stack prev_sprite_type_4A9
 	set image_id_4A4, {map_sequence_12F072,Y}
-	set image_offset_4A5, #0
-	STA	ppu_prev_unk_4A6
-	STA	ppu_prev_scroll_x_unk_4A7
-	STA	ppu_prev_scroll_y_unk_4A8
+	set4 image_offset_4A5, ppu_prev_unk_4A6, ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, #0
 	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
 	JSR	wait_for_any_input_FCCD
@@ -9245,9 +9180,7 @@ map_sequence_12F072:.BYTE   4,	6,  5,	7,  3,$14,$15, $C, $D, $E, $F
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F07D:
-	set byte_41F, #0
-	STA	byte_421
-	STA	byte_547
+	set3 byte_41F, byte_421, byte_547, #0
 	JSR	sub_1283BA
 	a_to_stack image_id_4A4
 	a_to_stack image_offset_4A5
@@ -9261,10 +9194,8 @@ sub_12F07D:
 
 show_computer_12F0B2:
 	set image_id_4A4, #$84 
-	set image_offset_4A5, #0
-	STA	ppu_prev_unk_4A6
-	set ppu_prev_scroll_x_unk_4A7, #0
-	STA	ppu_prev_scroll_y_unk_4A8
+	set2 image_offset_4A5, ppu_prev_unk_4A6, #0
+	set2 ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, #0
 	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
 	set text_idx_35C, #$2B 
@@ -9340,8 +9271,7 @@ sub_12F168:
 	TAY
 	set_iny byte_36A, {byte_12F28B,Y}
 	set byte_366, {byte_12F28B,Y}
-	set byte_36B, #0
-	STA	byte_367
+	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #0
 	set sprite_secondByte_31B, #0
@@ -9367,8 +9297,7 @@ loc_12F1C7:
 loc_12F1D0:
 	INY
 	set byte_366, {byte_12F28B,Y}
-	set byte_36B, #0
-	STA	byte_367
+	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #4
 	set sprite_secondByte_31B, #0
@@ -9382,8 +9311,7 @@ loc_12F1D0:
 	LDA	byte_12F28B,Y
 	add_to_a #8
 	STA	byte_366
-	set byte_36B, #0
-	STA	byte_367
+	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #8
 	set sprite_secondByte_31B, #0
@@ -9411,8 +9339,7 @@ loc_12F261:
 	LDA	byte_12F28B,Y
 	add_to_a #8
 	STA	byte_366
-	set byte_36B, #0
-	STA	byte_367
+	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #$C
 	set sprite_secondByte_31B, #0
@@ -9721,8 +9648,7 @@ sub_12F583:
 	add_to_a #$70 
 	STA	byte_36A
 	set byte_366, #$50 
-	set byte_36B, #0
-	STA	byte_367
+	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #$80 
 	set sprite_secondByte_31B, #0

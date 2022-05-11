@@ -3,6 +3,36 @@
 	STA	dst
 .endmacro
 
+.macro set2 dst0, dst1, src
+	LDA	src
+	STA	dst0
+	STA	dst1
+.endmacro
+
+.macro set3 dst0, dst1, dst2, src
+	LDA	src
+	STA	dst0
+	STA	dst1
+	STA	dst2
+.endmacro
+
+.macro set4 dst0, dst1, dst2, dst3, src
+	LDA	src
+	STA	dst0
+	STA	dst1
+	STA	dst2
+	STA	dst3
+.endmacro
+
+.macro set5 dst0, dst1, dst2, dst3, dst4, src
+	LDA	src
+	STA	dst0
+	STA	dst1
+	STA	dst2
+	STA	dst3
+	STA	dst4
+.endmacro
+
 .macro set_inx dst, src
 	LDA	src
 	STA	dst

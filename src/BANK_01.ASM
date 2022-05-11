@@ -106,8 +106,7 @@ palette3_F2AA:
 ; ---------------------------------------------------------------------------
 
 loc_1F2C3:
-	set objectIdx_318, #0
-	STA	sprPalIdx_319
+	set2 objectIdx_318, sprPalIdx_319, #0
 	JSR	get_sprite_palette_ptr_1F2F3
 	JSR	copy_sprite_palette_to_ram_1F316
 	LDX	#0
@@ -171,8 +170,7 @@ upload_tiles_to_ppu_1F32A:
 ; ---------------------------------------------------------------------------
 
 loc_1F33D:
-	set objectIdx_318, #0
-	STA	sprite_secondByte_31B
+	set2 objectIdx_318, sprite_secondByte_31B, #0
 	JSR	load_sprite_to_vram_1F36D
 	JSR	upload_to_ppu_1F6D1
 	LDX	#0

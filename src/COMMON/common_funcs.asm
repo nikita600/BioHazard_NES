@@ -110,7 +110,8 @@ revert_stack_FCEF:
 ; =============== S U B	R O U T	I N E =======================================
 
 hide_sprites_FCF5:
-	set spr_y_pos_218, #$F0 
+	LDA	#$F0 
+	STA	spr_y_pos_218
 	STA	spr_y_pos_21C
 	STA	spr_y_pos_220
 	STA	spr_y_pos_224
@@ -324,8 +325,7 @@ ppu_update_ctrl_mask_FE86:
 ; =============== S U B	R O U T	I N E =======================================
 
 ppu_reset_ctrl_mask_FE93:
-	set _PPU_CTRL, #0
-	STA	_PPU_MASK
+	set2 _PPU_CTRL, _PPU_MASK, #0
 	RTS
 ; End of function ppu_reset_ctrl_mask_FE93
 

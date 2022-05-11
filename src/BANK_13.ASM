@@ -177,8 +177,7 @@ music_func_13D484:
 
 	if_a_not_equal apu_unk_76D, loc_13D425
 	LDX	#0
-	set apu_unk_737, #0
-	STA	apu_unk_704
+	set2 apu_unk_737, apu_unk_704, #0
 
 loc_13D493:
 	STA	apu_unk_710,X
@@ -204,10 +203,7 @@ loc_13D4C0:
 loc_13D4D4:
 	INX
 	if_x_greater_cmp #4, loc_13D4C0
-	set apu_unk_700, #$FF
-	STA	apu_unk_701
-	STA	apu_unk_702
-	STA	apu_unk_703
+	set4 apu_unk_700, apu_unk_701, apu_unk_702, apu_unk_703, #$FF
 	LDX	#0
 	JSR	music_func_13D804
 	INX

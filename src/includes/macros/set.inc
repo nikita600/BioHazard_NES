@@ -80,3 +80,11 @@
 	set addr, #.LOBYTE(value)
 	set addr+1, #.HIBYTE(value)
 .endmacro
+
+.macro set_text_args text_idx, char_idx
+	LDA	text_idx
+	STA	text_idx_35C
+
+	LDA	char_idx
+	STA	char_type_id_35D
+.endmacro

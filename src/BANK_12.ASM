@@ -800,8 +800,7 @@ loc_1287B9:
 	JSR	sub_12BF29
 	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
-	set text_idx_35C, #$80 
-	set char_type_id_35D, #1
+	set_text_args #$80 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	set tilemapTypeUnk_30B, #2
@@ -836,8 +835,7 @@ loc_128835:
 	JSR	exec_b0_cA_1284C5
 	set byte_313, #0
 	JSR	exec_b0_c9_1284AA
-	set text_idx_35C, #$40 
-	set char_type_id_35D, #1
+	set_text_args #$40 , #1
 	set tilemapTypeUnk_30B, #$11
 	JSR	exec_b0_c0_12A973
 	set tilemapData_4C, #1
@@ -852,8 +850,7 @@ loc_128835:
 	JSR	exec_b0_cB_1284E0
 	set cur_obj_idx_unk_43A, #2
 	JSR	exec_b0_c3_128418
-	set text_idx_35C, #$51 
-	set char_type_id_35D, #1
+	set_text_args #$51 , #1
 	set tilemapTypeUnk_30B, #$E
 	JSR	exec_b0_c0_12A973
 	set tilemapTypeUnk_30B, #5
@@ -867,8 +864,7 @@ set_tyrant_level_1288B6:
 	set byte_4AD, #$40 
 	set byte_4AE, #$50 
 	JSR	exec_b0_c2_12A9A9
-	set text_idx_35C, #$3F 
-	set char_type_id_35D, #2
+	set_text_args #$3F , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
@@ -891,8 +887,7 @@ loc_1288EE:
 	JSR	exec_b0_cA_1284C5
 	set byte_313, #2
 	JSR	exec_b0_c9_1284AA
-	set text_idx_35C, #$78 
-	set char_type_id_35D, #1
+	set_text_args #$78 , #1
 	set tilemapTypeUnk_30B, #3
 	JSR	exec_b0_c0_12A973
 	set2 byte_552, byte_6C5, #$FF
@@ -2428,8 +2423,7 @@ loc_12AE86:
 	set byte_6CA, #$FF
 	set byte_313, #1
 	JSR	exec_b0_c9_1284AA
-	set text_idx_35C, #$81 
-	set char_type_id_35D, #1
+	set_text_args #$81 , #1
 	set tilemapTypeUnk_30B, #2
 	JSR	exec_b0_c0_12A973
 	set tilemapData_4C, #1
@@ -2442,8 +2436,7 @@ loc_12AE86:
 	set roomUnk2_4E, #3
 	set tilemap_line_idx_4F, #1
 	JSR	exec_b0_cB_1284E0
-	set text_idx_35C, #$84 
-	set char_type_id_35D, #1
+	set_text_args #$84 , #1
 	set tilemapTypeUnk_30B, #6
 	JSR	exec_b0_c0_12A973
 
@@ -2543,8 +2536,7 @@ loc_12AFE3:
 
 loc_12AFF8:
 	if_a_not_equal_cmp_addr byte_46E, #$2D, loc_12B03B
-	set text_idx_35C, #$BC 
-	set char_type_id_35D, #1
+	set_text_args #$BC , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	set byte_55F, #$FF
@@ -2571,8 +2563,7 @@ loc_12B054:
 	set byte_5BD, #$FF
 	set cur_obj_idx_unk_43A, #7
 	JSR	sub_12BF29
-	set text_idx_35C, #6
-	set char_type_id_35D, #2
+	set_text_args #6, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -2603,8 +2594,7 @@ loc_12B0C2:
 	set byte_5BC, #$FF
 	set cur_obj_idx_unk_43A, #6
 	JSR	sub_12BF29
-	set text_idx_35C, #6
-	set char_type_id_35D, #2
+	set_text_args #6, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -2612,8 +2602,7 @@ loc_12B0C2:
 
 loc_12B0E2:
 	if_a_not_equal_cmp #$1B, loc_12B106
-	set text_idx_35C, #6
-	set char_type_id_35D, #1
+	set_text_args #6, #1
 	set tilemapTypeUnk_30B, #4
 	JSR	exec_b0_c0_12A973
 	set byte_545, #1
@@ -2701,8 +2690,7 @@ sub_12B1B0:
 ; ---------------------------------------------------------------------------
 
 loc_12B1B8:
-	set text_idx_35C, #$AA 
-	set char_type_id_35D, #1
+	set_text_args #$AA , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -2737,13 +2725,11 @@ sub_12B1E3:
 ; ---------------------------------------------------------------------------
 
 loc_12B1EB:
-	set text_idx_35C, #$AB 
-	set char_type_id_35D, #1
+	set_text_args #$AB , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	if_a_not_equal byte_55B, locret_12B224
-	set text_idx_35C, #$B3 
-	set char_type_id_35D, #1
+	set_text_args #$B3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -2763,13 +2749,11 @@ sub_12B225:
 ; ---------------------------------------------------------------------------
 
 loc_12B22D:
-	set text_idx_35C, #$AC 
-	set char_type_id_35D, #1
+	set_text_args #$AC , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	if_a_not_equal byte_55B, locret_12B266
-	set text_idx_35C, #$B3 
-	set char_type_id_35D, #1
+	set_text_args #$B3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -2789,13 +2773,11 @@ sub_12B267:
 ; ---------------------------------------------------------------------------
 
 loc_12B26F:
-	set text_idx_35C, #$AD 
-	set char_type_id_35D, #1
+	set_text_args #$AD , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	if_a_not_equal byte_55B, locret_12B2A8
-	set text_idx_35C, #$B3 
-	set char_type_id_35D, #1
+	set_text_args #$B3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -2815,13 +2797,11 @@ sub_12B2A9:
 ; ---------------------------------------------------------------------------
 
 loc_12B2B1:
-	set text_idx_35C, #$AE 
-	set char_type_id_35D, #1
+	set_text_args #$AE , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	if_a_not_equal byte_55B, locret_12B2EA
-	set text_idx_35C, #$B3 
-	set char_type_id_35D, #1
+	set_text_args #$B3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -2841,13 +2821,11 @@ sub_12B2EB:
 ; ---------------------------------------------------------------------------
 
 loc_12B2F3:
-	set text_idx_35C, #$AF 
-	set char_type_id_35D, #1
+	set_text_args #$AF , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	if_a_not_equal byte_55B, locret_12B32C
-	set text_idx_35C, #$B3 
-	set char_type_id_35D, #1
+	set_text_args #$B3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -2867,13 +2845,11 @@ sub_12B32D:
 ; ---------------------------------------------------------------------------
 
 loc_12B335:
-	set text_idx_35C, #$B0 
-	set char_type_id_35D, #1
+	set_text_args #$B0 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	if_a_not_equal byte_55B, locret_12B36E
-	set text_idx_35C, #$B3 
-	set char_type_id_35D, #1
+	set_text_args #$B3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -2898,12 +2874,10 @@ loc_12B377:
 ; ---------------------------------------------------------------------------
 
 loc_12B37F:
-	set text_idx_35C, #$B1 
-	set char_type_id_35D, #1
+	set_text_args #$B1 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	set text_idx_35C, #$B3 
-	set char_type_id_35D, #1
+	set_text_args #$B3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -2942,8 +2916,7 @@ locret_12B403:
 
 sub_12B404:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_12B41E
-	set text_idx_35C, #$A7 
-	set char_type_id_35D, #1
+	set_text_args #$A7 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4086,8 +4059,7 @@ loc_12BD64:
 
 loc_12BD75:
 	set byte_5BD, #0
-	set text_idx_35C, #5
-	set char_type_id_35D, #2
+	set_text_args #5, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4145,8 +4117,7 @@ loc_12BDD8:
 
 loc_12BDE9:
 	set byte_5BC, #0
-	set text_idx_35C, #5
-	set char_type_id_35D, #2
+	set_text_args #5, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4241,8 +4212,7 @@ locret_12BEB4:
 
 sub_12BEB5:
 	if_a_equal byte_5B0, locret_12BEF9
-	set text_idx_35C, #0
-	set char_type_id_35D, #2
+	set_text_args #0, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -4274,8 +4244,7 @@ locret_12BEF9:
 
 sub_12BEFA:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_12BF14
-	set text_idx_35C, #$39 
-	set char_type_id_35D, #2
+	set_text_args #$39 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4304,8 +4273,7 @@ sub_12BF29:
 
 sub_12BF32:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_12BF4C
-	set text_idx_35C, #$37 
-	set char_type_id_35D, #2
+	set_text_args #$37 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4328,8 +4296,7 @@ locret_12BF65:
 ; ---------------------------------------------------------------------------
 
 loc_12BF66:
-	set text_idx_35C, #$BE 
-	set char_type_id_35D, #1
+	set_text_args #$BE , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4375,8 +4342,7 @@ locret_12BFC0:
 loc_12BFC1:
 	set byte_560, #$FF
 	JSR	exec_b0_c4_12842B
-	set text_idx_35C, #1
-	set char_type_id_35D, #2
+	set_text_args #1, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c4_12842B
@@ -4393,8 +4359,7 @@ sub_12BFDF:
 
 loc_12BFEC:
 	if_a_not_equal_cmp_addr byte_562, #0, loc_12C00B
-	set text_idx_35C, #$FF
-	set char_type_id_35D, #0
+	set_text_args #$FF, #0
 	set tilemapTypeUnk_30B, #7
 	JSR	exec_b0_c0_12A973
 	set byte_562, #$F
@@ -4403,8 +4368,7 @@ loc_12BFEC:
 
 loc_12C00B:
 	if_a_not_equal_cmp #$F, locret_12C021
-	set text_idx_35C, #5
-	set char_type_id_35D, #1
+	set_text_args #5, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
@@ -4419,13 +4383,11 @@ sub_12C022:
 	if_a_not_equal byte_563, locret_12C095
 	if_a_equal_cmp_addr byte_5C4, #$FF, locret_12C095
 	set byte_563, #$FF
-	set text_idx_35C, #2
-	set char_type_id_35D, #2
+	set_text_args #2, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	sub_12D21B
-	set text_idx_35C, #3
-	set char_type_id_35D, #2
+	set_text_args #3, #2
 	JSR	exec_b2_c3_128313
 
 set_mansion_saveroom_12C05C:
@@ -4436,8 +4398,7 @@ set_mansion_saveroom_12C05C:
 	set byte_4AD, #$60 
 	set byte_4AE, #$70 
 	JSR	exec_b0_c2_12A9A9
-	set text_idx_35C, #$B
-	set char_type_id_35D, #1
+	set_text_args #$B, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
@@ -4467,8 +4428,7 @@ sub_12C0AE:
 ; ---------------------------------------------------------------------------
 
 loc_12C0BB:
-	set text_idx_35C, #$CB 
-	set char_type_id_35D, #1
+	set_text_args #$CB , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4478,8 +4438,7 @@ loc_12C0BB:
 
 sub_12C0CE:
 	if_a_not_equal_cmp_addr byte_566, #0, locret_12C118
-	set text_idx_35C, #$D6 
-	set char_type_id_35D, #1
+	set_text_args #$D6 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -4590,8 +4549,7 @@ sub_12C1F2:
 
 loc_12C1FA:
 	if_a_equal_cmp_addr byte_585, #$FF, locret_12C220
-	set text_idx_35C, #$E2 
-	set char_type_id_35D, #1
+	set_text_args #$E2 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -4610,14 +4568,12 @@ sub_12C221:
 ; ---------------------------------------------------------------------------
 
 loc_12C229:
-	set text_idx_35C, #$E3 
-	set char_type_id_35D, #1
+	set_text_args #$E3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	if_a_not_equal byte_372, locret_12C25D
-	set text_idx_35C, #$E4 
-	set char_type_id_35D, #1
+	set_text_args #$E4 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	xor_byte byte_5CA, #$FF
@@ -4635,8 +4591,7 @@ sub_12C25E:
 ; ---------------------------------------------------------------------------
 
 loc_12C26B:
-	set text_idx_35C, #$42 
-	set char_type_id_35D, #2
+	set_text_args #$42 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4683,8 +4638,7 @@ locret_12C2D5:
 
 sub_12C2D6:
 	if_a_not_equal_cmp_addr byte_471, #0, locret_12C323
-	set text_idx_35C, #$E3 
-	set char_type_id_35D, #1
+	set_text_args #$E3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -4706,8 +4660,7 @@ locret_12C323:
 
 sub_12C324:
 	if_a_not_equal_cmp_addr byte_471, #0, locret_12C371
-	set text_idx_35C, #$E3 
-	set char_type_id_35D, #1
+	set_text_args #$E3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -4740,8 +4693,7 @@ sub_12C373:
 ; ---------------------------------------------------------------------------
 
 loc_12C380:
-	set text_idx_35C, #$B
-	set char_type_id_35D, #2
+	set_text_args #$B, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4751,8 +4703,7 @@ loc_12C380:
 
 sub_12C393:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_12C3AD
-	set text_idx_35C, #$BA 
-	set char_type_id_35D, #0
+	set_text_args #$BA , #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4785,8 +4736,7 @@ locret_12C3C8:
 
 sub_12C3C9:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_12C3E3
-	set text_idx_35C, #$BA 
-	set char_type_id_35D, #0
+	set_text_args #$BA , #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4802,8 +4752,7 @@ loc_12C3E3:
 
 sub_12C3EE:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_12C408
-	set text_idx_35C, #$BA 
-	set char_type_id_35D, #0
+	set_text_args #$BA , #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4819,8 +4768,7 @@ loc_12C408:
 
 sub_12C413:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_12C42D
-	set text_idx_35C, #$BA 
-	set char_type_id_35D, #0
+	set_text_args #$BA , #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4849,8 +4797,7 @@ sub_12C43F:
 ; ---------------------------------------------------------------------------
 
 loc_12C44C:
-	set text_idx_35C, #$B
-	set char_type_id_35D, #2
+	set_text_args #$B, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4892,8 +4839,7 @@ locret_12C4AD:
 
 sub_12C4AE:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_12C4C8
-	set text_idx_35C, #$BA 
-	set char_type_id_35D, #0
+	set_text_args #$BA , #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -4930,8 +4876,7 @@ sub_12C4F3:
 ; ---------------------------------------------------------------------------
 
 loc_12C507:
-	set text_idx_35C, #$D
-	set char_type_id_35D, #2
+	set_text_args #$D, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
@@ -4949,8 +4894,7 @@ sub_12C51A:
 ; ---------------------------------------------------------------------------
 
 loc_12C52E:
-	set text_idx_35C, #$E
-	set char_type_id_35D, #2
+	set_text_args #$E, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
@@ -4968,8 +4912,7 @@ sub_12C541:
 ; ---------------------------------------------------------------------------
 
 loc_12C555:
-	set text_idx_35C, #$F
-	set char_type_id_35D, #2
+	set_text_args #$F, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
@@ -4986,8 +4929,7 @@ sub_12C568:
 ; ---------------------------------------------------------------------------
 
 loc_12C575:
-	set text_idx_35C, #$12
-	set char_type_id_35D, #2
+	set_text_args #$12, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -5028,8 +4970,7 @@ loc_12C5B1:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C5F0:
-	set text_idx_35C, #$E3 
-	set char_type_id_35D, #1
+	set_text_args #$E3 , #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -5068,16 +5009,14 @@ loc_12C661:
 ; ---------------------------------------------------------------------------
 
 loc_12C66E:
-	set text_idx_35C, #$20 
-	set char_type_id_35D, #2
+	set_text_args #$20 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C681:
-	set text_idx_35C, #$21 
-	set char_type_id_35D, #2
+	set_text_args #$21 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -5086,8 +5025,7 @@ loc_12C681:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C694:
-	set text_idx_35C, #$24 
-	set char_type_id_35D, #2
+	set_text_args #$24 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -5103,8 +5041,7 @@ locret_12C6B8:
 
 sub_12C6B9:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_12C6D3
-	set text_idx_35C, #$BA 
-	set char_type_id_35D, #0
+	set_text_args #$BA , #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -5119,8 +5056,7 @@ loc_12C6D3:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C6DE:
-	set text_idx_35C, #$2A 
-	set char_type_id_35D, #2
+	set_text_args #$2A , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -5135,8 +5071,7 @@ locret_12C6FF:
 
 sub_12C700:
 	if_a_equal_cmp_addr byte_67A, #$FF, loc_12C72A
-	set text_idx_35C, #$27 
-	set char_type_id_35D, #2
+	set_text_args #$27 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -5144,8 +5079,7 @@ sub_12C700:
 	if_a_not_equal_cmp_addr byte_67B, #$FF, loc_12C742
 
 loc_12C72A:
-	set text_idx_35C, #$28 
-	set char_type_id_35D, #2
+	set_text_args #$28 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	set byte_67A, #$FF
@@ -5153,8 +5087,7 @@ loc_12C72A:
 ; ---------------------------------------------------------------------------
 
 loc_12C742:
-	set text_idx_35C, #$29 
-	set char_type_id_35D, #2
+	set_text_args #$29 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 
@@ -5165,8 +5098,7 @@ locret_12C754:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C755:
-	set text_idx_35C, #$26 
-	set char_type_id_35D, #2
+	set_text_args #$26 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
@@ -5177,8 +5109,7 @@ sub_12C755:
 ; ---------------------------------------------------------------------------
 
 loc_12C77E:
-	set text_idx_35C, #$33 
-	set char_type_id_35D, #2
+	set_text_args #$33 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -5209,8 +5140,7 @@ locret_12C7CA:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C7CB:
-	set text_idx_35C, #$35 
-	set char_type_id_35D, #2
+	set_text_args #$35 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -5702,8 +5632,7 @@ show_ending_screen_12CC06:
 	set prev_sprite_type_4A9, #2
 	set objectIdx_318, #$1A
 	JSR	exec_b0_c2_12A9A9
-	set text_idx_35C, #$46 
-	set char_type_id_35D, #2
+	set_text_args #$46 , #2
 	JSR	exec_b2_c2_1283DF
 	RTS
 ; End of function show_intro_screen_12CB58
@@ -5766,8 +5695,7 @@ loc_12CCDF:
 
 comm_46_12CCE3:
 	if_a_equal_cmp_addr byte_6C5, #0, return_12CD1C
-	set text_idx_35C, #$7B 
-	set char_type_id_35D, #1
+	set_text_args #$7B , #1
 	set tilemapTypeUnk_30B, #4
 	JSR	exec_b0_c0_12A973
 	set tilemapData_4C, #1
@@ -5786,8 +5714,7 @@ return_12CD1C:
 ; =============== S U B	R O U T	I N E =======================================
 
 comm_48_take_item_12CD1D:
-	set text_idx_35C, #$45 
-	set char_type_id_35D, #2
+	set_text_args #$45 , #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	RTS
@@ -5935,8 +5862,7 @@ loc_12CEBA:
 	set ppu_unk_byte_309, #$1B
 	set tilemap_size_307, #6
 	set sprite_secondByte_31B, #$DA 
-	set text_idx_35C, #$85 
-	set char_type_id_35D, #0
+	set_text_args #$85 , #0
 	set byte_35E, #$C
 	set byte_35F, #1
 	set byte_362, #0
@@ -5947,8 +5873,7 @@ loc_12CEBA:
 	set ppu_unk_byte_309, #$1B
 	set tilemap_size_307, #$15
 	set sprite_secondByte_31B, #$F2 
-	set text_idx_35C, #$86 
-	set char_type_id_35D, #0
+	set_text_args #$86 , #0
 	set byte_35E, #3
 	set byte_35F, #1
 	set byte_364, #6
@@ -5991,8 +5916,7 @@ loc_12CF76:
 	set ppu_unk_byte_309, #$1B
 	set tilemap_size_307, #6
 	set sprite_secondByte_31B, #$DA 
-	set text_idx_35C, #$74 
-	set char_type_id_35D, #0
+	set_text_args #$74 , #0
 	set byte_35E, #$C
 	set byte_35F, #1
 	set byte_362, #0
@@ -6042,8 +5966,7 @@ loc_12D003:
 	set ppu_unk_byte_309, #$1B
 	set tilemap_size_307, #6
 	set sprite_secondByte_31B, #$DA 
-	set text_idx_35C, #$87 
-	set char_type_id_35D, #0
+	set_text_args #$87 , #0
 	set byte_35E, #$C
 	set byte_35F, #1
 	set byte_362, #0
@@ -6382,8 +6305,7 @@ loc_12D383:
 
 loc_12D394:
 	LDY	tilemapTypeUnk_30B
-	set text_idx_35C, {byte_533,Y}
-	set char_type_id_35D, #0
+	set_text_args {byte_533,Y}, #0
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	RTS
@@ -6587,11 +6509,9 @@ sub_12D58C:
 	JSR	sub_12D287
 	from_stack_to_a tilemapTypeUnk_30B
 	a_to_stack tilemapTypeUnk_30B
-	set text_idx_35C, tilemapTypeUnk_30B
-	set char_type_id_35D, #0
+	set_text_args tilemapTypeUnk_30B, #0
 	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$3B, loc_12D5D2
-	set text_idx_35C, #7
-	set char_type_id_35D, #2
+	set_text_args #7, #2
 
 loc_12D5D2:
 	LDY	tilemapTypeUnk_30B
@@ -6606,8 +6526,7 @@ loc_12D5D2:
 	JSR	sub_12DAD0
 	from_stack_to_a tilemapTypeUnk_30B
 	if_a_greater_cmp_addr byte_532, #8, loc_12D623
-	set text_idx_35C, #$7D 
-	set char_type_id_35D, #0
+	set_text_args #$7D , #0
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12DAD0
@@ -6616,8 +6535,7 @@ loc_12D5D2:
 ; ---------------------------------------------------------------------------
 
 loc_12D623:
-	set text_idx_35C, #$7A 
-	set char_type_id_35D, #0
+	set_text_args #$7A , #0
 	set byte_364, #7
 	a_to_stack tilemapTypeUnk_30B
 	JSR	exec_b2_c1_128300
@@ -7147,8 +7065,7 @@ loc_12DB3A:
 	if_a_not_equal_cmp_addr byte_42C, #0, loc_12DB6C
 	if_a_equal byte_545, locret_12DB6B
 	JSR	sub_12ED20
-	set text_idx_35C, #$44 
-	set char_type_id_35D, #2
+	set_text_args #$44 , #2
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
@@ -7520,16 +7437,13 @@ sub_12DF32:
 
 sub_12DF6C:
 	LDX	byte_372
-	set text_idx_35C, {unk_4D2,X}
-	set char_type_id_35D, #0
+	set_text_args {unk_4D2,X}, #0
 	if_a_not_equal_cmp_addr inv_itemPrev_idx_31D, #$29, loc_12DF8B
-	set text_idx_35C, #$75 
-	set char_type_id_35D, #0
+	set_text_args #$75 , #0
 
 loc_12DF8B:
 	if_a_not_equal_cmp_addr inv_itemPrev_idx_31D, #$15, loc_12DF9C
-	set text_idx_35C, #7
-	set char_type_id_35D, #2
+	set_text_args #7, #2
 
 loc_12DF9C:
 	set byte_364, #7
@@ -7591,8 +7505,7 @@ sub_12DFFC:
 ; START	OF FUNCTION CHUNK FOR sub_12DFA5
 
 loc_12E019:
-	set text_idx_35C, #$77 
-	set char_type_id_35D, #0
+	set_text_args #$77 , #0
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
@@ -7682,8 +7595,7 @@ loc_12E108:
 ; ---------------------------------------------------------------------------
 
 loc_12E11E:
-	set text_idx_35C, #$78 
-	set char_type_id_35D, #0
+	set_text_args #$78 , #0
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
@@ -7880,8 +7792,7 @@ loc_12E2D3:
 loc_12E2E1:
 	if_a_not_equal_cmp #$1A, loc_12E312
 	if_a_not_equal_cmp_addr byte_598, #0, loc_12E308
-	set text_idx_35C, #$B7 
-	set char_type_id_35D, #0
+	set_text_args #$B7 , #0
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
@@ -7928,8 +7839,7 @@ loc_12E362:
 ; ---------------------------------------------------------------------------
 
 loc_12E368:
-	set text_idx_35C, #$76 
-	set char_type_id_35D, #0
+	set_text_args #$76 , #0
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
@@ -8164,8 +8074,7 @@ sub_12E5E6:
 	a_to_stack byte_372
 	set byte_372, #0
 	if_a_not_equal_cmp_addr byte_4C1, #0, loc_12E603
-	set text_idx_35C, #$75 
-	set char_type_id_35D, #0
+	set_text_args #$75 , #0
 	JMP	loc_12E616
 ; ---------------------------------------------------------------------------
 
@@ -8240,8 +8149,7 @@ sub_12E69F:
 	a_to_stack byte_372
 	set byte_372, #0
 	if_a_not_equal_cmp_addr byte_4D0, #0, loc_12E6BC
-	set text_idx_35C, #$75 
-	set char_type_id_35D, #0
+	set_text_args #$75 , #0
 	JMP	loc_12E6E0
 ; ---------------------------------------------------------------------------
 
@@ -8254,8 +8162,7 @@ loc_12E6BC:
 	ADC	#0
 	STA	char_type_id_35D
 	if_a_not_equal_cmp_addr {unk_4C2,X}, #$E, loc_12E6E0
-	set text_idx_35C, #$3A 
-	set char_type_id_35D, #2
+	set_text_args #$3A , #2
 
 loc_12E6E0:
 	JSR	sub_12E798
@@ -8302,8 +8209,7 @@ loc_12E731:
 	ADC	#0
 	STA	char_type_id_35D
 	if_a_not_equal_cmp_addr {unk_4C2,X}, #$E, loc_12E75B
-	set text_idx_35C, #$3B 
-	set char_type_id_35D, #2
+	set_text_args #$3B , #2
 
 loc_12E75B:
 	set byte_310, #0
@@ -9198,8 +9104,7 @@ show_computer_12F0B2:
 	set2 ppu_prev_scroll_x_unk_4A7, ppu_prev_scroll_y_unk_4A8, #0
 	set prev_sprite_type_4A9, #2
 	JSR	exec_b0_c2_12A9A9
-	set text_idx_35C, #$2B 
-	set char_type_id_35D, #2
+	set_text_args #$2B , #2
 	JSR	sub_12F5B9
 	set byte_372, #0
 
@@ -9419,8 +9324,7 @@ loc_12F34C:
 	if_x_greater_cmp byte_421, loc_12F342
 	if_a_not_equal_cmp_addr byte_420, #2, loc_12F377
 	set byte_420, #3
-	set text_idx_35C, #$2C 
-	set char_type_id_35D, #2
+	set_text_args #$2C , #2
 	JSR	sub_12F5B9
 	set byte_421, #0
 	JSR	sub_12F583
@@ -9693,32 +9597,28 @@ sub_12F5DC:
 
 sub_12F5FC:
 	JSR	hide_sprite_12F57D
-	set text_idx_35C, #$2D 
-	set char_type_id_35D, #2
+	set_text_args #$2D , #2
 	set ppu_unk_byte_309, #3
 	set tilemap_size_307, #5
 	set byte_35E, #$B
 	set byte_35F, #4
 	set sprite_secondByte_31B, #$AF 
 	JSR	sub_12F5D2
-	set text_idx_35C, #$2E 
-	set char_type_id_35D, #2
+	set_text_args #$2E , #2
 	set ppu_unk_byte_309, #5
 	set tilemap_size_307, #$E
 	set byte_35E, #2
 	set byte_35F, #1
 	set sprite_secondByte_31B, #$D7 
 	JSR	sub_12F5D2
-	set text_idx_35C, #$2F 
-	set char_type_id_35D, #2
+	set_text_args #$2F , #2
 	set ppu_unk_byte_309, #7
 	set tilemap_size_307, #$E
 	set byte_35E, #2
 	set byte_35F, #1
 	set sprite_secondByte_31B, #$DF 
 	JSR	sub_12F5D2
-	set text_idx_35C, #$30 
-	set char_type_id_35D, #2
+	set_text_args #$30 , #2
 	set ppu_unk_byte_309, #9
 	set tilemap_size_307, #$E
 	set byte_35E, #2
@@ -9732,8 +9632,7 @@ sub_12F5FC:
 
 sub_12F698:
 	JSR	sub_12F732
-	set text_idx_35C, #$32 
-	set char_type_id_35D, #2
+	set_text_args #$32 , #2
 	set ppu_unk_byte_309, #5
 	set tilemap_size_307, #5
 	set byte_35E, #$B
@@ -9753,8 +9652,7 @@ sub_12F698:
 
 sub_12F6D8:
 	JSR	sub_12F732
-	set text_idx_35C, #$31 
-	set char_type_id_35D, #2
+	set_text_args #$31 , #2
 	set ppu_unk_byte_309, #3
 	set tilemap_size_307, #5
 	set byte_35E, #$B
@@ -9763,8 +9661,7 @@ sub_12F6D8:
 	set byte_362, #0
 	set byte_363, #1
 	JSR	sub_12F5DC
-	set text_idx_35C, #$2C 
-	set char_type_id_35D, #2
+	set_text_args #$2C , #2
 	set ppu_unk_byte_309, #9
 	set tilemap_size_307, #9
 	set byte_35E, #3
@@ -9778,8 +9675,7 @@ sub_12F6D8:
 
 sub_12F732:
 	JSR	hide_sprite_12F57D
-	set text_idx_35C, #$74 
-	set char_type_id_35D, #0
+	set_text_args #$74 , #0
 	set ppu_unk_byte_309, #3
 	set tilemap_size_307, #5
 	set byte_35E, #$B

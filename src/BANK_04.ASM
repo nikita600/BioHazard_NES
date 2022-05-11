@@ -48,9 +48,7 @@ case3_48089:
 	JMP	return_4808F
 
 return_4808F:
-	set bank_command_346, #$FF
-	set bank_to_344, bank_from_343
-	JMP	bank_switch_8000
+	return_from_bank_command
 	
 ; ---------------------------------------------------------------------------
 

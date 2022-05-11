@@ -23,7 +23,7 @@ switch_case_8035:
 
 locret_12805A:
 	RTS
-; End of function bank_switch_8000
+; End of function bank_switch_func
 
 ; ---------------------------------------------------------------------------
 CommandPtrs_12805B:
@@ -498,9 +498,7 @@ loc_1282E8:
 
 return_1282EE:
 	from_stack_to_a bank_from_343
-	set bank_command_346, #$FF
-	set bank_to_344, bank_from_343
-	JMP	bank_switch_8000
+	return_from_bank_command
 ; End of function command_0_1280FB
 
 ; =============== S U B	R O U T	I N E =======================================

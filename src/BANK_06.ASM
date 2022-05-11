@@ -22,10 +22,8 @@ loc_68047:
 ; ---------------------------------------------------------------------------
 
 loc_6804D:
-	set bank_command_346, #$FF
-	set bank_to_344, bank_from_343
-	JMP	bank_switch_8000
-; End of function bank_switch_8000
+	return_from_bank_command
+; End of function bank_switch_func
 
 ; ---------------------------------------------------------------------------
 GFX_6805B:

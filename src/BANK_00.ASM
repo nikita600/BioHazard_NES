@@ -173,11 +173,8 @@ loc_815B:
 ; ---------------------------------------------------------------------------
 
 loc_8169:
-	set bank_command_346, #$FF
-	set bank_to_344, bank_from_343
-
-	JMP	bank_switch_8000
-; End of function bank_switch_8000
+	return_from_bank_command
+; End of function bank_switch_func
 
 ; ---------------------------------------------------------------------------
 ; START	OF FUNCTION CHUNK FOR update_88C2
@@ -7673,6 +7670,7 @@ next_F4D0:
 exec_bN_c0_F4D7:
 	set_iny bank_to_344, {(data_2),Y}
 	set entry_idx_300, {(data_2),Y}
+
 	set bank_command_346, #0
 	set bank_from_343, #0
 	JSR	bank_switch_8000

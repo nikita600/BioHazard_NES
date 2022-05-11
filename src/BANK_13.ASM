@@ -64,17 +64,17 @@ loc_13808A:
 ; ---------------------------------------------------------------------------
 
 loc_13808D:
-	set bank_command_346, #$FF
-	set bank_to_344, bank_from_343
-	JMP	bank_switch_8000
+	return_from_bank_command
 ; ---------------------------------------------------------------------------
 
 loc_13809B:
 	JSR	music_update_state_13DC1E
+
+ret_from_bank2:
 	set bank_to_344, bank_prev_345
 	set bank_command_346, #$FF
 	JMP	bank_switch_8000
-; End of function bank_switch_8000
+; End of function bank_switch_func
 
 ; ---------------------------------------------------------------------------
 Palette_1380AC:

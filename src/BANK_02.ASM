@@ -58,11 +58,8 @@ loc_28083:
 ; ---------------------------------------------------------------------------
 
 loc_28089:
-
-	set bank_command_346, #$FF
-	set bank_to_344, bank_from_343
-	JMP	bank_switch_8000
-; End of function bank_switch_8000
+	return_from_bank_command
+; End of function bank_switch_func
 
 ; ---------------------------------------------------------------------------
 off_28097:
@@ -206,7 +203,7 @@ loc_2D29C:
 	set_iny char_type_id_35D, {(ptr_0),Y}
 	set_iny text_idx_35C, {(ptr_0),Y}
 	mult_word_by_2 text_idx_35C
-	
+
 	a_to_stack ptr_0
 	a_to_stack ptr_1
 	a_to_stack data_2

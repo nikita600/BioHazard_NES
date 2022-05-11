@@ -14,10 +14,7 @@ case0_78047:
 ; ---------------------------------------------------------------------------
 
 return_7804D:
-	set bank_command_346, #$FF
-	set bank_to_344, bank_from_343
-
-	JMP	bank_switch_8000
+	return_from_bank_command
 
 .endmacro
 

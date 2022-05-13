@@ -838,13 +838,13 @@ loc_128835:
 	set tilemapTypeUnk_30B, #$11
 	JSR	exec_b0_c0_12A973
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #2
-	set roomUnk2_4E, #2
+	set room_pos_x_4D, #2
+	set room_pos_y_4E, #2
 	set tilemap_line_idx_4F, #1
 	JSR	exec_b0_cB_1284E0
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #2
-	set roomUnk2_4E, #8
+	set room_pos_x_4D, #2
+	set room_pos_y_4E, #8
 	set tilemap_line_idx_4F, #3
 	JSR	exec_b0_cB_1284E0
 	set cur_obj_idx_unk_43A, #2
@@ -2424,13 +2424,13 @@ loc_12AE86:
 	set tilemapTypeUnk_30B, #2
 	JSR	exec_b0_c0_12A973
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #1
-	set roomUnk2_4E, #3
+	set room_pos_x_4D, #1
+	set room_pos_y_4E, #3
 	set tilemap_line_idx_4F, #3
 	JSR	exec_b0_cB_1284E0
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #1
-	set roomUnk2_4E, #3
+	set room_pos_x_4D, #1
+	set room_pos_y_4E, #3
 	set tilemap_line_idx_4F, #1
 	JSR	exec_b0_cB_1284E0
 	set_text_args #$84, #1
@@ -5696,8 +5696,8 @@ comm_46_12CCE3:
 	set tilemapTypeUnk_30B, #4
 	JSR	exec_b0_c0_12A973
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #0
-	set roomUnk2_4E, #8
+	set room_pos_x_4D, #0
+	set room_pos_y_4E, #8
 	set tilemap_line_idx_4F, #1
 	JSR	exec_b0_cB_1284E0
 	set cur_obj_idx_unk_43A, #0

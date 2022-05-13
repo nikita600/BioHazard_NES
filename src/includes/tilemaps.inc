@@ -3,27 +3,23 @@
 tilemap_switch_case:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88
-
-	if_a_equal_cmp_addr bank_command_346, #0, case0_78047
+	if_a_equal_cmp_addr bank_command_346, #0, case0_8047
 	RTS
 ; ---------------------------------------------------------------------------
 
-case0_78047:
-	JSR	load_tilemap_chunk_in_ram_7F897
-	JMP	return_7804D
+case0_8047:
+	JSR	load_tilemap_chunk_in_ram_F897
+	JMP	return_804D
 ; ---------------------------------------------------------------------------
 
-return_7804D:
+return_804D:
 	return_from_bank_command
 
 .endmacro
 
 .macro load_tilemap_chunk_in_ram_func tilemaps_ptr
 
-; =============== S U B	R O U T	I N E =======================================
-
-load_tilemap_chunk_in_ram_7F897:
-
+load_tilemap_chunk_in_ram_F897:
 	get_ptr_from_tbl tilemaps_ptr, entry_idx_300
 	
 	set_word_to_word ptr_0, data_2
@@ -58,6 +54,5 @@ write_tilemap_line_7F90F:
 	INX
 	if_x_greater_cmp data_2, write_tilemap_line_7F90F
 	RTS
-; End of function load_tilemap_chunk_in_ram_7F897
 
 .endmacro

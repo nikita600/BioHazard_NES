@@ -7,7 +7,6 @@
 .include "includes/macros/division.inc"
 .include "includes/macros/branching.inc"
 
-
 ; ---------------------------------------------------------------------------
 
 .macro read_word dst, src
@@ -20,12 +19,16 @@
 	STA	dst+1
 .endmacro
 
+; ---------------------------------------------------------------------------
+
 .macro get_word_offset addr, idx
 	mult_by_2_byte idx
 	add_to_a addr
 	STA	addr
 	add_byte_to_byte addr+1, #0
 .endmacro
+
+; ---------------------------------------------------------------------------
 
 .macro get_ptr_from_tbl ptr_addr, ptr_idx
 
@@ -38,6 +41,8 @@
 	read_word data_2, {(ptr_0),Y}
 
 .endmacro
+
+; ---------------------------------------------------------------------------
 
 .macro bank_switch_func switch_case_func
 
@@ -75,6 +80,8 @@ vertical_8032:
 
 .endmacro
 
+; ---------------------------------------------------------------------------
+
 .macro execute_bank_command command, to, from
 
 	set bank_command_346, command
@@ -83,6 +90,8 @@ vertical_8032:
 	JSR	bank_switch_8000
 
 .endmacro
+
+; ---------------------------------------------------------------------------
 
 .macro return_from_bank_command
 

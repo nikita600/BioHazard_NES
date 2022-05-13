@@ -9,8 +9,8 @@ data_3 = $0003
 byte_4 = $0004
 
 tilemapData_4C = $004C
-roomUnk1_4D = $004D
-roomUnk2_4E = $004E
+room_pos_x_4D = $004D
+room_pos_y_4E = $004E
 tilemap_line_idx_4F = $004F 
 mapLineSize_50 = $0050
 tilemap_line_size_51 = $0051 

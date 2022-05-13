@@ -27,6 +27,13 @@
 	STA	dst
 .endmacro
 
+.macro add_byte_to_byte_clc_imm dst, src, value
+	LDA	src
+	CLC
+	ADC	value
+	STA	dst
+.endmacro
+
 .macro add_byte_to_byte dst, src
 	LDA	dst
 	ADC	src

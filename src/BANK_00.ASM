@@ -3853,14 +3853,14 @@ sub_CF42:
 
 loc_CF46:
 	set tilemapTypeUnk_30B, {tilemapData_4C,X}
-	set inv_spr_dscr1_30C, {roomUnk1_4D,X}
-	set byte_313, {roomUnk2_4E,X}
+	set inv_spr_dscr1_30C, {room_pos_x_4D,X}
+	set byte_313, {room_pos_y_4E,X}
 	if_a_not_equal inv_spr_dscr1_30C, loc_CF5D
 	JMP	loc_CFF2
 ; ---------------------------------------------------------------------------
 
 loc_CF5D:
-	DEC	roomUnk1_4D,X
+	DEC	room_pos_x_4D,X
 	x_to_stack
 	y_to_stack
 	LDY	#0
@@ -4135,15 +4135,17 @@ sub_D22C:
 	LDX	#$B
 	JSR	show_text_sequence_func_CF13
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #0
-	set roomUnk2_4E, #2
+	set room_pos_x_4D, #0
+	set room_pos_y_4E, #2
 	set tilemap_line_idx_4F, #0
 	JSR	sub_CF42
+
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #0
-	set roomUnk2_4E, #6
+	set room_pos_x_4D, #0
+	set room_pos_y_4E, #6
 	set tilemap_line_idx_4F, #2
 	JSR	sub_CF42
+	
 	set cur_obj_idx_unk_43A, #0
 	JSR	sub_DBE2
 	set byte_5A3, #0
@@ -4246,18 +4248,18 @@ sub_D359:
 	LDX	#8
 	JSR	show_text_sequence_func_CF13
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #2
-	set roomUnk2_4E, #4
+	set room_pos_x_4D, #2
+	set room_pos_y_4E, #4
 	set tilemap_line_idx_4F, #2
 	JSR	sub_CF42
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #2
-	set roomUnk2_4E, #7
+	set room_pos_x_4D, #2
+	set room_pos_y_4E, #7
 	set tilemap_line_idx_4F, #0
 	JSR	sub_CF42
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #2
-	set roomUnk2_4E, #$A
+	set room_pos_x_4D, #2
+	set room_pos_y_4E, #$A
 	set tilemap_line_idx_4F, #2
 	JSR	sub_CF42
 	set cur_obj_idx_unk_43A, #2
@@ -5276,8 +5278,8 @@ map_update_DEFA:
 
 read_tilemap_DF23:
 	set tilemapData_4C, entry_idx_300
-	set roomUnk1_4D, byte_36B
-	set roomUnk2_4E, byte_367
+	set room_pos_x_4D, byte_36B
+	set room_pos_y_4E, byte_367
 	set tilemap_line_idx_4F, byte_366
 	set mapLineSize_50, byte_36A
 	set tilemap_line_size_51, #$20 
@@ -5286,7 +5288,6 @@ read_tilemap_DF23:
 	JSR	tilemap_read_next_chunk_F472
 
 load_from_C558_DF4B:
-
 	get_ptr_from_tbl unknown_entries_C558, entry_idx_300
 
 	LDY	#0
@@ -5417,13 +5418,13 @@ loc_E0FF:
 	set cur_obj_idx_unk_43A, #0
 	JSR	sub_DC1C
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #0
-	set roomUnk2_4E, #7
+	set room_pos_x_4D, #0
+	set room_pos_y_4E, #7
 	set tilemap_line_idx_4F, #2
 	JSR	sub_CF42
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #0
-	set roomUnk2_4E, #7
+	set room_pos_x_4D, #0
+	set room_pos_y_4E, #7
 	set tilemap_line_idx_4F, #1
 	JSR	sub_CF42
 	LDX	byte_4D0
@@ -5433,13 +5434,13 @@ loc_E0FF:
 	LDX	#3
 	JSR	show_text_sequence_func_CF13
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #0
-	set roomUnk2_4E, #7
+	set room_pos_x_4D, #0
+	set room_pos_y_4E, #7
 	set tilemap_line_idx_4F, #0
 	JSR	sub_CF42
 	set tilemapData_4C, #1
-	set roomUnk1_4D, #0
-	set roomUnk2_4E, #7
+	set room_pos_x_4D, #0
+	set room_pos_y_4E, #7
 	set tilemap_line_idx_4F, #3
 	JSR	sub_CF42
 	set cur_obj_idx_unk_43A, #0
@@ -6961,8 +6962,8 @@ next_check_EE0E:
 
 start_read_tilemap_EE1C:
 	set tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #$20 
@@ -7007,16 +7008,16 @@ loc_EE9A:
 
 start_read_tilemap_EE9C:
 	set tilemapData_4C, entry_idx_300
-	set roomUnk1_4D, ppu_unk_byte_302
-	set roomUnk2_4E, ppu_unk_byte_303
+	set room_pos_x_4D, ppu_unk_byte_302
+	set room_pos_y_4E, ppu_unk_byte_303
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #8
 	set mapLineWidth_52, tilemapWidth_308
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
-	LDY	#0
 
+	LDY	#0
 loc_EEC7:
 	set_inx {byte_4,X}, {tilemapData_4C,Y}
 	INY
@@ -7046,8 +7047,8 @@ start_read_tilemap_EF06:
 	set tilemapData_4C, entry_idx_300
 	LDA	ppu_unk_byte_302
 	add_to_a #1
-	STA	roomUnk1_4D
-	set roomUnk2_4E, ppu_unk_byte_303
+	STA	room_pos_x_4D
+	set room_pos_y_4E, ppu_unk_byte_303
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, #0
 	set tilemap_line_size_51, #8
@@ -7056,8 +7057,8 @@ start_read_tilemap_EF06:
 	STA	mapLineWidth_52
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
-	LDY	#0
 
+	LDY	#0
 loc_EF36:
 	if_y_equal_cmp tilemapWidth_308, loc_EF45
 	set_inx {byte_4,X}, {tilemapData_4C,Y}
@@ -7109,18 +7110,18 @@ loc_EFAB:
 
 start_read_tilemap_EFAD:
 	set tilemapData_4C, entry_idx_300
-	set roomUnk1_4D, ppu_unk_byte_302
+	set room_pos_x_4D, ppu_unk_byte_302
 	LDA	ppu_unk_byte_303
 	add_to_a #1
-	STA	roomUnk2_4E
+	STA	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #8
 	set mapLineWidth_52, tilemapWidth_308
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
-	LDY	#0
 
+	LDY	#0
 loc_EFDB:
 	set_inx {byte_4,X}, {tilemapData_4C,Y}
 	INY
@@ -7157,10 +7158,10 @@ start_read_tilemap_F02E:
 	set tilemapData_4C, entry_idx_300
 	LDA	ppu_unk_byte_302
 	add_to_a #1
-	STA	roomUnk1_4D
+	STA	room_pos_x_4D
 	LDA	ppu_unk_byte_303
 	add_to_a #1
-	STA	roomUnk2_4E
+	STA	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, #0
 	set tilemap_line_size_51, #8
@@ -7169,8 +7170,8 @@ start_read_tilemap_F02E:
 	STA	mapLineWidth_52
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
-	LDY	#0
 
+	LDY	#0
 loc_F061:
 	if_y_equal_cmp tilemapWidth_308, loc_F070
 	set_inx {byte_4,X}, {tilemapData_4C,Y}
@@ -7295,14 +7296,15 @@ sub_F1A2:
 
 start_read_tilemap_F1B1:
 	set tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #$20 
 	set mapLineWidth_52, tilemapTypeUnk_30B
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
+
 	JSR	sub_F504
 	JSR	sub_ED8F
 	JSR	sub_EDA2
@@ -7317,14 +7319,15 @@ start_read_tilemap_F1B1:
 
 start_read_tilemap_F1FA:
 	set_inx tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, #0
 	set tilemap_line_size_51, #$20 
 	set mapLineWidth_52, tilemapTypeUnk_30B
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
+
 	JSR	sub_F504
 	JSR	sub_ED8F
 	from_stack_to_x
@@ -7340,14 +7343,15 @@ loc_F228:
 
 start_read_tilemap_F23C:
 	set tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #8
 	set mapLineWidth_52, tilemapTypeUnk_30B
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
+
 	JSR	sub_F504
 	JSR	sub_F57B
 	JSR	sub_F589
@@ -7366,14 +7370,15 @@ start_read_tilemap_F23C:
 
 start_read_tilemap_F290:
 	set_inx tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, #0
 	set tilemap_line_size_51, #8
 	set mapLineWidth_52, tilemapTypeUnk_30B
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
+
 	JSR	sub_F504
 	JSR	sub_F57B
 	JSR	sub_F589
@@ -7407,14 +7412,15 @@ sub_F2E4:
 
 start_read_tilemap_F2F3:
 	set tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #$20 
 	set mapLineWidth_52, tilemapTypeUnk_30B
 	set mapLineHeight_53, #$20 
 	JSR	tilemap_read_next_chunk_F472
+
 	JSR	sub_F504
 	JSR	sub_ED8F
 	JSR	sub_EDA2
@@ -7430,15 +7436,16 @@ start_read_tilemap_F2F3:
 
 start_read_tilemap_F344:
 	set tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
+	STX	room_pos_x_4D
 	INY
-	STY	roomUnk2_4E
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, #0
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #$20 
 	set mapLineWidth_52, tilemapTypeUnk_30B
 	set mapLineHeight_53, #$20 
 	JSR	tilemap_read_next_chunk_F472
+
 	JSR	sub_F504
 	JSR	sub_EDA2
 	from_stack_to_x
@@ -7461,14 +7468,15 @@ sub_F37E:
 
 start_read_tilemap_F390:
 	set tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #8
 	set mapLineWidth_52, tilemapTypeUnk_30B
 	set mapLineHeight_53, #8
 	JSR	tilemap_read_next_chunk_F472
+
 	set inv_spr_dscr1_30C, ppu_unk_byte_309
 	JSR	sub_F5AF
 	JSR	sub_F504
@@ -7490,14 +7498,15 @@ start_read_tilemap_F390:
 
 start_read_tilemap_F3F2:
 	set_iny tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, #0
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #8
 	set mapLineWidth_52, tilemapTypeUnk_30B
 	set mapLineHeight_53, #8
 	JSR	tilemap_read_next_chunk_F472
+
 	set inv_spr_dscr1_30C, #0
 	JSR	sub_F5AF
 	JSR	sub_F504
@@ -7564,11 +7573,11 @@ tilemap_read_next_chunk_F472:
 
 	get_ptr_from_tbl tilemap_entries_C000, entry_idx_300
 
-read_tilemap_entry_data_F4B3:
+read_tilemap_sizes_F4B3:
 	read_word  tilemaps_horiz_count_311, {(data_2),Y}
-	LDA	#0
-	LDY	roomUnk2_4E
 
+	LDA	#0
+	LDY	room_pos_y_4E
 add_offset_F4C4:
 	if_y_equal_cmp #0, next_F4D0
 	add_to_a tilemaps_horiz_count_311
@@ -7577,16 +7586,16 @@ add_offset_F4C4:
 ; ---------------------------------------------------------------------------
 
 next_F4D0:
-	add_to_a roomUnk1_4D
+	add_to_a room_pos_x_4D
 	mult_a_by_2
 	TAY
+
 	INY
 	INY
 
-exec_bN_c0_F4D7:
+read_tilemap_from_bank_F4D7:
 	set_iny bank_to_344, {(data_2),Y}
 	set entry_idx_300, {(data_2),Y}
-
 	set bank_command_346, #0
 	set bank_from_343, #0
 	JSR	bank_switch_8000
@@ -7730,17 +7739,17 @@ loc_F5ED:
 	INX
 
 loc_F5EE:
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, inv_spr_dscr1_30C
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #8
 	set mapLineWidth_52, tilemapTypeUnk_30B
 	set mapLineHeight_53, #8
 	JSR	tilemap_read_next_chunk_F472
+
 	if_a_equal_cmp_addr byte_313, #2, loc_F62B
 	LDX	#0
-
 loc_F615:
 	and_byte {tilemapData_4C,X}, #$CC 
 	load_a_masked {byte_5C,X}, #$33 
@@ -8021,14 +8030,15 @@ loc_F8AE:
 
 start_read_tilemap_F8BB:
 	set tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #$20 
 	set mapLineWidth_52, #2
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
+
 	from_stack_to_a tilemap_size_307
 	from_stack_to_a ppu_unk_byte_309
 	from_stack_to_x
@@ -8234,14 +8244,15 @@ sub_FAAF:
 
 start_read_tilemap_FAC8:
 	set tilemapData_4C, entry_idx_300
-	STX	roomUnk1_4D
-	STY	roomUnk2_4E
+	STX	room_pos_x_4D
+	STY	room_pos_y_4E
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #8
 	set mapLineWidth_52, #1
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
+
 	from_stack_to_a tilemap_size_307
 	from_stack_to_a ppu_unk_byte_309
 	a_to_stack ppu_unk_byte_309

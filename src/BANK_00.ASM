@@ -1,4 +1,3 @@
-; Segment type:Pure code
 ;.segment BANK_00 (Code)
 ;* =  $8000
 

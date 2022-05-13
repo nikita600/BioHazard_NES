@@ -1,6 +1,5 @@
-; Segment type:Pure code
-	;.segment BANK_03 (Text Data)
-	;* =  $8000
+;BANK_03 (Text Data)
+;* =  $8000
 
 	.include "includes/ram.inc"
 	.include "includes/macros.inc"
@@ -34,12 +33,14 @@ off_3805B:
 sub_3F76B:
 	a_to_stack data_2
 	a_to_stack data_3
+	
 	LDA	#$5B 
 	add_to_a char_type_id_35D
 	STA	ptr_0
 	LDA	#$80 
 	ADC	#0
 	STA	ptr_1
+
 	read_word  data_2, {(ptr_0),Y}
 	add_byte_to_word data_2, text_idx_35C
 

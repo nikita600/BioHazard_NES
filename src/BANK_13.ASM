@@ -1,6 +1,5 @@
-; Segment type:Pure code
-	;.segment BANK_13 (Code + Sprites)
-	;* =  $8000
+;BANK_13 (Code + Sprites)
+;* =  $8000
 
 	.include "includes/ram.inc"
 	.include "includes/macros.inc"

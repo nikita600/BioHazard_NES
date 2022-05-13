@@ -1,6 +1,5 @@
-; Segment type:Pure code
-	;.segment BANK_02 (Sprites)
-	;* =  $8000
+;BANK_02 (Sprites)
+;* =  $8000
 
 	.include "includes/ram.inc"
 	.include "includes/macros.inc"
@@ -12,52 +11,52 @@
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_a_equal_cmp_addr bank_command_346, #0, loc_2805F
-	if_a_equal_cmp #1, loc_28065
-	if_a_equal_cmp #2, loc_2806B
-	if_a_equal_cmp #3, loc_28071
-	if_a_equal_cmp #4, loc_28077
-	if_a_equal_cmp #5, loc_2807D
-	if_a_equal_cmp #6, loc_28083
+	if_a_equal_cmp_addr bank_command_346, #0, case0_2805F
+	if_a_equal_cmp #1, case1_28065
+	if_a_equal_cmp #2, case2_2806B
+	if_a_equal_cmp #3, case3_28071
+	if_a_equal_cmp #4, case4_28077
+	if_a_equal_cmp #5, case5_2807D
+	if_a_equal_cmp #6, case6_28083
 	RTS
 ; ---------------------------------------------------------------------------
 
-loc_2805F:
+case0_2805F:
 	JSR	sub_2D11F
-	JMP	loc_28089
+	JMP	return_28089
 ; ---------------------------------------------------------------------------
 
-loc_28065:
+case1_28065:
 	JSR	sub_2D131
-	JMP	loc_28089
+	JMP	return_28089
 ; ---------------------------------------------------------------------------
 
-loc_2806B:
+case2_2806B:
 	JSR	sub_2D16B
-	JMP	loc_28089
+	JMP	return_28089
 ; ---------------------------------------------------------------------------
 
-loc_28071:
+case3_28071:
 	JSR	sub_2D196
-	JMP	loc_28089
+	JMP	return_28089
 ; ---------------------------------------------------------------------------
 
-loc_28077:
+case4_28077:
 	JSR	sub_2D1CB
-	JMP	loc_28089
+	JMP	return_28089
 ; ---------------------------------------------------------------------------
 
-loc_2807D:
+case5_2807D:
 	JSR	sub_2D397
-	JMP	loc_28089
+	JMP	return_28089
 ; ---------------------------------------------------------------------------
 
-loc_28083:
+case6_28083:
 	JSR	sub_2E781
-	JMP	loc_28089
+	JMP	return_28089
 ; ---------------------------------------------------------------------------
 
-loc_28089:
+return_28089:
 	return_from_bank_command
 ; End of function bank_switch_func
 
@@ -126,9 +125,9 @@ sub_2D196:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2D1CB:
-
 	a_to_stack text_idx_35C
 	a_to_stack char_type_id_35D
+
 	load_a_masked byte_364, #1
 	if_a_equal_cmp #0, loc_2D1DF
 	JSR	sub_2D397
@@ -136,12 +135,14 @@ sub_2D1CB:
 loc_2D1DF:
 	mult_word_by_2 text_idx_35C
 	mult_byte_by_2 char_type_id_35D
-	LDA	#$97 
+
+	LDA	#.LOBYTE(off_28097)
 	add_to_a char_type_id_35D
 	STA	ptr_0
-	LDA	#$80 
+	LDA	#.HIBYTE(off_28097)
 	ADC	#0
 	STA	ptr_1
+
 	read_word  data_2, {(ptr_0),Y}
 	add_byte_to_word data_2, text_idx_35C
 
@@ -486,7 +487,7 @@ loc_2D54A:
 ; End of function sub_2D542
 
 ; ---------------------------------------------------------------------------
-Fonts:
+Fonts_D550:
 	.include "text/bank_02_fonts.asm"
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -494,12 +495,14 @@ Fonts:
 sub_2E244:
 	a_to_stack data_2
 	a_to_stack data_3
+
 	LDA	#$50 
 	add_to_a char_type_id_35D
 	STA	ptr_0
 	LDA	#$D5 
 	ADC	#0
 	STA	ptr_1
+
 	read_word  data_2, {(ptr_0),Y}
 	add_byte_to_word data_2, text_idx_35C
 

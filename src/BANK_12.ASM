@@ -1,6 +1,5 @@
-; Segment type:Pure code
-	;.segment BANK_12 (Code + Music)
-	;* =  $8000
+;BANK_12 (Code + Music)
+;* =  $8000
 
 	.include "includes/ram.inc"
 	.include "includes/macros.inc"
@@ -9271,6 +9270,7 @@ loc_12F2ED:
 	LDA	#$21 
 	ADC	#0
 	STA	data_3
+
 	LDX	byte_372
 	set tilemapTypeUnk_30B, {byte_12F45C,X}
 	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$FF, loc_12F30E
@@ -9385,6 +9385,7 @@ loc_12F411:
 	LDA	#$F4 
 	ADC	#0
 	STA	ptr_1
+	
 	LDX	byte_421
 	set {unk_422,X}, byte_372
 	set tilemapTypeUnk_30B, #1
@@ -9399,10 +9400,13 @@ loc_12F438:
 ; End of function sub_12F2C9
 
 ; ---------------------------------------------------------------------------
+
+byte_12F43C:
 	.BYTE $89,$8A, $E,$8B,$8C,$8D,$8E,$8F,$90,$91,$92,$17,$93,$94,$13,$16
 	.BYTE $95,$15,$14,$96,	7,$97,$98,$99,$9A,$9B,$9C,  5,	5,  5,	5,  5
-byte_12F45C:.BYTE $10,$16,	4,$11,$13,$18,$14,  8, $E, $F,$1B,  0,$12,  3,	5,  6
-	
+
+byte_12F45C:
+	.BYTE $10,$16,	4,$11,$13,$18,$14,  8, $E, $F,$1B,  0,$12,  3,	5,  6
 	.BYTE	7,  9, $A, $B,$FF,$19,$17,  2,$15,  1, $D, $C
 
 ; =============== S U B	R O U T	I N E =======================================

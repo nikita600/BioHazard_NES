@@ -1,6 +1,5 @@
-; Segment type:Pure code
-	;.segment BANK_0A (Tilemaps)
-	;* =  $8000
+;BANK_0A (Tilemaps)
+;* =  $8000
 
 	.include "includes/ram.inc"
 	.include "includes/macros.inc"

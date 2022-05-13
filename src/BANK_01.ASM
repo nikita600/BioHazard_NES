@@ -1,4 +1,3 @@
-; Segment type:Pure code
 
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -273,6 +272,7 @@ sub_1F416:
 	LDA	#2
 	ADC	#0
 	STA	ptr_1
+	
 	load_a_masked byte_317, #$40 
 	if_a_not_equal_cmp #$40, loc_1F430
 	JMP	loc_1F4CA

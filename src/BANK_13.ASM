@@ -138,8 +138,7 @@ loc_13D429:
 	STA	apu_unk_741,X
 	INX
 	if_x_greater_cmp #$27 , loc_13D429
-	LDA	apu_unk_76C
-	mult_a_by_2
+	mult_by_2_byte apu_unk_76C
 	TAX
 	set apu_unk_76A, {apu_off_13DEB0,X}
 	set apu_unk_76B, {apu_off_13DEB0+1,X}
@@ -183,8 +182,7 @@ loc_13D493:
 	STA	apu_unk_710,X
 	INX
 	if_x_greater_cmp #$27 , loc_13D493
-	LDA	apu_unk_76C
-	mult_a_by_2
+	mult_by_2_byte apu_unk_76C
 	TAX
 	set apu_ptr_768, {apu_off_13DEB0,X}
 	set apu_ptr_769, {apu_off_13DEB0+1,X}
@@ -406,8 +404,7 @@ loc_13D674:
 loc_13D67C:
 	set apu_unk_FE, apu_unk_76A
 	set apu_unk_FF, apu_unk_76B
-	LDA	apu_unk_760,X
-	mult_a_by_2
+	mult_by_2_byte {apu_unk_760,X}
 	TAY
 	BCC	loc_13D68F
 	INC	apu_unk_FF
@@ -703,8 +700,7 @@ loc_13D903:
 loc_13D90B:
 	set apu_unk_FE, apu_ptr_768
 	set apu_unk_FF, apu_ptr_769
-	LDA	apu_unk_72F,X
-	mult_a_by_2
+	mult_by_2_byte {apu_unk_72F,X}
 	TAY
 	BCC	loc_13D91E
 	INC	apu_unk_FF

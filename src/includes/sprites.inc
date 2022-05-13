@@ -4,8 +4,7 @@
 	set_word_to_word_const ptr_0, palette_addr
 
 	set data_2, #0
-	LDA	inv_sprite_idx_31C
-	mult_a_by_2
+	mult_by_2_byte inv_sprite_idx_31C
 	ROL	data_2
 	add_to_a ptr_0
 	STA	ptr_0
@@ -15,8 +14,7 @@
 
 	set_word_to_word_const ptr_0, _PPU_PALETTE
 
-	LDA	sprPalIdx_319
-	mult_a_by_4
+	mult_by_4_byte sprPalIdx_319
 	TAX
 	add_to_a ptr_0
 	STA	ptr_0
@@ -92,8 +90,7 @@ loc_4F3DC:
 
 get_offset_4F3EF:
 	set data_2, #0
-	LDA	inv_sprite_idx_31C
-	mult_a_by_2
+	mult_by_2_byte inv_sprite_idx_31C
 	ROL	data_2
 	add_to_a ptr_0
 	STA	ptr_0
@@ -125,8 +122,7 @@ skip_2_byte_4f416:
 
 get_offset_4F44B:
 	set data_2, #0
-	LDA	inv_sprite_idx_31C
-	mult_a_by_2
+	mult_by_2_byte inv_sprite_idx_31C
 	ROL	data_2
 	add_to_a ptr_0
 	STA	ptr_0
@@ -137,8 +133,7 @@ get_ptr_4F460:
 
 get_tilemap_offset_4F46B:
 	set ptr_0, #0
-	LDA	inv_itemPrev_idx_31D
-	mult_a_by_2
+	mult_by_2_byte inv_itemPrev_idx_31D
 	ROL	ptr_0
 	add_to_a data_2
 	STA	data_2
@@ -156,8 +151,7 @@ get_tilemap_descr_4F48B:
 
 	set data_2, #0
 	set data_3, #$20 
-	LDA	byte_36E
-	mult_a_by_4
+	mult_by_4_byte byte_36E
 	add_to_a data_3
 	STA	data_3
 	LDY	ppu_unk_byte_309

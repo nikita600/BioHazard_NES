@@ -158,8 +158,7 @@ loc_2D23E:
 	set tilemapWidth_308, #0
 
 loc_2D243:
-	LDA	tilemapWidth_308
-	mult_a_by_2
+	mult_by_2_byte tilemapWidth_308
 	TAY
 	if_a_not_equal_cmp_addr {(ptr_0),Y}, #0, loc_2D251
 	JMP	loc_2D342
@@ -176,8 +175,7 @@ loc_2D251:
 loc_2D260:
 	add_byte_to_word ptr_0, #2
 
-	LDA	tilemapWidth_308
-	mult_a_by_2
+	mult_by_2_byte tilemapWidth_308
 	add_to_a ptr_0
 	STA	ptr_0
 	add_byte_to_byte ptr_1, #0
@@ -228,8 +226,7 @@ loc_2D29C:
 
 loc_2D2F6:
 
-	LDA	tilemapWidth_308
-	mult_a_by_2
+	mult_by_2_byte tilemapWidth_308
 	add_to_a ptr_0
 	STA	ptr_0
 	add_byte_to_byte ptr_1, #0
@@ -345,8 +342,7 @@ loc_2D40B:
 	STA	tilemapTypeUnk_30B
 	if_a_equal_cmp #$20, loc_2D435
 	BCS	loc_2D435
-	LDA	byte_35E
-	mult_a_by_2
+	mult_by_2_byte byte_35E
 	add_to_a tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 	if_a_greater_cmp #$20, loc_2D445
@@ -358,8 +354,7 @@ loc_2D435:
 
 	a_to_stack data_2
 	a_to_stack data_3
-	LDA	byte_35E
-	mult_a_by_2
+	mult_by_2_byte byte_35E
 	STA	tilemapTypeUnk_30B
 	JMP	loc_2D49D
 ; ---------------------------------------------------------------------------
@@ -388,8 +383,7 @@ loc_2D471:
 	a_to_stack data_2
 	a_to_stack data_3
 	and_byte data_2, #$E0 
-	LDA	byte_35E
-	mult_a_by_2
+	mult_by_2_byte byte_35E
 	sub_a_sec tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 
@@ -525,11 +519,9 @@ sub_2E244:
 	set inv_spr_dscr1_30C, #0
 
 loc_2E2A5:
-	LDA	byte_360
-	mult_a_by_8
+	mult_a_by_8_byte byte_360
 	STA	tilemapTypeUnk_30B
-	LDA	byte_361
-	mult_a_by_2
+	mult_by_2_byte byte_361
 	add_to_a tilemapTypeUnk_30B
 	TAY
 	set tilemapTypeUnk_30B, #0
@@ -539,8 +531,7 @@ loc_2E2BC:
 	add_to_a tilemapTypeUnk_30B
 	TAY
 	if_a_not_equal_cmp_addr {byte_2E3B3,Y}, #0, loc_2E2D7
-	LDA	inv_spr_dscr1_30C
-	mult_a_by_8
+	mult_a_by_8_byte inv_spr_dscr1_30C
 	TAY
 	JSR	sub_2E3D3
 	JMP	loc_2E2F9
@@ -548,8 +539,7 @@ loc_2E2BC:
 
 loc_2E2D7:
 	if_a_not_equal_cmp #1, loc_2E2E8
-	LDA	inv_spr_dscr1_30C
-	mult_a_by_8
+	mult_a_by_8_byte inv_spr_dscr1_30C
 	TAY
 	JSR	sub_2E3F1
 	JMP	loc_2E2F9
@@ -582,8 +572,7 @@ loc_2E312:
 
 loc_2E31D:
 	if_y_equal_cmp #0, loc_2E32F
-	LDA	byte_35E
-	mult_a_by_4
+	mult_by_4_byte byte_35E
 	add_to_a ptr_0
 	STA	ptr_0
 	DEY
@@ -591,8 +580,7 @@ loc_2E31D:
 ; ---------------------------------------------------------------------------
 
 loc_2E32F:
-	LDA	tilemapWidth_308
-	mult_a_by_4
+	mult_by_4_byte tilemapWidth_308
 	add_to_a ptr_0
 	STA	ptr_0
 	set inv_spr_dscr1_30C, #0

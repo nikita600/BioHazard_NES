@@ -59,11 +59,9 @@ sub_3F76B:
 	set inv_spr_dscr1_30C, #0
 
 loc_3F7CC:
-	LDA	byte_360
-	mult_a_by_8
+	mult_a_by_8_byte byte_360
 	STA	tilemapTypeUnk_30B
-	LDA	byte_361
-	mult_a_by_2
+	mult_by_2_byte byte_361
 	add_to_a tilemapTypeUnk_30B
 	TAY
 	set tilemapTypeUnk_30B, #0
@@ -73,8 +71,7 @@ loc_3F7E3:
 	add_to_a tilemapTypeUnk_30B
 	TAY
 	if_a_not_equal_cmp_addr {byte_3F8DA,Y}, #0, loc_3F7FE
-	LDA	inv_spr_dscr1_30C
-	mult_a_by_8
+	mult_a_by_8_byte inv_spr_dscr1_30C
 	TAY
 	JSR	sub_3F8FA
 	JMP	loc_3F820
@@ -82,8 +79,7 @@ loc_3F7E3:
 
 loc_3F7FE:
 	if_a_not_equal_cmp #1, loc_3F80F
-	LDA	inv_spr_dscr1_30C
-	mult_a_by_8
+	mult_a_by_8_byte inv_spr_dscr1_30C
 	TAY
 	JSR	sub_3F918
 	JMP	loc_3F820
@@ -116,8 +112,7 @@ loc_3F839:
 
 loc_3F844:
 	if_y_equal_cmp #0, loc_3F856
-	LDA	byte_35E
-	mult_a_by_4
+	mult_by_4_byte byte_35E
 	add_to_a ptr_0
 	STA	ptr_0
 	DEY
@@ -125,8 +120,7 @@ loc_3F844:
 ; ---------------------------------------------------------------------------
 
 loc_3F856:
-	LDA	tilemapWidth_308
-	mult_a_by_4
+	mult_by_4_byte tilemapWidth_308
 	add_to_a ptr_0
 	STA	ptr_0
 	set inv_spr_dscr1_30C, #0

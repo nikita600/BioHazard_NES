@@ -747,6 +747,7 @@ sub_87CE:
 	a_to_stack byte_36B
 	a_to_stack byte_366
 	a_to_stack byte_367
+
 	div_a_by_2_addr tilemapWidth_308
 	mult_a_by_8
 	add_to_a byte_36A
@@ -1007,8 +1008,8 @@ loc_8AE0:
 
 loc_8AF1:
 	a_to_stack objMapIdx_316
-	LDA	byte_313
-	mult_a_by_4
+
+	mult_by_4_byte byte_313
 	add_to_a objMapIdx_316
 	TAX
 	set2 objMapIdx_316, byte_4AA, {byte_9523,X}
@@ -2006,8 +2007,8 @@ loc_94E9:
 loc_94EC:
 	sub_a_sec #1
 	STA	objMapIdx_316
-	LDA	byte_313
-	mult_a_by_4
+
+	mult_by_4_byte byte_313
 	add_to_a objMapIdx_316
 	TAX
 	set2 objMapIdx_316, byte_4AA, {byte_9523,X}
@@ -2424,22 +2425,27 @@ sub_999A:
 	set inv_spr_dscr1_30C, #0
 
 loc_99EF:
-	LDA	inv_spr_dscr1_30C
-	mult_a_by_2
+	mult_by_2_byte inv_spr_dscr1_30C
 	TAY
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
+
 	LDY	#0
 	if_a_not_equal_cmp_addr {(data_2),Y}, entry_idx_300, loc_9A7F
 	INY
+
 	set_iny byte_36A, {(data_2),Y}
 	set_iny byte_36B, {(data_2),Y}
+
 	set_iny byte_366, {(data_2),Y}
 	set_iny byte_367, {(data_2),Y}
+
 	set_iny byte_36C, {(data_2),Y}
 	set_iny byte_36D, {(data_2),Y}
+
 	set_iny byte_368, {(data_2),Y}
 	set_iny byte_369, {(data_2),Y}
+
 	sub_addr_sec tilemapWidth_308, byte_36A
 	sub_addr tilemap_size_307, byte_36B
 	BCC	loc_9A7F
@@ -2455,6 +2461,7 @@ loc_99EF:
 	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
 	JMP	(ptr_0)
+
 ; ---------------------------------------------------------------------------
 
 loc_9A7F:
@@ -3452,8 +3459,7 @@ sub_CB58:
 	set objMapIdx_316, #$12
 	a_to_stack byte_4AD
 	a_to_stack byte_4AE
-	LDA	byte_372
-	mult_a_by_2
+	mult_by_2_byte byte_372
 	TAX
 	set_inx byte_4AD, {off_CBBE,X}
 	LDA	off_CBBE,X
@@ -4740,8 +4746,7 @@ sub_D8D8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_D8FD:
-	LDA	tilemap_size_307
-	mult_a_by_8
+	mult_a_by_8_byte tilemap_size_307
 	add_to_a byte_36C
 	STA	byte_36C
 	add_byte_to_byte byte_36D, #0
@@ -4752,8 +4757,7 @@ sub_D8FD:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_D913:
-	LDA	ppu_unk_byte_309
-	mult_a_by_8
+	mult_a_by_8_byte ppu_unk_byte_309
 	add_to_a byte_368
 	STA	byte_368
 	add_byte_to_byte byte_369, #0
@@ -5200,8 +5204,7 @@ locret_DE21:
 loc_DE22:
 	if_a_not_equal_cmp #1, loc_DE6A
 	add_byte_to_byte_clc tilemapHeight_30A, #1
-	LDA	tilemapHeight_30A
-	mult_a_by_8
+	mult_a_by_8_byte tilemapHeight_30A
 	add_to_a byte_366
 	STA	byte_366
 	add_byte_to_byte byte_367, #0
@@ -5293,11 +5296,11 @@ load_from_C558_DF4B:
 load_from_BCB6_DF7F:
 	set_word_to_word_const ptr_0, unknown_data_BCB6
 
-	LDA	entry_idx_300
-	mult_a_by_2
+	mult_by_2_byte entry_idx_300
 	TAY
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
+
 	LDY	#0
 	if_a_greater_cmp_addr {(data_2),Y}, tilemapData_4C, loc_DFA7
 	BEQ	loc_DFA7
@@ -5345,32 +5348,40 @@ loc_E03B:
 ; ---------------------------------------------------------------------------
 
 loc_E046:
-	LDA	inv_spr_dscr1_30C
-	mult_a_by_2
+	mult_by_2_byte inv_spr_dscr1_30C
 	TAY
 	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
+
 	LDY	#0
 	set_iny byte_36A, {(ptr_0),Y}
 	set_iny byte_36B, {(ptr_0),Y}
+
 	set_iny byte_366, {(ptr_0),Y}
 	set_iny byte_367, {(ptr_0),Y}
+
 	set_iny byte_36C, {(ptr_0),Y}
 	set_iny byte_36D, {(ptr_0),Y}
+
 	set_iny byte_368, {(ptr_0),Y}
 	set_iny byte_369, {(ptr_0),Y}
+
 	sub_addr_sec tilemapWidth_308, byte_36A
 	sub_addr tilemap_size_307, byte_36B
 	BCC	loc_E0C5
+
 	sub_addr_sec tilemapHeight_30A, byte_366
 	sub_addr ppu_unk_byte_309, byte_367
 	BCC	loc_E0C5
+
 	sub_addr_sec byte_36C, tilemapWidth_308
 	sub_addr byte_36D, tilemap_size_307
 	BCC	loc_E0C5
+
 	sub_addr_sec byte_368, tilemapHeight_30A
 	sub_addr byte_369, ppu_unk_byte_309
 	BCC	loc_E0C5
+	
 	JMP	loc_E0CB
 ; ---------------------------------------------------------------------------
 
@@ -5382,6 +5393,7 @@ loc_E0C5:
 loc_E0CB:
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
+
 	JSR	sub_E747
 	if_a_not_equal_cmp_addr byte_370, #$25, loc_E0E8
 	if_a_not_equal_cmp_addr byte_371, #1, loc_E0E8
@@ -5933,7 +5945,7 @@ loc_E725:
 
 loc_E734:
 	if_a_not_equal_cmp #2, locret_E740
-	JSR	sub_E925
+	JSR	get_func_ptr_and_jmp_E925
 	set sprite_length_30F, #$FF
 
 locret_E740:
@@ -5954,6 +5966,7 @@ sub_E747:
 	a_to_stack ptr_1
 	a_to_stack tilemapTypeUnk_30B
 	a_to_stack inv_spr_dscr1_30C
+
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
 	if_a_not_equal_cmp #0, loc_E775
@@ -5967,8 +5980,7 @@ loc_E775:
 	set inv_spr_dscr1_30C, #0
 
 loc_E787:
-	LDA	inv_spr_dscr1_30C
-	mult_a_by_2
+	mult_by_2_byte inv_spr_dscr1_30C
 	TAY
 	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
@@ -6116,17 +6128,12 @@ nullsub_2:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-sub_E925:
+get_func_ptr_and_jmp_E925:
 	set_iny data_2, {(ptr_0),Y}
 	set data_3, {(ptr_0),Y}
 	JMP	(data_2)
-; End of function sub_E925
-
-; =============== S U B	R O U T	I N E =======================================
-
-nullsub_4:
 	RTS
-; End of function nullsub_4
+; End of function get_func_ptr_and_jmp_E925
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -7781,16 +7788,13 @@ loc_F653:
 sprites_func_9132:
 	JSR	sub_EE72
 
-	LDA	byte_357
-	mult_a_by_8
+	mult_a_by_8_byte byte_357
 	STA	byte_366
 
-	LDA	byte_358
-	mult_a_by_8
+	mult_a_by_8_byte byte_358
 	STA	byte_36A
 
-	LDA	byte_359
-	mult_a_by_8
+	mult_a_by_8_byte byte_359
 	STA	tilemapWidth_308
 
 	LDA	byte_36A
@@ -8142,10 +8146,12 @@ sub_F9C2:
 	load_a_masked tilemap_size_307, #3
 	BEQ	loc_F9F5
 	and_byte {byte_4,Y}, #$3F 
+
 	LDA	byte_35A
 	mult_a_by_64
 	ORA	byte_4,Y
 	STA	byte_4,Y
+	
 	JMP	loc_FA3B
 ; ---------------------------------------------------------------------------
 
@@ -8162,8 +8168,7 @@ loc_FA0D:
 	load_a_masked tilemap_size_307, #3
 	BEQ	loc_FA2A
 	and_byte {byte_4,Y}, #$F3 
-	LDA	byte_35A
-	mult_a_by_4
+	mult_by_4_byte byte_35A
 	ORA	byte_4,Y
 	STA	byte_4,Y
 	JMP	loc_FA3B

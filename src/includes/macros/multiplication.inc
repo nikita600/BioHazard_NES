@@ -29,6 +29,21 @@
 	ROL	addr+1
 .endmacro
 
+.macro mult_by_2_byte addr
+	LDA addr
+	mult_a_by_2
+.endmacro
+
+.macro mult_by_4_byte addr
+	LDA addr
+	mult_a_by_4
+.endmacro
+
+.macro mult_a_by_8_byte addr
+	LDA addr
+	mult_a_by_8
+.endmacro
+
 .macro mult_a_by_2
 	ASL A
 .endmacro

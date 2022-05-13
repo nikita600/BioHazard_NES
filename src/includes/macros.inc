@@ -21,8 +21,7 @@
 .endmacro
 
 .macro get_word_offset addr, idx
-	LDA	idx
-	mult_a_by_2
+	mult_by_2_byte idx
 	add_to_a addr
 	STA	addr
 	add_byte_to_byte addr+1, #0
@@ -48,9 +47,7 @@ bank_switch_8000:
 		LDA	bank_to_344
 		CMP	#$10
 		BCS	bank_idx_greater_10_8020
-		mult_a_by_2
-		mult_a_by_2
-		mult_a_by_2
+		mult_a_by_8
 		TAY
 		LDA	mirroring_type_342
 		BNE	vertical_801A
@@ -65,9 +62,7 @@ vertical_801A:
 bank_idx_greater_10_8020:
 		SEC
 		SBC	#$10
-		mult_a_by_2
-		mult_a_by_2
-		mult_a_by_2
+		mult_a_by_8
 		TAY
 		LDA	mirroring_type_342
 		BNE	vertical_8032

@@ -72,7 +72,7 @@ locret_8095:
 case0_8096:
 	a_to_stack bank_from_343
 	LDX	tilemapTypeUnk_30B
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	from_stack_to_a bank_from_343
 	JMP	loc_8169
 ; ---------------------------------------------------------------------------
@@ -1595,10 +1595,10 @@ loc_9061:
 	STA	char_type_id_35D
 	a_to_stack tilemapTypeUnk_30B
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	set_text_args #$1F, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JSR	sub_CAA9
 	from_stack_to_a tilemapTypeUnk_30B
 	if_a_not_equal byte_372, locret_90BA
@@ -1627,10 +1627,10 @@ loc_90BB:
 loc_90E6:
 	a_to_stack tilemapTypeUnk_30B
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	set_text_args #$1F, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JSR	sub_CAA9
 	from_stack_to_a tilemapTypeUnk_30B
 	if_a_not_equal byte_372, locret_911C
@@ -1660,14 +1660,15 @@ locret_9131:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-sub_9132:
+show_text_func_9132:
 	set byte_357, #$18
 	set byte_358, #0
 	set byte_359, #$1C
 	set byte_360, #3
 	set byte_361, #0
 	set text_unk_35B, #$C0 
-	JSR	sub_F65C
+	JSR	sprites_func_9132
+
 	set ppu_unk_byte_309, #$19
 	set tilemap_size_307, #4
 	set byte_35E, #$C
@@ -1679,12 +1680,14 @@ sub_9132:
 	add_to_a #5
 	STA	byte_310
 	JSR	exec_b2_c4_C90E
+
 	set byte_357, #$18
 	set byte_358, #0
 	set byte_359, #$1C
 	JSR	sub_F767
+
 	RTS
-; End of function sub_9132
+; End of function show_text_func_9132
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -3395,7 +3398,7 @@ sub_CAA9:
 	set byte_360, #3
 	set byte_361, #0
 	set text_unk_35B, #$C0 
-	JSR	sub_F65C
+	JSR	sprites_func_9132
 	set_text_args #$BB, #0
 	set ppu_unk_byte_309, #$19
 	set tilemap_size_307, #4
@@ -3815,20 +3818,21 @@ loc_CEDC:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-sub_CF13:
+show_text_sequence_func_CF13:
 	a_to_stack text_idx_35C
 	a_to_stack char_type_id_35D
 	x_to_stack
-	JSR	sub_9132
+	JSR	show_text_func_9132
 	from_stack_to_x
 	from_stack_to_a char_type_id_35D
 	from_stack_to_a text_idx_35C
+	
 	add_byte_to_word text_idx_35C, #1
 
 	DEX
-	if_x_not_equal_cmp #0, sub_CF13
+	if_x_not_equal_cmp #0, show_text_sequence_func_CF13
 	RTS
-; End of function sub_CF13
+; End of function show_text_sequence_func_CF13
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -4124,7 +4128,7 @@ sub_D1EE:
 sub_D22C:
 	set_text_args #$C2, #0
 	LDX	#$B
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	set tilemapData_4C, #1
 	set roomUnk1_4D, #0
 	set roomUnk2_4E, #2
@@ -4206,7 +4210,7 @@ loc_D33E:
 	JSR	sub_91B6
 	set_text_args #$D0, #0
 	LDX	#5
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 
 locret_D358:
 	RTS
@@ -4226,7 +4230,7 @@ sub_D359:
 	JSR	sub_D055
 	set_text_args #$DB, #0
 	LDX	#4
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	set byte_551, #0
 	set tilemapTypeUnk_30B, #4
 	set byte_313, #0
@@ -4235,7 +4239,7 @@ sub_D359:
 	JSR	sub_91B6
 	set_text_args #$DB, #0
 	LDX	#8
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	set tilemapData_4C, #1
 	set roomUnk1_4D, #2
 	set roomUnk2_4E, #4
@@ -5416,7 +5420,7 @@ loc_E0FF:
 	INC	byte_4D0
 	set_text_args #$3C, #2
 	LDX	#3
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	set tilemapData_4C, #1
 	set roomUnk1_4D, #0
 	set roomUnk2_4E, #7
@@ -5450,7 +5454,7 @@ loc_E198:
 loc_E1A2:
 	set_text_args #$43, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5469,7 +5473,7 @@ loc_E1CC:
 loc_E1D6:
 	set_text_args #4, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5489,7 +5493,7 @@ loc_E205:
 loc_E20F:
 	set_text_args #$D4, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5509,7 +5513,7 @@ loc_E23E:
 loc_E248:
 	set_text_args #$C, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5545,7 +5549,7 @@ loc_E290:
 loc_E2A8:
 	set_text_args #$B9, #0
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5560,7 +5564,7 @@ loc_E2BA:
 loc_E2D7:
 	set_text_args #$8E, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5575,7 +5579,7 @@ loc_E2E9:
 loc_E306:
 	set_text_args #$8D, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5590,7 +5594,7 @@ loc_E318:
 loc_E335:
 	set_text_args #$8C, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5605,7 +5609,7 @@ loc_E347:
 loc_E364:
 	set_text_args #$8F, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5620,7 +5624,7 @@ loc_E376:
 loc_E393:
 	set_text_args #4, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5635,7 +5639,7 @@ loc_E3A5:
 loc_E3C2:
 	set_text_args #$22, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5650,7 +5654,7 @@ loc_E3D4:
 loc_E3F1:
 	set_text_args #$90, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5664,7 +5668,7 @@ loc_E403:
 loc_E41B:
 	set_text_args #$DB, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5678,7 +5682,7 @@ loc_E42D:
 loc_E445:
 	set_text_args #$DB, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5692,7 +5696,7 @@ loc_E457:
 loc_E46F:
 	set_text_args #$DB, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5706,7 +5710,7 @@ loc_E481:
 loc_E499:
 	set_text_args #$E8, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JSR	sub_CAA9
 	if_a_not_equal byte_372, loc_E4C4
 	set byte_420, #1
@@ -5728,7 +5732,7 @@ loc_E4C7:
 loc_E4DF:
 	set_text_args #$E8, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JSR	sub_CAA9
 	if_a_not_equal byte_372, loc_E50A
 	set byte_420, #0
@@ -5750,7 +5754,7 @@ loc_E50D:
 loc_E525:
 	set_text_args #$F4, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5764,7 +5768,7 @@ loc_E537:
 loc_E54F:
 	set_text_args #$A, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5778,7 +5782,7 @@ loc_E561:
 loc_E579:
 	set_text_args #$10, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5792,7 +5796,7 @@ loc_E58B:
 loc_E5A3:
 	set_text_args #$11, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5806,7 +5810,7 @@ loc_E5B5:
 loc_E5CD:
 	set_text_args #$13, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5820,7 +5824,7 @@ loc_E5DF:
 loc_E5F7:
 	set_text_args #$33, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5834,7 +5838,7 @@ loc_E609:
 loc_E621:
 	set_text_args #$DB, #1
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5848,7 +5852,7 @@ loc_E633:
 loc_E64B:
 	set_text_args #$13, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5862,7 +5866,7 @@ loc_E65D:
 loc_E675:
 	set_text_args #$34, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5876,7 +5880,7 @@ loc_E687:
 loc_E69F:
 	set_text_args #$35, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5890,7 +5894,7 @@ loc_E6B1:
 loc_E6C9:
 	set_text_args #$36, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -5904,7 +5908,7 @@ loc_E6DB:
 loc_E6F3:
 	set_text_args #$41, #2
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	JMP	loc_E741
 ; ---------------------------------------------------------------------------
 
@@ -6130,7 +6134,7 @@ sub_E932:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_E949
 	set_text_args #$BA, #0
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -6145,7 +6149,7 @@ loc_E949:
 sub_E954:
 	if_a_not_equal_cmp_addr byte_471, #0, loc_E968
 	set_text_args #$B8, #0
-	JSR	sub_9132
+	JSR	show_text_func_9132
 
 loc_E968:
 	set sprite_length_30F, #$FF
@@ -6159,7 +6163,7 @@ sub_E96E:
 	if_a_not_equal_cmp_addr byte_554, #0, loc_E98F
 	set_text_args #$BC, #0
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	INC	byte_554
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6225,7 +6229,7 @@ sub_E9F2:
 loc_E9FF:
 	set_text_args #$B5, #0
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	set sprite_length_30F, #$FF
 	RTS
 ; End of function sub_E9F2
@@ -6241,7 +6245,7 @@ sub_EA14:
 loc_EA21:
 	set_text_args #$B6, #0
 	LDX	#1
-	JSR	sub_CF13
+	JSR	show_text_sequence_func_CF13
 	set sprite_length_30F, #$FF
 	RTS
 ; End of function sub_EA14
@@ -7197,13 +7201,13 @@ ppu_unk_func_F09D:
 	if_a_equal_cmp #1, loc_F0B9
 
 	set_word_to_word_const ptr_0, _PPU_ATTR_TBL_0
-	set_data _PPU_ATTR_TBL_1
+	set_word_to_word_const data_2, _PPU_ATTR_TBL_1
 
 	JMP	loc_F0C9
 ; ---------------------------------------------------------------------------
 
 loc_F0B9:
-	set_data _PPU_ATTR_TBL_0
+	set_word_to_word_const data_2, _PPU_ATTR_TBL_0
 	set_word_to_word_const ptr_0, _PPU_ATTR_TBL_1
 
 loc_F0C9:
@@ -7774,23 +7778,29 @@ loc_F653:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-sub_F65C:
+sprites_func_9132:
 	JSR	sub_EE72
+
 	LDA	byte_357
 	mult_a_by_8
 	STA	byte_366
+
 	LDA	byte_358
 	mult_a_by_8
 	STA	byte_36A
+
 	LDA	byte_359
 	mult_a_by_8
 	STA	tilemapWidth_308
+
 	LDA	byte_36A
 	add_to_a tilemapWidth_308
 	STA	byte_36C
+
 	LDA	byte_366
 	add_to_a #$20 
 	STA	byte_368
+
 	LDX	#0
 
 loc_F68F:
@@ -7859,7 +7869,7 @@ loc_F70A:
 	add_2_to inv_spr_dscr1_30C
 	if_a_greater_cmp_addr inv_spr_dscr1_30C, tilemapWidth_308, loc_F6EC
 	RTS
-; End of function sub_F65C
+; End of function sprites_func_9132
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -7893,18 +7903,22 @@ loc_F7B0:
 	set tilemapHeight_30A, #0
 	JSR	sub_F921
 	JSR	sub_F8A1
+
 	set tilemapHeight_30A, #1
 	add_2_to ppu_unk_byte_309
 	JSR	sub_F921
 	JSR	sub_F8A1
+
 	sub_2_from ppu_unk_byte_309
 	set tilemapHeight_30A, #0
 	JSR	sub_F942
 	JSR	sub_FAAF
+
 	set tilemapHeight_30A, #1
 	add_2_to ppu_unk_byte_309
 	JSR	sub_F942
 	JSR	sub_FAAF
+
 	sub_2_from ppu_unk_byte_309
 	JSR	wait_for_ppu_data_upload_FC8C
 	sub_2_from inv_spr_dscr1_30C

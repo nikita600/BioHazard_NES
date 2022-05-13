@@ -45,22 +45,6 @@
 	INY
 .endmacro
 
-.macro set_ptr addr
-	set ptr_0, #.LOBYTE(addr)
-	set ptr_1, #.HIBYTE(addr)
-.endmacro
-
-.macro set_ptr_iny addr
-	set ptr_0, #.LOBYTE(addr)
-	INY
-	set ptr_1, #.HIBYTE(addr)
-.endmacro
-
-.macro set_data addr
-	set data_2, #.LOBYTE(addr)
-	set data_3, #.HIBYTE(addr) 
-.endmacro
-
 .macro set_byte_to_word addr, value
 	set addr, value
 	set addr+1, #0

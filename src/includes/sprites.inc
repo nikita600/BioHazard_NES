@@ -88,7 +88,7 @@ loc_4F3DC:
 
 .macro get_sprite_offset_func sprite_addr
 
-    set_ptr sprite_addr
+	set_word_to_word_const ptr_0, sprite_addr
 
 get_offset_4F3EF:
 	set data_2, #0
@@ -120,7 +120,8 @@ skip_2_byte_4f416:
 ; ---------------------------------------------------------------------------
 
 .macro load_sprite_tilemap_func tilemap_addr, upload_sprite_func
-    set_ptr tilemap_addr
+
+	set_word_to_word_const ptr_0, tilemap_addr
 
 get_offset_4F44B:
 	set data_2, #0

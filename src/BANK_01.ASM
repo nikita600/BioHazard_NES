@@ -194,7 +194,10 @@ locret_1F36C:
 ; =============== S U B	R O U T	I N E =======================================
 
 load_sprite_to_vram_1F36D:
-	set_ptr_iny Sprites
+
+	set ptr_0, #.LOBYTE(Sprites)
+	INY
+	set ptr_1, #.HIBYTE(Sprites)
 
 get_offset_F376:; spriteIdx
 	LDA	objectIdx_318

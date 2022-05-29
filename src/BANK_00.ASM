@@ -747,13 +747,13 @@ sub_87CE:
 	a_to_stack byte_366
 	a_to_stack byte_367
 
-	div_a_by_2_addr tilemapWidth_308
+	DIV_A_BY_2_ADDR tilemapWidth_308
 	mult_a_by_8
 	ADD_TO_A byte_36A
 	STA	byte_36A
 	ADD_BYTE_TO_BYTE byte_36B, #0
 
-	div_a_by_2_addr tilemapHeight_30A
+	DIV_A_BY_2_ADDR tilemapHeight_30A
 	mult_a_by_8
 	ADD_TO_A byte_366
 	STA	byte_366
@@ -1213,7 +1213,7 @@ loc_8CD1:
 
 loc_8CDA:
 	IF_A_EQUAL_CMP_ADDR byte_314, #0, loc_8CED
-	div_a_by_2_addr byte_315
+	DIV_A_BY_2_ADDR byte_315
 	IF_A_EQUAL_CMP byte_314, loc_8CED
 	JMP	loc_8CF0
 ; ---------------------------------------------------------------------------
@@ -1298,7 +1298,7 @@ loc_8D9A:
 
 loc_8DA3:
 	IF_A_EQUAL_CMP_ADDR byte_314, #0, loc_8DB6
-	div_a_by_2_addr byte_315
+	DIV_A_BY_2_ADDR byte_315
 	IF_A_EQUAL_CMP byte_314, loc_8DB6
 	JMP	loc_8DB9
 ; ---------------------------------------------------------------------------
@@ -1381,9 +1381,9 @@ loc_8E5D:
 
 loc_8E66:
 	IF_A_EQUAL_CMP_ADDR byte_314, #0, loc_8E83
-	div_a_by_2_addr byte_315
+	DIV_A_BY_2_ADDR byte_315
 	IF_A_EQUAL_CMP byte_314, loc_8E83
-	div_a_by_4_addr byte_315
+	DIV_A_BY_4_ADDR byte_315
 	IF_A_EQUAL_CMP byte_314, loc_8E89
 	JMP	loc_8E8C
 ; ---------------------------------------------------------------------------
@@ -1471,9 +1471,9 @@ loc_8F2C:
 
 loc_8F35:
 	IF_A_EQUAL_CMP_ADDR byte_314, #0, loc_8F52
-	div_a_by_2_addr byte_315
+	DIV_A_BY_2_ADDR byte_315
 	IF_A_EQUAL_CMP byte_314, loc_8F52
-	div_a_by_4_addr byte_315
+	DIV_A_BY_4_ADDR byte_315
 	IF_A_EQUAL_CMP byte_314, loc_8F58
 	JMP	loc_8F5B
 ; ---------------------------------------------------------------------------
@@ -1993,7 +1993,7 @@ sub_94D3:
 ; ---------------------------------------------------------------------------
 
 loc_94E2:
-	div_a_by_2_addr byte_314
+	DIV_A_BY_2_ADDR byte_314
 	JMP	loc_94EC
 ; ---------------------------------------------------------------------------
 
@@ -3945,7 +3945,7 @@ sub_D01F:
 	ADD_TO_A tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 	TYA
-	div_a_by_2
+	DIV_A_BY_2
 	ADD_TO_A tilemapTypeUnk_30B
 	TAX
 	LDA	byte_D041,X
@@ -4188,7 +4188,7 @@ loc_D2C4:
 	sub_word_from_word byte_366, byte_368
 	BCC	loc_D32B
 	sub_addr_sec byte_366, byte_368
-	div_a_by_16
+	DIV_A_BY_16
 	STA	tilemapTypeUnk_30B
 	set byte_313, #0
 	JMP	loc_D33E
@@ -4196,7 +4196,7 @@ loc_D2C4:
 
 loc_D32B:
 	sub_addr_sec byte_368, byte_366
-	div_a_by_16
+	DIV_A_BY_16
 	STA	tilemapTypeUnk_30B
 	set byte_313, #1
 
@@ -5256,8 +5256,8 @@ map_update_DEFA:
 	a_to_stack byte_366
 	a_to_stack byte_367
 	JSR	sub_CA14
-	div_byte_by_8 byte_36A
-	div_byte_by_8 byte_366
+	DIV_BYTE_BY_8  byte_36A
+	DIV_BYTE_BY_8  byte_366
 
 read_tilemap_DF23:
 	set tilemapData_4C, entry_idx_300
@@ -6849,9 +6849,9 @@ sub_ECCC:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_ED7C:
-	div_a_by_8_addr ppu_scroll_y_305
+	DIV_A_BY_8_ADDR ppu_scroll_y_305
 	STA	ppu_unk_byte_309
-	div_a_by_8_addr ppu_scroll_x_304
+	DIV_A_BY_8_ADDR ppu_scroll_x_304
 	STA	tilemap_size_307
 	RTS
 ; End of function sub_ED7C
@@ -6978,8 +6978,8 @@ write_tilemap_to_ppu_EE4D:
 
 sub_EE72:
 	JSR	sub_ED7C
-	div_byte_by_4 ppu_unk_byte_309
-	div_byte_by_4 tilemap_size_307
+	DIV_BYTE_BY_4 ppu_unk_byte_309
+	DIV_BYTE_BY_4 tilemap_size_307
 	sub_addr_sec #8, tilemap_size_307
 	STA	tilemapWidth_308
 	sub_addr_sec #8, ppu_unk_byte_309
@@ -7196,9 +7196,9 @@ loc_F0C9:
 	ADD_BYTE_TO_BYTE_CLC data_3, #4
 
 loc_F0E0:
-	div_a_by_8_addr ppu_scroll_y_305
+	DIV_A_BY_8_ADDR ppu_scroll_y_305
 	STA	ppu_unk_byte_309
-	div_a_by_4
+	DIV_A_BY_4
 	STA	tilemapHeight_30A
 	mult_a_by_8
 	ADD_TO_A ptr_0
@@ -7672,8 +7672,8 @@ locret_F5A1:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_F5A2:
-	div_byte_by_4 ppu_unk_byte_309
-	div_byte_by_4 tilemap_size_307
+	DIV_BYTE_BY_4 ppu_unk_byte_309
+	DIV_BYTE_BY_4 tilemap_size_307
 	RTS
 ; End of function sub_F5A2
 
@@ -7810,7 +7810,7 @@ loc_F6C0:
 	set ppu_unk_byte_309, byte_357
 	set tilemap_size_307, byte_358
 	set tilemapWidth_308, byte_359
-	div_a_by_2_addr tilemapWidth_308
+	DIV_A_BY_2_ADDR tilemapWidth_308
 	AND	#$FE 
 	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
@@ -8054,8 +8054,8 @@ sub_F942:
 	a_to_stack ppu_unk_byte_309
 	a_to_stack tilemap_size_307
 	JSR	sub_F98B
-	div_byte_by_4 ppu_unk_byte_309
-	div_byte_by_4 tilemap_size_307
+	DIV_BYTE_BY_4 ppu_unk_byte_309
+	DIV_BYTE_BY_4 tilemap_size_307
 	JSR	sub_F504
 	JSR	sub_F57B
 	JSR	sub_F972
@@ -8089,7 +8089,7 @@ locret_F98A:
 sub_F98B:
 	LDX	ppu_unk_byte_302
 	LDY	ppu_unk_byte_303
-	div_a_by_8_addr ppu_scroll_y_305
+	DIV_A_BY_8_ADDR ppu_scroll_y_305
 	ADD_TO_A ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	IF_A_GREATER_CMP #$1E, loc_F9A9
@@ -8098,7 +8098,7 @@ sub_F98B:
 	STA	ppu_unk_byte_309
 
 loc_F9A9:
-	div_a_by_8_addr ppu_scroll_x_304
+	DIV_A_BY_8_ADDR ppu_scroll_x_304
 	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
 	IF_A_GREATER_CMP #$20, locret_F9C1
@@ -8170,7 +8170,7 @@ loc_FA3B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_FA61:
-	div_a_by_8_addr ppu_scroll_x_304
+	DIV_A_BY_8_ADDR ppu_scroll_x_304
 	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
 	IF_A_GREATER_CMP #$20, loc_FA78
@@ -8178,7 +8178,7 @@ sub_FA61:
 	STA	tilemap_size_307
 
 loc_FA78:
-	div_a_by_8_addr ppu_scroll_y_305
+	DIV_A_BY_8_ADDR ppu_scroll_y_305
 	ADD_TO_A ppu_unk_byte_309
 	IF_A_GREATER_CMP #$1E, loc_FA8C
 	ADD_2_TO ppu_unk_byte_309
@@ -8189,10 +8189,10 @@ loc_FA8C:
 	ADD_2_TO ppu_unk_byte_309
 
 loc_FA99:
-	div_a_by_4_addr ppu_unk_byte_309
+	DIV_A_BY_4_ADDR ppu_unk_byte_309
 	mult_a_by_8
 	STA	tilemapTypeUnk_30B
-	div_a_by_4_addr tilemap_size_307
+	DIV_A_BY_4_ADDR tilemap_size_307
 	ADD_TO_A tilemapTypeUnk_30B
 	TAY
 	RTS
@@ -8205,8 +8205,8 @@ sub_FAAF:
 	a_to_stack ppu_unk_byte_309
 	a_to_stack tilemap_size_307
 	JSR	sub_F98B
-	div_byte_by_4 ppu_unk_byte_309
-	div_byte_by_4 tilemap_size_307
+	DIV_BYTE_BY_4 ppu_unk_byte_309
+	DIV_BYTE_BY_4 tilemap_size_307
 
 start_read_tilemap_FAC8:
 	set tilemapData_4C, entry_idx_300

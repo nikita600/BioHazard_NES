@@ -293,7 +293,7 @@ read_pad0_FE51:
 loc_FE5E:
 	PHA
 	set input_reg0_34E, {_PAD0_REG,X}
-	div_byte_by_2 input_reg0_34E
+	DIV_BYTE_BY_2 input_reg0_34E
 	PLA
 	ROL	A
 	DEY

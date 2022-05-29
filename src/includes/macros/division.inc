@@ -1,61 +1,47 @@
 
-.macro div_byte_by_2 addr
+.macro DIV_BYTE_BY_2 addr
 	LSR addr
 .endmacro
 
-.macro div_byte_by_4 addr
-	LSR addr
-	LSR addr
-.endmacro
-
-.macro div_byte_by_8 addr
-	LSR addr
+.macro DIV_BYTE_BY_4 addr
 	LSR addr
 	LSR addr
 .endmacro
 
-.macro div_a_by_2_addr addr
+.macro DIV_BYTE_BY_8  addr
+	LSR addr
+	LSR addr
+	LSR addr
+.endmacro
+
+.macro DIV_A_BY_2_ADDR addr
 	LDA addr
 	LSR A
 .endmacro
 
-.macro div_a_by_4_addr addr
+.macro DIV_A_BY_4_ADDR addr
 	LDA addr
 	LSR A
 	LSR A
 .endmacro
 
-.macro div_a_by_8_addr addr
+.macro DIV_A_BY_8_ADDR addr
 	LDA addr
 	LSR A
 	LSR A
 	LSR A
 .endmacro
 
-.macro div_a_by_16_addr addr
-	LDA addr
+.macro DIV_A_BY_2
 	LSR A
-	LSR A
+.endmacro
+
+.macro DIV_A_BY_4
 	LSR A
 	LSR A
 .endmacro
 
-.macro div_a_by_2
-	LSR A
-.endmacro
-
-.macro div_a_by_4
-	LSR A
-	LSR A
-.endmacro
-
-.macro div_a_by_8
-	LSR A
-	LSR A
-	LSR A
-.endmacro
-
-.macro div_a_by_16
+.macro DIV_A_BY_16
 	LSR A
 	LSR A
 	LSR A

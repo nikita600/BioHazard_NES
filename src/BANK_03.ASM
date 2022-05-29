@@ -247,7 +247,7 @@ loc_3F975:
 
 loc_3F98D:
 	set ptr_0, ppu_unk_byte_303
-	div_a_by_8_addr ppu_scroll_x_304
+	DIV_A_BY_8_ADDR ppu_scroll_x_304
 	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
 	IF_A_GREATER_CMP #$20, loc_3F9A9
@@ -255,7 +255,7 @@ loc_3F98D:
 	STA	tilemap_size_307
 
 loc_3F9A9:
-	div_a_by_8_addr ppu_scroll_y_305
+	DIV_A_BY_8_ADDR ppu_scroll_y_305
 	ADD_TO_A ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	IF_A_GREATER_CMP #$1E, loc_3F9C2

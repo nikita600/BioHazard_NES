@@ -951,7 +951,7 @@ music_func_13DB65:
 loc_13DB7A:
 	STA	apu_unk_756,X
 	load_a_masked {apu_unk_74A,Y}, #$F0 
-	div_a_by_16
+	DIV_A_BY_16
 	STA	apu_unk_754,X
 
 locret_13DB89:
@@ -972,7 +972,7 @@ music_func_13DB8A:
 loc_13DB9F:
 	STA	apu_unk_725,X
 	load_a_masked {apu_unk_719,Y}, #$F0 
-	div_a_by_16
+	DIV_A_BY_16
 	STA	apu_unk_723,X
 
 locret_13DBAE:

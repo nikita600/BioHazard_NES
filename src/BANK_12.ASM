@@ -6195,10 +6195,10 @@ loc_12D2D6:
 	set inv_itemPrev_idx_31D, {byte_12E869,X}
 	mult_by_2_byte byte_372
 	TAY
-	div_a_by_8_addr {byte_12E851,Y}
+	DIV_A_BY_8_ADDR {byte_12E851,Y}
 	STA	tilemap_size_307
 	INY
-	div_a_by_8_addr {byte_12E851,Y}
+	DIV_A_BY_8_ADDR {byte_12E851,Y}
 	STA	ppu_unk_byte_309
 	JSR	sub_128358
 	JSR	sub_128326
@@ -6859,10 +6859,10 @@ loc_12D9DA:
 	TYA
 	mult_a_by_2
 	TAY
-	div_a_by_8_addr {byte_12E851,Y}
+	DIV_A_BY_8_ADDR {byte_12E851,Y}
 	STA	tilemap_size_307
 	INY
-	div_a_by_8_addr {byte_12E851,Y}
+	DIV_A_BY_8_ADDR {byte_12E851,Y}
 	STA	ppu_unk_byte_309
 	JSR	sub_128358
 	JSR	sub_128326
@@ -6879,10 +6879,10 @@ loc_12D9FB:
 	x_to_stack
 	mult_a_by_2
 	TAX
-	div_a_by_8_addr {byte_12E851,X}
+	DIV_A_BY_8_ADDR {byte_12E851,X}
 	STA	tilemap_size_307
 	INX
-	div_a_by_8_addr {byte_12E851,X}
+	DIV_A_BY_8_ADDR {byte_12E851,X}
 	STA	ppu_unk_byte_309
 	set inv_itemPrev_idx_31D, #$29 
 	set sprite_secondByte_31B, #$A
@@ -6928,10 +6928,10 @@ loc_12DA5E:
 	PHA
 	mult_a_by_2
 	TAX
-	div_a_by_8_addr {byte_12E851,X}
+	DIV_A_BY_8_ADDR {byte_12E851,X}
 	STA	tilemap_size_307
 	INX
-	div_a_by_8_addr {byte_12E851,X}
+	DIV_A_BY_8_ADDR {byte_12E851,X}
 	STA	ppu_unk_byte_309
 	y_to_stack
 	JSR	sub_128358

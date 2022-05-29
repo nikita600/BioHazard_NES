@@ -6,7 +6,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-	bank_switch_func switch_case_8035
+	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
 	if_a_equal_cmp_addr bank_command_346, #$88, loc_13809B
@@ -63,7 +63,7 @@ loc_13808A:
 ; ---------------------------------------------------------------------------
 
 loc_13808D:
-	return_from_bank_command
+	RETURN_FROM_BANK_COMMAND
 ; ---------------------------------------------------------------------------
 
 loc_13809B:

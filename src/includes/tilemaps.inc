@@ -1,3 +1,5 @@
+; ---------------------------------------------------------------------------
+
 .macro tilemap_entry_point_func
 
 tilemap_switch_case:
@@ -11,14 +13,16 @@ case0_8047:
 	JMP	return_804D
 
 return_804D:
-	return_from_bank_command
+	RETURN_FROM_BANK_COMMAND
 
 .endmacro
+
+; ---------------------------------------------------------------------------
 
 .macro load_tilemap_chunk_in_ram_func tilemaps_ptr
 
 load_tilemap_chunk_in_ram_F897:
-	get_ptr_from_tbl tilemaps_ptr, entry_idx_300
+	GET_PTR_FROM_TBL tilemaps_ptr, entry_idx_300
 	set_word_to_word ptr_0, data_2
 
 getOffset_F8CC:
@@ -54,3 +58,5 @@ write_tilemap_line_F90F:
 	RTS
 
 .endmacro
+
+; ---------------------------------------------------------------------------

@@ -6,7 +6,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-	bank_switch_func switch_case_8035
+	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
 	set bank_prev_345, bank_to_344
@@ -21,7 +21,7 @@ loc_58047:
 ; ---------------------------------------------------------------------------
 
 loc_5804D:
-	return_from_bank_command
+	RETURN_FROM_BANK_COMMAND
 ; End of function bank_switch_func
 
 ; ---------------------------------------------------------------------------
@@ -33,7 +33,7 @@ Sprites3_5805B:
 
 upload_gfx_to_ppu_5F093:
 
-	get_ptr_from_tbl Sprites3_5805B, entry_idx_300
+	GET_PTR_FROM_TBL Sprites3_5805B, entry_idx_300
 
 	set_word_to_word_const ptr_0, _PPU_PAT_TBL_1
 

@@ -7,7 +7,7 @@
 	.include "includes/ram.inc"
 	.include "includes/macros.inc"
 
-	bank_switch_func switch_case_8035
+	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
 	set bank_prev_345, bank_to_344
@@ -40,7 +40,7 @@ case3_18068:
 ; ---------------------------------------------------------------------------
 
 return_1806B:
-	return_from_bank_command
+	RETURN_FROM_BANK_COMMAND
 ; End of function bank_switch_func
 
 ; ---------------------------------------------------------------------------
@@ -138,7 +138,7 @@ get_offset_F2FB:
 	add_byte_to_byte ptr_1, #0
 
 get_ptr_F30A:
-	read_word  data_2, {(ptr_0),Y}
+	READ_WORD data_2, {(ptr_0),Y}
 	RTS
 ; End of function get_sprite_palette_ptr_1F2F3
 
@@ -202,7 +202,7 @@ get_offset_F376:; spriteIdx
 	add_byte_to_byte ptr_1, #0
 
 get_ptr_F385:
-	read_word  data_2, {(ptr_0),Y}
+	READ_WORD data_2, {(ptr_0),Y}
 
 get_sprite_length_F390:
 	LDY	#0
@@ -236,7 +236,7 @@ get_container_offset_F3C1:
 	add_byte_to_byte data_3, #0
 
 get_container_ptr_F3D0:
-	read_word  ptr_0, {(data_2),Y}
+	READ_WORD ptr_0, {(data_2),Y}
 
 get_tilemap_offset_F3DB:
 	mult_by_2_byte objMapIdx_316
@@ -245,7 +245,7 @@ get_tilemap_offset_F3DB:
 	add_byte_to_byte ptr_1, #0
 
 get_tilemap_ptr_F3EA:
-	read_word  data_2, {(ptr_0),Y}
+	READ_WORD data_2, {(ptr_0),Y}
 
 get_width_F3F5:
 	LDY	#0

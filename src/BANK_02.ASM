@@ -6,7 +6,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-	bank_switch_func switch_case_8035
+	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
 	set bank_prev_345, bank_to_344
@@ -57,7 +57,7 @@ case6_28083:
 ; ---------------------------------------------------------------------------
 
 return_28089:
-	return_from_bank_command
+	RETURN_FROM_BANK_COMMAND
 ; End of function bank_switch_func
 
 ; ---------------------------------------------------------------------------
@@ -141,10 +141,10 @@ loc_2D1DF:
 	ADC	#0
 	STA	ptr_1
 
-	read_word  data_2, {(ptr_0),Y}
+	READ_WORD data_2, {(ptr_0),Y}
 	add_byte_to_word data_2, text_idx_35C
 
-	read_word  ptr_0, {(data_2),Y}
+	READ_WORD ptr_0, {(data_2),Y}
 
 loc_2D21A:
 	set tilemapHeight_30A, #0
@@ -499,10 +499,10 @@ sub_2E244:
 	ADC	#0
 	STA	ptr_1
 
-	read_word  data_2, {(ptr_0),Y}
+	READ_WORD data_2, {(ptr_0),Y}
 	add_byte_to_word data_2, text_idx_35C
 
-	read_word  ptr_0, {(data_2),Y}
+	READ_WORD ptr_0, {(data_2),Y}
 	from_stack_to_a data_3
 	from_stack_to_a data_2
 	LDY	#0
@@ -905,7 +905,7 @@ byte_2E771:.BYTE $3E,  1,$16,$21,$3E,  0,$27,$30,	0,  0,	0,  0,	0,  0,	0,  0
 
 sub_2E781:
 
-	get_ptr_from_tbl off_2E52F, entry_idx_300
+	GET_PTR_FROM_TBL off_2E52F, entry_idx_300
 
 	LDY	#0
 loc_2E7B0:

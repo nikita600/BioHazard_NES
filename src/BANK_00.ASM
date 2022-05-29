@@ -6,7 +6,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-	bank_switch_func switch_case_8035
+	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
 	set bank_prev_345, bank_to_344
@@ -172,7 +172,7 @@ loc_815B:
 ; ---------------------------------------------------------------------------
 
 loc_8169:
-	return_from_bank_command
+	RETURN_FROM_BANK_COMMAND
 ; End of function bank_switch_func
 
 ; ---------------------------------------------------------------------------
@@ -219,7 +219,7 @@ clear_palette_81B0:
 switch_b13_c5_81CB:
 	set bank_switch_flag_6C, #$88 
 	set apu_unk_76C, #0
-	execute_bank_command #5, #banks_13, #0
+	EXECUTE_BANK_COMMAND #5, #banks_13, #0
 
 continue_816E:
 	set byte_357, #$18
@@ -684,7 +684,7 @@ loc_8742:
 	set apu_unk_76C, #2
 
 exec_b13_c5_8747:
-	execute_bank_command #5, #banks_13, #0
+	EXECUTE_BANK_COMMAND #5, #banks_13, #0
 
 gameplay_loop_8759:
 	JSR	wait_for_frame_rendered_FCA0
@@ -953,7 +953,7 @@ check_ending_type_8A4E:
 	set apu_unk_76C, #1
 
 exec_b13_c5_8A57:
-	execute_bank_command #5, #banks_13, #0
+	EXECUTE_BANK_COMMAND #5, #banks_13, #0
 
 loc_8A69:
 	JSR	exec_b12_c45_EC8E
@@ -966,7 +966,7 @@ ending_sequence_8A74:
 	set apu_unk_76C, #6
 
 exec_b13_c5_8A79:
-	execute_bank_command #5, #banks_13, #0
+	EXECUTE_BANK_COMMAND #5, #banks_13, #0
 
 loc_8A8B:
 	set byte_341, #4
@@ -3161,21 +3161,21 @@ loc_C814:
 ; =============== S U B	R O U T	I N E =======================================
 
 load_tiles_to_ppu_C83A:
-	execute_bank_command #0, #sprites_1, #0
+	EXECUTE_BANK_COMMAND #0, #sprites_1, #0
 	RTS
 ; End of function load_tiles_to_ppu_C83A
 
 ; =============== S U B	R O U T	I N E =======================================
 
 loadt_obj_tilemaps_C84D:
-	execute_bank_command #1, #sprites_1, #0
+	EXECUTE_BANK_COMMAND #1, #sprites_1, #0
 	RTS
 ; End of function loadt_obj_tilemaps_C84D
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b1_c2_C860:
-	execute_bank_command #2, #sprites_1, #0
+	EXECUTE_BANK_COMMAND #2, #sprites_1, #0
 	RTS
 ; End of function exec_b1_c2_C860
 
@@ -3184,13 +3184,13 @@ exec_b1_c2_C860:
 sub_C873:
 	a_to_stack entry_idx_300
 
-	get_ptr_from_tbl unknown_entries_C558, entry_idx_300
+	GET_PTR_FROM_TBL unknown_entries_C558, entry_idx_300
 
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
 
 exec_b2_c6_C8AB:
-	execute_bank_command #6, #text_2, #0
+	EXECUTE_BANK_COMMAND #6, #text_2, #0
 
 loc_C8BD:
 	from_stack_to_a entry_idx_300
@@ -3200,35 +3200,35 @@ loc_C8BD:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c0_C8C2:
-	execute_bank_command #0, #text_2, #0
+	EXECUTE_BANK_COMMAND #0, #text_2, #0
 	RTS
 ; End of function exec_b2_c0_C8C2
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c1_C8D5:
-	execute_bank_command #1, #text_2, #0
+	EXECUTE_BANK_COMMAND #1, #text_2, #0
 	RTS
 ; End of function exec_b2_c1_C8D5
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c2_text_cuts_C8E8:
-	execute_bank_command #2, #text_2, #0
+	EXECUTE_BANK_COMMAND #2, #text_2, #0
 	RTS
 ; End of function exec_b2_c2_text_cuts_C8E8
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c3_C8FB:
-	execute_bank_command #3, #text_2, #0
+	EXECUTE_BANK_COMMAND #3, #text_2, #0
 	RTS
 ; End of function exec_b2_c3_C8FB
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c4_C90E:
-	execute_bank_command #4, #text_2, #0
+	EXECUTE_BANK_COMMAND #4, #text_2, #0
 	RTS
 ; End of function exec_b2_c4_C90E
 
@@ -3237,7 +3237,7 @@ exec_b2_c4_C90E:
 sub_C921:
 	a_to_stack entry_idx_300
 
-	get_ptr_from_tbl unknown_entries_C558, entry_idx_300
+	GET_PTR_FROM_TBL unknown_entries_C558, entry_idx_300
 
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
@@ -3360,21 +3360,21 @@ loc_CA45:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b4_c0_CA4B:
-	execute_bank_command #0, #items_spr_4, #0
+	EXECUTE_BANK_COMMAND #0, #items_spr_4, #0
 	RTS
 ; End of function exec_b4_c0_CA4B
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b4_c1_CA5E:
-	execute_bank_command #1, #items_spr_4, #0
+	EXECUTE_BANK_COMMAND #1, #items_spr_4, #0
 	RTS
 ; End of function exec_b4_c1_CA5E
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b4_c2_CA71:
-	execute_bank_command #2, #items_spr_4, #0
+	EXECUTE_BANK_COMMAND #2, #items_spr_4, #0
 	RTS
 ; End of function exec_b4_c2_CA71
 
@@ -3500,7 +3500,7 @@ sub_CBE2:
 	a_to_stack bank_from_343
 
 exec_c12_b29_CBE6:
-	execute_bank_command #$29 , #banks_12, #0
+	EXECUTE_BANK_COMMAND #$29 , #banks_12, #0
 
 loc_CBF8:
 	from_stack_to_a bank_from_343
@@ -5271,7 +5271,7 @@ read_tilemap_DF23:
 	JSR	tilemap_read_next_chunk_F472
 
 load_from_C558_DF4B:
-	get_ptr_from_tbl unknown_entries_C558, entry_idx_300
+	GET_PTR_FROM_TBL unknown_entries_C558, entry_idx_300
 
 	LDY	#0
 	set entry_idx_300, {(data_2),Y}
@@ -5308,7 +5308,7 @@ loc_DFAC:
 sub_DFC1:
 	set byte_36E, #$FF
 
-	get_ptr_from_tbl off_9BB5, entry_idx_300
+	GET_PTR_FROM_TBL off_9BB5, entry_idx_300
 
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
@@ -7543,10 +7543,10 @@ tilemap_read_next_chunk_F472:
 	a_to_stack data_3
 	a_to_stack entry_idx_300
 
-	get_ptr_from_tbl tilemap_entries_C000, entry_idx_300
+	GET_PTR_FROM_TBL tilemap_entries_C000, entry_idx_300
 
 read_tilemap_sizes_F4B3:
-	read_word  tilemaps_horiz_count_311, {(data_2),Y}
+	READ_WORD tilemaps_horiz_count_311, {(data_2),Y}
 
 	LDA	#0
 	LDY	room_pos_y_4E

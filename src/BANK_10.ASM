@@ -7,7 +7,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-	bank_switch_func switch_case_8035
+	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
 	tilemap_entry_point_func

@@ -9,7 +9,7 @@
 
 ; ---------------------------------------------------------------------------
 
-.macro read_word dst, src
+.macro READ_WORD dst, src
 	LDY	#0
 	LDA	src
 	STA	dst
@@ -21,16 +21,7 @@
 
 ; ---------------------------------------------------------------------------
 
-.macro get_word_offset addr, idx
-	mult_by_2_byte idx
-	add_to_a addr
-	STA	addr
-	add_byte_to_byte addr+1, #0
-.endmacro
-
-; ---------------------------------------------------------------------------
-
-.macro get_ptr_from_tbl ptr_addr, ptr_idx
+.macro GET_PTR_FROM_TBL ptr_addr, ptr_idx
 
 	set_word_to_word_const ptr_0, ptr_addr
 
@@ -38,13 +29,13 @@
 	mult_word_by_2 data_2
 	add_word_to_word ptr_0, data_2
 
-	read_word data_2, {(ptr_0),Y}
+	READ_WORD data_2, {(ptr_0),Y}
 
 .endmacro
 
 ; ---------------------------------------------------------------------------
 
-.macro bank_switch_func switch_case_func
+.macro BANK_SWITCH_FUNC switch_case_func
 
 bank_switch_8000:
 		set bank_switch_flag_6C, #$EE 
@@ -82,7 +73,7 @@ vertical_8032:
 
 ; ---------------------------------------------------------------------------
 
-.macro execute_bank_command command, to, from
+.macro EXECUTE_BANK_COMMAND command, to, from
 
 	set bank_command_346, command
 	set bank_to_344, to
@@ -93,7 +84,7 @@ vertical_8032:
 
 ; ---------------------------------------------------------------------------
 
-.macro return_from_bank_command
+.macro RETURN_FROM_BANK_COMMAND
 
 	set bank_command_346, #$FF
 	set bank_to_344, bank_from_343

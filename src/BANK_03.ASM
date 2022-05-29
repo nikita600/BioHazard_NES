@@ -6,7 +6,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-	bank_switch_func switch_case_8035
+	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
 	set bank_prev_345, bank_to_344
@@ -21,7 +21,7 @@ loc_38047:
 ; ---------------------------------------------------------------------------
 
 loc_3804D:
-	return_from_bank_command
+	RETURN_FROM_BANK_COMMAND
 ; End of function bank_switch_func
 
 ; ---------------------------------------------------------------------------
@@ -39,10 +39,10 @@ sub_3F76B:
 	ADC	#0
 	STA	ptr_1
 
-	read_word  data_2, {(ptr_0),Y}
+	READ_WORD data_2, {(ptr_0),Y}
 	add_byte_to_word data_2, text_idx_35C
 
-	read_word  ptr_0, {(data_2),Y}
+	READ_WORD ptr_0, {(data_2),Y}
 	from_stack_to_a data_3
 	from_stack_to_a data_2
 	LDY	#0

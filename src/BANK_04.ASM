@@ -7,7 +7,7 @@
 
 ; ---------------------------------------------------------------------------
 
-	bank_switch_func switch_case_8035
+	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
 	set bank_prev_345, bank_to_344
@@ -29,7 +29,7 @@ case1_48059:
 	a_to_stack bank_from_343
 
 exec_b13_c1_48064:
-	execute_bank_command #1, #banks_13, #4
+	EXECUTE_BANK_COMMAND #1, #banks_13, #4
 
 loc_48076:
 	from_stack_to_a bank_from_343
@@ -48,7 +48,7 @@ case3_48089:
 	JMP	return_4808F
 
 return_4808F:
-	return_from_bank_command
+	RETURN_FROM_BANK_COMMAND
 	
 ; ---------------------------------------------------------------------------
 

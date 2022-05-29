@@ -6,7 +6,7 @@
 
 ; =============== S U B	R O U T	I N E =======================================
 
-	bank_switch_func switch_case_8035
+	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
 	set bank_prev_345, bank_to_344
@@ -454,14 +454,14 @@ loc_128293:
 	set apu_unk_76C, #5
 
 exec_b13_c5_12829C:
-	execute_bank_command #5, #banks_13, #$12
+	EXECUTE_BANK_COMMAND #5, #banks_13, #$12
 
 loc_1282AE:
 	JSR	sub_128955
 	from_stack_to_a apu_unk_76C
 
 exec_b13_c5_1282B5:
-	execute_bank_command #5, #banks_13, #$12
+	EXECUTE_BANK_COMMAND #5, #banks_13, #$12
 	JMP	return_1282EE
 ; ---------------------------------------------------------------------------
 
@@ -497,20 +497,20 @@ loc_1282E8:
 
 return_1282EE:
 	from_stack_to_a bank_from_343
-	return_from_bank_command
+	RETURN_FROM_BANK_COMMAND
 ; End of function command_0_1280FB
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c1_128300:
-	execute_bank_command #1, #text_2, #$12
+	EXECUTE_BANK_COMMAND #1, #text_2, #$12
 	RTS
 ; End of function exec_b2_c1_128300
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c3_128313:
-	execute_bank_command #3, #2, #$12
+	EXECUTE_BANK_COMMAND #3, #2, #$12
 	RTS
 ; End of function exec_b2_c3_128313
 
@@ -542,7 +542,7 @@ sub_128358:
 	set byte_31E, sprite_secondByte_31B
 
 exec_b4_c3_128375:
-	execute_bank_command #3, #items_spr_4, #$12
+	EXECUTE_BANK_COMMAND #3, #items_spr_4, #$12
 
 loc_128387:
 	from_stack_to_a tilemap_size_307
@@ -554,14 +554,14 @@ loc_128387:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b1_c1_128394:
-	execute_bank_command #1, #sprites_1, #$12
+	EXECUTE_BANK_COMMAND #1, #sprites_1, #$12
 	RTS
 ; End of function exec_b1_c1_128394
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b4_c2_1283A7:
-	execute_bank_command #2, #items_spr_4, #$12
+	EXECUTE_BANK_COMMAND #2, #items_spr_4, #$12
 	RTS
 ; End of function exec_b4_c2_1283A7
 
@@ -580,35 +580,35 @@ sub_1283BA:
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c2_1283DF:
-	execute_bank_command #2, #text_2, #$12
+	EXECUTE_BANK_COMMAND #2, #text_2, #$12
 	RTS
 ; End of function exec_b2_c2_1283DF
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c4_1283F2:
-	execute_bank_command #4, #text_2, #$12
+	EXECUTE_BANK_COMMAND #4, #text_2, #$12
 	RTS
 ; End of function exec_b2_c4_1283F2
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b2_c5_128405:
-	execute_bank_command #5, #text_2, #$12
+	EXECUTE_BANK_COMMAND #5, #text_2, #$12
 	RTS
 ; End of function exec_b2_c5_128405
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c3_128418:
-	execute_bank_command #3, #code_0, #$12
+	EXECUTE_BANK_COMMAND #3, #code_0, #$12
 	RTS
 ; End of function exec_b0_c3_128418
 
 ; =============== S U B	R O U T	I N E =======================================
 
 exec_b0_c4_12842B:
-	execute_bank_command #4, #code_0, #$12
+	EXECUTE_BANK_COMMAND #4, #code_0, #$12
 	RTS
 ; End of function exec_b0_c4_12842B
 
@@ -616,7 +616,7 @@ exec_b0_c4_12842B:
 
 exec_b0_c5_12843E:
 	a_to_stack bank_from_343
-	execute_bank_command #5, #code_0, #$12
+	EXECUTE_BANK_COMMAND #5, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c5_12843E
@@ -625,7 +625,7 @@ exec_b0_c5_12843E:
 
 exec_b0_c6_128459:
 	a_to_stack bank_from_343
-	execute_bank_command #6, #code_0, #$12
+	EXECUTE_BANK_COMMAND #6, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c6_128459
@@ -634,7 +634,7 @@ exec_b0_c6_128459:
 
 exec_b0_c7_128474:
 	a_to_stack bank_from_343
-	execute_bank_command #7, #code_0, #$12
+	EXECUTE_BANK_COMMAND #7, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c7_128474
@@ -643,7 +643,7 @@ exec_b0_c7_128474:
 
 exec_b0_c8_12848F:
 	a_to_stack bank_from_343
-	execute_bank_command #8, #code_0, #$12
+	EXECUTE_BANK_COMMAND #8, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c8_12848F
@@ -652,7 +652,7 @@ exec_b0_c8_12848F:
 
 exec_b0_c9_1284AA:
 	a_to_stack bank_from_343
-	execute_bank_command #9, #code_0, #$12
+	EXECUTE_BANK_COMMAND #9, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c9_1284AA
@@ -661,7 +661,7 @@ exec_b0_c9_1284AA:
 
 exec_b0_cA_1284C5:
 	a_to_stack bank_from_343
-	execute_bank_command #$A, #code_0, #$12
+	EXECUTE_BANK_COMMAND #$A, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cA_1284C5
@@ -670,7 +670,7 @@ exec_b0_cA_1284C5:
 
 exec_b0_cB_1284E0:
 	a_to_stack bank_from_343
-	execute_bank_command #$B, #code_0, #$12
+	EXECUTE_BANK_COMMAND #$B, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cB_1284E0
@@ -679,7 +679,7 @@ exec_b0_cB_1284E0:
 
 exec_b0_cC_1284FB:
 	a_to_stack bank_from_343
-	execute_bank_command #$C, #code_0, #$12
+	EXECUTE_BANK_COMMAND #$C, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cC_1284FB
@@ -688,7 +688,7 @@ exec_b0_cC_1284FB:
 
 exec_b0_cD_128516:
 	a_to_stack bank_from_343
-	execute_bank_command #$D, #code_0, #$12
+	EXECUTE_BANK_COMMAND #$D, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_cD_128516
@@ -1682,7 +1682,7 @@ loc_12A64A:
 	INX
 	if_x_not_equal_cmp #$AC , loc_12A64A
 
-	get_ptr_from_tbl off_129269, entry_idx_300
+	GET_PTR_FROM_TBL off_129269, entry_idx_300
 	
 	LDY	#0
 	set objArraySize_373, {(data_2),Y}
@@ -1703,7 +1703,7 @@ loc_12A69D:
 	STA	data_2
 	add_byte_to_byte data_3, #0
 
-	read_word  ptr_0, {(data_2),Y}
+	READ_WORD ptr_0, {(data_2),Y}
 	LDX	inv_spr_dscr1_30C
 	LDY	#0
 	set_iny {array_unk_3C5,X}, {(ptr_0),Y}
@@ -1916,7 +1916,7 @@ sub_12A944:
 
 exec_b0_c0_12A973:
 	a_to_stack bank_from_343
-	execute_bank_command #0, #code_0, #$12
+	EXECUTE_BANK_COMMAND #0, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c0_12A973
@@ -1925,7 +1925,7 @@ exec_b0_c0_12A973:
 
 exec_b0_c1_12A98E:
 	a_to_stack bank_from_343
-	execute_bank_command #1, #code_0, #$12
+	EXECUTE_BANK_COMMAND #1, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c1_12A98E
@@ -1934,7 +1934,7 @@ exec_b0_c1_12A98E:
 
 exec_b0_c2_12A9A9:
 	a_to_stack bank_from_343
-	execute_bank_command #2, #code_0, #$12
+	EXECUTE_BANK_COMMAND #2, #code_0, #$12
 	from_stack_to_a bank_from_343
 	RTS
 ; End of function exec_b0_c2_12A9A9
@@ -9217,7 +9217,7 @@ loc_12F30E:
 	STA	ptr_0
 	add_byte_to_byte ptr_1, #0
 
-	read_word  data_2, {(ptr_0),Y}
+	READ_WORD data_2, {(ptr_0),Y}
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
 	if_a_equal_cmp byte_421, loc_12F33F

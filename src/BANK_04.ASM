@@ -10,8 +10,8 @@
 	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
-	set bank_prev_345, bank_to_344
-	set bank_switch_flag_6C, #$88 
+	SET bank_prev_345, bank_to_344
+	SET bank_switch_flag_6C, #$88 
 	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, case0_48053
 	IF_A_EQUAL_CMP #1, case1_48059
 	IF_A_EQUAL_CMP #2, case2_48083

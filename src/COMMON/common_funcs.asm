@@ -1,7 +1,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_ppu_data_upload_FC8C:
-	set has_ppu_data_to_upload_6F, #1
+	SET has_ppu_data_to_upload_6F, #1
 
 loc_FC90:
 	IF_A_NOT_EQUAL has_ppu_data_to_upload_6F, loc_FC90
@@ -23,7 +23,7 @@ loc_FC9A:
 ; =============== S U B	R O U T	I N E =======================================
 
 wait_for_frame_rendered_FCA0:
-	set frame_render_count_350, #1
+	SET frame_render_count_350, #1
 
 loop_FCA5:
 	IF_A_NOT_EQUAL frame_render_count_350, loop_FCA5
@@ -125,7 +125,7 @@ hide_sprites_FCF5:
 sub_FD0A:
 	IF_A_EQUAL byte_43E, loc_FD31
 	IF_A_NOT_EQUAL spr_x_pos_203, loc_FD1C
-	set byte_43E, #0
+	SET byte_43E, #0
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
 
@@ -137,7 +137,7 @@ loc_FD1C:
 
 loc_FD31:
 	IF_A_NOT_EQUAL_CMP_ADDR spr_x_pos_203, #$F8, loc_FD40
-	set byte_43E, #1
+	SET byte_43E, #1
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
 
@@ -161,12 +161,12 @@ NMI_FD53:
 ; ---------------------------------------------------------------------------
 
 loc_FD62:
-	set bank_switch_flag_6C, #$EE 
+	SET bank_switch_flag_6C, #$EE 
 	IF_A_NOT_EQUAL sprite_type_306, battle_screen_update_FD6E
 	JSR	hide_sprites_FCF5
 
 battle_screen_update_FD6E:
-	set _PPU_OAM_DMA, #2
+	SET _PPU_OAM_DMA, #2
 	JSR	ppu_upset_data_FDCB
 	JSR	ppu_update_FE20
 	JSR	input_update_FE39
@@ -177,7 +177,7 @@ battle_screen_update_FD6E:
 music_update_FD89:
 	JSR	sub_FE9C
 	JSR	apu_update_music_FF2E
-	set bank_switch_flag_6C, #$88 
+	SET bank_switch_flag_6C, #$88 
 
 loc_FD93:
 	IF_A_EQUAL byte_432, next_frame_FD9B
@@ -236,12 +236,12 @@ loc_FDF7:
 	LOAD_A_MASKED {ppu_data_70,X}, #$7F 
 	STA	ppu_fld1_y_6E
 	INX
-	set_inx _PPU_ADDR, {ppu_data_70,X}
-	set _PPU_ADDR, {ppu_data_70,X}
+	SET_INX _PPU_ADDR, {ppu_data_70,X}
+	SET _PPU_ADDR, {ppu_data_70,X}
 
 loc_FE09:
 	INX
-	set _PPU_DATA, {ppu_data_70,X}
+	SET _PPU_DATA, {ppu_data_70,X}
 	DEC	ppu_fld1_y_6E
 	BNE	loc_FE09
 	DEC	ppu_fld0_x_6D
@@ -251,17 +251,17 @@ loc_FE09:
 ; ---------------------------------------------------------------------------
 
 loc_FE1B:
-	set has_ppu_data_to_upload_6F, #0
+	SET has_ppu_data_to_upload_6F, #0
 	RTS
 ; End of function ppu_upset_data_FDCB
 
 ; =============== S U B	R O U T	I N E =======================================
 
 ppu_update_FE20:
-	set _PPU_CTRL, ppu_ctrl_31F
-	set _PPU_MASK, ppu_mask_320
-	set _PPU_SCROLL, ppu_scroll_x_304
-	set _PPU_SCROLL, ppu_scroll_y_305
+	SET _PPU_CTRL, ppu_ctrl_31F
+	SET _PPU_MASK, ppu_mask_320
+	SET _PPU_SCROLL, ppu_scroll_x_304
+	SET _PPU_SCROLL, ppu_scroll_y_305
 	RTS
 ; End of function ppu_update_FE20
 
@@ -292,7 +292,7 @@ read_pad0_FE51:
 
 loc_FE5E:
 	PHA
-	set input_reg0_34E, {_PAD0_REG,X}
+	SET input_reg0_34E, {_PAD0_REG,X}
 	DIV_BYTE_BY_2 input_reg0_34E
 	PLA
 	ROL	A
@@ -310,22 +310,22 @@ input_sub_FE71:
 	EOR	input_unk_34C,X
 	AND	input_reg1_347,X
 	STA	input_pressed_34A,X
-	set {input_unk_34C,X}, {input_reg1_347,X}
+	SET {input_unk_34C,X}, {input_reg1_347,X}
 	RTS
 ; End of function input_sub_FE71
 
 ; =============== S U B	R O U T	I N E =======================================
 
 ppu_update_ctrl_mask_FE86:
-	set _PPU_CTRL, ppu_ctrl_31F
-	set _PPU_MASK, ppu_mask_320
+	SET _PPU_CTRL, ppu_ctrl_31F
+	SET _PPU_MASK, ppu_mask_320
 	RTS
 ; End of function ppu_update_ctrl_mask_FE86
 
 ; =============== S U B	R O U T	I N E =======================================
 
 ppu_reset_ctrl_mask_FE93:
-	set2 _PPU_CTRL, _PPU_MASK, #0
+	SET2 _PPU_CTRL, _PPU_MASK, #0
 	RTS
 ; End of function ppu_reset_ctrl_mask_FE93
 
@@ -338,7 +338,7 @@ sub_FE9C:
 ; ---------------------------------------------------------------------------
 
 loc_FEA7:
-	set byte_353, #0
+	SET byte_353, #0
 	IF_A_NOT_EQUAL_CMP_ADDR byte_354, #0, loc_FED2
 	IF_A_NOT_EQUAL_CMP_ADDR byte_355, #0, loc_FECA
 	IF_A_NOT_EQUAL_CMP_ADDR byte_356, #0, loc_FEC2
@@ -347,11 +347,11 @@ loc_FEA7:
 
 loc_FEC2:
 	DEC	byte_356
-	set byte_355, #$A
+	SET byte_355, #$A
 
 loc_FECA:
 	DEC	byte_355
-	set byte_354, #$A
+	SET byte_354, #$A
 
 loc_FED2:
 	DEC	byte_354
@@ -370,7 +370,7 @@ scroll_update_FED6:
 	a_to_stack scroll_offset_y_47A
 	LOAD_A_MASKED scroll_offset_y_47A, #$80 
 	IF_A_EQUAL_CMP #0, loc_FF0E
-	set ppu_scroll_y_305, #0
+	SET ppu_scroll_y_305, #0
 	JMP	loc_FF20
 ; ---------------------------------------------------------------------------
 
@@ -393,8 +393,8 @@ apu_update_music_FF2E:
 	a_to_stack bank_to_344
 	a_to_stack bank_from_343
 	
-	set bank_to_344, #banks_13
-	set bank_command_346, #$88 
+	SET bank_to_344, #banks_13
+	SET bank_command_346, #$88 
 	JSR	bank_switch_8000
 
 	from_stack_to_a bank_from_343

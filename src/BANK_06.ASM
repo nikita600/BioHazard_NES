@@ -9,8 +9,8 @@
 	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
-	set bank_prev_345, bank_to_344
-	set bank_switch_flag_6C, #$88 
+	SET bank_prev_345, bank_to_344
+	SET bank_switch_flag_6C, #$88 
 	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, loc_68047
 	RTS
 ; ---------------------------------------------------------------------------
@@ -34,7 +34,7 @@ upload_gfx_to_ppu_6F863:
 
 	GET_PTR_FROM_TBL GFX_6805B, entry_idx_300
 	
-	set_word_to_word_const ptr_0, _PPU_PAT_TBL_1
+	SET_WORD_TO_WORD_CONST ptr_0, _PPU_PAT_TBL_1
 
 	JSR	upload_gfx_to_ppu_6F89C
 	RTS
@@ -44,19 +44,19 @@ upload_gfx_to_ppu_6F863:
 
 upload_gfx_to_ppu_6F89C:
 	LDY	#0
-	set tilemapWidth_308, {(data_2),Y}
+	SET tilemapWidth_308, {(data_2),Y}
 
 	ADD_WORD_TO_WORD_IMM data_2, $2
 
 	LDX	#0
 
 loc_6F8B2:
-	set _PPU_ADDR, ptr_1
-	set _PPU_ADDR, ptr_0
+	SET _PPU_ADDR, ptr_1
+	SET _PPU_ADDR, ptr_0
 	LDY	#0
 
 loc_6F8BE:
-	set_iny _PPU_DATA, {(data_2),Y}
+	SET_INY _PPU_DATA, {(data_2),Y}
 	IF_Y_GREATER_CMP #$10, loc_6F8BE
 	
 	ADD_BYTE_TO_WORD ptr_0, #$10

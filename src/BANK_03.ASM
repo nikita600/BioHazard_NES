@@ -9,8 +9,8 @@
 	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
-	set bank_prev_345, bank_to_344
-	set bank_switch_flag_6C, #$88 
+	SET bank_prev_345, bank_to_344
+	SET bank_switch_flag_6C, #$88 
 	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, loc_38047
 	RTS
 ; ---------------------------------------------------------------------------
@@ -46,16 +46,16 @@ sub_3F76B:
 	from_stack_to_a data_3
 	from_stack_to_a data_2
 	LDY	#0
-	set has_ppu_data_to_upload_6F, #0
+	SET has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set_inx {ppu_data_70,X}, #5
-	set_inx {ppu_data_70,X}, #$40 
+	SET_INX {ppu_data_70,X}, #5
+	SET_INX {ppu_data_70,X}, #$40 
 	INX
-	set {ppu_data_70,X}, data_2
+	SET {ppu_data_70,X}, data_2
 	DEX
-	set_inx {ppu_data_70,X}, data_3
+	SET_INX {ppu_data_70,X}, data_3
 	INX
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_3F7CC:
 	MULT_BY_8_BYTE byte_360
@@ -63,7 +63,7 @@ loc_3F7CC:
 	MULT_BY_2_BYTE byte_361
 	ADD_TO_A tilemapTypeUnk_30B
 	TAY
-	set tilemapTypeUnk_30B, #0
+	SET tilemapTypeUnk_30B, #0
 
 loc_3F7E3:
 	y_to_stack
@@ -106,7 +106,7 @@ loc_3F820:
 
 loc_3F839:
 	JSR	sub_3F972
-	set ptr_0, sprite_secondByte_31B
+	SET ptr_0, sprite_secondByte_31B
 	LDY	tilemapHeight_30A
 
 loc_3F844:
@@ -122,18 +122,18 @@ loc_3F856:
 	MULT_BY_4_BYTE tilemapWidth_308
 	ADD_TO_A ptr_0
 	STA	ptr_0
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_3F865:
 	a_to_stack data_2
 	a_to_stack data_3
-	set_inx {ppu_data_70,X}, #1
+	SET_INX {ppu_data_70,X}, #1
 	INX
-	set {ppu_data_70,X}, data_2
+	SET {ppu_data_70,X}, data_2
 	DEX
-	set_inx {ppu_data_70,X}, data_3
+	SET_INX {ppu_data_70,X}, data_3
 	INX
-	set_inx {ppu_data_70,X}, ptr_0
+	SET_INX {ppu_data_70,X}, ptr_0
 	INC	ptr_0
 	LOAD_A_MASKED data_2, #$1F
 	IF_A_NOT_EQUAL_CMP #$1F, loc_3F89B
@@ -145,13 +145,13 @@ loc_3F89B:
 	ADD_WORD_TO_WORD_IMM data_2, $1
 
 loc_3F8A8:
-	set_inx {ppu_data_70,X}, #1
+	SET_INX {ppu_data_70,X}, #1
 	INX
-	set {ppu_data_70,X}, data_2
+	SET {ppu_data_70,X}, data_2
 	DEX
-	set_inx {ppu_data_70,X}, data_3
+	SET_INX {ppu_data_70,X}, data_3
 	INX
-	set_inx {ppu_data_70,X}, ptr_0
+	SET_INX {ppu_data_70,X}, ptr_0
 	from_stack_to_a data_3
 	from_stack_to_a data_2
 	INC	ptr_0
@@ -175,10 +175,10 @@ byte_3F8DA:
 
 sub_3F8FA:
 	a_to_stack inv_spr_dscr1_30C
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_3F903:
-	set_inx {ppu_data_70,X}, {(ptr_0),Y}
+	SET_INX {ppu_data_70,X}, {(ptr_0),Y}
 	INY
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_3F903
@@ -190,7 +190,7 @@ loc_3F903:
 
 sub_3F918:
 	a_to_stack inv_spr_dscr1_30C
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_3F921:
 	LDA	(ptr_0),Y
@@ -208,10 +208,10 @@ loc_3F921:
 
 sub_3F938:
 	a_to_stack inv_spr_dscr1_30C
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_3F941:
-	set_inx {ppu_data_70,X}, #0
+	SET_INX {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_3F941
 	from_stack_to_a inv_spr_dscr1_30C
@@ -222,10 +222,10 @@ loc_3F941:
 
 sub_3F955:
 	a_to_stack inv_spr_dscr1_30C
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_3F95E:
-	set_inx {ppu_data_70,X}, #$FF
+	SET_INX {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_3F95E
 	from_stack_to_a inv_spr_dscr1_30C
@@ -246,7 +246,7 @@ loc_3F975:
 ; ---------------------------------------------------------------------------
 
 loc_3F98D:
-	set ptr_0, ppu_unk_byte_303
+	SET ptr_0, ppu_unk_byte_303
 	DIV_A_BY_8_ADDR ppu_scroll_x_304
 	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
@@ -266,14 +266,14 @@ loc_3F9A9:
 loc_3F9C2:
 	LOAD_A_MASKED ptr_0, #1
 	BEQ	loc_3F9D3
-	set data_2, #0
-	set data_3, #$28 
+	SET data_2, #0
+	SET data_3, #$28 
 	JMP	loc_3F9DB
 ; ---------------------------------------------------------------------------
 
 loc_3F9D3:
-	set data_2, #0
-	set data_3, #$20 
+	SET data_2, #0
+	SET data_3, #$20 
 
 loc_3F9DB:
 	LDY	ppu_unk_byte_309
@@ -317,12 +317,12 @@ loc_3FA18:
 sub_3FA27:
 	IF_A_NOT_EQUAL_CMP_ADDR ppu_unk_byte_309, #$1D, loc_3FA48
 	IF_A_GREATER_CMP_ADDR data_3, #$28, loc_3FA3B
-	set data_3, #$20 
+	SET data_3, #$20 
 	JMP	loc_3FA3F
 ; ---------------------------------------------------------------------------
 
 loc_3FA3B:
-	set data_3, #$28 
+	SET data_3, #$28 
 
 loc_3FA3F:
 	AND_BYTE data_2, #$1F

@@ -1,22 +1,22 @@
-.macro set dst, src
+.macro SET dst, src
 	LDA	src
 	STA	dst
 .endmacro
 
-.macro set2 dst0, dst1, src
+.macro SET2 dst0, dst1, src
 	LDA	src
 	STA	dst0
 	STA	dst1
 .endmacro
 
-.macro set3 dst0, dst1, dst2, src
+.macro SET3 dst0, dst1, dst2, src
 	LDA	src
 	STA	dst0
 	STA	dst1
 	STA	dst2
 .endmacro
 
-.macro set4 dst0, dst1, dst2, dst3, src
+.macro SET4 dst0, dst1, dst2, dst3, src
 	LDA	src
 	STA	dst0
 	STA	dst1
@@ -24,7 +24,7 @@
 	STA	dst3
 .endmacro
 
-.macro set5 dst0, dst1, dst2, dst3, dst4, src
+.macro SET5 dst0, dst1, dst2, dst3, dst4, src
 	LDA	src
 	STA	dst0
 	STA	dst1
@@ -33,39 +33,34 @@
 	STA	dst4
 .endmacro
 
-.macro set_inx dst, src
+.macro SET_INX dst, src
 	LDA	src
 	STA	dst
 	INX
 .endmacro
 
-.macro set_iny dst, src
+.macro SET_INY dst, src
 	LDA	src
 	STA	dst
 	INY
 .endmacro
 
-.macro set_byte_to_word addr, value
-	set addr, value
-	set addr+1, #0
+.macro SET_BYTE_TO_WORD addr, value
+	SET addr, value
+	SET addr+1, #0
 .endmacro
 
-.macro set_byte_to_word_const addr, value
-	set addr, #.LOBYTE(value)
-	set addr+1, #0
+.macro SET_WORD_TO_WORD addr, value
+	SET addr, value
+	SET addr+1, value+1
 .endmacro
 
-.macro set_word_to_word addr, value
-	set addr, value
-	set addr+1, value+1
+.macro SET_WORD_TO_WORD_CONST addr, value
+	SET addr, #.LOBYTE(value)
+	SET addr+1, #.HIBYTE(value)
 .endmacro
 
-.macro set_word_to_word_const addr, value
-	set addr, #.LOBYTE(value)
-	set addr+1, #.HIBYTE(value)
-.endmacro
-
-.macro set_text_args text_idx, char_idx
+.macro SET_TEXT_ARGS text_idx, char_idx
 	LDA	text_idx
 	STA	text_idx_35C
 

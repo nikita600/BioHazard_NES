@@ -23,9 +23,9 @@
 
 .macro GET_PTR_FROM_TBL ptr_addr, ptr_idx
 
-	set_word_to_word_const ptr_0, ptr_addr
+	SET_WORD_TO_WORD_CONST ptr_0, ptr_addr
 
-	set_byte_to_word data_2, ptr_idx
+	SET_BYTE_TO_WORD data_2, ptr_idx
 	MULT_WORD_BY_2 data_2
 	ADD_WORD_TO_WORD ptr_0, data_2
 
@@ -38,7 +38,7 @@
 .macro BANK_SWITCH_FUNC switch_case_func
 
 bank_switch_8000:
-		set bank_switch_flag_6C, #$EE 
+		SET bank_switch_flag_6C, #$EE 
 
 		LDA	bank_to_344
 		CMP	#$10
@@ -75,9 +75,9 @@ vertical_8032:
 
 .macro EXECUTE_BANK_COMMAND command, to, from
 
-	set bank_command_346, command
-	set bank_to_344, to
-	set bank_from_343, from
+	SET bank_command_346, command
+	SET bank_to_344, to
+	SET bank_from_343, from
 	JSR	bank_switch_8000
 
 .endmacro
@@ -86,8 +86,8 @@ vertical_8032:
 
 .macro RETURN_FROM_BANK_COMMAND
 
-	set bank_command_346, #$FF
-	set bank_to_344, bank_from_343
+	SET bank_command_346, #$FF
+	SET bank_to_344, bank_from_343
 	JMP	bank_switch_8000
 
 .endmacro

@@ -9,8 +9,8 @@
 	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
-	set bank_prev_345, bank_to_344
-	set bank_switch_flag_6C, #$88 
+	SET bank_prev_345, bank_to_344
+	SET bank_switch_flag_6C, #$88 
 	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, case0_2805F
 	IF_A_EQUAL_CMP #1, case1_28065
 	IF_A_EQUAL_CMP #2, case2_2806B
@@ -67,58 +67,58 @@ off_28097:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2D11F:
-	set sprite_secondByte_31B, #$CF 
-	set byte_35E, #$C
-	set byte_364, #0
+	SET sprite_secondByte_31B, #$CF 
+	SET byte_35E, #$C
+	SET byte_364, #0
 	JMP	loc_2D14F
 ; End of function sub_2D11F
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2D131:
-	set byte_310, #0
-	set sprite_secondByte_31B, #$D7 
-	set byte_35E, #$A
-	set byte_364, #7
-	set byte_360, #0
-	set byte_361, #1
+	SET byte_310, #0
+	SET sprite_secondByte_31B, #$D7 
+	SET byte_35E, #$A
+	SET byte_364, #7
+	SET byte_360, #0
+	SET byte_361, #1
 
 loc_2D14F:
-	set ppu_unk_byte_309, #$1B
-	set tilemap_size_307, #4
-	set byte_35F, #1
-	set byte_362, #0
-	set byte_363, #0
+	SET ppu_unk_byte_309, #$1B
+	SET tilemap_size_307, #4
+	SET byte_35F, #1
+	SET byte_362, #0
+	SET byte_363, #0
 	JMP	sub_2D1CB
 ; End of function sub_2D131
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2D16B:
-	set byte_364, #8
-	set ppu_unk_byte_309, #$14
-	set tilemap_size_307, #4
-	set byte_35E, #$C
-	set byte_35F, #2
-	set byte_362, #0
-	set byte_363, #1
-	set sprite_secondByte_31B, #$A0 
+	SET byte_364, #8
+	SET ppu_unk_byte_309, #$14
+	SET tilemap_size_307, #4
+	SET byte_35E, #$C
+	SET byte_35F, #2
+	SET byte_362, #0
+	SET byte_363, #1
+	SET sprite_secondByte_31B, #$A0 
 	JMP	sub_2D1CB
 ; End of function sub_2D16B
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2D196:
-	set ppu_unk_byte_309, #8
-	set tilemap_size_307, #4
-	set byte_35E, #$C
-	set byte_35F, #5
-	set byte_362, #0
-	set byte_363, #2
-	set sprite_secondByte_31B, #4
-	set byte_364, #6
-	set byte_360, #0
-	set byte_361, #3
+	SET ppu_unk_byte_309, #8
+	SET tilemap_size_307, #4
+	SET byte_35E, #$C
+	SET byte_35F, #5
+	SET byte_362, #0
+	SET byte_363, #2
+	SET sprite_secondByte_31B, #4
+	SET byte_364, #6
+	SET byte_360, #0
+	SET byte_361, #3
 	JMP	sub_2D1CB
 ; End of function sub_2D196
 
@@ -147,14 +147,14 @@ loc_2D1DF:
 	READ_WORD ptr_0, {(data_2),Y}
 
 loc_2D21A:
-	set tilemapHeight_30A, #0
+	SET tilemapHeight_30A, #0
 
-	set_byte_to_word data_2, sprite_secondByte_31B
+	SET_BYTE_TO_WORD data_2, sprite_secondByte_31B
 	MULT_WORD_BY_16 data_2
 	OR_BYTE data_3, #$10
 
 loc_2D23E:
-	set tilemapWidth_308, #0
+	SET tilemapWidth_308, #0
 
 loc_2D243:
 	MULT_BY_2_BYTE tilemapWidth_308
@@ -197,8 +197,8 @@ loc_2D299:
 
 loc_2D29C:
 
-	set_iny char_type_id_35D, {(ptr_0),Y}
-	set_iny text_idx_35C, {(ptr_0),Y}
+	SET_INY char_type_id_35D, {(ptr_0),Y}
+	SET_INY text_idx_35C, {(ptr_0),Y}
 	MULT_WORD_BY_2 text_idx_35C
 
 	a_to_stack ptr_0
@@ -287,7 +287,7 @@ loc_2D378:
 	from_stack_to_a text_idx_35C
 	ADD_BYTE_TO_WORD text_idx_35C, #1
 
-	set byte_364, #0
+	SET byte_364, #0
 	RTS
 ; End of function sub_2D1CB
 
@@ -302,11 +302,11 @@ sub_2D397:
 	a_to_stack ptr_1
 	a_to_stack data_2
 	a_to_stack data_3
-	set tilemapTypeUnk_30B, byte_35F
-	set tilemapHeight_30A, #0
+	SET tilemapTypeUnk_30B, byte_35F
+	SET tilemapHeight_30A, #0
 
 loc_2D3BA:
-	set tilemapWidth_308, #0
+	SET tilemapWidth_308, #0
 	a_to_stack tilemapTypeUnk_30B
 	a_to_stack ppu_unk_byte_309
 	a_to_stack tilemap_size_307
@@ -330,7 +330,7 @@ loc_2D3BA:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2D401:
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 	LDX	#0
 	STX	ppu_data_70
 	INX
@@ -345,7 +345,7 @@ loc_2D40B:
 	ADD_TO_A tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 	IF_A_GREATER_CMP #$20, loc_2D445
-	set tilemapTypeUnk_30B, #$20 
+	SET tilemapTypeUnk_30B, #$20 
 	JMP	loc_2D445
 ; ---------------------------------------------------------------------------
 
@@ -368,13 +368,13 @@ loc_2D445:
 	sub_a_sec tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 	INC	ppu_data_70
-	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
-	set_inx {ppu_data_70,X}, data_3
-	set_inx {ppu_data_70,X}, data_2
+	SET_INX {ppu_data_70,X}, tilemapTypeUnk_30B
+	SET_INX {ppu_data_70,X}, data_3
+	SET_INX {ppu_data_70,X}, data_2
 	LDY	#0
 
 loc_2D471:
-	set_inx {ppu_data_70,X}, byte_310
+	SET_INX {ppu_data_70,X}, byte_310
 	INY
 	IF_Y_GREATER_CMP tilemapTypeUnk_30B, loc_2D471
 	DIV_A_BY_2_ADDR tilemapTypeUnk_30B
@@ -388,13 +388,13 @@ loc_2D471:
 
 loc_2D49D:
 	INC	ppu_data_70
-	set_inx {ppu_data_70,X}, tilemapTypeUnk_30B
-	set_inx {ppu_data_70,X}, data_3
-	set_inx {ppu_data_70,X}, data_2
+	SET_INX {ppu_data_70,X}, tilemapTypeUnk_30B
+	SET_INX {ppu_data_70,X}, data_3
+	SET_INX {ppu_data_70,X}, data_2
 	LDY	#0
 
 loc_2D4B1:
-	set_inx {ppu_data_70,X}, byte_310
+	SET_INX {ppu_data_70,X}, byte_310
 	INY
 	IF_Y_GREATER_CMP tilemapTypeUnk_30B, loc_2D4B1
 	from_stack_to_a data_3
@@ -425,9 +425,9 @@ loc_2D4E3:
 	a_to_stack bank_from_343
 
 exec_b3_c0_D4E7:
-	set bank_command_346, #0
-	set bank_from_343, bank_to_344
-	set bank_to_344, #glyphs_3
+	SET bank_command_346, #0
+	SET bank_from_343, bank_to_344
+	SET bank_to_344, #glyphs_3
 	JSR	bank_switch_8000
 
 loc_2D4FA:
@@ -439,7 +439,7 @@ loc_2D4FA:
 
 sub_2D4FF:
 
-	set count_unk_365, #0
+	SET count_unk_365, #0
 	LDY	#$FF
 
 loc_2D506:
@@ -458,15 +458,15 @@ sub_2D514:
 
 loc_2D51C:
 	IF_A_GREATER_CMP_ADDR count_unk_365, #$A, locret_2D541
-	set count_unk_365, #0
+	SET count_unk_365, #0
 	TYA
 	EOR	#1
 	TAY
 	ADD_TO_A #$D4 
 	STA	spr_y_pos_200
-	set spr_idx_201, #$5A 
-	set spr_pal_idx_202, #0
-	set spr_x_pos_203, #$E2 
+	SET spr_idx_201, #$5A 
+	SET spr_pal_idx_202, #0
+	SET spr_x_pos_203, #$E2 
 
 locret_2D541:
 	RTS
@@ -480,7 +480,7 @@ sub_2D542:
 ; ---------------------------------------------------------------------------
 
 loc_2D54A:
-	set spr_y_pos_200, #$F0 
+	SET spr_y_pos_200, #$F0 
 	RTS
 ; End of function sub_2D542
 
@@ -506,16 +506,16 @@ sub_2E244:
 	from_stack_to_a data_3
 	from_stack_to_a data_2
 	LDY	#0
-	set has_ppu_data_to_upload_6F, #0
+	SET has_ppu_data_to_upload_6F, #0
 	LDX	#0
-	set_inx {ppu_data_70,X}, #5
-	set_inx {ppu_data_70,X}, #$40 
+	SET_INX {ppu_data_70,X}, #5
+	SET_INX {ppu_data_70,X}, #$40 
 	INX
-	set {ppu_data_70,X}, data_2
+	SET {ppu_data_70,X}, data_2
 	DEX
-	set_inx {ppu_data_70,X}, data_3
+	SET_INX {ppu_data_70,X}, data_3
 	INX
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_2E2A5:
 	MULT_BY_8_BYTE byte_360
@@ -523,7 +523,7 @@ loc_2E2A5:
 	MULT_BY_2_BYTE byte_361
 	ADD_TO_A tilemapTypeUnk_30B
 	TAY
-	set tilemapTypeUnk_30B, #0
+	SET tilemapTypeUnk_30B, #0
 
 loc_2E2BC:
 	y_to_stack
@@ -566,7 +566,7 @@ loc_2E2F9:
 
 loc_2E312:
 	JSR	sub_2E44B
-	set ptr_0, sprite_secondByte_31B
+	SET ptr_0, sprite_secondByte_31B
 	LDY	tilemapHeight_30A
 
 loc_2E31D:
@@ -582,18 +582,18 @@ loc_2E32F:
 	MULT_BY_4_BYTE tilemapWidth_308
 	ADD_TO_A ptr_0
 	STA	ptr_0
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_2E33E:
 	a_to_stack data_2
 	a_to_stack data_3
-	set_inx {ppu_data_70,X}, #1
+	SET_INX {ppu_data_70,X}, #1
 	INX
-	set {ppu_data_70,X}, data_2
+	SET {ppu_data_70,X}, data_2
 	DEX
-	set_inx {ppu_data_70,X}, data_3
+	SET_INX {ppu_data_70,X}, data_3
 	INX
-	set_inx {ppu_data_70,X}, ptr_0
+	SET_INX {ppu_data_70,X}, ptr_0
 	INC	ptr_0
 	LOAD_A_MASKED data_2, #$1F
 	IF_A_NOT_EQUAL_CMP #$1F, loc_2E374
@@ -605,13 +605,13 @@ loc_2E374:
 	ADD_WORD_TO_WORD_IMM data_2, $1
 
 loc_2E381:
-	set_inx {ppu_data_70,X}, #1
+	SET_INX {ppu_data_70,X}, #1
 	INX
-	set {ppu_data_70,X}, data_2
+	SET {ppu_data_70,X}, data_2
 	DEX
-	set_inx {ppu_data_70,X}, data_3
+	SET_INX {ppu_data_70,X}, data_3
 	INX
-	set_inx {ppu_data_70,X}, ptr_0
+	SET_INX {ppu_data_70,X}, ptr_0
 	from_stack_to_a data_3
 	from_stack_to_a data_2
 	INC	ptr_0
@@ -635,10 +635,10 @@ byte_2E3B3:.BYTE	2,  2,	0,  2,	2,  0,	0,  0,	1,  2,	3,  2,	1,  0,	3,  0
 
 sub_2E3D3:
 	a_to_stack inv_spr_dscr1_30C
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_2E3DC:
-	set_inx {ppu_data_70,X}, {(ptr_0),Y}
+	SET_INX {ppu_data_70,X}, {(ptr_0),Y}
 	INY
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E3DC
@@ -650,7 +650,7 @@ loc_2E3DC:
 
 sub_2E3F1:
 	a_to_stack inv_spr_dscr1_30C
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_2E3FA:
 	LDA	(ptr_0),Y
@@ -668,10 +668,10 @@ loc_2E3FA:
 
 sub_2E411:
 	a_to_stack inv_spr_dscr1_30C
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_2E41A:
-	set_inx {ppu_data_70,X}, #0
+	SET_INX {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E41A
 	from_stack_to_a inv_spr_dscr1_30C
@@ -682,10 +682,10 @@ loc_2E41A:
 
 sub_2E42E:
 	a_to_stack inv_spr_dscr1_30C
-	set inv_spr_dscr1_30C, #0
+	SET inv_spr_dscr1_30C, #0
 
 loc_2E437:
-	set_inx {ppu_data_70,X}, #$FF
+	SET_INX {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E437
 	from_stack_to_a inv_spr_dscr1_30C
@@ -707,7 +707,7 @@ loc_2E44E:
 ; ---------------------------------------------------------------------------
 
 loc_2E466:
-	set ptr_0, ppu_unk_byte_303
+	SET ptr_0, ppu_unk_byte_303
 	DIV_A_BY_8_ADDR ppu_scroll_x_304
 	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
@@ -727,14 +727,14 @@ loc_2E482:
 loc_2E49B:
 	LOAD_A_MASKED ptr_0, #1
 	BEQ	loc_2E4AC
-	set data_2, #0
-	set data_3, #$28 
+	SET data_2, #0
+	SET data_3, #$28 
 	JMP	loc_2E4B4
 ; ---------------------------------------------------------------------------
 
 loc_2E4AC:
-	set data_2, #0
-	set data_3, #$20 
+	SET data_2, #0
+	SET data_3, #$20 
 
 loc_2E4B4:
 	LDY	ppu_unk_byte_309
@@ -779,12 +779,12 @@ sub_2E500:
 
 	IF_A_NOT_EQUAL_CMP_ADDR ppu_unk_byte_309, #$1D, loc_2E521
 	IF_A_GREATER_CMP_ADDR data_3, #$28, loc_2E514
-	set data_3, #$20 
+	SET data_3, #$20 
 	JMP	loc_2E518
 ; ---------------------------------------------------------------------------
 
 loc_2E514:
-	set data_3, #$28 
+	SET data_3, #$28 
 
 loc_2E518:
 	AND_BYTE data_2, #$1F
@@ -909,7 +909,7 @@ sub_2E781:
 
 	LDY	#0
 loc_2E7B0:
-	set_iny {palette_bg_321,Y}, {(data_2),Y}
+	SET_INY {palette_bg_321,Y}, {(data_2),Y}
 	IF_Y_GREATER_CMP #$10, loc_2E7B0
 	RTS
 ; End of function sub_2E781

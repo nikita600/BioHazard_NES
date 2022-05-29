@@ -11,7 +11,7 @@
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_a_equal_cmp_addr bank_command_346, #$FF, locret_12805A
+	IF_A_EQUAL_CMP_ADDR bank_command_346, #$FF, locret_12805A
 	mult_a_by_2
 	TAX
 	set_inx ptr_0, {CommandPtrs_12805B,X}
@@ -696,7 +696,7 @@ exec_b0_cD_128516:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128531:
-	if_a_greater_cmp_addr tilemapTypeUnk_30B, #$47, loc_12853B
+	IF_A_GREATER_CMP_ADDR tilemapTypeUnk_30B, #$47, loc_12853B
 	BEQ	loc_12853B
 	RTS
 ; ---------------------------------------------------------------------------
@@ -706,7 +706,7 @@ loc_12853B:
 	STX	_APU_STATUS
 	PHA
 	TAY
-	if_a_greater_cmp #$40, loc_128549
+	IF_A_GREATER_CMP #$40, loc_128549
 	sub_a_sec #$40 
 
 loc_128549:
@@ -716,7 +716,7 @@ loc_128549:
 	LDA	byte_1285D2,Y
 	TAY
 	PLA
-	if_a_lower_cmp #$40, loc_128571
+	IF_A_LOWER_CMP #$40, loc_128571
 	set {_APU_PULSE1_ENV,Y}, {apu_pulse_timer1_12861A,X}
 	set {_APU_PULSE1_SWEEP,Y}, {apu_pulse_timer1_12861A+1,X}
 	set {_APU_PULSE1_TIME,Y}, {apu_pulse_timer1_12861A+2,X}
@@ -739,22 +739,22 @@ loc_128571:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12873A:
-	if_a_not_equal_cmp_addr byte_46F, #$17, loc_12875A
-	if_a_not_equal_cmp_addr byte_470, #0, loc_12875A
-	if_a_not_equal_cmp_addr byte_54E, #3, loc_12875A
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46F, #$17, loc_12875A
+	IF_A_NOT_EQUAL_CMP_ADDR byte_470, #0, loc_12875A
+	IF_A_NOT_EQUAL_CMP_ADDR byte_54E, #3, loc_12875A
 	set byte_54E, #0
 	JSR	exec_b0_cC_1284FB
 	JMP	locret_128954
 ; ---------------------------------------------------------------------------
 
 loc_12875A:
-	if_a_equal_cmp_addr byte_46F, #$69, loc_128768
-	if_a_equal_cmp #$98, loc_128768
+	IF_A_EQUAL_CMP_ADDR byte_46F, #$69, loc_128768
+	IF_A_EQUAL_CMP #$98, loc_128768
 	JMP	loc_128777
 ; ---------------------------------------------------------------------------
 
 loc_128768:
-	if_a_not_equal_cmp_addr entry_idx_300, #$63, loc_128774
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$63, loc_128774
 	set byte_5D5, #$FF
 
 loc_128774:
@@ -762,8 +762,8 @@ loc_128774:
 ; ---------------------------------------------------------------------------
 
 loc_128777:
-	if_a_not_equal_cmp_addr byte_46F, #$1B, loc_12878D
-	if_a_not_equal_cmp_addr entry_idx_300, #$18, loc_12878A
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46F, #$1B, loc_12878D
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$18, loc_12878A
 	set byte_5D4, #$FF
 
 loc_12878A:
@@ -771,8 +771,8 @@ loc_12878A:
 ; ---------------------------------------------------------------------------
 
 loc_12878D:
-	if_a_not_equal_cmp_addr byte_46F, #$19, loc_1287A3
-	if_a_not_equal_cmp_addr entry_idx_300, #$18, loc_1287A0
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46F, #$19, loc_1287A3
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$18, loc_1287A0
 	set byte_5D3, #$FF
 
 loc_1287A0:
@@ -780,8 +780,8 @@ loc_1287A0:
 ; ---------------------------------------------------------------------------
 
 loc_1287A3:
-	if_a_not_equal_cmp_addr byte_46F, #$7B, loc_1287B9
-	if_a_not_equal_cmp_addr entry_idx_300, #$74, loc_1287B6
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46F, #$7B, loc_1287B9
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$74, loc_1287B6
 	set byte_690, #$FF
 
 loc_1287B6:
@@ -789,9 +789,9 @@ loc_1287B6:
 ; ---------------------------------------------------------------------------
 
 loc_1287B9:
-	if_a_not_equal_cmp_addr byte_46F, #$71, loc_128817
-	if_a_not_equal_cmp_addr entry_idx_300, #$6F, loc_128814
-	if_a_not_equal_cmp_addr byte_6A2, #0, loc_128814
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46F, #$71, loc_128817
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$6F, loc_128814
+	IF_A_NOT_EQUAL_CMP_ADDR byte_6A2, #0, loc_128814
 	set byte_313, #1
 	JSR	exec_b0_c9_1284AA
 	set byte_690, #$FF
@@ -813,17 +813,17 @@ loc_128814:
 ; ---------------------------------------------------------------------------
 
 loc_128817:
-	if_a_equal_cmp_addr byte_46F, #$7C, loc_128821
+	IF_A_EQUAL_CMP_ADDR byte_46F, #$7C, loc_128821
 	JMP	loc_1288EE
 ; ---------------------------------------------------------------------------
 
 loc_128821:
-	if_a_equal_cmp_addr entry_idx_300, #$82, loc_12882B
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$82, loc_12882B
 	JMP	loc_1288EB
 ; ---------------------------------------------------------------------------
 
 loc_12882B:
-	if_a_not_equal_cmp_addr byte_597, #$FF, loc_128835
+	IF_A_NOT_EQUAL_CMP_ADDR byte_597, #$FF, loc_128835
 	JMP	loc_1288EB
 ; ---------------------------------------------------------------------------
 
@@ -872,9 +872,9 @@ loc_1288EB:
 ; ---------------------------------------------------------------------------
 
 loc_1288EE:
-	if_a_not_equal_cmp_addr byte_46F, #$78, locret_128954
-	if_a_not_equal_cmp_addr entry_idx_300, #$79, loc_128951
-	if_a_equal_cmp_addr byte_6C6, #0, loc_128951
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46F, #$78, locret_128954
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$79, loc_128951
+	IF_A_EQUAL_CMP_ADDR byte_6C6, #0, loc_128951
 	set tilemapTypeUnk_30B, #2
 	set byte_313, #1
 	JSR	exec_b0_cA_1284C5
@@ -933,7 +933,7 @@ ppu_clear_ram_1289A1:
 	INY
 	BNE	ppu_clear_ram_1289A1
 	INX
-	if_x_not_equal_cmp #4, loc_12899F
+	IF_X_NOT_EQUAL_CMP #4, loc_12899F
 	set byte_341, #1
 	set entry_idx_300, #0
 	set ppu_unk_byte_302, #0
@@ -969,7 +969,7 @@ sub_128A1A:
 
 loc_128A20:
 	JSR	sub_128FC1
-	if_a_equal_cmp_addr is_game_finished_561, #0, game_not_finished_128A43
+	IF_A_EQUAL_CMP_ADDR is_game_finished_561, #0, game_not_finished_128A43
 	from_stack_to_a prev_sprite_type_4A9
 	from_stack_to_a ppu_prev_scroll_y_unk_4A8
 	from_stack_to_a ppu_prev_scroll_x_unk_4A7
@@ -987,7 +987,7 @@ game_not_finished_128A43:
 	JSR	sub_128EC2
 	JSR	sub_129019
 	JSR	wait_for_frame_rendered_FCA0
-	if_a_not_equal_cmp_addr input_pressed_34A, #$20, loc_128A72
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #$20, loc_128A72
 	JSR	sub_12ED3B
 	xor_byte byte_472, #1
 	set byte_440, #0
@@ -995,7 +995,7 @@ game_not_finished_128A43:
 ; ---------------------------------------------------------------------------
 
 loc_128A72:
-	if_a_not_equal_cmp #$10, loc_128A87
+	IF_A_NOT_EQUAL_CMP #$10, loc_128A87
 	JSR	sub_12ED44
 	a_to_stack inv_sprite_idx_31C
 	JSR	sub_12D4C6
@@ -1004,10 +1004,10 @@ loc_128A72:
 ; ---------------------------------------------------------------------------
 
 loc_128A87:
-	if_a_not_equal_cmp #$80, loc_128A9C
+	IF_A_NOT_EQUAL_CMP #$80, loc_128A9C
 	JSR	sub_1290C3
-	if_a_equal_cmp_addr sprite_length_30F, #$FF, loc_128AA5
-	if_a_equal_cmp #$FE, loc_128A9F
+	IF_A_EQUAL_CMP_ADDR sprite_length_30F, #$FF, loc_128AA5
+	IF_A_EQUAL_CMP #$FE, loc_128A9F
 	JMP	loc_128A20
 ; ---------------------------------------------------------------------------
 
@@ -1027,15 +1027,15 @@ loc_128AA5:
 	from_stack_to_a ppu_prev_unk_4A6
 	from_stack_to_a image_offset_4A5
 	from_stack_to_a image_id_4A4
-	if_a_equal_cmp_addr image_id_4A4, #$17, loc_128B01
-	if_a_equal_cmp #$45, loc_128B01
+	IF_A_EQUAL_CMP_ADDR image_id_4A4, #$17, loc_128B01
+	IF_A_EQUAL_CMP #$45, loc_128B01
 	JSR	sub_12C7DE
 	JSR	exec_b0_c3_128418
-	if_a_not_equal_cmp_addr image_id_4A4, #$96, loc_128ADA
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$96, loc_128ADA
 	set byte_6C9, #$FF
 
 loc_128ADA:
-	if_a_not_equal_cmp_addr image_id_4A4, #$9A, loc_128AE6
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$9A, loc_128AE6
 	set is_game_finished_561, #$88 
 
 loc_128AE6:
@@ -1076,7 +1076,7 @@ sub_128B0F:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128B43:
-	if_a_not_equal byte_472, loc_128B4B
+	IF_A_NOT_EQUAL byte_472, loc_128B4B
 	JMP	loc_128BFB
 ; ---------------------------------------------------------------------------
 
@@ -1181,7 +1181,7 @@ loc_128BFB:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128CC0:
-	if_a_not_equal_cmp_addr byte_543, #0, loc_128CD5
+	IF_A_NOT_EQUAL_CMP_ADDR byte_543, #0, loc_128CD5
 	set byte_31A, #$38 
 	set tilemapWidth_308, #$40 
 	JSR	sub_12D26B
@@ -1208,7 +1208,7 @@ loc_128CD5:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128D20:
-	if_a_not_equal_cmp_addr byte_543, #0, loc_128D35
+	IF_A_NOT_EQUAL_CMP_ADDR byte_543, #0, loc_128D35
 	set byte_31A, #$78 
 	set tilemapWidth_308, #8
 	JSR	sub_12D26B
@@ -1219,7 +1219,7 @@ loc_128D35:
 	LDX	byte_544
 	set tilemapTypeUnk_30B, {unk_53B,X}
 	JSR	sub_128F1B
-	if_a_not_equal_cmp_addr byte_543, #1, loc_128D8F
+	IF_A_NOT_EQUAL_CMP_ADDR byte_543, #1, loc_128D8F
 	set objMapIdx_316, #$33 
 	set byte_366, #$C0 
 	set byte_367, #0
@@ -1280,8 +1280,8 @@ sub_128E24:
 	set sprite_secondByte_31B, #0
 	set byte_31A, #$88 
 	set objMapIdx_316, #0
-	if_a_greater_cmp_addr byte_549, #$55, loc_128E7D
-	if_a_greater_cmp #$AA, loc_128E6C
+	IF_A_GREATER_CMP_ADDR byte_549, #$55, loc_128E7D
+	IF_A_GREATER_CMP #$AA, loc_128E6C
 	set byte_54B, #0
 	JMP	loc_128E8B
 ; ---------------------------------------------------------------------------
@@ -1297,9 +1297,9 @@ loc_128E7D:
 	set byte_54B, #2
 
 loc_128E8B:
-	if_a_greater_cmp_addr count_unk_465, #$A, loc_128EA6
+	IF_A_GREATER_CMP_ADDR count_unk_465, #$A, loc_128EA6
 	set count_unk_465, #0
-	if_a_greater_cmp_addr byte_54C, #6, loc_128EA3
+	IF_A_GREATER_CMP_ADDR byte_54C, #6, loc_128EA3
 	set byte_54C, #$FF
 
 loc_128EA3:
@@ -1327,7 +1327,7 @@ sub_128EC2:
 	set byte_31A, #$B8 
 	set objectIdx_318, #4
 	ADD_BYTE_TO_BYTE_CLC_IMM objMapIdx_316, #$15, byte_54B
-	if_a_equal byte_54A, loc_128F0E
+	IF_A_EQUAL byte_54A, loc_128F0E
 	ADD_BYTE_TO_BYTE_CLC objMapIdx_316, #3
 
 loc_128F0E:
@@ -1343,14 +1343,14 @@ sub_128F1B:
 	set3 byte_354, byte_355, byte_356, #0
 
 loc_128F26:
-	if_a_greater_cmp_addr tilemapTypeUnk_30B, #$64, loc_128F3C
+	IF_A_GREATER_CMP_ADDR tilemapTypeUnk_30B, #$64, loc_128F3C
 	sub_byte_sec tilemapTypeUnk_30B, #$64 
 	INC	byte_356
 	JMP	loc_128F26
 ; ---------------------------------------------------------------------------
 
 loc_128F3C:
-	if_a_greater_cmp_addr tilemapTypeUnk_30B, #$A, loc_128F52
+	IF_A_GREATER_CMP_ADDR tilemapTypeUnk_30B, #$A, loc_128F52
 	sub_byte_sec tilemapTypeUnk_30B, #$A
 	INC	byte_355
 	JMP	loc_128F3C
@@ -1374,7 +1374,7 @@ byte_128F59:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_128FC1:
-	if_a_greater_cmp_addr count_unk_467, #$32, locret_129004
+	IF_A_GREATER_CMP_ADDR count_unk_467, #$32, locret_129004
 	set count_unk_467, #0
 	ADD_BYTE_TO_BYTE_CLC_IMM inv_itemPrev_idx_31D, #0, byte_43F
 	set tilemap_size_307, #$B
@@ -1385,7 +1385,7 @@ sub_128FC1:
 	sub_addr_sec inv_sprite_idx_31C, #$2A 
 	mult_a_by_2
 	TAY
-	if_a_not_equal_cmp_addr {byte_129006,Y}, byte_43F, locret_129004
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_129006,Y}, byte_43F, locret_129004
 	set byte_43F, {byte_129005,Y}
 	JSR	sub_129155
 
@@ -1403,7 +1403,7 @@ byte_129006:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_129019:
-	if_a_not_equal byte_440, loc_12902C
+	IF_A_NOT_EQUAL byte_440, loc_12902C
 	set byte_31A, #$C8 
 	set tilemapWidth_308, #$38 
 	JSR	sub_12D26B
@@ -1420,13 +1420,13 @@ loc_12902C:
 	set sprite_secondByte_31B, #0
 	set byte_31A, #$C8 
 	set objectIdx_318, #4
-	if_a_equal byte_472, loc_12905F
+	IF_A_EQUAL byte_472, loc_12905F
 	LDA	#0
 	JMP	loc_129071
 ; ---------------------------------------------------------------------------
 
 loc_12905F:
-	if_a_not_equal_cmp_addr byte_543, #0, loc_129069
+	IF_A_NOT_EQUAL_CMP_ADDR byte_543, #0, loc_129069
 	JMP	loc_12908C
 ; ---------------------------------------------------------------------------
 
@@ -1444,10 +1444,10 @@ loc_129071:
 	JSR	exec_b1_c1_128394
 
 loc_12908C:
-	if_a_greater_cmp_addr count_unk_466, #5, locret_1290A8
+	IF_A_GREATER_CMP_ADDR count_unk_466, #5, locret_1290A8
 	set count_unk_466, #0
 	INC	byte_443
-	if_a_greater_cmp_addr byte_443, byte_478, locret_1290A8
+	IF_A_GREATER_CMP_ADDR byte_443, byte_478, locret_1290A8
 	set byte_440, #0
 
 locret_1290A8:
@@ -1486,15 +1486,15 @@ locret_1290A8:
 
 sub_1290C3:
 	set sprite_length_30F, #0
-	if_a_not_equal byte_472, loc_1290EA
-	if_a_equal_cmp_addr byte_543, #1, loc_1290EA
-	if_a_not_equal_cmp_addr byte_543, #0, loc_1290DC
+	IF_A_NOT_EQUAL byte_472, loc_1290EA
+	IF_A_EQUAL_CMP_ADDR byte_543, #1, loc_1290EA
+	IF_A_NOT_EQUAL_CMP_ADDR byte_543, #0, loc_1290DC
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_1290DC:
 	LDX	byte_544
-	if_a_not_equal_cmp_addr {unk_53B,X}, #0, loc_1290E7
+	IF_A_NOT_EQUAL_CMP_ADDR {unk_53B,X}, #0, loc_1290E7
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1506,27 +1506,27 @@ loc_1290EA:
 	set byte_440, #$FF
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_441, ppu_scroll_x_304, spr_x_pos_203
 	set byte_476, #0
-	if_a_greater_cmp_addr byte_441, byte_473, loc_129117
-	if_a_equal_cmp byte_474, loc_129117
+	IF_A_GREATER_CMP_ADDR byte_441, byte_473, loc_129117
+	IF_A_EQUAL_CMP byte_474, loc_129117
 	BCS	loc_129117
 	set byte_476, #$FF
 
 loc_129117:
-	if_a_not_equal byte_476, loc_129120
+	IF_A_NOT_EQUAL byte_476, loc_129120
 	JSR	sub_12ED29
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_129120:
 	JSR	sub_12ED20
-	if_a_equal byte_472, loc_12912E
+	IF_A_EQUAL byte_472, loc_12912E
 	set sprite_length_30F, #$FE 
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12912E:
 	JSR	sub_129196
-	if_a_greater_cmp_addr byte_475, byte_477, loc_129143
+	IF_A_GREATER_CMP_ADDR byte_475, byte_477, loc_129143
 	sub_a_sec byte_477
 	STA	byte_475
 	JMP	loc_129148
@@ -1536,7 +1536,7 @@ loc_129143:
 	set byte_475, #0
 
 loc_129148:
-	if_a_not_equal_cmp_addr byte_475, #0, locret_129154
+	IF_A_NOT_EQUAL_CMP_ADDR byte_475, #0, locret_129154
 	set sprite_length_30F, #$FF
 
 locret_129154:
@@ -1549,7 +1549,7 @@ sub_129155:
 	set scroll_offset_y_47A, #$10
 	set is_game_finished_561, #0
 	JSR	sub_129186
-	if_a_greater_cmp_addr byte_549, byte_477, loc_129174
+	IF_A_GREATER_CMP_ADDR byte_549, byte_477, loc_129174
 	sub_a_sec byte_477
 	STA	byte_549
 	JMP	loc_129179
@@ -1559,7 +1559,7 @@ loc_129174:
 	set byte_549, #0
 
 loc_129179:
-	if_a_not_equal_cmp_addr byte_549, #0, locret_129185
+	IF_A_NOT_EQUAL_CMP_ADDR byte_549, #0, locret_129185
 	set is_game_finished_561, #$FF
 
 locret_129185:
@@ -1583,8 +1583,8 @@ loc_12918F:
 
 sub_129196:
 	set byte_477, #0
-	if_a_not_equal_cmp_addr byte_476, #$FF, locret_1291F4
-	if_a_equal_cmp_addr byte_441, #$80, loc_1291C3
+	IF_A_NOT_EQUAL_CMP_ADDR byte_476, #$FF, locret_1291F4
+	IF_A_EQUAL_CMP_ADDR byte_441, #$80, loc_1291C3
 	BCC	loc_1291B7
 	sub_addr_sec byte_441, #$80 
 	STA	tilemapTypeUnk_30B
@@ -1603,7 +1603,7 @@ loc_1291C3:
 loc_1291C8:
 	sub_addr_sec #$14, tilemapTypeUnk_30B
 	STA	byte_477
-	if_a_not_equal_cmp_addr byte_301, #$9A, loc_1291DE
+	IF_A_NOT_EQUAL_CMP_ADDR byte_301, #$9A, loc_1291DE
 	set byte_477, byte_543
 
 loc_1291DE:
@@ -1612,7 +1612,7 @@ loc_1291DE:
 	DEY
 
 loc_1291E5:
-	if_y_equal_cmp #0, loc_1291F1
+	IF_Y_EQUAL_CMP #0, loc_1291F1
 	ADD_TO_A byte_477
 	DEY
 	JMP	loc_1291E5
@@ -1629,20 +1629,20 @@ locret_1291F4:
 
 sub_1291F5:
 	LDX	cur_obj_idx_unk_43A
-	if_a_not_equal_cmp_addr {array_unk_3A7,X}, #1, loc_129213
+	IF_A_NOT_EQUAL_CMP_ADDR {array_unk_3A7,X}, #1, loc_129213
 	sub_byte_sec {array_unk_3D9,X}, #8
 	sub_byte {array_unk_3CF,X}, #0
 	JMP	locret_129254
 ; ---------------------------------------------------------------------------
 
 loc_129213:
-	if_a_not_equal_cmp #0, loc_12922B
+	IF_A_NOT_EQUAL_CMP #0, loc_12922B
 	ADD_TO {array_unk_3D9,X}, {array_unk_3CF,X}, #8, #0
 	JMP	locret_129254
 ; ---------------------------------------------------------------------------
 
 loc_12922B:
-	if_a_not_equal_cmp #3, loc_129243
+	IF_A_NOT_EQUAL_CMP #3, loc_129243
 	sub_byte_sec {array_unk_3C5,X}, #8
 	sub_byte {array_unk_3BB,X}, #0
 	JMP	locret_129254
@@ -1680,13 +1680,13 @@ com_29_start_new_game_12A646:
 loc_12A64A:
 	STA	objArraySize_373,X
 	INX
-	if_x_not_equal_cmp #$AC , loc_12A64A
+	IF_X_NOT_EQUAL_CMP #$AC , loc_12A64A
 
 	GET_PTR_FROM_TBL off_129269, entry_idx_300
 	
 	LDY	#0
 	set objArraySize_373, {(data_2),Y}
-	if_a_not_equal_cmp #0, loc_12A68B
+	IF_A_NOT_EQUAL_CMP #0, loc_12A68B
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1712,37 +1712,37 @@ loc_12A69D:
 	set_iny {array_unk_3CF,X}, {(ptr_0),Y}
 	set_iny {objIdxArray_375,X}, {(ptr_0),Y}
 	set_iny {array_unk_39D,X}, {(ptr_0),Y}
-	if_a_not_equal_cmp_addr entry_idx_300, #$65, loc_12A70C
-	if_a_not_equal_cmp_addr {objIdxArray_375,X}, #3, loc_12A70C
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$65, loc_12A70C
+	IF_A_NOT_EQUAL_CMP_ADDR {objIdxArray_375,X}, #3, loc_12A70C
 	set {array_unk_3C5,X}, byte_567
 	set {array_unk_3BB,X}, byte_568
 	set {array_unk_3D9,X}, byte_569
 	set {array_unk_3CF,X}, byte_56A
 
 loc_12A70C:
-	if_a_not_equal_cmp_addr entry_idx_300, #$3C, loc_12A732
-	if_a_not_equal_cmp_addr {objIdxArray_375,X}, #3, loc_12A732
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$3C, loc_12A732
+	IF_A_NOT_EQUAL_CMP_ADDR {objIdxArray_375,X}, #3, loc_12A732
 	set {array_unk_3C5,X}, byte_56B
 	set {array_unk_3BB,X}, byte_56C
 	set {array_unk_3D9,X}, byte_56D
 	set {array_unk_3CF,X}, byte_56E
 
 loc_12A732:
-	if_a_not_equal_cmp_addr entry_idx_300, #$5C, loc_12A758
-	if_a_not_equal_cmp_addr {objIdxArray_375,X}, #3, loc_12A758
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$5C, loc_12A758
+	IF_A_NOT_EQUAL_CMP_ADDR {objIdxArray_375,X}, #3, loc_12A758
 	set {array_unk_3C5,X}, byte_56F
 	set {array_unk_3BB,X}, byte_570
 	set {array_unk_3D9,X}, byte_571
 	set {array_unk_3CF,X}, byte_572
 
 loc_12A758:
-	if_a_not_equal_cmp_addr entry_idx_300, #$93, loc_12A79E
-	if_a_not_equal_cmp_addr {objIdxArray_375,X}, #3, loc_12A79E
-	if_a_equal_cmp_addr byte_56F, #$40, loc_12A786
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$93, loc_12A79E
+	IF_A_NOT_EQUAL_CMP_ADDR {objIdxArray_375,X}, #3, loc_12A79E
+	IF_A_EQUAL_CMP_ADDR byte_56F, #$40, loc_12A786
 	BCS	loc_12A786
-	if_a_equal_cmp_addr byte_571, #$50, loc_12A781
-	if_a_equal_cmp #$60, loc_12A781
-	if_a_equal_cmp #$70, loc_12A781
+	IF_A_EQUAL_CMP_ADDR byte_571, #$50, loc_12A781
+	IF_A_EQUAL_CMP #$60, loc_12A781
+	IF_A_EQUAL_CMP #$70, loc_12A781
 	JMP	loc_12A786
 ; ---------------------------------------------------------------------------
 
@@ -1756,12 +1756,12 @@ loc_12A786:
 	set {array_unk_3CF,X}, byte_572
 
 loc_12A79E:
-	if_a_not_equal_cmp_addr entry_idx_300, #$5D, loc_12A7F7
-	if_a_not_equal_cmp_addr {objIdxArray_375,X}, #3, loc_12A7F7
-	if_a_not_equal_cmp_addr byte_573, #$90, loc_12A7CB
-	if_a_not_equal_cmp_addr byte_574, #1, loc_12A7CB
-	if_a_not_equal_cmp_addr byte_575, #$B0, loc_12A7CB
-	if_a_not_equal_cmp_addr byte_576, #0, loc_12A7CB
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$5D, loc_12A7F7
+	IF_A_NOT_EQUAL_CMP_ADDR {objIdxArray_375,X}, #3, loc_12A7F7
+	IF_A_NOT_EQUAL_CMP_ADDR byte_573, #$90, loc_12A7CB
+	IF_A_NOT_EQUAL_CMP_ADDR byte_574, #1, loc_12A7CB
+	IF_A_NOT_EQUAL_CMP_ADDR byte_575, #$B0, loc_12A7CB
+	IF_A_NOT_EQUAL_CMP_ADDR byte_576, #0, loc_12A7CB
 	JMP	loc_12A7DF
 ; ---------------------------------------------------------------------------
 
@@ -1778,12 +1778,12 @@ loc_12A7DF:
 	set {array_unk_3CF,X}, byte_576
 
 loc_12A7F7:
-	if_a_not_equal_cmp_addr {objIdxArray_375,X}, #6, loc_12A809
+	IF_A_NOT_EQUAL_CMP_ADDR {objIdxArray_375,X}, #6, loc_12A809
 	set {obj_array_unk_415,X}, {array_unk_39D,X}
 	set {array_unk_39D,X}, #0
 
 loc_12A809:
-	if_a_not_equal_cmp_addr {objIdxArray_375,X}, #7, loc_12A81B
+	IF_A_NOT_EQUAL_CMP_ADDR {objIdxArray_375,X}, #7, loc_12A81B
 	set {obj_array_unk_415,X}, {array_unk_39D,X}
 	set {array_unk_39D,X}, #0
 
@@ -1795,7 +1795,7 @@ loc_12A81B:
 	ADC	#0
 	STA	data_3
 	JSR	sub_12A893
-	if_a_not_equal_cmp_addr byte_36F, #0, loc_12A839
+	IF_A_NOT_EQUAL_CMP_ADDR byte_36F, #0, loc_12A839
 	LDX	inv_spr_dscr1_30C
 	set {objCreatedArray_393,X}, #$FF
 
@@ -1803,20 +1803,20 @@ loc_12A839:
 	from_stack_to_a data_3
 	from_stack_to_a data_2
 	INC	inv_spr_dscr1_30C
-	if_a_equal_cmp_addr inv_spr_dscr1_30C, objArraySize_373, loc_12A84D
+	IF_A_EQUAL_CMP_ADDR inv_spr_dscr1_30C, objArraySize_373, loc_12A84D
 	JMP	loc_12A69D
 ; ---------------------------------------------------------------------------
 
 loc_12A84D:
-	if_a_not_equal_cmp_addr entry_idx_300, #$6A, locret_12A892
-	if_a_not_equal_cmp_addr byte_577, #$FF, loc_12A88D
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$6A, locret_12A892
+	IF_A_NOT_EQUAL_CMP_ADDR byte_577, #$FF, loc_12A88D
 	LDY	#0
 	LDX	#0
 
 loc_12A85F:
-	if_a_equal_cmp_addr {objIdxArray_375,X}, #3, loc_12A86D
+	IF_A_EQUAL_CMP_ADDR {objIdxArray_375,X}, #3, loc_12A86D
 	INX
-	if_x_greater_cmp objArraySize_373, loc_12A85F
+	IF_X_GREATER_CMP objArraySize_373, loc_12A85F
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1826,7 +1826,7 @@ loc_12A86D:
 	set {array_unk_3D9,X}, {byte_57E,Y}
 	set_iny {array_unk_3CF,X}, {byte_581,Y}
 	INX
-	if_x_greater_cmp objArraySize_373, loc_12A85F
+	IF_X_GREATER_CMP objArraySize_373, loc_12A85F
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1848,7 +1848,7 @@ sub_12A893:
 	a_to_stack inv_spr_dscr1_30C
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
-	if_a_not_equal_cmp #0, loc_12A8C1
+	IF_A_NOT_EQUAL_CMP #0, loc_12A8C1
 	set byte_36F, #$FF
 	JMP	loc_12A933
 ; ---------------------------------------------------------------------------
@@ -1868,8 +1868,8 @@ loc_12A8D3:
 loc_12A8E3:
 	set_iny tilemapFrameCount_30D, {(ptr_0),Y}
 	set_iny byte_30E, {(ptr_0),Y}
-	if_a_not_equal_cmp_addr tilemapFrameCount_30D, #$FF, loc_12A8FD
-	if_a_equal_cmp_addr tilemapFrameCount_30D, #$FF, loc_12A91F
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapFrameCount_30D, #$FF, loc_12A8FD
+	IF_A_EQUAL_CMP_ADDR tilemapFrameCount_30D, #$FF, loc_12A91F
 
 loc_12A8FD:
 	ADD_WORD_TO_WORD byte_370, tilemapFrameCount_30D
@@ -1882,7 +1882,7 @@ loc_12A8FD:
 loc_12A91F:
 	and_byte byte_36F, tilemapFrameCount_30D
 	INC	inv_spr_dscr1_30C
-	if_a_greater_cmp_addr inv_spr_dscr1_30C, tilemapTypeUnk_30B, loc_12A8D3
+	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, tilemapTypeUnk_30B, loc_12A8D3
 
 loc_12A933:
 	from_stack_to_a inv_spr_dscr1_30C
@@ -1942,18 +1942,18 @@ exec_b0_c2_12A9A9:
 ; =============== S U B	R O U T	I N E =======================================
 
 com_17_player_update_12A9C4:
-	if_a_not_equal_cmp_addr entry_idx_300, #$46, loc_12AA0E
-	if_a_not_equal_cmp_addr byte_560, #$FF, locret_12AA0D
-	if_a_not_equal_cmp_addr byte_355, #0, locret_12AA0D
-	if_a_not_equal_cmp_addr byte_354, #0, locret_12AA0D
-	if_a_not_equal_cmp_addr byte_356, #0, locret_12AA0D
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$46, loc_12AA0E
+	IF_A_NOT_EQUAL_CMP_ADDR byte_560, #$FF, locret_12AA0D
+	IF_A_NOT_EQUAL_CMP_ADDR byte_355, #0, locret_12AA0D
+	IF_A_NOT_EQUAL_CMP_ADDR byte_354, #0, locret_12AA0D
+	IF_A_NOT_EQUAL_CMP_ADDR byte_356, #0, locret_12AA0D
 	set byte_354, #$A
 	set2 byte_355, byte_356, #0
 	load_a_masked byte_54B, #$F
 	ORA	#$F0 
 	STA	byte_54B
 	INC	byte_54B
-	if_a_greater_cmp_addr byte_54B, #$F2, locret_12AA0D
+	IF_A_GREATER_CMP_ADDR byte_54B, #$F2, locret_12AA0D
 
 set_game_finished_12AA08:
 	set is_game_finished_561, #$FF
@@ -1963,17 +1963,17 @@ locret_12AA0D:
 ; ---------------------------------------------------------------------------
 
 loc_12AA0E:
-	if_a_not_equal_cmp_addr entry_idx_300, #$41, loc_12AA1B
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$41, loc_12AA1B
 	set byte_560, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12AA1B:
-	if_a_equal_cmp_addr entry_idx_300, #$2F, locret_12AA6C
-	if_a_equal_cmp_addr entry_idx_300, #$5C, locret_12AA6C
-	if_a_equal_cmp #$93, locret_12AA6C
-	if_a_not_equal_cmp_addr byte_56F, #$B0, loc_12AA3E
-	if_a_not_equal_cmp_addr byte_571, #$60, loc_12AA3E
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$2F, locret_12AA6C
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$5C, locret_12AA6C
+	IF_A_EQUAL_CMP #$93, locret_12AA6C
+	IF_A_NOT_EQUAL_CMP_ADDR byte_56F, #$B0, loc_12AA3E
+	IF_A_NOT_EQUAL_CMP_ADDR byte_571, #$60, loc_12AA3E
 	JMP	loc_12AA52
 ; ---------------------------------------------------------------------------
 
@@ -2001,8 +2001,8 @@ locret_12AA6C:
 ; =============== S U B	R O U T	I N E =======================================
 
 entry_idx_handler_unk_12AA6D:
-	if_a_not_equal_cmp_addr entry_idx_300, #$83, check_room_7D_12AA81
-	if_a_equal_cmp_addr byte_595, #0, locret_12AA80
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$83, check_room_7D_12AA81
+	IF_A_EQUAL_CMP_ADDR byte_595, #0, locret_12AA80
 	set entry_idx_300, #$96 
 
 locret_12AA80:
@@ -2010,8 +2010,8 @@ locret_12AA80:
 ; ---------------------------------------------------------------------------
 
 check_room_7D_12AA81:
-	if_a_not_equal_cmp_addr entry_idx_300, #$7D, check_room_95_12AA95
-	if_a_equal_cmp_addr byte_594, #0, locret_12AA94
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$7D, check_room_95_12AA95
+	IF_A_EQUAL_CMP_ADDR byte_594, #0, locret_12AA94
 	set entry_idx_300, #$95 
 
 locret_12AA94:
@@ -2019,8 +2019,8 @@ locret_12AA94:
 ; ---------------------------------------------------------------------------
 
 check_room_95_12AA95:
-	if_a_not_equal_cmp_addr entry_idx_300, #$95, check_room_76_12AAA9
-	if_a_not_equal_cmp_addr byte_594, #0, locret_12AAA8
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$95, check_room_76_12AAA9
+	IF_A_NOT_EQUAL_CMP_ADDR byte_594, #0, locret_12AAA8
 	set entry_idx_300, #$7D 
 
 locret_12AAA8:
@@ -2028,8 +2028,8 @@ locret_12AAA8:
 ; ---------------------------------------------------------------------------
 
 check_room_76_12AAA9:
-	if_a_not_equal_cmp_addr entry_idx_300, #$76, check_room_94_12AABD
-	if_a_equal_cmp_addr byte_593, #0, locret_12AABC
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$76, check_room_94_12AABD
+	IF_A_EQUAL_CMP_ADDR byte_593, #0, locret_12AABC
 	set entry_idx_300, #$94 
 
 locret_12AABC:
@@ -2037,8 +2037,8 @@ locret_12AABC:
 ; ---------------------------------------------------------------------------
 
 check_room_94_12AABD:
-	if_a_not_equal_cmp_addr entry_idx_300, #$94, check_room_53_12AAD1
-	if_a_not_equal_cmp_addr byte_593, #0, locret_12AAD0
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$94, check_room_53_12AAD1
+	IF_A_NOT_EQUAL_CMP_ADDR byte_593, #0, locret_12AAD0
 	set entry_idx_300, #$76 
 
 locret_12AAD0:
@@ -2046,8 +2046,8 @@ locret_12AAD0:
 ; ---------------------------------------------------------------------------
 
 check_room_53_12AAD1:
-	if_a_not_equal_cmp_addr entry_idx_300, #$53, check_room_90_12AAE5
-	if_a_not_equal_cmp_addr byte_58C, #$FF, locret_12AAE4
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$53, check_room_90_12AAE5
+	IF_A_NOT_EQUAL_CMP_ADDR byte_58C, #$FF, locret_12AAE4
 	set entry_idx_300, #$90 
 
 locret_12AAE4:
@@ -2055,8 +2055,8 @@ locret_12AAE4:
 ; ---------------------------------------------------------------------------
 
 check_room_90_12AAE5:
-	if_a_not_equal_cmp_addr entry_idx_300, #$90, check_room_3D_12AAF9
-	if_a_equal_cmp_addr byte_58C, #$FF, locret_12AAF8
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$90, check_room_3D_12AAF9
+	IF_A_EQUAL_CMP_ADDR byte_58C, #$FF, locret_12AAF8
 	set entry_idx_300, #$53 
 
 locret_12AAF8:
@@ -2064,8 +2064,8 @@ locret_12AAF8:
 ; ---------------------------------------------------------------------------
 
 check_room_3D_12AAF9:
-	if_a_not_equal_cmp_addr entry_idx_300, #$3D, check_room_44_12AB0D
-	if_a_not_equal_cmp_addr byte_58A, #$FF, locret_12AB0C
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$3D, check_room_44_12AB0D
+	IF_A_NOT_EQUAL_CMP_ADDR byte_58A, #$FF, locret_12AB0C
 	set entry_idx_300, #$8B 
 
 locret_12AB0C:
@@ -2073,8 +2073,8 @@ locret_12AB0C:
 ; ---------------------------------------------------------------------------
 
 check_room_44_12AB0D:
-	if_a_not_equal_cmp_addr entry_idx_300, #$44, check_room_9C_12AB21
-	if_a_equal_cmp_addr byte_58B, #0, locret_12AB20
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$44, check_room_9C_12AB21
+	IF_A_EQUAL_CMP_ADDR byte_58B, #0, locret_12AB20
 	set entry_idx_300, #$9C 
 
 locret_12AB20:
@@ -2082,8 +2082,8 @@ locret_12AB20:
 ; ---------------------------------------------------------------------------
 
 check_room_9C_12AB21:
-	if_a_not_equal_cmp_addr entry_idx_300, #$9C, check_room_38_12AB35
-	if_a_not_equal_cmp_addr byte_58B, #0, locret_12AB34
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$9C, check_room_38_12AB35
+	IF_A_NOT_EQUAL_CMP_ADDR byte_58B, #0, locret_12AB34
 	set entry_idx_300, #$44 
 
 locret_12AB34:
@@ -2091,8 +2091,8 @@ locret_12AB34:
 ; ---------------------------------------------------------------------------
 
 check_room_38_12AB35:
-	if_a_not_equal_cmp_addr entry_idx_300, #$38, check_room_8A_12AB49
-	if_a_equal_cmp_addr byte_589, #0, locret_12AB48
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$38, check_room_8A_12AB49
+	IF_A_EQUAL_CMP_ADDR byte_589, #0, locret_12AB48
 	set entry_idx_300, #$8A 
 
 locret_12AB48:
@@ -2100,8 +2100,8 @@ locret_12AB48:
 ; ---------------------------------------------------------------------------
 
 check_room_8A_12AB49:
-	if_a_not_equal_cmp_addr entry_idx_300, #$8A, check_room_2F_12AB5D
-	if_a_equal_cmp_addr byte_589, #$FF, locret_12AB5C
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$8A, check_room_2F_12AB5D
+	IF_A_EQUAL_CMP_ADDR byte_589, #$FF, locret_12AB5C
 	set entry_idx_300, #$38 
 
 locret_12AB5C:
@@ -2109,133 +2109,133 @@ locret_12AB5C:
 ; ---------------------------------------------------------------------------
 
 check_room_2F_12AB5D:
-	if_a_not_equal_cmp_addr entry_idx_300, #$2F, check_room_1A_12AB71
-	if_a_equal_cmp_addr byte_55B, #0, check_room_1A_12AB71
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$2F, check_room_1A_12AB71
+	IF_A_EQUAL_CMP_ADDR byte_55B, #0, check_room_1A_12AB71
 	set entry_idx_300, #$89 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_1A_12AB71:
-	if_a_not_equal_cmp_addr entry_idx_300, #$1A, check_room_17_12AB85
-	if_a_equal_cmp_addr byte_55F, #0, check_room_17_12AB85
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$1A, check_room_17_12AB85
+	IF_A_EQUAL_CMP_ADDR byte_55F, #0, check_room_17_12AB85
 	set entry_idx_300, #$86 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_17_12AB85:
-	if_a_not_equal_cmp_addr entry_idx_300, #$17, check_room_4F_12AB99
-	if_a_equal_cmp_addr byte_5A9, #0, check_room_4F_12AB99
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$17, check_room_4F_12AB99
+	IF_A_EQUAL_CMP_ADDR byte_5A9, #0, check_room_4F_12AB99
 	set entry_idx_300, #$85 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_4F_12AB99:
-	if_a_not_equal_cmp_addr entry_idx_300, #$4F, check_room_50_12ABAD
-	if_a_equal_cmp_addr byte_565, #0, check_room_50_12ABAD
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$4F, check_room_50_12ABAD
+	IF_A_EQUAL_CMP_ADDR byte_565, #0, check_room_50_12ABAD
 	set entry_idx_300, #$8D 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_50_12ABAD:
-	if_a_not_equal_cmp_addr entry_idx_300, #$50, check_room_8D_12ABC1
-	if_a_not_equal_cmp_addr byte_565, #0, check_room_8D_12ABC1
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$50, check_room_8D_12ABC1
+	IF_A_NOT_EQUAL_CMP_ADDR byte_565, #0, check_room_8D_12ABC1
 	set entry_idx_300, #$8E 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_8D_12ABC1:
-	if_a_not_equal_cmp_addr entry_idx_300, #$8D, check_room_8E_12ABD5
-	if_a_not_equal_cmp_addr byte_565, #0, check_room_8E_12ABD5
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$8D, check_room_8E_12ABD5
+	IF_A_NOT_EQUAL_CMP_ADDR byte_565, #0, check_room_8E_12ABD5
 	set entry_idx_300, #$4F 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_8E_12ABD5:
-	if_a_not_equal_cmp_addr entry_idx_300, #$8E, check_room_60_12ABE9
-	if_a_equal_cmp_addr byte_565, #0, check_room_60_12ABE9
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$8E, check_room_60_12ABE9
+	IF_A_EQUAL_CMP_ADDR byte_565, #0, check_room_60_12ABE9
 	set entry_idx_300, #$50 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_60_12ABE9:
-	if_a_not_equal_cmp_addr entry_idx_300, #$60, check_room_6B_12ABFD
-	if_a_equal_cmp_addr byte_566, #0, check_room_6B_12ABFD
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$60, check_room_6B_12ABFD
+	IF_A_EQUAL_CMP_ADDR byte_566, #0, check_room_6B_12ABFD
 	set entry_idx_300, #$97 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_6B_12ABFD:
-	if_a_not_equal_cmp_addr entry_idx_300, #$6B, check_room_67_12AC11
-	if_a_equal_cmp_addr byte_585, #0, check_room_67_12AC11
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$6B, check_room_67_12AC11
+	IF_A_EQUAL_CMP_ADDR byte_585, #0, check_room_67_12AC11
 	set entry_idx_300, #$99 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_67_12AC11:
-	if_a_not_equal_cmp_addr entry_idx_300, #$67, check_room_69_12AC25
-	if_a_equal_cmp_addr byte_586, #0, check_room_69_12AC25
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$67, check_room_69_12AC25
+	IF_A_EQUAL_CMP_ADDR byte_586, #0, check_room_69_12AC25
 	set entry_idx_300, #$9B 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_69_12AC25:
-	if_a_not_equal_cmp_addr entry_idx_300, #$69, check_room_1C_12AC39
-	if_a_equal_cmp_addr byte_587, #0, check_room_1C_12AC39
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$69, check_room_1C_12AC39
+	IF_A_EQUAL_CMP_ADDR byte_587, #0, check_room_1C_12AC39
 	set entry_idx_300, #$98 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_1C_12AC39:
-	if_a_not_equal_cmp_addr entry_idx_300, #$1C, check_room_57_12AC4D
-	if_a_equal_cmp_addr byte_588, #0, check_room_57_12AC4D
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$1C, check_room_57_12AC4D
+	IF_A_EQUAL_CMP_ADDR byte_588, #0, check_room_57_12AC4D
 	set entry_idx_300, #$87 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_57_12AC4D:
-	if_a_not_equal_cmp_addr entry_idx_300, #$57, check_room_91_12AC61
-	if_a_not_equal_cmp_addr byte_646, #0, check_room_91_12AC61
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$57, check_room_91_12AC61
+	IF_A_NOT_EQUAL_CMP_ADDR byte_646, #0, check_room_91_12AC61
 	set entry_idx_300, #$91 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_91_12AC61:
-	if_a_not_equal_cmp_addr entry_idx_300, #$91, check_room_5B_12AC75
-	if_a_equal_cmp_addr byte_646, #0, check_room_5B_12AC75
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$91, check_room_5B_12AC75
+	IF_A_EQUAL_CMP_ADDR byte_646, #0, check_room_5B_12AC75
 	set entry_idx_300, #$57 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_5B_12AC75:
-	if_a_not_equal_cmp_addr entry_idx_300, #$5B, check_room_5C_12AC89
-	if_a_equal_cmp_addr byte_58F, #0, check_room_5C_12AC89
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$5B, check_room_5C_12AC89
+	IF_A_EQUAL_CMP_ADDR byte_58F, #0, check_room_5C_12AC89
 	set entry_idx_300, #$92 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_5C_12AC89:
-	if_a_not_equal_cmp_addr entry_idx_300, #$5C, check_room_92_12AC9D
-	if_a_equal_cmp_addr byte_590, #0, check_room_92_12AC9D
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$5C, check_room_92_12AC9D
+	IF_A_EQUAL_CMP_ADDR byte_590, #0, check_room_92_12AC9D
 	set entry_idx_300, #$93 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_92_12AC9D:
-	if_a_not_equal_cmp_addr entry_idx_300, #$92, check_room_93_12ACB1
-	if_a_not_equal_cmp_addr byte_58F, #0, check_room_93_12ACB1
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$92, check_room_93_12ACB1
+	IF_A_NOT_EQUAL_CMP_ADDR byte_58F, #0, check_room_93_12ACB1
 	set entry_idx_300, #$5B 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_93_12ACB1:
-	if_a_not_equal_cmp_addr entry_idx_300, #$93, check_room_52_12ACC5
-	if_a_not_equal_cmp_addr byte_590, #0, check_room_52_12ACC5
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$93, check_room_52_12ACC5
+	IF_A_NOT_EQUAL_CMP_ADDR byte_590, #0, check_room_52_12ACC5
 	set entry_idx_300, #$5C 
 	RTS
 ; ---------------------------------------------------------------------------
 
 check_room_52_12ACC5:
-	if_a_not_equal_cmp_addr entry_idx_300, #$52, locret_12ACDA
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$52, locret_12ACDA
 	load_a_masked byte_591, byte_592
 	BEQ	locret_12ACDA
 	set entry_idx_300, #$8F 
@@ -2252,13 +2252,13 @@ sub_12ACDB:
 	LDA	byte_46E
 
 is_save_game_12ACDE:
-	if_a_not_equal_cmp #$1A, loc_12ACE6
+	IF_A_NOT_EQUAL_CMP #$1A, loc_12ACE6
 	JSR	com_E_load_game_12CD30
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12ACE6:
-	if_a_not_equal_cmp_addr byte_46E, #$2F, loc_12AD06
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$2F, loc_12AD06
 	set2 byte_6A6, byte_6A7, #$FF
 	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
@@ -2268,8 +2268,8 @@ loc_12ACE6:
 ; ---------------------------------------------------------------------------
 
 loc_12AD06:
-	if_a_not_equal_cmp_addr byte_46E, #$30, loc_12AD65
-	if_a_not_equal_cmp_addr entry_idx_300, #$77, loc_12AD27
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$30, loc_12AD65
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$77, loc_12AD27
 	set byte_68D, #$FF
 	LDX	byte_4D0
 	set {unk_4C2,X}, #$4D 
@@ -2278,7 +2278,7 @@ loc_12AD06:
 ; ---------------------------------------------------------------------------
 
 loc_12AD27:
-	if_a_not_equal_cmp_addr entry_idx_300, #$7B, loc_12AD41
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$7B, loc_12AD41
 	set byte_68E, #$FF
 	LDX	byte_4D0
 	set {unk_4C2,X}, #$4E 
@@ -2287,7 +2287,7 @@ loc_12AD27:
 ; ---------------------------------------------------------------------------
 
 loc_12AD41:
-	if_a_not_equal_cmp_addr entry_idx_300, #$80, locret_12AD64
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$80, locret_12AD64
 	set byte_68F, #$FF
 	LDX	byte_4D0
 	set {unk_4C2,X}, #$4F 
@@ -2303,10 +2303,10 @@ locret_12AD64:
 ; ---------------------------------------------------------------------------
 
 loc_12AD65:
-	if_a_not_equal_cmp_addr byte_46E, #$27, loc_12ADA0
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$27, loc_12ADA0
 	set byte_591, #$FF
 	load_a_masked byte_591, byte_592
-	if_a_equal_cmp #0, locret_12AD9F
+	IF_A_EQUAL_CMP #0, locret_12AD9F
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -2320,10 +2320,10 @@ locret_12AD9F:
 ; ---------------------------------------------------------------------------
 
 loc_12ADA0:
-	if_a_not_equal_cmp_addr byte_46E, #$28, loc_12ADDB
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$28, loc_12ADDB
 	set byte_592, #$FF
 	load_a_masked byte_591, byte_592
-	if_a_equal_cmp #0, locret_12ADDA
+	IF_A_EQUAL_CMP #0, locret_12ADDA
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -2337,35 +2337,35 @@ locret_12ADDA:
 ; ---------------------------------------------------------------------------
 
 loc_12ADDB:
-	if_a_not_equal_cmp_addr byte_46E, #$39, loc_12ADE8
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$39, loc_12ADE8
 	set byte_587, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12ADE8:
-	if_a_not_equal_cmp_addr byte_46E, #0, loc_12ADF5
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #0, loc_12ADF5
 	set byte_64C, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12ADF5:
-	if_a_not_equal_cmp_addr byte_46E, #$15, loc_12AE02
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$15, loc_12AE02
 	set byte_59B, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12AE02:
-	if_a_not_equal_cmp_addr byte_46E, #$16, loc_12AE0F
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$16, loc_12AE0F
 	set byte_59C, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12AE0F:
-	if_a_not_equal_cmp_addr byte_46E, #$2A, loc_12AE6C
-	if_a_equal_cmp_addr entry_idx_300, #$53, loc_12AE3F
-	if_a_equal_cmp #$90, loc_12AE3F
-	if_a_equal_cmp #$5C, loc_12AE34
-	if_a_equal_cmp #$93, loc_12AE34
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$2A, loc_12AE6C
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$53, loc_12AE3F
+	IF_A_EQUAL_CMP #$90, loc_12AE3F
+	IF_A_EQUAL_CMP #$5C, loc_12AE34
+	IF_A_EQUAL_CMP #$93, loc_12AE34
 	xor_byte byte_58F, #$FF
 	JMP	loc_12AE47
 ; ---------------------------------------------------------------------------
@@ -2390,12 +2390,12 @@ loc_12AE47:
 ; ---------------------------------------------------------------------------
 
 loc_12AE6C:
-	if_a_equal_cmp_addr byte_46E, #$2E, loc_12AE76
+	IF_A_EQUAL_CMP_ADDR byte_46E, #$2E, loc_12AE76
 	JMP	loc_12AF01
 ; ---------------------------------------------------------------------------
 
 loc_12AE76:
-	if_a_equal_cmp_addr entry_idx_300, #$70, loc_12AE86
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$70, loc_12AE86
 	set2 byte_636, byte_633, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2431,7 +2431,7 @@ set_helipad_level_12AEDD:
 ; ---------------------------------------------------------------------------
 
 loc_12AF01:
-	if_a_not_equal_cmp_addr byte_46E, #2, loc_12AF16
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #2, loc_12AF16
 	set byte_5EF, #$FF
 	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
@@ -2439,7 +2439,7 @@ loc_12AF01:
 ; ---------------------------------------------------------------------------
 
 loc_12AF16:
-	if_a_not_equal_cmp_addr byte_46E, #$3B, loc_12AF2B
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$3B, loc_12AF2B
 	set byte_5F9, #$FF
 	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
@@ -2447,7 +2447,7 @@ loc_12AF16:
 ; ---------------------------------------------------------------------------
 
 loc_12AF2B:
-	if_a_not_equal_cmp_addr byte_46E, #$2C, loc_12AF69
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$2C, loc_12AF69
 	set byte_5E7, #0
 	set cur_obj_idx_unk_43A, #8
 	JSR	exec_b0_c3_128418
@@ -2463,7 +2463,7 @@ loc_12AF2B:
 ; ---------------------------------------------------------------------------
 
 loc_12AF69:
-	if_a_not_equal_cmp_addr byte_46E, #$24, loc_12AF9A
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$24, loc_12AF9A
 	set byte_586, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -2476,31 +2476,31 @@ loc_12AF69:
 ; ---------------------------------------------------------------------------
 
 loc_12AF9A:
-	if_a_not_equal_cmp_addr byte_46E, #$17, loc_12AFA7
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$17, loc_12AFA7
 	set byte_5CB, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12AFA7:
-	if_a_not_equal_cmp_addr byte_46E, #$18, loc_12AFB4
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$18, loc_12AFB4
 	set byte_59D, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12AFB4:
-	if_a_not_equal_cmp_addr byte_46E, #$13, loc_12AFC1
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$13, loc_12AFC1
 	set byte_599, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12AFC1:
-	if_a_not_equal_cmp_addr byte_46E, #$14, loc_12AFCE
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$14, loc_12AFCE
 	set byte_59A, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12AFCE:
-	if_a_not_equal_cmp_addr byte_46E, #$22, loc_12AFE3
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$22, loc_12AFE3
 	set byte_5D9, #$FF
 	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
@@ -2508,7 +2508,7 @@ loc_12AFCE:
 ; ---------------------------------------------------------------------------
 
 loc_12AFE3:
-	if_a_not_equal_cmp_addr byte_46E, #$23, loc_12AFF8
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$23, loc_12AFF8
 	set byte_5B3, #$FF
 	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
@@ -2516,7 +2516,7 @@ loc_12AFE3:
 ; ---------------------------------------------------------------------------
 
 loc_12AFF8:
-	if_a_not_equal_cmp_addr byte_46E, #$2D, loc_12B03B
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$2D, loc_12B03B
 	set_text_args #$BC, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -2532,8 +2532,8 @@ loc_12AFF8:
 ; ---------------------------------------------------------------------------
 
 loc_12B03B:
-	if_a_not_equal_cmp #$1C, loc_12B074
-	if_a_equal_cmp_addr entry_idx_300, #$1E, loc_12B054
+	IF_A_NOT_EQUAL_CMP #$1C, loc_12B074
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$1E, loc_12B054
 	set byte_5A8, #$FF
 	set cur_obj_idx_unk_43A, #0
 	JSR	sub_12BF29
@@ -2551,11 +2551,11 @@ loc_12B054:
 ; ---------------------------------------------------------------------------
 
 loc_12B074:
-	if_a_not_equal_cmp #$1D, loc_12B0E2
-	if_a_equal_cmp_addr entry_idx_300, #$1E, loc_12B0C2
+	IF_A_NOT_EQUAL_CMP #$1D, loc_12B0E2
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$1E, loc_12B0C2
 	set byte_5A9, #$FF
 	set cur_obj_idx_unk_43A, #2
-	if_a_equal_cmp_addr entry_idx_300, #$17, loc_12B095
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$17, loc_12B095
 	set cur_obj_idx_unk_43A, #1
 
 loc_12B095:
@@ -2582,7 +2582,7 @@ loc_12B0C2:
 ; ---------------------------------------------------------------------------
 
 loc_12B0E2:
-	if_a_not_equal_cmp #$1B, loc_12B106
+	IF_A_NOT_EQUAL_CMP #$1B, loc_12B106
 	set_text_args #6, #1
 	set tilemapTypeUnk_30B, #4
 	JSR	exec_b0_c0_12A973
@@ -2592,7 +2592,7 @@ loc_12B0E2:
 ; ---------------------------------------------------------------------------
 
 loc_12B106:
-	if_a_not_equal_cmp #$1E, loc_12B11F
+	IF_A_NOT_EQUAL_CMP #$1E, loc_12B11F
 	set byte_59F, #$FF
 	load_a_masked byte_59F, byte_5A0
 	AND	byte_5A1
@@ -2602,7 +2602,7 @@ loc_12B106:
 ; ---------------------------------------------------------------------------
 
 loc_12B11F:
-	if_a_not_equal_cmp #$1F, loc_12B138
+	IF_A_NOT_EQUAL_CMP #$1F, loc_12B138
 	set byte_5A0, #$FF
 	load_a_masked byte_59F, byte_5A0
 	AND	byte_5A1
@@ -2612,7 +2612,7 @@ loc_12B11F:
 ; ---------------------------------------------------------------------------
 
 loc_12B138:
-	if_a_not_equal_cmp #$20, loc_12B151
+	IF_A_NOT_EQUAL_CMP #$20, loc_12B151
 	set byte_5A1, #$FF
 	load_a_masked byte_59F, byte_5A0
 	AND	byte_5A1
@@ -2622,7 +2622,7 @@ loc_12B138:
 ; ---------------------------------------------------------------------------
 
 loc_12B151:
-	if_a_not_equal_cmp #$21, loc_12B16A
+	IF_A_NOT_EQUAL_CMP #$21, loc_12B16A
 	set byte_5A2, #$FF
 	load_a_masked byte_59F, byte_5A0
 	AND	byte_5A1
@@ -2632,14 +2632,14 @@ loc_12B151:
 ; ---------------------------------------------------------------------------
 
 loc_12B16A:
-	if_a_not_equal_cmp #$29, locret_12B1AF
-	if_a_not_equal_cmp_addr entry_idx_300, #$4F, loc_12B17D
+	IF_A_NOT_EQUAL_CMP #$29, locret_12B1AF
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$4F, loc_12B17D
 	set byte_565, #$FF
 	JMP	loc_12B18A
 ; ---------------------------------------------------------------------------
 
 loc_12B17D:
-	if_a_not_equal_cmp #$8D, locret_12B189
+	IF_A_NOT_EQUAL_CMP #$8D, locret_12B189
 	set byte_565, #0
 	JMP	loc_12B18A
 ; ---------------------------------------------------------------------------
@@ -2666,7 +2666,7 @@ locret_12B1AF:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B1B0:
-	if_a_equal_cmp_addr byte_471, #0, loc_12B1B8
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12B1B8
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2684,12 +2684,12 @@ sub_12B1CB:
 	LDX	#0
 
 loc_12B1CF:
-	if_a_equal {byte_555,X}, loc_12B1D5
+	IF_A_EQUAL {byte_555,X}, loc_12B1D5
 	INY
 
 loc_12B1D5:
 	INX
-	if_x_greater_cmp #6, loc_12B1CF
+	IF_X_GREATER_CMP #6, loc_12B1CF
 	INY
 	RTS
 ; End of function sub_12B1CB
@@ -2701,7 +2701,7 @@ byte_12B1DC:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B1E3:
-	if_a_equal_cmp_addr byte_471, #0, loc_12B1EB
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12B1EB
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2709,12 +2709,12 @@ loc_12B1EB:
 	set_text_args #$AB, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	if_a_not_equal byte_55B, locret_12B224
+	IF_A_NOT_EQUAL byte_55B, locret_12B224
 	set_text_args #$B3, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12B224
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12B224
 	JSR	sub_12B1CB
 	STY	byte_555
 
@@ -2725,7 +2725,7 @@ locret_12B224:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B225:
-	if_a_equal_cmp_addr byte_471, #0, loc_12B22D
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12B22D
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2733,12 +2733,12 @@ loc_12B22D:
 	set_text_args #$AC, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	if_a_not_equal byte_55B, locret_12B266
+	IF_A_NOT_EQUAL byte_55B, locret_12B266
 	set_text_args #$B3, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12B266
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12B266
 	JSR	sub_12B1CB
 	STY	byte_556
 
@@ -2749,7 +2749,7 @@ locret_12B266:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B267:
-	if_a_equal_cmp_addr byte_471, #0, loc_12B26F
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12B26F
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2757,12 +2757,12 @@ loc_12B26F:
 	set_text_args #$AD, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	if_a_not_equal byte_55B, locret_12B2A8
+	IF_A_NOT_EQUAL byte_55B, locret_12B2A8
 	set_text_args #$B3, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12B2A8
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12B2A8
 	JSR	sub_12B1CB
 	STY	byte_557
 
@@ -2773,7 +2773,7 @@ locret_12B2A8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B2A9:
-	if_a_equal_cmp_addr byte_471, #0, loc_12B2B1
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12B2B1
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2781,12 +2781,12 @@ loc_12B2B1:
 	set_text_args #$AE, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	if_a_not_equal byte_55B, locret_12B2EA
+	IF_A_NOT_EQUAL byte_55B, locret_12B2EA
 	set_text_args #$B3, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12B2EA
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12B2EA
 	JSR	sub_12B1CB
 	STY	byte_558
 
@@ -2797,7 +2797,7 @@ locret_12B2EA:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B2EB:
-	if_a_equal_cmp_addr byte_471, #0, loc_12B2F3
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12B2F3
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2805,12 +2805,12 @@ loc_12B2F3:
 	set_text_args #$AF, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	if_a_not_equal byte_55B, locret_12B32C
+	IF_A_NOT_EQUAL byte_55B, locret_12B32C
 	set_text_args #$B3, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12B32C
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12B32C
 	JSR	sub_12B1CB
 	STY	byte_559
 
@@ -2821,7 +2821,7 @@ locret_12B32C:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B32D:
-	if_a_equal_cmp_addr byte_471, #0, loc_12B335
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12B335
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2829,12 +2829,12 @@ loc_12B335:
 	set_text_args #$B0, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	if_a_not_equal byte_55B, locret_12B36E
+	IF_A_NOT_EQUAL byte_55B, locret_12B36E
 	set_text_args #$B3, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12B36E
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12B36E
 	JSR	sub_12B1CB
 	STY	byte_55A
 
@@ -2845,12 +2845,12 @@ locret_12B36E:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B36F:
-	if_a_equal_cmp_addr byte_471, #0, loc_12B377
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12B377
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B377:
-	if_a_equal byte_55B, loc_12B37F
+	IF_A_EQUAL byte_55B, loc_12B37F
 	JMP	locret_12B403
 ; ---------------------------------------------------------------------------
 
@@ -2862,13 +2862,13 @@ loc_12B37F:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12B403
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12B403
 	LDX	#0
 
 loc_12B3AF:
-	if_a_not_equal_cmp_addr {byte_12B1DC,X}, {byte_555,X}, loc_12B3E8
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_12B1DC,X}, {byte_555,X}, loc_12B3E8
 	INX
-	if_x_greater_cmp #6, loc_12B3AF
+	IF_X_GREATER_CMP #6, loc_12B3AF
 	set byte_55B, #$F
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -2896,7 +2896,7 @@ locret_12B403:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B404:
-	if_a_not_equal_cmp_addr byte_471, #0, loc_12B41E
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, loc_12B41E
 	set_text_args #$A7, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -2904,10 +2904,10 @@ sub_12B404:
 ; ---------------------------------------------------------------------------
 
 loc_12B41E:
-	if_a_not_equal_cmp_addr byte_59F, #$FF, loc_12B43B
-	if_a_not_equal_cmp_addr byte_5A0, #$FF, loc_12B43B
-	if_a_not_equal_cmp_addr byte_5A1, #$FF, loc_12B43B
-	if_a_not_equal_cmp_addr byte_5A2, #$FF, loc_12B43B
+	IF_A_NOT_EQUAL_CMP_ADDR byte_59F, #$FF, loc_12B43B
+	IF_A_NOT_EQUAL_CMP_ADDR byte_5A0, #$FF, loc_12B43B
+	IF_A_NOT_EQUAL_CMP_ADDR byte_5A1, #$FF, loc_12B43B
+	IF_A_NOT_EQUAL_CMP_ADDR byte_5A2, #$FF, loc_12B43B
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -2919,9 +2919,9 @@ loc_12B43B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12B441:
-	if_a_not_equal_cmp_addr entry_idx_300, #$24, loc_12B45E
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$24, loc_12B45E
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$1A, loc_12B458
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$1A, loc_12B458
 	set byte_5E2, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2932,15 +2932,15 @@ loc_12B458:
 ; ---------------------------------------------------------------------------
 
 loc_12B45E:
-	if_a_not_equal_cmp_addr entry_idx_300, #$25, loc_12B47F
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$25, loc_12B47F
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$1A, loc_12B475
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$1A, loc_12B475
 	set byte_5E3, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B475:
-	if_a_not_equal_cmp #6, locret_12B47E
+	IF_A_NOT_EQUAL_CMP #6, locret_12B47E
 	set byte_5E6, #0
 
 locret_12B47E:
@@ -2948,10 +2948,10 @@ locret_12B47E:
 ; ---------------------------------------------------------------------------
 
 loc_12B47F:
-	if_a_not_equal_cmp_addr entry_idx_300, #$1E, loc_12B4D9
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$1E, loc_12B4D9
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$A, loc_12B4A3
-	if_a_not_equal_cmp_addr byte_434, #4, loc_12B49D
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$A, loc_12B4A3
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #4, loc_12B49D
 	set byte_5B9, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2962,20 +2962,20 @@ loc_12B49D:
 ; ---------------------------------------------------------------------------
 
 loc_12B4A3:
-	if_a_not_equal_cmp #$B, loc_12B4C8
-	if_a_not_equal_cmp_addr byte_434, #1, loc_12B4B4
+	IF_A_NOT_EQUAL_CMP #$B, loc_12B4C8
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #1, loc_12B4B4
 	set byte_5B6, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B4B4:
-	if_a_not_equal_cmp #2, loc_12B4BE
+	IF_A_NOT_EQUAL_CMP #2, loc_12B4BE
 	set byte_5B7, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B4BE:
-	if_a_not_equal_cmp #3, locret_12B4C7
+	IF_A_NOT_EQUAL_CMP #3, locret_12B4C7
 	set byte_5B8, #0
 
 locret_12B4C7:
@@ -2983,7 +2983,7 @@ locret_12B4C7:
 ; ---------------------------------------------------------------------------
 
 loc_12B4C8:
-	if_a_not_equal_cmp #$13, loc_12B4D2
+	IF_A_NOT_EQUAL_CMP #$13, loc_12B4D2
 	set byte_5B5, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -2997,10 +2997,10 @@ loc_12B4D2:
 ; ---------------------------------------------------------------------------
 
 loc_12B4D9:
-	if_a_not_equal_cmp_addr entry_idx_300, #$6E, loc_12B52B
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$6E, loc_12B52B
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #6, loc_12B503
-	if_a_not_equal_cmp_addr byte_434, #1, loc_12B4FA
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #6, loc_12B503
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #1, loc_12B4FA
 	set byte_5CD, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3015,8 +3015,8 @@ loc_12B4FA:
 ; ---------------------------------------------------------------------------
 
 loc_12B503:
-	if_a_not_equal_cmp #7, loc_12B51D
-	if_a_not_equal_cmp_addr byte_434, #2, loc_12B517
+	IF_A_NOT_EQUAL_CMP #7, loc_12B51D
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #2, loc_12B517
 	set byte_5CF, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3029,7 +3029,7 @@ loc_12B517:
 ; ---------------------------------------------------------------------------
 
 loc_12B51D:
-	if_a_not_equal_cmp #$17, locret_12B527
+	IF_A_NOT_EQUAL_CMP #$17, locret_12B527
 	set byte_5CC, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3041,9 +3041,9 @@ locret_12B527:
 ; ---------------------------------------------------------------------------
 
 loc_12B52B:
-	if_a_not_equal_cmp_addr entry_idx_300, #$1C, loc_12B58E
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$1C, loc_12B58E
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #6, loc_12B545
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #6, loc_12B545
 	set byte_5D7, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3051,13 +3051,13 @@ loc_12B52B:
 ; ---------------------------------------------------------------------------
 
 loc_12B545:
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #7, loc_12B552
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #7, loc_12B552
 	set byte_5D6, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B552:
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$47, locret_12B58A
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$47, locret_12B58A
 	set byte_6A8, #0
 	set2 byte_588, byte_5D8, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
@@ -3075,9 +3075,9 @@ locret_12B58A:
 ; ---------------------------------------------------------------------------
 
 loc_12B58E:
-	if_a_not_equal_cmp_addr entry_idx_300, #$87, loc_12B5A8
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$87, loc_12B5A8
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #6, loc_12B545
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #6, loc_12B545
 	set byte_5D7, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3085,15 +3085,15 @@ loc_12B58E:
 ; ---------------------------------------------------------------------------
 
 loc_12B5A8:
-	if_a_not_equal_cmp_addr entry_idx_300, #$20, loc_12B5CC
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$20, loc_12B5CC
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #6, loc_12B5BF
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #6, loc_12B5BF
 	set byte_5DD, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B5BF:
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$3B, locret_12B5CB
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$3B, locret_12B5CB
 	set byte_5DC, #0
 
 locret_12B5CB:
@@ -3101,15 +3101,15 @@ locret_12B5CB:
 ; ---------------------------------------------------------------------------
 
 loc_12B5CC:
-	if_a_not_equal_cmp_addr entry_idx_300, #$21, loc_12B5F0
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$21, loc_12B5F0
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$1A, loc_12B5E3
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$1A, loc_12B5E3
 	set byte_5DE, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B5E3:
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$1B, locret_12B5EF
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$1B, locret_12B5EF
 	set byte_5C3, #0
 
 locret_12B5EF:
@@ -3117,20 +3117,20 @@ locret_12B5EF:
 ; ---------------------------------------------------------------------------
 
 loc_12B5F0:
-	if_a_not_equal_cmp_addr entry_idx_300, #$16, loc_12B606
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$16, loc_12B606
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$1A, loc_12B606
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$1A, loc_12B606
 	set byte_5EA, #0
 
 loc_12B606:
-	if_a_not_equal_cmp_addr entry_idx_300, #$26, loc_12B61C
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$26, loc_12B61C
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$B, loc_12B61C
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$B, loc_12B61C
 	set byte_5EB, #0
 
 loc_12B61C:
-	if_a_not_equal_cmp_addr entry_idx_300, #$27, loc_12B636
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12B630
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$27, loc_12B636
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12B630
 	set byte_5EC, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3141,33 +3141,33 @@ loc_12B630:
 ; ---------------------------------------------------------------------------
 
 loc_12B636:
-	if_a_not_equal_cmp_addr entry_idx_300, #$28, loc_12B64C
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$28, loc_12B64C
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #6, loc_12B64C
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #6, loc_12B64C
 	set byte_5EE, #0
 
 loc_12B64C:
-	if_a_not_equal_cmp_addr entry_idx_300, #$2A, loc_12B662
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$2A, loc_12B662
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$14, loc_12B662
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$14, loc_12B662
 	set byte_5EF, #0
 
 loc_12B662:
-	if_a_not_equal_cmp_addr entry_idx_300, #$2C, loc_12B678
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$2C, loc_12B678
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$B, loc_12B678
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$B, loc_12B678
 	set byte_5F3, #0
 
 loc_12B678:
-	if_a_not_equal_cmp_addr entry_idx_300, #$2E, loc_12B69C
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$2E, loc_12B69C
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #8, loc_12B68F
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #8, loc_12B68F
 	set byte_5F4, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B68F:
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$25, locret_12B69B
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$25, locret_12B69B
 	set byte_5F5, #0
 
 locret_12B69B:
@@ -3175,14 +3175,14 @@ locret_12B69B:
 ; ---------------------------------------------------------------------------
 
 loc_12B69C:
-	if_a_not_equal_cmp_addr entry_idx_300, #$2D, loc_12B6C0
-	if_a_not_equal_cmp_addr byte_434, #1, loc_12B6B0
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$2D, loc_12B6C0
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #1, loc_12B6B0
 	set byte_5F7, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B6B0:
-	if_a_not_equal_cmp #2, loc_12B6BA
+	IF_A_NOT_EQUAL_CMP #2, loc_12B6BA
 	set byte_5F8, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3193,20 +3193,20 @@ loc_12B6BA:
 ; ---------------------------------------------------------------------------
 
 loc_12B6C0:
-	if_a_not_equal_cmp_addr entry_idx_300, #$32, loc_12B6E8
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12B6D4
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$32, loc_12B6E8
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12B6D4
 	set byte_5FB, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B6D4:
-	if_a_not_equal_cmp #1, loc_12B6DE
+	IF_A_NOT_EQUAL_CMP #1, loc_12B6DE
 	set byte_5FA, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B6DE:
-	if_a_not_equal_cmp #3, locret_12B6E7
+	IF_A_NOT_EQUAL_CMP #3, locret_12B6E7
 	set byte_6B2, #0
 
 locret_12B6E7:
@@ -3214,29 +3214,29 @@ locret_12B6E7:
 ; ---------------------------------------------------------------------------
 
 loc_12B6E8:
-	if_a_not_equal_cmp_addr entry_idx_300, #$34, loc_12B6FF
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$34, loc_12B6FF
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #7, loc_12B6FF
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #7, loc_12B6FF
 	set byte_601, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B6FF:
-	if_a_not_equal_cmp_addr entry_idx_300, #$38, loc_12B72D
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$38, loc_12B72D
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #7, loc_12B716
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #7, loc_12B716
 	set byte_604, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B716:
-	if_a_not_equal_cmp #$52, loc_12B720
+	IF_A_NOT_EQUAL_CMP #$52, loc_12B720
 	set byte_6AE, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B720:
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #8, locret_12B72C
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #8, locret_12B72C
 	set byte_605, #0
 
 locret_12B72C:
@@ -3244,8 +3244,8 @@ locret_12B72C:
 ; ---------------------------------------------------------------------------
 
 loc_12B72D:
-	if_a_not_equal_cmp_addr entry_idx_300, #$3A, loc_12B747
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12B741
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$3A, loc_12B747
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12B741
 	set byte_608, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -3256,32 +3256,32 @@ loc_12B741:
 ; ---------------------------------------------------------------------------
 
 loc_12B747:
-	if_a_not_equal_cmp_addr entry_idx_300, #$3B, loc_12B783
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12B75B
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$3B, loc_12B783
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12B75B
 	set byte_60D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B75B:
-	if_a_not_equal_cmp #1, loc_12B765
+	IF_A_NOT_EQUAL_CMP #1, loc_12B765
 	set byte_60E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B765:
-	if_a_not_equal_cmp #2, loc_12B76F
+	IF_A_NOT_EQUAL_CMP #2, loc_12B76F
 	set byte_611, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B76F:
-	if_a_not_equal_cmp #3, loc_12B779
+	IF_A_NOT_EQUAL_CMP #3, loc_12B779
 	set byte_610, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B779:
-	if_a_not_equal_cmp #4, locret_12B782
+	IF_A_NOT_EQUAL_CMP #4, locret_12B782
 	set byte_60F, #0
 
 locret_12B782:
@@ -3289,15 +3289,15 @@ locret_12B782:
 ; ---------------------------------------------------------------------------
 
 loc_12B783:
-	if_a_not_equal_cmp_addr entry_idx_300, #$3C, loc_12B7A4
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$3C, loc_12B7A4
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #8, loc_12B79A
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #8, loc_12B79A
 	set byte_613, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B79A:
-	if_a_not_equal_cmp #$4A, locret_12B7A3
+	IF_A_NOT_EQUAL_CMP #$4A, locret_12B7A3
 	set byte_6AB, #0
 
 locret_12B7A3:
@@ -3305,9 +3305,9 @@ locret_12B7A3:
 ; ---------------------------------------------------------------------------
 
 loc_12B7A4:
-	if_a_not_equal_cmp_addr entry_idx_300, #$3E, loc_12B7BB
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$3E, loc_12B7BB
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #6, locret_12B7BA
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #6, locret_12B7BA
 	set byte_615, #0
 
 locret_12B7BA:
@@ -3315,14 +3315,14 @@ locret_12B7BA:
 ; ---------------------------------------------------------------------------
 
 loc_12B7BB:
-	if_a_not_equal_cmp_addr entry_idx_300, #$42, loc_12B7D9
-	if_a_not_equal_cmp_addr byte_434, #1, loc_12B7CF
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$42, loc_12B7D9
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #1, loc_12B7CF
 	set byte_61C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B7CF:
-	if_a_not_equal_cmp #2, locret_12B7D8
+	IF_A_NOT_EQUAL_CMP #2, locret_12B7D8
 	set byte_61B, #0
 
 locret_12B7D8:
@@ -3330,9 +3330,9 @@ locret_12B7D8:
 ; ---------------------------------------------------------------------------
 
 loc_12B7D9:
-	if_a_not_equal_cmp_addr entry_idx_300, #$9C, loc_12B7F0
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$9C, loc_12B7F0
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #9, locret_12B7EF
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #9, locret_12B7EF
 	set byte_61D, #0
 
 locret_12B7EF:
@@ -3340,15 +3340,15 @@ locret_12B7EF:
 ; ---------------------------------------------------------------------------
 
 loc_12B7F0:
-	if_a_not_equal_cmp_addr entry_idx_300, #$45, loc_12B811
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$45, loc_12B811
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #7, loc_12B807
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #7, loc_12B807
 	set byte_61E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B807:
-	if_a_not_equal_cmp #$1F, locret_12B810
+	IF_A_NOT_EQUAL_CMP #$1F, locret_12B810
 	set byte_5C4, #0
 
 locret_12B810:
@@ -3356,15 +3356,15 @@ locret_12B810:
 ; ---------------------------------------------------------------------------
 
 loc_12B811:
-	if_a_not_equal_cmp_addr entry_idx_300, #$47, loc_12B832
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$47, loc_12B832
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #7, loc_12B828
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #7, loc_12B828
 	set byte_61F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B828:
-	if_a_not_equal_cmp #$53, locret_12B831
+	IF_A_NOT_EQUAL_CMP #$53, locret_12B831
 	set byte_6AF, #0
 
 locret_12B831:
@@ -3372,15 +3372,15 @@ locret_12B831:
 ; ---------------------------------------------------------------------------
 
 loc_12B832:
-	if_a_not_equal_cmp_addr entry_idx_300, #$4A, loc_12B853
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$4A, loc_12B853
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$2B, loc_12B849
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$2B, loc_12B849
 	set byte_622, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B849:
-	if_a_not_equal_cmp #$C, locret_12B852
+	IF_A_NOT_EQUAL_CMP #$C, locret_12B852
 	set byte_623, #0
 
 locret_12B852:
@@ -3388,21 +3388,21 @@ locret_12B852:
 ; ---------------------------------------------------------------------------
 
 loc_12B853:
-	if_a_not_equal_cmp_addr entry_idx_300, #$4B, loc_12B87E
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$4B, loc_12B87E
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #9, loc_12B86A
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #9, loc_12B86A
 	set byte_624, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B86A:
-	if_a_not_equal_cmp #6, loc_12B874
+	IF_A_NOT_EQUAL_CMP #6, loc_12B874
 	set byte_625, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B874:
-	if_a_not_equal_cmp #$48, locret_12B87D
+	IF_A_NOT_EQUAL_CMP #$48, locret_12B87D
 	set byte_6A9, #0
 
 locret_12B87D:
@@ -3410,15 +3410,15 @@ locret_12B87D:
 ; ---------------------------------------------------------------------------
 
 loc_12B87E:
-	if_a_not_equal_cmp_addr entry_idx_300, #$4C, loc_12B89F
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$4C, loc_12B89F
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$B, loc_12B895
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$B, loc_12B895
 	set byte_626, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B895:
-	if_a_not_equal_cmp #$3E, locret_12B89E
+	IF_A_NOT_EQUAL_CMP #$3E, locret_12B89E
 	set byte_6B1, #0
 
 locret_12B89E:
@@ -3426,32 +3426,32 @@ locret_12B89E:
 ; ---------------------------------------------------------------------------
 
 loc_12B89F:
-	if_a_not_equal_cmp_addr entry_idx_300, #$4E, loc_12B8DB
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12B8B3
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$4E, loc_12B8DB
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12B8B3
 	set byte_62A, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8B3:
-	if_a_not_equal_cmp #1, loc_12B8BD
+	IF_A_NOT_EQUAL_CMP #1, loc_12B8BD
 	set byte_62B, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8BD:
-	if_a_not_equal_cmp #2, loc_12B8C7
+	IF_A_NOT_EQUAL_CMP #2, loc_12B8C7
 	set byte_62C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8C7:
-	if_a_not_equal_cmp #3, loc_12B8D1
+	IF_A_NOT_EQUAL_CMP #3, loc_12B8D1
 	set byte_62D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8D1:
-	if_a_not_equal_cmp #4, locret_12B8DA
+	IF_A_NOT_EQUAL_CMP #4, locret_12B8DA
 	set byte_6B3, #0
 
 locret_12B8DA:
@@ -3459,26 +3459,26 @@ locret_12B8DA:
 ; ---------------------------------------------------------------------------
 
 loc_12B8DB:
-	if_a_not_equal_cmp_addr entry_idx_300, #$51, loc_12B90D
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12B8EF
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$51, loc_12B90D
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12B8EF
 	set byte_637, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8EF:
-	if_a_not_equal_cmp #1, loc_12B8F9
+	IF_A_NOT_EQUAL_CMP #1, loc_12B8F9
 	set byte_638, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B8F9:
-	if_a_not_equal_cmp #2, loc_12B903
+	IF_A_NOT_EQUAL_CMP #2, loc_12B903
 	set byte_639, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B903:
-	if_a_not_equal_cmp #3, locret_12B90C
+	IF_A_NOT_EQUAL_CMP #3, locret_12B90C
 	set byte_63A, #0
 
 locret_12B90C:
@@ -3486,9 +3486,9 @@ locret_12B90C:
 ; ---------------------------------------------------------------------------
 
 loc_12B90D:
-	if_a_not_equal_cmp_addr entry_idx_300, #$53, loc_12B924
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$53, loc_12B924
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$1A, locret_12B923
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$1A, locret_12B923
 	set byte_63D, #0
 
 locret_12B923:
@@ -3496,9 +3496,9 @@ locret_12B923:
 ; ---------------------------------------------------------------------------
 
 loc_12B924:
-	if_a_not_equal_cmp_addr entry_idx_300, #$90, loc_12B93B
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$90, loc_12B93B
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$1A, locret_12B93A
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$1A, locret_12B93A
 	set byte_63D, #0
 
 locret_12B93A:
@@ -3506,15 +3506,15 @@ locret_12B93A:
 ; ---------------------------------------------------------------------------
 
 loc_12B93B:
-	if_a_not_equal_cmp_addr entry_idx_300, #$55, loc_12B95C
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$55, loc_12B95C
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$12, loc_12B952
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$12, loc_12B952
 	set byte_641, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B952:
-	if_a_not_equal_cmp #9, locret_12B95B
+	IF_A_NOT_EQUAL_CMP #9, locret_12B95B
 	set byte_642, #0
 
 locret_12B95B:
@@ -3522,15 +3522,15 @@ locret_12B95B:
 ; ---------------------------------------------------------------------------
 
 loc_12B95C:
-	if_a_not_equal_cmp_addr entry_idx_300, #$56, loc_12B97D
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$56, loc_12B97D
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$2A, loc_12B973
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$2A, loc_12B973
 	set byte_643, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B973:
-	if_a_not_equal_cmp #9, locret_12B97C
+	IF_A_NOT_EQUAL_CMP #9, locret_12B97C
 	set byte_644, #0
 
 locret_12B97C:
@@ -3538,9 +3538,9 @@ locret_12B97C:
 ; ---------------------------------------------------------------------------
 
 loc_12B97D:
-	if_a_not_equal_cmp_addr entry_idx_300, #$57, loc_12B994
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$57, loc_12B994
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #9, locret_12B993
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #9, locret_12B993
 	set byte_645, #0
 
 locret_12B993:
@@ -3548,9 +3548,9 @@ locret_12B993:
 ; ---------------------------------------------------------------------------
 
 loc_12B994:
-	if_a_not_equal_cmp_addr entry_idx_300, #$91, loc_12B9AB
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$91, loc_12B9AB
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #9, locret_12B9AA
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #9, locret_12B9AA
 	set byte_645, #0
 
 locret_12B9AA:
@@ -3558,9 +3558,9 @@ locret_12B9AA:
 ; ---------------------------------------------------------------------------
 
 loc_12B9AB:
-	if_a_not_equal_cmp_addr entry_idx_300, #$58, loc_12B9C2
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$58, loc_12B9C2
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #0, locret_12B9C1
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #0, locret_12B9C1
 	set byte_64B, #0
 
 locret_12B9C1:
@@ -3568,21 +3568,21 @@ locret_12B9C1:
 ; ---------------------------------------------------------------------------
 
 loc_12B9C2:
-	if_a_not_equal_cmp_addr entry_idx_300, #$5A, loc_12B9ED
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$5A, loc_12B9ED
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$C, loc_12B9D9
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$C, loc_12B9D9
 	set byte_64D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B9D9:
-	if_a_not_equal_cmp #$1A, loc_12B9E3
+	IF_A_NOT_EQUAL_CMP #$1A, loc_12B9E3
 	set byte_64F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12B9E3:
-	if_a_not_equal_cmp #$12, locret_12B9EC
+	IF_A_NOT_EQUAL_CMP #$12, locret_12B9EC
 	set byte_64E, #0
 
 locret_12B9EC:
@@ -3590,15 +3590,15 @@ locret_12B9EC:
 ; ---------------------------------------------------------------------------
 
 loc_12B9ED:
-	if_a_not_equal_cmp_addr entry_idx_300, #$5B, loc_12BA0E
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$5B, loc_12BA0E
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$30, loc_12BA04
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$30, loc_12BA04
 	set byte_650, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA04:
-	if_a_not_equal_cmp #$40, locret_12BA0D
+	IF_A_NOT_EQUAL_CMP #$40, locret_12BA0D
 	set byte_6B4, #0
 
 locret_12BA0D:
@@ -3606,9 +3606,9 @@ locret_12BA0D:
 ; ---------------------------------------------------------------------------
 
 loc_12BA0E:
-	if_a_not_equal_cmp_addr entry_idx_300, #$92, loc_12BA25
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$92, loc_12BA25
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$30, locret_12BA24
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$30, locret_12BA24
 	set byte_650, #0
 
 locret_12BA24:
@@ -3616,26 +3616,26 @@ locret_12BA24:
 ; ---------------------------------------------------------------------------
 
 loc_12BA25:
-	if_a_not_equal_cmp_addr entry_idx_300, #$5D, loc_12BA57
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12BA39
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$5D, loc_12BA57
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12BA39
 	set byte_655, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA39:
-	if_a_not_equal_cmp #1, loc_12BA43
+	IF_A_NOT_EQUAL_CMP #1, loc_12BA43
 	set byte_656, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA43:
-	if_a_not_equal_cmp #2, loc_12BA4D
+	IF_A_NOT_EQUAL_CMP #2, loc_12BA4D
 	set byte_657, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA4D:
-	if_a_not_equal_cmp #3, locret_12BA56
+	IF_A_NOT_EQUAL_CMP #3, locret_12BA56
 	set byte_658, #0
 
 locret_12BA56:
@@ -3643,15 +3643,15 @@ locret_12BA56:
 ; ---------------------------------------------------------------------------
 
 loc_12BA57:
-	if_a_not_equal_cmp_addr entry_idx_300, #$5E, loc_12BA78
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$5E, loc_12BA78
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #9, loc_12BA6E
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #9, loc_12BA6E
 	set byte_65A, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA6E:
-	if_a_not_equal_cmp #$12, locret_12BA77
+	IF_A_NOT_EQUAL_CMP #$12, locret_12BA77
 	set byte_65B, #0
 
 locret_12BA77:
@@ -3659,15 +3659,15 @@ locret_12BA77:
 ; ---------------------------------------------------------------------------
 
 loc_12BA78:
-	if_a_not_equal_cmp_addr entry_idx_300, #$5F, loc_12BA99
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$5F, loc_12BA99
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$24, loc_12BA8F
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$24, loc_12BA8F
 	set byte_5C5, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BA8F:
-	if_a_not_equal_cmp #7, locret_12BA98
+	IF_A_NOT_EQUAL_CMP #7, locret_12BA98
 	set byte_65C, #0
 
 locret_12BA98:
@@ -3675,15 +3675,15 @@ locret_12BA98:
 ; ---------------------------------------------------------------------------
 
 loc_12BA99:
-	if_a_not_equal_cmp_addr entry_idx_300, #$60, loc_12BABA
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$60, loc_12BABA
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #9, loc_12BAB0
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #9, loc_12BAB0
 	set byte_65D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BAB0:
-	if_a_not_equal_cmp #$18, locret_12BAB9
+	IF_A_NOT_EQUAL_CMP #$18, locret_12BAB9
 	set byte_5C8, #0
 
 locret_12BAB9:
@@ -3691,15 +3691,15 @@ locret_12BAB9:
 ; ---------------------------------------------------------------------------
 
 loc_12BABA:
-	if_a_not_equal_cmp_addr entry_idx_300, #$97, loc_12BADB
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$97, loc_12BADB
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #9, loc_12BAD1
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #9, loc_12BAD1
 	set byte_65D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BAD1:
-	if_a_not_equal_cmp #$18, locret_12BADA
+	IF_A_NOT_EQUAL_CMP #$18, locret_12BADA
 	set byte_5C8, #0
 
 locret_12BADA:
@@ -3707,21 +3707,21 @@ locret_12BADA:
 ; ---------------------------------------------------------------------------
 
 loc_12BADB:
-	if_a_not_equal_cmp_addr entry_idx_300, #$61, loc_12BB06
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$61, loc_12BB06
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #6, loc_12BAF2
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #6, loc_12BAF2
 	set byte_65F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BAF2:
-	if_a_not_equal_cmp #$55, loc_12BAFC
+	IF_A_NOT_EQUAL_CMP #$55, loc_12BAFC
 	set byte_6BC, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BAFC:
-	if_a_not_equal_cmp #$1A, locret_12BB05
+	IF_A_NOT_EQUAL_CMP #$1A, locret_12BB05
 	set byte_660, #0
 
 locret_12BB05:
@@ -3729,14 +3729,14 @@ locret_12BB05:
 ; ---------------------------------------------------------------------------
 
 loc_12BB06:
-	if_a_not_equal_cmp_addr entry_idx_300, #$62, loc_12BB24
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12BB1A
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$62, loc_12BB24
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12BB1A
 	set byte_663, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BB1A:
-	if_a_not_equal_cmp #1, locret_12BB23
+	IF_A_NOT_EQUAL_CMP #1, locret_12BB23
 	set byte_664, #0
 
 locret_12BB23:
@@ -3744,21 +3744,21 @@ locret_12BB23:
 ; ---------------------------------------------------------------------------
 
 loc_12BB24:
-	if_a_not_equal_cmp_addr entry_idx_300, #$65, loc_12BB4F
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$65, loc_12BB4F
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #8, loc_12BB3B
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #8, loc_12BB3B
 	set byte_66D, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BB3B:
-	if_a_not_equal_cmp #$41, loc_12BB45
+	IF_A_NOT_EQUAL_CMP #$41, loc_12BB45
 	set byte_6B5, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BB45:
-	if_a_not_equal_cmp #$49, locret_12BB4E
+	IF_A_NOT_EQUAL_CMP #$49, locret_12BB4E
 	set byte_6AA, #0
 
 locret_12BB4E:
@@ -3766,15 +3766,15 @@ locret_12BB4E:
 ; ---------------------------------------------------------------------------
 
 loc_12BB4F:
-	if_a_not_equal_cmp_addr entry_idx_300, #$67, loc_12BB70
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$67, loc_12BB70
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #7, loc_12BB66
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #7, loc_12BB66
 	set byte_66F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BB66:
-	if_a_not_equal_cmp #$4C, locret_12BB6F
+	IF_A_NOT_EQUAL_CMP #$4C, locret_12BB6F
 	set byte_6AC, #0
 
 locret_12BB6F:
@@ -3782,9 +3782,9 @@ locret_12BB6F:
 ; ---------------------------------------------------------------------------
 
 loc_12BB70:
-	if_a_not_equal_cmp_addr entry_idx_300, #$9B, loc_12BB87
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$9B, loc_12BB87
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #7, locret_12BB86
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #7, locret_12BB86
 	set byte_66F, #0
 
 locret_12BB86:
@@ -3792,9 +3792,9 @@ locret_12BB86:
 ; ---------------------------------------------------------------------------
 
 loc_12BB87:
-	if_a_not_equal_cmp_addr entry_idx_300, #$68, loc_12BB9E
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$68, loc_12BB9E
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #9, locret_12BB9D
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #9, locret_12BB9D
 	set byte_671, #0
 
 locret_12BB9D:
@@ -3802,20 +3802,20 @@ locret_12BB9D:
 ; ---------------------------------------------------------------------------
 
 loc_12BB9E:
-	if_a_not_equal_cmp_addr entry_idx_300, #$6A, loc_12BBC6
-	if_a_not_equal_cmp_addr byte_434, #3, loc_12BBB2
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$6A, loc_12BBC6
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #3, loc_12BBB2
 	set byte_672, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBB2:
-	if_a_not_equal_cmp #4, loc_12BBBC
+	IF_A_NOT_EQUAL_CMP #4, loc_12BBBC
 	set byte_673, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBBC:
-	if_a_not_equal_cmp #5, locret_12BBC5
+	IF_A_NOT_EQUAL_CMP #5, locret_12BBC5
 	set byte_6B6, #0
 
 locret_12BBC5:
@@ -3823,37 +3823,37 @@ locret_12BBC5:
 ; ---------------------------------------------------------------------------
 
 loc_12BBC6:
-	if_a_equal_cmp_addr entry_idx_300, #$52, loc_12BBD4
-	if_a_equal_cmp #$8F, loc_12BBD4
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$52, loc_12BBD4
+	IF_A_EQUAL_CMP #$8F, loc_12BBD4
 	JMP	loc_12BC09
 ; ---------------------------------------------------------------------------
 
 loc_12BBD4:
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12BBE1
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12BBE1
 	set byte_675, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBE1:
-	if_a_not_equal_cmp #1, loc_12BBEB
+	IF_A_NOT_EQUAL_CMP #1, loc_12BBEB
 	set byte_676, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBEB:
-	if_a_not_equal_cmp #2, loc_12BBF5
+	IF_A_NOT_EQUAL_CMP #2, loc_12BBF5
 	set byte_677, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBF5:
-	if_a_not_equal_cmp #3, loc_12BBFF
+	IF_A_NOT_EQUAL_CMP #3, loc_12BBFF
 	set byte_678, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BBFF:
-	if_a_not_equal_cmp #4, locret_12BC08
+	IF_A_NOT_EQUAL_CMP #4, locret_12BC08
 	set byte_679, #0
 
 locret_12BC08:
@@ -3861,26 +3861,26 @@ locret_12BC08:
 ; ---------------------------------------------------------------------------
 
 loc_12BC09:
-	if_a_not_equal_cmp_addr entry_idx_300, #$72, loc_12BC3B
-	if_a_not_equal_cmp_addr byte_434, #2, loc_12BC1D
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$72, loc_12BC3B
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #2, loc_12BC1D
 	set byte_67E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BC1D:
-	if_a_not_equal_cmp #3, loc_12BC27
+	IF_A_NOT_EQUAL_CMP #3, loc_12BC27
 	set byte_67F, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BC27:
-	if_a_not_equal_cmp #4, loc_12BC31
+	IF_A_NOT_EQUAL_CMP #4, loc_12BC31
 	set byte_680, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BC31:
-	if_a_not_equal_cmp #5, locret_12BC3A
+	IF_A_NOT_EQUAL_CMP #5, locret_12BC3A
 	set byte_681, #0
 
 locret_12BC3A:
@@ -3888,9 +3888,9 @@ locret_12BC3A:
 ; ---------------------------------------------------------------------------
 
 loc_12BC3B:
-	if_a_not_equal_cmp_addr entry_idx_300, #$70, loc_12BC52
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$70, loc_12BC52
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$2E, locret_12BC51
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$2E, locret_12BC51
 	set byte_682, #0
 
 locret_12BC51:
@@ -3898,9 +3898,9 @@ locret_12BC51:
 ; ---------------------------------------------------------------------------
 
 loc_12BC52:
-	if_a_not_equal_cmp_addr entry_idx_300, #$6F, loc_12BC69
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$6F, loc_12BC69
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$43, locret_12BC68
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$43, locret_12BC68
 	set byte_6B7, #0
 
 locret_12BC68:
@@ -3908,9 +3908,9 @@ locret_12BC68:
 ; ---------------------------------------------------------------------------
 
 loc_12BC69:
-	if_a_not_equal_cmp_addr entry_idx_300, #$71, loc_12BC80
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$71, loc_12BC80
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$44, locret_12BC7F
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$44, locret_12BC7F
 	set byte_6B8, #0
 
 locret_12BC7F:
@@ -3918,9 +3918,9 @@ locret_12BC7F:
 ; ---------------------------------------------------------------------------
 
 loc_12BC80:
-	if_a_not_equal_cmp_addr entry_idx_300, #$75, loc_12BC97
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$75, loc_12BC97
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$45, locret_12BC96
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$45, locret_12BC96
 	set byte_6B9, #0
 
 locret_12BC96:
@@ -3928,9 +3928,9 @@ locret_12BC96:
 ; ---------------------------------------------------------------------------
 
 loc_12BC97:
-	if_a_not_equal_cmp_addr entry_idx_300, #$82, loc_12BCAE
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$82, loc_12BCAE
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$46, locret_12BCAD
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$46, locret_12BCAD
 	set byte_6BA, #0
 
 locret_12BCAD:
@@ -3938,23 +3938,23 @@ locret_12BCAD:
 ; ---------------------------------------------------------------------------
 
 loc_12BCAE:
-	if_a_equal_cmp_addr entry_idx_300, #$76, loc_12BCBC
-	if_a_equal_cmp #$94, loc_12BCBC
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$76, loc_12BCBC
+	IF_A_EQUAL_CMP #$94, loc_12BCBC
 	JMP	loc_12BCDC
 ; ---------------------------------------------------------------------------
 
 loc_12BCBC:
-	if_a_not_equal_cmp_addr byte_434, #1, loc_12BCC9
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #1, loc_12BCC9
 	set byte_685, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BCC9:
-	if_a_not_equal_cmp #2, loc_12BCD2
+	IF_A_NOT_EQUAL_CMP #2, loc_12BCD2
 	set byte_686, #0
 
 loc_12BCD2:
-	if_a_not_equal_cmp #3, locret_12BCDB
+	IF_A_NOT_EQUAL_CMP #3, locret_12BCDB
 	set byte_687, #0
 
 locret_12BCDB:
@@ -3962,20 +3962,20 @@ locret_12BCDB:
 ; ---------------------------------------------------------------------------
 
 loc_12BCDC:
-	if_a_not_equal_cmp_addr entry_idx_300, #$77, loc_12BD04
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12BCF0
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$77, loc_12BD04
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12BCF0
 	set byte_68B, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BCF0:
-	if_a_not_equal_cmp #1, loc_12BCFA
+	IF_A_NOT_EQUAL_CMP #1, loc_12BCFA
 	set byte_68C, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BCFA:
-	if_a_not_equal_cmp #5, locret_12BD03
+	IF_A_NOT_EQUAL_CMP #5, locret_12BD03
 	set byte_69F, #0
 
 locret_12BD03:
@@ -3983,26 +3983,26 @@ locret_12BD03:
 ; ---------------------------------------------------------------------------
 
 loc_12BD04:
-	if_a_not_equal_cmp_addr entry_idx_300, #$7E, loc_12BD36
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12BD18
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$7E, loc_12BD36
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12BD18
 	set byte_691, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD18:
-	if_a_not_equal_cmp #1, loc_12BD22
+	IF_A_NOT_EQUAL_CMP #1, loc_12BD22
 	set byte_692, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD22:
-	if_a_not_equal_cmp #2, loc_12BD2C
+	IF_A_NOT_EQUAL_CMP #2, loc_12BD2C
 	set byte_693, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD2C:
-	if_a_not_equal_cmp #3, locret_12BD35
+	IF_A_NOT_EQUAL_CMP #3, locret_12BD35
 	set byte_694, #0
 
 locret_12BD35:
@@ -4010,14 +4010,14 @@ locret_12BD35:
 ; ---------------------------------------------------------------------------
 
 loc_12BD36:
-	if_a_not_equal_cmp_addr entry_idx_300, #$9A, loc_12BD54
-	if_a_not_equal_cmp_addr byte_434, #0, loc_12BD4A
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$9A, loc_12BD54
+	IF_A_NOT_EQUAL_CMP_ADDR byte_434, #0, loc_12BD4A
 	set byte_6A5, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD4A:
-	if_a_not_equal_cmp #1, locret_12BD53
+	IF_A_NOT_EQUAL_CMP #1, locret_12BD53
 	set byte_6A6, #0
 
 locret_12BD53:
@@ -4026,14 +4026,14 @@ locret_12BD53:
 
 loc_12BD54:
 	LDX	byte_434
-	if_a_not_equal_cmp_addr {obj_array_unk_415,X}, #$20, loc_12BD64
+	IF_A_NOT_EQUAL_CMP_ADDR {obj_array_unk_415,X}, #$20, loc_12BD64
 	set byte_5AD, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD64:
-	if_a_not_equal_cmp #$1C, loc_12BD8D
-	if_a_equal_cmp_addr entry_idx_300, #$1E, loc_12BD75
+	IF_A_NOT_EQUAL_CMP #$1C, loc_12BD8D
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$1E, loc_12BD75
 	set byte_5A8, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4047,51 +4047,51 @@ loc_12BD75:
 ; ---------------------------------------------------------------------------
 
 loc_12BD8D:
-	if_a_not_equal_cmp #$19, loc_12BD9C
+	IF_A_NOT_EQUAL_CMP #$19, loc_12BD9C
 	set byte_683, #0
 	set byte_59E, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BD9C:
-	if_a_not_equal_cmp #$39, loc_12BDA6
+	IF_A_NOT_EQUAL_CMP #$39, loc_12BDA6
 	set byte_6BB, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDA6:
-	if_a_not_equal_cmp #$50, loc_12BDB0
+	IF_A_NOT_EQUAL_CMP #$50, loc_12BDB0
 	set byte_6AD, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDB0:
-	if_a_not_equal_cmp #$21, loc_12BDBA
+	IF_A_NOT_EQUAL_CMP #$21, loc_12BDBA
 	set byte_5B3, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDBA:
-	if_a_not_equal_cmp #$16, loc_12BDC4
+	IF_A_NOT_EQUAL_CMP #$16, loc_12BDC4
 	set byte_5C9, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDC4:
-	if_a_not_equal_cmp #$2D, loc_12BDCE
+	IF_A_NOT_EQUAL_CMP #$2D, loc_12BDCE
 	set byte_5BB, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDCE:
-	if_a_not_equal_cmp #$30, loc_12BDD8
+	IF_A_NOT_EQUAL_CMP #$30, loc_12BDD8
 	set byte_614, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BDD8:
-	if_a_not_equal_cmp #$1D, loc_12BE01
-	if_a_equal_cmp_addr entry_idx_300, #$1E, loc_12BDE9
+	IF_A_NOT_EQUAL_CMP #$1D, loc_12BE01
+	IF_A_EQUAL_CMP_ADDR entry_idx_300, #$1E, loc_12BDE9
 	set byte_5A9, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4105,19 +4105,19 @@ loc_12BDE9:
 ; ---------------------------------------------------------------------------
 
 loc_12BE01:
-	if_a_not_equal_cmp #$14, loc_12BE0B
+	IF_A_NOT_EQUAL_CMP #$14, loc_12BE0B
 	set byte_5BE, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BE0B:
-	if_a_not_equal_cmp #$23, loc_12BE15
+	IF_A_NOT_EQUAL_CMP #$23, loc_12BE15
 	set byte_5AA, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BE15:
-	if_a_not_equal_cmp #$15, loc_12BE5D
+	IF_A_NOT_EQUAL_CMP #$15, loc_12BE5D
 	set byte_5D1, #0
 	
 	LDA	#$FF
@@ -4145,14 +4145,14 @@ loc_12BE15:
 ; ---------------------------------------------------------------------------
 
 loc_12BE5D:
-	if_a_not_equal_cmp #3, loc_12BE67
+	IF_A_NOT_EQUAL_CMP #3, loc_12BE67
 	set byte_5D9, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BE67:
-	if_a_not_equal_cmp #2, loc_12BE7E
-	if_a_equal_cmp_addr byte_5F9, #$FF, loc_12BE78
+	IF_A_NOT_EQUAL_CMP #2, loc_12BE7E
+	IF_A_EQUAL_CMP_ADDR byte_5F9, #$FF, loc_12BE78
 	set byte_5EF, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4163,13 +4163,13 @@ loc_12BE78:
 ; ---------------------------------------------------------------------------
 
 loc_12BE7E:
-	if_a_not_equal_cmp #$22, loc_12BE88
+	IF_A_NOT_EQUAL_CMP #$22, loc_12BE88
 	set byte_606, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BE88:
-	if_a_not_equal_cmp #4, loc_12BEAA
+	IF_A_NOT_EQUAL_CMP #4, loc_12BEAA
 	set byte_616, #0
 	set2 byte_617, byte_618, #$FF
 	set cur_obj_idx_unk_43A, #1
@@ -4180,7 +4180,7 @@ loc_12BE88:
 ; ---------------------------------------------------------------------------
 
 loc_12BEAA:
-	if_a_not_equal_cmp #$26, locret_12BEB4
+	IF_A_NOT_EQUAL_CMP #$26, locret_12BEB4
 	set byte_654, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4192,22 +4192,22 @@ locret_12BEB4:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12BEB5:
-	if_a_equal byte_5B0, locret_12BEF9
+	IF_A_EQUAL byte_5B0, locret_12BEF9
 	set_text_args #0, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12BEF9
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12BEF9
 	LDX	#0
 
 loc_12BED8:
-	if_a_not_equal_cmp_addr {objIdxArray_375,X}, #3, loc_12BEE2
+	IF_A_NOT_EQUAL_CMP_ADDR {objIdxArray_375,X}, #3, loc_12BEE2
 	JMP	loc_12BEE9
 ; ---------------------------------------------------------------------------
 
 loc_12BEE2:
 	INX
-	if_x_greater_cmp objArraySize_373, loc_12BED8
+	IF_X_GREATER_CMP objArraySize_373, loc_12BED8
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4224,7 +4224,7 @@ locret_12BEF9:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12BEFA:
-	if_a_not_equal_cmp_addr byte_471, #0, loc_12BF14
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, loc_12BF14
 	set_text_args #$39, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -4232,8 +4232,8 @@ sub_12BEFA:
 ; ---------------------------------------------------------------------------
 
 loc_12BF14:
-	if_a_equal_cmp_addr byte_55C, #0, loc_12BF23
-	if_a_equal_cmp_addr byte_55D, #0, loc_12BF23
+	IF_A_EQUAL_CMP_ADDR byte_55C, #0, loc_12BF23
+	IF_A_EQUAL_CMP_ADDR byte_55D, #0, loc_12BF23
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4253,7 +4253,7 @@ sub_12BF29:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12BF32:
-	if_a_not_equal_cmp_addr byte_471, #0, loc_12BF4C
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, loc_12BF4C
 	set_text_args #$37, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -4268,8 +4268,8 @@ loc_12BF4C:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12BF52:
-	if_a_equal_cmp_addr byte_471, #0, loc_12BF66
-	if_a_equal_cmp_addr byte_55F, #$FF, locret_12BF65
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12BF66
+	IF_A_EQUAL_CMP_ADDR byte_55F, #$FF, locret_12BF65
 	set byte_46D, #$2D 
 
 locret_12BF65:
@@ -4286,8 +4286,8 @@ loc_12BF66:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12BF79:
-	if_a_not_equal byte_5BC, locret_12BF88
-	if_a_not_equal byte_5BD, locret_12BF88
+	IF_A_NOT_EQUAL byte_5BC, locret_12BF88
+	IF_A_NOT_EQUAL byte_5BD, locret_12BF88
 	set byte_46D, #$1C
 
 locret_12BF88:
@@ -4297,8 +4297,8 @@ locret_12BF88:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12BF89:
-	if_a_not_equal byte_5A8, locret_12BF98
-	if_a_not_equal byte_5A9, locret_12BF98
+	IF_A_NOT_EQUAL byte_5A8, locret_12BF98
+	IF_A_NOT_EQUAL byte_5A9, locret_12BF98
 	set byte_46D, #$1C
 
 locret_12BF98:
@@ -4308,12 +4308,12 @@ locret_12BF98:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12BF99:
-	if_a_equal_cmp_addr byte_5C1, #0, loc_12BFC1
-	if_a_equal_cmp_addr byte_5C2, #0, loc_12BFC1
-	if_a_not_equal_cmp_addr byte_59F, #0, locret_12BFC0
+	IF_A_EQUAL_CMP_ADDR byte_5C1, #0, loc_12BFC1
+	IF_A_EQUAL_CMP_ADDR byte_5C2, #0, loc_12BFC1
+	IF_A_NOT_EQUAL_CMP_ADDR byte_59F, #0, locret_12BFC0
 	set tilemapTypeUnk_30B, #$1E
 	JSR	sub_12D58C
-	if_a_equal sprite_length_30F, locret_12BFC0
+	IF_A_EQUAL sprite_length_30F, locret_12BFC0
 	set byte_59F, #1
 
 locret_12BFC0:
@@ -4333,13 +4333,13 @@ loc_12BFC1:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12BFDF:
-	if_a_equal_cmp_addr byte_471, #0, loc_12BFEC
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12BFEC
 	set byte_46D, #$1B
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12BFEC:
-	if_a_not_equal_cmp_addr byte_562, #0, loc_12C00B
+	IF_A_NOT_EQUAL_CMP_ADDR byte_562, #0, loc_12C00B
 	set_text_args #$FF, #0
 	set tilemapTypeUnk_30B, #7
 	JSR	exec_b0_c0_12A973
@@ -4348,7 +4348,7 @@ loc_12BFEC:
 ; ---------------------------------------------------------------------------
 
 loc_12C00B:
-	if_a_not_equal_cmp #$F, locret_12C021
+	IF_A_NOT_EQUAL_CMP #$F, locret_12C021
 	set_text_args #5, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -4360,9 +4360,9 @@ locret_12C021:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C022:
-	if_a_not_equal_cmp_addr byte_313, #2, locret_12C095
-	if_a_not_equal byte_563, locret_12C095
-	if_a_equal_cmp_addr byte_5C4, #$FF, locret_12C095
+	IF_A_NOT_EQUAL_CMP_ADDR byte_313, #2, locret_12C095
+	IF_A_NOT_EQUAL byte_563, locret_12C095
+	IF_A_EQUAL_CMP_ADDR byte_5C4, #$FF, locret_12C095
 	set byte_563, #$FF
 	set_text_args #2, #2
 	set tilemapTypeUnk_30B, #1
@@ -4390,10 +4390,10 @@ locret_12C095:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C096:
-	if_a_not_equal byte_564, locret_12C0AD
+	IF_A_NOT_EQUAL byte_564, locret_12C0AD
 	set tilemapTypeUnk_30B, #$29 
 	JSR	sub_12D58C
-	if_a_equal sprite_length_30F, locret_12C0AD
+	IF_A_EQUAL sprite_length_30F, locret_12C0AD
 	set byte_564, #$FF
 
 locret_12C0AD:
@@ -4403,7 +4403,7 @@ locret_12C0AD:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C0AE:
-	if_a_equal_cmp_addr byte_471, #0, loc_12C0BB
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C0BB
 	set byte_46D, #$29 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4418,12 +4418,12 @@ loc_12C0BB:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C0CE:
-	if_a_not_equal_cmp_addr byte_566, #0, locret_12C118
+	IF_A_NOT_EQUAL_CMP_ADDR byte_566, #0, locret_12C118
 	set_text_args #$D6, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_not_equal byte_372, locret_12C118
+	IF_A_NOT_EQUAL byte_372, locret_12C118
 	set byte_566, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -4443,10 +4443,10 @@ sub_12C119:
 	LDX	#0
 
 loc_12C11B:
-	if_a_not_equal {objCreatedArray_393,X}, locret_12C13B
-	if_a_equal_cmp_addr {objIdxArray_375,X}, #3, loc_12C12E
+	IF_A_NOT_EQUAL {objCreatedArray_393,X}, locret_12C13B
+	IF_A_EQUAL_CMP_ADDR {objIdxArray_375,X}, #3, loc_12C12E
 	INX
-	if_x_greater_cmp objArraySize_373, loc_12C11B
+	IF_X_GREATER_CMP objArraySize_373, loc_12C11B
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4455,7 +4455,7 @@ loc_12C12E:
 	JSR	sub_12C13C
 	from_stack_to_x
 	INX
-	if_x_greater_cmp objArraySize_373, loc_12C11B
+	IF_X_GREATER_CMP objArraySize_373, loc_12C11B
 
 locret_12C13B:
 	RTS
@@ -4483,11 +4483,11 @@ sub_12C13C:
 	set {byte_57E,Y}, {array_unk_3D9,X}
 	set {byte_581,Y}, {array_unk_3CF,X}
 	INC	byte_577
-	if_a_not_equal_cmp_addr byte_577, #3, locret_12C1B7
-	if_a_not_equal_cmp_addr byte_578, byte_579, locret_12C1B7
-	if_a_not_equal_cmp byte_57A, locret_12C1B7
-	if_a_not_equal_cmp_addr byte_57B, byte_57C, locret_12C1B7
-	if_a_not_equal_cmp byte_57D, locret_12C1B7
+	IF_A_NOT_EQUAL_CMP_ADDR byte_577, #3, locret_12C1B7
+	IF_A_NOT_EQUAL_CMP_ADDR byte_578, byte_579, locret_12C1B7
+	IF_A_NOT_EQUAL_CMP byte_57A, locret_12C1B7
+	IF_A_NOT_EQUAL_CMP_ADDR byte_57B, byte_57C, locret_12C1B7
+	IF_A_NOT_EQUAL_CMP byte_57D, locret_12C1B7
 	set byte_577, #$FF
 
 locret_12C1B7:
@@ -4517,24 +4517,24 @@ sub_12C1C3:
 	JSR	wait_for_frame_rendered_FCA0
 	from_stack_to_x
 	from_stack_to_y
-	if_y_not_equal_cmp #0, sub_12C1C3
+	IF_Y_NOT_EQUAL_CMP #0, sub_12C1C3
 	RTS
 ; End of function sub_12C1C3
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C1F2:
-	if_a_equal_cmp_addr byte_471, #0, loc_12C1FA
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C1FA
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C1FA:
-	if_a_equal_cmp_addr byte_585, #$FF, locret_12C220
+	IF_A_EQUAL_CMP_ADDR byte_585, #$FF, locret_12C220
 	set_text_args #$E2, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_not_equal byte_372, locret_12C220
+	IF_A_NOT_EQUAL byte_372, locret_12C220
 	set byte_585, #$FF
 
 locret_12C220:
@@ -4544,7 +4544,7 @@ locret_12C220:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C221:
-	if_a_equal_cmp_addr byte_471, #0, loc_12C229
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C229
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -4553,7 +4553,7 @@ loc_12C229:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_not_equal byte_372, locret_12C25D
+	IF_A_NOT_EQUAL byte_372, locret_12C25D
 	set_text_args #$E4, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -4566,7 +4566,7 @@ locret_12C25D:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C25E:
-	if_a_equal_cmp_addr byte_471, #0, loc_12C26B
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C26B
 	set byte_46D, #$24 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4581,14 +4581,14 @@ loc_12C26B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C27E:
-	if_a_equal_cmp_addr byte_471, #0, loc_12C286
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C286
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C286:
 	set inv_sprite_idx_31C, #$33 
 	JSR	sub_128955
-	if_a_equal_cmp_addr is_game_finished_561, #$FF, return_12C2BE
+	IF_A_EQUAL_CMP_ADDR is_game_finished_561, #$FF, return_12C2BE
 	set byte_587, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -4605,10 +4605,10 @@ return_12C2BE:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C2BF:
-	if_a_equal_cmp_addr byte_471, #0, locret_12C2D5
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, locret_12C2D5
 	LDA	byte_5EF
 	ORA	byte_5F9
-	if_a_not_equal_cmp #0, locret_12C2D5
+	IF_A_NOT_EQUAL_CMP #0, locret_12C2D5
 	set byte_46D, #2
 
 locret_12C2D5:
@@ -4618,12 +4618,12 @@ locret_12C2D5:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C2D6:
-	if_a_not_equal_cmp_addr byte_471, #0, locret_12C323
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, locret_12C323
 	set_text_args #$E3, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_not_equal byte_372, locret_12C323
+	IF_A_NOT_EQUAL byte_372, locret_12C323
 	xor_byte byte_589, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -4640,12 +4640,12 @@ locret_12C323:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C324:
-	if_a_not_equal_cmp_addr byte_471, #0, locret_12C371
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, locret_12C371
 	set_text_args #$E3, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_not_equal byte_372, locret_12C371
+	IF_A_NOT_EQUAL byte_372, locret_12C371
 	xor_byte byte_58B, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -4668,7 +4668,7 @@ nullsub_3:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C373:
-	if_a_equal_cmp_addr byte_471, #0, loc_12C380
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C380
 	set byte_46D, #$2A 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4683,7 +4683,7 @@ loc_12C380:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C393:
-	if_a_not_equal_cmp_addr byte_471, #0, loc_12C3AD
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, loc_12C3AD
 	set_text_args #$BA, #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -4706,7 +4706,7 @@ sub_12C3B8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C3BE:
-	if_a_equal byte_58D, locret_12C3C8
+	IF_A_EQUAL byte_58D, locret_12C3C8
 	set byte_58E, #$FF
 
 locret_12C3C8:
@@ -4716,7 +4716,7 @@ locret_12C3C8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C3C9:
-	if_a_not_equal_cmp_addr byte_471, #0, loc_12C3E3
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, loc_12C3E3
 	set_text_args #$BA, #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -4732,7 +4732,7 @@ loc_12C3E3:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C3EE:
-	if_a_not_equal_cmp_addr byte_471, #0, loc_12C408
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, loc_12C408
 	set_text_args #$BA, #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -4748,7 +4748,7 @@ loc_12C408:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C413:
-	if_a_not_equal_cmp_addr byte_471, #0, loc_12C42D
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, loc_12C42D
 	set_text_args #$BA, #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -4772,7 +4772,7 @@ sub_12C438:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C43F:
-	if_a_equal_cmp_addr byte_471, #0, loc_12C44C
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C44C
 	set byte_46D, #$2A 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4787,7 +4787,7 @@ loc_12C44C:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C45F:
-	if_a_equal_cmp_addr byte_651, #0, locret_12C46B
+	IF_A_EQUAL_CMP_ADDR byte_651, #0, locret_12C46B
 	set byte_58D, #$FF
 
 locret_12C46B:
@@ -4797,12 +4797,12 @@ locret_12C46B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C46C:
-	if_a_not_equal_cmp_addr byte_313, #1, locret_12C4AD
+	IF_A_NOT_EQUAL_CMP_ADDR byte_313, #1, locret_12C4AD
 	LDX	#4
-	if_a_not_equal_cmp_addr {array_unk_3C5,X}, #$90, locret_12C4AD
-	if_a_not_equal_cmp_addr {array_unk_3BB,X}, #1, locret_12C4AD
-	if_a_not_equal_cmp_addr {array_unk_3D9,X}, #$A0, locret_12C4AD
-	if_a_not_equal_cmp_addr {array_unk_3CF,X}, #0, locret_12C4AD
+	IF_A_NOT_EQUAL_CMP_ADDR {array_unk_3C5,X}, #$90, locret_12C4AD
+	IF_A_NOT_EQUAL_CMP_ADDR {array_unk_3BB,X}, #1, locret_12C4AD
+	IF_A_NOT_EQUAL_CMP_ADDR {array_unk_3D9,X}, #$A0, locret_12C4AD
+	IF_A_NOT_EQUAL_CMP_ADDR {array_unk_3CF,X}, #0, locret_12C4AD
 	LDX	#4
 	LDY	#$10
 	JSR	sub_12C1C3
@@ -4819,7 +4819,7 @@ locret_12C4AD:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C4AE:
-	if_a_not_equal_cmp_addr byte_471, #0, loc_12C4C8
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, loc_12C4C8
 	set_text_args #$BA, #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -4835,7 +4835,7 @@ loc_12C4C8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C4D3:
-	if_a_not_equal_cmp_addr byte_313, #1, locret_12C4F2
+	IF_A_NOT_EQUAL_CMP_ADDR byte_313, #1, locret_12C4F2
 	set cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
 	set cur_obj_idx_unk_43A, #2
@@ -4850,8 +4850,8 @@ locret_12C4F2:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C4F3:
-	if_a_equal_cmp_addr byte_587, #$FF, locret_12C519
-	if_a_equal_cmp_addr byte_471, #0, loc_12C507
+	IF_A_EQUAL_CMP_ADDR byte_587, #$FF, locret_12C519
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C507
 	set byte_46D, #$39 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4868,8 +4868,8 @@ locret_12C519:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C51A:
-	if_a_equal_cmp_addr byte_591, #$FF, locret_12C540
-	if_a_equal_cmp_addr byte_471, #0, loc_12C52E
+	IF_A_EQUAL_CMP_ADDR byte_591, #$FF, locret_12C540
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C52E
 	set byte_46D, #$27 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4886,8 +4886,8 @@ locret_12C540:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C541:
-	if_a_equal_cmp_addr byte_592, #$FF, locret_12C567
-	if_a_equal_cmp_addr byte_471, #0, loc_12C555
+	IF_A_EQUAL_CMP_ADDR byte_592, #$FF, locret_12C567
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C555
 	set byte_46D, #$28 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4904,7 +4904,7 @@ locret_12C567:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C568:
-	if_a_equal_cmp_addr byte_471, #0, loc_12C575
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C575
 	set byte_46D, #$2E 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -4928,7 +4928,7 @@ show_tree_screen_12C588:
 
 set_tree_screen_12C5A0:
 	set image_id_4A4, #$9D 
-	if_a_equal_cmp_addr byte_593, #0, loc_12C5B1
+	IF_A_EQUAL_CMP_ADDR byte_593, #0, loc_12C5B1
 	set image_id_4A4, #$9E 
 
 loc_12C5B1:
@@ -4955,7 +4955,7 @@ sub_12C5F0:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_not_equal byte_372, locret_12C636
+	IF_A_NOT_EQUAL byte_372, locret_12C636
 	xor_byte byte_593, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -4972,19 +4972,19 @@ locret_12C636:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C637:
-	if_a_not_equal_cmp_addr entry_idx_300, #$77, loc_12C645
-	if_a_equal_cmp_addr byte_68D, #$FF, loc_12C681
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$77, loc_12C645
+	IF_A_EQUAL_CMP_ADDR byte_68D, #$FF, loc_12C681
 
 loc_12C645:
-	if_a_not_equal_cmp_addr entry_idx_300, #$7B, loc_12C653
-	if_a_equal_cmp_addr byte_68E, #$FF, loc_12C681
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$7B, loc_12C653
+	IF_A_EQUAL_CMP_ADDR byte_68E, #$FF, loc_12C681
 
 loc_12C653:
-	if_a_not_equal_cmp_addr entry_idx_300, #$80, loc_12C661
-	if_a_equal_cmp_addr byte_68F, #$FF, loc_12C681
+	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$80, loc_12C661
+	IF_A_EQUAL_CMP_ADDR byte_68F, #$FF, loc_12C681
 
 loc_12C661:
-	if_a_equal_cmp_addr byte_471, #0, loc_12C66E
+	IF_A_EQUAL_CMP_ADDR byte_471, #0, loc_12C66E
 	set byte_46D, #$30 
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5010,7 +5010,7 @@ sub_12C694:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12C6B8
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12C6B8
 	set byte_420, #2
 	JSR	sub_12F07D
 
@@ -5021,7 +5021,7 @@ locret_12C6B8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C6B9:
-	if_a_not_equal_cmp_addr byte_471, #0, loc_12C6D3
+	IF_A_NOT_EQUAL_CMP_ADDR byte_471, #0, loc_12C6D3
 	set_text_args #$BA, #0
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
@@ -5041,7 +5041,7 @@ sub_12C6DE:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12C6FF
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12C6FF
 	set byte_67B, #$FF
 
 locret_12C6FF:
@@ -5051,13 +5051,13 @@ locret_12C6FF:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C700:
-	if_a_equal_cmp_addr byte_67A, #$FF, loc_12C72A
+	IF_A_EQUAL_CMP_ADDR byte_67A, #$FF, loc_12C72A
 	set_text_args #$27, #2
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12C754
-	if_a_not_equal_cmp_addr byte_67B, #$FF, loc_12C742
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12C754
+	IF_A_NOT_EQUAL_CMP_ADDR byte_67B, #$FF, loc_12C742
 
 loc_12C72A:
 	set_text_args #$28, #2
@@ -5083,8 +5083,8 @@ sub_12C755:
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
-	if_a_equal_cmp_addr byte_372, #1, locret_12C791
-	if_a_equal_cmp_addr byte_67A, #0, loc_12C77E
+	IF_A_EQUAL_CMP_ADDR byte_372, #1, locret_12C791
+	IF_A_EQUAL_CMP_ADDR byte_67A, #0, loc_12C77E
 	set byte_6A0, #$FF
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5103,7 +5103,7 @@ locret_12C791:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C792:
-	if_a_equal_cmp_addr byte_595, #$FF, locret_12C7CA
+	IF_A_EQUAL_CMP_ADDR byte_595, #$FF, locret_12C7CA
 	set2 byte_595, byte_6A1, #$FF
 	set byte_6A3, #0
 	JSR	entry_idx_handler_unk_12AA6D
@@ -5130,14 +5130,14 @@ sub_12C7CB:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C7DE:
-	if_a_not_equal_cmp_addr image_id_4A4, #$18, loc_12C7EB
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$18, loc_12C7EB
 	set byte_54E, #2
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C7EB:
-	if_a_not_equal_cmp_addr image_id_4A4, #$1B, loc_12C805
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12C7FF
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$1B, loc_12C805
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12C7FF
 	set byte_5E8, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5148,14 +5148,14 @@ loc_12C7FF:
 ; ---------------------------------------------------------------------------
 
 loc_12C805:
-	if_a_not_equal_cmp_addr image_id_4A4, #$87, loc_12C812
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$87, loc_12C812
 	set byte_5D8, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C812:
-	if_a_not_equal_cmp_addr image_id_4A4, #$1F, loc_12C82C
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12C826
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$1F, loc_12C82C
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12C826
 	set byte_5DA, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5166,20 +5166,20 @@ loc_12C826:
 ; ---------------------------------------------------------------------------
 
 loc_12C82C:
-	if_a_not_equal_cmp_addr image_id_4A4, #$22, loc_12C839
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$22, loc_12C839
 	set byte_5E0, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C839:
-	if_a_not_equal_cmp_addr image_id_4A4, #$23, loc_12C846
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$23, loc_12C846
 	set byte_5E1, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C846:
-	if_a_not_equal_cmp_addr image_id_4A4, #$25, loc_12C860
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #1, loc_12C85A
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$25, loc_12C860
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #1, loc_12C85A
 	set byte_5E4, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5190,8 +5190,8 @@ loc_12C85A:
 ; ---------------------------------------------------------------------------
 
 loc_12C860:
-	if_a_not_equal_cmp_addr image_id_4A4, #$2B, loc_12C87A
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12C874
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$2B, loc_12C87A
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12C874
 	set byte_5F0, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5202,20 +5202,20 @@ loc_12C874:
 ; ---------------------------------------------------------------------------
 
 loc_12C87A:
-	if_a_not_equal_cmp_addr image_id_4A4, #$2C, loc_12C887
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$2C, loc_12C887
 	set byte_5F2, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C887:
-	if_a_not_equal_cmp_addr image_id_4A4, #$30, loc_12C894
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$30, loc_12C894
 	set byte_5F6, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C894:
-	if_a_not_equal_cmp_addr image_id_4A4, #$36, loc_12C8AE
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #1, loc_12C8A8
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$36, loc_12C8AE
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #1, loc_12C8A8
 	set byte_5B2, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5226,8 +5226,8 @@ loc_12C8A8:
 ; ---------------------------------------------------------------------------
 
 loc_12C8AE:
-	if_a_not_equal_cmp_addr image_id_4A4, #$37, loc_12C8C8
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12C8C2
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$37, loc_12C8C8
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12C8C2
 	set byte_602, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5238,20 +5238,20 @@ loc_12C8C2:
 ; ---------------------------------------------------------------------------
 
 loc_12C8C8:
-	if_a_not_equal_cmp_addr image_id_4A4, #$3C, loc_12C8D5
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$3C, loc_12C8D5
 	set byte_612, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C8D5:
-	if_a_not_equal_cmp_addr image_id_4A4, #$3A, loc_12C8F9
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #2, loc_12C8E9
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$3A, loc_12C8F9
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #2, loc_12C8E9
 	set byte_60A, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C8E9:
-	if_a_not_equal_cmp #3, loc_12C8F3
+	IF_A_NOT_EQUAL_CMP #3, loc_12C8F3
 	set byte_60B, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5262,8 +5262,8 @@ loc_12C8F3:
 ; ---------------------------------------------------------------------------
 
 loc_12C8F9:
-	if_a_not_equal_cmp_addr image_id_4A4, #$41, loc_12C913
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12C90D
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$41, loc_12C913
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12C90D
 	set byte_619, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5274,8 +5274,8 @@ loc_12C90D:
 ; ---------------------------------------------------------------------------
 
 loc_12C913:
-	if_a_not_equal_cmp_addr image_id_4A4, #$48, loc_12C92D
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12C927
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$48, loc_12C92D
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12C927
 	set byte_620, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5286,14 +5286,14 @@ loc_12C927:
 ; ---------------------------------------------------------------------------
 
 loc_12C92D:
-	if_a_not_equal_cmp_addr image_id_4A4, #$32, loc_12C93A
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$32, loc_12C93A
 	set byte_5FC, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C93A:
-	if_a_not_equal_cmp_addr image_id_4A4, #$33, loc_12C954
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12C94E
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$33, loc_12C954
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12C94E
 	set byte_5FD, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5304,8 +5304,8 @@ loc_12C94E:
 ; ---------------------------------------------------------------------------
 
 loc_12C954:
-	if_a_not_equal_cmp_addr image_id_4A4, #$34, loc_12C96E
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12C968
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$34, loc_12C96E
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12C968
 	set byte_5FF, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5316,14 +5316,14 @@ loc_12C968:
 ; ---------------------------------------------------------------------------
 
 loc_12C96E:
-	if_a_not_equal_cmp_addr image_id_4A4, #$4E, loc_12C992
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #6, loc_12C982
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$4E, loc_12C992
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #6, loc_12C982
 	set byte_630, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C982:
-	if_a_not_equal_cmp #7, loc_12C98C
+	IF_A_NOT_EQUAL_CMP #7, loc_12C98C
 	set byte_631, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5334,8 +5334,8 @@ loc_12C98C:
 ; ---------------------------------------------------------------------------
 
 loc_12C992:
-	if_a_not_equal_cmp_addr image_id_4A4, #$50, loc_12C9AC
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12C9A6
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$50, loc_12C9AC
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12C9A6
 	set byte_634, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5346,8 +5346,8 @@ loc_12C9A6:
 ; ---------------------------------------------------------------------------
 
 loc_12C9AC:
-	if_a_not_equal_cmp_addr image_id_4A4, #$51, loc_12C9C6
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #4, loc_12C9C0
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$51, loc_12C9C6
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #4, loc_12C9C0
 	set byte_63B, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5358,14 +5358,14 @@ loc_12C9C0:
 ; ---------------------------------------------------------------------------
 
 loc_12C9C6:
-	if_a_not_equal_cmp_addr image_id_4A4, #$54, loc_12C9D3
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$54, loc_12C9D3
 	set byte_63E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C9D3:
-	if_a_not_equal_cmp_addr image_id_4A4, #$55, loc_12C9ED
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12C9E7
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$55, loc_12C9ED
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12C9E7
 	set byte_63F, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5376,20 +5376,20 @@ loc_12C9E7:
 ; ---------------------------------------------------------------------------
 
 loc_12C9ED:
-	if_a_not_equal_cmp_addr image_id_4A4, #$91, loc_12C9FA
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$91, loc_12C9FA
 	set byte_647, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12C9FA:
-	if_a_not_equal_cmp_addr image_id_4A4, #$58, loc_12CA1E
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12CA0E
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$58, loc_12CA1E
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12CA0E
 	set byte_648, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CA0E:
-	if_a_not_equal_cmp #1, loc_12CA18
+	IF_A_NOT_EQUAL_CMP #1, loc_12CA18
 	set byte_649, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5400,14 +5400,14 @@ loc_12CA18:
 ; ---------------------------------------------------------------------------
 
 loc_12CA1E:
-	if_a_not_equal_cmp_addr image_id_4A4, #$60, loc_12CA2B
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$60, loc_12CA2B
 	set byte_65E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CA2B:
-	if_a_not_equal_cmp_addr image_id_4A4, #$61, loc_12CA45
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #2, loc_12CA3F
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$61, loc_12CA45
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #2, loc_12CA3F
 	set byte_661, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5418,8 +5418,8 @@ loc_12CA3F:
 ; ---------------------------------------------------------------------------
 
 loc_12CA45:
-	if_a_not_equal_cmp_addr image_id_4A4, #$5F, loc_12CA5F
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #2, loc_12CA59
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$5F, loc_12CA5F
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #2, loc_12CA59
 	set byte_668, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5430,8 +5430,8 @@ loc_12CA59:
 ; ---------------------------------------------------------------------------
 
 loc_12CA5F:
-	if_a_not_equal_cmp_addr image_id_4A4, #$65, loc_12CA79
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #1, loc_12CA73
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$65, loc_12CA79
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #1, loc_12CA73
 	set byte_66B, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5442,20 +5442,20 @@ loc_12CA73:
 ; ---------------------------------------------------------------------------
 
 loc_12CA79:
-	if_a_not_equal_cmp_addr image_id_4A4, #$66, loc_12CA86
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$66, loc_12CA86
 	set byte_66E, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CA86:
-	if_a_not_equal_cmp_addr image_id_4A4, #$68, loc_12CA93
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$68, loc_12CA93
 	set byte_670, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CA93:
-	if_a_not_equal_cmp_addr image_id_4A4, #$72, loc_12CAAD
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12CAA7
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$72, loc_12CAAD
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12CAA7
 	set byte_67C, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5466,14 +5466,14 @@ loc_12CAA7:
 ; ---------------------------------------------------------------------------
 
 loc_12CAAD:
-	if_a_not_equal_cmp_addr image_id_4A4, #$77, loc_12CAD1
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12CAC1
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$77, loc_12CAD1
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12CAC1
 	set byte_688, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CAC1:
-	if_a_not_equal_cmp #1, loc_12CACB
+	IF_A_NOT_EQUAL_CMP #1, loc_12CACB
 	set byte_689, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5484,14 +5484,14 @@ loc_12CACB:
 ; ---------------------------------------------------------------------------
 
 loc_12CAD1:
-	if_a_not_equal_cmp_addr image_id_4A4, #$7F, loc_12CAF5
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12CAE5
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$7F, loc_12CAF5
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12CAE5
 	set byte_695, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CAE5:
-	if_a_not_equal_cmp #1, loc_12CAEF
+	IF_A_NOT_EQUAL_CMP #1, loc_12CAEF
 	set byte_696, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5502,20 +5502,20 @@ loc_12CAEF:
 ; ---------------------------------------------------------------------------
 
 loc_12CAF5:
-	if_a_not_equal_cmp_addr image_id_4A4, #$74, loc_12CB23
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12CB09
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$74, loc_12CB23
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12CB09
 	set byte_698, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CB09:
-	if_a_not_equal_cmp #1, loc_12CB13
+	IF_A_NOT_EQUAL_CMP #1, loc_12CB13
 	set byte_699, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CB13:
-	if_a_not_equal_cmp #2, loc_12CB1D
+	IF_A_NOT_EQUAL_CMP #2, loc_12CB1D
 	set byte_69A, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5526,8 +5526,8 @@ loc_12CB1D:
 ; ---------------------------------------------------------------------------
 
 loc_12CB23:
-	if_a_not_equal_cmp_addr image_id_4A4, #$7C, loc_12CB3D
-	if_a_not_equal_cmp_addr cur_obj_idx_unk_43A, #0, loc_12CB37
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$7C, loc_12CB3D
+	IF_A_NOT_EQUAL_CMP_ADDR cur_obj_idx_unk_43A, #0, loc_12CB37
 	set byte_69C, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5538,13 +5538,13 @@ loc_12CB37:
 ; ---------------------------------------------------------------------------
 
 loc_12CB3D:
-	if_a_not_equal_cmp_addr image_id_4A4, #$9A, loc_12CB4A
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$9A, loc_12CB4A
 	set byte_6A7, #0
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12CB4A:
-	if_a_not_equal_cmp_addr image_id_4A4, #$96, locret_12CB57
+	IF_A_NOT_EQUAL_CMP_ADDR image_id_4A4, #$96, locret_12CB57
 	set byte_6A1, #0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5572,17 +5572,17 @@ loc_12CB96:
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	wait_for_frame_rendered_FCA0
-	if_a_equal_cmp_addr byte_42E, #$26, loc_12CBB2
+	IF_A_EQUAL_CMP_ADDR byte_42E, #$26, loc_12CBB2
 	DEC	byte_42E
 	JMP	loc_12CB96
 ; ---------------------------------------------------------------------------
 
 loc_12CBB2:
-	if_a_equal_cmp_addr byte_434, #4, loc_12CBD9
+	IF_A_EQUAL_CMP_ADDR byte_434, #4, loc_12CBD9
 	BCS	loc_12CBD9
 	ADD_BYTE_TO_BYTE_CLC_IMM objMapIdx_316, #2, byte_434
 	JSR	sub_12CCAB
-	if_a_greater_cmp_addr count_unk_468, #$14, loc_12CBD6
+	IF_A_GREATER_CMP_ADDR count_unk_468, #$14, loc_12CBD6
 	set count_unk_468, #0
 	INC	byte_434
 
@@ -5591,10 +5591,10 @@ loc_12CBD6:
 ; ---------------------------------------------------------------------------
 
 loc_12CBD9:
-	if_a_greater_cmp_addr count_unk_469, #$A, loc_12CBF7
+	IF_A_GREATER_CMP_ADDR count_unk_469, #$A, loc_12CBF7
 	set count_unk_469, #0
 	xor_byte byte_434, #1
-	if_a_equal_cmp_addr byte_42B, #$14, show_ending_screen_12CC06
+	IF_A_EQUAL_CMP_ADDR byte_42B, #$14, show_ending_screen_12CC06
 	INC	byte_42B
 
 loc_12CBF7:
@@ -5617,17 +5617,17 @@ show_ending_screen_12CC06:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12CC34:
-	if_a_greater_cmp_addr count_unk_465, #$A, loc_12CC48
+	IF_A_GREATER_CMP_ADDR count_unk_465, #$A, loc_12CC48
 	set count_unk_465, #0
 	xor_byte byte_430, #1
 
 loc_12CC48:
-	if_a_greater_cmp_addr count_unk_466, #$F, loc_12CC5C
+	IF_A_GREATER_CMP_ADDR count_unk_466, #$F, loc_12CC5C
 	set count_unk_466, #0
 	xor_byte byte_431, #1
 
 loc_12CC5C:
-	if_a_greater_cmp_addr count_unk_467, #$A, loc_12CC70
+	IF_A_GREATER_CMP_ADDR count_unk_467, #$A, loc_12CC70
 	set count_unk_467, #0
 	xor_byte byte_433, #1
 
@@ -5654,7 +5654,7 @@ sub_12CCAB:
 	set byte_31A, #$8C 
 	set objectIdx_318, #$1A
 	set byte_317, #1
-	if_a_greater_cmp_addr objMapIdx_316, #6, loc_12CCDF
+	IF_A_GREATER_CMP_ADDR objMapIdx_316, #6, loc_12CCDF
 	set byte_317, #2
 
 loc_12CCDF:
@@ -5665,7 +5665,7 @@ loc_12CCDF:
 ; =============== S U B	R O U T	I N E =======================================
 
 comm_46_12CCE3:
-	if_a_equal_cmp_addr byte_6C5, #0, return_12CD1C
+	IF_A_EQUAL_CMP_ADDR byte_6C5, #0, return_12CD1C
 	set_text_args #$7B, #1
 	set tilemapTypeUnk_30B, #4
 	JSR	exec_b0_c0_12A973
@@ -5718,8 +5718,8 @@ com_E_load_game_12CD30:
 	set sprite_secondByte_31B, #$7A 
 
 loc_12CDA2:
-	if_y_equal_cmp #4, loc_12CE00
-	if_a_equal_cmp_addr {byte_4A0,Y}, #$FF, loc_12CDEA
+	IF_Y_EQUAL_CMP #4, loc_12CE00
+	IF_A_EQUAL_CMP_ADDR {byte_4A0,Y}, #$FF, loc_12CDEA
 	ADD_TO_A #$7E 
 	STA	text_idx_35C
 	set char_type_id_35D, #0
@@ -5750,8 +5750,8 @@ loc_12CE00:
 loc_12CE05:
 	JSR	sub_12D0C2
 	JSR	wait_for_frame_rendered_FCA0
-	if_a_not_equal_cmp_addr input_pressed_34A, #8, loc_12CE25
-	if_a_not_equal byte_372, loc_12CE1C
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #8, loc_12CE25
+	IF_A_NOT_EQUAL byte_372, loc_12CE1C
 	set byte_372, #4
 
 loc_12CE1C:
@@ -5761,8 +5761,8 @@ loc_12CE1C:
 ; ---------------------------------------------------------------------------
 
 loc_12CE25:
-	if_a_not_equal_cmp #4, loc_12CE3E
-	if_a_not_equal_cmp_addr byte_372, #3, loc_12CE35
+	IF_A_NOT_EQUAL_CMP #4, loc_12CE3E
+	IF_A_NOT_EQUAL_CMP_ADDR byte_372, #3, loc_12CE35
 	set byte_372, #$FF
 
 loc_12CE35:
@@ -5772,28 +5772,28 @@ loc_12CE35:
 ; ---------------------------------------------------------------------------
 
 loc_12CE3E:
-	if_a_not_equal_cmp #$80, loc_12CE62
+	IF_A_NOT_EQUAL_CMP #$80, loc_12CE62
 	JSR	sub_12ED20
-	if_a_not_equal_cmp_addr jill_pos_y_47E, #$FF, loc_12CE57
+	IF_A_NOT_EQUAL_CMP_ADDR jill_pos_y_47E, #$FF, loc_12CE57
 	JSR	sub_12D120
-	if_a_not_equal sprite_length_30F, loc_12CE69
+	IF_A_NOT_EQUAL sprite_length_30F, loc_12CE69
 	JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
 loc_12CE57:
 	JSR	sub_12CEAC
-	if_a_not_equal sprite_length_30F, loc_12CE69
+	IF_A_NOT_EQUAL sprite_length_30F, loc_12CE69
 	JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
 loc_12CE62:
-	if_a_equal_cmp #$40, loc_12CE69
+	IF_A_EQUAL_CMP #$40, loc_12CE69
 	JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
 loc_12CE69:
 	JSR	sub_12ED29
-	if_a_equal_cmp_addr jill_pos_y_47E, #$FF, loc_12CE99
+	IF_A_EQUAL_CMP_ADDR jill_pos_y_47E, #$FF, loc_12CE99
 	from_stack_to_a prev_sprite_type_4A9
 	from_stack_to_a ppu_prev_scroll_y_unk_4A8
 	from_stack_to_a ppu_prev_scroll_x_unk_4A7
@@ -5807,7 +5807,7 @@ loc_12CE69:
 ; ---------------------------------------------------------------------------
 
 loc_12CE99:
-	if_a_not_equal_cmp_addr sprite_length_30F, #$FF, loc_12CEA5
+	IF_A_NOT_EQUAL_CMP_ADDR sprite_length_30F, #$FF, loc_12CEA5
 	set jill_pos_y_47E, #0
 
 loc_12CEA5:
@@ -5824,7 +5824,7 @@ loc_12CEA5:
 
 sub_12CEAC:
 	LDY	byte_372
-	if_a_not_equal_cmp_addr {byte_4A0,Y}, #$FF, loc_12CEBA
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_4A0,Y}, #$FF, loc_12CEBA
 	JSR	sub_12CFBA
 	RTS
 ; ---------------------------------------------------------------------------
@@ -5856,28 +5856,28 @@ loc_12CEBA:
 loc_12CF2D:
 	JSR	sub_12D070
 	JSR	wait_for_vblank_FC95
-	if_a_not_equal_cmp_addr input_pressed_34A, #2, loc_12CF48
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #2, loc_12CF48
 	xor_byte byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
 loc_12CF48:
-	if_a_not_equal_cmp #1, loc_12CF5A
+	IF_A_NOT_EQUAL_CMP #1, loc_12CF5A
 	xor_byte byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
 loc_12CF5A:
-	if_a_equal_cmp #$80, loc_12CF61
+	IF_A_EQUAL_CMP #$80, loc_12CF61
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
 loc_12CF61:
 	JSR	sub_12ED20
 	set spr_y_pos_204, #$F0 
-	if_a_not_equal byte_372, loc_12CF76
+	IF_A_NOT_EQUAL byte_372, loc_12CF76
 	from_stack_to_a byte_372
 	JSR	sub_12CFBA
 	RTS
@@ -5915,7 +5915,7 @@ sub_12CFBA:
 	STA	char_type_id_35D
 
 loc_12CFE6:
-	if_a_equal byte_372, loc_12D003
+	IF_A_EQUAL byte_372, loc_12D003
 	ADD_BYTE_TO_BYTE_CLC ppu_unk_byte_309, #4
 	ADD_BYTE_TO_BYTE_CLC sprite_secondByte_31B, #$18
 
@@ -5952,7 +5952,7 @@ loc_12D003:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D070:
-	if_a_greater_cmp_addr count_unk_466, #$A, loc_12D084
+	IF_A_GREATER_CMP_ADDR count_unk_466, #$A, loc_12D084
 	set count_unk_466, #0
 	xor_byte byte_547, #1
 
@@ -5975,7 +5975,7 @@ loc_12D084:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D0C2:
-	if_a_greater_cmp_addr count_unk_465, #$A, loc_12D0D6
+	IF_A_GREATER_CMP_ADDR count_unk_465, #$A, loc_12D0D6
 	set count_unk_465, #0
 	xor_byte byte_547, #1
 
@@ -6009,7 +6009,7 @@ byte_12D11C:.BYTE $9D,$DA
 
 sub_12D120:
 	LDY	byte_372
-	if_a_equal_cmp_addr {byte_4A0,Y}, #$FF, loc_12D133
+	IF_A_EQUAL_CMP_ADDR {byte_4A0,Y}, #$FF, loc_12D133
 	JSR	sub_12D1E9
 	set sprite_length_30F, #$FF
 	RTS
@@ -6030,7 +6030,7 @@ sub_12D139:
 	LDY	byte_372
 
 loc_12D151:
-	if_y_equal_cmp #0, locret_12D166
+	IF_Y_EQUAL_CMP #0, locret_12D166
 
 	ADD_BYTE_TO_BYTE_CLC ptr_0, #$58 
 	ADD_BYTE_TO_BYTE ptr_1, #2
@@ -6054,13 +6054,13 @@ loc_12D171:
 	TYA
 	STA	(ptr_0),Y
 	INY
-	if_y_greater_cmp #$10, loc_12D171
+	IF_Y_GREATER_CMP #$10, loc_12D171
 	LDX	#0
 
 loc_12D17B:
 	set_inx {(ptr_0),Y}, {byte_4A0,X}
 	INY
-	if_x_greater_cmp #4, loc_12D17B
+	IF_X_GREATER_CMP #4, loc_12D17B
 
 	ADD_BYTE_TO_WORD ptr_0, #$14
 
@@ -6075,17 +6075,17 @@ loc_12D17B:
 
 loc_12D1BC:
 	set_iny {(ptr_0),Y}, {image_id_4A4,Y}
-	if_y_not_equal_cmp #0, loc_12D1BC
+	IF_Y_NOT_EQUAL_CMP #0, loc_12D1BC
 	ADD_BYTE_TO_BYTE_CLC ptr_1, #4
 
 loc_12D1CD:
 	set_iny {(ptr_0),Y}, {byte_5A4,Y}
-	if_y_not_equal_cmp #0, loc_12D1CD
+	IF_Y_NOT_EQUAL_CMP #0, loc_12D1CD
 	ADD_BYTE_TO_BYTE_CLC ptr_1, #4
 
 loc_12D1DE:
 	set_iny {(ptr_0),Y}, {byte_6A4,Y}
-	if_y_not_equal_cmp #$44 , loc_12D1DE
+	IF_Y_NOT_EQUAL_CMP #$44 , loc_12D1DE
 	RTS
 ; End of function sub_12D167
 
@@ -6097,17 +6097,17 @@ sub_12D1E9:
 
 loc_12D1EE:
 	set_iny {image_id_4A4,Y}, {(ptr_0),Y}
-	if_y_not_equal_cmp #0, loc_12D1EE
+	IF_Y_NOT_EQUAL_CMP #0, loc_12D1EE
 	ADD_BYTE_TO_BYTE_CLC ptr_1, #4
 
 loc_12D1FF:
 	set_iny {byte_5A4,Y}, {(ptr_0),Y}
-	if_y_not_equal_cmp #0, loc_12D1FF
+	IF_Y_NOT_EQUAL_CMP #0, loc_12D1FF
 	ADD_BYTE_TO_BYTE_CLC ptr_1, #4
 
 loc_12D210:
 	set_iny {byte_6A4,Y}, {(ptr_0),Y}
-	if_y_not_equal_cmp #$44 , loc_12D210
+	IF_Y_NOT_EQUAL_CMP #$44 , loc_12D210
 	RTS
 ; End of function sub_12D1E9
 
@@ -6133,7 +6133,7 @@ loc_12D232:
 
 loc_12D23F:
 	set_inx {palette_bg_321,X}, {byte_12D251,X}
-	if_x_not_equal_cmp #$10, loc_12D23F
+	IF_X_NOT_EQUAL_CMP #$10, loc_12D23F
 	JSR	ppu_update_ctrl_mask_FE86
 	JSR	sub_12EDF5
 	RTS
@@ -6163,7 +6163,7 @@ loc_12D278:
 	INY
 	INY
 	INY
-	if_y_not_equal_cmp tilemapWidth_308, loc_12D278
+	IF_Y_NOT_EQUAL_CMP tilemapWidth_308, loc_12D278
 	RTS
 ; End of function sub_12D26B
 
@@ -6186,7 +6186,7 @@ set_inventory_screen_12D2A3:
 	JSR	sub_12DEB5
 	set byte_372, #0
 	set sprite_secondByte_31B, #$3C 
-	if_a_equal byte_532, loc_12D315
+	IF_A_EQUAL byte_532, loc_12D315
 
 loc_12D2D6:
 	LDY	byte_372
@@ -6204,7 +6204,7 @@ loc_12D2D6:
 	JSR	sub_128326
 	ADD_BYTE_TO_BYTE_CLC sprite_secondByte_31B, #$11
 	INC	byte_372
-	if_a_not_equal_cmp_addr byte_372, byte_532, loc_12D2D6
+	IF_A_NOT_EQUAL_CMP_ADDR byte_372, byte_532, loc_12D2D6
 
 loc_12D315:
 	JSR	sub_12E3DF
@@ -6225,7 +6225,7 @@ sub_12D319:
 sub_12D329:
 	mult_by_2_byte byte_42E
 	ADD_TO_A byte_42C
-	if_a_greater_cmp byte_532, loc_12D33A
+	IF_A_GREATER_CMP byte_532, loc_12D33A
 	JSR	sub_12D49F
 	RTS
 ; ---------------------------------------------------------------------------
@@ -6237,16 +6237,16 @@ loc_12D33A:
 	set_inx tilemap_size_307, {byte_12E851,X}
 	ADD_BYTE_TO_BYTE_CLC_IMM ppu_unk_byte_309, {byte_12E851,X}, #$10
 	LDY	tilemapTypeUnk_30B
-	if_a_equal_cmp_addr {byte_533,Y}, #1, loc_12D383
-	if_a_equal_cmp #2, loc_12D383
-	if_a_equal_cmp #3, loc_12D383
-	if_a_equal_cmp #4, loc_12D383
-	if_a_equal_cmp #5, loc_12D383
-	if_a_equal_cmp #6, loc_12D383
-	if_a_equal_cmp #7, loc_12D383
-	if_a_equal_cmp #8, loc_12D383
-	if_a_equal_cmp #9, loc_12D383
-	if_a_equal_cmp #$1A, loc_12D383
+	IF_A_EQUAL_CMP_ADDR {byte_533,Y}, #1, loc_12D383
+	IF_A_EQUAL_CMP #2, loc_12D383
+	IF_A_EQUAL_CMP #3, loc_12D383
+	IF_A_EQUAL_CMP #4, loc_12D383
+	IF_A_EQUAL_CMP #5, loc_12D383
+	IF_A_EQUAL_CMP #6, loc_12D383
+	IF_A_EQUAL_CMP #7, loc_12D383
+	IF_A_EQUAL_CMP #8, loc_12D383
+	IF_A_EQUAL_CMP #9, loc_12D383
+	IF_A_EQUAL_CMP #$1A, loc_12D383
 	JMP	loc_12D394
 ; ---------------------------------------------------------------------------
 
@@ -6272,21 +6272,21 @@ sub_12D3AB:
 	set2 data_2, data_3, #0
 
 loc_12D3B3:
-	if_a_greater_cmp_addr ptr_0, #$64, loc_12D3C5
+	IF_A_GREATER_CMP_ADDR ptr_0, #$64, loc_12D3C5
 	sub_byte_sec ptr_0, #$64 
 	INC	data_3
 	JMP	loc_12D3B3
 ; ---------------------------------------------------------------------------
 
 loc_12D3C5:
-	if_a_greater_cmp_addr ptr_0, #$A, loc_12D3D7
+	IF_A_GREATER_CMP_ADDR ptr_0, #$A, loc_12D3D7
 	sub_byte_sec ptr_0, #$A
 	INC	data_2
 	JMP	loc_12D3C5
 ; ---------------------------------------------------------------------------
 
 loc_12D3D7:
-	if_a_equal data_3, loc_12D423
+	IF_A_EQUAL data_3, loc_12D423
 	ADD_BYTE_TO_BYTE_CLC tilemap_size_307, #4
 	ADD_BYTE_TO_BYTE_CLC_IMM objMapIdx_316, data_3, #$32 
 	set byte_317, #0
@@ -6307,8 +6307,8 @@ loc_12D3D7:
 	STA	tilemap_size_307
 
 loc_12D423:
-	if_a_not_equal data_3, loc_12D434
-	if_a_equal data_2, loc_12D473
+	IF_A_NOT_EQUAL data_3, loc_12D434
+	IF_A_EQUAL data_2, loc_12D473
 	ADD_BYTE_TO_BYTE_CLC tilemap_size_307, #8
 
 loc_12D434:
@@ -6331,8 +6331,8 @@ loc_12D434:
 	STA	tilemap_size_307
 
 loc_12D473:
-	if_a_not_equal data_3, loc_12D484
-	if_a_not_equal data_2, loc_12D484
+	IF_A_NOT_EQUAL data_3, loc_12D484
+	IF_A_NOT_EQUAL data_2, loc_12D484
 	ADD_BYTE_TO_BYTE_CLC tilemap_size_307, #$C
 
 loc_12D484:
@@ -6381,8 +6381,8 @@ loc_12D4E7:
 	JSR	sub_12DEB5
 	JSR	sub_12DD0A
 	JSR	wait_for_vblank_FC95
-	if_a_not_equal_cmp_addr input_pressed_34A, #8, loc_12D512
-	if_a_not_equal_cmp_addr byte_42E, #0, loc_12D506
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #8, loc_12D512
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #0, loc_12D506
 	set byte_42E, #6
 
 loc_12D506:
@@ -6393,8 +6393,8 @@ loc_12D506:
 ; ---------------------------------------------------------------------------
 
 loc_12D512:
-	if_a_not_equal_cmp #4, loc_12D52E
-	if_a_not_equal_cmp_addr byte_42E, #5, loc_12D522
+	IF_A_NOT_EQUAL_CMP #4, loc_12D52E
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #5, loc_12D522
 	set byte_42E, #$FF
 
 loc_12D522:
@@ -6405,7 +6405,7 @@ loc_12D522:
 ; ---------------------------------------------------------------------------
 
 loc_12D52E:
-	if_a_not_equal_cmp #2, loc_12D543
+	IF_A_NOT_EQUAL_CMP #2, loc_12D543
 	xor_byte byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
@@ -6413,7 +6413,7 @@ loc_12D52E:
 ; ---------------------------------------------------------------------------
 
 loc_12D543:
-	if_a_not_equal_cmp #1, loc_12D558
+	IF_A_NOT_EQUAL_CMP #1, loc_12D558
 	xor_byte byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
@@ -6421,14 +6421,14 @@ loc_12D543:
 ; ---------------------------------------------------------------------------
 
 loc_12D558:
-	if_a_not_equal_cmp #$80, loc_12D569
+	IF_A_NOT_EQUAL_CMP #$80, loc_12D569
 	JSR	sub_12DB1E
-	if_a_equal_cmp_addr sprite_length_30F, #$FF, loc_12D570
+	IF_A_EQUAL_CMP_ADDR sprite_length_30F, #$FF, loc_12D570
 	JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
 loc_12D569:
-	if_a_equal_cmp #$10, loc_12D570
+	IF_A_EQUAL_CMP #$10, loc_12D570
 	JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
@@ -6458,7 +6458,7 @@ sub_12D58C:
 	from_stack_to_a tilemapTypeUnk_30B
 	a_to_stack tilemapTypeUnk_30B
 	set_text_args tilemapTypeUnk_30B, #0
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$3B, loc_12D5D2
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$3B, loc_12D5D2
 	set_text_args #7, #2
 
 loc_12D5D2:
@@ -6473,7 +6473,7 @@ loc_12D5D2:
 	JSR	exec_b2_c1_128300
 	JSR	sub_12DAD0
 	from_stack_to_a tilemapTypeUnk_30B
-	if_a_greater_cmp_addr byte_532, #8, loc_12D623
+	IF_A_GREATER_CMP_ADDR byte_532, #8, loc_12D623
 	set_text_args #$7D, #0
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
@@ -6490,7 +6490,7 @@ loc_12D623:
 	JSR	sub_12D680
 	from_stack_to_a tilemapTypeUnk_30B
 	set sprite_length_30F, #0
-	if_a_not_equal byte_372, loc_12D652
+	IF_A_NOT_EQUAL byte_372, loc_12D652
 	JSR	sub_12D82B
 	set sprite_length_30F, #$FF
 
@@ -6515,7 +6515,7 @@ sub_12D680:
 	set byte_372, #0
 
 loc_12D685:
-	if_a_greater_cmp_addr byte_546, #$A, loc_12D699
+	IF_A_GREATER_CMP_ADDR byte_546, #$A, loc_12D699
 	set byte_546, #0
 	xor_byte byte_547, #1
 
@@ -6535,21 +6535,21 @@ loc_12D699:
 	set ppu_unk_byte_309, #$DC 
 	JSR	sub_12E829
 	JSR	wait_for_vblank_FC95
-	if_a_not_equal_cmp_addr input_pressed_34A, #2, loc_12D6E3
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #2, loc_12D6E3
 	xor_byte byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
 loc_12D6E3:
-	if_a_not_equal_cmp #1, loc_12D6F5
+	IF_A_NOT_EQUAL_CMP #1, loc_12D6F5
 	xor_byte byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
 loc_12D6F5:
-	if_a_equal_cmp #$80, loc_12D6FC
+	IF_A_EQUAL_CMP #$80, loc_12D6FC
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
@@ -6578,9 +6578,9 @@ sub_12D700:
 loc_12D72F:
 	JSR	sub_12DD0A
 	JSR	wait_for_vblank_FC95
-	if_a_not_equal_cmp_addr input_pressed_34A, #8, loc_12D76F
-	if_a_not_equal_cmp_addr byte_42E, #0, loc_12D757
-	if_a_not_equal_cmp_addr byte_42C, #1, loc_12D752
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #8, loc_12D76F
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #0, loc_12D757
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42C, #1, loc_12D752
 	set byte_42E, #6
 	JMP	loc_12D757
 ; ---------------------------------------------------------------------------
@@ -6589,7 +6589,7 @@ loc_12D752:
 	set byte_42E, #4
 
 loc_12D757:
-	if_a_not_equal_cmp_addr byte_42E, #5, loc_12D763
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #5, loc_12D763
 	set byte_42E, #4
 
 loc_12D763:
@@ -6600,9 +6600,9 @@ loc_12D763:
 ; ---------------------------------------------------------------------------
 
 loc_12D76F:
-	if_a_not_equal_cmp #4, loc_12D7A6
-	if_a_not_equal_cmp_addr byte_42E, #3, loc_12D78E
-	if_a_not_equal_cmp_addr byte_42C, #1, loc_12D789
+	IF_A_NOT_EQUAL_CMP #4, loc_12D7A6
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #3, loc_12D78E
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42C, #1, loc_12D789
 	set byte_42E, #4
 	JMP	loc_12D78E
 ; ---------------------------------------------------------------------------
@@ -6611,7 +6611,7 @@ loc_12D789:
 	set byte_42E, #$FF
 
 loc_12D78E:
-	if_a_not_equal_cmp_addr byte_42E, #5, loc_12D79A
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #5, loc_12D79A
 	set byte_42E, #$FF
 
 loc_12D79A:
@@ -6622,8 +6622,8 @@ loc_12D79A:
 ; ---------------------------------------------------------------------------
 
 loc_12D7A6:
-	if_a_not_equal_cmp #2, loc_12D7C5
-	if_a_not_equal_cmp_addr byte_42E, #5, loc_12D7B4
+	IF_A_NOT_EQUAL_CMP #2, loc_12D7C5
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #5, loc_12D7B4
 	JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
@@ -6635,8 +6635,8 @@ loc_12D7B4:
 ; ---------------------------------------------------------------------------
 
 loc_12D7C5:
-	if_a_not_equal_cmp #1, loc_12D7E4
-	if_a_not_equal_cmp_addr byte_42E, #5, loc_12D7D3
+	IF_A_NOT_EQUAL_CMP #1, loc_12D7E4
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #5, loc_12D7D3
 	JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
@@ -6648,8 +6648,8 @@ loc_12D7D3:
 ; ---------------------------------------------------------------------------
 
 loc_12D7E4:
-	if_a_not_equal_cmp #$80, loc_12D7FB
-	if_a_equal_cmp_addr byte_42E, #5, loc_12D802
+	IF_A_NOT_EQUAL_CMP #$80, loc_12D7FB
+	IF_A_EQUAL_CMP_ADDR byte_42E, #5, loc_12D802
 	JSR	sub_12ED20
 	JSR	sub_12DC76
 	JSR	sub_12D319
@@ -6657,7 +6657,7 @@ loc_12D7E4:
 ; ---------------------------------------------------------------------------
 
 loc_12D7FB:
-	if_a_equal_cmp #$10, loc_12D802
+	IF_A_EQUAL_CMP #$10, loc_12D802
 	JMP	loc_12D72F
 ; ---------------------------------------------------------------------------
 
@@ -6680,47 +6680,47 @@ loc_12D802:
 sub_12D82B:
 	LDY	byte_532
 	set {byte_533,Y}, tilemapTypeUnk_30B
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #1, loc_12D840
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #1, loc_12D840
 	set {unk_53B,Y}, #$F
 
 loc_12D840:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #2, loc_12D84C
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #2, loc_12D84C
 	set {unk_53B,Y}, #6
 
 loc_12D84C:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #3, loc_12D858
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #3, loc_12D858
 	set {unk_53B,Y}, #6
 
 loc_12D858:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #4, loc_12D864
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #4, loc_12D864
 	set {unk_53B,Y}, #6
 
 loc_12D864:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #5, loc_12D870
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #5, loc_12D870
 	set {unk_53B,Y}, #6
 
 loc_12D870:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #6, loc_12D87C
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #6, loc_12D87C
 	set {unk_53B,Y}, #$F
 
 loc_12D87C:
-	if_a_not_equal_cmp #7, loc_12D885
+	IF_A_NOT_EQUAL_CMP #7, loc_12D885
 	set {unk_53B,Y}, #6
 
 loc_12D885:
-	if_a_not_equal_cmp #8, loc_12D88E
+	IF_A_NOT_EQUAL_CMP #8, loc_12D88E
 	set {unk_53B,Y}, #6
 
 loc_12D88E:
-	if_a_not_equal_cmp #9, loc_12D897
+	IF_A_NOT_EQUAL_CMP #9, loc_12D897
 	set {unk_53B,Y}, #6
 
 loc_12D897:
-	if_a_not_equal_cmp #$1A, loc_12D8A0
+	IF_A_NOT_EQUAL_CMP #$1A, loc_12D8A0
 	set {unk_53B,Y}, #3
 
 loc_12D8A0:
-	if_a_not_equal byte_4B4, loc_12D8AF
+	IF_A_NOT_EQUAL byte_4B4, loc_12D8AF
 	ADD_BYTE_TO_BYTE_CLC {unk_53B,Y}, {unk_53B,Y}
 
 loc_12D8AF:
@@ -6731,7 +6731,7 @@ loc_12D8AF:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D8B3:
-	if_a_greater_cmp_addr tilemapTypeUnk_30B, byte_532, loc_12D8BC
+	IF_A_GREATER_CMP_ADDR tilemapTypeUnk_30B, byte_532, loc_12D8BC
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -6741,7 +6741,7 @@ loc_12D8BC:
 	INX
 
 loc_12D8C3:
-	if_x_equal_cmp byte_532, loc_12D8D9
+	IF_X_EQUAL_CMP byte_532, loc_12D8D9
 	set {byte_533,Y}, {byte_533,X}
 	set_inx {unk_53B,Y}, {unk_53B,X}
 	INY
@@ -6763,7 +6763,7 @@ sub_12D8DD:
 	PHA
 	mult_by_2_byte byte_42E
 	ADD_TO_A byte_42C
-	if_a_greater_cmp byte_532, loc_12D900
+	IF_A_GREATER_CMP byte_532, loc_12D900
 	LDX	byte_372
 	set {unk_4D2,X}, #$3A 
 	JMP	loc_12D910
@@ -6782,8 +6782,8 @@ loc_12D910:
 	mult_by_2_byte byte_42E
 	ADD_TO_A byte_42C
 	TAY
-	if_y_greater_cmp byte_532, loc_12D946
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$3A, loc_12D931
+	IF_Y_GREATER_CMP byte_532, loc_12D946
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$3A, loc_12D931
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -6796,7 +6796,7 @@ loc_12D931:
 ; ---------------------------------------------------------------------------
 
 loc_12D946:
-	if_a_equal_cmp_addr {byte_533,Y}, #6, loc_12D966
+	IF_A_EQUAL_CMP_ADDR {byte_533,Y}, #6, loc_12D966
 	BCS	loc_12D966
 	a_to_stack tilemapTypeUnk_30B
 	a_to_stack inv_spr_dscr1_30C
@@ -6809,7 +6809,7 @@ loc_12D946:
 loc_12D966:
 	set {unk_53B,Y}, inv_spr_dscr1_30C
 	set {byte_533,Y}, tilemapTypeUnk_30B
-	if_a_not_equal_cmp #$3A, loc_12D9A3
+	IF_A_NOT_EQUAL_CMP #$3A, loc_12D9A3
 	y_to_stack
 	TAX
 
@@ -6817,7 +6817,7 @@ loc_12D979:
 	TYA
 	TAX
 	INX
-	if_x_equal_cmp byte_532, loc_12D991
+	IF_X_EQUAL_CMP byte_532, loc_12D991
 	set {byte_533,Y}, {byte_533,X}
 	set_iny {unk_53B,Y}, {unk_53B,X}
 	JMP	loc_12D979
@@ -6849,7 +6849,7 @@ loc_12D9A3:
 	set sprite_secondByte_31B, #$3C 
 
 loc_12D9C9:
-	if_x_equal_cmp #0, loc_12D9DA
+	IF_X_EQUAL_CMP #0, loc_12D9DA
 	ADD_BYTE_TO_BYTE_CLC sprite_secondByte_31B, #$11
 	DEX
 	JMP	loc_12D9C9
@@ -6892,7 +6892,7 @@ loc_12D9FB:
 	STY	tilemapTypeUnk_30B
 	from_stack_to_x
 	INX
-	if_x_greater_cmp tilemapTypeUnk_30B, loc_12D9FB
+	IF_X_GREATER_CMP tilemapTypeUnk_30B, loc_12D9FB
 	from_stack_to_y
 	from_stack_to_x
 	RTS
@@ -6905,7 +6905,7 @@ sub_12DA33:
 	y_to_stack
 	STX	tilemapTypeUnk_30B
 	TYA
-	if_a_not_equal_cmp tilemapTypeUnk_30B, loc_12DA43
+	IF_A_NOT_EQUAL_CMP tilemapTypeUnk_30B, loc_12DA43
 	JMP	loc_12DACB
 ; ---------------------------------------------------------------------------
 
@@ -6913,7 +6913,7 @@ loc_12DA43:
 	set sprite_secondByte_31B, #$3C 
 
 loc_12DA48:
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_12DA5E
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #0, loc_12DA5E
 	ADD_BYTE_TO_BYTE_CLC sprite_secondByte_31B, #$11
 	DEC	tilemapTypeUnk_30B
 	JMP	loc_12DA48
@@ -6942,7 +6942,7 @@ loc_12DA5E:
 	x_to_stack
 	LDA	byte_533,X
 	ADD_TO_A #1
-	if_a_not_equal_cmp byte_543, loc_12DABA
+	IF_A_NOT_EQUAL_CMP byte_543, loc_12DABA
 	STX	byte_544
 	set tilemap_size_307, #$10
 	set ppu_unk_byte_309, #$14
@@ -6956,7 +6956,7 @@ loc_12DABA:
 	ADD_BYTE_TO_BYTE_CLC sprite_secondByte_31B, #$11
 	from_stack_to_x
 	INX
-	if_x_greater_cmp tilemapTypeUnk_30B, loc_12DA5E
+	IF_X_GREATER_CMP tilemapTypeUnk_30B, loc_12DA5E
 
 loc_12DACB:
 	from_stack_to_y
@@ -6967,7 +6967,7 @@ loc_12DACB:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DAD0:
-	if_a_greater_cmp_addr byte_546, #$A, loc_12DAE4
+	IF_A_GREATER_CMP_ADDR byte_546, #$A, loc_12DAE4
 	set byte_546, #0
 	xor_byte byte_547, #1
 
@@ -6983,7 +6983,7 @@ loc_12DAE4:
 	STA	ppu_unk_byte_309
 	JSR	sub_12E829
 	JSR	wait_for_vblank_FC95
-	if_a_not_equal_cmp_addr input_pressed_34A, #0, loc_12DB1A
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #0, loc_12DB1A
 	JMP	sub_12DAD0
 ; ---------------------------------------------------------------------------
 
@@ -6995,8 +6995,8 @@ loc_12DB1A:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DB1E:
-	if_a_not_equal_cmp_addr byte_42E, #4, loc_12DB3A
-	if_a_not_equal_cmp_addr byte_42C, #0, loc_12DB33
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #4, loc_12DB3A
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42C, #0, loc_12DB33
 	JSR	sub_12ED20
 	JSR	sub_12E5E6
 	RTS
@@ -7009,9 +7009,9 @@ loc_12DB33:
 ; ---------------------------------------------------------------------------
 
 loc_12DB3A:
-	if_a_not_equal_cmp_addr byte_42E, #5, loc_12DB75
-	if_a_not_equal_cmp_addr byte_42C, #0, loc_12DB6C
-	if_a_equal byte_545, locret_12DB6B
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #5, loc_12DB75
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42C, #0, loc_12DB6C
+	IF_A_EQUAL byte_545, locret_12DB6B
 	JSR	sub_12ED20
 	set_text_args #$44, #2
 	set byte_364, #7
@@ -7033,7 +7033,7 @@ loc_12DB6C:
 loc_12DB75:
 	mult_by_2_byte byte_42E
 	ADD_TO_A byte_42C
-	if_a_greater_cmp byte_532, loc_12DB83
+	IF_A_GREATER_CMP byte_532, loc_12DB83
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -7044,8 +7044,8 @@ loc_12DB83:
 
 loc_12DB8E:
 	JSR	wait_for_vblank_FC95
-	if_a_not_equal_cmp_addr input_pressed_34A, #8, loc_12DBB0
-	if_a_not_equal_cmp_addr byte_372, #0, loc_12DBA4
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #8, loc_12DBB0
+	IF_A_NOT_EQUAL_CMP_ADDR byte_372, #0, loc_12DBA4
 	set byte_372, #3
 
 loc_12DBA4:
@@ -7056,8 +7056,8 @@ loc_12DBA4:
 ; ---------------------------------------------------------------------------
 
 loc_12DBB0:
-	if_a_not_equal_cmp #4, loc_12DBCC
-	if_a_not_equal_cmp_addr byte_372, #2, loc_12DBC0
+	IF_A_NOT_EQUAL_CMP #4, loc_12DBCC
+	IF_A_NOT_EQUAL_CMP_ADDR byte_372, #2, loc_12DBC0
 	set byte_372, #$FF
 
 loc_12DBC0:
@@ -7068,24 +7068,24 @@ loc_12DBC0:
 ; ---------------------------------------------------------------------------
 
 loc_12DBCC:
-	if_a_not_equal_cmp #$80, loc_12DC0F
+	IF_A_NOT_EQUAL_CMP #$80, loc_12DC0F
 	JSR	sub_12ED20
 	mult_by_2_byte byte_42E
 	ADD_TO_A byte_42C
 	STA	byte_47B
-	if_a_not_equal_cmp_addr byte_372, #0, loc_12DBEB
+	IF_A_NOT_EQUAL_CMP_ADDR byte_372, #0, loc_12DBEB
 	JSR	sub_12DFA5
 	JMP	loc_12DC0C
 ; ---------------------------------------------------------------------------
 
 loc_12DBEB:
-	if_a_not_equal_cmp #1, loc_12DBF5
+	IF_A_NOT_EQUAL_CMP #1, loc_12DBF5
 	JSR	sub_12E384
 	JMP	loc_12DC0C
 ; ---------------------------------------------------------------------------
 
 loc_12DBF5:
-	if_a_not_equal_cmp #2, loc_12DC0C
+	IF_A_NOT_EQUAL_CMP #2, loc_12DC0C
 	a_to_stack byte_42C
 	a_to_stack byte_42E
 	JSR	sub_12E428
@@ -7097,7 +7097,7 @@ loc_12DC0C:
 ; ---------------------------------------------------------------------------
 
 loc_12DC0F:
-	if_a_equal_cmp #$40, loc_12DC16
+	IF_A_EQUAL_CMP #$40, loc_12DC16
 	JMP	loc_12DB8E
 ; ---------------------------------------------------------------------------
 
@@ -7106,7 +7106,7 @@ loc_12DC16:
 	set tilemapWidth_308, #$60 
 	set byte_31A, #$A0 
 	JSR	sub_12D26B
-	if_a_equal_cmp_addr sprite_length_30F, #$FF, locret_12DC30
+	IF_A_EQUAL_CMP_ADDR sprite_length_30F, #$FF, locret_12DC30
 	JSR	sub_12D319
 
 locret_12DC30:
@@ -7144,8 +7144,8 @@ sub_12DC76:
 
 loc_12DC79:
 	JSR	wait_for_vblank_FC95
-	if_a_not_equal_cmp_addr input_reg1_347, #8, loc_12DC97
-	if_a_equal byte_372, loc_12DC79
+	IF_A_NOT_EQUAL_CMP_ADDR input_reg1_347, #8, loc_12DC97
+	IF_A_EQUAL byte_372, loc_12DC79
 	DEC	byte_372
 	JSR	sub_12ED32
 	JSR	sub_12DF2B
@@ -7154,8 +7154,8 @@ loc_12DC79:
 ; ---------------------------------------------------------------------------
 
 loc_12DC97:
-	if_a_not_equal_cmp #4, loc_12DCB1
-	if_a_equal_cmp_addr byte_372, #$2F, loc_12DC79
+	IF_A_NOT_EQUAL_CMP #4, loc_12DCB1
+	IF_A_EQUAL_CMP_ADDR byte_372, #$2F, loc_12DC79
 	INC	byte_372
 	JSR	sub_12ED32
 	JSR	sub_12DF2B
@@ -7164,14 +7164,14 @@ loc_12DC97:
 ; ---------------------------------------------------------------------------
 
 loc_12DCB1:
-	if_a_not_equal_cmp_addr input_pressed_34A, #$80, loc_12DCC1
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #$80, loc_12DCC1
 	JSR	sub_12ED20
 	JSR	sub_12D8DD
 	JMP	loc_12DCC8
 ; ---------------------------------------------------------------------------
 
 loc_12DCC1:
-	if_a_equal_cmp #$40, loc_12DCC8
+	IF_A_EQUAL_CMP #$40, loc_12DCC8
 	JMP	loc_12DC79
 ; ---------------------------------------------------------------------------
 
@@ -7207,7 +7207,7 @@ sub_12DCE9:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DD0A:
-	if_a_greater_cmp_addr byte_546, #$A, loc_12DD1E
+	IF_A_GREATER_CMP_ADDR byte_546, #$A, loc_12DD1E
 	set byte_546, #0
 	xor_byte byte_547, #1
 
@@ -7254,7 +7254,7 @@ loc_12DD1E:
 	sub_a_sec byte_547
 	STA	ppu_unk_byte_309
 	ADD_BYTE_TO_BYTE_CLC tilemap_size_307, byte_547
-	if_a_greater_cmp_addr byte_42E, #4, loc_12DDE9
+	IF_A_GREATER_CMP_ADDR byte_42E, #4, loc_12DDE9
 	sub_byte_sec ppu_unk_byte_309, #$10
 
 loc_12DDE9:
@@ -7273,7 +7273,7 @@ loc_12DDE9:
 	ADD_TO_A #$18
 	sub_a_sec byte_547
 	STA	ppu_unk_byte_309
-	if_a_greater_cmp_addr byte_42E, #4, loc_12DE34
+	IF_A_GREATER_CMP_ADDR byte_42E, #4, loc_12DE34
 	sub_byte_sec ppu_unk_byte_309, #$10
 
 loc_12DE34:
@@ -7287,16 +7287,16 @@ loc_12DE34:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DE49:
-	if_a_greater_cmp_addr count_unk_465, #5, locret_12DEB4
+	IF_A_GREATER_CMP_ADDR count_unk_465, #5, locret_12DEB4
 	set count_unk_465, #0
 	INC	byte_54D
-	if_a_greater_cmp_addr byte_54D, #7, loc_12DE64
+	IF_A_GREATER_CMP_ADDR byte_54D, #7, loc_12DE64
 	set byte_54D, #0
 
 loc_12DE64:
 	set objMapIdx_316, byte_54D
-	if_a_greater_cmp_addr byte_549, #$55, loc_12DE8E
-	if_a_greater_cmp #$AA, loc_12DE7D
+	IF_A_GREATER_CMP_ADDR byte_549, #$55, loc_12DE8E
+	IF_A_GREATER_CMP #$AA, loc_12DE7D
 	set byte_54B, #0
 	JMP	loc_12DE9C
 ; ---------------------------------------------------------------------------
@@ -7325,7 +7325,7 @@ locret_12DEB4:
 
 sub_12DEB5:
 	set objMapIdx_316, byte_54B
-	if_a_equal byte_54A, loc_12DEC9
+	IF_A_EQUAL byte_54A, loc_12DEC9
 	ADD_BYTE_TO_BYTE_CLC objMapIdx_316, #3
 
 loc_12DEC9:
@@ -7378,11 +7378,11 @@ sub_12DF32:
 sub_12DF6C:
 	LDX	byte_372
 	set_text_args {unk_4D2,X}, #0
-	if_a_not_equal_cmp_addr inv_itemPrev_idx_31D, #$29, loc_12DF8B
+	IF_A_NOT_EQUAL_CMP_ADDR inv_itemPrev_idx_31D, #$29, loc_12DF8B
 	set_text_args #$75, #0
 
 loc_12DF8B:
-	if_a_not_equal_cmp_addr inv_itemPrev_idx_31D, #$15, loc_12DF9C
+	IF_A_NOT_EQUAL_CMP_ADDR inv_itemPrev_idx_31D, #$15, loc_12DF9C
 	set_text_args #7, #2
 
 loc_12DF9C:
@@ -7401,28 +7401,28 @@ sub_12DFA5:
 	ADD_TO_A byte_42C
 	TAY
 	set tilemapTypeUnk_30B, {byte_533,Y}
-	if_a_greater_cmp_addr tilemapTypeUnk_30B, #6, loc_12DFC6
-	if_a_greater_cmp #$A, loc_12E019
-	if_a_greater_cmp #$13, loc_12E035
+	IF_A_GREATER_CMP_ADDR tilemapTypeUnk_30B, #6, loc_12DFC6
+	IF_A_GREATER_CMP #$A, loc_12E019
+	IF_A_GREATER_CMP #$13, loc_12E035
 	JMP	loc_12E166
 ; ---------------------------------------------------------------------------
 
 loc_12DFC6:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #2, loc_12DFD7
-	if_a_not_equal_cmp_addr byte_46D, #2, loc_12DFD7
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #2, loc_12DFD7
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46D, #2, loc_12DFD7
 	JMP	loc_12E166
 ; ---------------------------------------------------------------------------
 
 loc_12DFD7:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_12DFE8
-	if_a_not_equal_cmp_addr byte_46D, #0, loc_12DFE8
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #0, loc_12DFE8
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46D, #0, loc_12DFE8
 	JMP	loc_12E166
 ; ---------------------------------------------------------------------------
 
 loc_12DFE8:
 	LDA	tilemapTypeUnk_30B
 	ADD_TO_A #1
-	if_a_equal_cmp byte_543, sub_12DFFC
+	IF_A_EQUAL_CMP byte_543, sub_12DFFC
 	STA	byte_543
 	STY	byte_544
 	JMP	sub_12E3DF
@@ -7454,9 +7454,9 @@ loc_12E019:
 ; ---------------------------------------------------------------------------
 
 loc_12E035:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$12, loc_12E05D
-	if_a_not_equal_cmp_addr byte_54A, #0, loc_12E04D
-	if_a_greater_cmp_addr byte_549, #$C8, loc_12E04D
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$12, loc_12E05D
+	IF_A_NOT_EQUAL_CMP_ADDR byte_54A, #0, loc_12E04D
+	IF_A_GREATER_CMP_ADDR byte_549, #$C8, loc_12E04D
 	JMP	loc_12E05D
 ; ---------------------------------------------------------------------------
 
@@ -7467,16 +7467,16 @@ loc_12E04D:
 ; ---------------------------------------------------------------------------
 
 loc_12E05D:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$C, loc_12E076
-	if_a_equal_cmp_addr byte_54A, #0, loc_12E076
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$C, loc_12E076
+	IF_A_EQUAL_CMP_ADDR byte_54A, #0, loc_12E076
 	set2 byte_54A, byte_4B5, #0
 	JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
 loc_12E076:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$E, loc_12E09E
-	if_a_not_equal_cmp_addr byte_54A, #0, loc_12E08E
-	if_a_greater_cmp_addr byte_549, #$C8, loc_12E08E
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$E, loc_12E09E
+	IF_A_NOT_EQUAL_CMP_ADDR byte_54A, #0, loc_12E08E
+	IF_A_GREATER_CMP_ADDR byte_549, #$C8, loc_12E08E
 	JMP	loc_12E09E
 ; ---------------------------------------------------------------------------
 
@@ -7488,9 +7488,9 @@ loc_12E08E:
 ; ---------------------------------------------------------------------------
 
 loc_12E09E:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$11, loc_12E0C6
-	if_a_not_equal_cmp_addr byte_54A, #0, loc_12E0B6
-	if_a_greater_cmp_addr byte_549, #$C8, loc_12E0B6
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$11, loc_12E0C6
+	IF_A_NOT_EQUAL_CMP_ADDR byte_54A, #0, loc_12E0B6
+	IF_A_GREATER_CMP_ADDR byte_549, #$C8, loc_12E0B6
 	JMP	loc_12E0C6
 ; ---------------------------------------------------------------------------
 
@@ -7502,32 +7502,32 @@ loc_12E0B6:
 ; ---------------------------------------------------------------------------
 
 loc_12E0C6:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$B, loc_12E0DC
-	if_a_lower_cmp_addr byte_549, #$C8, loc_12E0DC
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$B, loc_12E0DC
+	IF_A_LOWER_CMP_ADDR byte_549, #$C8, loc_12E0DC
 	LDA	#$55 
 	JSR	sub_12E156
 	JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
 loc_12E0DC:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$D, loc_12E0F2
-	if_a_lower_cmp_addr byte_549, #$C8, loc_12E0F2
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$D, loc_12E0F2
+	IF_A_LOWER_CMP_ADDR byte_549, #$C8, loc_12E0F2
 	LDA	#$AA 
 	JSR	sub_12E156
 	JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
 loc_12E0F2:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$F, loc_12E108
-	if_a_lower_cmp_addr byte_549, #$C8, loc_12E108
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$F, loc_12E108
+	IF_A_LOWER_CMP_ADDR byte_549, #$C8, loc_12E108
 	LDA	#$AA 
 	JSR	sub_12E156
 	JMP	loc_12E13A
 ; ---------------------------------------------------------------------------
 
 loc_12E108:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$10, loc_12E11E
-	if_a_lower_cmp_addr byte_549, #$C8, loc_12E11E
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$10, loc_12E11E
+	IF_A_LOWER_CMP_ADDR byte_549, #$C8, loc_12E11E
 	LDA	#$FF
 	JSR	sub_12E156
 	JMP	loc_12E13A
@@ -7573,59 +7573,59 @@ loc_12E162:
 ; START	OF FUNCTION CHUNK FOR sub_12DFA5
 
 loc_12E166:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$2F, loc_12E170
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$2F, loc_12E170
 	JMP	loc_12E315
 ; ---------------------------------------------------------------------------
 
 loc_12E170:
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #$12, loc_12E17A
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$12, loc_12E17A
 	JMP	loc_12E035
 ; ---------------------------------------------------------------------------
 
 loc_12E17A:
-	if_a_not_equal_cmp_addr byte_46D, #$1E, loc_12E1A0
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$1E, loc_12E202
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$1F, loc_12E202
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$20, loc_12E202
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$21, loc_12E202
+	IF_A_NOT_EQUAL_CMP_ADDR byte_46D, #$1E, loc_12E1A0
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$1E, loc_12E202
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$1F, loc_12E202
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$20, loc_12E202
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$21, loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1A0:
-	if_a_not_equal_cmp #$22, loc_12E1B5
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$22, loc_12E202
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$23, loc_12E202
+	IF_A_NOT_EQUAL_CMP #$22, loc_12E1B5
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$22, loc_12E202
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$23, loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1B5:
-	if_a_not_equal_cmp #$2D, loc_12E1C3
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$2D, loc_12E202
+	IF_A_NOT_EQUAL_CMP #$2D, loc_12E1C3
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$2D, loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1C3:
-	if_a_not_equal_cmp #$1C, loc_12E1D8
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$1C, loc_12E202
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$1D, loc_12E202
+	IF_A_NOT_EQUAL_CMP #$1C, loc_12E1D8
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$1C, loc_12E202
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$1D, loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1D8:
-	if_a_not_equal_cmp #$1B, loc_12E1E6
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$1B, loc_12E202
+	IF_A_NOT_EQUAL_CMP #$1B, loc_12E1E6
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$1B, loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1E6:
-	if_a_not_equal_cmp #$29, loc_12E1F4
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$29, loc_12E202
+	IF_A_NOT_EQUAL_CMP #$29, loc_12E1F4
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$29, loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E1F4:
-	if_a_not_equal_cmp #$13, loc_12E205
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$13, loc_12E202
+	IF_A_NOT_EQUAL_CMP #$13, loc_12E205
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$13, loc_12E202
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
@@ -7634,57 +7634,57 @@ loc_12E202:
 ; ---------------------------------------------------------------------------
 
 loc_12E205:
-	if_a_not_equal_cmp #$18, loc_12E213
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$18, loc_12E28A
+	IF_A_NOT_EQUAL_CMP #$18, loc_12E213
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$18, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E213:
-	if_a_not_equal_cmp #$17, loc_12E221
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$17, loc_12E28A
+	IF_A_NOT_EQUAL_CMP #$17, loc_12E221
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$17, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E221:
-	if_a_not_equal_cmp #$16, loc_12E22F
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$16, loc_12E28A
+	IF_A_NOT_EQUAL_CMP #$16, loc_12E22F
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$16, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E22F:
-	if_a_not_equal_cmp #$24, loc_12E23D
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$24, loc_12E28A
+	IF_A_NOT_EQUAL_CMP #$24, loc_12E23D
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$24, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E23D:
-	if_a_not_equal_cmp #$2C, loc_12E24B
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$2C, loc_12E28A
+	IF_A_NOT_EQUAL_CMP #$2C, loc_12E24B
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$2C, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E24B:
-	if_a_not_equal_cmp #2, loc_12E260
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #2, loc_12E28A
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$3B, loc_12E28A
+	IF_A_NOT_EQUAL_CMP #2, loc_12E260
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #2, loc_12E28A
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$3B, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E260:
-	if_a_not_equal_cmp #$2E, loc_12E26E
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$2E, loc_12E28A
+	IF_A_NOT_EQUAL_CMP #$2E, loc_12E26E
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$2E, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E26E:
-	if_a_not_equal_cmp #$2A, loc_12E27C
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$2A, loc_12E28A
+	IF_A_NOT_EQUAL_CMP #$2A, loc_12E27C
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$2A, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E27C:
-	if_a_not_equal_cmp #0, loc_12E28D
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_12E28A
+	IF_A_NOT_EQUAL_CMP #0, loc_12E28D
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #0, loc_12E28A
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
@@ -7693,44 +7693,44 @@ loc_12E28A:
 ; ---------------------------------------------------------------------------
 
 loc_12E28D:
-	if_a_not_equal_cmp #$39, loc_12E29B
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$39, loc_12E315
+	IF_A_NOT_EQUAL_CMP #$39, loc_12E29B
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$39, loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E29B:
-	if_a_not_equal_cmp #$27, loc_12E2A9
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$27, loc_12E315
+	IF_A_NOT_EQUAL_CMP #$27, loc_12E2A9
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$27, loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E2A9:
-	if_a_not_equal_cmp #$28, loc_12E2B7
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$28, loc_12E315
+	IF_A_NOT_EQUAL_CMP #$28, loc_12E2B7
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$28, loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E2B7:
-	if_a_not_equal_cmp #$30, loc_12E2C5
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$30, loc_12E315
+	IF_A_NOT_EQUAL_CMP #$30, loc_12E2C5
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$30, loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E2C5:
-	if_a_not_equal_cmp #$14, loc_12E2D3
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$14, loc_12E315
+	IF_A_NOT_EQUAL_CMP #$14, loc_12E2D3
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$14, loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E2D3:
-	if_a_not_equal_cmp #$15, loc_12E2E1
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$15, loc_12E315
+	IF_A_NOT_EQUAL_CMP #$15, loc_12E2E1
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$15, loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
 loc_12E2E1:
-	if_a_not_equal_cmp #$1A, loc_12E312
-	if_a_not_equal_cmp_addr byte_598, #0, loc_12E308
+	IF_A_NOT_EQUAL_CMP #$1A, loc_12E312
+	IF_A_NOT_EQUAL_CMP_ADDR byte_598, #0, loc_12E308
 	set_text_args #$B7, #0
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
@@ -7741,7 +7741,7 @@ loc_12E2E1:
 ; ---------------------------------------------------------------------------
 
 loc_12E308:
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$1A, loc_12E315
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$1A, loc_12E315
 	JMP	loc_12E368
 ; ---------------------------------------------------------------------------
 
@@ -7751,20 +7751,20 @@ loc_12E312:
 
 loc_12E315:
 	set byte_46E, tilemapTypeUnk_30B
-	if_a_equal_cmp #0, loc_12E362
-	if_a_equal_cmp #$13, loc_12E362
-	if_a_equal_cmp #$14, loc_12E362
-	if_a_equal_cmp #$15, loc_12E362
-	if_a_equal_cmp #$16, loc_12E362
-	if_a_equal_cmp #$17, loc_12E362
-	if_a_equal_cmp #$18, loc_12E362
-	if_a_equal_cmp #$19, loc_12E362
-	if_a_equal_cmp #$29, loc_12E362
-	if_a_equal_cmp #$2A, loc_12E362
-	if_a_equal_cmp #$2B, loc_12E362
-	if_a_not_equal_cmp #$1A, loc_12E35C
+	IF_A_EQUAL_CMP #0, loc_12E362
+	IF_A_EQUAL_CMP #$13, loc_12E362
+	IF_A_EQUAL_CMP #$14, loc_12E362
+	IF_A_EQUAL_CMP #$15, loc_12E362
+	IF_A_EQUAL_CMP #$16, loc_12E362
+	IF_A_EQUAL_CMP #$17, loc_12E362
+	IF_A_EQUAL_CMP #$18, loc_12E362
+	IF_A_EQUAL_CMP #$19, loc_12E362
+	IF_A_EQUAL_CMP #$29, loc_12E362
+	IF_A_EQUAL_CMP #$2A, loc_12E362
+	IF_A_EQUAL_CMP #$2B, loc_12E362
+	IF_A_NOT_EQUAL_CMP #$1A, loc_12E35C
 	sub_byte_sec {unk_53B,Y}, #1
-	if_a_equal {unk_53B,Y}, loc_12E35C
+	IF_A_EQUAL {unk_53B,Y}, loc_12E35C
 	JMP	loc_12E362
 ; ---------------------------------------------------------------------------
 
@@ -7802,13 +7802,13 @@ sub_12E384:
 	mult_by_2_byte byte_42E
 	ADD_TO_A byte_42C
 	TAY
-	if_a_not_equal_cmp_addr {byte_533,Y}, #$25, loc_12E3C1
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #$25, loc_12E3C1
 	set {byte_533,Y}, #$27 
 	JMP	loc_12E3CA
 ; ---------------------------------------------------------------------------
 
 loc_12E3C1:
-	if_a_not_equal_cmp #$26, locret_12E3D3
+	IF_A_NOT_EQUAL_CMP #$26, locret_12E3D3
 	set {byte_533,Y}, #$28 
 
 loc_12E3CA:
@@ -7826,14 +7826,14 @@ locret_12E3D3:
 
 sub_12E3D4:
 	JSR	wait_for_vblank_FC95
-	if_a_not_equal_cmp_addr input_pressed_34A, #$40, sub_12E3D4
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #$40, sub_12E3D4
 	RTS
 ; End of function sub_12E3D4
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E3DF:
-	if_a_equal_cmp_addr byte_543, #0, locret_12E427
+	IF_A_EQUAL_CMP_ADDR byte_543, #0, locret_12E427
 	set tilemap_size_307, #$10
 	set ppu_unk_byte_309, #$14
 	sub_addr_sec byte_543, #1
@@ -7845,12 +7845,12 @@ sub_12E3DF:
 loc_12E404:
 	LDA	byte_533,Y
 	INY
-	if_a_not_equal_cmp tilemapTypeUnk_30B, loc_12E404
+	IF_A_NOT_EQUAL_CMP tilemapTypeUnk_30B, loc_12E404
 	DEY
 	set sprite_secondByte_31B, #$3C 
 
 loc_12E413:
-	if_y_equal_cmp #0, loc_12E424
+	IF_Y_EQUAL_CMP #0, loc_12E424
 	ADD_BYTE_TO_BYTE_CLC sprite_secondByte_31B, #$11
 	DEY
 	JMP	loc_12E413
@@ -7868,8 +7868,8 @@ locret_12E427:
 sub_12E428:
 	JSR	sub_12E4CD
 	JSR	wait_for_vblank_FC95
-	if_a_not_equal_cmp_addr input_pressed_34A, #8, loc_12E450
-	if_a_not_equal_cmp_addr byte_42E, #0, loc_12E441
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #8, loc_12E450
+	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #0, loc_12E441
 	set byte_42E, #4
 
 loc_12E441:
@@ -7881,8 +7881,8 @@ loc_12E441:
 ; ---------------------------------------------------------------------------
 
 loc_12E450:
-	if_a_not_equal_cmp #4, loc_12E46F
-	if_a_greater_cmp_addr byte_42E, #3, loc_12E460
+	IF_A_NOT_EQUAL_CMP #4, loc_12E46F
+	IF_A_GREATER_CMP_ADDR byte_42E, #3, loc_12E460
 	set byte_42E, #$FF
 
 loc_12E460:
@@ -7894,7 +7894,7 @@ loc_12E460:
 ; ---------------------------------------------------------------------------
 
 loc_12E46F:
-	if_a_not_equal_cmp #2, loc_12E487
+	IF_A_NOT_EQUAL_CMP #2, loc_12E487
 	xor_byte byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12E4CD
@@ -7903,7 +7903,7 @@ loc_12E46F:
 ; ---------------------------------------------------------------------------
 
 loc_12E487:
-	if_a_not_equal_cmp #1, loc_12E49F
+	IF_A_NOT_EQUAL_CMP #1, loc_12E49F
 	xor_byte byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12E4CD
@@ -7912,14 +7912,14 @@ loc_12E487:
 ; ---------------------------------------------------------------------------
 
 loc_12E49F:
-	if_a_not_equal_cmp #$80, loc_12E4B0
+	IF_A_NOT_EQUAL_CMP #$80, loc_12E4B0
 	JSR	sub_12E8A5
-	if_a_equal_cmp_addr sprite_length_30F, #$FF, loc_12E4B7
+	IF_A_EQUAL_CMP_ADDR sprite_length_30F, #$FF, loc_12E4B7
 	JMP	sub_12E428
 ; ---------------------------------------------------------------------------
 
 loc_12E4B0:
-	if_a_equal_cmp #$40, loc_12E4B7
+	IF_A_EQUAL_CMP #$40, loc_12E4B7
 	JMP	sub_12E428
 ; ---------------------------------------------------------------------------
 
@@ -7938,7 +7938,7 @@ sub_12E4CD:
 	set byte_31A, #$80 
 	set tilemapWidth_308, #$C
 	JSR	sub_12D26B
-	if_a_greater_cmp_addr byte_546, #$A, loc_12E4EE
+	IF_A_GREATER_CMP_ADDR byte_546, #$A, loc_12E4EE
 	set byte_546, #0
 	xor_byte byte_547, #1
 
@@ -8008,7 +8008,7 @@ loc_12E4EE:
 sub_12E5E6:
 	a_to_stack byte_372
 	set byte_372, #0
-	if_a_not_equal_cmp_addr byte_4C1, #0, loc_12E603
+	IF_A_NOT_EQUAL_CMP_ADDR byte_4C1, #0, loc_12E603
 	set_text_args #$75, #0
 	JMP	loc_12E616
 ; ---------------------------------------------------------------------------
@@ -8024,32 +8024,32 @@ loc_12E616:
 	JSR	sub_12E798
 	JSR	sub_12E7D3
 	JSR	sub_12E7F0
-	if_a_not_equal byte_4C1, loc_12E62A
+	IF_A_NOT_EQUAL byte_4C1, loc_12E62A
 	JSR	wait_for_b_pressed_FCC5
 	JMP	loc_12E67A
 ; ---------------------------------------------------------------------------
 
 loc_12E62A:
-	if_a_not_equal_cmp_addr input_pressed_34A, #4, loc_12E645
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #4, loc_12E645
 	LDA	byte_372
 	ADD_TO_A #1
-	if_a_equal_cmp byte_4C1, loc_12E62A
+	IF_A_EQUAL_CMP byte_4C1, loc_12E62A
 	INC	byte_372
 	JSR	sub_12ED32
 	JMP	loc_12E603
 ; ---------------------------------------------------------------------------
 
 loc_12E645:
-	if_a_not_equal_cmp #8, loc_12E659
-	if_a_equal_cmp_addr byte_372, #0, loc_12E62A
+	IF_A_NOT_EQUAL_CMP #8, loc_12E659
+	IF_A_EQUAL_CMP_ADDR byte_372, #0, loc_12E62A
 	DEC	byte_372
 	JSR	sub_12ED32
 	JMP	loc_12E603
 ; ---------------------------------------------------------------------------
 
 loc_12E659:
-	if_a_equal_cmp #$80, loc_12E664
-	if_a_equal_cmp #$40, loc_12E67A
+	IF_A_EQUAL_CMP #$80, loc_12E664
+	IF_A_EQUAL_CMP #$40, loc_12E67A
 	JMP	loc_12E62A
 ; ---------------------------------------------------------------------------
 
@@ -8081,7 +8081,7 @@ loc_12E67A:
 sub_12E69F:
 	a_to_stack byte_372
 	set byte_372, #0
-	if_a_not_equal_cmp_addr byte_4D0, #0, loc_12E6BC
+	IF_A_NOT_EQUAL_CMP_ADDR byte_4D0, #0, loc_12E6BC
 	set_text_args #$75, #0
 	JMP	loc_12E6E0
 ; ---------------------------------------------------------------------------
@@ -8092,40 +8092,40 @@ loc_12E6BC:
 	LDA	#0
 	ADC	#0
 	STA	char_type_id_35D
-	if_a_not_equal_cmp_addr {unk_4C2,X}, #$E, loc_12E6E0
+	IF_A_NOT_EQUAL_CMP_ADDR {unk_4C2,X}, #$E, loc_12E6E0
 	set_text_args #$3A, #2
 
 loc_12E6E0:
 	JSR	sub_12E798
 	JSR	sub_12E7D3
 	JSR	sub_12E7F0
-	if_a_not_equal byte_4D0, loc_12E6F7
+	IF_A_NOT_EQUAL byte_4D0, loc_12E6F7
 	JSR	wait_for_b_pressed_FCC5
 	JSR	sub_12ED29
 	JMP	loc_12E776
 ; ---------------------------------------------------------------------------
 
 loc_12E6F7:
-	if_a_not_equal_cmp_addr input_pressed_34A, #4, loc_12E712
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #4, loc_12E712
 	LDA	byte_372
 	ADD_TO_A #1
-	if_a_equal_cmp byte_4D0, loc_12E6F7
+	IF_A_EQUAL_CMP byte_4D0, loc_12E6F7
 	INC	byte_372
 	JSR	sub_12ED32
 	JMP	loc_12E6BC
 ; ---------------------------------------------------------------------------
 
 loc_12E712:
-	if_a_not_equal_cmp #8, loc_12E726
-	if_a_equal_cmp_addr byte_372, #0, loc_12E6F7
+	IF_A_NOT_EQUAL_CMP #8, loc_12E726
+	IF_A_EQUAL_CMP_ADDR byte_372, #0, loc_12E6F7
 	DEC	byte_372
 	JSR	sub_12ED32
 	JMP	loc_12E6BC
 ; ---------------------------------------------------------------------------
 
 loc_12E726:
-	if_a_equal_cmp #$80, loc_12E731
-	if_a_equal_cmp #$40, loc_12E776
+	IF_A_EQUAL_CMP #$80, loc_12E731
+	IF_A_EQUAL_CMP #$40, loc_12E776
 	JMP	loc_12E6F7
 ; ---------------------------------------------------------------------------
 
@@ -8137,7 +8137,7 @@ loc_12E731:
 	LDA	#0
 	ADC	#0
 	STA	char_type_id_35D
-	if_a_not_equal_cmp_addr {unk_4C2,X}, #$E, loc_12E75B
+	IF_A_NOT_EQUAL_CMP_ADDR {unk_4C2,X}, #$E, loc_12E75B
 	set_text_args #$3B, #2
 
 loc_12E75B:
@@ -8146,7 +8146,7 @@ loc_12E75B:
 
 loc_12E763:
 	JSR	wait_for_frame_rendered_FCA0
-	if_a_not_equal_cmp_addr input_pressed_34A, #$40, loc_12E763
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #$40, loc_12E763
 	JSR	sub_12ED29
 	JSR	sub_12D287
 	JSR	sub_12D319
@@ -8255,7 +8255,7 @@ byte_12E869:
 sub_12E8A5:
 	mult_by_2_byte byte_42E
 	ADD_TO_A byte_42C
-	if_a_greater_cmp byte_532, loc_12E8B5
+	IF_A_GREATER_CMP byte_532, loc_12E8B5
 	JMP	loc_12ED0E
 ; ---------------------------------------------------------------------------
 
@@ -8265,15 +8265,15 @@ loc_12E8B5:
 loc_12E8B8:
 	LDX	byte_47B
 	LDY	byte_47C
-	if_a_not_equal_cmp_addr {byte_533,X}, #1, loc_12E926
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,X}, #1, loc_12E926
 
 loc_12E8C5:
-	if_a_not_equal_cmp_addr {byte_533,Y}, #6, loc_12E923
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #6, loc_12E923
 	LDA	unk_53B,X
 	ADD_TO_A {unk_53B,Y}
-	if_a_greater_cmp #$F, loc_12E8FB
+	IF_A_GREATER_CMP #$F, loc_12E8FB
 	BEQ	loc_12E8FB
-	if_a_equal_cmp_addr {unk_53B,X}, #$F, loc_12E923
+	IF_A_EQUAL_CMP_ADDR {unk_53B,X}, #$F, loc_12E923
 	sub_addr_sec #$F, {unk_53B,X}
 	STA	tilemapTypeUnk_30B
 	sub_byte_sec {unk_53B,Y}, tilemapTypeUnk_30B
@@ -8299,15 +8299,15 @@ loc_12E923:
 ; ---------------------------------------------------------------------------
 
 loc_12E926:
-	if_a_not_equal_cmp #2, loc_12E98B
+	IF_A_NOT_EQUAL_CMP #2, loc_12E98B
 
 loc_12E92A:
-	if_a_not_equal_cmp_addr {byte_533,Y}, #7, loc_12E988
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #7, loc_12E988
 	LDA	unk_53B,X
 	ADD_TO_A {unk_53B,Y}
-	if_a_greater_cmp #6, loc_12E960
+	IF_A_GREATER_CMP #6, loc_12E960
 	BEQ	loc_12E960
-	if_a_equal_cmp_addr {unk_53B,X}, #6, loc_12E988
+	IF_A_EQUAL_CMP_ADDR {unk_53B,X}, #6, loc_12E988
 	sub_addr_sec #6, {unk_53B,X}
 	STA	tilemapTypeUnk_30B
 	sub_byte_sec {unk_53B,Y}, tilemapTypeUnk_30B
@@ -8333,15 +8333,15 @@ loc_12E988:
 ; ---------------------------------------------------------------------------
 
 loc_12E98B:
-	if_a_not_equal_cmp #3, loc_12E9F0
+	IF_A_NOT_EQUAL_CMP #3, loc_12E9F0
 
 loc_12E98F:
-	if_a_not_equal_cmp_addr {byte_533,Y}, #8, loc_12E9ED
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #8, loc_12E9ED
 	LDA	unk_53B,X
 	ADD_TO_A {unk_53B,Y}
-	if_a_greater_cmp #6, loc_12E9C5
+	IF_A_GREATER_CMP #6, loc_12E9C5
 	BEQ	loc_12E9C5
-	if_a_equal_cmp_addr {unk_53B,X}, #6, loc_12E9ED
+	IF_A_EQUAL_CMP_ADDR {unk_53B,X}, #6, loc_12E9ED
 	sub_addr_sec #6, {unk_53B,X}
 	STA	tilemapTypeUnk_30B
 	sub_byte_sec {unk_53B,Y}, tilemapTypeUnk_30B
@@ -8367,15 +8367,15 @@ loc_12E9ED:
 ; ---------------------------------------------------------------------------
 
 loc_12E9F0:
-	if_a_not_equal_cmp #4, loc_12EA55
+	IF_A_NOT_EQUAL_CMP #4, loc_12EA55
 
 loc_12E9F4:
-	if_a_not_equal_cmp_addr {byte_533,Y}, #9, loc_12EA52
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #9, loc_12EA52
 	LDA	unk_53B,X
 	ADD_TO_A {unk_53B,Y}
-	if_a_greater_cmp #6, loc_12EA2A
+	IF_A_GREATER_CMP #6, loc_12EA2A
 	BEQ	loc_12EA2A
-	if_a_equal_cmp_addr {unk_53B,X}, #6, loc_12EA52
+	IF_A_EQUAL_CMP_ADDR {unk_53B,X}, #6, loc_12EA52
 	sub_addr_sec #6, {unk_53B,X}
 	STA	tilemapTypeUnk_30B
 	sub_byte_sec {unk_53B,Y}, tilemapTypeUnk_30B
@@ -8401,8 +8401,8 @@ loc_12EA52:
 ; ---------------------------------------------------------------------------
 
 loc_12EA55:
-	if_a_not_equal_cmp #6, loc_12EA7A
-	if_a_not_equal_cmp_addr {byte_533,Y}, #1, loc_12EA77
+	IF_A_NOT_EQUAL_CMP #6, loc_12EA7A
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #1, loc_12EA77
 	a_to_stack byte_47C
 	set byte_47C, byte_47B
 	from_stack_to_a byte_47B
@@ -8416,8 +8416,8 @@ loc_12EA77:
 ; ---------------------------------------------------------------------------
 
 loc_12EA7A:
-	if_a_not_equal_cmp #7, loc_12EA9F
-	if_a_not_equal_cmp_addr {byte_533,Y}, #2, loc_12EA9C
+	IF_A_NOT_EQUAL_CMP #7, loc_12EA9F
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #2, loc_12EA9C
 	a_to_stack byte_47C
 	set byte_47C, byte_47B
 	from_stack_to_a byte_47B
@@ -8431,8 +8431,8 @@ loc_12EA9C:
 ; ---------------------------------------------------------------------------
 
 loc_12EA9F:
-	if_a_not_equal_cmp #8, loc_12EAC4
-	if_a_not_equal_cmp_addr {byte_533,Y}, #3, loc_12EAC1
+	IF_A_NOT_EQUAL_CMP #8, loc_12EAC4
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #3, loc_12EAC1
 	a_to_stack byte_47C
 	set byte_47C, byte_47B
 	from_stack_to_a byte_47B
@@ -8446,8 +8446,8 @@ loc_12EAC1:
 ; ---------------------------------------------------------------------------
 
 loc_12EAC4:
-	if_a_not_equal_cmp #9, loc_12EAE9
-	if_a_not_equal_cmp_addr {byte_533,Y}, #4, loc_12EAE6
+	IF_A_NOT_EQUAL_CMP #9, loc_12EAE9
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #4, loc_12EAE6
 	a_to_stack byte_47C
 	set byte_47C, byte_47B
 	from_stack_to_a byte_47B
@@ -8461,19 +8461,19 @@ loc_12EAE6:
 ; ---------------------------------------------------------------------------
 
 loc_12EAE9:
-	if_a_not_equal_cmp #$A, loc_12EB3C
-	if_a_not_equal_cmp_addr {byte_533,Y}, #$B, loc_12EAFC
+	IF_A_NOT_EQUAL_CMP #$A, loc_12EB3C
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #$B, loc_12EAFC
 	set {byte_533,X}, #$D
 	JMP	loc_12EB05
 ; ---------------------------------------------------------------------------
 
 loc_12EAFC:
-	if_a_not_equal_cmp #$11, loc_12EB39
+	IF_A_NOT_EQUAL_CMP #$11, loc_12EB39
 	set {byte_533,X}, #$E
 
 loc_12EB05:
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EB13
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EB13
 	LDX	byte_47C
 
 loc_12EB13:
@@ -8482,7 +8482,7 @@ loc_12EB13:
 	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EB30
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EB30
 	LDX	byte_47C
 
 loc_12EB30:
@@ -8496,32 +8496,32 @@ loc_12EB39:
 ; ---------------------------------------------------------------------------
 
 loc_12EB3C:
-	if_a_not_equal_cmp #$B, loc_12EBAF
-	if_a_not_equal_cmp_addr {byte_533,Y}, #$A, loc_12EB4F
+	IF_A_NOT_EQUAL_CMP #$B, loc_12EBAF
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #$A, loc_12EB4F
 	set {byte_533,X}, #$D
 	JMP	loc_12EB78
 ; ---------------------------------------------------------------------------
 
 loc_12EB4F:
-	if_a_not_equal_cmp #$B, loc_12EB63
-	if_a_equal_cmp_addr byte_47B, byte_47C, loc_12EB63
+	IF_A_NOT_EQUAL_CMP #$B, loc_12EB63
+	IF_A_EQUAL_CMP_ADDR byte_47B, byte_47C, loc_12EB63
 	set {byte_533,X}, #$F
 	JMP	loc_12EB78
 ; ---------------------------------------------------------------------------
 
 loc_12EB63:
-	if_a_not_equal_cmp #$C, loc_12EB6F
+	IF_A_NOT_EQUAL_CMP #$C, loc_12EB6F
 	set {byte_533,X}, #$11
 	JMP	loc_12EB78
 ; ---------------------------------------------------------------------------
 
 loc_12EB6F:
-	if_a_not_equal_cmp #$F, loc_12EBAC
+	IF_A_NOT_EQUAL_CMP #$F, loc_12EBAC
 	set {byte_533,X}, #$10
 
 loc_12EB78:
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EB86
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EB86
 	LDX	byte_47C
 
 loc_12EB86:
@@ -8530,7 +8530,7 @@ loc_12EB86:
 	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EBA3
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EBA3
 	LDX	byte_47C
 
 loc_12EBA3:
@@ -8544,15 +8544,15 @@ loc_12EBAC:
 ; ---------------------------------------------------------------------------
 
 loc_12EBAF:
-	if_a_equal_cmp #$C, loc_12EBB6
+	IF_A_EQUAL_CMP #$C, loc_12EBB6
 	JMP	loc_12EC39
 ; ---------------------------------------------------------------------------
 
 loc_12EBB6:
-	if_a_not_equal_cmp_addr {byte_533,Y}, #$B, loc_12EBF6
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #$B, loc_12EBF6
 	set {byte_533,X}, #$11
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EBD0
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EBD0
 	LDX	byte_47C
 
 loc_12EBD0:
@@ -8561,7 +8561,7 @@ loc_12EBD0:
 	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EBED
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EBED
 	LDX	byte_47C
 
 loc_12EBED:
@@ -8571,10 +8571,10 @@ loc_12EBED:
 ; ---------------------------------------------------------------------------
 
 loc_12EBF6:
-	if_a_not_equal_cmp_addr {byte_533,Y}, #$D, loc_12EC36
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #$D, loc_12EC36
 	set {byte_533,X}, #$E
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EC10
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EC10
 	LDX	byte_47C
 
 loc_12EC10:
@@ -8583,7 +8583,7 @@ loc_12EC10:
 	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EC2D
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EC2D
 	LDX	byte_47C
 
 loc_12EC2D:
@@ -8597,11 +8597,11 @@ loc_12EC36:
 ; ---------------------------------------------------------------------------
 
 loc_12EC39:
-	if_a_not_equal_cmp #$D, loc_12EC80
-	if_a_not_equal_cmp_addr {byte_533,Y}, #$C, loc_12EC7D
+	IF_A_NOT_EQUAL_CMP #$D, loc_12EC80
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #$C, loc_12EC7D
 	set {byte_533,X}, #$E
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EC57
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EC57
 	LDX	byte_47C
 
 loc_12EC57:
@@ -8610,7 +8610,7 @@ loc_12EC57:
 	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EC74
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EC74
 	LDX	byte_47C
 
 loc_12EC74:
@@ -8624,11 +8624,11 @@ loc_12EC7D:
 ; ---------------------------------------------------------------------------
 
 loc_12EC80:
-	if_a_not_equal_cmp #$F, loc_12ECC7
-	if_a_not_equal_cmp_addr {byte_533,Y}, #$B, loc_12ECC4
+	IF_A_NOT_EQUAL_CMP #$F, loc_12ECC7
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #$B, loc_12ECC4
 	set {byte_533,X}, #$10
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12EC9E
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12EC9E
 	LDX	byte_47C
 
 loc_12EC9E:
@@ -8637,7 +8637,7 @@ loc_12EC9E:
 	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12ECBB
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12ECBB
 	LDX	byte_47C
 
 loc_12ECBB:
@@ -8651,11 +8651,11 @@ loc_12ECC4:
 ; ---------------------------------------------------------------------------
 
 loc_12ECC7:
-	if_a_not_equal_cmp #$11, loc_12ED0E
-	if_a_not_equal_cmp_addr {byte_533,Y}, #$A, loc_12ED0B
+	IF_A_NOT_EQUAL_CMP #$11, loc_12ED0E
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #$A, loc_12ED0B
 	set {byte_533,X}, #$E
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12ECE5
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12ECE5
 	LDX	byte_47C
 
 loc_12ECE5:
@@ -8664,7 +8664,7 @@ loc_12ECE5:
 	set tilemapTypeUnk_30B, byte_47C
 	JSR	sub_12D8B3
 	LDX	byte_47B
-	if_a_greater_cmp_addr byte_47B, byte_47C, loc_12ED02
+	IF_A_GREATER_CMP_ADDR byte_47B, byte_47C, loc_12ED02
 	LDX	byte_47C
 
 loc_12ED02:
@@ -8754,8 +8754,8 @@ set_inventory_screen_12ED5D:
 
 loc_12ED90:
 	JSR	wait_for_frame_rendered_FCA0
-	if_a_not_equal_cmp_addr input_pressed_34A, #8, loc_12EDC0
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_12ED90
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #8, loc_12EDC0
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #0, loc_12ED90
 	DEC	tilemapTypeUnk_30B
 	set2 tilemap_size_307, ppu_unk_byte_309, #$80 
 	JSR	sub_12D261
@@ -8767,8 +8767,8 @@ loc_12ED90:
 ; ---------------------------------------------------------------------------
 
 loc_12EDC0:
-	if_a_not_equal_cmp #4, loc_12EDE7
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$47, loc_12ED90
+	IF_A_NOT_EQUAL_CMP #4, loc_12EDE7
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$47, loc_12ED90
 	INC	tilemapTypeUnk_30B
 	set2 tilemap_size_307, ppu_unk_byte_309, #$80 
 	a_to_stack tilemapTypeUnk_30B
@@ -8779,7 +8779,7 @@ loc_12EDC0:
 ; ---------------------------------------------------------------------------
 
 loc_12EDE7:
-	if_a_not_equal_cmp #$80, loc_12EDF1
+	IF_A_NOT_EQUAL_CMP #$80, loc_12EDF1
 	JSR	sub_128531
 	JMP	loc_12ED90
 ; ---------------------------------------------------------------------------
@@ -8807,17 +8807,17 @@ loc_12EE04:
 	set_inx {ppu_data_70,X}, #$20 
 	set_inx {ppu_data_70,X}, #$3F 
 	set_inx {ppu_data_70,X}, #0
-	if_a_not_equal_cmp_addr byte_341, #0, loc_12EE2A
+	IF_A_NOT_EQUAL_CMP_ADDR byte_341, #0, loc_12EE2A
 	set inv_spr_dscr1_30C, #1
 
 loc_12EE2A:
 	LDY	#0
 
 loc_12EE2C:
-	if_a_equal_cmp_addr inv_spr_dscr1_30C, #4, loc_12EE3F
-	if_a_equal_cmp #3, loc_12EE47
-	if_a_equal_cmp #2, loc_12EE58
-	if_a_equal_cmp #1, loc_12EE69
+	IF_A_EQUAL_CMP_ADDR inv_spr_dscr1_30C, #4, loc_12EE3F
+	IF_A_EQUAL_CMP #3, loc_12EE47
+	IF_A_EQUAL_CMP #2, loc_12EE58
+	IF_A_EQUAL_CMP #1, loc_12EE69
 
 loc_12EE3F:
 	load_a_masked {palette_bg_321,Y }, #$CF 
@@ -8826,21 +8826,21 @@ loc_12EE3F:
 
 loc_12EE47:
 	load_a_masked {palette_bg_321,Y }, #$30 
-	if_a_greater_cmp #$30, loc_12EE7A
+	IF_A_GREATER_CMP #$30, loc_12EE7A
 	load_a_masked {palette_bg_321,Y }, #$DF 
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
 loc_12EE58:
 	load_a_masked {palette_bg_321,Y }, #$30 
-	if_a_greater_cmp #$20, loc_12EE7A
+	IF_A_GREATER_CMP #$20, loc_12EE7A
 	load_a_masked {palette_bg_321,Y }, #$EF 
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
 loc_12EE69:
 	load_a_masked {palette_bg_321,Y }, #$30 
-	if_a_greater_cmp #$10, loc_12EE7A
+	IF_A_GREATER_CMP #$10, loc_12EE7A
 	load_a_masked {palette_bg_321,Y }, #$FF
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
@@ -8852,17 +8852,17 @@ loc_12EE7D:
 	STA	ppu_data_70,X
 	INX
 	INY
-	if_y_greater_cmp #$20 , loc_12EE2C
+	IF_Y_GREATER_CMP #$20 , loc_12EE2C
 	set has_ppu_data_to_upload_6F, #1
 	DEC	inv_spr_dscr1_30C
-	if_a_equal_cmp_addr inv_spr_dscr1_30C, #0, loc_12EE9C
+	IF_A_EQUAL_CMP_ADDR inv_spr_dscr1_30C, #0, loc_12EE9C
 	LDA	byte_341
 	JSR	wait_for_frame_rendered_FCA0
 	JMP	loc_12EE04
 ; ---------------------------------------------------------------------------
 
 loc_12EE9C:
-	if_a_equal_cmp_addr byte_341, #0, loc_12EEA7
+	IF_A_EQUAL_CMP_ADDR byte_341, #0, loc_12EEA7
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -8885,18 +8885,18 @@ write_ppu_entry_12EEB3:
 	set_inx {ppu_data_70,X}, #$20 
 	set_inx {ppu_data_70,X}, #$3F 
 	set_inx {ppu_data_70,X}, #0
-	if_a_not_equal_cmp_addr byte_341, #0, loc_12EED9
+	IF_A_NOT_EQUAL_CMP_ADDR byte_341, #0, loc_12EED9
 	set inv_spr_dscr1_30C, #0
 
 loc_12EED9:
 	LDY	#0
 
 loc_12EEDB:
-	if_a_equal_cmp_addr inv_spr_dscr1_30C, #4, loc_12EEF2
-	if_a_equal_cmp #3, loc_12EEFA
-	if_a_equal_cmp #2, loc_12EF0B
-	if_a_equal_cmp #1, loc_12EF1C
-	if_a_equal_cmp #0, loc_12EF2D
+	IF_A_EQUAL_CMP_ADDR inv_spr_dscr1_30C, #4, loc_12EEF2
+	IF_A_EQUAL_CMP #3, loc_12EEFA
+	IF_A_EQUAL_CMP #2, loc_12EF0B
+	IF_A_EQUAL_CMP #1, loc_12EF1C
+	IF_A_EQUAL_CMP #0, loc_12EF2D
 
 loc_12EEF2:
 	load_a_masked {palette_bg_321,Y }, #$FF
@@ -8905,21 +8905,21 @@ loc_12EEF2:
 
 loc_12EEFA:
 	load_a_masked {palette_bg_321,Y }, #$30 
-	if_a_greater_cmp #$30, loc_12EF32
+	IF_A_GREATER_CMP #$30, loc_12EF32
 	load_a_masked {palette_bg_321,Y }, #$EF 
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
 loc_12EF0B:
 	load_a_masked {palette_bg_321,Y }, #$30 
-	if_a_greater_cmp #$20, loc_12EF32
+	IF_A_GREATER_CMP #$20, loc_12EF32
 	load_a_masked {palette_bg_321,Y }, #$DF 
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
 loc_12EF1C:
 	load_a_masked {palette_bg_321,Y }, #$30 
-	if_a_greater_cmp #$10, loc_12EF32
+	IF_A_GREATER_CMP #$10, loc_12EF32
 	load_a_masked {palette_bg_321,Y }, #$CF 
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
@@ -8936,17 +8936,17 @@ loc_12EF35:
 	STA	ppu_data_70,X
 	INX
 	INY
-	if_y_greater_cmp #$20 , loc_12EEDB
+	IF_Y_GREATER_CMP #$20 , loc_12EEDB
 	set has_ppu_data_to_upload_6F, #1
 	DEC	inv_spr_dscr1_30C
-	if_a_equal_cmp_addr inv_spr_dscr1_30C, #$FF, loc_12EF54
+	IF_A_EQUAL_CMP_ADDR inv_spr_dscr1_30C, #$FF, loc_12EF54
 	LDA	byte_341
 	JSR	wait_for_frame_rendered_FCA0
 	JMP	write_ppu_entry_12EEB3
 ; ---------------------------------------------------------------------------
 
 loc_12EF54:
-	if_a_equal_cmp_addr byte_341, #0, loc_12EF5F
+	IF_A_EQUAL_CMP_ADDR byte_341, #0, loc_12EF5F
 	JSR	wait_for_frame_rendered_FCA0
 	RTS
 ; ---------------------------------------------------------------------------
@@ -8963,7 +8963,7 @@ sub_12EF66:
 	LDY	byte_301
 	LDA	byte_12EFD7,Y
 	TAY
-	if_y_not_equal_cmp #$F, sub_12EF77
+	IF_Y_NOT_EQUAL_CMP #$F, sub_12EF77
 	set sprite_length_30F, #$FF
 	RTS
 ; End of function sub_12EF66
@@ -9040,44 +9040,44 @@ loc_12F0E1:
 	JSR	sub_12F564
 	JSR	sub_12F168
 	JSR	wait_for_frame_rendered_FCA0
-	if_a_not_equal_cmp_addr input_pressed_34A, #8, loc_12F0FA
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #8, loc_12F0FA
 	JSR	sub_12ED32
 	JSR	sub_12F4C0
 	JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
 loc_12F0FA:
-	if_a_not_equal_cmp #4, loc_12F107
+	IF_A_NOT_EQUAL_CMP #4, loc_12F107
 	JSR	sub_12ED32
 	JSR	sub_12F4E4
 	JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
 loc_12F107:
-	if_a_not_equal_cmp #2, loc_12F114
+	IF_A_NOT_EQUAL_CMP #2, loc_12F114
 	JSR	sub_12ED32
 	JSR	sub_12F514
 	JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
 loc_12F114:
-	if_a_not_equal_cmp #1, loc_12F121
+	IF_A_NOT_EQUAL_CMP #1, loc_12F121
 	JSR	sub_12ED32
 	JSR	sub_12F527
 	JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
 loc_12F121:
-	if_a_not_equal_cmp #$80, loc_12F138
+	IF_A_NOT_EQUAL_CMP #$80, loc_12F138
 	JSR	sub_12ED20
 	JSR	sub_12F2C9
 	JSR	sub_12F583
-	if_a_equal_cmp_addr byte_41F, #$FF, loc_12F13F
+	IF_A_EQUAL_CMP_ADDR byte_41F, #$FF, loc_12F13F
 	JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
 loc_12F138:
-	if_a_equal_cmp #$40, loc_12F13F
+	IF_A_EQUAL_CMP #$40, loc_12F13F
 	JMP	loc_12F0E1
 ; ---------------------------------------------------------------------------
 
@@ -9114,10 +9114,10 @@ sub_12F168:
 	mult_by_2_byte byte_372
 	TAY
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_36A, {byte_12F28B,Y}, #8
-	if_a_equal_cmp_addr byte_372, #$14, loc_12F1C7
-	if_a_equal_cmp #$1C, loc_12F1C7
-	if_a_equal_cmp #$1D, loc_12F1C7
-	if_a_equal_cmp #$1E, loc_12F1C7
+	IF_A_EQUAL_CMP_ADDR byte_372, #$14, loc_12F1C7
+	IF_A_EQUAL_CMP #$1C, loc_12F1C7
+	IF_A_EQUAL_CMP #$1D, loc_12F1C7
+	IF_A_EQUAL_CMP #$1E, loc_12F1C7
 	JMP	loc_12F1D0
 ; ---------------------------------------------------------------------------
 
@@ -9148,10 +9148,10 @@ loc_12F1D0:
 	mult_by_2_byte byte_372
 	TAY
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_36A, {byte_12F28B,Y}, #8
-	if_a_equal_cmp_addr byte_372, #$14, loc_12F258
-	if_a_equal_cmp #$1C, loc_12F258
-	if_a_equal_cmp #$1D, loc_12F258
-	if_a_equal_cmp #$1E, loc_12F258
+	IF_A_EQUAL_CMP_ADDR byte_372, #$14, loc_12F258
+	IF_A_EQUAL_CMP #$1C, loc_12F258
+	IF_A_EQUAL_CMP #$1D, loc_12F258
+	IF_A_EQUAL_CMP #$1E, loc_12F258
 	JMP	loc_12F261
 ; ---------------------------------------------------------------------------
 
@@ -9181,14 +9181,14 @@ byte_12F28B:.BYTE $28,$88,$38,$88,$48,$88,$58,$88,$68,$88,$78,$88,$88,$88,$98,$8
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F2C9:
-	if_a_greater_cmp_addr byte_421, #$A, loc_12F2D8
-	if_a_equal_cmp_addr byte_372, #$A, loc_12F2D8
+	IF_A_GREATER_CMP_ADDR byte_421, #$A, loc_12F2D8
+	IF_A_EQUAL_CMP_ADDR byte_372, #$A, loc_12F2D8
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12F2D8:
-	if_a_not_equal_cmp_addr byte_372, #$A, loc_12F2ED
-	if_a_equal_cmp_addr byte_421, #0, locret_12F2EC
+	IF_A_NOT_EQUAL_CMP_ADDR byte_372, #$A, loc_12F2ED
+	IF_A_EQUAL_CMP_ADDR byte_421, #0, locret_12F2EC
 	DEC	byte_421
 	JMP	loc_12F2ED
 ; ---------------------------------------------------------------------------
@@ -9205,7 +9205,7 @@ loc_12F2ED:
 
 	LDX	byte_372
 	set tilemapTypeUnk_30B, {byte_12F45C,X}
-	if_a_equal_cmp_addr tilemapTypeUnk_30B, #$FF, loc_12F30E
+	IF_A_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #$FF, loc_12F30E
 	JMP	loc_12F411
 ; ---------------------------------------------------------------------------
 
@@ -9220,7 +9220,7 @@ loc_12F30E:
 	READ_WORD data_2, {(ptr_0),Y}
 	LDY	#0
 	set tilemapTypeUnk_30B, {(data_2),Y}
-	if_a_equal_cmp byte_421, loc_12F33F
+	IF_A_EQUAL_CMP byte_421, loc_12F33F
 	JMP	locret_12F410
 ; ---------------------------------------------------------------------------
 
@@ -9229,15 +9229,15 @@ loc_12F33F:
 	LDX	#0
 
 loc_12F342:
-	if_a_equal_cmp_addr {(data_2),Y}, {unk_422,X}, loc_12F34C
+	IF_A_EQUAL_CMP_ADDR {(data_2),Y}, {unk_422,X}, loc_12F34C
 	JMP	locret_12F410
 ; ---------------------------------------------------------------------------
 
 loc_12F34C:
 	INX
 	INY
-	if_x_greater_cmp byte_421, loc_12F342
-	if_a_not_equal_cmp_addr byte_420, #2, loc_12F377
+	IF_X_GREATER_CMP byte_421, loc_12F342
+	IF_A_NOT_EQUAL_CMP_ADDR byte_420, #2, loc_12F377
 	set byte_420, #3
 	set_text_args #$2C, #2
 	JSR	sub_12F5B9
@@ -9247,7 +9247,7 @@ loc_12F34C:
 ; ---------------------------------------------------------------------------
 
 loc_12F377:
-	if_a_not_equal_cmp_addr byte_420, #3, loc_12F3F4
+	IF_A_NOT_EQUAL_CMP_ADDR byte_420, #3, loc_12F3F4
 
 loc_12F37E:
 	JSR	sub_12F5FC
@@ -9257,21 +9257,21 @@ loc_12F37E:
 loc_12F38A:
 	JSR	wait_for_frame_rendered_FCA0
 	JSR	sub_12F168
-	if_a_not_equal_cmp_addr input_pressed_34A, #8, loc_12F3A4
-	if_a_equal_cmp_addr byte_372, #$1C, loc_12F38A
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #8, loc_12F3A4
+	IF_A_EQUAL_CMP_ADDR byte_372, #$1C, loc_12F38A
 	DEC	byte_372
 	JMP	loc_12F38A
 ; ---------------------------------------------------------------------------
 
 loc_12F3A4:
-	if_a_not_equal_cmp #4, loc_12F3B5
-	if_a_equal_cmp_addr byte_372, #$1E, loc_12F38A
+	IF_A_NOT_EQUAL_CMP #4, loc_12F3B5
+	IF_A_EQUAL_CMP_ADDR byte_372, #$1E, loc_12F38A
 	INC	byte_372
 	JMP	loc_12F38A
 ; ---------------------------------------------------------------------------
 
 loc_12F3B5:
-	if_a_equal_cmp #$80, loc_12F3BC
+	IF_A_EQUAL_CMP #$80, loc_12F3BC
 	JMP	loc_12F38A
 ; ---------------------------------------------------------------------------
 
@@ -9281,8 +9281,8 @@ loc_12F3BC:
 	a_to_stack tilemapTypeUnk_30B
 	JSR	sub_12F168
 	from_stack_to_a tilemapTypeUnk_30B
-	if_a_equal_cmp #$1E, loc_12F3F4
-	if_a_equal_cmp #$1D, loc_12F3E9
+	IF_A_EQUAL_CMP #$1E, loc_12F3F4
+	IF_A_EQUAL_CMP #$1D, loc_12F3E9
 	JSR	sub_12F6D8
 	set byte_420, #4
 	set byte_421, #0
@@ -9296,7 +9296,7 @@ loc_12F3E9:
 ; ---------------------------------------------------------------------------
 
 loc_12F3F4:
-	if_a_not_equal_cmp_addr byte_420, #4, loc_12F40B
+	IF_A_NOT_EQUAL_CMP_ADDR byte_420, #4, loc_12F40B
 	JSR	sub_12F698
 	set byte_69E, #$FF
 	set byte_420, #3
@@ -9320,7 +9320,7 @@ loc_12F411:
 	set {unk_422,X}, byte_372
 	set tilemapTypeUnk_30B, #1
 	JSR	sub_12F478
-	if_a_not_equal_cmp_addr byte_372, #$A, loc_12F438
+	IF_A_NOT_EQUAL_CMP_ADDR byte_372, #$A, loc_12F438
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -9353,7 +9353,7 @@ sub_12F478:
 loc_12F495:
 	set_inx {ppu_data_70,X}, {(ptr_0),Y}
 	INY
-	if_y_greater_cmp tilemapTypeUnk_30B, loc_12F495
+	IF_Y_GREATER_CMP tilemapTypeUnk_30B, loc_12F495
 	ADD_BYTE_TO_WORD data_2, tilemapTypeUnk_30B
 
 	
@@ -9366,9 +9366,9 @@ loc_12F495:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F4C0:
-	if_a_greater_cmp_addr byte_372, #$A, locret_12F4E3
+	IF_A_GREATER_CMP_ADDR byte_372, #$A, locret_12F4E3
 	BEQ	locret_12F4E3
-	if_a_greater_cmp #$14, loc_12F4D9
+	IF_A_GREATER_CMP #$14, loc_12F4D9
 	BEQ	loc_12F4D9
 	sub_byte_sec byte_372, #$A
 	RTS
@@ -9386,18 +9386,18 @@ locret_12F4E3:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F4E4:
-	if_a_lower_cmp_addr byte_372, #$15, locret_12F513
+	IF_A_LOWER_CMP_ADDR byte_372, #$15, locret_12F513
 	BEQ	locret_12F513
-	if_a_lower_cmp #$B, loc_12F503
+	IF_A_LOWER_CMP #$B, loc_12F503
 	BEQ	loc_12F503
-	if_a_lower_cmp #$A, locret_12F513
+	IF_A_LOWER_CMP #$A, locret_12F513
 	BEQ	locret_12F513
 	ADD_BYTE_TO_BYTE_CLC byte_372, #$B
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_12F503:
-	if_a_lower_cmp #$12, locret_12F513
+	IF_A_LOWER_CMP #$12, locret_12F513
 	BEQ	locret_12F513
 	ADD_BYTE_TO_BYTE_CLC byte_372, #$A
 	RTS
@@ -9410,9 +9410,9 @@ locret_12F513:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F514:
-	if_a_equal_cmp_addr byte_372, #0, locret_12F526
-	if_a_equal_cmp #$B, locret_12F526
-	if_a_equal_cmp #$15, locret_12F526
+	IF_A_EQUAL_CMP_ADDR byte_372, #0, locret_12F526
+	IF_A_EQUAL_CMP #$B, locret_12F526
+	IF_A_EQUAL_CMP #$15, locret_12F526
 	DEC	byte_372
 
 locret_12F526:
@@ -9422,9 +9422,9 @@ locret_12F526:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F527:
-	if_a_equal_cmp_addr byte_372, #$A, locret_12F539
-	if_a_equal_cmp #$14, locret_12F539
-	if_a_equal_cmp #$1B, locret_12F539
+	IF_A_EQUAL_CMP_ADDR byte_372, #$A, locret_12F539
+	IF_A_EQUAL_CMP #$14, locret_12F539
+	IF_A_EQUAL_CMP #$1B, locret_12F539
 	INC	byte_372
 
 locret_12F539:
@@ -9447,10 +9447,10 @@ byte_12F55F:.BYTE	4,$1B,	8,$13,	2
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12F564:
-	if_a_greater_cmp_addr count_unk_465, #$F, locret_12F5B8
+	IF_A_GREATER_CMP_ADDR count_unk_465, #$F, locret_12F5B8
 	set count_unk_465, #0
 	xor_byte byte_547, #1
-	if_a_equal byte_547, sub_12F583
+	IF_A_EQUAL byte_547, sub_12F583
 ; End of function sub_12F564
 
 ; =============== S U B	R O U T	I N E =======================================

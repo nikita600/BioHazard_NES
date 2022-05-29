@@ -12,10 +12,10 @@
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_a_equal_cmp_addr bank_command_346, #0, case0_48053
-	if_a_equal_cmp #1, case1_48059
-	if_a_equal_cmp #2, case2_48083
-	if_a_equal_cmp #3, case3_48089
+	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, case0_48053
+	IF_A_EQUAL_CMP #1, case1_48059
+	IF_A_EQUAL_CMP #2, case2_48083
+	IF_A_EQUAL_CMP #3, case3_48089
 	RTS
 
 ; ---------------------------------------------------------------------------
@@ -25,7 +25,7 @@ case0_48053:
 	JMP	return_4808F
 
 case1_48059:
-	if_a_greater_cmp_addr inv_sprite_idx_31C, #$2F, loc_4807D
+	IF_A_GREATER_CMP_ADDR inv_sprite_idx_31C, #$2F, loc_4807D
 	a_to_stack bank_from_343
 
 exec_b13_c1_48064:

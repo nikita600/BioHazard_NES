@@ -12,10 +12,10 @@
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_a_equal_cmp_addr bank_command_346, #0, case0_18053
-	if_a_equal_cmp #1, case1_18059
-	if_a_equal_cmp #2, case2_1805F
-	if_a_equal_cmp #3, case3_18068
+	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, case0_18053
+	IF_A_EQUAL_CMP #1, case1_18059
+	IF_A_EQUAL_CMP #2, case2_1805F
+	IF_A_EQUAL_CMP #3, case3_18068
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -71,7 +71,7 @@ load_obj_tilemap_1F264:
 ; =============== S U B	R O U T	I N E =======================================
 
 load_palettes_to_ram_1F268:
-	if_a_equal_cmp_addr sprite_type_306, #0, loc_1F2C3
+	IF_A_EQUAL_CMP_ADDR sprite_type_306, #0, loc_1F2C3
 
 palette0_F26F:
 	set sprPalIdx_319, #0
@@ -111,7 +111,7 @@ loc_1F2C3:
 	LDX	#0
 
 loop_1F2D3:
-	if_x_equal_cmp objArraySize_373, return_1F2F2
+	IF_X_EQUAL_CMP objArraySize_373, return_1F2F2
 	set objectIdx_318, {objIdxArray_375,X}
 	set sprPalIdx_319, {objPalIdxArray_3F7,X}
 	x_to_stack
@@ -152,14 +152,14 @@ copy_sprite_palette_to_ram_1F316:
 loc_1F31E:
 	set_inx {sprite_palette_331,X}, {(data_2),Y}
 	INY
-	if_y_greater_cmp #4, loc_1F31E
+	IF_Y_GREATER_CMP #4, loc_1F31E
 	RTS
 ; End of function copy_sprite_palette_to_ram_1F316
 
 ; =============== S U B	R O U T	I N E =======================================
 
 upload_tiles_to_ppu_1F32A:
-	if_a_equal_cmp_addr sprite_type_306, #0, loc_1F33D
+	IF_A_EQUAL_CMP_ADDR sprite_type_306, #0, loc_1F33D
 	set sprite_secondByte_31B, #0
 	JSR	load_sprite_to_vram_1F36D
 	JSR	upload_to_ppu_1F6D1
@@ -173,7 +173,7 @@ loc_1F33D:
 	LDX	#0
 
 loc_1F34D:
-	if_x_equal_cmp objArraySize_373, locret_1F36C
+	IF_X_EQUAL_CMP objArraySize_373, locret_1F36C
 	set objectIdx_318, {objIdxArray_375,X}
 	set sprite_secondByte_31B, {unk_401,X}
 	x_to_stack
@@ -271,13 +271,13 @@ sub_1F416:
 	STA	ptr_1
 	
 	load_a_masked byte_317, #$40 
-	if_a_not_equal_cmp #$40, loc_1F430
+	IF_A_NOT_EQUAL_CMP #$40, loc_1F430
 	JMP	loc_1F4CA
 ; ---------------------------------------------------------------------------
 
 loc_1F430:
 	load_a_masked byte_317, #$80 
-	if_a_not_equal_cmp #$80, loc_1F43C
+	IF_A_NOT_EQUAL_CMP #$80, loc_1F43C
 	JMP	loc_1F559
 ; ---------------------------------------------------------------------------
 
@@ -302,13 +302,13 @@ loc_1F44D:
 	set_iny {(ptr_0),Y}, tilemap_size_307
 	ADD_BYTE_TO_WORD byte_36A, #8
 	INC	tilemapTypeUnk_30B
-	if_a_greater_cmp_addr tilemapTypeUnk_30B, tilemapWidth_308, loc_1F44D
+	IF_A_GREATER_CMP_ADDR tilemapTypeUnk_30B, tilemapWidth_308, loc_1F44D
 	from_stack_to_a byte_36B
 	from_stack_to_a byte_36A
 	ADD_BYTE_TO_WORD data_2, tilemapWidth_308
 	ADD_BYTE_TO_WORD byte_366, #8
 	INX
-	if_x_equal_cmp tilemapHeight_30A, loc_1F4C4
+	IF_X_EQUAL_CMP tilemapHeight_30A, loc_1F4C4
 	JMP	loc_1F440
 ; ---------------------------------------------------------------------------
 
@@ -339,13 +339,13 @@ loc_1F4DC:
 	set_iny {(ptr_0),Y}, tilemap_size_307
 	ADD_BYTE_TO_WORD byte_36A, #8
 	DEC	tilemapTypeUnk_30B
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_1F4DC
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #0, loc_1F4DC
 	from_stack_to_a byte_36B
 	from_stack_to_a byte_36A
 	ADD_BYTE_TO_WORD data_2, tilemapWidth_308
 	ADD_BYTE_TO_WORD byte_366, #8
 	INX
-	if_x_equal_cmp tilemapHeight_30A, loc_1F553
+	IF_X_EQUAL_CMP tilemapHeight_30A, loc_1F553
 	JMP	loc_1F4CE
 ; ---------------------------------------------------------------------------
 
@@ -359,7 +359,7 @@ loc_1F559:
 	DEY
 
 loc_1F55D:
-	if_y_equal_cmp #0, loc_1F572
+	IF_Y_EQUAL_CMP #0, loc_1F572
 	ADD_BYTE_TO_BYTE_CLC data_2, tilemapWidth_308
 	LDA	data_3
 	CLC
@@ -389,13 +389,13 @@ loc_1F583:
 	set_iny {(ptr_0),Y}, tilemap_size_307
 	ADD_BYTE_TO_WORD byte_36A, #8
 	DEC	tilemapTypeUnk_30B
-	if_a_not_equal_cmp_addr tilemapTypeUnk_30B, #0, loc_1F583
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #0, loc_1F583
 	from_stack_to_a byte_36B
 	from_stack_to_a byte_36A
 	sub_byte_from_word data_2, tilemapWidth_308
 	ADD_BYTE_TO_WORD byte_366, #8
 	INX
-	if_x_equal_cmp tilemapHeight_30A, loc_1F5F9
+	IF_X_EQUAL_CMP tilemapHeight_30A, loc_1F5F9
 	JMP	loc_1F576
 ; ---------------------------------------------------------------------------
 
@@ -420,14 +420,14 @@ sub_1F5FF:
 	ADD_BYTE_TO_WORD byte_368, #$F0 
 	sub_word_from_word byte_36C, byte_36A
 	BCC	loc_1F68D
-	if_a_not_equal_cmp_addr byte_36C, byte_36A, loc_1F66B
-	if_a_equal_cmp_addr byte_36D, byte_36B, loc_1F68D
+	IF_A_NOT_EQUAL_CMP_ADDR byte_36C, byte_36A, loc_1F66B
+	IF_A_EQUAL_CMP_ADDR byte_36D, byte_36B, loc_1F68D
 
 loc_1F66B:
 	sub_word_from_word byte_368, byte_366
 	BCC	loc_1F68D
-	if_a_not_equal_cmp_addr byte_368, byte_366, loc_1F693
-	if_a_equal_cmp_addr byte_369, byte_367, loc_1F68D
+	IF_A_NOT_EQUAL_CMP_ADDR byte_368, byte_366, loc_1F693
+	IF_A_EQUAL_CMP_ADDR byte_369, byte_367, loc_1F68D
 	JMP	loc_1F693
 ; ---------------------------------------------------------------------------
 
@@ -453,7 +453,7 @@ sub_1F6AB:
 	set byte_369, #0
 
 loc_1F6B5:
-	if_y_equal_cmp #0, loc_1F6CE
+	IF_Y_EQUAL_CMP #0, loc_1F6CE
 	ADD_BYTE_TO_WORD byte_368, #$F0 
 	DEY
 	JMP	loc_1F6B5
@@ -480,12 +480,12 @@ loc_1F6E7:
 
 copy_byte_to_ppu_1F6F3:
 	set_iny _PPU_DATA, {(data_2),Y}
-	if_y_greater_cmp #$10, copy_byte_to_ppu_1F6F3
+	IF_Y_GREATER_CMP #$10, copy_byte_to_ppu_1F6F3
 
 	ADD_BYTE_TO_WORD ptr_0, #$10
 	ADD_WORD_TO_WORD_IMM data_2, $10
 	INX
-	if_x_greater_cmp tilemapWidth_308, loc_1F6E7
+	IF_X_GREATER_CMP tilemapWidth_308, loc_1F6E7
 	RTS
 ; End of function upload_to_ppu_1F6D1
 

@@ -24,7 +24,7 @@
 copy_palette:
 	set_inx {palette_bg_321,X}, {(data_2),Y}
 	INY
-	if_y_greater_cmp #4, copy_palette
+	IF_Y_GREATER_CMP #4, copy_palette
 
 	RTS
 .endmacro
@@ -41,13 +41,13 @@ loc_4F375:
 
 loc_4F381:
 	set_iny _PPU_DATA, {(data_2),Y}
-	if_y_greater_cmp #$10, loc_4F381
+	IF_Y_GREATER_CMP #$10, loc_4F381
 
 	ADD_WORD_TO_WORD_IMM data_2, $10
 	ADD_BYTE_TO_WORD ptr_0, #$10
 
 	DEC	inv_spr_dscr1_30C
-	if_a_equal_cmp_addr inv_spr_dscr1_30C, #0, locret_4F3B2
+	IF_A_EQUAL_CMP_ADDR inv_spr_dscr1_30C, #0, locret_4F3B2
 	JMP	loc_4F375
 
 locret_4F3B2:
@@ -61,7 +61,7 @@ locret_4F3B2:
     JSR	get_sprite_func
 
 loc_4F3B6:
-	if_a_greater_cmp_addr inv_spr_dscr1_30C, #4, loc_4F3CD
+	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #4, loc_4F3CD
 	BEQ	loc_4F3CD
 	sub_a_sec #4
 	STA	inv_spr_dscr1_30C
@@ -77,7 +77,7 @@ loc_4F3CD:
 
 loc_4F3DC:
 	JSR	upload_chunk_func
-	if_a_not_equal_cmp_addr inv_spr_dscr1_30C, #0, loc_4F3B6
+	IF_A_NOT_EQUAL_CMP_ADDR inv_spr_dscr1_30C, #0, loc_4F3B6
 	RTS
 
 .endmacro
@@ -157,7 +157,7 @@ get_tilemap_descr_4F48B:
 	LDY	ppu_unk_byte_309
 
 loc_4F4BA:
-	if_y_equal_cmp #0, loc_4F4CF
+	IF_Y_EQUAL_CMP #0, loc_4F4CF
 
 	ADD_WORD_TO_WORD_IMM data_2, $20
 
@@ -172,7 +172,7 @@ loc_4F4CF:
 	LDA	#$32 
 
 loc_4F4E7:
-	if_a_greater_cmp tilemapWidth_308, loc_4F4F6
+	IF_A_GREATER_CMP tilemapWidth_308, loc_4F4F6
 	sub_a_sec tilemapWidth_308
 	INC	inv_spr_dscr1_30C
 	JMP	loc_4F4E7
@@ -182,7 +182,7 @@ loc_4F4F6:
 	LDA	tilemapHeight_30A
 
 loc_4F4F9:
-	if_a_greater_cmp inv_spr_dscr1_30C, loc_4F50B
+	IF_A_GREATER_CMP inv_spr_dscr1_30C, loc_4F50B
 	sub_a_sec inv_spr_dscr1_30C
 	STA	tilemapHeight_30A
 	INC	ppu_unk_byte_309
@@ -191,13 +191,13 @@ loc_4F4F9:
 
 loc_4F50B:
 
-	if_a_equal ppu_unk_byte_309, loc_4F51B
+	IF_A_EQUAL ppu_unk_byte_309, loc_4F51B
 	JSR	upload_sprite_func
 	DEC	ppu_unk_byte_309
-	if_a_not_equal ppu_unk_byte_309, loc_4F50B
+	IF_A_NOT_EQUAL ppu_unk_byte_309, loc_4F50B
 
 loc_4F51B:
-	if_a_equal tilemapHeight_30A, locret_4F526
+	IF_A_EQUAL tilemapHeight_30A, locret_4F526
 	STA	inv_spr_dscr1_30C
 	JSR	upload_sprite_func
 
@@ -223,13 +223,13 @@ loc_4F54A:
 	ADD_BYTE_TO_BYTE_CLC_IMM {ppu_data_70,X}, {(ptr_0),Y}, byte_31E
 	INX
 	INY
-	if_y_greater_cmp tilemapWidth_308, loc_4F54A
+	IF_Y_GREATER_CMP tilemapWidth_308, loc_4F54A
 
 	ADD_WORD_TO_WORD_IMM data_2, $20
 	ADD_BYTE_TO_WORD ptr_0, tilemapWidth_308
 
 	INC	tilemapTypeUnk_30B
-	if_a_greater_cmp_addr tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_4F538
+	IF_A_GREATER_CMP_ADDR tilemapTypeUnk_30B, inv_spr_dscr1_30C, loc_4F538
 	JSR	wait_for_ppu_data_upload_FC8C
 	RTS
 .endmacro
@@ -249,7 +249,7 @@ loc_4F54A:
 loc_13E195:
 	set_inx {ppu_data_70,X}, {(data_2),Y}
 	INY
-	if_y_greater_cmp tilemapTypeUnk_30B, loc_13E195
+	IF_Y_GREATER_CMP tilemapTypeUnk_30B, loc_13E195
 
 	ADD_BYTE_TO_WORD data_2, tilemapTypeUnk_30B
 	ADD_BYTE_TO_WORD ptr_0, tilemapTypeUnk_30B

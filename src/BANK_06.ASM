@@ -11,7 +11,7 @@
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_a_equal_cmp_addr bank_command_346, #0, loc_68047
+	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, loc_68047
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -57,14 +57,14 @@ loc_6F8B2:
 
 loc_6F8BE:
 	set_iny _PPU_DATA, {(data_2),Y}
-	if_y_greater_cmp #$10, loc_6F8BE
+	IF_Y_GREATER_CMP #$10, loc_6F8BE
 	
 	ADD_BYTE_TO_WORD ptr_0, #$10
 
 	ADD_WORD_TO_WORD_IMM data_2, $10
 
 	INX
-	if_x_greater_cmp tilemapWidth_308, loc_6F8B2
+	IF_X_GREATER_CMP tilemapWidth_308, loc_6F8B2
 	RTS
 ; End of function upload_gfx_to_ppu_6F89C
 

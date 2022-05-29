@@ -11,13 +11,13 @@
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_a_equal_cmp_addr bank_command_346, #0, case0_2805F
-	if_a_equal_cmp #1, case1_28065
-	if_a_equal_cmp #2, case2_2806B
-	if_a_equal_cmp #3, case3_28071
-	if_a_equal_cmp #4, case4_28077
-	if_a_equal_cmp #5, case5_2807D
-	if_a_equal_cmp #6, case6_28083
+	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, case0_2805F
+	IF_A_EQUAL_CMP #1, case1_28065
+	IF_A_EQUAL_CMP #2, case2_2806B
+	IF_A_EQUAL_CMP #3, case3_28071
+	IF_A_EQUAL_CMP #4, case4_28077
+	IF_A_EQUAL_CMP #5, case5_2807D
+	IF_A_EQUAL_CMP #6, case6_28083
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -129,7 +129,7 @@ sub_2D1CB:
 	a_to_stack char_type_id_35D
 
 	load_a_masked byte_364, #1
-	if_a_equal_cmp #0, loc_2D1DF
+	IF_A_EQUAL_CMP #0, loc_2D1DF
 	JSR	sub_2D397
 
 loc_2D1DF:
@@ -159,14 +159,14 @@ loc_2D23E:
 loc_2D243:
 	mult_by_2_byte tilemapWidth_308
 	TAY
-	if_a_not_equal_cmp_addr {(ptr_0),Y}, #0, loc_2D251
+	IF_A_NOT_EQUAL_CMP_ADDR {(ptr_0),Y}, #0, loc_2D251
 	JMP	loc_2D342
 ; ---------------------------------------------------------------------------
 
 loc_2D251:
-	if_a_not_equal_cmp #$FF, loc_2D29C
+	IF_A_NOT_EQUAL_CMP #$FF, loc_2D29C
 	INY
-	if_a_equal_cmp_addr {(ptr_0),Y}, #$FF, loc_2D260
+	IF_A_EQUAL_CMP_ADDR {(ptr_0),Y}, #$FF, loc_2D260
 	DEY
 	JMP	loc_2D29C
 ; ---------------------------------------------------------------------------
@@ -183,7 +183,7 @@ loc_2D260:
 	TAY
 
 loc_2D284:
-	if_y_equal_cmp #0, loc_2D299
+	IF_Y_EQUAL_CMP #0, loc_2D299
 
 	ADD_WORD_TO_WORD_IMM data_2, $40
 
@@ -218,7 +218,7 @@ loc_2D29C:
 	ADD_WORD_TO_WORD_IMM data_2, $40
 
 	INC	tilemapWidth_308
-	if_a_equal_cmp_addr tilemapWidth_308, byte_35E, loc_2D2F6
+	IF_A_EQUAL_CMP_ADDR tilemapWidth_308, byte_35E, loc_2D2F6
 	BCS	loc_2D2F6
 	JMP	loc_2D243
 ; ---------------------------------------------------------------------------
@@ -232,15 +232,15 @@ loc_2D2F6:
 
 loc_2D305:
 	LDY	#0
-	if_a_equal_cmp_addr {(ptr_0),Y}, #0, loc_2D342
+	IF_A_EQUAL_CMP_ADDR {(ptr_0),Y}, #0, loc_2D342
 	INC	tilemapHeight_30A
-	if_a_equal_cmp_addr tilemapHeight_30A, byte_35F, loc_2D31B
+	IF_A_EQUAL_CMP_ADDR tilemapHeight_30A, byte_35F, loc_2D31B
 	JMP	loc_2D23E
 ; ---------------------------------------------------------------------------
 
 loc_2D31B:
 	load_a_masked byte_364, #8
-	if_a_equal_cmp #0, loc_2D339
+	IF_A_EQUAL_CMP #0, loc_2D339
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
@@ -261,7 +261,7 @@ loc_2D33C:
 loc_2D342:
 
 	load_a_masked byte_364, #8
-	if_a_equal_cmp #0, loc_2D360
+	IF_A_EQUAL_CMP #0, loc_2D360
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
@@ -273,13 +273,13 @@ loc_2D342:
 
 loc_2D360:
 	load_a_masked byte_364, #2
-	if_a_not_equal_cmp #0, loc_2D36C
+	IF_A_NOT_EQUAL_CMP #0, loc_2D36C
 	JSR	sub_2D4FF
 
 loc_2D36C:
 
 	load_a_masked byte_364, #4
-	if_a_not_equal_cmp #0, loc_2D378
+	IF_A_NOT_EQUAL_CMP #0, loc_2D378
 	JSR	sub_2D397
 
 loc_2D378:
@@ -316,7 +316,7 @@ loc_2D3BA:
 	from_stack_to_a ppu_unk_byte_309
 	from_stack_to_a tilemapTypeUnk_30B
 	INC	tilemapHeight_30A
-	if_a_not_equal_cmp_addr tilemapHeight_30A, tilemapTypeUnk_30B, loc_2D3BA
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapHeight_30A, tilemapTypeUnk_30B, loc_2D3BA
 	from_stack_to_a data_3
 	from_stack_to_a data_2
 	from_stack_to_a ptr_1
@@ -339,12 +339,12 @@ loc_2D40B:
 	div_a_by_8_addr ppu_scroll_x_304
 	ADD_TO_A tilemap_size_307
 	STA	tilemapTypeUnk_30B
-	if_a_equal_cmp #$20, loc_2D435
+	IF_A_EQUAL_CMP #$20, loc_2D435
 	BCS	loc_2D435
 	mult_by_2_byte byte_35E
 	ADD_TO_A tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
-	if_a_greater_cmp #$20, loc_2D445
+	IF_A_GREATER_CMP #$20, loc_2D445
 	set tilemapTypeUnk_30B, #$20 
 	JMP	loc_2D445
 ; ---------------------------------------------------------------------------
@@ -376,9 +376,9 @@ loc_2D445:
 loc_2D471:
 	set_inx {ppu_data_70,X}, byte_310
 	INY
-	if_y_greater_cmp tilemapTypeUnk_30B, loc_2D471
+	IF_Y_GREATER_CMP tilemapTypeUnk_30B, loc_2D471
 	div_a_by_2_addr tilemapTypeUnk_30B
-	if_a_equal_cmp byte_35E, loc_2D4C3
+	IF_A_EQUAL_CMP byte_35E, loc_2D4C3
 	a_to_stack data_2
 	a_to_stack data_3
 	and_byte data_2, #$E0 
@@ -396,14 +396,14 @@ loc_2D49D:
 loc_2D4B1:
 	set_inx {ppu_data_70,X}, byte_310
 	INY
-	if_y_greater_cmp tilemapTypeUnk_30B, loc_2D4B1
+	IF_Y_GREATER_CMP tilemapTypeUnk_30B, loc_2D4B1
 	from_stack_to_a data_3
 	from_stack_to_a data_2
 
 loc_2D4C3:
 	JSR	sub_2E500
 	INC	inv_spr_dscr1_30C
-	if_a_equal_cmp_addr inv_spr_dscr1_30C, #2, loc_2D4D3
+	IF_A_EQUAL_CMP_ADDR inv_spr_dscr1_30C, #2, loc_2D4D3
 	JMP	loc_2D40B
 ; ---------------------------------------------------------------------------
 
@@ -416,7 +416,7 @@ loc_2D4D3:
 
 sub_2D4D7:
 	div_a_by_2_addr char_type_id_35D
-	if_a_greater_cmp #8, loc_2D4E3
+	IF_A_GREATER_CMP #8, loc_2D4E3
 	JSR	sub_2E244
 	RTS
 ; ---------------------------------------------------------------------------
@@ -444,7 +444,7 @@ sub_2D4FF:
 
 loc_2D506:
 	JSR	sub_2D514
-	if_a_equal_cmp_addr input_pressed_34A, #0, loc_2D506
+	IF_A_EQUAL_CMP_ADDR input_pressed_34A, #0, loc_2D506
 	JSR	sub_2D542
 	RTS
 ; End of function sub_2D4FF
@@ -452,12 +452,12 @@ loc_2D506:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2D514:
-	if_a_equal_cmp_addr sprite_type_306, #0, loc_2D51C
+	IF_A_EQUAL_CMP_ADDR sprite_type_306, #0, loc_2D51C
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_2D51C:
-	if_a_greater_cmp_addr count_unk_365, #$A, locret_2D541
+	IF_A_GREATER_CMP_ADDR count_unk_365, #$A, locret_2D541
 	set count_unk_365, #0
 	TYA
 	EOR	#1
@@ -475,7 +475,7 @@ locret_2D541:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2D542:
-	if_a_equal_cmp_addr sprite_type_306, #0, loc_2D54A
+	IF_A_EQUAL_CMP_ADDR sprite_type_306, #0, loc_2D54A
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -529,7 +529,7 @@ loc_2E2BC:
 	y_to_stack
 	ADD_TO_A tilemapTypeUnk_30B
 	TAY
-	if_a_not_equal_cmp_addr {byte_2E3B3,Y}, #0, loc_2E2D7
+	IF_A_NOT_EQUAL_CMP_ADDR {byte_2E3B3,Y}, #0, loc_2E2D7
 	mult_a_by_8_byte inv_spr_dscr1_30C
 	TAY
 	JSR	sub_2E3D3
@@ -537,7 +537,7 @@ loc_2E2BC:
 ; ---------------------------------------------------------------------------
 
 loc_2E2D7:
-	if_a_not_equal_cmp #1, loc_2E2E8
+	IF_A_NOT_EQUAL_CMP #1, loc_2E2E8
 	mult_a_by_8_byte inv_spr_dscr1_30C
 	TAY
 	JSR	sub_2E3F1
@@ -545,22 +545,22 @@ loc_2E2D7:
 ; ---------------------------------------------------------------------------
 
 loc_2E2E8:
-	if_a_not_equal_cmp #2, loc_2E2F2
+	IF_A_NOT_EQUAL_CMP #2, loc_2E2F2
 	JSR	sub_2E411
 	JMP	loc_2E2F9
 ; ---------------------------------------------------------------------------
 
 loc_2E2F2:
-	if_a_not_equal_cmp #3, loc_2E2F9
+	IF_A_NOT_EQUAL_CMP #3, loc_2E2F9
 	JSR	sub_2E42E
 
 loc_2E2F9:
 
 	from_stack_to_y
 	INC	tilemapTypeUnk_30B
-	if_a_greater_cmp_addr tilemapTypeUnk_30B, #2, loc_2E2BC
+	IF_A_GREATER_CMP_ADDR tilemapTypeUnk_30B, #2, loc_2E2BC
 	INC	inv_spr_dscr1_30C
-	if_a_equal_cmp_addr inv_spr_dscr1_30C, #4, loc_2E312
+	IF_A_EQUAL_CMP_ADDR inv_spr_dscr1_30C, #4, loc_2E312
 	JMP	loc_2E2A5
 ; ---------------------------------------------------------------------------
 
@@ -570,7 +570,7 @@ loc_2E312:
 	LDY	tilemapHeight_30A
 
 loc_2E31D:
-	if_y_equal_cmp #0, loc_2E32F
+	IF_Y_EQUAL_CMP #0, loc_2E32F
 	mult_by_4_byte byte_35E
 	ADD_TO_A ptr_0
 	STA	ptr_0
@@ -596,7 +596,7 @@ loc_2E33E:
 	set_inx {ppu_data_70,X}, ptr_0
 	INC	ptr_0
 	load_a_masked data_2, #$1F
-	if_a_not_equal_cmp #$1F, loc_2E374
+	IF_A_NOT_EQUAL_CMP #$1F, loc_2E374
 	sub_byte_from_word data_2, #$1F
 	JMP	loc_2E381
 ; ---------------------------------------------------------------------------
@@ -617,7 +617,7 @@ loc_2E381:
 	INC	ptr_0
 	JSR	sub_2E500
 	INC	inv_spr_dscr1_30C
-	if_a_equal_cmp_addr inv_spr_dscr1_30C, #2, loc_2E3AF
+	IF_A_EQUAL_CMP_ADDR inv_spr_dscr1_30C, #2, loc_2E3AF
 	JMP	loc_2E33E
 ; ---------------------------------------------------------------------------
 
@@ -641,7 +641,7 @@ loc_2E3DC:
 	set_inx {ppu_data_70,X}, {(ptr_0),Y}
 	INY
 	INC	inv_spr_dscr1_30C
-	if_a_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_2E3DC
+	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E3DC
 	from_stack_to_a inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E3D3
@@ -659,7 +659,7 @@ loc_2E3FA:
 	INX
 	INY
 	INC	inv_spr_dscr1_30C
-	if_a_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_2E3FA
+	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E3FA
 	from_stack_to_a inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E3F1
@@ -673,7 +673,7 @@ sub_2E411:
 loc_2E41A:
 	set_inx {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
-	if_a_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_2E41A
+	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E41A
 	from_stack_to_a inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E411
@@ -687,7 +687,7 @@ sub_2E42E:
 loc_2E437:
 	set_inx {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
-	if_a_greater_cmp_addr inv_spr_dscr1_30C, #8, loc_2E437
+	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E437
 	from_stack_to_a inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E42E
@@ -699,7 +699,7 @@ sub_2E44B:
 	LDY	tilemapHeight_30A
 
 loc_2E44E:
-	if_y_equal_cmp #0, loc_2E466
+	IF_Y_EQUAL_CMP #0, loc_2E466
 	ADD_BYTE_TO_BYTE_CLC ppu_unk_byte_309, byte_363
 	ADD_2_TO ppu_unk_byte_309
 	DEY
@@ -711,7 +711,7 @@ loc_2E466:
 	div_a_by_8_addr ppu_scroll_x_304
 	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
-	if_a_greater_cmp #$20, loc_2E482
+	IF_A_GREATER_CMP #$20, loc_2E482
 	sub_a_sec #$20 
 	STA	tilemap_size_307
 
@@ -719,7 +719,7 @@ loc_2E482:
 	div_a_by_8_addr ppu_scroll_y_305
 	ADD_TO_A ppu_unk_byte_309
 	STA	ppu_unk_byte_309
-	if_a_greater_cmp #$1E, loc_2E49B
+	IF_A_GREATER_CMP #$1E, loc_2E49B
 	sub_a_sec #$1E
 	STA	ppu_unk_byte_309
 	INC	ptr_0
@@ -740,7 +740,7 @@ loc_2E4B4:
 	LDY	ppu_unk_byte_309
 
 loc_2E4B7:
-	if_y_equal_cmp #0, loc_2E4CC
+	IF_Y_EQUAL_CMP #0, loc_2E4CC
 
 	ADD_WORD_TO_WORD_IMM data_2, $20
 	
@@ -753,7 +753,7 @@ loc_2E4CC:
 	LDY	tilemapWidth_308
 
 loc_2E4D1:
-	if_y_equal_cmp #0, loc_2E4E0
+	IF_Y_EQUAL_CMP #0, loc_2E4E0
 	ADD_TO_A #2
 	ADD_TO_A byte_362
 	DEY
@@ -763,7 +763,7 @@ loc_2E4D1:
 loc_2E4E0:
 	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
-	if_a_greater_cmp #$20, loc_2E4F1
+	IF_A_GREATER_CMP #$20, loc_2E4F1
 	sub_a_sec #$20 
 	STA	tilemap_size_307
 
@@ -777,8 +777,8 @@ loc_2E4F1:
 
 sub_2E500:
 
-	if_a_not_equal_cmp_addr ppu_unk_byte_309, #$1D, loc_2E521
-	if_a_greater_cmp_addr data_3, #$28, loc_2E514
+	IF_A_NOT_EQUAL_CMP_ADDR ppu_unk_byte_309, #$1D, loc_2E521
+	IF_A_GREATER_CMP_ADDR data_3, #$28, loc_2E514
 	set data_3, #$20 
 	JMP	loc_2E518
 ; ---------------------------------------------------------------------------
@@ -910,7 +910,7 @@ sub_2E781:
 	LDY	#0
 loc_2E7B0:
 	set_iny {palette_bg_321,Y}, {(data_2),Y}
-	if_y_greater_cmp #$10, loc_2E7B0
+	IF_Y_GREATER_CMP #$10, loc_2E7B0
 	RTS
 ; End of function sub_2E781
 

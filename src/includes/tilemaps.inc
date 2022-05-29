@@ -5,7 +5,7 @@
 tilemap_switch_case:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88
-	if_a_equal_cmp_addr bank_command_346, #0, case0_8047
+	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, case0_8047
 	RTS
 
 case0_8047:
@@ -26,14 +26,14 @@ load_tilemap_chunk_in_ram_F897:
 	set_word_to_word ptr_0, data_2
 
 getOffset_F8CC:
-	if_a_equal_cmp_addr tilemap_line_size_51, #$20, size_20_F8DF
+	IF_A_EQUAL_CMP_ADDR tilemap_line_size_51, #$20, size_20_F8DF
 	ADD_WORD_TO_WORD_IMM ptr_0, $3C0
 
 size_20_F8DF:
 	LDY	tilemap_line_idx_4F
 
 add_size_F8E1:
-	if_y_equal_cmp #0, addOffset_F8F6
+	IF_Y_EQUAL_CMP #0, addOffset_F8F6
 	ADD_BYTE_TO_WORD ptr_0, tilemap_line_size_51
 	DEY
 	JMP	add_size_F8E1
@@ -53,7 +53,7 @@ write_tilemap_line_F90F:
 	set {tilemapData_4C,X}, {(ptr_0),Y}
 	ADD_BYTE_TO_WORD ptr_0, data_3
 	INX
-	if_x_greater_cmp data_2, write_tilemap_line_F90F
+	IF_X_GREATER_CMP data_2, write_tilemap_line_F90F
 
 	RTS
 

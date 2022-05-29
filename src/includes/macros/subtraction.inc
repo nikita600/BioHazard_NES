@@ -1,25 +1,25 @@
-.macro sub_2_from dst
+.macro SUB_2_FROM dst
 	DEC dst
 	DEC dst
 .endmacro
 
-.macro sub_a_sec value
+.macro SUB_A_SEC value
 	SEC
 	SBC	value
 .endmacro
 
-.macro sub_addr_sec dst, value
+.macro SUB_ADDR_SEC dst, value
 	LDA	dst
 	SEC
 	SBC	value
 .endmacro
 
-.macro sub_addr dst, value
+.macro SUB_ADDR dst, value
 	LDA	dst
 	SBC	value
 .endmacro
 
-.macro sub_word_from_word dst, value
+.macro SUB_WORD_FROM_WORD dst, value
 	LDA	dst
 	SEC
 	SBC	value
@@ -28,20 +28,20 @@
 	SBC	value+1
 .endmacro
 
-.macro sub_byte_sec dst, value
+.macro SUB_BYTE_SEC dst, value
 	LDA	dst
 	SEC
 	SBC	value
 	STA	dst
 .endmacro
 
-.macro sub_byte dst, value
+.macro SUB_BYTE dst, value
 	LDA	dst
 	SBC	value
 	STA	dst
 .endmacro
 
-.macro sub_byte_from_word dst, value
+.macro SUB_BYTE_FROM_WORD dst, value
 	LDA	dst
 	SEC
 	SBC	value

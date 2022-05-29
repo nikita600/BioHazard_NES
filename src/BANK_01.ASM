@@ -114,10 +114,10 @@ loop_1F2D3:
 	IF_X_EQUAL_CMP objArraySize_373, return_1F2F2
 	SET objectIdx_318, {objIdxArray_375,X}
 	SET sprPalIdx_319, {objPalIdxArray_3F7,X}
-	x_to_stack
+	X_TO_STACK
 	JSR	get_sprite_palette_ptr_1F2F3
 	JSR	copy_sprite_palette_to_ram_1F316
-	from_stack_to_x
+	FROM_STACK_TO_X
 	INX
 	JMP	loop_1F2D3
 ; ---------------------------------------------------------------------------
@@ -176,10 +176,10 @@ loc_1F34D:
 	IF_X_EQUAL_CMP objArraySize_373, locret_1F36C
 	SET objectIdx_318, {objIdxArray_375,X}
 	SET sprite_secondByte_31B, {unk_401,X}
-	x_to_stack
+	X_TO_STACK
 	JSR	load_sprite_to_vram_1F36D
 	JSR	upload_to_ppu_1F6D1
-	from_stack_to_x
+	FROM_STACK_TO_X
 	INX
 	JMP	loc_1F34D
 ; ---------------------------------------------------------------------------
@@ -286,25 +286,25 @@ loc_1F43C:
 	LDY	#0
 
 loc_1F440:
-	a_to_stack byte_36A
-	a_to_stack byte_36B
+	A_TO_STACK byte_36A
+	A_TO_STACK byte_36B
 	SET tilemapTypeUnk_30B, #0
 
 loc_1F44D:
 	JSR	sub_1F5FF
 	SET_INY {(ptr_0),Y}, ppu_unk_byte_309
-	y_to_stack
+	Y_TO_STACK
 	LDY	tilemapTypeUnk_30B
 	ADD_BYTE_TO_BYTE_CLC_IMM inv_spr_dscr1_30C, {(data_2),Y}, sprite_secondByte_31B
-	from_stack_to_y
+	FROM_STACK_TO_Y
 	SET_INY {(ptr_0),Y}, inv_spr_dscr1_30C
 	SET_INY {(ptr_0),Y}, byte_317
 	SET_INY {(ptr_0),Y}, tilemap_size_307
 	ADD_BYTE_TO_WORD byte_36A, #8
 	INC	tilemapTypeUnk_30B
 	IF_A_GREATER_CMP_ADDR tilemapTypeUnk_30B, tilemapWidth_308, loc_1F44D
-	from_stack_to_a byte_36B
-	from_stack_to_a byte_36A
+	FROM_STACK_TO_A byte_36B
+	FROM_STACK_TO_A byte_36A
 	ADD_BYTE_TO_WORD data_2, tilemapWidth_308
 	ADD_BYTE_TO_WORD byte_366, #8
 	INX
@@ -322,26 +322,26 @@ loc_1F4CA:
 	LDY	#0
 
 loc_1F4CE:
-	a_to_stack byte_36A
-	a_to_stack byte_36B
+	A_TO_STACK byte_36A
+	A_TO_STACK byte_36B
 	SET tilemapTypeUnk_30B, tilemapWidth_308
 
 loc_1F4DC:
 	JSR	sub_1F5FF
 	SET_INY {(ptr_0),Y}, ppu_unk_byte_309
-	y_to_stack
+	Y_TO_STACK
 	LDY	tilemapTypeUnk_30B
 	DEY
 	ADD_BYTE_TO_BYTE_CLC_IMM inv_spr_dscr1_30C, {(data_2),Y}, sprite_secondByte_31B
-	from_stack_to_y
+	FROM_STACK_TO_Y
 	SET_INY {(ptr_0),Y}, inv_spr_dscr1_30C
 	SET_INY {(ptr_0),Y}, byte_317
 	SET_INY {(ptr_0),Y}, tilemap_size_307
 	ADD_BYTE_TO_WORD byte_36A, #8
 	DEC	tilemapTypeUnk_30B
 	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #0, loc_1F4DC
-	from_stack_to_a byte_36B
-	from_stack_to_a byte_36A
+	FROM_STACK_TO_A byte_36B
+	FROM_STACK_TO_A byte_36A
 	ADD_BYTE_TO_WORD data_2, tilemapWidth_308
 	ADD_BYTE_TO_WORD byte_366, #8
 	INX
@@ -373,26 +373,26 @@ loc_1F572:
 	LDY	#0
 
 loc_1F576:
-	a_to_stack byte_36A
-	a_to_stack byte_36B
+	A_TO_STACK byte_36A
+	A_TO_STACK byte_36B
 	SET tilemapTypeUnk_30B, #0
 
 loc_1F583:
 	JSR	sub_1F5FF
 	SET_INY {(ptr_0),Y}, ppu_unk_byte_309
-	y_to_stack
+	Y_TO_STACK
 	LDY	tilemapTypeUnk_30B
 	ADD_BYTE_TO_BYTE_CLC_IMM inv_spr_dscr1_30C, {(data_2),Y}, sprite_secondByte_31B
-	from_stack_to_y
+	FROM_STACK_TO_Y
 	SET_INY {(ptr_0),Y}, inv_spr_dscr1_30C
 	SET_INY {(ptr_0),Y}, byte_317
 	SET_INY {(ptr_0),Y}, tilemap_size_307
 	ADD_BYTE_TO_WORD byte_36A, #8
 	DEC	tilemapTypeUnk_30B
 	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #0, loc_1F583
-	from_stack_to_a byte_36B
-	from_stack_to_a byte_36A
-	sub_byte_from_word data_2, tilemapWidth_308
+	FROM_STACK_TO_A byte_36B
+	FROM_STACK_TO_A byte_36A
+	SUB_BYTE_FROM_WORD data_2, tilemapWidth_308
 	ADD_BYTE_TO_WORD byte_366, #8
 	INX
 	IF_X_EQUAL_CMP tilemapHeight_30A, loc_1F5F9
@@ -412,19 +412,19 @@ sub_1F5FF:
 	SET byte_368, ppu_scroll_y_305
 	SET byte_369, ppu_unk_byte_303
 	JSR	sub_1F6AB
-	sub_word_from_word byte_36A, byte_36C
+	SUB_WORD_FROM_WORD byte_36A, byte_36C
 	BCC	loc_1F68D
-	sub_word_from_word byte_366, byte_368
+	SUB_WORD_FROM_WORD byte_366, byte_368
 	BCC	loc_1F68D
 	INC	byte_36D
 	ADD_BYTE_TO_WORD byte_368, #$F0 
-	sub_word_from_word byte_36C, byte_36A
+	SUB_WORD_FROM_WORD byte_36C, byte_36A
 	BCC	loc_1F68D
 	IF_A_NOT_EQUAL_CMP_ADDR byte_36C, byte_36A, loc_1F66B
 	IF_A_EQUAL_CMP_ADDR byte_36D, byte_36B, loc_1F68D
 
 loc_1F66B:
-	sub_word_from_word byte_368, byte_366
+	SUB_WORD_FROM_WORD byte_368, byte_366
 	BCC	loc_1F68D
 	IF_A_NOT_EQUAL_CMP_ADDR byte_368, byte_366, loc_1F693
 	IF_A_EQUAL_CMP_ADDR byte_369, byte_367, loc_1F68D
@@ -437,10 +437,10 @@ loc_1F68D:
 ; ---------------------------------------------------------------------------
 
 loc_1F693:
-	sub_addr_sec byte_36A, byte_36C
+	SUB_ADDR_SEC byte_36A, byte_36C
 	STA	tilemap_size_307
-	sub_addr_sec byte_366, byte_368
-	sub_a_sec #$10
+	SUB_ADDR_SEC byte_366, byte_368
+	SUB_A_SEC #$10
 	STA	ppu_unk_byte_309
 	RTS
 ; End of function sub_1F5FF
@@ -448,7 +448,7 @@ loc_1F693:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_1F6AB:
-	y_to_stack
+	Y_TO_STACK
 	LDY	byte_369
 	SET byte_369, #0
 
@@ -460,7 +460,7 @@ loc_1F6B5:
 ; ---------------------------------------------------------------------------
 
 loc_1F6CE:
-	from_stack_to_y
+	FROM_STACK_TO_Y
 	RTS
 ; End of function sub_1F6AB
 

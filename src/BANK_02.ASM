@@ -125,8 +125,8 @@ sub_2D196:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2D1CB:
-	a_to_stack text_idx_35C
-	a_to_stack char_type_id_35D
+	A_TO_STACK text_idx_35C
+	A_TO_STACK char_type_id_35D
 
 	LOAD_A_MASKED byte_364, #1
 	IF_A_EQUAL_CMP #0, loc_2D1DF
@@ -179,7 +179,7 @@ loc_2D260:
 	STA	ptr_0
 	ADD_BYTE_TO_BYTE ptr_1, #0
 
-	sub_addr_sec byte_35E, tilemapWidth_308
+	SUB_ADDR_SEC byte_35E, tilemapWidth_308
 	TAY
 
 loc_2D284:
@@ -201,19 +201,19 @@ loc_2D29C:
 	SET_INY text_idx_35C, {(ptr_0),Y}
 	MULT_WORD_BY_2 text_idx_35C
 
-	a_to_stack ptr_0
-	a_to_stack ptr_1
-	a_to_stack data_2
-	a_to_stack data_3
-	a_to_stack tilemap_size_307
-	a_to_stack ppu_unk_byte_309
+	A_TO_STACK ptr_0
+	A_TO_STACK ptr_1
+	A_TO_STACK data_2
+	A_TO_STACK data_3
+	A_TO_STACK tilemap_size_307
+	A_TO_STACK ppu_unk_byte_309
 	JSR	sub_2D4D7
-	from_stack_to_a ppu_unk_byte_309
-	from_stack_to_a tilemap_size_307
-	from_stack_to_a data_3
-	from_stack_to_a data_2
-	from_stack_to_a ptr_1
-	from_stack_to_a ptr_0
+	FROM_STACK_TO_A ppu_unk_byte_309
+	FROM_STACK_TO_A tilemap_size_307
+	FROM_STACK_TO_A data_3
+	FROM_STACK_TO_A data_2
+	FROM_STACK_TO_A ptr_1
+	FROM_STACK_TO_A ptr_0
 
 	ADD_WORD_TO_WORD_IMM data_2, $40
 
@@ -283,8 +283,8 @@ loc_2D36C:
 	JSR	sub_2D397
 
 loc_2D378:
-	from_stack_to_a char_type_id_35D
-	from_stack_to_a text_idx_35C
+	FROM_STACK_TO_A char_type_id_35D
+	FROM_STACK_TO_A text_idx_35C
 	ADD_BYTE_TO_WORD text_idx_35C, #1
 
 	SET byte_364, #0
@@ -295,35 +295,35 @@ loc_2D378:
 
 sub_2D397:
 
-	a_to_stack tilemapWidth_308
-	a_to_stack ppu_unk_byte_309
-	a_to_stack tilemap_size_307
-	a_to_stack ptr_0
-	a_to_stack ptr_1
-	a_to_stack data_2
-	a_to_stack data_3
+	A_TO_STACK tilemapWidth_308
+	A_TO_STACK ppu_unk_byte_309
+	A_TO_STACK tilemap_size_307
+	A_TO_STACK ptr_0
+	A_TO_STACK ptr_1
+	A_TO_STACK data_2
+	A_TO_STACK data_3
 	SET tilemapTypeUnk_30B, byte_35F
 	SET tilemapHeight_30A, #0
 
 loc_2D3BA:
 	SET tilemapWidth_308, #0
-	a_to_stack tilemapTypeUnk_30B
-	a_to_stack ppu_unk_byte_309
-	a_to_stack tilemap_size_307
+	A_TO_STACK tilemapTypeUnk_30B
+	A_TO_STACK ppu_unk_byte_309
+	A_TO_STACK tilemap_size_307
 	JSR	sub_2E44B
-	from_stack_to_a tilemap_size_307
+	FROM_STACK_TO_A tilemap_size_307
 	JSR	sub_2D401
-	from_stack_to_a ppu_unk_byte_309
-	from_stack_to_a tilemapTypeUnk_30B
+	FROM_STACK_TO_A ppu_unk_byte_309
+	FROM_STACK_TO_A tilemapTypeUnk_30B
 	INC	tilemapHeight_30A
 	IF_A_NOT_EQUAL_CMP_ADDR tilemapHeight_30A, tilemapTypeUnk_30B, loc_2D3BA
-	from_stack_to_a data_3
-	from_stack_to_a data_2
-	from_stack_to_a ptr_1
-	from_stack_to_a ptr_0
-	from_stack_to_a tilemap_size_307
-	from_stack_to_a ppu_unk_byte_309
-	from_stack_to_a tilemapWidth_308
+	FROM_STACK_TO_A data_3
+	FROM_STACK_TO_A data_2
+	FROM_STACK_TO_A ptr_1
+	FROM_STACK_TO_A ptr_0
+	FROM_STACK_TO_A tilemap_size_307
+	FROM_STACK_TO_A ppu_unk_byte_309
+	FROM_STACK_TO_A tilemapWidth_308
 	RTS
 ; End of function sub_2D397
 
@@ -351,8 +351,8 @@ loc_2D40B:
 
 loc_2D435:
 
-	a_to_stack data_2
-	a_to_stack data_3
+	A_TO_STACK data_2
+	A_TO_STACK data_3
 	MULT_BY_2_BYTE byte_35E
 	STA	tilemapTypeUnk_30B
 	JMP	loc_2D49D
@@ -365,7 +365,7 @@ loc_2D445:
 	ADD_TO_A tilemap_size_307
 	STA	tilemapTypeUnk_30B
 	TYA
-	sub_a_sec tilemapTypeUnk_30B
+	SUB_A_SEC tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 	INC	ppu_data_70
 	SET_INX {ppu_data_70,X}, tilemapTypeUnk_30B
@@ -379,11 +379,11 @@ loc_2D471:
 	IF_Y_GREATER_CMP tilemapTypeUnk_30B, loc_2D471
 	DIV_A_BY_2_ADDR tilemapTypeUnk_30B
 	IF_A_EQUAL_CMP byte_35E, loc_2D4C3
-	a_to_stack data_2
-	a_to_stack data_3
+	A_TO_STACK data_2
+	A_TO_STACK data_3
 	AND_BYTE data_2, #$E0 
 	MULT_BY_2_BYTE byte_35E
-	sub_a_sec tilemapTypeUnk_30B
+	SUB_A_SEC tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 
 loc_2D49D:
@@ -397,8 +397,8 @@ loc_2D4B1:
 	SET_INX {ppu_data_70,X}, byte_310
 	INY
 	IF_Y_GREATER_CMP tilemapTypeUnk_30B, loc_2D4B1
-	from_stack_to_a data_3
-	from_stack_to_a data_2
+	FROM_STACK_TO_A data_3
+	FROM_STACK_TO_A data_2
 
 loc_2D4C3:
 	JSR	sub_2E500
@@ -422,7 +422,7 @@ sub_2D4D7:
 ; ---------------------------------------------------------------------------
 
 loc_2D4E3:
-	a_to_stack bank_from_343
+	A_TO_STACK bank_from_343
 
 exec_b3_c0_D4E7:
 	SET bank_command_346, #0
@@ -431,7 +431,7 @@ exec_b3_c0_D4E7:
 	JSR	bank_switch_8000
 
 loc_2D4FA:
-	from_stack_to_a bank_from_343
+	FROM_STACK_TO_A bank_from_343
 	RTS
 ; End of function sub_2D4D7
 
@@ -491,8 +491,8 @@ Fonts_D550:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2E244:
-	a_to_stack data_2
-	a_to_stack data_3
+	A_TO_STACK data_2
+	A_TO_STACK data_3
 
 	ADD_BYTE_TO_BYTE_CLC_IMM ptr_0, #$50 , char_type_id_35D
 	LDA	#$D5 
@@ -503,8 +503,8 @@ sub_2E244:
 	ADD_BYTE_TO_WORD data_2, text_idx_35C
 
 	READ_WORD ptr_0, {(data_2),Y}
-	from_stack_to_a data_3
-	from_stack_to_a data_2
+	FROM_STACK_TO_A data_3
+	FROM_STACK_TO_A data_2
 	LDY	#0
 	SET has_ppu_data_to_upload_6F, #0
 	LDX	#0
@@ -526,7 +526,7 @@ loc_2E2A5:
 	SET tilemapTypeUnk_30B, #0
 
 loc_2E2BC:
-	y_to_stack
+	Y_TO_STACK
 	ADD_TO_A tilemapTypeUnk_30B
 	TAY
 	IF_A_NOT_EQUAL_CMP_ADDR {byte_2E3B3,Y}, #0, loc_2E2D7
@@ -556,7 +556,7 @@ loc_2E2F2:
 
 loc_2E2F9:
 
-	from_stack_to_y
+	FROM_STACK_TO_Y
 	INC	tilemapTypeUnk_30B
 	IF_A_GREATER_CMP_ADDR tilemapTypeUnk_30B, #2, loc_2E2BC
 	INC	inv_spr_dscr1_30C
@@ -585,8 +585,8 @@ loc_2E32F:
 	SET inv_spr_dscr1_30C, #0
 
 loc_2E33E:
-	a_to_stack data_2
-	a_to_stack data_3
+	A_TO_STACK data_2
+	A_TO_STACK data_3
 	SET_INX {ppu_data_70,X}, #1
 	INX
 	SET {ppu_data_70,X}, data_2
@@ -597,7 +597,7 @@ loc_2E33E:
 	INC	ptr_0
 	LOAD_A_MASKED data_2, #$1F
 	IF_A_NOT_EQUAL_CMP #$1F, loc_2E374
-	sub_byte_from_word data_2, #$1F
+	SUB_BYTE_FROM_WORD data_2, #$1F
 	JMP	loc_2E381
 ; ---------------------------------------------------------------------------
 
@@ -612,8 +612,8 @@ loc_2E381:
 	SET_INX {ppu_data_70,X}, data_3
 	INX
 	SET_INX {ppu_data_70,X}, ptr_0
-	from_stack_to_a data_3
-	from_stack_to_a data_2
+	FROM_STACK_TO_A data_3
+	FROM_STACK_TO_A data_2
 	INC	ptr_0
 	JSR	sub_2E500
 	INC	inv_spr_dscr1_30C
@@ -634,7 +634,7 @@ byte_2E3B3:.BYTE	2,  2,	0,  2,	2,  0,	0,  0,	1,  2,	3,  2,	1,  0,	3,  0
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2E3D3:
-	a_to_stack inv_spr_dscr1_30C
+	A_TO_STACK inv_spr_dscr1_30C
 	SET inv_spr_dscr1_30C, #0
 
 loc_2E3DC:
@@ -642,14 +642,14 @@ loc_2E3DC:
 	INY
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E3DC
-	from_stack_to_a inv_spr_dscr1_30C
+	FROM_STACK_TO_A inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E3D3
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2E3F1:
-	a_to_stack inv_spr_dscr1_30C
+	A_TO_STACK inv_spr_dscr1_30C
 	SET inv_spr_dscr1_30C, #0
 
 loc_2E3FA:
@@ -660,35 +660,35 @@ loc_2E3FA:
 	INY
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E3FA
-	from_stack_to_a inv_spr_dscr1_30C
+	FROM_STACK_TO_A inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E3F1
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2E411:
-	a_to_stack inv_spr_dscr1_30C
+	A_TO_STACK inv_spr_dscr1_30C
 	SET inv_spr_dscr1_30C, #0
 
 loc_2E41A:
 	SET_INX {ppu_data_70,X}, #0
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E41A
-	from_stack_to_a inv_spr_dscr1_30C
+	FROM_STACK_TO_A inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E411
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_2E42E:
-	a_to_stack inv_spr_dscr1_30C
+	A_TO_STACK inv_spr_dscr1_30C
 	SET inv_spr_dscr1_30C, #0
 
 loc_2E437:
 	SET_INX {ppu_data_70,X}, #$FF
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, #8, loc_2E437
-	from_stack_to_a inv_spr_dscr1_30C
+	FROM_STACK_TO_A inv_spr_dscr1_30C
 	RTS
 ; End of function sub_2E42E
 
@@ -712,7 +712,7 @@ loc_2E466:
 	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
 	IF_A_GREATER_CMP #$20, loc_2E482
-	sub_a_sec #$20 
+	SUB_A_SEC #$20 
 	STA	tilemap_size_307
 
 loc_2E482:
@@ -720,7 +720,7 @@ loc_2E482:
 	ADD_TO_A ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	IF_A_GREATER_CMP #$1E, loc_2E49B
-	sub_a_sec #$1E
+	SUB_A_SEC #$1E
 	STA	ppu_unk_byte_309
 	INC	ptr_0
 
@@ -764,7 +764,7 @@ loc_2E4E0:
 	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
 	IF_A_GREATER_CMP #$20, loc_2E4F1
-	sub_a_sec #$20 
+	SUB_A_SEC #$20 
 	STA	tilemap_size_307
 
 loc_2E4F1:

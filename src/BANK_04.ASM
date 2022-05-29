@@ -26,13 +26,13 @@ case0_48053:
 
 case1_48059:
 	IF_A_GREATER_CMP_ADDR inv_sprite_idx_31C, #$2F, loc_4807D
-	a_to_stack bank_from_343
+	A_TO_STACK bank_from_343
 
 exec_b13_c1_48064:
 	EXECUTE_BANK_COMMAND #1, #banks_13, #4
 
 loc_48076:
-	from_stack_to_a bank_from_343
+	FROM_STACK_TO_A bank_from_343
 	JMP	return_4808F
 
 loc_4807D:

@@ -99,7 +99,7 @@ loc_13C032:
 	PHA
 	TAY
 	IF_A_GREATER_CMP #$40, loc_13C040
-	sub_a_sec #$40 
+	SUB_A_SEC #$40 
 
 loc_13C040:
 	MULT_A_BY_4
@@ -413,7 +413,7 @@ loc_13D68F:
 	PHA
 	INY
 	SET apu_unk_FF, {(apu_unk_FE),Y}
-	from_stack_to_a apu_unk_FE
+	FROM_STACK_TO_A apu_unk_FE
 	LDY	apu_unk_764,X
 	LDA	(apu_unk_FE),Y
 	EOR	#$E
@@ -709,7 +709,7 @@ loc_13D91E:
 	PHA
 	INY
 	SET apu_unk_FF, {(apu_unk_FE),Y}
-	from_stack_to_a apu_unk_FE
+	FROM_STACK_TO_A apu_unk_FE
 	LDY	apu_unk_733,X
 	LDA	(apu_unk_FE),Y
 	EOR	#$E
@@ -848,7 +848,7 @@ apu_update_pulse1_13DA62:
 	IF_A_EQUAL {apu_unk_752,X}, loc_13DA99
 	IF_A_LOWER_CMP #4, locret_13DADB
 	LOAD_A_MASKED {apu_pulse1_env_744,X}, #$F
-	sub_a_sec {apu_unk_754,X}
+	SUB_A_SEC {apu_unk_754,X}
 	STA	apu_unk_705
 	BCS	loc_13DAB3
 	SET apu_unk_705, #0
@@ -901,7 +901,7 @@ music_func_13DAE3:
 	IF_A_EQUAL {apu_unk_721,X}, loc_13DB1A
 	IF_A_LOWER_CMP #4, locret_13DB64
 	LOAD_A_MASKED {pulse1_env_713,X}, #$F
-	sub_a_sec {apu_unk_723,X}
+	SUB_A_SEC {apu_unk_723,X}
 	STA	apu_unk_705
 	BCS	loc_13DB34
 	SET apu_unk_705, #0
@@ -996,7 +996,7 @@ loc_13DBB1:
 	LDA	apu_dat_13D421,X
 	ORA	apu_unk_704
 	STA	apu_unk_704
-	x_to_stack
+	X_TO_STACK
 	MULT_A_BY_2
 	TAX
 	SET apu_unk_FE, {apu_data_13DEBE,X}
@@ -1008,7 +1008,7 @@ loc_13DBB1:
 	SET_INY {_APU_PULSE1_SWEEP,X}, {(apu_unk_FE),Y}
 	SET_INY {_APU_PULSE1_TIME,X}, {(apu_unk_FE),Y}
 	SET {_APU_PULSE1_LEN,X}, {(apu_unk_FE),Y}
-	from_stack_to_x
+	FROM_STACK_TO_X
 	JMP	loc_13DC18
 ; ---------------------------------------------------------------------------
 

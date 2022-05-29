@@ -76,7 +76,7 @@ wait_for_n_65k_cycles_FCD5:
 	PHA
 	JSR	wait_65k_cycles_FCE0
 	PLA
-	sub_a_sec #1
+	SUB_A_SEC #1
 	BNE	wait_for_n_65k_cycles_FCD5
 	RTS
 ; End of function wait_for_n_65k_cycles_FCD5
@@ -85,8 +85,8 @@ wait_for_n_65k_cycles_FCD5:
 
 wait_65k_cycles_FCE0:
 	PHA
-	x_to_stack
-	y_to_stack
+	X_TO_STACK
+	Y_TO_STACK
 
 start_wait_FCE5:
 	LDX	#0
@@ -101,8 +101,8 @@ loc_FCE9:
 	BNE	loc_FCE7
 
 revert_stack_FCEF:
-	from_stack_to_y
-	from_stack_to_x
+	FROM_STACK_TO_Y
+	FROM_STACK_TO_X
 	PLA
 	RTS
 ; End of function wait_65k_cycles_FCE0
@@ -130,8 +130,8 @@ sub_FD0A:
 ; ---------------------------------------------------------------------------
 
 loc_FD1C:
-	sub_byte_sec spr_x_pos_203, #8
-	sub_byte_sec spr_x_pos_207, #8
+	SUB_BYTE_SEC spr_x_pos_203, #8
+	SUB_BYTE_SEC spr_x_pos_207, #8
 	JMP	locret_FD52
 ; ---------------------------------------------------------------------------
 
@@ -154,8 +154,8 @@ locret_FD52:
 NMI_FD53:
 	PHP
 	PHA
-	x_to_stack
-	y_to_stack
+	X_TO_STACK
+	Y_TO_STACK
 	IF_A_EQUAL_CMP_ADDR bank_switch_flag_6C, #$88, loc_FD62
 	JMP	loc_FD93
 ; ---------------------------------------------------------------------------
@@ -199,8 +199,8 @@ next_frame_FD9B:
 	DEC	frame_render_count_350
 
 stack_reset_FDC4:
-	from_stack_to_y
-	from_stack_to_x
+	FROM_STACK_TO_Y
+	FROM_STACK_TO_X
 	PLA
 	PLP
 
@@ -268,15 +268,15 @@ ppu_update_FE20:
 ; =============== S U B	R O U T	I N E =======================================
 
 input_update_FE39:
-	y_to_stack
-	y_to_stack
+	Y_TO_STACK
+	Y_TO_STACK
 	JSR	read_pad0_FE51
 	JSR	input_sub_FE71
 	LDA	input_pressed_34A
 	ORA	input_unk_34B
 	STA	input_unk_349
-	from_stack_to_x
-	from_stack_to_y
+	FROM_STACK_TO_X
+	FROM_STACK_TO_Y
 	RTS
 ; End of function input_update_FE39
 
@@ -367,7 +367,7 @@ scroll_update_FED6:
 	AND_BYTE scroll_offset_y_47A, #$FE 
 	LOAD_A_MASKED scroll_offset_y_47A, #$7F 
 	IF_A_EQUAL_CMP #0, locret_FF2D
-	a_to_stack scroll_offset_y_47A
+	A_TO_STACK scroll_offset_y_47A
 	LOAD_A_MASKED scroll_offset_y_47A, #$80 
 	IF_A_EQUAL_CMP #0, loc_FF0E
 	SET ppu_scroll_y_305, #0
@@ -379,8 +379,8 @@ loc_FF0E:
 	ADD_BYTE_TO_BYTE_CLC ppu_scroll_y_305, scroll_offset_y_47A
 
 loc_FF20:
-	from_stack_to_a scroll_offset_y_47A
-	sub_byte_sec scroll_offset_y_47A, #2
+	FROM_STACK_TO_A scroll_offset_y_47A
+	SUB_BYTE_SEC scroll_offset_y_47A, #2
 
 locret_FF2D:
 	RTS
@@ -389,16 +389,16 @@ locret_FF2D:
 ; =============== S U B	R O U T	I N E =======================================
 
 apu_update_music_FF2E:
-	a_to_stack bank_command_346
-	a_to_stack bank_to_344
-	a_to_stack bank_from_343
+	A_TO_STACK bank_command_346
+	A_TO_STACK bank_to_344
+	A_TO_STACK bank_from_343
 	
 	SET bank_to_344, #banks_13
 	SET bank_command_346, #$88 
 	JSR	bank_switch_8000
 
-	from_stack_to_a bank_from_343
-	from_stack_to_a bank_to_344
-	from_stack_to_a bank_command_346
+	FROM_STACK_TO_A bank_from_343
+	FROM_STACK_TO_A bank_to_344
+	FROM_STACK_TO_A bank_command_346
 	RTS
 ; End of function apu_update_music_FF2E

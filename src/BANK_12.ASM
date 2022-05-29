@@ -948,7 +948,7 @@ ppu_clear_ram_1289A1:
 	JSR	exec_b0_c7_128474
 	set objectIdx_318, #4
 	JSR	exec_b0_c8_12848F
-	and_byte ppu_ctrl_31F, #$FC 
+	AND_BYTE ppu_ctrl_31F, #$FC 
 	JSR	ppu_update_ctrl_mask_FE86
 	JSR	exec_b0_cD_128516
 	JSR	sub_12EDF5
@@ -989,7 +989,7 @@ game_not_finished_128A43:
 	JSR	wait_for_frame_rendered_FCA0
 	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #$20, loc_128A72
 	JSR	sub_12ED3B
-	xor_byte byte_472, #1
+	XOR_BYTE  byte_472, #1
 	set byte_440, #0
 	JMP	loc_128A20
 ; ---------------------------------------------------------------------------
@@ -1875,12 +1875,12 @@ loc_12A8FD:
 	ADD_WORD_TO_WORD byte_370, tilemapFrameCount_30D
 
 	JSR	sub_12A944
-	or_byte byte_36F, tilemapFrameCount_30D
+	OR_BYTE byte_36F, tilemapFrameCount_30D
 	JMP	loc_12A8E3
 ; ---------------------------------------------------------------------------
 
 loc_12A91F:
-	and_byte byte_36F, tilemapFrameCount_30D
+	AND_BYTE byte_36F, tilemapFrameCount_30D
 	INC	inv_spr_dscr1_30C
 	IF_A_GREATER_CMP_ADDR inv_spr_dscr1_30C, tilemapTypeUnk_30B, loc_12A8D3
 
@@ -1949,7 +1949,7 @@ com_17_player_update_12A9C4:
 	IF_A_NOT_EQUAL_CMP_ADDR byte_356, #0, locret_12AA0D
 	set byte_354, #$A
 	set2 byte_355, byte_356, #0
-	load_a_masked byte_54B, #$F
+	LOAD_A_MASKED byte_54B, #$F
 	ORA	#$F0 
 	STA	byte_54B
 	INC	byte_54B
@@ -2236,7 +2236,7 @@ check_room_93_12ACB1:
 
 check_room_52_12ACC5:
 	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$52, locret_12ACDA
-	load_a_masked byte_591, byte_592
+	LOAD_A_MASKED byte_591, byte_592
 	BEQ	locret_12ACDA
 	set entry_idx_300, #$8F 
 	RTS
@@ -2294,7 +2294,7 @@ loc_12AD41:
 	INC	byte_4D0
 
 loc_12AD58:
-	load_a_masked byte_68D, byte_68E
+	LOAD_A_MASKED byte_68D, byte_68E
 	AND	byte_68F
 	STA	byte_6A4
 
@@ -2305,7 +2305,7 @@ locret_12AD64:
 loc_12AD65:
 	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$27, loc_12ADA0
 	set byte_591, #$FF
-	load_a_masked byte_591, byte_592
+	LOAD_A_MASKED byte_591, byte_592
 	IF_A_EQUAL_CMP #0, locret_12AD9F
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -2322,7 +2322,7 @@ locret_12AD9F:
 loc_12ADA0:
 	IF_A_NOT_EQUAL_CMP_ADDR byte_46E, #$28, loc_12ADDB
 	set byte_592, #$FF
-	load_a_masked byte_591, byte_592
+	LOAD_A_MASKED byte_591, byte_592
 	IF_A_EQUAL_CMP #0, locret_12ADDA
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
@@ -2366,17 +2366,17 @@ loc_12AE0F:
 	IF_A_EQUAL_CMP #$90, loc_12AE3F
 	IF_A_EQUAL_CMP #$5C, loc_12AE34
 	IF_A_EQUAL_CMP #$93, loc_12AE34
-	xor_byte byte_58F, #$FF
+	XOR_BYTE  byte_58F, #$FF
 	JMP	loc_12AE47
 ; ---------------------------------------------------------------------------
 
 loc_12AE34:
-	xor_byte byte_590, #$FF
+	XOR_BYTE  byte_590, #$FF
 	JMP	loc_12AE47
 ; ---------------------------------------------------------------------------
 
 loc_12AE3F:
-	xor_byte byte_58C, #$FF
+	XOR_BYTE  byte_58C, #$FF
 
 loc_12AE47:
 	JSR	entry_idx_handler_unk_12AA6D
@@ -2594,7 +2594,7 @@ loc_12B0E2:
 loc_12B106:
 	IF_A_NOT_EQUAL_CMP #$1E, loc_12B11F
 	set byte_59F, #$FF
-	load_a_masked byte_59F, byte_5A0
+	LOAD_A_MASKED byte_59F, byte_5A0
 	AND	byte_5A1
 	AND	byte_5A2
 	STA	byte_6C8
@@ -2604,7 +2604,7 @@ loc_12B106:
 loc_12B11F:
 	IF_A_NOT_EQUAL_CMP #$1F, loc_12B138
 	set byte_5A0, #$FF
-	load_a_masked byte_59F, byte_5A0
+	LOAD_A_MASKED byte_59F, byte_5A0
 	AND	byte_5A1
 	AND	byte_5A2
 	STA	byte_6C8
@@ -2614,7 +2614,7 @@ loc_12B11F:
 loc_12B138:
 	IF_A_NOT_EQUAL_CMP #$20, loc_12B151
 	set byte_5A1, #$FF
-	load_a_masked byte_59F, byte_5A0
+	LOAD_A_MASKED byte_59F, byte_5A0
 	AND	byte_5A1
 	AND	byte_5A2
 	STA	byte_6C8
@@ -2624,7 +2624,7 @@ loc_12B138:
 loc_12B151:
 	IF_A_NOT_EQUAL_CMP #$21, loc_12B16A
 	set byte_5A2, #$FF
-	load_a_masked byte_59F, byte_5A0
+	LOAD_A_MASKED byte_59F, byte_5A0
 	AND	byte_5A1
 	AND	byte_5A2
 	STA	byte_6C8
@@ -4557,7 +4557,7 @@ loc_12C229:
 	set_text_args #$E4, #1
 	set tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
-	xor_byte byte_5CA, #$FF
+	XOR_BYTE  byte_5CA, #$FF
 
 locret_12C25D:
 	RTS
@@ -4624,7 +4624,7 @@ sub_12C2D6:
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	IF_A_NOT_EQUAL byte_372, locret_12C323
-	xor_byte byte_589, #$FF
+	XOR_BYTE  byte_589, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -4646,7 +4646,7 @@ sub_12C324:
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	IF_A_NOT_EQUAL byte_372, locret_12C371
-	xor_byte byte_58B, #$FF
+	XOR_BYTE  byte_58B, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -4956,7 +4956,7 @@ sub_12C5F0:
 	JSR	exec_b0_c0_12A973
 	JSR	exec_b0_c1_12A98E
 	IF_A_NOT_EQUAL byte_372, locret_12C636
-	xor_byte byte_593, #$FF
+	XOR_BYTE  byte_593, #$FF
 	JSR	entry_idx_handler_unk_12AA6D
 	set image_id_4A4, entry_idx_300
 	set image_offset_4A5, ppu_unk_byte_302
@@ -5593,7 +5593,7 @@ loc_12CBD6:
 loc_12CBD9:
 	IF_A_GREATER_CMP_ADDR count_unk_469, #$A, loc_12CBF7
 	set count_unk_469, #0
-	xor_byte byte_434, #1
+	XOR_BYTE  byte_434, #1
 	IF_A_EQUAL_CMP_ADDR byte_42B, #$14, show_ending_screen_12CC06
 	INC	byte_42B
 
@@ -5619,17 +5619,17 @@ show_ending_screen_12CC06:
 sub_12CC34:
 	IF_A_GREATER_CMP_ADDR count_unk_465, #$A, loc_12CC48
 	set count_unk_465, #0
-	xor_byte byte_430, #1
+	XOR_BYTE  byte_430, #1
 
 loc_12CC48:
 	IF_A_GREATER_CMP_ADDR count_unk_466, #$F, loc_12CC5C
 	set count_unk_466, #0
-	xor_byte byte_431, #1
+	XOR_BYTE  byte_431, #1
 
 loc_12CC5C:
 	IF_A_GREATER_CMP_ADDR count_unk_467, #$A, loc_12CC70
 	set count_unk_467, #0
-	xor_byte byte_433, #1
+	XOR_BYTE  byte_433, #1
 
 loc_12CC70:
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_36A, byte_42C, byte_430
@@ -5857,14 +5857,14 @@ loc_12CF2D:
 	JSR	sub_12D070
 	JSR	wait_for_vblank_FC95
 	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #2, loc_12CF48
-	xor_byte byte_372, #1
+	XOR_BYTE  byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
 loc_12CF48:
 	IF_A_NOT_EQUAL_CMP #1, loc_12CF5A
-	xor_byte byte_372, #1
+	XOR_BYTE  byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
@@ -5954,7 +5954,7 @@ loc_12D003:
 sub_12D070:
 	IF_A_GREATER_CMP_ADDR count_unk_466, #$A, loc_12D084
 	set count_unk_466, #0
-	xor_byte byte_547, #1
+	XOR_BYTE  byte_547, #1
 
 loc_12D084:
 	set objMapIdx_316, #$25 
@@ -5977,7 +5977,7 @@ loc_12D084:
 sub_12D0C2:
 	IF_A_GREATER_CMP_ADDR count_unk_465, #$A, loc_12D0D6
 	set count_unk_465, #0
-	xor_byte byte_547, #1
+	XOR_BYTE  byte_547, #1
 
 loc_12D0D6:
 	set objMapIdx_316, #$25 
@@ -6406,7 +6406,7 @@ loc_12D522:
 
 loc_12D52E:
 	IF_A_NOT_EQUAL_CMP #2, loc_12D543
-	xor_byte byte_42C, #1
+	XOR_BYTE  byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
 	JMP	loc_12D4E7
@@ -6414,7 +6414,7 @@ loc_12D52E:
 
 loc_12D543:
 	IF_A_NOT_EQUAL_CMP #1, loc_12D558
-	xor_byte byte_42C, #1
+	XOR_BYTE  byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
 	JMP	loc_12D4E7
@@ -6517,7 +6517,7 @@ sub_12D680:
 loc_12D685:
 	IF_A_GREATER_CMP_ADDR byte_546, #$A, loc_12D699
 	set byte_546, #0
-	xor_byte byte_547, #1
+	XOR_BYTE  byte_547, #1
 
 loc_12D699:
 	set byte_31A, #$70 
@@ -6536,14 +6536,14 @@ loc_12D699:
 	JSR	sub_12E829
 	JSR	wait_for_vblank_FC95
 	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #2, loc_12D6E3
-	xor_byte byte_372, #1
+	XOR_BYTE  byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
 loc_12D6E3:
 	IF_A_NOT_EQUAL_CMP #1, loc_12D6F5
-	xor_byte byte_372, #1
+	XOR_BYTE  byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
@@ -6628,7 +6628,7 @@ loc_12D7A6:
 ; ---------------------------------------------------------------------------
 
 loc_12D7B4:
-	xor_byte byte_42C, #1
+	XOR_BYTE  byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
 	JMP	loc_12D72F
@@ -6641,7 +6641,7 @@ loc_12D7C5:
 ; ---------------------------------------------------------------------------
 
 loc_12D7D3:
-	xor_byte byte_42C, #1
+	XOR_BYTE  byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
 	JMP	loc_12D72F
@@ -6969,7 +6969,7 @@ loc_12DACB:
 sub_12DAD0:
 	IF_A_GREATER_CMP_ADDR byte_546, #$A, loc_12DAE4
 	set byte_546, #0
-	xor_byte byte_547, #1
+	XOR_BYTE  byte_547, #1
 
 loc_12DAE4:
 	set byte_31A, #$70 
@@ -7209,7 +7209,7 @@ sub_12DCE9:
 sub_12DD0A:
 	IF_A_GREATER_CMP_ADDR byte_546, #$A, loc_12DD1E
 	set byte_546, #0
-	xor_byte byte_547, #1
+	XOR_BYTE  byte_547, #1
 
 loc_12DD1E:
 	mult_by_4_byte byte_42E
@@ -7895,7 +7895,7 @@ loc_12E460:
 
 loc_12E46F:
 	IF_A_NOT_EQUAL_CMP #2, loc_12E487
-	xor_byte byte_42C, #1
+	XOR_BYTE  byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12E4CD
 	JSR	sub_12D329
@@ -7904,7 +7904,7 @@ loc_12E46F:
 
 loc_12E487:
 	IF_A_NOT_EQUAL_CMP #1, loc_12E49F
-	xor_byte byte_42C, #1
+	XOR_BYTE  byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12E4CD
 	JSR	sub_12D329
@@ -7940,7 +7940,7 @@ sub_12E4CD:
 	JSR	sub_12D26B
 	IF_A_GREATER_CMP_ADDR byte_546, #$A, loc_12E4EE
 	set byte_546, #0
-	xor_byte byte_547, #1
+	XOR_BYTE  byte_547, #1
 
 loc_12E4EE:
 	mult_by_4_byte byte_42E
@@ -8820,28 +8820,28 @@ loc_12EE2C:
 	IF_A_EQUAL_CMP #1, loc_12EE69
 
 loc_12EE3F:
-	load_a_masked {palette_bg_321,Y }, #$CF 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$CF 
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
 loc_12EE47:
-	load_a_masked {palette_bg_321,Y }, #$30 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$30 
 	IF_A_GREATER_CMP #$30, loc_12EE7A
-	load_a_masked {palette_bg_321,Y }, #$DF 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$DF 
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
 loc_12EE58:
-	load_a_masked {palette_bg_321,Y }, #$30 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$30 
 	IF_A_GREATER_CMP #$20, loc_12EE7A
-	load_a_masked {palette_bg_321,Y }, #$EF 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$EF 
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
 loc_12EE69:
-	load_a_masked {palette_bg_321,Y }, #$30 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$30 
 	IF_A_GREATER_CMP #$10, loc_12EE7A
-	load_a_masked {palette_bg_321,Y }, #$FF
+	LOAD_A_MASKED {palette_bg_321,Y }, #$FF
 	JMP	loc_12EE7D
 ; ---------------------------------------------------------------------------
 
@@ -8899,28 +8899,28 @@ loc_12EEDB:
 	IF_A_EQUAL_CMP #0, loc_12EF2D
 
 loc_12EEF2:
-	load_a_masked {palette_bg_321,Y }, #$FF
+	LOAD_A_MASKED {palette_bg_321,Y }, #$FF
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
 loc_12EEFA:
-	load_a_masked {palette_bg_321,Y }, #$30 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$30 
 	IF_A_GREATER_CMP #$30, loc_12EF32
-	load_a_masked {palette_bg_321,Y }, #$EF 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$EF 
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
 loc_12EF0B:
-	load_a_masked {palette_bg_321,Y }, #$30 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$30 
 	IF_A_GREATER_CMP #$20, loc_12EF32
-	load_a_masked {palette_bg_321,Y }, #$DF 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$DF 
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
 loc_12EF1C:
-	load_a_masked {palette_bg_321,Y }, #$30 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$30 
 	IF_A_GREATER_CMP #$10, loc_12EF32
-	load_a_masked {palette_bg_321,Y }, #$CF 
+	LOAD_A_MASKED {palette_bg_321,Y }, #$CF 
 	JMP	loc_12EF35
 ; ---------------------------------------------------------------------------
 
@@ -9449,7 +9449,7 @@ byte_12F55F:.BYTE	4,$1B,	8,$13,	2
 sub_12F564:
 	IF_A_GREATER_CMP_ADDR count_unk_465, #$F, locret_12F5B8
 	set count_unk_465, #0
-	xor_byte byte_547, #1
+	XOR_BYTE  byte_547, #1
 	IF_A_EQUAL byte_547, sub_12F583
 ; End of function sub_12F564
 

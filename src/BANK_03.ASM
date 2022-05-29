@@ -135,7 +135,7 @@ loc_3F865:
 	INX
 	set_inx {ppu_data_70,X}, ptr_0
 	INC	ptr_0
-	load_a_masked data_2, #$1F
+	LOAD_A_MASKED data_2, #$1F
 	IF_A_NOT_EQUAL_CMP #$1F, loc_3F89B
 	sub_byte_from_word data_2, #$1F
 	JMP	loc_3F8A8
@@ -264,7 +264,7 @@ loc_3F9A9:
 	INC	ptr_0
 
 loc_3F9C2:
-	load_a_masked ptr_0, #1
+	LOAD_A_MASKED ptr_0, #1
 	BEQ	loc_3F9D3
 	set data_2, #0
 	set data_3, #$28 
@@ -325,7 +325,7 @@ loc_3FA3B:
 	set data_3, #$28 
 
 loc_3FA3F:
-	and_byte data_2, #$1F
+	AND_BYTE data_2, #$1F
 	JMP	locret_3FA55
 ; ---------------------------------------------------------------------------
 

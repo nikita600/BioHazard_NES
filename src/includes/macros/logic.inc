@@ -1,21 +1,21 @@
-.macro load_a_masked addr, mask
+.macro LOAD_A_MASKED addr, mask
 	LDA	addr
 	AND	mask
 .endmacro
 
-.macro and_byte addr, value
+.macro AND_BYTE addr, value
 	LDA	addr
 	AND	value
 	STA	addr
 .endmacro
 
-.macro or_byte addr, value
+.macro OR_BYTE addr, value
 	LDA	addr
 	ORA	value
 	STA	addr
 .endmacro
 
-.macro xor_byte addr, value
+.macro XOR_BYTE  addr, value
 	LDA addr
 	EOR value
 	STA addr

@@ -270,13 +270,13 @@ sub_1F416:
 	ADC	#0
 	STA	ptr_1
 	
-	load_a_masked byte_317, #$40 
+	LOAD_A_MASKED byte_317, #$40 
 	IF_A_NOT_EQUAL_CMP #$40, loc_1F430
 	JMP	loc_1F4CA
 ; ---------------------------------------------------------------------------
 
 loc_1F430:
-	load_a_masked byte_317, #$80 
+	LOAD_A_MASKED byte_317, #$80 
 	IF_A_NOT_EQUAL_CMP #$80, loc_1F43C
 	JMP	loc_1F559
 ; ---------------------------------------------------------------------------

@@ -149,7 +149,7 @@ loc_13D429:
 	LDX	#0
 
 loc_13D459:
-	load_a_masked {apu_dat_13D421,X}, apu_unk_737
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_737
 	BEQ	loc_13D46D
 	set_iny {apu_unk_739,X}, {(apu_unk_FE),Y}
 	set_iny {apu_unk_73D,X}, {(apu_unk_FE),Y}
@@ -192,7 +192,7 @@ loc_13D493:
 	LDX	#0
 
 loc_13D4C0:
-	load_a_masked {apu_dat_13D421,X}, apu_unk_706
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_706
 	BEQ	loc_13D4D4
 	set_iny {apu_unk_708,X}, {(apu_unk_FE),Y}
 	set_iny {apu_unk_70C,X}, {(apu_unk_FE),Y}
@@ -225,7 +225,7 @@ apu_update_13D4F9:
 	IF_A_GREATER_CMP_ADDR apu_unk_742, {apu_dat_13DC5C,X}, locret_13D533
 	set apu_unk_742, #0
 	INC	apu_unk_741
-	and_byte apu_unk_741, #3
+	AND_BYTE apu_unk_741, #3
 	DEC	apu_unk_758
 	DEC	apu_unk_759
 	DEC	apu_unk_75A
@@ -278,9 +278,9 @@ loc_13D565:
 
 apu_func_13D575:
 	IF_A_NOT_EQUAL {apu_unk_758,X}, locret_13D55B
-	load_a_masked {apu_dat_13D421,X}, apu_unk_737
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_737
 	BEQ	locret_13D55B
-	load_a_masked {apu_dat_13D421,X}, apu_unk_743
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_743
 	BEQ	loc_13D58D
 	JMP	loc_13D662
 ; ---------------------------------------------------------------------------
@@ -320,7 +320,7 @@ loc_13D5C2:
 	set {apu_pulse1_env_744,X}, {(apu_unk_FE),Y}
 	AND	#$10
 	BEQ	loc_13D5D4
-	or_byte {apu_pulse1_env_744,X}, #$F
+	OR_BYTE {apu_pulse1_env_744,X}, #$F
 
 loc_13D5D4:
 	INY
@@ -376,7 +376,7 @@ loc_13D636:
 loc_13D63E:
 	set apu_unk_705, {(apu_unk_FE),Y}
 	set {apu_unk_752,X}, #4
-	load_a_masked {apu_pulse1_env_744,X}, #$F0 
+	LOAD_A_MASKED {apu_pulse1_env_744,X}, #$F0 
 	ORA	apu_unk_705
 	ORA	#$10
 	STA	apu_pulse1_env_744,X
@@ -384,14 +384,14 @@ loc_13D63E:
 
 loc_13D657:
 	INY
-	load_a_masked {(apu_unk_FE),Y}, #$FC 
+	LOAD_A_MASKED {(apu_unk_FE),Y}, #$FC 
 	STA	apu_unk_738
 	JMP	loc_13D636
 ; ---------------------------------------------------------------------------
 
 loc_13D662:
 	IF_X_LOWER_CMP #2, loc_13D67C
-	load_a_masked {apu_pulse1_env_744,X}, #$10
+	LOAD_A_MASKED {apu_pulse1_env_744,X}, #$10
 	BEQ	loc_13D674
 	set {apu_unk_752,X}, #4
 	BNE	loc_13D67C
@@ -432,7 +432,7 @@ loc_13D68F:
 	STA	apu_unk_743
 
 loc_13D6C0:
-	load_a_masked {apu_dat_13D421,X}, apu_unk_704
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_704
 	BNE	locret_13D6F0
 	LDA	apu_dat_13D421,X
 	ORA	_APU_STATUS
@@ -447,7 +447,7 @@ loc_13D6DE:
 	LDY	apu_unk_705
 	BNE	loc_13D6F1
 	set _APU_NOISE_ENV, #$10
-	and_byte _APU_STATUS, #$F7 
+	AND_BYTE _APU_STATUS, #$F7 
 
 locret_13D6F0:
 	RTS
@@ -574,9 +574,9 @@ loc_13D7F4:
 
 music_func_13D804:
 	IF_A_NOT_EQUAL {apu_unk_727,X}, locret_13D7EA
-	load_a_masked {apu_dat_13D421,X}, apu_unk_706
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_706
 	BEQ	locret_13D7EA
-	load_a_masked {apu_dat_13D421,X}, apu_unk_712
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_712
 	BEQ	loc_13D81C
 	JMP	loc_13D8F1
 ; ---------------------------------------------------------------------------
@@ -616,7 +616,7 @@ loc_13D851:
 	set {pulse1_env_713,X}, {(apu_unk_FE),Y}
 	AND	#$10
 	BEQ	loc_13D863
-	or_byte {pulse1_env_713,X}, #$F
+	OR_BYTE {pulse1_env_713,X}, #$F
 
 loc_13D863:
 	INY
@@ -672,7 +672,7 @@ loc_13D8C5:
 loc_13D8CD:
 	set apu_unk_705, {(apu_unk_FE),Y}
 	set {apu_unk_721,X}, #4
-	load_a_masked {pulse1_env_713,X}, #$F0 
+	LOAD_A_MASKED {pulse1_env_713,X}, #$F0 
 	ORA	apu_unk_705
 	ORA	#$10
 	STA	pulse1_env_713,X
@@ -680,14 +680,14 @@ loc_13D8CD:
 
 loc_13D8E6:
 	INY
-	load_a_masked {(apu_unk_FE),Y}, #$FC 
+	LOAD_A_MASKED {(apu_unk_FE),Y}, #$FC 
 	STA	apu_unk_707
 	JMP	loc_13D8C5
 ; ---------------------------------------------------------------------------
 
 loc_13D8F1:
 	IF_X_LOWER_CMP #2, loc_13D90B
-	load_a_masked {pulse1_env_713,X}, #$10
+	LOAD_A_MASKED {pulse1_env_713,X}, #$10
 	BEQ	loc_13D903
 	set {apu_unk_721,X}, #4
 	BNE	loc_13D90B
@@ -728,9 +728,9 @@ loc_13D91E:
 	STA	apu_unk_712
 
 loc_13D94F:
-	load_a_masked {apu_dat_13D421,X}, apu_unk_704
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_704
 	BNE	locret_13D987
-	load_a_masked {apu_dat_13D421,X}, apu_unk_737
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_737
 	BNE	locret_13D987
 	LDA	apu_dat_13D421,X
 	ORA	_APU_STATUS
@@ -745,7 +745,7 @@ loc_13D975:
 	LDY	apu_unk_705
 	BNE	apu_update_noise_13D988
 	set _APU_NOISE_ENV, #$10
-	and_byte _APU_STATUS, #$F7 
+	AND_BYTE _APU_STATUS, #$F7 
 
 locret_13D987:
 	RTS
@@ -840,14 +840,14 @@ apu_update_pulse1_13DA5B:
 ; =============== S U B	R O U T	I N E =======================================
 
 apu_update_pulse1_13DA62:
-	load_a_masked {apu_dat_13D421,X}, apu_unk_737
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_737
 	BEQ	locret_13DADB
 	IF_A_EQUAL {apu_unk_758,X}, locret_13DADB
-	load_a_masked {apu_pulse1_env_744,X}, #$10
+	LOAD_A_MASKED {apu_pulse1_env_744,X}, #$10
 	BNE	locret_13DADB
 	IF_A_EQUAL {apu_unk_752,X}, loc_13DA99
 	IF_A_LOWER_CMP #4, locret_13DADB
-	load_a_masked {apu_pulse1_env_744,X}, #$F
+	LOAD_A_MASKED {apu_pulse1_env_744,X}, #$F
 	sub_a_sec {apu_unk_754,X}
 	STA	apu_unk_705
 	BCS	loc_13DAB3
@@ -856,7 +856,7 @@ apu_update_pulse1_13DA62:
 	BNE	loc_13DAB3
 
 loc_13DA99:
-	load_a_masked {apu_pulse1_env_744,X}, #$F
+	LOAD_A_MASKED {apu_pulse1_env_744,X}, #$F
 	ADD_TO_A {apu_unk_754,X}
 	STA	apu_unk_705
 	IF_A_GREATER_CMP #$F, loc_13DAB3
@@ -864,14 +864,14 @@ loc_13DA99:
 	set {apu_unk_756,X}, #1
 
 loc_13DAB3:
-	load_a_masked {apu_pulse1_env_744,X}, #$F0 
+	LOAD_A_MASKED {apu_pulse1_env_744,X}, #$F0 
 	ORA	apu_unk_705
 	STA	apu_pulse1_env_744,X
 	DEC	apu_unk_756,X
 	BNE	locret_13DADB
 	INC	apu_unk_752,X
 	JSR	music_func_13DB65
-	load_a_masked {apu_dat_13D421,X}, apu_unk_704
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_704
 	BNE	locret_13DADB
 	TXA
 	mult_a_by_4
@@ -893,14 +893,14 @@ music_func_13DADC:
 ; =============== S U B	R O U T	I N E =======================================
 
 music_func_13DAE3:
-	load_a_masked {apu_dat_13D421,X}, apu_unk_706
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_706
 	BEQ	locret_13DB64
 	IF_A_EQUAL {apu_unk_727,X}, locret_13DB64
-	load_a_masked {pulse1_env_713,X}, #$10
+	LOAD_A_MASKED {pulse1_env_713,X}, #$10
 	BNE	locret_13DB64
 	IF_A_EQUAL {apu_unk_721,X}, loc_13DB1A
 	IF_A_LOWER_CMP #4, locret_13DB64
-	load_a_masked {pulse1_env_713,X}, #$F
+	LOAD_A_MASKED {pulse1_env_713,X}, #$F
 	sub_a_sec {apu_unk_723,X}
 	STA	apu_unk_705
 	BCS	loc_13DB34
@@ -909,7 +909,7 @@ music_func_13DAE3:
 	BNE	loc_13DB34
 
 loc_13DB1A:
-	load_a_masked {pulse1_env_713,X}, #$F
+	LOAD_A_MASKED {pulse1_env_713,X}, #$F
 	ADD_TO_A {apu_unk_723,X}
 	STA	apu_unk_705
 	IF_A_GREATER_CMP #$F, loc_13DB34
@@ -917,16 +917,16 @@ loc_13DB1A:
 	set {apu_unk_725,X}, #1
 
 loc_13DB34:
-	load_a_masked {pulse1_env_713,X}, #$F0 
+	LOAD_A_MASKED {pulse1_env_713,X}, #$F0 
 	ORA	apu_unk_705
 	STA	pulse1_env_713,X
 	DEC	apu_unk_725,X
 	BNE	locret_13DB64
 	INC	apu_unk_721,X
 	JSR	music_func_13DB8A
-	load_a_masked {apu_dat_13D421,X}, apu_unk_704
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_704
 	BNE	locret_13DB64
-	load_a_masked {apu_dat_13D421,X}, apu_unk_737
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_737
 	BNE	locret_13DB64
 	TXA
 	mult_a_by_4
@@ -943,14 +943,14 @@ music_func_13DB65:
 	IF_A_LOWER_CMP_ADDR {apu_unk_752,X}, #4, locret_13DB89
 	mult_a_by_2
 	TAY
-	load_a_masked {apu_unk_74A,Y}, #$F
+	LOAD_A_MASKED {apu_unk_74A,Y}, #$F
 	BNE	loc_13DB7A
 	INC	apu_unk_752,X
 	BNE	music_func_13DB65
 
 loc_13DB7A:
 	STA	apu_unk_756,X
-	load_a_masked {apu_unk_74A,Y}, #$F0 
+	LOAD_A_MASKED {apu_unk_74A,Y}, #$F0 
 	DIV_A_BY_16
 	STA	apu_unk_754,X
 
@@ -964,14 +964,14 @@ music_func_13DB8A:
 	IF_A_LOWER_CMP_ADDR {apu_unk_721,X}, #4, locret_13DBAE
 	mult_a_by_2
 	TAY
-	load_a_masked {apu_unk_719,Y}, #$F
+	LOAD_A_MASKED {apu_unk_719,Y}, #$F
 	BNE	loc_13DB9F
 	INC	apu_unk_721,X
 	BNE	music_func_13DB8A
 
 loc_13DB9F:
 	STA	apu_unk_725,X
-	load_a_masked {apu_unk_719,Y}, #$F0 
+	LOAD_A_MASKED {apu_unk_719,Y}, #$F0 
 	DIV_A_BY_16
 	STA	apu_unk_723,X
 
@@ -1013,9 +1013,9 @@ loc_13DBB1:
 ; ---------------------------------------------------------------------------
 
 loc_13DBFD:
-	load_a_masked {apu_dat_13D421,X}, apu_unk_704
+	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_704
 	BEQ	loc_13DC18
-	load_a_masked {apu_dat_13D421,X}, _APU_STATUS
+	LOAD_A_MASKED {apu_dat_13D421,X}, _APU_STATUS
 	BNE	loc_13DC18
 	LDA	apu_dat_13D421,X
 	EOR	#$FF
@@ -1042,7 +1042,7 @@ music_update_state_13DC1E:
 	IF_A_GREATER_CMP_ADDR apu_unk_711, {apu_dat_13DC5C,X}, locret_13DC5B
 	set apu_unk_711, #0
 	INC	apu_unk_710
-	and_byte apu_unk_710, #3
+	AND_BYTE apu_unk_710, #3
 	DEC	apu_unk_727
 	DEC	apu_unk_728
 	DEC	apu_unk_729

@@ -108,7 +108,7 @@ skip_2_byte_4f416:
 
 	set_byte_to_word ptr_0, byte_31E
 	mult_word_by_16 ptr_0
-	or_byte ptr_1, #$10
+	OR_BYTE ptr_1, #$10
 
 	RTS
 

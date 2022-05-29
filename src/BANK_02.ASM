@@ -128,7 +128,7 @@ sub_2D1CB:
 	a_to_stack text_idx_35C
 	a_to_stack char_type_id_35D
 
-	load_a_masked byte_364, #1
+	LOAD_A_MASKED byte_364, #1
 	IF_A_EQUAL_CMP #0, loc_2D1DF
 	JSR	sub_2D397
 
@@ -151,7 +151,7 @@ loc_2D21A:
 
 	set_byte_to_word data_2, sprite_secondByte_31B
 	mult_word_by_16 data_2
-	or_byte data_3, #$10
+	OR_BYTE data_3, #$10
 
 loc_2D23E:
 	set tilemapWidth_308, #0
@@ -239,7 +239,7 @@ loc_2D305:
 ; ---------------------------------------------------------------------------
 
 loc_2D31B:
-	load_a_masked byte_364, #8
+	LOAD_A_MASKED byte_364, #8
 	IF_A_EQUAL_CMP #0, loc_2D339
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
@@ -260,7 +260,7 @@ loc_2D33C:
 
 loc_2D342:
 
-	load_a_masked byte_364, #8
+	LOAD_A_MASKED byte_364, #8
 	IF_A_EQUAL_CMP #0, loc_2D360
 	JSR	wait_any_input_65k_cycles_FCAB
 	JSR	wait_any_input_65k_cycles_FCAB
@@ -272,13 +272,13 @@ loc_2D342:
 ; ---------------------------------------------------------------------------
 
 loc_2D360:
-	load_a_masked byte_364, #2
+	LOAD_A_MASKED byte_364, #2
 	IF_A_NOT_EQUAL_CMP #0, loc_2D36C
 	JSR	sub_2D4FF
 
 loc_2D36C:
 
-	load_a_masked byte_364, #4
+	LOAD_A_MASKED byte_364, #4
 	IF_A_NOT_EQUAL_CMP #0, loc_2D378
 	JSR	sub_2D397
 
@@ -381,7 +381,7 @@ loc_2D471:
 	IF_A_EQUAL_CMP byte_35E, loc_2D4C3
 	a_to_stack data_2
 	a_to_stack data_3
-	and_byte data_2, #$E0 
+	AND_BYTE data_2, #$E0 
 	mult_by_2_byte byte_35E
 	sub_a_sec tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
@@ -595,7 +595,7 @@ loc_2E33E:
 	INX
 	set_inx {ppu_data_70,X}, ptr_0
 	INC	ptr_0
-	load_a_masked data_2, #$1F
+	LOAD_A_MASKED data_2, #$1F
 	IF_A_NOT_EQUAL_CMP #$1F, loc_2E374
 	sub_byte_from_word data_2, #$1F
 	JMP	loc_2E381
@@ -725,7 +725,7 @@ loc_2E482:
 	INC	ptr_0
 
 loc_2E49B:
-	load_a_masked ptr_0, #1
+	LOAD_A_MASKED ptr_0, #1
 	BEQ	loc_2E4AC
 	set data_2, #0
 	set data_3, #$28 
@@ -787,7 +787,7 @@ loc_2E514:
 	set data_3, #$28 
 
 loc_2E518:
-	and_byte data_2, #$1F
+	AND_BYTE data_2, #$1F
 	JMP	locret_2E52E
 ; ---------------------------------------------------------------------------
 

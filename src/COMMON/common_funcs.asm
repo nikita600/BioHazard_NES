@@ -221,19 +221,19 @@ loc_FDD0:
 	LDX	#1
 
 loc_FDD8:
-	load_a_masked {ppu_data_70,X}, #$80 
+	LOAD_A_MASKED {ppu_data_70,X}, #$80 
 	BEQ	loc_FDEC
-	or_byte ppu_ctrl_31F, #4
+	OR_BYTE ppu_ctrl_31F, #4
 	STA	_PPU_CTRL
 	JMP	loc_FDF7
 ; ---------------------------------------------------------------------------
 
 loc_FDEC:
-	and_byte ppu_ctrl_31F, #$FB 
+	AND_BYTE ppu_ctrl_31F, #$FB 
 	STA	_PPU_CTRL
 
 loc_FDF7:
-	load_a_masked {ppu_data_70,X}, #$7F 
+	LOAD_A_MASKED {ppu_data_70,X}, #$7F 
 	STA	ppu_fld1_y_6E
 	INX
 	set_inx _PPU_ADDR, {ppu_data_70,X}
@@ -363,19 +363,19 @@ loc_FED2:
 scroll_update_FED6:
 	INC	scroll_offset_x_479
 	IF_A_GREATER_CMP_ADDR scroll_offset_x_479, #$A, locret_FF2D
-	xor_byte scroll_offset_y_47A, #$80 
-	and_byte scroll_offset_y_47A, #$FE 
-	load_a_masked scroll_offset_y_47A, #$7F 
+	XOR_BYTE  scroll_offset_y_47A, #$80 
+	AND_BYTE scroll_offset_y_47A, #$FE 
+	LOAD_A_MASKED scroll_offset_y_47A, #$7F 
 	IF_A_EQUAL_CMP #0, locret_FF2D
 	a_to_stack scroll_offset_y_47A
-	load_a_masked scroll_offset_y_47A, #$80 
+	LOAD_A_MASKED scroll_offset_y_47A, #$80 
 	IF_A_EQUAL_CMP #0, loc_FF0E
 	set ppu_scroll_y_305, #0
 	JMP	loc_FF20
 ; ---------------------------------------------------------------------------
 
 loc_FF0E:
-	and_byte scroll_offset_y_47A, #$7F 
+	AND_BYTE scroll_offset_y_47A, #$7F 
 	ADD_BYTE_TO_BYTE_CLC ppu_scroll_y_305, scroll_offset_y_47A
 
 loc_FF20:

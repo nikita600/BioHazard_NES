@@ -219,7 +219,7 @@ apu_update_13D4F9:
 	JSR	apu_update_pulse1_13DA5B
 	JSR	apu_func_13D534
 	LDA	apu_unk_738
-	add_to_a apu_unk_741
+	ADD_TO_A apu_unk_741
 	TAX
 	INC	apu_unk_742
 	if_a_greater_cmp_addr apu_unk_742, {apu_dat_13DC5C,X}, locret_13D533
@@ -241,7 +241,7 @@ apu_func_13D534:
 	LDX	apu_unk_742
 	if_x_lower_cmp #4, locret_13D55B
 	LDA	apu_unk_738
-	add_to_a apu_unk_741
+	ADD_TO_A apu_unk_741
 	TAY
 	if_a_greater_cmp_addr {apu_dat_13DC5C,Y}, #2, loc_13D565
 	BEQ	loc_13D55C
@@ -537,7 +537,7 @@ music_func_13D7C3:
 	LDX	apu_unk_711
 	if_x_lower_cmp #4, locret_13D7EA
 	LDA	apu_unk_707
-	add_to_a apu_unk_710
+	ADD_TO_A apu_unk_710
 	TAY
 	if_a_greater_cmp_addr {apu_dat_13DC5C,Y}, #2, loc_13D7F4
 	BEQ	loc_13D7EB
@@ -857,7 +857,7 @@ apu_update_pulse1_13DA62:
 
 loc_13DA99:
 	load_a_masked {apu_pulse1_env_744,X}, #$F
-	add_to_a {apu_unk_754,X}
+	ADD_TO_A {apu_unk_754,X}
 	STA	apu_unk_705
 	if_a_greater_cmp #$F, loc_13DAB3
 	set apu_unk_705, #$F
@@ -910,7 +910,7 @@ music_func_13DAE3:
 
 loc_13DB1A:
 	load_a_masked {pulse1_env_713,X}, #$F
-	add_to_a {apu_unk_723,X}
+	ADD_TO_A {apu_unk_723,X}
 	STA	apu_unk_705
 	if_a_greater_cmp #$F, loc_13DB34
 	set apu_unk_705, #$F
@@ -1036,7 +1036,7 @@ music_update_state_13DC1E:
 	JSR	music_func_13DADC
 	JSR	music_func_13D7C3
 	LDA	apu_unk_707
-	add_to_a apu_unk_710
+	ADD_TO_A apu_unk_710
 	TAX
 	INC	apu_unk_711
 	if_a_greater_cmp_addr apu_unk_711, {apu_dat_13DC5C,X}, locret_13DC5B

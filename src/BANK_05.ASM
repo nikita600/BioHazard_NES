@@ -47,7 +47,7 @@ upload_gfx_5F0CC:
 	LDY	#0
 	set tilemapWidth_308, {(data_2),Y}
 
-	add_word_to_word_imm data_2, $2
+	ADD_WORD_TO_WORD_IMM data_2, $2
 
 	LDX	#0
 
@@ -60,9 +60,9 @@ loc_5F0EE:
 	set_iny _PPU_DATA, {(data_2),Y}
 	if_y_greater_cmp #$10, loc_5F0EE
 	
-	add_byte_to_word ptr_0, #$10
+	ADD_BYTE_TO_WORD ptr_0, #$10
 
-	add_word_to_word_imm data_2, $10
+	ADD_WORD_TO_WORD_IMM data_2, $10
 
 	INX
 	if_x_greater_cmp tilemapWidth_308, loc_5F0E2

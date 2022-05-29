@@ -142,8 +142,8 @@ loc_FD31:
 ; ---------------------------------------------------------------------------
 
 loc_FD40:
-	add_byte_to_byte_clc spr_x_pos_203, #8
-	add_byte_to_byte_clc spr_x_pos_207, #8
+	ADD_BYTE_TO_BYTE_CLC spr_x_pos_203, #8
+	ADD_BYTE_TO_BYTE_CLC spr_x_pos_207, #8
 
 locret_FD52:
 	RTS
@@ -376,7 +376,7 @@ scroll_update_FED6:
 
 loc_FF0E:
 	and_byte scroll_offset_y_47A, #$7F 
-	add_byte_to_byte_clc ppu_scroll_y_305, scroll_offset_y_47A
+	ADD_BYTE_TO_BYTE_CLC ppu_scroll_y_305, scroll_offset_y_47A
 
 loc_FF20:
 	from_stack_to_a scroll_offset_y_47A

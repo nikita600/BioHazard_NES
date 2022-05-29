@@ -34,13 +34,13 @@ sub_3F76B:
 	a_to_stack data_2
 	a_to_stack data_3
 	
-	add_byte_to_byte_clc_imm ptr_0, #$5B , char_type_id_35D
+	ADD_BYTE_TO_BYTE_CLC_IMM ptr_0, #$5B , char_type_id_35D
 	LDA	#$80 
 	ADC	#0
 	STA	ptr_1
 
 	READ_WORD data_2, {(ptr_0),Y}
-	add_byte_to_word data_2, text_idx_35C
+	ADD_BYTE_TO_WORD data_2, text_idx_35C
 
 	READ_WORD ptr_0, {(data_2),Y}
 	from_stack_to_a data_3
@@ -61,13 +61,13 @@ loc_3F7CC:
 	mult_a_by_8_byte byte_360
 	STA	tilemapTypeUnk_30B
 	mult_by_2_byte byte_361
-	add_to_a tilemapTypeUnk_30B
+	ADD_TO_A tilemapTypeUnk_30B
 	TAY
 	set tilemapTypeUnk_30B, #0
 
 loc_3F7E3:
 	y_to_stack
-	add_to_a tilemapTypeUnk_30B
+	ADD_TO_A tilemapTypeUnk_30B
 	TAY
 	if_a_not_equal_cmp_addr {byte_3F8DA,Y}, #0, loc_3F7FE
 	mult_a_by_8_byte inv_spr_dscr1_30C
@@ -112,7 +112,7 @@ loc_3F839:
 loc_3F844:
 	if_y_equal_cmp #0, loc_3F856
 	mult_by_4_byte byte_35E
-	add_to_a ptr_0
+	ADD_TO_A ptr_0
 	STA	ptr_0
 	DEY
 	JMP	loc_3F844
@@ -120,7 +120,7 @@ loc_3F844:
 
 loc_3F856:
 	mult_by_4_byte tilemapWidth_308
-	add_to_a ptr_0
+	ADD_TO_A ptr_0
 	STA	ptr_0
 	set inv_spr_dscr1_30C, #0
 
@@ -142,7 +142,7 @@ loc_3F865:
 ; ---------------------------------------------------------------------------
 
 loc_3F89B:
-	add_word_to_word_imm data_2, $1
+	ADD_WORD_TO_WORD_IMM data_2, $1
 
 loc_3F8A8:
 	set_inx {ppu_data_70,X}, #1
@@ -239,8 +239,8 @@ sub_3F972:
 
 loc_3F975:
 	if_y_equal_cmp #0, loc_3F98D
-	add_byte_to_byte_clc ppu_unk_byte_309, byte_363
-	add_2_to ppu_unk_byte_309
+	ADD_BYTE_TO_BYTE_CLC ppu_unk_byte_309, byte_363
+	ADD_2_TO ppu_unk_byte_309
 	DEY
 	JMP	loc_3F975
 ; ---------------------------------------------------------------------------
@@ -248,7 +248,7 @@ loc_3F975:
 loc_3F98D:
 	set ptr_0, ppu_unk_byte_303
 	div_a_by_8_addr ppu_scroll_x_304
-	add_to_a tilemap_size_307
+	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
 	if_a_greater_cmp #$20, loc_3F9A9
 	sub_a_sec #$20 
@@ -256,7 +256,7 @@ loc_3F98D:
 
 loc_3F9A9:
 	div_a_by_8_addr ppu_scroll_y_305
-	add_to_a ppu_unk_byte_309
+	ADD_TO_A ppu_unk_byte_309
 	STA	ppu_unk_byte_309
 	if_a_greater_cmp #$1E, loc_3F9C2
 	sub_a_sec #$1E
@@ -281,7 +281,7 @@ loc_3F9DB:
 loc_3F9DE:
 	if_y_equal_cmp #0, loc_3F9F3
 
-	add_word_to_word_imm data_2, $20
+	ADD_WORD_TO_WORD_IMM data_2, $20
 
 	DEY
 	JMP	loc_3F9DE
@@ -293,21 +293,21 @@ loc_3F9F3:
 
 loc_3F9F8:
 	if_y_equal_cmp #0, loc_3FA07
-	add_to_a #2
-	add_to_a byte_362
+	ADD_TO_A #2
+	ADD_TO_A byte_362
 	DEY
 	JMP	loc_3F9F8
 ; ---------------------------------------------------------------------------
 
 loc_3FA07:
-	add_to_a tilemap_size_307
+	ADD_TO_A tilemap_size_307
 	STA	tilemap_size_307
 	if_a_greater_cmp #$20, loc_3FA18
 	sub_a_sec #$20 
 	STA	tilemap_size_307
 
 loc_3FA18:
-	add_byte_to_word data_2, tilemap_size_307
+	ADD_BYTE_TO_WORD data_2, tilemap_size_307
 
 	RTS
 ; End of function sub_3F972
@@ -330,7 +330,7 @@ loc_3FA3F:
 ; ---------------------------------------------------------------------------
 
 loc_3FA48:
-	add_word_to_word_imm data_2, $20
+	ADD_WORD_TO_WORD_IMM data_2, $20
 
 locret_3FA55:
 	RTS

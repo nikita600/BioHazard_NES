@@ -1,46 +1,46 @@
-.macro add_2_to dst
+.macro ADD_2_TO dst
 	INC dst
 	INC dst
 .endmacro
 
-.macro add_to_a value
+.macro ADD_TO_A value
 	CLC
 	ADC	value
 .endmacro
 
-.macro add_byte_to_word addr, value
-	add_to addr, addr+1, value, #0
+.macro ADD_BYTE_TO_WORD addr, value
+	ADD_TO addr, addr+1, value, #0
 .endmacro
 
-.macro add_word_to_word addr, value
-	add_to addr, addr+1, value, value+1
+.macro ADD_WORD_TO_WORD addr, value
+	ADD_TO addr, addr+1, value, value+1
 .endmacro
 
-.macro add_word_to_word_imm addr, value
-	add_to addr, addr+1, #.LOBYTE(value), #.HIBYTE(value)
+.macro ADD_WORD_TO_WORD_IMM addr, value
+	ADD_TO addr, addr+1, #.LOBYTE(value), #.HIBYTE(value)
 .endmacro
 
-.macro add_byte_to_byte_clc dst, src
+.macro ADD_BYTE_TO_BYTE_CLC dst, src
 	LDA	dst
 	CLC
 	ADC	src
 	STA	dst
 .endmacro
 
-.macro add_byte_to_byte_clc_imm dst, src, value
+.macro ADD_BYTE_TO_BYTE_CLC_IMM dst, src, value
 	LDA	src
 	CLC
 	ADC	value
 	STA	dst
 .endmacro
 
-.macro add_byte_to_byte dst, src
+.macro ADD_BYTE_TO_BYTE dst, src
 	LDA	dst
 	ADC	src
 	STA	dst
 .endmacro
 
-.macro add_to dst_lo, dst_hi, src_lo, src_hi
+.macro ADD_TO dst_lo, dst_hi, src_lo, src_hi
 	LDA	dst_lo
 	CLC
 	ADC	src_lo

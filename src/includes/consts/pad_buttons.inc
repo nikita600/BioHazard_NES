@@ -1,9 +1,9 @@
 ; pad ids
-a_80	.SET $80
-b_40	.SET $40
-select_20   .SET $20
+right_1     .SET $01
+left_2      .SET $02
+down_4      .SET $04
+up_8        .SET $08
 start_10	.SET $10
-right_1	 .SET $1
-left_2		.SET $2
-down_4		.SET $4
-up_8	.SET $8
+select_20   .SET $20
+b_40	    .SET $40
+a_80	    .SET $80

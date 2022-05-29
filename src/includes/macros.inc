@@ -27,7 +27,7 @@
 
 	set_byte_to_word data_2, ptr_idx
 	mult_word_by_2 data_2
-	add_word_to_word ptr_0, data_2
+	ADD_WORD_TO_WORD ptr_0, data_2
 
 	READ_WORD data_2, {(ptr_0),Y}
 

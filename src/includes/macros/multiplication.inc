@@ -1,80 +1,80 @@
-.macro mult_byte_by_2 addr
+.macro MULT_BYTE_BY_2 addr
 	ASL addr
 .endmacro
 
-.macro mult_byte_by_4 addr
-	ASL addr
-	ASL addr
-.endmacro
-
-.macro mult_byte_by_8 addr
-	ASL addr
+.macro MULT_BYTE_BY_4 addr
 	ASL addr
 	ASL addr
 .endmacro
 
-.macro mult_word_by_2 addr
+.macro MULT_BYTE_BY_8 addr
+	ASL addr
+	ASL addr
+	ASL addr
+.endmacro
+
+.macro MULT_WORD_BY_2 addr
 	ASL addr
 	ROL	addr+1
 .endmacro
 
-.macro mult_word_by_16 addr
-	ASL addr
-	ROL	addr+1
+.macro MULT_WORD_BY_16 addr
 	ASL addr
 	ROL	addr+1
 	ASL addr
 	ROL	addr+1
 	ASL addr
 	ROL	addr+1
+	ASL addr
+	ROL	addr+1
 .endmacro
 
-.macro mult_by_2_byte addr
+.macro MULT_BY_2_BYTE addr
 	LDA addr
-	mult_a_by_2
+	MULT_A_BY_2
 .endmacro
 
-.macro mult_by_4_byte addr
+.macro MULT_BY_4_BYTE addr
 	LDA addr
-	mult_a_by_4
+	MULT_A_BY_4
 .endmacro
 
-.macro mult_a_by_8_byte addr
+.macro MULT_BY_8_BYTE addr
 	LDA addr
-	mult_a_by_8
+	MULT_A_BY_8
 .endmacro
 
-.macro mult_a_by_2
-	ASL A
-.endmacro
-
-.macro mult_a_by_4
-	ASL A
+.macro MULT_A_BY_2
 	ASL A
 .endmacro
 
-.macro mult_a_by_8
-	ASL A
+.macro MULT_A_BY_4
 	ASL A
 	ASL A
 .endmacro
 
-.macro mult_a_by_16
-	ASL A
+.macro MULT_A_BY_8
 	ASL A
 	ASL A
 	ASL A
 .endmacro
 
-.macro mult_a_by_32
-	ASL A
+.macro MULT_A_BY_16
 	ASL A
 	ASL A
 	ASL A
 	ASL A
 .endmacro
 
-.macro mult_a_by_64
+.macro MULT_A_BY_32
+	ASL A
+	ASL A
+	ASL A
+	ASL A
+	ASL A
+.endmacro
+
+.macro MULT_A_BY_64
 	ASL A
 	ASL A
 	ASL A

@@ -133,8 +133,8 @@ sub_2D1CB:
 	JSR	sub_2D397
 
 loc_2D1DF:
-	mult_word_by_2 text_idx_35C
-	mult_byte_by_2 char_type_id_35D
+	MULT_WORD_BY_2 text_idx_35C
+	MULT_BYTE_BY_2 char_type_id_35D
 
 	ADD_BYTE_TO_BYTE_CLC_IMM ptr_0, #.LOBYTE(off_28097), char_type_id_35D
 	LDA	#.HIBYTE(off_28097)
@@ -150,14 +150,14 @@ loc_2D21A:
 	set tilemapHeight_30A, #0
 
 	set_byte_to_word data_2, sprite_secondByte_31B
-	mult_word_by_16 data_2
+	MULT_WORD_BY_16 data_2
 	OR_BYTE data_3, #$10
 
 loc_2D23E:
 	set tilemapWidth_308, #0
 
 loc_2D243:
-	mult_by_2_byte tilemapWidth_308
+	MULT_BY_2_BYTE tilemapWidth_308
 	TAY
 	IF_A_NOT_EQUAL_CMP_ADDR {(ptr_0),Y}, #0, loc_2D251
 	JMP	loc_2D342
@@ -174,7 +174,7 @@ loc_2D251:
 loc_2D260:
 	ADD_BYTE_TO_WORD ptr_0, #2
 
-	mult_by_2_byte tilemapWidth_308
+	MULT_BY_2_BYTE tilemapWidth_308
 	ADD_TO_A ptr_0
 	STA	ptr_0
 	ADD_BYTE_TO_BYTE ptr_1, #0
@@ -199,7 +199,7 @@ loc_2D29C:
 
 	set_iny char_type_id_35D, {(ptr_0),Y}
 	set_iny text_idx_35C, {(ptr_0),Y}
-	mult_word_by_2 text_idx_35C
+	MULT_WORD_BY_2 text_idx_35C
 
 	a_to_stack ptr_0
 	a_to_stack ptr_1
@@ -225,7 +225,7 @@ loc_2D29C:
 
 loc_2D2F6:
 
-	mult_by_2_byte tilemapWidth_308
+	MULT_BY_2_BYTE tilemapWidth_308
 	ADD_TO_A ptr_0
 	STA	ptr_0
 	ADD_BYTE_TO_BYTE ptr_1, #0
@@ -341,7 +341,7 @@ loc_2D40B:
 	STA	tilemapTypeUnk_30B
 	IF_A_EQUAL_CMP #$20, loc_2D435
 	BCS	loc_2D435
-	mult_by_2_byte byte_35E
+	MULT_BY_2_BYTE byte_35E
 	ADD_TO_A tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 	IF_A_GREATER_CMP #$20, loc_2D445
@@ -353,7 +353,7 @@ loc_2D435:
 
 	a_to_stack data_2
 	a_to_stack data_3
-	mult_by_2_byte byte_35E
+	MULT_BY_2_BYTE byte_35E
 	STA	tilemapTypeUnk_30B
 	JMP	loc_2D49D
 ; ---------------------------------------------------------------------------
@@ -382,7 +382,7 @@ loc_2D471:
 	a_to_stack data_2
 	a_to_stack data_3
 	AND_BYTE data_2, #$E0 
-	mult_by_2_byte byte_35E
+	MULT_BY_2_BYTE byte_35E
 	sub_a_sec tilemapTypeUnk_30B
 	STA	tilemapTypeUnk_30B
 
@@ -518,9 +518,9 @@ sub_2E244:
 	set inv_spr_dscr1_30C, #0
 
 loc_2E2A5:
-	mult_a_by_8_byte byte_360
+	MULT_BY_8_BYTE byte_360
 	STA	tilemapTypeUnk_30B
-	mult_by_2_byte byte_361
+	MULT_BY_2_BYTE byte_361
 	ADD_TO_A tilemapTypeUnk_30B
 	TAY
 	set tilemapTypeUnk_30B, #0
@@ -530,7 +530,7 @@ loc_2E2BC:
 	ADD_TO_A tilemapTypeUnk_30B
 	TAY
 	IF_A_NOT_EQUAL_CMP_ADDR {byte_2E3B3,Y}, #0, loc_2E2D7
-	mult_a_by_8_byte inv_spr_dscr1_30C
+	MULT_BY_8_BYTE inv_spr_dscr1_30C
 	TAY
 	JSR	sub_2E3D3
 	JMP	loc_2E2F9
@@ -538,7 +538,7 @@ loc_2E2BC:
 
 loc_2E2D7:
 	IF_A_NOT_EQUAL_CMP #1, loc_2E2E8
-	mult_a_by_8_byte inv_spr_dscr1_30C
+	MULT_BY_8_BYTE inv_spr_dscr1_30C
 	TAY
 	JSR	sub_2E3F1
 	JMP	loc_2E2F9
@@ -571,7 +571,7 @@ loc_2E312:
 
 loc_2E31D:
 	IF_Y_EQUAL_CMP #0, loc_2E32F
-	mult_by_4_byte byte_35E
+	MULT_BY_4_BYTE byte_35E
 	ADD_TO_A ptr_0
 	STA	ptr_0
 	DEY
@@ -579,7 +579,7 @@ loc_2E31D:
 ; ---------------------------------------------------------------------------
 
 loc_2E32F:
-	mult_by_4_byte tilemapWidth_308
+	MULT_BY_4_BYTE tilemapWidth_308
 	ADD_TO_A ptr_0
 	STA	ptr_0
 	set inv_spr_dscr1_30C, #0

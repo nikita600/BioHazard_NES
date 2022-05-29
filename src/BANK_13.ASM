@@ -102,7 +102,7 @@ loc_13C032:
 	sub_a_sec #$40 
 
 loc_13C040:
-	mult_a_by_4
+	MULT_A_BY_4
 	TAX
 	LDA	byte_13C081,Y
 	LDA	byte_13C0C9,Y
@@ -137,7 +137,7 @@ loc_13D429:
 	STA	apu_unk_741,X
 	INX
 	IF_X_GREATER_CMP #$27 , loc_13D429
-	mult_by_2_byte apu_unk_76C
+	MULT_BY_2_BYTE apu_unk_76C
 	TAX
 	set apu_unk_76A, {apu_off_13DEB0,X}
 	set apu_unk_76B, {apu_off_13DEB0+1,X}
@@ -181,7 +181,7 @@ loc_13D493:
 	STA	apu_unk_710,X
 	INX
 	IF_X_GREATER_CMP #$27 , loc_13D493
-	mult_by_2_byte apu_unk_76C
+	MULT_BY_2_BYTE apu_unk_76C
 	TAX
 	set apu_ptr_768, {apu_off_13DEB0,X}
 	set apu_ptr_769, {apu_off_13DEB0+1,X}
@@ -403,7 +403,7 @@ loc_13D674:
 loc_13D67C:
 	set apu_unk_FE, apu_unk_76A
 	set apu_unk_FF, apu_unk_76B
-	mult_by_2_byte {apu_unk_760,X}
+	MULT_BY_2_BYTE {apu_unk_760,X}
 	TAY
 	BCC	loc_13D68F
 	INC	apu_unk_FF
@@ -456,7 +456,7 @@ locret_13D6F0:
 loc_13D6F1:
 	set _APU_NOISE_ENV, {noise_env_13C231,Y}
 	TYA
-	mult_a_by_2
+	MULT_A_BY_2
 	TAY
 	set _APU_NOISE_LOOP, {noise_loop_13C286,Y}
 	set _APU_NOISE_LEN, {noise_len_13C287,Y}
@@ -465,7 +465,7 @@ loc_13D6F1:
 
 loc_13D707:
 	IF_A_LOWER_CMP_ADDR apu_unk_705, #$D, loc_13D729
-	mult_a_by_4
+	MULT_A_BY_4
 	TAY
 	set _APU_PULSE1_ENV, {pulse_env_13DDEC,Y}
 	set ptr_1, {pulse_sweep_13DDED,Y}
@@ -488,7 +488,7 @@ loc_13D729:
 
 loc_13D747:
 	IF_A_LOWER_CMP_ADDR apu_unk_705, #$D, loc_13D76A
-	mult_a_by_4
+	MULT_A_BY_4
 	TAY
 	set _APU_PULSE2_ENV, {pulse2_env_13DE20,Y}
 	set _APU_PULSE2_SWEEP, {pulse2_sweep_13DE21,Y}
@@ -511,7 +511,7 @@ loc_13D76A:
 
 loc_13D788:
 	IF_A_LOWER_CMP_ADDR apu_unk_705, #$D, loc_13D7AB
-	mult_a_by_4
+	MULT_A_BY_4
 	TAY
 	set _APU_TRI_COUNT, {tri_count_13DE54,Y}
 	set _APU_TRI_UNUSED, {tri_unused_13DE55,Y}
@@ -699,7 +699,7 @@ loc_13D903:
 loc_13D90B:
 	set apu_unk_FE, apu_ptr_768
 	set apu_unk_FF, apu_ptr_769
-	mult_by_2_byte {apu_unk_72F,X}
+	MULT_BY_2_BYTE {apu_unk_72F,X}
 	TAY
 	BCC	loc_13D91E
 	INC	apu_unk_FF
@@ -754,7 +754,7 @@ locret_13D987:
 apu_update_noise_13D988:
 	set _APU_NOISE_ENV, {noise_env_13C231,Y}
 	TYA
-	mult_a_by_2
+	MULT_A_BY_2
 	TAY
 	set _APU_NOISE_LOOP, {noise_loop_13C286,Y}
 	set _APU_NOISE_LEN, {noise_len_13C287,Y}
@@ -763,7 +763,7 @@ apu_update_noise_13D988:
 
 apu_update_pulse1_13D99E:
 	IF_A_LOWER_CMP_ADDR apu_unk_705, #$D, apu_update_pulse1_13D9C1
-	mult_a_by_4
+	MULT_A_BY_4
 	TAY
 	set _APU_PULSE1_ENV, {pulse_env_13DDEC,Y}
 	set _APU_PULSE1_SWEEP, {pulse_sweep_13DDED,Y}
@@ -786,7 +786,7 @@ apu_update_pulse1_13D9C1:
 
 apu_update_pulse2_13D9DF:
 	IF_A_LOWER_CMP_ADDR apu_unk_705, #$D, apu_update_pulse2_13DA02
-	mult_a_by_4
+	MULT_A_BY_4
 	TAY
 	set _APU_PULSE2_ENV, {pulse2_env_13DE20,Y}
 	set _APU_PULSE2_SWEEP, {pulse2_sweep_13DE21,Y}
@@ -809,7 +809,7 @@ apu_update_pulse2_13DA02:
 
 apu_update_triangle_13DA20:
 	IF_A_LOWER_CMP_ADDR apu_unk_705, #$D, loc_13DA43
-	mult_a_by_4
+	MULT_A_BY_4
 	TAY
 	set _APU_TRI_COUNT, {tri_count_13DE54,Y}
 	set _APU_TRI_UNUSED, {tri_unused_13DE55,Y}
@@ -874,7 +874,7 @@ loc_13DAB3:
 	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_704
 	BNE	locret_13DADB
 	TXA
-	mult_a_by_4
+	MULT_A_BY_4
 	TAY
 	set {_APU_PULSE1_ENV,Y}, {apu_pulse1_env_744,X}
 
@@ -929,7 +929,7 @@ loc_13DB34:
 	LOAD_A_MASKED {apu_dat_13D421,X}, apu_unk_737
 	BNE	locret_13DB64
 	TXA
-	mult_a_by_4
+	MULT_A_BY_4
 	TAY
 	set {_APU_PULSE1_ENV,Y}, {pulse1_env_713,X}
 
@@ -941,7 +941,7 @@ locret_13DB64:
 
 music_func_13DB65:
 	IF_A_LOWER_CMP_ADDR {apu_unk_752,X}, #4, locret_13DB89
-	mult_a_by_2
+	MULT_A_BY_2
 	TAY
 	LOAD_A_MASKED {apu_unk_74A,Y}, #$F
 	BNE	loc_13DB7A
@@ -962,7 +962,7 @@ locret_13DB89:
 
 music_func_13DB8A:
 	IF_A_LOWER_CMP_ADDR {apu_unk_721,X}, #4, locret_13DBAE
-	mult_a_by_2
+	MULT_A_BY_2
 	TAY
 	LOAD_A_MASKED {apu_unk_719,Y}, #$F
 	BNE	loc_13DB9F
@@ -987,7 +987,7 @@ apu_func_13DBAF:
 loc_13DBB1:
 	LDA	apu_unk_700,X
 	BMI	loc_13DBFD
-	mult_a_by_4
+	MULT_A_BY_4
 	TAY
 	set {apu_unk_700,X}, #$FF
 	LDA	apu_dat_13D421,X
@@ -997,12 +997,12 @@ loc_13DBB1:
 	ORA	apu_unk_704
 	STA	apu_unk_704
 	x_to_stack
-	mult_a_by_2
+	MULT_A_BY_2
 	TAX
 	set apu_unk_FE, {apu_data_13DEBE,X}
 	set apu_unk_FF, {apu_data_13DEBE+1,X}
 	TXA
-	mult_a_by_2
+	MULT_A_BY_2
 	TAX
 	set_iny {_APU_PULSE1_ENV,X}, {(apu_unk_FE),Y}
 	set_iny {_APU_PULSE1_SWEEP,X}, {(apu_unk_FE),Y}

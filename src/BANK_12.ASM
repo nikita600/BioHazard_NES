@@ -12,7 +12,7 @@ switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
 	IF_A_EQUAL_CMP_ADDR bank_command_346, #$FF, locret_12805A
-	mult_a_by_2
+	MULT_A_BY_2
 	TAX
 	set_inx ptr_0, {CommandPtrs_12805B,X}
 	set ptr_1, {CommandPtrs_12805B,X}
@@ -710,7 +710,7 @@ loc_12853B:
 	sub_a_sec #$40 
 
 loc_128549:
-	mult_a_by_4
+	MULT_A_BY_4
 	TAX
 	LDA	byte_12858A,Y
 	LDA	byte_1285D2,Y
@@ -911,7 +911,7 @@ sub_128955:
 	a_to_stack ppu_prev_scroll_y_unk_4A8
 	a_to_stack prev_sprite_type_4A9
 	sub_addr_sec inv_sprite_idx_31C, #$2A 
-	mult_a_by_2
+	MULT_A_BY_2
 	TAX
 	set byte_475, {byte_129255,X}
 	set2 byte_43F, byte_472, #0
@@ -1085,10 +1085,10 @@ loc_128B4B:
 	set tilemapWidth_308, #8
 	JSR	sub_12D26B
 	sub_addr_sec inv_sprite_idx_31C, #$2A 
-	mult_a_by_2
+	MULT_A_BY_2
 	TAY
 	sub_addr_sec {byte_129006,Y}, byte_43F
-	mult_a_by_4
+	MULT_A_BY_4
 	STA	tilemapTypeUnk_30B
 	sub_addr_sec #$80 , tilemapTypeUnk_30B
 	STA	byte_36A
@@ -1105,10 +1105,10 @@ loc_128B4B:
 	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
 	sub_addr_sec inv_sprite_idx_31C, #$2A 
-	mult_a_by_2
+	MULT_A_BY_2
 	TAY
 	sub_addr_sec {byte_129006,Y}, byte_43F
-	mult_a_by_4
+	MULT_A_BY_4
 	STA	tilemapTypeUnk_30B
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_36A, #$80 , tilemapTypeUnk_30B
 	STA	byte_474
@@ -1141,7 +1141,7 @@ loc_128BFB:
 	JSR	exec_b1_c1_128394
 	LDA	byte_43F
 	ADD_TO_A #1
-	mult_a_by_4
+	MULT_A_BY_4
 	STA	tilemapTypeUnk_30B
 	sub_addr_sec #$80 , tilemapTypeUnk_30B
 	STA	byte_36A
@@ -1159,7 +1159,7 @@ loc_128BFB:
 	JSR	exec_b1_c1_128394
 	LDA	byte_43F
 	ADD_TO_A #1
-	mult_a_by_4
+	MULT_A_BY_4
 	STA	tilemapTypeUnk_30B
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_36A, #$80 , tilemapTypeUnk_30B
 	STA	byte_474
@@ -1383,7 +1383,7 @@ sub_128FC1:
 	JSR	exec_b4_c2_1283A7
 	INC	byte_43F
 	sub_addr_sec inv_sprite_idx_31C, #$2A 
-	mult_a_by_2
+	MULT_A_BY_2
 	TAY
 	IF_A_NOT_EQUAL_CMP_ADDR {byte_129006,Y}, byte_43F, locret_129004
 	set byte_43F, {byte_129005,Y}
@@ -1432,7 +1432,7 @@ loc_12905F:
 
 loc_129069:
 	sub_addr_sec byte_543, #1
-	mult_a_by_4
+	MULT_A_BY_4
 
 loc_129071:
 	ADD_TO_A #$34 
@@ -1570,7 +1570,7 @@ locret_129185:
 
 sub_129186:
 	sub_addr_sec inv_sprite_idx_31C, #$2A 
-	mult_a_by_2
+	MULT_A_BY_2
 	TAX
 	INX
 
@@ -1698,7 +1698,7 @@ loc_12A68B:
 loc_12A69D:
 	a_to_stack data_2
 	a_to_stack data_3
-	mult_by_2_byte inv_spr_dscr1_30C
+	MULT_BY_2_BYTE inv_spr_dscr1_30C
 	ADD_TO_A data_2
 	STA	data_2
 	ADD_BYTE_TO_BYTE data_3, #0
@@ -1859,7 +1859,7 @@ loc_12A8C1:
 	set inv_spr_dscr1_30C, #0
 
 loc_12A8D3:
-	mult_by_2_byte inv_spr_dscr1_30C
+	MULT_BY_2_BYTE inv_spr_dscr1_30C
 	TAY
 	set_iny ptr_0, {(data_2),Y}
 	set ptr_1, {(data_2),Y}
@@ -4498,7 +4498,7 @@ locret_12C1B7:
 
 sub_12C1B8:
 	sub_addr_sec #3, byte_577
-	mult_a_by_16
+	MULT_A_BY_16
 	TAY
 ; End of function sub_12C1B8
 
@@ -5958,7 +5958,7 @@ sub_12D070:
 
 loc_12D084:
 	set objMapIdx_316, #$25 
-	mult_by_2_byte byte_372
+	MULT_BY_2_BYTE byte_372
 	TAY
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_36A, {byte_12D11C,Y}, byte_547
 	INY
@@ -5981,7 +5981,7 @@ sub_12D0C2:
 
 loc_12D0D6:
 	set objMapIdx_316, #$25 
-	mult_by_2_byte byte_372
+	MULT_BY_2_BYTE byte_372
 	TAY
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_36A, {byte_12D114,Y}, byte_547
 	INY
@@ -6193,7 +6193,7 @@ loc_12D2D6:
 	LDA	byte_533,Y
 	TAX
 	set inv_itemPrev_idx_31D, {byte_12E869,X}
-	mult_by_2_byte byte_372
+	MULT_BY_2_BYTE byte_372
 	TAY
 	DIV_A_BY_8_ADDR {byte_12E851,Y}
 	STA	tilemap_size_307
@@ -6223,7 +6223,7 @@ sub_12D319:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12D329:
-	mult_by_2_byte byte_42E
+	MULT_BY_2_BYTE byte_42E
 	ADD_TO_A byte_42C
 	IF_A_GREATER_CMP byte_532, loc_12D33A
 	JSR	sub_12D49F
@@ -6232,7 +6232,7 @@ sub_12D329:
 
 loc_12D33A:
 	STA	tilemapTypeUnk_30B
-	mult_by_2_byte tilemapTypeUnk_30B
+	MULT_BY_2_BYTE tilemapTypeUnk_30B
 	TAX
 	set_inx tilemap_size_307, {byte_12E851,X}
 	ADD_BYTE_TO_BYTE_CLC_IMM ppu_unk_byte_309, {byte_12E851,X}, #$10
@@ -6526,7 +6526,7 @@ loc_12D699:
 	set objMapIdx_316, #$30 
 
 	LDA	byte_372
-	mult_a_by_32
+	MULT_A_BY_32
 	ADD_TO_A #$84 
 	ADD_TO_A byte_547
 	ADD_TO_A byte_547
@@ -6761,7 +6761,7 @@ sub_12D8DD:
 	PHA
 	LDA	unk_502,X
 	PHA
-	mult_by_2_byte byte_42E
+	MULT_BY_2_BYTE byte_42E
 	ADD_TO_A byte_42C
 	IF_A_GREATER_CMP byte_532, loc_12D900
 	LDX	byte_372
@@ -6779,7 +6779,7 @@ loc_12D910:
 	JSR	sub_12DF2B
 	from_stack_to_a inv_spr_dscr1_30C
 	from_stack_to_a tilemapTypeUnk_30B
-	mult_by_2_byte byte_42E
+	MULT_BY_2_BYTE byte_42E
 	ADD_TO_A byte_42C
 	TAY
 	IF_Y_GREATER_CMP byte_532, loc_12D946
@@ -6857,7 +6857,7 @@ loc_12D9C9:
 
 loc_12D9DA:
 	TYA
-	mult_a_by_2
+	MULT_A_BY_2
 	TAY
 	DIV_A_BY_8_ADDR {byte_12E851,Y}
 	STA	tilemap_size_307
@@ -6877,7 +6877,7 @@ sub_12D9F7:
 
 loc_12D9FB:
 	x_to_stack
-	mult_a_by_2
+	MULT_A_BY_2
 	TAX
 	DIV_A_BY_8_ADDR {byte_12E851,X}
 	STA	tilemap_size_307
@@ -6926,7 +6926,7 @@ loc_12DA5E:
 	set inv_itemPrev_idx_31D, {byte_12E869,X}
 	from_stack_to_x
 	PHA
-	mult_a_by_2
+	MULT_A_BY_2
 	TAX
 	DIV_A_BY_8_ADDR {byte_12E851,X}
 	STA	tilemap_size_307
@@ -7031,7 +7031,7 @@ loc_12DB6C:
 ; ---------------------------------------------------------------------------
 
 loc_12DB75:
-	mult_by_2_byte byte_42E
+	MULT_BY_2_BYTE byte_42E
 	ADD_TO_A byte_42C
 	IF_A_GREATER_CMP byte_532, loc_12DB83
 	RTS
@@ -7070,7 +7070,7 @@ loc_12DBC0:
 loc_12DBCC:
 	IF_A_NOT_EQUAL_CMP #$80, loc_12DC0F
 	JSR	sub_12ED20
-	mult_by_2_byte byte_42E
+	MULT_BY_2_BYTE byte_42E
 	ADD_TO_A byte_42C
 	STA	byte_47B
 	IF_A_NOT_EQUAL_CMP_ADDR byte_372, #0, loc_12DBEB
@@ -7212,7 +7212,7 @@ sub_12DD0A:
 	XOR_BYTE  byte_547, #1
 
 loc_12DD1E:
-	mult_by_4_byte byte_42E
+	MULT_BY_4_BYTE byte_42E
 	ADD_TO_A byte_42C
 	ADD_TO_A byte_42C
 	TAY
@@ -7397,7 +7397,7 @@ sub_12DFA5:
 ; FUNCTION CHUNK AT E019 SIZE 0000013D BYTES
 ; FUNCTION CHUNK AT E166 SIZE 0000021E BYTES
 
-	mult_by_2_byte byte_42E
+	MULT_BY_2_BYTE byte_42E
 	ADD_TO_A byte_42C
 	TAY
 	set tilemapTypeUnk_30B, {byte_533,Y}
@@ -7790,7 +7790,7 @@ loc_12E368:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E384:
-	mult_by_2_byte byte_42E
+	MULT_BY_2_BYTE byte_42E
 	ADD_TO_A byte_42C
 	TAY
 	ADD_BYTE_TO_BYTE_CLC_IMM text_idx_35C, {byte_533,Y}, #$3A 
@@ -7799,7 +7799,7 @@ sub_12E384:
 	JSR	exec_b2_c1_128300
 	JSR	sub_12E3D4
 	JSR	sub_12ED29
-	mult_by_2_byte byte_42E
+	MULT_BY_2_BYTE byte_42E
 	ADD_TO_A byte_42C
 	TAY
 	IF_A_NOT_EQUAL_CMP_ADDR {byte_533,Y}, #$25, loc_12E3C1
@@ -7943,7 +7943,7 @@ sub_12E4CD:
 	XOR_BYTE  byte_547, #1
 
 loc_12E4EE:
-	mult_by_4_byte byte_42E
+	MULT_BY_4_BYTE byte_42E
 	ADD_TO_A byte_42C
 	ADD_TO_A byte_42C
 	TAY
@@ -8253,7 +8253,7 @@ byte_12E869:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12E8A5:
-	mult_by_2_byte byte_42E
+	MULT_BY_2_BYTE byte_42E
 	ADD_TO_A byte_42C
 	IF_A_GREATER_CMP byte_532, loc_12E8B5
 	JMP	loc_12ED0E
@@ -9099,7 +9099,7 @@ loc_12F13F:
 
 sub_12F168:
 	set objMapIdx_316, #$2A 
-	mult_by_2_byte byte_372
+	MULT_BY_2_BYTE byte_372
 	TAY
 	set_iny byte_36A, {byte_12F28B,Y}
 	set byte_366, {byte_12F28B,Y}
@@ -9111,7 +9111,7 @@ sub_12F168:
 	set byte_317, #0
 	JSR	exec_b1_c1_128394
 	set objMapIdx_316, #$2B 
-	mult_by_2_byte byte_372
+	MULT_BY_2_BYTE byte_372
 	TAY
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_36A, {byte_12F28B,Y}, #8
 	IF_A_EQUAL_CMP_ADDR byte_372, #$14, loc_12F1C7
@@ -9134,7 +9134,7 @@ loc_12F1D0:
 	set byte_317, #0
 	JSR	exec_b1_c1_128394
 	set objMapIdx_316, #$2C 
-	mult_by_2_byte byte_372
+	MULT_BY_2_BYTE byte_372
 	TAY
 	set_iny byte_36A, {byte_12F28B,Y}
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_366, {byte_12F28B,Y}, #8
@@ -9145,7 +9145,7 @@ loc_12F1D0:
 	set byte_317, #0
 	JSR	exec_b1_c1_128394
 	set objMapIdx_316, #$2D 
-	mult_by_2_byte byte_372
+	MULT_BY_2_BYTE byte_372
 	TAY
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_36A, {byte_12F28B,Y}, #8
 	IF_A_EQUAL_CMP_ADDR byte_372, #$14, loc_12F258
@@ -9212,7 +9212,7 @@ loc_12F2ED:
 loc_12F30E:
 	set_word_to_word_const ptr_0, off_12F53A
 
-	mult_by_2_byte byte_420
+	MULT_BY_2_BYTE byte_420
 	ADD_TO_A ptr_0
 	STA	ptr_0
 	ADD_BYTE_TO_BYTE ptr_1, #0
@@ -9464,7 +9464,7 @@ hide_sprite_12F57D:
 
 sub_12F583:
 	set objMapIdx_316, #$3C 
-	mult_a_by_8_byte byte_421
+	MULT_BY_8_BYTE byte_421
 	ADD_TO_A #$70 
 	STA	byte_36A
 	set byte_366, #$50 

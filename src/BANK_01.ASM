@@ -132,7 +132,7 @@ get_sprite_palette_ptr_1F2F3:
 	set_word_to_word_const ptr_0, SpritePalettes_18079
 
 get_offset_F2FB:
-	mult_by_2_byte objectIdx_318
+	MULT_BY_2_BYTE objectIdx_318
 	ADD_TO_A ptr_0
 	STA	ptr_0
 	ADD_BYTE_TO_BYTE ptr_1, #0
@@ -146,7 +146,7 @@ get_ptr_F30A:
 
 copy_sprite_palette_to_ram_1F316:
 	LDY	#0
-	mult_by_4_byte sprPalIdx_319
+	MULT_BY_4_BYTE sprPalIdx_319
 	TAX
 
 loc_1F31E:
@@ -196,7 +196,7 @@ load_sprite_to_vram_1F36D:
 	set ptr_1, #.HIBYTE(Sprites)
 
 get_offset_F376:; spriteIdx
-	mult_by_2_byte objectIdx_318
+	MULT_BY_2_BYTE objectIdx_318
 	ADD_TO_A ptr_0
 	STA	ptr_0
 	ADD_BYTE_TO_BYTE ptr_1, #0
@@ -210,7 +210,7 @@ get_sprite_length_F390:
 
 get_sprite_descr2_F397:
 	set_byte_to_word ptr_0, sprite_secondByte_31B
-	mult_word_by_16 ptr_0
+	MULT_WORD_BY_16 ptr_0
 
 	RTS
 ; End of function load_sprite_to_vram_1F36D
@@ -230,7 +230,7 @@ load_sprite_tilemap_1F3B8:
 	set data_3, #$82 
 
 get_container_offset_F3C1:
-	mult_by_2_byte objectIdx_318
+	MULT_BY_2_BYTE objectIdx_318
 	ADD_TO_A data_2
 	STA	data_2
 	ADD_BYTE_TO_BYTE data_3, #0
@@ -239,7 +239,7 @@ get_container_ptr_F3D0:
 	READ_WORD ptr_0, {(data_2),Y}
 
 get_tilemap_offset_F3DB:
-	mult_by_2_byte objMapIdx_316
+	MULT_BY_2_BYTE objMapIdx_316
 	ADD_TO_A ptr_0
 	STA	ptr_0
 	ADD_BYTE_TO_BYTE ptr_1, #0

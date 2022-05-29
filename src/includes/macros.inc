@@ -26,7 +26,7 @@
 	set_word_to_word_const ptr_0, ptr_addr
 
 	set_byte_to_word data_2, ptr_idx
-	mult_word_by_2 data_2
+	MULT_WORD_BY_2 data_2
 	ADD_WORD_TO_WORD ptr_0, data_2
 
 	READ_WORD data_2, {(ptr_0),Y}
@@ -43,7 +43,7 @@ bank_switch_8000:
 		LDA	bank_to_344
 		CMP	#$10
 		BCS	bank_idx_greater_10_8020
-		mult_a_by_8
+		MULT_A_BY_8
 		TAY
 		LDA	mirroring_type_342
 		BNE	vertical_801A
@@ -58,7 +58,7 @@ vertical_801A:
 bank_idx_greater_10_8020:
 		SEC
 		SBC	#$10
-		mult_a_by_8
+		MULT_A_BY_8
 		TAY
 		LDA	mirroring_type_342
 		BNE	vertical_8032

@@ -34,9 +34,7 @@ sub_3F76B:
 	a_to_stack data_2
 	a_to_stack data_3
 	
-	LDA	#$5B 
-	add_to_a char_type_id_35D
-	STA	ptr_0
+	add_byte_to_byte_clc_imm ptr_0, #$5B , char_type_id_35D
 	LDA	#$80 
 	ADC	#0
 	STA	ptr_1

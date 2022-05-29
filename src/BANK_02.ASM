@@ -136,9 +136,7 @@ loc_2D1DF:
 	mult_word_by_2 text_idx_35C
 	mult_byte_by_2 char_type_id_35D
 
-	LDA	#.LOBYTE(off_28097)
-	add_to_a char_type_id_35D
-	STA	ptr_0
+	add_byte_to_byte_clc_imm ptr_0, #.LOBYTE(off_28097), char_type_id_35D
 	LDA	#.HIBYTE(off_28097)
 	ADC	#0
 	STA	ptr_1
@@ -496,9 +494,7 @@ sub_2E244:
 	a_to_stack data_2
 	a_to_stack data_3
 
-	LDA	#$50 
-	add_to_a char_type_id_35D
-	STA	ptr_0
+	add_byte_to_byte_clc_imm ptr_0, #$50 , char_type_id_35D
 	LDA	#$D5 
 	ADC	#0
 	STA	ptr_1

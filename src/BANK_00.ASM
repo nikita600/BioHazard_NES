@@ -1058,7 +1058,6 @@ is_B_pressed_8B64:
 	add_byte_to_byte_clc byte_366, #4
 	STA	byte_42E
 	add_byte_to_byte byte_367, #0
-
 	STA	byte_42F
 
 loc_8BAC:
@@ -1676,9 +1675,7 @@ show_text_func_9132:
 	set byte_362, #0
 	set byte_363, #0
 	set sprite_secondByte_31B, #$D0 
-	LDA	text_unk_35B
-	add_to_a #5
-	STA	byte_310
+	add_byte_to_byte_clc_imm byte_310, text_unk_35B, #5
 	JSR	exec_b2_c4_C90E
 
 	set byte_357, #$18
@@ -2552,37 +2549,37 @@ unknown_data_BCB6:
 	.WORD byte_BD0D
 	.WORD byte_BD0E
 	.WORD byte_BD0F
-byte_BCF2:.BYTE	0	
-byte_BCF3:.BYTE	0	
-byte_BCF4:.BYTE	0	
-byte_BCF5:.BYTE	0	
-byte_BCF6:.BYTE	0	
-byte_BCF7:.BYTE	0	
-byte_BCF8:.BYTE	0	
-byte_BCF9:.BYTE	0	
-byte_BCFA:.BYTE	0	
-byte_BCFB:.BYTE	0	
-byte_BCFC:.BYTE	0	
-byte_BCFD:.BYTE	0	
-byte_BCFE:.BYTE	0	
-byte_BCFF:.BYTE	0	
-byte_BD00:.BYTE	0	
-byte_BD01:.BYTE	0	
-byte_BD02:.BYTE	0	
-byte_BD03:.BYTE	0	
-byte_BD04:.BYTE	0	
-byte_BD05:.BYTE	0	
-byte_BD06:.BYTE	0	
-byte_BD07:.BYTE	0	
-byte_BD08:.BYTE	0	
-byte_BD09:.BYTE $A3	
-byte_BD0A:.BYTE $88	
-byte_BD0B:.BYTE $8E	
-byte_BD0C:.BYTE $72	
-byte_BD0D:.BYTE $B6	
-byte_BD0E:.BYTE $99	
-byte_BD0F:.BYTE $86	
-byte_BD10:.BYTE  $B,$18,$25,$30,$39,$45,$50,$58,$63,$70,$7C,$85
+byte_BCF2: .BYTE	0	
+byte_BCF3: .BYTE	0	
+byte_BCF4: .BYTE	0	
+byte_BCF5: .BYTE	0	
+byte_BCF6: .BYTE	0	
+byte_BCF7: .BYTE	0	
+byte_BCF8: .BYTE	0	
+byte_BCF9: .BYTE	0	
+byte_BCFA: .BYTE	0	
+byte_BCFB: .BYTE	0	
+byte_BCFC: .BYTE	0	
+byte_BCFD: .BYTE	0	
+byte_BCFE: .BYTE	0	
+byte_BCFF: .BYTE	0	
+byte_BD00: .BYTE	0	
+byte_BD01: .BYTE	0	
+byte_BD02: .BYTE	0	
+byte_BD03: .BYTE	0	
+byte_BD04: .BYTE	0	
+byte_BD05: .BYTE	0	
+byte_BD06: .BYTE	0	
+byte_BD07: .BYTE	0	
+byte_BD08: .BYTE	0	
+byte_BD09: .BYTE $A3	
+byte_BD0A: .BYTE $88	
+byte_BD0B: .BYTE $8E	
+byte_BD0C: .BYTE $72	
+byte_BD0D: .BYTE $B6	
+byte_BD0E: .BYTE $99	
+byte_BD0F: .BYTE $86	
+byte_BD10: .BYTE  $B,$18,$25,$30,$39,$45,$50,$58,$63,$70,$7C,$85
 	
 byte_BD1C:.BYTE	2,$16,$21	
 
@@ -3153,9 +3150,7 @@ loc_C7FB:
 
 loc_C814:
 	from_stack_to_y
-	LDA	byte_368
-	add_to_a byte_4AE
-	STA	byte_366
+	add_byte_to_byte_clc_imm byte_366, byte_368, byte_4AE
 	LDA	byte_369
 	ADC	#0
 	STA	byte_367
@@ -3413,9 +3408,7 @@ sub_CAA9:
 	set byte_362, #0
 	set byte_363, #0
 	set sprite_secondByte_31B, #$D0 
-	LDA	text_unk_35B
-	add_to_a #5
-	STA	byte_310
+	add_byte_to_byte_clc_imm byte_310, text_unk_35B, #5
 	set byte_364, #7
 	JSR	exec_b2_c4_C90E
 	set byte_364, #0
@@ -3461,9 +3454,7 @@ sub_CB58:
 	mult_by_2_byte byte_372
 	TAX
 	set_inx byte_4AD, {off_CBBE,X}
-	LDA	off_CBBE,X
-	add_to_a #4
-	STA	byte_4AE
+	add_byte_to_byte_clc_imm byte_4AE, {off_CBBE,X}, #4
 	INX
 	if_a_greater_cmp_addr count_unk_465, #$A, loc_CBAF
 	if_a_greater_cmp #$14, loc_CBA7
@@ -4188,9 +4179,7 @@ loc_D2C4:
 	from_stack_to_x
 	add_byte_to_word byte_366, #8
 
-	LDA	array_unk_3C5,X
-	add_to_a #$10
-	STA	byte_36C
+	add_byte_to_byte_clc_imm byte_36C, {array_unk_3C5,X}, #$10
 	LDA	array_unk_3BB,X
 	ADC	#0
 	STA	byte_36D
@@ -4379,17 +4368,13 @@ loc_D4F7:
 
 loc_D508:
 	if_x_equal_cmp inv_spr_dscr1_30C, loc_D51A
-	LDA	tilemapData_4C,X
-	add_to_a sprite_length_30F
-	STA	sprite_length_30F
+	add_byte_to_byte_clc_imm sprite_length_30F, {tilemapData_4C,X}, sprite_length_30F
 	INX
 	JMP	loc_D508
 ; ---------------------------------------------------------------------------
 
 loc_D51A:
-	LDA	sprite_length_30F
-	add_to_a #$6F 
-	STA	unk_401,Y
+	add_byte_to_byte_clc_imm {unk_401,Y}, sprite_length_30F, #$6F 
 	INY
 	if_y_greater_cmp objArraySize_373, loc_D4E8
 	RTS
@@ -4946,9 +4931,7 @@ loc_DB57:
 	or_byte sprite_length_30F, #$C0 
 
 loc_DB72:
-	LDA	byte_368
-	add_to_a byte_36C
-	STA	byte_36A
+	add_byte_to_byte_clc_imm byte_36A, byte_368, byte_36C
 	LDA	byte_369
 	ADC	byte_36D
 	STA	byte_36B
@@ -6974,13 +6957,14 @@ start_read_tilemap_EE1C:
 start_upload_ppu_EE3F:
 	set _PPU_ADDR, data_3
 	set _PPU_ADDR, data_2
+
 	y_to_stack
 	LDY	#0
-
 write_tilemap_to_ppu_EE4D:
 	set_iny _PPU_DATA, {tilemapData_4C,Y}
 	if_y_greater_cmp tilemapWidth_308, write_tilemap_to_ppu_EE4D
 	from_stack_to_y
+	
 	INC	ppu_unk_byte_309
 	JSR	sub_F194
 	DEC	tilemapHeight_30A
@@ -7045,16 +7029,12 @@ loc_EF04:
 
 start_read_tilemap_EF06:
 	set tilemapData_4C, entry_idx_300
-	LDA	ppu_unk_byte_302
-	add_to_a #1
-	STA	room_pos_x_4D
+	add_byte_to_byte_clc_imm room_pos_x_4D, ppu_unk_byte_302, #1
 	set room_pos_y_4E, ppu_unk_byte_303
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, #0
 	set tilemap_line_size_51, #8
-	LDA	tilemapWidth_308
-	add_to_a #1
-	STA	mapLineWidth_52
+	add_byte_to_byte_clc_imm mapLineWidth_52, tilemapWidth_308, #1
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
 
@@ -7111,9 +7091,7 @@ loc_EFAB:
 start_read_tilemap_EFAD:
 	set tilemapData_4C, entry_idx_300
 	set room_pos_x_4D, ppu_unk_byte_302
-	LDA	ppu_unk_byte_303
-	add_to_a #1
-	STA	room_pos_y_4E
+	add_byte_to_byte_clc_imm room_pos_y_4E, ppu_unk_byte_303, #1
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, tilemap_size_307
 	set tilemap_line_size_51, #8
@@ -7156,18 +7134,12 @@ loc_F02C:
 
 start_read_tilemap_F02E:
 	set tilemapData_4C, entry_idx_300
-	LDA	ppu_unk_byte_302
-	add_to_a #1
-	STA	room_pos_x_4D
-	LDA	ppu_unk_byte_303
-	add_to_a #1
-	STA	room_pos_y_4E
+	add_byte_to_byte_clc_imm room_pos_x_4D, ppu_unk_byte_302, #1
+	add_byte_to_byte_clc_imm room_pos_y_4E, ppu_unk_byte_303, #1
 	set tilemap_line_idx_4F, ppu_unk_byte_309
 	set mapLineSize_50, #0
 	set tilemap_line_size_51, #8
-	LDA	tilemapWidth_308
-	add_to_a #1
-	STA	mapLineWidth_52
+	add_byte_to_byte_clc_imm mapLineWidth_52, tilemapWidth_308, #1
 	set mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
 
@@ -7805,13 +7777,9 @@ sprites_func_9132:
 	mult_a_by_8_byte byte_359
 	STA	tilemapWidth_308
 
-	LDA	byte_36A
-	add_to_a tilemapWidth_308
-	STA	byte_36C
+	add_byte_to_byte_clc_imm byte_36C, byte_36A, tilemapWidth_308
 
-	LDA	byte_366
-	add_to_a #$20 
-	STA	byte_368
+	add_byte_to_byte_clc_imm byte_368, byte_366, #$20 
 
 	LDX	#0
 
@@ -7997,9 +7965,7 @@ loc_F86E:
 	set tilemapTypeUnk_30B, #0
 
 loc_F877:
-	LDA	TextBg_FBD2,Y
-	add_to_a text_unk_35B
-	STA	ppu_data_70,X
+	add_byte_to_byte_clc_imm {ppu_data_70,X}, {TextBg_FBD2,Y}, text_unk_35B
 	INY
 	INX
 	INC	tilemapTypeUnk_30B

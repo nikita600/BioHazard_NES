@@ -12,34 +12,34 @@
 switch_case_8035:
 	set bank_prev_345, bank_to_344
 	set bank_switch_flag_6C, #$88 
-	if_a_equal_cmp_addr bank_command_346, #0, loc_18053
-	if_a_equal_cmp #1, loc_18059
-	if_a_equal_cmp #2, loc_1805F
-	if_a_equal_cmp #3, loc_18068
+	if_a_equal_cmp_addr bank_command_346, #0, case0_18053
+	if_a_equal_cmp #1, case1_18059
+	if_a_equal_cmp #2, case2_1805F
+	if_a_equal_cmp #3, case3_18068
 	RTS
 ; ---------------------------------------------------------------------------
 
-loc_18053:
+case0_18053:
 	JSR	load_tiles_state_1F25D
-	JMP	loc_1806B
+	JMP	return_1806B
 ; ---------------------------------------------------------------------------
 
-loc_18059:
+case1_18059:
 	JSR	load_obj_tilemap_1F264
-	JMP	loc_1806B
+	JMP	return_1806B
 ; ---------------------------------------------------------------------------
 
-loc_1805F:
+case2_1805F:
 	JSR	load_sprite_to_vram_1F36D
 	JSR	load_sprite_tilemap_1F3B8
-	JMP	loc_1806B
+	JMP	return_1806B
 ; ---------------------------------------------------------------------------
 
-loc_18068:
-	JMP	loc_1806B
+case3_18068:
+	JMP	return_1806B
 ; ---------------------------------------------------------------------------
 
-loc_1806B:
+return_1806B:
 	return_from_bank_command
 ; End of function bank_switch_func
 
@@ -192,8 +192,7 @@ locret_1F36C:
 
 load_sprite_to_vram_1F36D:
 
-	set ptr_0, #.LOBYTE(Sprites)
-	INY
+	set_iny ptr_0, #.LOBYTE(Sprites)
 	set ptr_1, #.HIBYTE(Sprites)
 
 get_offset_F376:; spriteIdx
@@ -266,9 +265,7 @@ add_offset_F408:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_1F416:
-	LDA	#0
-	add_to_a byte_31A
-	STA	ptr_0
+	add_byte_to_byte_clc_imm ptr_0, #0, byte_31A
 	LDA	#2
 	ADC	#0
 	STA	ptr_1
@@ -298,9 +295,7 @@ loc_1F44D:
 	set_iny {(ptr_0),Y}, ppu_unk_byte_309
 	y_to_stack
 	LDY	tilemapTypeUnk_30B
-	LDA	(data_2),Y
-	add_to_a sprite_secondByte_31B
-	STA	inv_spr_dscr1_30C
+	add_byte_to_byte_clc_imm inv_spr_dscr1_30C, {(data_2),Y}, sprite_secondByte_31B
 	from_stack_to_y
 	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
 	set_iny {(ptr_0),Y}, byte_317
@@ -337,9 +332,7 @@ loc_1F4DC:
 	y_to_stack
 	LDY	tilemapTypeUnk_30B
 	DEY
-	LDA	(data_2),Y
-	add_to_a sprite_secondByte_31B
-	STA	inv_spr_dscr1_30C
+	add_byte_to_byte_clc_imm inv_spr_dscr1_30C, {(data_2),Y}, sprite_secondByte_31B
 	from_stack_to_y
 	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
 	set_iny {(ptr_0),Y}, byte_317
@@ -389,9 +382,7 @@ loc_1F583:
 	set_iny {(ptr_0),Y}, ppu_unk_byte_309
 	y_to_stack
 	LDY	tilemapTypeUnk_30B
-	LDA	(data_2),Y
-	add_to_a sprite_secondByte_31B
-	STA	inv_spr_dscr1_30C
+	add_byte_to_byte_clc_imm inv_spr_dscr1_30C, {(data_2),Y}, sprite_secondByte_31B
 	from_stack_to_y
 	set_iny {(ptr_0),Y}, inv_spr_dscr1_30C
 	set_iny {(ptr_0),Y}, byte_317

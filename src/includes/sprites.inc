@@ -220,9 +220,7 @@ loc_4F538:
 
 	LDY	#0
 loc_4F54A:
-	LDA	(ptr_0),Y
-	add_to_a byte_31E
-	STA	ppu_data_70,X
+	add_byte_to_byte_clc_imm {ppu_data_70,X}, {(ptr_0),Y}, byte_31E
 	INX
 	INY
 	if_y_greater_cmp tilemapWidth_308, loc_4F54A

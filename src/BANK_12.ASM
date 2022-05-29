@@ -1110,9 +1110,7 @@ loc_128B4B:
 	sub_addr_sec {byte_129006,Y}, byte_43F
 	mult_a_by_4
 	STA	tilemapTypeUnk_30B
-	LDA	#$80 
-	add_to_a tilemapTypeUnk_30B
-	STA	byte_36A
+	add_byte_to_byte_clc_imm byte_36A, #$80 , tilemapTypeUnk_30B
 	STA	byte_474
 	LDA	#0
 	ADC	#0
@@ -1163,9 +1161,7 @@ loc_128BFB:
 	add_to_a #1
 	mult_a_by_4
 	STA	tilemapTypeUnk_30B
-	LDA	#$80 
-	add_to_a tilemapTypeUnk_30B
-	STA	byte_36A
+	add_byte_to_byte_clc_imm byte_36A, #$80 , tilemapTypeUnk_30B
 	STA	byte_474
 	LDA	#0
 	ADC	#0
@@ -1202,9 +1198,7 @@ loc_128CD5:
 	set sprite_secondByte_31B, #0
 	set byte_31A, #$38 
 	set objectIdx_318, #4
-	LDA	#$1A
-	add_to_a byte_543
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, #$1A, byte_543
 	LDX	objMapIdx_316
 	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
@@ -1245,9 +1239,7 @@ loc_128D8B:
 ; ---------------------------------------------------------------------------
 
 loc_128D8F:
-	LDA	byte_355
-	add_to_a #$29 
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, byte_355, #$29 
 	set byte_366, #$C0 
 	set byte_367, #0
 	set byte_36A, ppu_scroll_x_304
@@ -1260,9 +1252,7 @@ loc_128D8F:
 	LDX	objMapIdx_316
 	set byte_317, {byte_128F59,X}
 	JSR	exec_b1_c1_128394
-	LDA	byte_354
-	add_to_a #$29 
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, byte_354, #$29 
 	set byte_366, #$C0 
 	set byte_367, #0
 	set byte_36A, ppu_scroll_x_304
@@ -1336,9 +1326,7 @@ sub_128EC2:
 	set sprite_secondByte_31B, #0
 	set byte_31A, #$B8 
 	set objectIdx_318, #4
-	LDA	#$15
-	add_to_a byte_54B
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, #$15, byte_54B
 	if_a_equal byte_54A, loc_128F0E
 	add_byte_to_byte_clc objMapIdx_316, #3
 
@@ -1388,9 +1376,7 @@ byte_128F59:
 sub_128FC1:
 	if_a_greater_cmp_addr count_unk_467, #$32, locret_129004
 	set count_unk_467, #0
-	LDA	#0
-	add_to_a byte_43F
-	STA	inv_itemPrev_idx_31D
+	add_byte_to_byte_clc_imm inv_itemPrev_idx_31D, #0, byte_43F
 	set tilemap_size_307, #$B
 	set ppu_unk_byte_309, #4
 	set byte_36E, #0
@@ -1518,9 +1504,7 @@ loc_1290E7:
 loc_1290EA:
 	set byte_443, #0
 	set byte_440, #$FF
-	LDA	ppu_scroll_x_304
-	add_to_a spr_x_pos_203
-	STA	byte_441
+	add_byte_to_byte_clc_imm byte_441, ppu_scroll_x_304, spr_x_pos_203
 	set byte_476, #0
 	if_a_greater_cmp_addr byte_441, byte_473, loc_129117
 	if_a_equal_cmp byte_474, loc_129117
@@ -5596,9 +5580,7 @@ loc_12CB96:
 loc_12CBB2:
 	if_a_equal_cmp_addr byte_434, #4, loc_12CBD9
 	BCS	loc_12CBD9
-	LDA	#2
-	add_to_a byte_434
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, #2, byte_434
 	JSR	sub_12CCAB
 	if_a_greater_cmp_addr count_unk_468, #$14, loc_12CBD6
 	set count_unk_468, #0
@@ -5616,9 +5598,7 @@ loc_12CBD9:
 	INC	byte_42B
 
 loc_12CBF7:
-	LDA	#2
-	add_to_a byte_434
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, #2, byte_434
 	JSR	sub_12CCAB
 	JMP	loc_12CB96
 ; ---------------------------------------------------------------------------
@@ -5652,18 +5632,12 @@ loc_12CC5C:
 	xor_byte byte_433, #1
 
 loc_12CC70:
-	LDA	byte_42C
-	add_to_a byte_430
-	STA	byte_36A
-	LDA	byte_42E
-	add_to_a byte_431
-	STA	byte_366
+	add_byte_to_byte_clc_imm byte_36A, byte_42C, byte_430
+	add_byte_to_byte_clc_imm byte_366, byte_42E, byte_431
 	set2 byte_367, byte_36B, #0
 	set2 sprite_secondByte_31B, byte_31A, #0
 	set objectIdx_318, #$1A
-	LDA	#0
-	add_to_a byte_433
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, #0, byte_433
 	set byte_317, #0
 	JSR	exec_b1_c1_128394
 	RTS
@@ -5935,9 +5909,7 @@ sub_12CFBA:
 	a_to_stack byte_372
 	set ppu_unk_byte_309, #$B
 	set sprite_secondByte_31B, #$7A 
-	LDA	#$7E 
-	add_to_a byte_47F
-	STA	text_idx_35C
+	add_byte_to_byte_clc_imm text_idx_35C, #$7E , byte_47F
 	LDA	#0
 	ADC	#0
 	STA	char_type_id_35D
@@ -5988,13 +5960,9 @@ loc_12D084:
 	set objMapIdx_316, #$25 
 	mult_by_2_byte byte_372
 	TAY
-	LDA	byte_12D11C,Y
-	add_to_a byte_547
-	STA	byte_36A
+	add_byte_to_byte_clc_imm byte_36A, {byte_12D11C,Y}, byte_547
 	INY
-	LDA	byte_12D11C,Y
-	add_to_a #2
-	STA	byte_366
+	add_byte_to_byte_clc_imm byte_366, {byte_12D11C,Y}, #2
 	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #4
@@ -6015,13 +5983,9 @@ loc_12D0D6:
 	set objMapIdx_316, #$25 
 	mult_by_2_byte byte_372
 	TAY
-	LDA	byte_12D114,Y
-	add_to_a byte_547
-	STA	byte_36A
+	add_byte_to_byte_clc_imm byte_36A, {byte_12D114,Y}, byte_547
 	INY
-	LDA	byte_12D114,Y
-	add_to_a #2
-	STA	byte_366
+	add_byte_to_byte_clc_imm byte_366, {byte_12D114,Y}, #2
 	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #0
@@ -6271,9 +6235,7 @@ loc_12D33A:
 	mult_by_2_byte tilemapTypeUnk_30B
 	TAX
 	set_inx tilemap_size_307, {byte_12E851,X}
-	LDA	byte_12E851,X
-	add_to_a #$10
-	STA	ppu_unk_byte_309
+	add_byte_to_byte_clc_imm ppu_unk_byte_309, {byte_12E851,X}, #$10
 	LDY	tilemapTypeUnk_30B
 	if_a_equal_cmp_addr {byte_533,Y}, #1, loc_12D383
 	if_a_equal_cmp #2, loc_12D383
@@ -6326,9 +6288,7 @@ loc_12D3C5:
 loc_12D3D7:
 	if_a_equal data_3, loc_12D423
 	add_byte_to_byte_clc tilemap_size_307, #4
-	LDA	data_3
-	add_to_a #$32 
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, data_3, #$32 
 	set byte_317, #0
 	set byte_31A, #$80 
 	set sprite_secondByte_31B, #0
@@ -6352,9 +6312,7 @@ loc_12D423:
 	add_byte_to_byte_clc tilemap_size_307, #8
 
 loc_12D434:
-	LDA	data_2
-	add_to_a #$32 
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, data_2, #$32 
 	set byte_317, #0
 	set byte_31A, #$84 
 	set sprite_secondByte_31B, #0
@@ -6378,9 +6336,7 @@ loc_12D473:
 	add_byte_to_byte_clc tilemap_size_307, #$C
 
 loc_12D484:
-	LDA	ptr_0
-	add_to_a #$32 
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, ptr_0, #$32 
 	set byte_317, #0
 	set byte_31A, #$88 
 	set sprite_secondByte_31B, #0
@@ -7160,9 +7116,7 @@ locret_12DC30:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DC31:
-	LDA	byte_372
-	add_to_a #$20 
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, byte_372, #$20 
 	set tilemap_size_307, #$80 
 	set ppu_unk_byte_309, #$50 
 	set byte_31A, #$A0 
@@ -7174,9 +7128,7 @@ sub_12DC31:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12DC52:
-	LDA	byte_545
-	add_to_a #$1B
-	STA	objMapIdx_316
+	add_byte_to_byte_clc_imm objMapIdx_316, byte_545, #$1B
 	set byte_31A, #$40 
 	set2 sprite_secondByte_31B, byte_317, #0
 	set tilemap_size_307, #$B0 
@@ -7245,9 +7197,7 @@ sub_12DCCC:
 sub_12DCE9:
 	set objMapIdx_316, #$24 
 	set tilemap_size_307, #$90 
-	LDA	#$38 
-	add_to_a byte_372
-	STA	ppu_unk_byte_309
+	add_byte_to_byte_clc_imm ppu_unk_byte_309, #$38 , byte_372
 	set byte_31A, #$A0 
 	set sprite_secondByte_31B, #0
 	JSR	sub_12E829
@@ -7843,9 +7793,7 @@ sub_12E384:
 	mult_by_2_byte byte_42E
 	add_to_a byte_42C
 	TAY
-	LDA	byte_533,Y
-	add_to_a #$3A 
-	STA	text_idx_35C
+	add_byte_to_byte_clc_imm text_idx_35C, {byte_533,Y}, #$3A 
 	set char_type_id_35D, #0
 	set byte_364, #7
 	JSR	exec_b2_c1_128300
@@ -8067,9 +8015,7 @@ sub_12E5E6:
 
 loc_12E603:
 	LDX	byte_372
-	LDA	unk_4B6,X
-	add_to_a #$14
-	STA	text_idx_35C
+	add_byte_to_byte_clc_imm text_idx_35C, {unk_4B6,X}, #$14
 	LDA	#2
 	ADC	#0
 	STA	char_type_id_35D
@@ -8142,9 +8088,7 @@ sub_12E69F:
 
 loc_12E6BC:
 	LDX	byte_372
-	LDA	unk_4C2,X
-	add_to_a #$99 
-	STA	text_idx_35C
+	add_byte_to_byte_clc_imm text_idx_35C, {unk_4C2,X}, #$99 
 	LDA	#0
 	ADC	#0
 	STA	char_type_id_35D
@@ -8189,9 +8133,7 @@ loc_12E731:
 	JSR	sub_12ED20
 	JSR	sub_12D21B
 	LDX	byte_372
-	LDA	unk_4C2,X
-	add_to_a #$A7 
-	STA	text_idx_35C
+	add_byte_to_byte_clc_imm text_idx_35C, {unk_4C2,X}, #$A7 
 	LDA	#0
 	ADC	#0
 	STA	char_type_id_35D
@@ -9171,9 +9113,7 @@ sub_12F168:
 	set objMapIdx_316, #$2B 
 	mult_by_2_byte byte_372
 	TAY
-	LDA	byte_12F28B,Y
-	add_to_a #8
-	STA	byte_36A
+	add_byte_to_byte_clc_imm byte_36A, {byte_12F28B,Y}, #8
 	if_a_equal_cmp_addr byte_372, #$14, loc_12F1C7
 	if_a_equal_cmp #$1C, loc_12F1C7
 	if_a_equal_cmp #$1D, loc_12F1C7
@@ -9197,9 +9137,7 @@ loc_12F1D0:
 	mult_by_2_byte byte_372
 	TAY
 	set_iny byte_36A, {byte_12F28B,Y}
-	LDA	byte_12F28B,Y
-	add_to_a #8
-	STA	byte_366
+	add_byte_to_byte_clc_imm byte_366, {byte_12F28B,Y}, #8
 	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #8
@@ -9209,9 +9147,7 @@ loc_12F1D0:
 	set objMapIdx_316, #$2D 
 	mult_by_2_byte byte_372
 	TAY
-	LDA	byte_12F28B,Y
-	add_to_a #8
-	STA	byte_36A
+	add_byte_to_byte_clc_imm byte_36A, {byte_12F28B,Y}, #8
 	if_a_equal_cmp_addr byte_372, #$14, loc_12F258
 	if_a_equal_cmp #$1C, loc_12F258
 	if_a_equal_cmp #$1D, loc_12F258
@@ -9224,9 +9160,7 @@ loc_12F258:
 
 loc_12F261:
 	INY
-	LDA	byte_12F28B,Y
-	add_to_a #8
-	STA	byte_366
+	add_byte_to_byte_clc_imm byte_366, {byte_12F28B,Y}, #8
 	set2 byte_36B, byte_367, #0
 	set objectIdx_318, #5
 	set byte_31A, #$C
@@ -9264,9 +9198,7 @@ locret_12F2EC:
 ; ---------------------------------------------------------------------------
 
 loc_12F2ED:
-	LDA	#$4E 
-	add_to_a byte_421
-	STA	data_2
+	add_byte_to_byte_clc_imm data_2, #$4E , byte_421
 	LDA	#$21 
 	ADC	#0
 	STA	data_3
@@ -9379,9 +9311,7 @@ locret_12F410:
 ; ---------------------------------------------------------------------------
 
 loc_12F411:
-	LDA	#$3C 
-	add_to_a tilemapTypeUnk_30B
-	STA	ptr_0
+	add_byte_to_byte_clc_imm ptr_0, #$3C , tilemapTypeUnk_30B
 	LDA	#$F4 
 	ADC	#0
 	STA	ptr_1

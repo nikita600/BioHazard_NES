@@ -1175,49 +1175,49 @@ byte_13DF14:
 	.include "includes/sprites.inc"
 
 load_spr_palette_13DF18:
-	load_sprite_palette_func Palette_1380AC
+	LOAD_SPRITE_PALETTE_FUNC Palette_1380AC
 
 ; End of function load_spr_palette_13DF18
 
 ; =============== S U B	R O U T	I N E =======================================
 
 copy_boss_spr_to_ppu_13DF67:
-	load_sprite	load_boss_sprite_13DFDC
+	LOAD_SPRITE load_boss_sprite_13DFDC
 
 ; End of function copy_boss_spr_to_ppu_13DF67
 
 ; =============== S U B	R O U T	I N E =======================================
 
 load_sprite_func_13DFA8:
-	upload_sprite_chunks_to_ppu	load_boss_sprite_13DFDC, sprites_func_13E178
+	UPLOAD_SPRITE_CHUNKS_TO_PPU	load_boss_sprite_13DFDC, sprites_func_13E178
 
 ; End of function load_sprite_func_13DFA8
 
 ; =============== S U B	R O U T	I N E =======================================
 
 load_boss_sprite_13DFDC:
-	get_sprite_offset_func BossImages_129826
+	GET_SPRITE_OFFSET_FUNC BossImages_129826
 
 ; End of function load_boss_sprite_13DFDC
 
 ; =============== S U B	R O U T	I N E =======================================
 
 load_sprite_map_13E038:
-	load_sprite_tilemap_func SpriteMaps_138454, sprites_func_13E11C
+	LOAD_SPRITE_TILEMAP_FUNC SpriteMaps_138454, sprites_func_13E11C
 
 ; End of function load_sprite_map_13E038
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sprites_func_13E11C:
-	upload_sprite_to_ppu
+	UPLOAD_SPRITE_TO_PPU
 
 ; End of function sprites_func_13E11C
 
 ; =============== S U B	R O U T	I N E =======================================
 
 sprites_func_13E178:
-	upload_sprite_chunk_to_ppu
+	UPLOAD_SPRITE_CHUNK_TO_PPU
 
 ; End of function sprites_func_13E178
 

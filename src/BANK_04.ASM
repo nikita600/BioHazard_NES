@@ -64,25 +64,25 @@ InvItemSprites_9817:
 ; ---------------------------------------------------------------------------
 
 load_palette_4F323:
-	load_sprite_palette_func Palette_4809D
+	LOAD_SPRITE_PALETTE_FUNC Palette_4809D
 
 load_inventory_sprite_4F372:
-	load_sprite	get_inventory_sprite_ptr_4F3E7
+	LOAD_SPRITE get_inventory_sprite_ptr_4F3E7
 
 sub_4F3B3:
-	upload_sprite_chunks_to_ppu	get_inventory_sprite_ptr_4F3E7, sub_4F583
+	UPLOAD_SPRITE_CHUNKS_TO_PPU	get_inventory_sprite_ptr_4F3E7, sub_4F583
 
 get_inventory_sprite_ptr_4F3E7:
-	get_sprite_offset_func InvItemSprites_9817
+	GET_SPRITE_OFFSET_FUNC InvItemSprites_9817
 
 load_inventory_sprite_tilemap_4F443:
-	load_sprite_tilemap_func TilemapsUnk_8445, sub_4F527
+	LOAD_SPRITE_TILEMAP_FUNC TilemapsUnk_8445, sub_4F527
 
 sub_4F527:
-	upload_sprite_to_ppu
+	UPLOAD_SPRITE_TO_PPU
 
 sub_4F583:
-	upload_sprite_chunk_to_ppu
+	UPLOAD_SPRITE_CHUNK_TO_PPU
 
 ; ---------------------------------------------------------------------------
 

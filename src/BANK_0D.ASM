@@ -10,14 +10,14 @@
 	BANK_SWITCH_FUNC switch_case_8035
 
 switch_case_8035:
-	tilemap_entry_point_func
+	TILEMAP_ENTRY_POINT_FUNC
 
 ; ---------------------------------------------------------------------------
 off_D805B:
 	.include "tilemaps/bank_0D.asm"
 	
 Code_Tilemaps_0D:
-	load_tilemap_chunk_in_ram_func off_D805B
+	LOAD_TILEMAP_CHUNK_IN_RAM_FUNC off_D805B
 
 Common_Code_Tilemap:
 	.include "common/common_funcs.asm"

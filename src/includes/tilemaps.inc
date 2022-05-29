@@ -1,6 +1,6 @@
 ; ---------------------------------------------------------------------------
 
-.macro tilemap_entry_point_func
+.macro TILEMAP_ENTRY_POINT_FUNC
 
 tilemap_switch_case:
 	SET bank_prev_345, bank_to_344
@@ -19,7 +19,7 @@ return_804D:
 
 ; ---------------------------------------------------------------------------
 
-.macro load_tilemap_chunk_in_ram_func tilemaps_ptr
+.macro LOAD_TILEMAP_CHUNK_IN_RAM_FUNC tilemaps_ptr
 
 load_tilemap_chunk_in_ram_F897:
 	GET_PTR_FROM_TBL tilemaps_ptr, entry_idx_300

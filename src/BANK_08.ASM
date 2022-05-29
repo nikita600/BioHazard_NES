@@ -10,7 +10,7 @@
 	BANK_SWITCH_FUNC switch_case_8035
 	
 switch_case_8035:
-	tilemap_entry_point_func
+	TILEMAP_ENTRY_POINT_FUNC
 
 ; ---------------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ Tilemaps_8805B:
 	.include "tilemaps/bank_08.asm"
 	
 Code_Tilemaps_08:
-	load_tilemap_chunk_in_ram_func Tilemaps_8805B
+	LOAD_TILEMAP_CHUNK_IN_RAM_FUNC Tilemaps_8805B
 
 Common_Code_Tilemap:
 	.include "common/common_funcs.asm"

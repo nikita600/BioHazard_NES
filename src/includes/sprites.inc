@@ -1,6 +1,6 @@
 ; ---------------------------------------------------------------------------
 
-.macro load_sprite_palette_func palette_addr
+.macro LOAD_SPRITE_PALETTE_FUNC palette_addr
 	SET_WORD_TO_WORD_CONST ptr_0, palette_addr
 
 	SET data_2, #0
@@ -31,7 +31,7 @@ copy_palette:
 
 ; ---------------------------------------------------------------------------
 
-.macro load_sprite get_sprite_func
+.macro LOAD_SPRITE get_sprite_func
     JSR	get_sprite_func
 
 loc_4F375:
@@ -56,7 +56,7 @@ locret_4F3B2:
 
 ; ---------------------------------------------------------------------------
 
-.macro upload_sprite_chunks_to_ppu get_sprite_func, upload_chunk_func
+.macro UPLOAD_SPRITE_CHUNKS_TO_PPU get_sprite_func, upload_chunk_func
 
     JSR	get_sprite_func
 
@@ -84,7 +84,7 @@ loc_4F3DC:
 
 ; ---------------------------------------------------------------------------
 
-.macro get_sprite_offset_func sprite_addr
+.macro GET_SPRITE_OFFSET_FUNC sprite_addr
 
 	SET_WORD_TO_WORD_CONST ptr_0, sprite_addr
 
@@ -116,7 +116,7 @@ skip_2_byte_4f416:
 
 ; ---------------------------------------------------------------------------
 
-.macro load_sprite_tilemap_func tilemap_addr, upload_sprite_func
+.macro LOAD_SPRITE_TILEMAP_FUNC tilemap_addr, upload_sprite_func
 
 	SET_WORD_TO_WORD_CONST ptr_0, tilemap_addr
 
@@ -207,7 +207,7 @@ locret_4F526:
 
 ; ---------------------------------------------------------------------------
 
-.macro upload_sprite_to_ppu
+.macro UPLOAD_SPRITE_TO_PPU
     SET tilemapTypeUnk_30B, #0
 	SET has_ppu_data_to_upload_6F, #0
 
@@ -236,7 +236,7 @@ loc_4F54A:
 
 ; ---------------------------------------------------------------------------
 
-.macro upload_sprite_chunk_to_ppu
+.macro UPLOAD_SPRITE_CHUNK_TO_PPU
 	SET has_ppu_data_to_upload_6F, #0
 
 	LDX	#0

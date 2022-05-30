@@ -34,11 +34,11 @@ copy_palette:
 .macro LOAD_SPRITE get_sprite_func
     JSR	get_sprite_func
 
-loc_4F375:
+set_ppu_addr_4F375:
 	SET _PPU_ADDR, ptr_1
 	SET _PPU_ADDR, ptr_0
-	LDY	#0
 
+	LDY	#0
 loc_4F381:
 	SET_INY _PPU_DATA, {(data_2),Y}
 	IF_Y_GREATER_CMP #$10, loc_4F381
@@ -48,7 +48,7 @@ loc_4F381:
 
 	DEC	inv_spr_dscr1_30C
 	IF_A_EQUAL_CMP_ADDR inv_spr_dscr1_30C, #0, locret_4F3B2
-	JMP	loc_4F375
+	JMP	set_ppu_addr_4F375
 
 locret_4F3B2:
 	RTS

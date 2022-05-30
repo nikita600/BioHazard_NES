@@ -472,20 +472,7 @@ upload_to_ppu_1F6D1:
 	ADD_WORD_TO_WORD_IMM data_2, $2
 
 	LDX	#0
-
-loc_1F6E7:
-	SET _PPU_ADDR, ptr_1
-	SET _PPU_ADDR, ptr_0
-	LDY	#0
-
-copy_byte_to_ppu_1F6F3:
-	SET_INY _PPU_DATA, {(data_2),Y}
-	IF_Y_GREATER_CMP #$10, copy_byte_to_ppu_1F6F3
-
-	ADD_BYTE_TO_WORD ptr_0, #$10
-	ADD_WORD_TO_WORD_IMM data_2, $10
-	INX
-	IF_X_GREATER_CMP tilemapWidth_308, loc_1F6E7
+	PPU_WRITE_DATA_FUNC tilemapWidth_308
 	RTS
 ; End of function upload_to_ppu_1F6D1
 

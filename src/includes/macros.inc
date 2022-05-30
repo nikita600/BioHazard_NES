@@ -93,3 +93,24 @@ vertical_8032:
 .endmacro
 
 ; ---------------------------------------------------------------------------
+
+.macro PPU_WRITE_DATA_FUNC data_count
+
+set_ppu_addr:
+	SET _PPU_ADDR, ptr_1
+	SET _PPU_ADDR, ptr_0
+
+	LDY	#0
+write_ppu_data:
+	SET_INY _PPU_DATA, {(data_2),Y}
+	IF_Y_GREATER_CMP #$10, write_ppu_data
+
+	ADD_BYTE_TO_WORD ptr_0, #$10
+	ADD_WORD_TO_WORD_IMM data_2, $10
+
+	INX
+	IF_X_GREATER_CMP data_count, set_ppu_addr
+
+.endmacro
+
+; ---------------------------------------------------------------------------

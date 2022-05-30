@@ -22,156 +22,181 @@ switch_case_8035:
 ; ---------------------------------------------------------------------------
 
 else_805D:
-	IF_A_NOT_EQUAL_CMP #6, case6_8064
-	JMP	loc_80ED
+	IF_A_NOT_EQUAL_CMP #6, check_case_7_8064
+	JMP	case6_80ED
 ; ---------------------------------------------------------------------------
 
-case6_8064:
-	IF_A_NOT_EQUAL_CMP #7, loc_806B
-	JMP	loc_8104
+check_case_7_8064:
+	IF_A_NOT_EQUAL_CMP #7, check_case_8_806B
+	JMP	case7_8104
 ; ---------------------------------------------------------------------------
 
-loc_806B:
-	IF_A_NOT_EQUAL_CMP #8, loc_8072
-	JMP	loc_8115
+check_case_8_806B:
+	IF_A_NOT_EQUAL_CMP #8, check_case_9_8072
+	JMP	case8_8115
 ; ---------------------------------------------------------------------------
 
-loc_8072:
-	IF_A_NOT_EQUAL_CMP #9, loc_8079
-	JMP	loc_8123
+check_case_9_8072:
+	IF_A_NOT_EQUAL_CMP #9, check_case_A_8079
+	JMP	case9_8123
 ; ---------------------------------------------------------------------------
 
-loc_8079:
-	IF_A_NOT_EQUAL_CMP #$A, loc_8080
-	JMP	loc_8131
+check_case_A_8079:
+	IF_A_NOT_EQUAL_CMP #$A, check_case_B_8080
+	JMP	caseA_8131
 ; ---------------------------------------------------------------------------
 
-loc_8080:
-	CMP	#$B
-
-loc_8082:
-	BNE	loc_8087
-	JMP	loc_813F
+check_case_B_8080:
+	IF_A_NOT_EQUAL_CMP #$B, check_case_C_8087
+	JMP	caseB_813F
 ; ---------------------------------------------------------------------------
 
-loc_8087:
-	IF_A_NOT_EQUAL_CMP #$C, loc_808E
-	JMP	loc_814D
+check_case_C_8087:
+	IF_A_NOT_EQUAL_CMP #$C, check_case_D_808E
+	JMP	caseC_814D
 ; ---------------------------------------------------------------------------
 
-loc_808E:
-	IF_A_NOT_EQUAL_CMP #$D, locret_8095
-	JMP	loc_815B
+check_case_D_808E:
+	IF_A_NOT_EQUAL_CMP #$D, return_8095
+	JMP	caseD_815B
 ; ---------------------------------------------------------------------------
 
-locret_8095:
+return_8095:
 	RTS
 ; ---------------------------------------------------------------------------
 
 case0_8096:
 	A_TO_STACK bank_from_343
+
 	LDX	tilemapTypeUnk_30B
 	JSR	show_text_sequence_func_CF13
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
 case1_80A7:
 	A_TO_STACK bank_from_343
+
 	JSR	sub_CAA9
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
 case2_80B5:
 	A_TO_STACK bank_from_343
+
 	JSR	load_image_C6D2
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
 case3_80C3:
 	A_TO_STACK bank_from_343
+
 	JSR	sub_DBE2
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
 case4_80D1:
 	A_TO_STACK bank_from_343
+
 	JSR	sub_CBC2
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
 case5_80DF:
 	A_TO_STACK bank_from_343
+
 	JSR	objects_func_D52A
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
-loc_80ED:
+case6_80ED:
 	A_TO_STACK bank_from_343
+
 	JSR	sub_C873
 	JSR	sub_C921
 	JSR	sub_ECCC
 	JSR	sub_EE72
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
-loc_8104:
+case7_8104:
 	A_TO_STACK bank_from_343
+
 	JSR	exec_b4_c0_CA4B
 	JSR	exec_b4_c1_CA5E
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
-loc_8115:
+case8_8115:
 	A_TO_STACK bank_from_343
+
 	JSR	load_tiles_to_ppu_C83A
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
-loc_8123:
+case9_8123:
 	A_TO_STACK bank_from_343
+
 	JSR	sub_91B6
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
-loc_8131:
+caseA_8131:
 	A_TO_STACK bank_from_343
-	JSR	move_player_to_D055
+
+	JSR	move_player_D055
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
-loc_813F:
+caseB_813F:
 	A_TO_STACK bank_from_343
+
 	JSR	sub_CF42
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
-loc_814D:
+caseC_814D:
 	A_TO_STACK bank_from_343
+
 	JSR	sub_D359
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
-loc_815B:
+caseD_815B:
 	A_TO_STACK bank_from_343
+
 	JSR	ppu_unk_func_F09D
+
 	FROM_STACK_TO_A bank_from_343
-	JMP	loc_8169
+	JMP	return_8169
 ; ---------------------------------------------------------------------------
 
-loc_8169:
+return_8169:
 	RETURN_FROM_BANK_COMMAND
 ; End of function bank_switch_func
 
@@ -1048,7 +1073,7 @@ update_player_input_8B5F:
 	SET byte_433, #0
 
 is_B_pressed_8B64:
-	LOAD_A_MASKED input_reg1_347, #$40 
+	LOAD_A_MASKED input_reg1_347, #b_40 
 	IF_A_NOT_EQUAL_CMP #b_40, b_not_pressed_8BB1
 	SET byte_433, #$FF
 	IF_A_EQUAL_CMP_ADDR byte_42A, #$FF, loc_8BAC
@@ -1070,7 +1095,7 @@ b_not_pressed_8BB1:
 	JSR	sub_9195
 
 is_up_pressed_8BB7:
-	LOAD_A_MASKED input_reg1_347, #8
+	LOAD_A_MASKED input_reg1_347, #up_8
 	IF_A_NOT_EQUAL_CMP #up_8, up_not_pressed_8BD7
 
 up_pressed_8BC0:
@@ -1082,7 +1107,7 @@ up_pressed_8BC0:
 ; ---------------------------------------------------------------------------
 
 loc_8BD3:
-	JSR	sub_8C5F
+	JSR	player_move_up_8C5F
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1097,7 +1122,7 @@ up_not_pressed_8BD7:
 ; ---------------------------------------------------------------------------
 
 loc_8BF3:
-	JSR	sub_8D27
+	JSR	player_move_down_8D27
 	RTS
 ; ---------------------------------------------------------------------------
 
@@ -1112,12 +1137,12 @@ down_not_pressed_8BF7:
 ; ---------------------------------------------------------------------------
 
 loc_8C13:
-	JSR	sub_8DF0
+	JSR	player_move_left_8DF0
 	RTS
 ; ---------------------------------------------------------------------------
 
 left_not_pressed_8C17:
-	LOAD_A_MASKED input_reg1_347, #1
+	LOAD_A_MASKED input_reg1_347, #right_1
 	IF_A_NOT_EQUAL_CMP #right_1, right_not_pressed_8C37
 	SET byte_437, #0
 	SET player_direction_313, #dir_right_03
@@ -1127,26 +1152,26 @@ left_not_pressed_8C17:
 ; ---------------------------------------------------------------------------
 
 loc_8C33:
-	JSR	sub_8EB9
+	JSR	player_move_right_8EB9
 	RTS
 ; ---------------------------------------------------------------------------
 
 right_not_pressed_8C37:
-	LOAD_A_MASKED input_reg1_347, #$10
+	LOAD_A_MASKED input_reg1_347, #start_10
 	IF_A_NOT_EQUAL_CMP #start_10, start_not_pressed_8C44
 	JSR	start_button_pressed_8F88
 	RTS
 ; ---------------------------------------------------------------------------
 
 start_not_pressed_8C44:
-	LOAD_A_MASKED input_reg1_347, #$20 
+	LOAD_A_MASKED input_reg1_347, #select_20 
 	IF_A_NOT_EQUAL_CMP #select_20, select_not_pressed_8C51
 	JSR	select_button_pressed_8FC4
 	RTS
 ; ---------------------------------------------------------------------------
 
 select_not_pressed_8C51:
-	LOAD_A_MASKED input_reg1_347, #$80 
+	LOAD_A_MASKED input_reg1_347, #a_80 
 	IF_A_NOT_EQUAL_CMP #a_80, a_not_pressed_8C5E
 	JSR	a_button_pressed_8FDC
 	RTS
@@ -1158,7 +1183,7 @@ a_not_pressed_8C5E:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-sub_8C5F:
+player_move_up_8C5F:
 	JSR	sub_91B6
 	SET byte_432, #$96 
 	IF_A_NOT_EQUAL ppu_unk_byte_303, loc_8C79
@@ -1240,11 +1265,11 @@ loc_8D15:
 	JSR	sub_9542
 	IF_A_GREATER_CMP_ADDR byte_314, byte_315, loc_8CDA
 	RTS
-; End of function sub_8C5F
+; End of function player_move_up_8C5F
 
 ; =============== S U B	R O U T	I N E =======================================
 
-sub_8D27:
+player_move_down_8D27:
 	JSR	sub_91B6
 	SET byte_432, #$96 
 	LDA	ppu_unk_byte_303
@@ -1325,11 +1350,11 @@ loc_8DDE:
 	JSR	sub_9542
 	IF_A_GREATER_CMP_ADDR byte_314, byte_315, loc_8DA3
 	RTS
-; End of function sub_8D27
+; End of function player_move_down_8D27
 
 ; =============== S U B	R O U T	I N E =======================================
 
-sub_8DF0:
+player_move_left_8DF0:
 	JSR	sub_91B6
 	SET byte_432, #$96 
 	IF_A_NOT_EQUAL ppu_unk_byte_302, loc_8E0A
@@ -1413,11 +1438,11 @@ loc_8EA7:
 	JSR	sub_9542
 	IF_A_GREATER_CMP_ADDR byte_314, byte_315, loc_8E66
 	RTS
-; End of function sub_8DF0
+; End of function player_move_left_8DF0
 
 ; =============== S U B	R O U T	I N E =======================================
 
-sub_8EB9:
+player_move_right_8EB9:
 	JSR	sub_91B6
 	SET byte_432, #$96 
 	LDA	ppu_unk_byte_302
@@ -1503,7 +1528,7 @@ loc_8F76:
 	JSR	sub_9542
 	IF_A_GREATER_CMP_ADDR byte_314, byte_315, loc_8F35
 	RTS
-; End of function sub_8EB9
+; End of function player_move_right_8EB9
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -3307,33 +3332,15 @@ ppu_upset_data_1000_C9BF:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-ppu_upset_data_C9C7:
+ppu_upload_data_C9C7:
 	LDY	#0
 	SET tilemapWidth_308, {(data_2),Y}
-
 	ADD_WORD_TO_WORD_IMM data_2, 2
 
 	LDX	#0
-
-loc_C9DD:
-	SET _PPU_ADDR, ptr_1
-	SET _PPU_ADDR, ptr_0
-
-	LDY	#0
-
-loc_C9E9:
-	SET_INY _PPU_DATA, {(data_2),Y}
-	IF_Y_GREATER_CMP #$10, loc_C9E9
-
-	ADD_BYTE_TO_WORD ptr_0, #$10
-
-	
-	ADD_WORD_TO_WORD_IMM data_2, $10
-
-	INX
-	IF_X_GREATER_CMP tilemapWidth_308, loc_C9DD
+	PPU_WRITE_DATA_FUNC tilemapWidth_308
 	RTS
-; End of function ppu_upset_data_C9C7
+; End of function ppu_upload_data_C9C7
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -3402,6 +3409,7 @@ sub_CAA9:
 	SET byte_361, #0
 	SET text_unk_35B, #$C0 
 	JSR	sprites_func_9132
+
 	SET_TEXT_ARGS #$BB, #0
 	SET ppu_unk_byte_309, #$19
 	SET tilemap_size_307, #4
@@ -3413,6 +3421,7 @@ sub_CAA9:
 	ADD_BYTE_TO_BYTE_CLC_IMM byte_310, text_unk_35B, #5
 	SET byte_364, #7
 	JSR	exec_b2_c4_C90E
+
 	SET byte_364, #0
 	SET byte_372, #0
 
@@ -3477,7 +3486,7 @@ loc_CBAF:
 
 ; ---------------------------------------------------------------------------
 off_CBBE:.WORD loc_D03C	
-	.WORD loc_D080
+	.WORD check_down_dir_D080
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -3966,7 +3975,7 @@ byte_D041:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-move_player_to_D055:
+move_player_D055:
 	A_TO_STACK tilemapTypeUnk_30B
 	A_TO_STACK player_direction_313
 	SET byte_315, #8
@@ -3975,34 +3984,35 @@ move_player_to_D055:
 	JSR	objects_func_CED2
 	JSR	objects_func_D644
 	JSR	objects_func_D52A
-	IF_A_NOT_EQUAL_CMP_ADDR player_direction_313, #dir_up_00, loc_D080
-	JSR	sub_8C5F
-	JMP	loc_D097
+
+	IF_A_NOT_EQUAL_CMP_ADDR player_direction_313, #dir_up_00, check_down_dir_D080
+	JSR	player_move_up_8C5F
+	JMP	return_D097
 ; ---------------------------------------------------------------------------
 
-loc_D080:
-	IF_A_NOT_EQUAL_CMP #1, loc_D08A
-	JSR	sub_8D27
-	JMP	loc_D097
+check_down_dir_D080:
+	IF_A_NOT_EQUAL_CMP #dir_down_01, check_left_dir_D08A
+	JSR	player_move_down_8D27
+	JMP	return_D097
 ; ---------------------------------------------------------------------------
 
-loc_D08A:
-	IF_A_NOT_EQUAL_CMP #2, loc_D094
-	JSR	sub_8DF0
-	JMP	loc_D097
+check_left_dir_D08A:
+	IF_A_NOT_EQUAL_CMP #dir_left_02, loc_D094
+	JSR	player_move_left_8DF0
+	JMP	return_D097
 ; ---------------------------------------------------------------------------
 
 loc_D094:
-	JSR	sub_8EB9
+	JSR	player_move_right_8EB9
 
-loc_D097:
+return_D097:
 	FROM_STACK_TO_A player_direction_313
 	FROM_STACK_TO_A tilemapTypeUnk_30B
 	JSR	wait_for_frame_rendered_FCA0
 	DEC	tilemapTypeUnk_30B
-	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #0, move_player_to_D055
+	IF_A_NOT_EQUAL_CMP_ADDR tilemapTypeUnk_30B, #0, move_player_D055
 	RTS
-; End of function move_player_to_D055
+; End of function move_player_D055
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -4149,21 +4159,22 @@ show_new_game_cutscene_D22C:
 	SET byte_550, #$16
 	SET byte_54E, #1
 
-	SET tilemapTypeUnk_30B, #6
+move_player_to_door_D22C:
+	SET tilemapTypeUnk_30B, #6 ; blocks move count
 	SET player_direction_313, #dir_up_00
-	JSR	move_player_to_D055
+	JSR	move_player_D055
 
 	SET tilemapTypeUnk_30B, #8
 	SET player_direction_313, #dir_left_02
-	JSR	move_player_to_D055
+	JSR	move_player_D055
 
 	SET tilemapTypeUnk_30B, #3
 	SET player_direction_313, #dir_up_00
-	JSR	move_player_to_D055
+	JSR	move_player_D055
 
 	SET tilemapTypeUnk_30B, #3
 	SET player_direction_313, #dir_left_02
-	JSR	move_player_to_D055
+	JSR	move_player_D055
 
 	RTS
 ; End of function show_new_game_cutscene_D22C
@@ -4185,7 +4196,7 @@ loc_D2C4:
 
 	SET tilemapTypeUnk_30B, #1
 	SET player_direction_313, #dir_left_02
-	JSR	move_player_to_D055
+	JSR	move_player_D055
 
 	JSR	sub_C7C7
 	FROM_STACK_TO_X
@@ -4213,7 +4224,7 @@ loc_D32B:
 	SET player_direction_313, #dir_down_01
 
 loc_D33E:
-	JSR	move_player_to_D055
+	JSR	move_player_D055
 	SET player_direction_313, #dir_left_02
 	JSR	sub_91B6
 	SET_TEXT_ARGS #$D0, #0
@@ -4229,15 +4240,15 @@ locret_D358:
 sub_D359:
 	SET tilemapTypeUnk_30B, #5
 	SET player_direction_313, #dir_right_03
-	JSR	move_player_to_D055
+	JSR	move_player_D055
 
 	SET tilemapTypeUnk_30B, #8
 	SET player_direction_313, #dir_down_01
-	JSR	move_player_to_D055
+	JSR	move_player_D055
 
 	SET tilemapTypeUnk_30B, #8
 	SET player_direction_313, #dir_right_03
-	JSR	move_player_to_D055
+	JSR	move_player_D055
 
 	SET_TEXT_ARGS #$DB, #0
 	LDX	#4
@@ -4246,7 +4257,7 @@ sub_D359:
 
 	SET tilemapTypeUnk_30B, #4
 	SET player_direction_313, #dir_up_00
-	JSR	move_player_to_D055
+	JSR	move_player_D055
 
 	SET player_direction_313, #dir_down_01
 	JSR	sub_91B6
@@ -6981,7 +6992,7 @@ start_read_tilemap_EE1C:
 	SET mapLineHeight_53, #1
 	JSR	tilemap_read_next_chunk_F472
 
-start_upload_ppu_EE3F:
+set_ppu_addr_EE3F:
 	SET _PPU_ADDR, data_3
 	SET _PPU_ADDR, data_2
 
@@ -8314,7 +8325,7 @@ loc_FB8C:
 	MULT_WORD_BY_16 ptr_0
 	OR_BYTE ptr_1, #$10
 
-	JSR	ppu_upset_data_C9C7
+	JSR	ppu_upload_data_C9C7
 	RTS
 ; End of function upload_text_palette_to_ppu_FB85
 

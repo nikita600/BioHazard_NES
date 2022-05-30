@@ -101,7 +101,7 @@ byte_4AD = $04AD
 byte_4AE = $04AE 
 byte_4AF = $04AF 
 
-byte_4B4 = $04B4 
+difficulty_4B4 = $04B4 
 byte_4B5 = $04B5 
 unk_4B6 = $04B6
 

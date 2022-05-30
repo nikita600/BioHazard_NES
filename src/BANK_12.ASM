@@ -792,7 +792,7 @@ loc_1287B9:
 	IF_A_NOT_EQUAL_CMP_ADDR byte_46F, #$71, loc_128817
 	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$6F, loc_128814
 	IF_A_NOT_EQUAL_CMP_ADDR byte_6A2, #0, loc_128814
-	SET byte_313, #1
+	SET player_direction_313, #dir_down_01
 	JSR	exec_b0_c9_1284AA
 	SET byte_690, #$FF
 	SET cur_obj_idx_unk_43A, #0
@@ -803,7 +803,7 @@ loc_1287B9:
 	SET tilemapTypeUnk_30B, #1
 	JSR	exec_b0_c0_12A973
 	SET tilemapTypeUnk_30B, #2
-	SET byte_313, #2
+	SET player_direction_313, #dir_left_02
 	JSR	exec_b0_cA_1284C5
 	SET byte_551, #$FF
 	SET byte_553, #$FF
@@ -830,9 +830,9 @@ loc_12882B:
 loc_128835:
 	SET byte_597, #$FF
 	SET tilemapTypeUnk_30B, #8
-	SET byte_313, #2
+	SET player_direction_313, #dir_left_02
 	JSR	exec_b0_cA_1284C5
-	SET byte_313, #0
+	SET player_direction_313, #dir_up_00
 	JSR	exec_b0_c9_1284AA
 	SET_TEXT_ARGS #$40, #1
 	SET tilemapTypeUnk_30B, #$11
@@ -853,7 +853,7 @@ loc_128835:
 	SET tilemapTypeUnk_30B, #$E
 	JSR	exec_b0_c0_12A973
 	SET tilemapTypeUnk_30B, #5
-	SET byte_313, #1
+	SET player_direction_313, #dir_down_01
 	JSR	exec_b0_cA_1284C5
 	SET2 byte_6C3, byte_6C4, #0
 
@@ -876,15 +876,15 @@ loc_1288EE:
 	IF_A_NOT_EQUAL_CMP_ADDR entry_idx_300, #$79, loc_128951
 	IF_A_EQUAL_CMP_ADDR byte_6C6, #0, loc_128951
 	SET tilemapTypeUnk_30B, #2
-	SET byte_313, #1
+	SET player_direction_313, #dir_down_01
 	JSR	exec_b0_cA_1284C5
 	SET tilemapTypeUnk_30B, #1
-	SET byte_313, #2
+	SET player_direction_313, #dir_left_02
 	JSR	exec_b0_cA_1284C5
 	SET tilemapTypeUnk_30B, #3
-	SET byte_313, #1
+	SET player_direction_313, #dir_down_01
 	JSR	exec_b0_cA_1284C5
-	SET byte_313, #2
+	SET player_direction_313, #dir_left_02
 	JSR	exec_b0_c9_1284AA
 	SET_TEXT_ARGS #$78, #1
 	SET tilemapTypeUnk_30B, #3
@@ -987,7 +987,7 @@ game_not_finished_128A43:
 	JSR	sub_128EC2
 	JSR	sub_129019
 	JSR	wait_for_frame_rendered_FCA0
-	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #$20, loc_128A72
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #select_20, loc_128A72
 	JSR	sub_12ED3B
 	XOR_BYTE  byte_472, #1
 	SET byte_440, #0
@@ -995,7 +995,7 @@ game_not_finished_128A43:
 ; ---------------------------------------------------------------------------
 
 loc_128A72:
-	IF_A_NOT_EQUAL_CMP #$10, loc_128A87
+	IF_A_NOT_EQUAL_CMP #start_10, loc_128A87
 	JSR	sub_12ED44
 	A_TO_STACK inv_sprite_idx_31C
 	JSR	sub_12D4C6
@@ -1004,7 +1004,7 @@ loc_128A72:
 ; ---------------------------------------------------------------------------
 
 loc_128A87:
-	IF_A_NOT_EQUAL_CMP #$80, loc_128A9C
+	IF_A_NOT_EQUAL_CMP #a_80, loc_128A9C
 	JSR	sub_1290C3
 	IF_A_EQUAL_CMP_ADDR sprite_length_30F, #$FF, loc_128AA5
 	IF_A_EQUAL_CMP #$FE, loc_128A9F
@@ -2402,7 +2402,7 @@ loc_12AE76:
 
 loc_12AE86:
 	SET byte_6CA, #$FF
-	SET byte_313, #1
+	SET player_direction_313, #dir_down_01
 	JSR	exec_b0_c9_1284AA
 	SET_TEXT_ARGS #$81, #1
 	SET tilemapTypeUnk_30B, #2
@@ -4360,7 +4360,7 @@ locret_12C021:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C022:
-	IF_A_NOT_EQUAL_CMP_ADDR byte_313, #2, locret_12C095
+	IF_A_NOT_EQUAL_CMP_ADDR player_direction_313, #dir_left_02, locret_12C095
 	IF_A_NOT_EQUAL byte_563, locret_12C095
 	IF_A_EQUAL_CMP_ADDR byte_5C4, #$FF, locret_12C095
 	SET byte_563, #$FF
@@ -4797,7 +4797,7 @@ locret_12C46B:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C46C:
-	IF_A_NOT_EQUAL_CMP_ADDR byte_313, #1, locret_12C4AD
+	IF_A_NOT_EQUAL_CMP_ADDR player_direction_313, #dir_down_01, locret_12C4AD
 	LDX	#4
 	IF_A_NOT_EQUAL_CMP_ADDR {array_unk_3C5,X}, #$90, locret_12C4AD
 	IF_A_NOT_EQUAL_CMP_ADDR {array_unk_3BB,X}, #1, locret_12C4AD
@@ -4835,7 +4835,7 @@ loc_12C4C8:
 ; =============== S U B	R O U T	I N E =======================================
 
 sub_12C4D3:
-	IF_A_NOT_EQUAL_CMP_ADDR byte_313, #1, locret_12C4F2
+	IF_A_NOT_EQUAL_CMP_ADDR player_direction_313, #dir_down_01, locret_12C4F2
 	SET cur_obj_idx_unk_43A, #1
 	JSR	sub_12BF29
 	SET cur_obj_idx_unk_43A, #2
@@ -5750,7 +5750,7 @@ loc_12CE00:
 loc_12CE05:
 	JSR	sub_12D0C2
 	JSR	wait_for_frame_rendered_FCA0
-	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #8, loc_12CE25
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #up_8, loc_12CE25
 	IF_A_NOT_EQUAL byte_372, loc_12CE1C
 	SET byte_372, #4
 
@@ -5761,7 +5761,7 @@ loc_12CE1C:
 ; ---------------------------------------------------------------------------
 
 loc_12CE25:
-	IF_A_NOT_EQUAL_CMP #4, loc_12CE3E
+	IF_A_NOT_EQUAL_CMP #down_4, loc_12CE3E
 	IF_A_NOT_EQUAL_CMP_ADDR byte_372, #3, loc_12CE35
 	SET byte_372, #$FF
 
@@ -5772,7 +5772,7 @@ loc_12CE35:
 ; ---------------------------------------------------------------------------
 
 loc_12CE3E:
-	IF_A_NOT_EQUAL_CMP #$80, loc_12CE62
+	IF_A_NOT_EQUAL_CMP #a_80, loc_12CE62
 	JSR	sub_12ED20
 	IF_A_NOT_EQUAL_CMP_ADDR jill_pos_y_47E, #$FF, loc_12CE57
 	JSR	sub_12D120
@@ -5787,7 +5787,7 @@ loc_12CE57:
 ; ---------------------------------------------------------------------------
 
 loc_12CE62:
-	IF_A_EQUAL_CMP #$40, loc_12CE69
+	IF_A_EQUAL_CMP #b_40, loc_12CE69
 	JMP	loc_12CE05
 ; ---------------------------------------------------------------------------
 
@@ -5856,21 +5856,21 @@ loc_12CEBA:
 loc_12CF2D:
 	JSR	sub_12D070
 	JSR	wait_for_vblank_FC95
-	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #2, loc_12CF48
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #left_2, loc_12CF48
 	XOR_BYTE  byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
 loc_12CF48:
-	IF_A_NOT_EQUAL_CMP #1, loc_12CF5A
+	IF_A_NOT_EQUAL_CMP #right_1, loc_12CF5A
 	XOR_BYTE  byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
 loc_12CF5A:
-	IF_A_EQUAL_CMP #$80, loc_12CF61
+	IF_A_EQUAL_CMP #a_80, loc_12CF61
 	JMP	loc_12CF2D
 ; ---------------------------------------------------------------------------
 
@@ -6381,7 +6381,7 @@ loc_12D4E7:
 	JSR	sub_12DEB5
 	JSR	sub_12DD0A
 	JSR	wait_for_vblank_FC95
-	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #8, loc_12D512
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #up_8, loc_12D512
 	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #0, loc_12D506
 	SET byte_42E, #6
 
@@ -6393,7 +6393,7 @@ loc_12D506:
 ; ---------------------------------------------------------------------------
 
 loc_12D512:
-	IF_A_NOT_EQUAL_CMP #4, loc_12D52E
+	IF_A_NOT_EQUAL_CMP #down_4, loc_12D52E
 	IF_A_NOT_EQUAL_CMP_ADDR byte_42E, #5, loc_12D522
 	SET byte_42E, #$FF
 
@@ -6405,7 +6405,7 @@ loc_12D522:
 ; ---------------------------------------------------------------------------
 
 loc_12D52E:
-	IF_A_NOT_EQUAL_CMP #2, loc_12D543
+	IF_A_NOT_EQUAL_CMP #left_2, loc_12D543
 	XOR_BYTE  byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
@@ -6413,7 +6413,7 @@ loc_12D52E:
 ; ---------------------------------------------------------------------------
 
 loc_12D543:
-	IF_A_NOT_EQUAL_CMP #1, loc_12D558
+	IF_A_NOT_EQUAL_CMP #right_1, loc_12D558
 	XOR_BYTE  byte_42C, #1
 	JSR	sub_12ED32
 	JSR	sub_12D319
@@ -6421,14 +6421,14 @@ loc_12D543:
 ; ---------------------------------------------------------------------------
 
 loc_12D558:
-	IF_A_NOT_EQUAL_CMP #$80, loc_12D569
+	IF_A_NOT_EQUAL_CMP #a_80, loc_12D569
 	JSR	sub_12DB1E
 	IF_A_EQUAL_CMP_ADDR sprite_length_30F, #$FF, loc_12D570
 	JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
 loc_12D569:
-	IF_A_EQUAL_CMP #$10, loc_12D570
+	IF_A_EQUAL_CMP #start_10, loc_12D570
 	JMP	loc_12D4E7
 ; ---------------------------------------------------------------------------
 
@@ -6535,21 +6535,21 @@ loc_12D699:
 	SET ppu_unk_byte_309, #$DC 
 	JSR	sub_12E829
 	JSR	wait_for_vblank_FC95
-	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #2, loc_12D6E3
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #left_2, loc_12D6E3
 	XOR_BYTE  byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
 loc_12D6E3:
-	IF_A_NOT_EQUAL_CMP #1, loc_12D6F5
+	IF_A_NOT_EQUAL_CMP #right_1, loc_12D6F5
 	XOR_BYTE  byte_372, #1
 	JSR	sub_12ED32
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
 loc_12D6F5:
-	IF_A_EQUAL_CMP #$80, loc_12D6FC
+	IF_A_EQUAL_CMP #a_80, loc_12D6FC
 	JMP	loc_12D685
 ; ---------------------------------------------------------------------------
 
@@ -6720,7 +6720,7 @@ loc_12D897:
 	SET {unk_53B,Y}, #3
 
 loc_12D8A0:
-	IF_A_NOT_EQUAL byte_4B4, loc_12D8AF
+	IF_A_NOT_EQUAL difficulty_4B4, loc_12D8AF
 	ADD_BYTE_TO_BYTE_CLC {unk_53B,Y}, {unk_53B,Y}
 
 loc_12D8AF:
@@ -7144,7 +7144,7 @@ sub_12DC76:
 
 loc_12DC79:
 	JSR	wait_for_vblank_FC95
-	IF_A_NOT_EQUAL_CMP_ADDR input_reg1_347, #8, loc_12DC97
+	IF_A_NOT_EQUAL_CMP_ADDR input_reg1_347, #up_8, loc_12DC97
 	IF_A_EQUAL byte_372, loc_12DC79
 	DEC	byte_372
 	JSR	sub_12ED32
@@ -7154,7 +7154,7 @@ loc_12DC79:
 ; ---------------------------------------------------------------------------
 
 loc_12DC97:
-	IF_A_NOT_EQUAL_CMP #4, loc_12DCB1
+	IF_A_NOT_EQUAL_CMP #down_4, loc_12DCB1
 	IF_A_EQUAL_CMP_ADDR byte_372, #$2F, loc_12DC79
 	INC	byte_372
 	JSR	sub_12ED32
@@ -7164,14 +7164,14 @@ loc_12DC97:
 ; ---------------------------------------------------------------------------
 
 loc_12DCB1:
-	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #$80, loc_12DCC1
+	IF_A_NOT_EQUAL_CMP_ADDR input_pressed_34A, #a_80, loc_12DCC1
 	JSR	sub_12ED20
 	JSR	sub_12D8DD
 	JMP	loc_12DCC8
 ; ---------------------------------------------------------------------------
 
 loc_12DCC1:
-	IF_A_EQUAL_CMP #$40, loc_12DCC8
+	IF_A_EQUAL_CMP #b_40, loc_12DCC8
 	JMP	loc_12DC79
 ; ---------------------------------------------------------------------------
 

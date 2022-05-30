@@ -3,6 +3,20 @@
 .include "includes/consts/bank_ids.inc"
 .include "includes/consts/pad_buttons.inc"
 
+; title screen options
+new_game_00 	.SET $00
+load_game_01 	.SET $01
+
+; new game options
+easy_00     .SET $00
+hard_01     .SET $01
+
+; player directions
+dir_up_00       .SET $00
+dir_down_01     .SET $01
+dir_left_02     .SET $02
+dir_right_03    .SET $03
+
 ; RAM
 .include "includes/ram/ram_0.inc"
 .include "includes/ram/ram_100.inc"

@@ -94,6 +94,35 @@ vertical_8032:
 
 ; ---------------------------------------------------------------------------
 
+.macro UPLOAD_SPRITE_TO_PPU_FUNCS sprites_ptr
+
+upload_sprite_to_ppu:
+	GET_PTR_FROM_TBL sprites_ptr, entry_idx_300
+	SET_WORD_TO_WORD_CONST ptr_0, _PPU_PAT_TBL_1
+	JSR	upload_data_to_ppu
+	RTS
+
+	UPLOAD_DATA_TO_PPU_FUNC
+
+.endmacro
+
+; ---------------------------------------------------------------------------
+
+.macro UPLOAD_DATA_TO_PPU_FUNC
+
+upload_data_to_ppu:
+	LDY	#0
+	SET tilemapWidth_308, {(data_2),Y}
+	ADD_WORD_TO_WORD_IMM data_2, $2
+
+	LDX	#0
+	PPU_WRITE_DATA_FUNC tilemapWidth_308
+	RTS
+
+.endmacro
+
+; ---------------------------------------------------------------------------
+
 .macro PPU_WRITE_DATA_FUNC data_count
 
 set_ppu_addr:

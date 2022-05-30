@@ -3081,6 +3081,7 @@ load_image_C6D2:
 	STA	byte_42E
 	STA	byte_42F
 	JSR	sub_BDFE
+	
 	JSR	ppu_reset_ctrl_mask_FE93
 	SET entry_idx_300, image_id_4A4
 	SET ppu_unk_byte_302, image_offset_4A5
@@ -3093,12 +3094,15 @@ load_image_C6D2:
 
 loc_C71B:
 	JSR	sub_BD1F
+
 	JSR	sub_C873
 	JSR	sub_C921
 	JSR	sub_ECCC
 	JSR	sub_EE72
+
 	IF_A_NOT_EQUAL sprite_type_306, loc_C743
 	JSR	upload_text_palette_to_ppu_FB85
+
 	IF_A_NOT_EQUAL map_show_43B, loc_C73D
 	JSR	sub_CBE2
 	JSR	sub_D409
@@ -8318,6 +8322,7 @@ upload_text_palette_to_ppu_FB85:
 loc_FB8C:
 	SET_INY {palette_bg_321,Y}, {TextPalette_FBC2,Y}
 	IF_Y_GREATER_CMP #$10, loc_FB8C
+
 	SET data_2, #$EA 
 	SET data_3, #$FB 
 

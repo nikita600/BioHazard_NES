@@ -11,16 +11,16 @@
 switch_case_8035:
 	SET bank_prev_345, bank_to_344
 	SET bank_switch_flag_6C, #$88 
-	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, loc_38047
+	IF_A_EQUAL_CMP_ADDR bank_command_346, #0, case0_38047
 	RTS
 ; ---------------------------------------------------------------------------
 
-loc_38047:
+case0_38047:
 	JSR	sub_3F76B
-	JMP	loc_3804D
+	JMP	return_3804D
 ; ---------------------------------------------------------------------------
 
-loc_3804D:
+return_3804D:
 	RETURN_FROM_BANK_COMMAND
 ; End of function bank_switch_func
 
@@ -34,8 +34,8 @@ sub_3F76B:
 	A_TO_STACK data_2
 	A_TO_STACK data_3
 	
-	ADD_BYTE_TO_BYTE_CLC_IMM ptr_0, #$5B , char_type_id_35D
-	LDA	#$80 
+	ADD_BYTE_TO_BYTE_CLC_IMM ptr_0, #.LOBYTE(off_3805B), char_type_id_35D
+	LDA	#.HIBYTE(off_3805B)
 	ADC	#0
 	STA	ptr_1
 

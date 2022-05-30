@@ -30,7 +30,7 @@ case1_18059:
 ; ---------------------------------------------------------------------------
 
 case2_1805F:
-	JSR	load_sprite_to_vram_1F36D
+	JSR	get_sprite_ptr_1F36D
 	JSR	load_sprite_tilemap_1F3B8
 	JMP	return_1806B
 ; ---------------------------------------------------------------------------
@@ -161,14 +161,14 @@ loc_1F31E:
 upload_tiles_to_ppu_1F32A:
 	IF_A_EQUAL_CMP_ADDR sprite_type_306, #0, loc_1F33D
 	SET sprite_secondByte_31B, #0
-	JSR	load_sprite_to_vram_1F36D
+	JSR	get_sprite_ptr_1F36D
 	JSR	upload_to_ppu_1F6D1
 	RTS
 ; ---------------------------------------------------------------------------
 
 loc_1F33D:
 	SET2 objectIdx_318, sprite_secondByte_31B, #0
-	JSR	load_sprite_to_vram_1F36D
+	JSR	get_sprite_ptr_1F36D
 	JSR	upload_to_ppu_1F6D1
 	LDX	#0
 
@@ -177,7 +177,7 @@ loc_1F34D:
 	SET objectIdx_318, {objIdxArray_375,X}
 	SET sprite_secondByte_31B, {unk_401,X}
 	X_TO_STACK
-	JSR	load_sprite_to_vram_1F36D
+	JSR	get_sprite_ptr_1F36D
 	JSR	upload_to_ppu_1F6D1
 	FROM_STACK_TO_X
 	INX
@@ -190,8 +190,7 @@ locret_1F36C:
 
 ; =============== S U B	R O U T	I N E =======================================
 
-load_sprite_to_vram_1F36D:
-
+get_sprite_ptr_1F36D:
 	SET_INY ptr_0, #.LOBYTE(Sprites)
 	SET ptr_1, #.HIBYTE(Sprites)
 
@@ -213,7 +212,7 @@ get_sprite_descr2_F397:
 	MULT_WORD_BY_16 ptr_0
 
 	RTS
-; End of function load_sprite_to_vram_1F36D
+; End of function get_sprite_ptr_1F36D
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -226,8 +225,8 @@ sub_1F3B1:
 ; =============== S U B	R O U T	I N E =======================================
 
 load_sprite_tilemap_1F3B8:
-	SET_INY data_2, #$5F 
-	SET data_3, #$82 
+	SET_INY data_2, #.LOBYTE(SpriteTileMaps)
+	SET data_3, #.HIBYTE(SpriteTileMaps)
 
 get_container_offset_F3C1:
 	MULT_BY_2_BYTE objectIdx_318
@@ -467,13 +466,7 @@ loc_1F6CE:
 ; =============== S U B	R O U T	I N E =======================================
 
 upload_to_ppu_1F6D1:
-	LDY	#0
-	SET tilemapWidth_308, {(data_2),Y}
-	ADD_WORD_TO_WORD_IMM data_2, $2
-
-	LDX	#0
-	PPU_WRITE_DATA_FUNC tilemapWidth_308
-	RTS
+	UPLOAD_DATA_TO_PPU_FUNC
 ; End of function upload_to_ppu_1F6D1
 
 Common_Code_01:

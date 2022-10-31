@@ -1,6 +1,6 @@
 @echo off
 
-set cc65_folder=bin\cc65\bin
+set cc65_folder=build_tools\cc65\bin
 
 ::call :compile_bank TEMP
 
@@ -27,7 +27,7 @@ call :compile_bank 13
 
 call :merge_banks Temp ROM.BIN
 
-copy /b bin\HEAD.BIN+ROM.BIN+bin\TAIL.BIN ROM.NES
+copy /b build_tools\HEAD.BIN+ROM.BIN+build_tools\TAIL.BIN ROM.NES
 
 call :check_checksum ORIG.NES ROM.NES
 
@@ -60,10 +60,10 @@ goto :eof
 :check_checksum
 
 if exist %1 echo "OLD:"
-if exist %1 bin\m3checksum.exe %1
+if exist %1 build_tools\m3checksum.exe %1
 
 if exist %2 echo "NEW:"
-if exist %2 bin\m3checksum.exe %2
+if exist %2 build_tools\m3checksum.exe %2
 
 goto :eof
 
